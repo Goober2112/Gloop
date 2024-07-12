@@ -146,6 +146,7 @@ local tbl =
 	UICorner_21 = Instance.new("UICorner"),
 	TextLabel_4 = Instance.new("TextLabel"),
 	TextButton_8 = Instance.new("TextButton"),
+	TextButton_9 = Instance.new("TextButton"),
 	LocalScript_12 = Instance.new("LocalScript"),
 	UIStroke_14 = Instance.new("UIStroke"),
 	bigtitle = Instance.new("TextLabel"),
@@ -414,6 +415,18 @@ tbl.ArrowImage_2.Size = UDim2.new(0, 20, 0, 20)
 tbl.ArrowImage_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 tbl.ArrowImage_2.BackgroundTransparency = 1
 tbl.ArrowImage_2.Parent = tbl.ScriptHubBtn
+
+tbl.TextButton_9.BorderSizePixel = 0
+tbl.TextButton_9.Position = UDim2.new(0.372026, 0, 0.937413, 0)
+tbl.TextButton_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+tbl.TextButton_9.FontFace = Font.new("rbxassetid://11702779409", Enum.FontWeight.Medium, Enum.FontStyle.Normal)
+tbl.TextButton_9.TextSize = 14
+tbl.TextButton_9.Size = UDim2.new(0.255537, 0, 0.0904033, 0)
+tbl.TextButton_9.TextColor3 = Color3.fromRGB(255, 255, 255)
+tbl.TextButton_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
+tbl.TextButton_9.Text = "close cacti"
+tbl.TextButton_9.BackgroundTransparency = 1
+tbl.TextButton_9.Parent = tbl.WL_Frame
 
 tbl.LocalScript.Parent = tbl.NavBtnHolder
 
@@ -1431,7 +1444,7 @@ tbl.UICorner_23.CornerRadius = UDim.new(10, 10)
 tbl.UICorner_23.Parent = tbl.SmallWhiteIcon
 
 -- Plato configuration
-local accountId = 23344; -- Plato account id [IMPORTANT]
+local accountId = 39097; -- Plato account id [IMPORTANT]
 local allowPassThrough = false; -- Allow user through if error occurs, may reduce security
 local allowKeyRedeeming = false; -- Automatically check keys to redeem if valid
 local useDataModel = false;
@@ -1492,7 +1505,8 @@ function verify(key)
 						end;
 					end;
 				end;
-				
+
+				onMessage("Key invalid!");
 				return false;
 			end;
 		elseif result.StatusCode == 204 then
@@ -1516,9 +1530,11 @@ function verify(key)
 				end); 
 			end;
 		else
+			onMessage("Key invalid!");
 			return allowPassThrough;
 		end;    
 	else
+		onMessage("Key invalid!");
 		return allowPassThrough;
 	end;
 end;

@@ -1070,7 +1070,7 @@ tbl.Frame_10.BorderSizePixel = 0
 tbl.Frame_10.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
 tbl.Frame_10.Size = UDim2.new(0.974, 0, 1, -35)
 tbl.Frame_10.ClipsDescendants = true
-tbl.Frame_10.Visible = false
+tbl.Frame_10.Visible = true
 tbl.Frame_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
 tbl.Frame_10.Position = UDim2.new(0, 0, 0, 18)
 tbl.Frame_10.Parent = tbl.ScriptHub
@@ -1151,6 +1151,7 @@ tbl.Frame_12.Size = UDim2.new(0, 306, 0, 190)
 tbl.Frame_12.BorderColor3 = Color3.fromRGB(0, 0, 0)
 tbl.Frame_12.Position = UDim2.new(0.00489736, 0, 0.00525433, 0)
 tbl.Frame_12.ZIndex = 30
+tbl.Frame_12.Visible = false
 tbl.Frame_12.Parent = tbl.Template_1
 
 tbl.UICorner_16.CornerRadius = UDim.new(0, 10)
@@ -1906,6 +1907,7 @@ task.spawn(function()
 				local e_script = v["script"]
 	
 				local Clone = script.Parent.Parent.Parent.SavedBackground.Template.Frame:Clone()
+				Clone.Visible = true
 				Clone.Parent = script.Parent.Parent.Parent.SavedBackground
 				if #title > 16 then
 					title = string.sub(title, 0, 16) .. ".."

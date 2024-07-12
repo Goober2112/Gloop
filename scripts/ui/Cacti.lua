@@ -1829,8 +1829,8 @@ task.spawn(function()
 	base.Parent = script.Parent
 	base.Visible = true
 	
-	base.Name = "       "
-	base.ScriptName.Text = "       "
+	base.ScriptName.Text = "0"
+	base.ScriptName.Transparency = 1
 	base.run:Destroy();
 	base.trash:Destroy()
 
@@ -1838,7 +1838,6 @@ task.spawn(function()
 	a.Parent = script.Parent
 	a.Visible = true
 	
-	a.Name = "Reaper Hub"
 	a.ScriptName.Text = "Reaper Hub"
 	a.run.ImageButton.MouseButton1Down:Connect(function()
 		run_script([[
@@ -1853,7 +1852,6 @@ return b()
 	b.Parent = script.Parent
 	b.Visible = true
 	
-	b.Name = "Hydroxide"
 	b.ScriptName.Text = "Hydroxide"
 	b.run.ImageButton.MouseButton1Down:Connect(function()
 		run_script([[
@@ -1874,7 +1872,6 @@ webImport("ui/main")
 	d.Parent = script.Parent
 	d.Visible = true
 	
-	d.Name = "Infinite Yield"
 	d.ScriptName.Text = "Infinite Yield"
 	d.run.ImageButton.MouseButton1Down:Connect(function()
 		run_script([[
@@ -1887,7 +1884,6 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/
 	e.Parent = script.Parent
 	e.Visible = true
 	
-	e.Name = "Dex Explorer"
 	e.ScriptName.Text = "Dex Explorer"
 	e.run.ImageButton.MouseButton1Down:Connect(function()
 		run_script([[
@@ -1903,7 +1899,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/d
 				c.Parent = script.Parent
 				c.Visible = true
 				
-				c.Name = v
 				c.ScriptName.Text = v
 				c.run.ImageButton.MouseButton1Down:Connect(function()
 					run_script(readscript(v))

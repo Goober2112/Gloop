@@ -1802,7 +1802,7 @@ task.spawn(function()
 		Canvas.CanvasSize = UDim2.new(0, Constraint.AbsoluteContentSize.X, 0, Constraint.AbsoluteContentSize.Y+20)
 	end
 
-	UpdateCanvasSize(script.Parent.Parent.Parent.SavedBackground, tbl.UIListLayout_3)
+	UpdateCanvasSize(script.Parent.Parent.Parent.SavedBackground, tbl.LocalScript_9.Parent.UIGridLayout)
 	
 	script.Parent.FocusLost:Connect(function(enterpressed, input)
 		if enterpressed then

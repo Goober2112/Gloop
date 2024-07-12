@@ -1064,6 +1064,7 @@ tbl.Frame_10.BorderSizePixel = 0
 tbl.Frame_10.BackgroundColor3 = Color3.fromRGB(13, 13, 13)
 tbl.Frame_10.Size = UDim2.new(0.974, 0, 1, -35)
 tbl.Frame_10.ClipsDescendants = true
+tbl.Frame_10.Visible = false
 tbl.Frame_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
 tbl.Frame_10.Position = UDim2.new(0, 0, 0, 18)
 tbl.Frame_10.Parent = tbl.ScriptHub
@@ -1924,24 +1925,6 @@ task.spawn(function()
 	UpdateCanvasSize(script.Parent, script.Parent.UIGridLayout)
 	script.Parent.ChildAdded:Connect(function()
 		UpdateCanvasSize(script.Parent, script.Parent.UIGridLayout)
-	end)
-end)
-
-task.spawn(function()
-	local script = tbl.LocalScript_10
-
-	local v = script.Parent
-	local Tween = game:GetService("TweenService")
-	
-	v.MouseEnter:Connect(function()
-		if _G.Valanims == "all" or _G.Valanims == "fade" then
-			Tween:Create(v, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut, 0, false, 0), {BackgroundColor3 = Color3.fromRGB(71, 81, 112)}):Play()
-		end
-	end)
-	v.MouseLeave:Connect(function()
-		if _G.Valanims == "all" or _G.Valanims == "fade" then
-			Tween:Create(v, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut, 0, false, 0), {BackgroundColor3 = Color3.fromRGB(54, 61, 85)}):Play()
-		end
 	end)
 end)
 

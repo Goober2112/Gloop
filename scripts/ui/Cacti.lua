@@ -1900,7 +1900,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/d
 	local function UpdateCanvasSize(Canvas, Constraint)
 		Canvas.CanvasSize = UDim2.new(0, Constraint.AbsoluteContentSize.X, 0, Constraint.AbsoluteContentSize.Y+20)
 	end
-	UpdateCanvasSize(script.Parent, script.Parent.UIGridLayout)
+	UpdateCanvasSize(script.Parent, tbl.UIListLayout_3)
 	
 	while wait(2) do
 		for i, v in pairs(listscripts()) do

@@ -1750,10 +1750,59 @@ task.spawn(function()
 	
 		return results;
 	end
+
+	function initial_load()
+		local response = request({
+			Url = "https://scriptblox.com/api/script/fetch?page=1&max=9&filters=hot&mode=free",
+			Method = "GET"
+		})
+
+		assert(type(response) == "table", "request did not return a table.")
+		assert(response.StatusCode == 200, "request did not return 200 status code.")
+
+		local data = game:GetService("HttpService"):JSONDecode(response.Body)
+	
+		local scripts = data["result"]["scripts"]
+		local totalPages = data["result"]["totalPages"]
+	
+		local results = { }
+		results["totalPages"] = totalPages
+	
+		for _,script in pairs(scripts) do
+			table.insert(results, script)
+		end
+
+		return results
+	end
+
+	for i, v in pairs(initial_load()) do
+		if typeof(v) ~= "table" then continue end
+		local title = v["title"]
+		local isUniversal = v["isUniversal"]
+		local gameId = v["game"]["gameId"]
+		local views = v["views"]
+		local e_script = v["script"]
+
+		local Clone = script.Parent.Parent.Parent.SavedBackground.Template.Frame:Clone()
+		Clone.Parent = script.Parent.Parent.Parent.SavedBackground
+		Clone.Name = tostring(views)
+		if #title > 16 then
+			title = string.sub(title, 0, 16) .. ".."
+		end
+		Clone.ScriptName.Text = title
+		Clone.ImageLabel.Image = string.format("https://assetgame.roblox.com/Game/Tools/ThumbnailAsset.ashx?aid=%d&fmt=png&wd=1920&ht=1080", isUniversal and 4483381587 or gameId);
+		Clone.Visible = true
+
+		Clone.script2.TextButton.MouseButton1Down:Connect(function()
+			run_script(e_script)
+		end)
+	end
 	
 	local function UpdateCanvasSize(Canvas, Constraint)
 		Canvas.CanvasSize = UDim2.new(0, Constraint.AbsoluteContentSize.X, 0, Constraint.AbsoluteContentSize.Y+20)
 	end
+
+	UpdateCanvasSize(script.Parent.Parent.Parent.SavedBackground, tbl.UIListLayout_3)
 	
 	script.Parent.FocusLost:Connect(function(enterpressed, input)
 		if enterpressed then

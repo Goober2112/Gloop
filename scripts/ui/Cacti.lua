@@ -1252,7 +1252,7 @@ tbl.TextButton_9.BackgroundTransparency = 1
 tbl.TextButton_9.Parent = tbl.WL_Frame
 
 tbl.TextButton_9.MouseButton1Down:Connect(function()
-	CactiUI:Destroy()
+	tbl.CactiUI:Destroy()
 end)
 
 tbl.Frame_14.BorderSizePixel = 0

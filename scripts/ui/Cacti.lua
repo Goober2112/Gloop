@@ -1786,24 +1786,6 @@ task.spawn(function()
 end)
 
 task.spawn(function()
-	local script = tbl.LocalScript_8
-
-	local v = script.Parent
-	local Tween = game:GetService("TweenService")
-	
-	v.MouseEnter:Connect(function()
-		if _G.Valanims == "all" or _G.Valanims == "fade" then
-			Tween:Create(v, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut, 0, false, 0), {BackgroundColor3 = Color3.fromRGB(71, 81, 112)}):Play()
-		end
-	end)
-	v.MouseLeave:Connect(function()
-		if _G.Valanims == "all" or _G.Valanims == "fade" then
-			Tween:Create(v, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut, 0, false, 0), {BackgroundColor3 = Color3.fromRGB(54, 61, 85)}):Play()
-		end
-	end)
-end)
-
-task.spawn(function()
 	local script = tbl.LocalScript_9
 
 	local function UpdateCanvasSize(Canvas, Constraint)

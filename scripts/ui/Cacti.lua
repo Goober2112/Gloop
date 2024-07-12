@@ -2051,7 +2051,7 @@ tbl.TextButton_7.MouseButton1Down:Connect(function()
 end)
 
 task.spawn(function()
-	--[[if verify("") then
+	if verify("") then
 		local root = tbl.CactiUI
 		root.MainFrame.Visible = true
 		root.NavBar.Visible = true
@@ -2060,8 +2060,8 @@ task.spawn(function()
 		runautoexec()
 
 		root.WL_Frame:Destroy()
-	end--]]
-
+	end
+			
 	tbl.TextButton_8.MouseButton1Down:Connect(function()
 		if verify("") then
 			local root = tbl.CactiUI

@@ -1497,6 +1497,7 @@ function verify(key)
 					end;
 				end;
 				
+				onMessage("Key invalid!");
 				return false;
 			end;
 		elseif result.StatusCode == 204 then
@@ -1520,10 +1521,12 @@ function verify(key)
 				end); 
 			end;
 		else
-			return allowPassThrough;
+			onMessage("Key invalid!");
+			return false;
 		end;    
 	else
-		return allowPassThrough;
+		onMessage("Key invalid!");
+		return false;
 	end;
 end;
 -- Plato global functions [END]

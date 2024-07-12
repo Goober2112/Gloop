@@ -1753,7 +1753,7 @@ task.spawn(function()
 
 	function initial_load()
 		local response = request({
-			Url = "https://scriptblox.com/api/script/fetch?page=1&max=9&filters=hot&mode=free",
+			Url = "https://scriptblox.com/api/script/fetch?page=1&max=30&filters=hot&mode=free",
 			Method = "GET"
 		})
 

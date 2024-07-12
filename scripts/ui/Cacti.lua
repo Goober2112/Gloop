@@ -1185,6 +1185,7 @@ tbl.ImageButton_1.Parent = tbl.trash
 tbl.LocalScript_10.Parent = tbl.SavedBackground_1
 
 tbl.UIListLayout_3.Padding = UDim.new(0, 10)
+tbl.UIListLayout_3.SortOrder = Enum.SortOrder.Name
 tbl.UIListLayout_3.Parent = tbl.SavedBackground_1
 
 tbl.DragButton.Visible = false
@@ -1828,8 +1829,9 @@ task.spawn(function()
 	local base = script.Parent.Template.Frame:Clone()
 	base.Parent = script.Parent
 	base.Visible = true
-	
-	base.ScriptName.Text = "0"
+
+	base.Name = "0"
+	base.ScriptName.Text = "A"
 	base.ScriptName.Transparency = 1
 	base.run:Destroy();
 	base.trash:Destroy()
@@ -1852,6 +1854,7 @@ return b()
 	b.Parent = script.Parent
 	b.Visible = true
 	
+	b.Name = "1"
 	b.ScriptName.Text = "Hydroxide"
 	b.run.ImageButton.MouseButton1Down:Connect(function()
 		run_script([[
@@ -1872,6 +1875,7 @@ webImport("ui/main")
 	d.Parent = script.Parent
 	d.Visible = true
 	
+	d.Name = "2"
 	d.ScriptName.Text = "Infinite Yield"
 	d.run.ImageButton.MouseButton1Down:Connect(function()
 		run_script([[
@@ -1884,7 +1888,8 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/
 	e.Parent = script.Parent
 	e.Visible = true
 	
-	e.ScriptName.Text = "Dex Explorer"
+	e.Name = "3"
+	e.ScriptName.Text = "Dex"
 	e.run.ImageButton.MouseButton1Down:Connect(function()
 		run_script([[
 loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()

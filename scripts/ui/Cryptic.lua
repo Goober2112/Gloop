@@ -1438,7 +1438,7 @@ local useDataModel = false;
 
 -- Plato callbacks
 local onMessage = function(message)
-    tbl.smalltext_1.Text = message
+    tbl.smalltext.Text = message
 end;
 
 -- Plato internals [START]

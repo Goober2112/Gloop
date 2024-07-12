@@ -1251,8 +1251,10 @@ tbl.TextButton_9.Text = "close cacti"
 tbl.TextButton_9.BackgroundTransparency = 1
 tbl.TextButton_9.Parent = tbl.WL_Frame
 
-tbl.TextButton_9.MouseButton1Down:Connect(function()
-	CactiUI:Destroy()
+task.spawn(function()
+	tbl.TextButton_9.MouseButton1Down:Connect(function()
+		tbl.CactiUI:Destroy()
+	end)
 end)
 
 tbl.Frame_14.BorderSizePixel = 0
@@ -1812,7 +1814,7 @@ task.spawn(function()
 		UpdateCanvasSize(script.Parent, script.Parent.UIListLayout)
 	end)
 
-	local base = script.Parent.Template.Frame:Clone()
+	--[[local base = script.Parent.Template.Frame:Clone()
 	base.Parent = script.Parent
 	base.Visible = true
 
@@ -1820,7 +1822,7 @@ task.spawn(function()
 	base.ScriptName.Text = "A"
 	base.ScriptName.Transparency = 1
 	base.run:Destroy();
-	base.trash:Destroy()
+	base.trash:Destroy()--]]
 
 	local a = script.Parent.Template.Frame:Clone()
 	a.Parent = script.Parent
@@ -1887,10 +1889,13 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/d
 		Canvas.CanvasSize = UDim2.new(0, Constraint.AbsoluteContentSize.X, 0, Constraint.AbsoluteContentSize.Y+20)
 	end
 	UpdateCanvasSize(script.Parent, tbl.UIListLayout_3)
-	
+
+	local loaded_scripts = {}
+		
 	while wait(2) do
 		for i, v in pairs(listscripts()) do
-			if not script.Parent:FindFirstChild(v) then
+			if not table.find(loaded_scripts, v) then
+				table.insert(loaded_scripts, v)
 				local c = script.Parent.Template.Frame:Clone()
 				c.Parent = script.Parent
 				c.Visible = true
@@ -1900,6 +1905,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/d
 					run_script(readscript(v))
 				end)
 				c.trash.ImageButton.MouseButton1Down:Connect(function()
+					table.remove(loaded_scripts, table.find(loaded_scripts, v))
 					delscript(v)
 					c:Destroy()
 				end)

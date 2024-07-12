@@ -1400,7 +1400,6 @@ tbl.smalltext_1.Position = UDim2.new(0.5, 0, 0, 245)
 tbl.smalltext_1.Name = "smalltext"
 tbl.smalltext_1.AnchorPoint = Vector2.new(0.5, 0)
 tbl.smalltext_1.TextSize = 24
-tbl.smalltext_1.TextEditable = false
 tbl.smalltext_1.Size = UDim2.new(0, 505, 0, 50)
 tbl.smalltext_1.TextColor3 = Color3.fromRGB(229, 229, 229)
 tbl.smalltext_1.BorderColor3 = Color3.fromRGB(0, 0, 0)

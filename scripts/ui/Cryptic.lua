@@ -424,9 +424,15 @@ tbl.TextButton_9.TextSize = 14
 tbl.TextButton_9.Size = UDim2.new(0.255537, 0, 0.0904033, 0)
 tbl.TextButton_9.TextColor3 = Color3.fromRGB(255, 255, 255)
 tbl.TextButton_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
-tbl.TextButton_9.Text = "close cacti"
+tbl.TextButton_9.Text = "close cryptic"
 tbl.TextButton_9.BackgroundTransparency = 1
 tbl.TextButton_9.Parent = tbl.WL_Frame
+
+task.spawn(function()
+	tbl.TextButton_9.MouseButton1Down:Connect(function()
+		tbl.CrypticUI:Destroy()
+	end)
+end)
 
 tbl.LocalScript.Parent = tbl.NavBtnHolder
 

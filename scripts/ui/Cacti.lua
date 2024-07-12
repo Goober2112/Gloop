@@ -1050,7 +1050,7 @@ tbl.UICorner_15.Parent = tbl.TextButton_6
 tbl.LocalScript_9.Parent = tbl.SavedBackground
 
 tbl.UIGridLayout.CellPadding = UDim2.new(0, 15, 0, 15)
-tbl.UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+tbl.UIGridLayout.SortOrder = Enum.SortOrder.Name
 tbl.UIGridLayout.CellSize = UDim2.new(0, 306, 0, 195)
 tbl.UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 tbl.UIGridLayout.Parent = tbl.SavedBackground
@@ -1769,6 +1769,7 @@ task.spawn(function()
 	
 				local Clone = script.Parent.Parent.Parent.SavedBackground.Template.Frame:Clone()
 				Clone.Parent = script.Parent.Parent.Parent.SavedBackground
+				Clone.Name = tostring(views)
 				if #title > 16 then
 					title = string.sub(title, 0, 16) .. ".."
 				end
@@ -1919,6 +1920,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/d
 				end)
 			end
 		end
+
+		UpdateCanvasSize(script.Parent, tbl.UIListLayout_3)
 	end
 end)
 

@@ -1433,7 +1433,7 @@ tbl.DragButton.Parent = tbl.CrypticUI
 tbl.SlideScript.Name = "SlideScript"
 tbl.SlideScript.Parent = tbl.DragButton
 
-tbl.SmallWhiteIcon.Visible = true
+tbl.SmallWhiteIcon.Visible = false
 tbl.SmallWhiteIcon.BorderSizePixel = 0
 tbl.SmallWhiteIcon.Position = UDim2.new(-0.123, 10, 0.54, 0)
 tbl.SmallWhiteIcon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -2120,6 +2120,7 @@ task.spawn(function()
 		root.MainFrame.Visible = true
 		root.NavBar.Visible = true
 		root.DragButton.Visible = true
+		tbl.SmallWhiteIcon.Visible = true
 
 		runautoexec()
 
@@ -2134,6 +2135,7 @@ task.spawn(function()
 			root.MainFrame.Visible = true
 			root.NavBar.Visible = true
 			root.DragButton.Visible = true
+			tbl.SmallWhiteIcon.Visible = true
 
 			runautoexec()
 

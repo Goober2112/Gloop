@@ -1697,7 +1697,7 @@ task.spawn(function()
 	local script = tbl.LocalScript_3
 
 	script.Parent.MouseButton1Down:Connect(function()
-		load_to_queue(script.Parent.Parent.Parent.Parent.EditorFrame.TextBox.Text)
+		run_script(script.Parent.Parent.Parent.Parent.EditorFrame.TextBox.Text)
 	end)
 end)
 
@@ -1708,42 +1708,12 @@ task.spawn(function()
 		game.TweenService:Create(a, TweenInfo.new(c, Enum.EasingStyle.Cubic), b):Play()
 	end
 	script.Parent.MouseButton1Down:Connect(function()
-		writefile("Scripts/" .. tostring(script.Parent.Parent.Parent.TextBox.Text), script.Parent.Parent.Parent.Parent.EditorFrame.TextBox.Text)
+		writescript(tostring(script.Parent.Parent.Parent.TextBox.Text), script.Parent.Parent.Parent.Parent.EditorFrame.TextBox.Text)
 		script.Parent.Parent.Parent.TextBox.Text = ""
 		setb(script.Parent.Parent.Parent, { Size = UDim2.new(0, 0, script.Parent.Parent.Parent.Size.Y.Scale, script.Parent.Parent.Parent.Size.Y.Offset)}, 0.5)
 		setb(script.Parent.Parent.Parent.fluency_icon, { ImageTransparency = 1 }, 0.2)
 		wait(.5)
 		script.Parent.Parent.Parent.Visible = false
-	end)
-end)
-
-task.spawn(function()
-	local script = tbl.LocalScript_5
-
-	local state = false
-	
-	function Tween(a, b, c)
-		game.TweenService:Create(a, TweenInfo.new(b, Enum.EasingStyle.Linear), c):Play()
-	end
-	
-	local ws = nil
-	
-	script.Parent.MouseButton1Down:Connect(function()
-		state = not state
-		Tween(script.Parent.Parent, 0.3, {
-			BackgroundColor3 = state and Color3.fromRGB(106, 255, 98) or Color3.fromRGB(255, 94, 97)
-		})
-		if state and ws == nil then
-			ws = WebSocket.connect("ws://192.168.32.14:8765/execute")
-	
-			ws.OnMessage:Connect(function(Msg)
-				load_to_queue(Msg)
-			end)
-		else
-			ws:Close()
-			
-			ws = nil
-		end
 	end)
 end)
 
@@ -1938,7 +1908,7 @@ task.spawn(function()
 				Clone.Visible = true
 	
 				Clone.script2.TextButton.MouseButton1Down:Connect(function()
-					load_to_queue(e_script)
+					run_script(e_script)
 				end)
 			end
 		end
@@ -2102,7 +2072,7 @@ end)
 
 task.spawn(function()
 	if verify("") then
-		local root = tbl.CactiUI
+		local root = tbl.CrypticUI
 		root.MainFrame.Visible = true
 		root.NavBar.Visible = true
 		root.DragButton.Visible = true
@@ -2110,11 +2080,13 @@ task.spawn(function()
 		runautoexec()
 
 		root.WL_Frame:Destroy()
+	else
+		tbl.smalltext.Text = "Copy the link and complete the steps to gain access to Cryptic."
 	end
 			
 	tbl.TextButton_8.MouseButton1Down:Connect(function()
 		if verify("") then
-			local root = tbl.CactiUI
+			local root = tbl.CrypticUI
 			root.MainFrame.Visible = true
 			root.NavBar.Visible = true
 			root.DragButton.Visible = true

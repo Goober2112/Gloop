@@ -1251,9 +1251,9 @@ tbl.TextButton_9.Text = "close cacti"
 tbl.TextButton_9.BackgroundTransparency = 1
 tbl.TextButton_9.Parent = tbl.WL_Frame
 
---[[tbl.TextButton_9.MouseButton1Down:Connect(function()
-	tbl.CactiUI:Destroy()
-end)--]]
+tbl.TextButton_9.MouseButton1Down:Connect(function()
+	CactiUI:Destroy()
+end)
 
 tbl.Frame_14.BorderSizePixel = 0
 tbl.Frame_14.BackgroundColor3 = Color3.fromRGB(0, 0, 0)

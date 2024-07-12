@@ -1,5 +1,3 @@
-print("erm... whar?")
-
 local tbl =
 {
 	CactiUI = Instance.new("ScreenGui"),

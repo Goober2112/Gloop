@@ -1034,6 +1034,7 @@ tbl.ImageButton_1.Parent = tbl.trash
 tbl.LocalScript_7.Parent = tbl.SavedBackground
 
 tbl.UIListLayout_3.Padding = UDim.new(0, 10)
+tbl.UIListLayout_3.SortOrder = Enum.SortOrder.Name
 tbl.UIListLayout_3.Parent = tbl.SavedBackground
 
 tbl.ScriptHub.BorderSizePixel = 0
@@ -1429,6 +1430,100 @@ tbl.SmallWhiteIcon.Parent = tbl.DragButton
 tbl.UICorner_23.CornerRadius = UDim.new(10, 10)
 tbl.UICorner_23.Parent = tbl.SmallWhiteIcon
 
+-- Plato configuration
+local accountId = 23344; -- Plato account id [IMPORTANT]
+local allowPassThrough = false; -- Allow user through if error occurs, may reduce security
+local allowKeyRedeeming = false; -- Automatically check keys to redeem if valid
+local useDataModel = false;
+
+-- Plato callbacks
+local onMessage = function(message)
+    tbl.smalltext_1.Text = message
+end;
+
+-- Plato internals [START]
+local fRequest, fStringFormat, fSpawn, fWait = request or http.request or http_request or syn.request, string.format, task.spawn, task.wait;
+local rateLimit, rateLimitCountdown, errorWait = false, 0, false;
+local hardwareid = gethwid()
+-- Plato internals [END]
+
+-- Plato global functions [START]
+function getLink()
+    return fStringFormat("https://gateway.platoboost.com/a/%i?id=%s", accountId, hardwareid);
+end;
+
+local key_link = getLink()
+tbl.TextBox_3.Text = key_link
+
+function verify(key)
+    if errorWait or rateLimit then 
+        return false;
+    end;
+
+    onMessage("Checking key...");
+
+	local status, result = pcall(function() 
+		return fRequest({
+			Url = fStringFormat("https://api-gateway.platoboost.com/v1/public/whitelist/%i/%s?key=%s", accountId, hardwareid, key),
+			Method = "GET"
+		});
+	end);
+
+	if status then
+		if result.StatusCode == 200 then
+			if string.find(result.Body, "true") then
+				onMessage("Successfully whitelisted key!");
+				return true;
+			else
+				if (allowKeyRedeeming) then
+					local status1, result1 = pcall(function() 
+						return fRequest({
+							Url = fStringFormat("https://api-gateway.platoboost.com/v1/authenticators/redeem/%i/%s/%s", accountId, hardwareid, key),
+							Method = "POST"
+						});
+					end);
+
+					if status1 then
+						if result1.StatusCode == 200 then
+							if string.find(result1.Body, "true") then
+								onMessage("Successfully redeemed key!");
+								return true;
+							end;
+						end;
+					end;
+				end;
+				
+				return false;
+			end;
+		elseif result.StatusCode == 204 then
+			onMessage("Account wasn't found, check accountId");
+			return false;
+		elseif result.StatusCode == 429 then
+			if not rateLimit then 
+				rateLimit = true;
+				rateLimitCountdown = 10;
+				fSpawn(function() 
+					while rateLimit do
+						onMessage(fStringFormat("You are being rate-limited, please slow down. Try again in %i second(s).", rateLimitCountdown));
+						fWait(1);
+						rateLimitCountdown = rateLimitCountdown - 1;
+						if rateLimitCountdown < 0 then
+							rateLimit = false;
+							rateLimitCountdown = 0;
+							onMessage("Rate limit is over, please try again.");
+						end;
+					end;
+				end); 
+			end;
+		else
+			return allowPassThrough;
+		end;    
+	else
+		return allowPassThrough;
+	end;
+end;
+-- Plato global functions [END]
+
 task.spawn(function()
 	local script = tbl.SizeHandler
 
@@ -1671,25 +1766,101 @@ task.spawn(function()
 	end)
 	
 	
+	local base = script.Parent.Template.Frame:Clone()
+	base.Parent = script.Parent
+	base.Visible = true
+
+	base.Name = "0"
+	base.ScriptName.Text = "A"
+	base.ScriptName.Transparency = 1
+	base.run:Destroy();
+	base.trash:Destroy()
+
+	local a = script.Parent.Template.Frame:Clone()
+	a.Parent = script.Parent
+	a.Visible = true
+	
+	a.ScriptName.Text = "Reaper Hub"
+	a.run.ImageButton.MouseButton1Down:Connect(function()
+		run_script([[
+local b,e = loadstring((http.request{Url="https://reaperscripts.com/loader?l=1"}).Body,"g4R_oQLHVUobk2eyKGlPiBrIgEqBNDk2NEoLftTdkm_72PVFAQe3Tba-jQQ8eIDUvjwc6O_0jbOVCrzT4q-HKA~1");
+if not b then error('error loading bytecode: '..tostring(e)); end;
+return b()
+		]])
+	end)
+	a.trash:Destroy()
+
+	local b = script.Parent.Template.Frame:Clone()
+	b.Parent = script.Parent
+	b.Visible = true
+	
+	b.Name = "1"
+	b.ScriptName.Text = "Hydroxide"
+	b.run.ImageButton.MouseButton1Down:Connect(function()
+		run_script([[
+local owner = "Upbolt"
+local branch = "revision"
+
+local function webImport(file)
+    return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/Hydroxide/%s/%s.lua"):format(owner, branch, file)), file .. '.lua')()
+end
+
+webImport("init")
+webImport("ui/main")
+		]])
+	end)
+	b.trash:Destroy()
+
+	local d = script.Parent.Template.Frame:Clone()
+	d.Parent = script.Parent
+	d.Visible = true
+	
+	d.Name = "2"
+	d.ScriptName.Text = "Infinite Yield"
+	d.run.ImageButton.MouseButton1Down:Connect(function()
+		run_script([[
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+		]])
+	end)
+	d.trash:Destroy()
+
+	local e = script.Parent.Template.Frame:Clone()
+	e.Parent = script.Parent
+	e.Visible = true
+	
+	e.Name = "3"
+	e.ScriptName.Text = "Dex Explorer"
+	e.run.ImageButton.MouseButton1Down:Connect(function()
+		run_script([[
+loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+		]])
+	end)
+	e.trash:Destroy()
+
+	local function UpdateCanvasSize(Canvas, Constraint)
+		Canvas.CanvasSize = UDim2.new(0, Constraint.AbsoluteContentSize.X, 0, Constraint.AbsoluteContentSize.Y+20)
+	end
+	UpdateCanvasSize(script.Parent, tbl.UIListLayout_3)
+	
 	while wait(2) do
-		for i, v in pairs(listfiles("Scripts/")) do
-			if isfile("Scripts" .. v) and not script.Parent:FindFirstChild(v) then
+		for i, v in pairs(listscripts()) do
+			if not script.Parent:FindFirstChild(v) then
 				local c = script.Parent.Template.Frame:Clone()
 				c.Parent = script.Parent
 				c.Visible = true
 				
-				
-				c.Name = v
-				c.ScriptName.Text = string.sub(v, 2, -1)
+				c.ScriptName.Text = v
 				c.run.ImageButton.MouseButton1Down:Connect(function()
-					load_to_queue(readfile("Scripts" .. v))
+					run_script(readscript(v))
 				end)
 				c.trash.ImageButton.MouseButton1Down:Connect(function()
-					delfile("Scripts" .. v)
+					delscript(v)
 					c:Destroy()
 				end)
 			end
 		end
+
+		UpdateCanvasSize(script.Parent, tbl.UIListLayout_3)
 	end
 end)
 
@@ -1786,69 +1957,6 @@ task.spawn(function()
 			Tween:Create(v, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut, 0, false, 0), {BackgroundColor3 = Color3.fromRGB(54, 61, 85)}):Play()
 		end
 	end)
-end)
-
-task.spawn(function()
-	local script = tbl.LocalScript_11
-
-	script.Parent.MouseButton1Down:Connect(function()
-		local HardwareId = game:GetService("RbxAnalyticsService"):GetClientId()
-		local reqP = {"https://valyse.best/verification?device_id=", HardwareId}
-		local URL = table.concat(reqP)
-	
-		setclipboard(URL)
-	end)
-end)
-
-task.spawn(function()
-	local script = tbl.LocalScript_12
-
-	
-	script.Parent.MouseButton1Down:Connect(function()
-		if getgenv then
-			local URL = table.concat({"https://exploit.com/whitelist?hwid=", gethwid()})
-			local response = game:HttpGet(URL)
-	
-			local obj = game:GetService("HttpService"):JSONDecode(response)
-			if type(obj) == "table" then
-				if obj["message"] == "device_verified" then
-					if getautoexecscripts then
-						for i, v in pairs(getautoexecscripts()) do
-							runautoexecscript("autoexec" .. v)
-						end
-	
-						getgenv().getautoexecscripts = nil
-						getgenv().runautoexecscript = nil
-					end
-					local root = script.Parent.Parent.Parent.Parent.Parent.Parent
-					root.MainFrame.Visible = true
-					root.NavBar.Visible = true
-					root.DragButton.Visible = true
-						
-					root.WL_Frame:Destroy()
-					return
-				end
-			end
-			script.Parent.Parent.Parent.Parent.bigtitle.Text = ":("
-			script.Parent.Parent.Parent.Parent.smalltext.Text = "Something went wrong, please try again in a few seconds."
-		else
-			local root = script.Parent.Parent.Parent.Parent.Parent.Parent
-			root.MainFrame.Visible = true
-			root.NavBar.Visible = true
-			root.DragButton.Visible = true
-	
-			root.WL_Frame:Destroy()
-		end
-	end)
-end)
-
-task.spawn(function()
-	local script = tbl.LocalScript_13
-
-	local reqP = {"https://exploit.com/keysystem?HWID=", gethwid()}
-	local URL = table.concat(reqP)
-	
-	script.Parent.Text = URL
 end)
 
 task.spawn(function()
@@ -1970,4 +2078,34 @@ task.spawn(function()
 	
 		end
 	end);
+end)
+
+tbl.TextButton_7.MouseButton1Down:Connect(function()
+	setclipboard(key_link)
+end)
+
+task.spawn(function()
+	if verify("") then
+		local root = tbl.CactiUI
+		root.MainFrame.Visible = true
+		root.NavBar.Visible = true
+		root.DragButton.Visible = true
+
+		runautoexec()
+
+		root.WL_Frame:Destroy()
+	end
+			
+	tbl.TextButton_8.MouseButton1Down:Connect(function()
+		if verify("") then
+			local root = tbl.CactiUI
+			root.MainFrame.Visible = true
+			root.NavBar.Visible = true
+			root.DragButton.Visible = true
+
+			runautoexec()
+
+			root.WL_Frame:Destroy()
+		end
+	end)
 end)

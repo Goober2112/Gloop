@@ -1889,13 +1889,18 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/
 	e.Visible = true
 	
 	e.Name = "3"
-	e.ScriptName.Text = "Dex"
+	e.ScriptName.Text = "Dex Explorer"
 	e.run.ImageButton.MouseButton1Down:Connect(function()
 		run_script([[
 loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
 		]])
 	end)
 	e.trash:Destroy()
+
+	local function UpdateCanvasSize(Canvas, Constraint)
+		Canvas.CanvasSize = UDim2.new(0, Constraint.AbsoluteContentSize.X, 0, Constraint.AbsoluteContentSize.Y+20)
+	end
+	UpdateCanvasSize(script.Parent, script.Parent.UIGridLayout)
 	
 	while wait(2) do
 		for i, v in pairs(listscripts()) do

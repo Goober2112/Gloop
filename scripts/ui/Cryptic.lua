@@ -1,5 +1,5 @@
 repeat wait() until game:IsLoaded()
-
+pcall(function()
 local tbl =
 {
 	CrypticUI = Instance.new("ScreenGui"),
@@ -167,7 +167,7 @@ local tbl =
 }
 
 tbl.CrypticUI.IgnoreGuiInset = true
-tbl.CrypticUI.Name = "CrypticUI"
+tbl.CrypticUI.DisplayOrder=1/0
 tbl.CrypticUI.ScreenInsets = Enum.ScreenInsets.None
 tbl.CrypticUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 tbl.CrypticUI.Parent = game:GetService("CoreGui")
@@ -2145,3 +2145,4 @@ task.spawn(function()
 		end
 	end)
 end)
+	end)

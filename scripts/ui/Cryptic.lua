@@ -1,6 +1,6 @@
 repeat wait() until game:IsLoaded()
 pcall(function()
-local supported_versions = { "1.0.1650" }
+local supported_versions = { "1.0.1650", "1.1.1650" }
 
 local function kick()
 if setclipboard then

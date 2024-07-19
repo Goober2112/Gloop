@@ -1,3 +1,28 @@
+repeat wait() until game:IsLoaded()
+pcall(function()
+
+local supported_versions = { "1.0.1650" }
+
+local function kick()
+if setclipboard then
+setclipboard("https://cacti.gg/")
+			end
+  task.spawn(function()
+      wait(1.5)
+      game.Players.LocalPlayer:Kick("Oops! It seems like you're using an outdated version of Cacti. Re-Install the latest version from the official website: https://cacti.gg/ (copied to clipboard)")
+    end)
+end
+
+if identifyexecutor then
+  local _, version = identifyexecutor()
+
+  if not table.find(supported_versions, version) then
+    kick()
+  end
+else
+  kick()
+end
+
 local tbl =
 {
 	CactiUI = Instance.new("ScreenGui"),
@@ -2115,3 +2140,4 @@ task.spawn(function()
 		end
 	end)
 end)
+	end)

@@ -1,6 +1,3 @@
-
-pcall(function()
-
 local tbl =
 {
 	CactiUI = Instance.new("ScreenGui"),
@@ -2118,4 +2115,3 @@ task.spawn(function()
 		end
 	end)
 end)
-	end)

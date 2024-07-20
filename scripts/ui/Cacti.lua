@@ -162,7 +162,7 @@ tbl.CactiUI.IgnoreGuiInset = true
 tbl.CactiUI.Name = "CactiUI"
 tbl.CactiUI.ScreenInsets = Enum.ScreenInsets.None
 tbl.CactiUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-tbl.CactiUI.Parent = gethui()
+tbl.CactiUI.Parent = game:GetService("CoreGui")
 
 tbl.NavBar.BorderSizePixel = 0
 tbl.NavBar.BackgroundColor3 = Color3.fromRGB(13, 13, 13)

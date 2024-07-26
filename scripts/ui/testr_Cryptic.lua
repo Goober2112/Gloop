@@ -2,7 +2,7 @@ repeat wait() until game:IsLoaded()
 local G2L = {};
 
 -- StarterGui.KeySystem
-print("start ui yeh")
+print("start ui wuh")
 G2L["1"] = Instance.new("ScreenGui");
 G2L["1"].IgnoreGuiInset = true
 G2L["1"].DisplayOrder=1/0
@@ -18,6 +18,25 @@ G2L["2"]["Size"] = UDim2.new(1, 0, 1, 0);
 G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["2"]["Name"] = [[WL_Frame]];
 G2L["2"]["BackgroundTransparency"] = 0.1;
+
+G2L["close"] = Instance.new("TextButton", G2L["2"]);
+G2L["close"].BorderSizePixel = 0
+G2L["close"].Position = UDim2.new(0.372026, 0, 0.937413, 0)
+G2L["close"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+G2L["close"].FontFace = Font.new("rbxassetid://11702779409", Enum.FontWeight.Medium, Enum.FontStyle.Normal)
+G2L["close"].TextSize = 14
+G2L["close"].Size = UDim2.new(0.255537, 0, 0.0904033, 0)
+G2L["close"].TextColor3 = Color3.fromRGB(255, 255, 255)
+G2L["close"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+G2L["close"].Text = "close cryptic"
+G2L["close"].BackgroundTransparency = 1
+G2L["close"].Parent = tbl.WL_Frame
+
+task.spawn(function()
+	G2L["close"].MouseButton1Down:Connect(function()
+		G2L["1"]:Destroy()
+	end)
+end)
 
 -- StarterGui.KeySystem.WL_Frame.Frame
 G2L["3"] = Instance.new("Frame", G2L["2"]);

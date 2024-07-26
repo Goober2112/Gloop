@@ -2,9 +2,13 @@ repeat wait() until game:IsLoaded()
 local G2L = {};
 
 -- StarterGui.KeySystem
-print("start ui starting")
-G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
-G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+print("start ui yeh")
+G2L["1"] = Instance.new("ScreenGui");
+G2L["1"].IgnoreGuiInset = true
+G2L["1"].DisplayOrder=1/0
+G2L["1"].ScreenInsets = Enum.ScreenInsets.None
+G2L["1"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+G2L["1"].Parent = gethui()
 
 -- StarterGui.KeySystem.WL_Frame
 G2L["2"] = Instance.new("Frame", G2L["1"]);

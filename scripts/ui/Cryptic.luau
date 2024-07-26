@@ -1,8 +1,6 @@
 repeat wait() until game:IsLoaded()
 local G2L = {};
 
--- StarterGui.KeySystem
-print("start ui wuh")
 G2L["1"] = Instance.new("ScreenGui");
 G2L["1"].IgnoreGuiInset = true
 G2L["1"].DisplayOrder=1/0

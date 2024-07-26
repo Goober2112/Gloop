@@ -351,7 +351,7 @@ task.spawn(C_a);
 local function C_10()
 	local function fun()
 		G2L["1"]:Destroy()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/wtc.lua")())()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/what.lua"))()
 		runautoexec()
 	end
 

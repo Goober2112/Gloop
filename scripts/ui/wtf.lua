@@ -6091,8 +6091,7 @@ local script = G2L["47"];
 		end
 	end
 	
-	
-	local function checkVersion()
+	--[[local function checkVersion()
 		repeat wait() until game:IsLoaded()
 		pcall(function()
 			local supported_versions = { "1.0.1650", "1.1.1650" }
@@ -6119,7 +6118,7 @@ local script = G2L["47"];
 		end)
 	end
 	
-	checkVersion()
+	checkVersion()--]]
 		
 	
 	do -- Main UI Functionality

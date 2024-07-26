@@ -11,7 +11,8 @@
 local G2L = {};
 
 -- StarterGui.KeySystem
-G2L["1"] = gethui();
+print("start ui init")
+G2L["1"] = Instance.new("ScreenGui", gethui());
 G2L["1"]["Name"] = [[KeySystem]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 

@@ -1,15 +1,14 @@
-repeat wait() until game:IsLoaded()
-
 local G2L = {};
 
 -- StarterGui.Cryptic
-G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"] = Instance.new("ScreenGui");
 G2L["1"]["IgnoreGuiInset"] = true;
 G2L["1"]["DisplayOrder"] = 1000000000;
 G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.DeviceSafeInsets;
 G2L["1"]["Name"] = [[Cryptic]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 G2L["1"]["ResetOnSpawn"] = false;
+G2L["1"].Parent = gethui();
 
 -- StarterGui.Cryptic.MainUI
 G2L["2"] = Instance.new("Frame", G2L["1"]);
@@ -1781,13 +1780,13 @@ G2L["c5"] = Instance.new("UICorner", G2L["c4"]);
 
 
 -- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Fly
-G2L["c6"] = Instance.new("Frame", G2L["b6"]);
+--[[G2L["c6"] = Instance.new("Frame", G2L["b6"]);
 G2L["c6"]["BorderSizePixel"] = 0;
 G2L["c6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["c6"]["Size"] = UDim2.new(0, 249, 0, 38);
 G2L["c6"]["Position"] = UDim2.new(0, 16, 0, 10);
 G2L["c6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["c6"]["Name"] = [[Fly]];
+G2L["c6"]["Name"] = "Fly";
 G2L["c6"]["LayoutOrder"] = 3;
 G2L["c6"]["BackgroundTransparency"] = 0.99;
 
@@ -1806,12 +1805,12 @@ G2L["c9"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["c9"]["TextXAlignment"] = Enum.TextXAlignment.Left;
 G2L["c9"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["c9"]["TextSize"] = 20;
-G2L["c9"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["c9"]["FontFace"] = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal);
 G2L["c9"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["c9"]["BackgroundTransparency"] = 1;
 G2L["c9"]["Size"] = UDim2.new(0, 163, 0, 38);
 G2L["c9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["c9"]["Text"] = [[Fly]];
+G2L["c9"]["Text"] = "Fly;
 
 -- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Fly.TextLabel.UIPadding
 G2L["ca"] = Instance.new("UIPadding", G2L["c9"]);
@@ -1823,15 +1822,14 @@ G2L["cb"]["BorderSizePixel"] = 0;
 G2L["cb"]["TextSize"] = 14;
 G2L["cb"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["cb"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5);
-G2L["cb"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["cb"]["FontFace"] = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["cb"]["Size"] = UDim2.new(0, 23, 0, 23);
-G2L["cb"]["Name"] = [[Toggle]];
 G2L["cb"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["cb"]["Text"] = [[]];
+G2L["cb"]["Text"] = "";
 G2L["cb"]["Position"] = UDim2.new(0, 211, 0, 8);
 
 -- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Fly.Toggle.UICorner
-G2L["cc"] = Instance.new("UICorner", G2L["cb"]);
+G2L["cc"] = Instance.new("UICorner", G2L["cb"]);--]]
 
 
 -- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Jump Power
@@ -5772,8 +5770,8 @@ local script = G2L["47"];
 	
 	local LocalPlayer_Features = {
 		["infJump"] = false,
-		["flyHack"] = false,
-		["flySpeed"] = 1,
+		--["flyHack"] = false,
+		--["flySpeed"] = 1,
 		["noclip"] = false,
 		["speedHack"] = false,
 		["speedHack_Speed"] = 16,
@@ -6960,8 +6958,8 @@ local script = G2L["47"];
 								LocalPlayer_Features.infJump = state
 							elseif feature == "Noclip" then
 								LocalPlayer_Features.noclip = state
-							elseif feature == "Fly" then
-								LocalPlayer_Features.flyHack = state
+							--elseif feature == "Fly" then
+							--	LocalPlayer_Features.flyHack = state
 							elseif feature == "Walk Speed" then
 								LocalPlayer_Features.speedHack = state
 							elseif feature == "Jump Power" then
@@ -7123,12 +7121,12 @@ local script = G2L["47"];
 				local minValue = 0
 				local maxValue = 100
 				local decimals = 0
-				if tostring(Slider) == "FlySpeed_Slider" then
+				--[[if tostring(Slider) == "FlySpeed_Slider" then
 					minValue = 0.1
 					maxValue = 9.9
 					decimals = 1
-					LocalPlayer_Features.flySpeed = minValue
-				elseif tostring(Slider) == "FOV_Slider" then
+					LocalPlayer_Features.flySpeed = minValue--]]
+				if tostring(Slider) == "FOV_Slider" then
 					minValue = 10
 					maxValue = 110
 					LocalPlayer_Features.customFOV_Value = minValue
@@ -7215,8 +7213,8 @@ local script = G2L["47"];
 							LocalPlayer_Features.speedHack_Speed = currentValue
 						elseif tostring(Slider) == "JumpPower_Slider" then
 							LocalPlayer_Features.jumpPowerHack_Power = currentValue
-						elseif tostring(Slider) == "FlySpeed_Slider" then
-							LocalPlayer_Features.flySpeed = currentValue
+						--elseif tostring(Slider) == "FlySpeed_Slider" then
+						--	LocalPlayer_Features.flySpeed = currentValue
 						elseif tostring(Slider) == "FOV_Slider" then
 							LocalPlayer_Features.customFOV_Value = currentValue
 						elseif tostring(Slider) == "MaxDistance_Slider" then
@@ -7752,57 +7750,6 @@ local script = G2L["47"];
 				local autoFarm_targetPlayer = nil
 				game:GetService("RunService").RenderStepped:Connect(function()
 					local success, ret = pcall(function()
-						do -- Flyhack Thumbstick
-							local TouchGui = Players.LocalPlayer.PlayerGui:FindFirstChild("TouchGui")
-							newFlyVelocity = Vector3.new(0,0.9,0)
-	
-							if EmulatorMode then
-								if UserInputService:IsKeyDown(Enum.KeyCode.W) then
-									newFlyVelocity += Workspace.CurrentCamera.CFrame.LookVector * (LocalPlayer_Features.flySpeed*10)
-								end
-								if UserInputService:IsKeyDown(Enum.KeyCode.A) then
-									newFlyVelocity += Workspace.CurrentCamera.CFrame.RightVector * (LocalPlayer_Features.flySpeed*10) * -1
-								end
-								if UserInputService:IsKeyDown(Enum.KeyCode.S) then
-									newFlyVelocity += Workspace.CurrentCamera.CFrame.LookVector * (LocalPlayer_Features.flySpeed*10) * -1
-								end
-								if UserInputService:IsKeyDown(Enum.KeyCode.D) then
-									newFlyVelocity += Workspace.CurrentCamera.CFrame.RightVector * (LocalPlayer_Features.flySpeed*10)
-								end	
-							end
-	
-							if not EmulatorMode then
-								if TouchGui then
-									do -- Mobile infinite jump
-										local JumpButton = TouchGui:FindFirstChild("JumpButton", true)
-										if JumpButton then
-											if JumpButton.ImageRectOffset.X ~= 1 and LocalPlayer_Features.infJump then
-												Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
-											end
-										end
-									end
-									local DynamicThumbstickFrame = Players.LocalPlayer.PlayerGui.TouchGui.TouchControlFrame:FindFirstChild("DynamicThumbstickFrame")
-									if DynamicThumbstickFrame then
-										if Players.LocalPlayer.PlayerGui.TouchGui.TouchControlFrame.DynamicThumbstickFrame.ThumbstickStart.ImageTransparency ~= 1 then
-											local joystickPos = Players.LocalPlayer.PlayerGui.TouchGui.TouchControlFrame.DynamicThumbstickFrame.ThumbstickEnd.AbsolutePosition + Vector2.new(Players.LocalPlayer.PlayerGui.TouchGui.TouchControlFrame.DynamicThumbstickFrame.ThumbstickEnd.Size.X.Offset, Players.LocalPlayer.PlayerGui.TouchGui.TouchControlFrame.DynamicThumbstickFrame.ThumbstickEnd.Size.Y.Offset)/2
-											local joystickStartPos = Players.LocalPlayer.PlayerGui.TouchGui.TouchControlFrame.DynamicThumbstickFrame.ThumbstickStart.AbsolutePosition
-	
-											local joystickRelative = joystickStartPos - joystickPos
-											local joystickScale = Vector2.new(math.clamp(joystickRelative.X, -200, 200)/200, math.clamp(joystickRelative.Y, -200, 200)/200)
-	
-											newFlyVelocity += Workspace.CurrentCamera.CFrame.LookVector*joystickScale.Y * (LocalPlayer_Features.flySpeed*10)
-											newFlyVelocity += Workspace.CurrentCamera.CFrame.RightVector*-1*joystickScale.X * (LocalPlayer_Features.flySpeed*10)	
-										end	
-									end				
-								end
-							end
-	
-	
-							if LocalPlayer_Features.flyHack then 
-								Players.LocalPlayer.Character.HumanoidRootPart.AssemblyLinearVelocity = newFlyVelocity
-							end
-						end
-	
 						do -- Inf jump for PC
 							if LocalPlayer_Features.infJump then
 								if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.Space) and EmulatorMode then

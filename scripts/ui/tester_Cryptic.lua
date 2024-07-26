@@ -1,18 +1,9 @@
---[=[
- d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
-88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
-88      88    88    88            odD'      88      88    88 88ooo88 
-88  ooo 88    88    88          .88'        88      88    88 88~~~88 
-88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
- Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
-]=]
-
--- Instances: 26 | Scripts: 3 | Modules: 0
+repeat wait() until game:IsLoaded()
 local G2L = {};
 
 -- StarterGui.KeySystem
-print("start ui init")
-G2L["1"] = Instance.new("ScreenGui", gethui());
+print("start ui starting")
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 G2L["1"]["Name"] = [[KeySystem]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 

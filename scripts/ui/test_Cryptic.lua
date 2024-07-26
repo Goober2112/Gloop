@@ -4,7 +4,6 @@ local G2L = {};
 -- StarterGui.KeySystem
 print("start ui starting")
 G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
-G2L["1"]["Name"] = [[KeySystem]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
 -- StarterGui.KeySystem.WL_Frame
@@ -124,9 +123,6 @@ G2L["f"]["BackgroundTransparency"] = 1;
 G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["f"]["Text"] = [[]];
 
--- StarterGui.KeySystem.WL_Frame.Frame.Frame.Frame.TextButton.LocalScript
-G2L["10"] = Instance.new("LocalScript", G2L["f"]);
-
 
 -- StarterGui.KeySystem.WL_Frame.Frame.Frame.Frame.UIStroke
 G2L["11"] = Instance.new("UIStroke", G2L["c"]);
@@ -159,7 +155,6 @@ G2L["13"]["BackgroundTransparency"] = 1;
 G2L["13"]["AnchorPoint"] = Vector2.new(0.5, 0);
 G2L["13"]["Size"] = UDim2.new(0, 505, 0, 50);
 G2L["13"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["13"]["Text"] = [[Copy the link and complete the steps to gain access to Cryptic.]];
 G2L["13"]["Name"] = [[smalltext]];
 G2L["13"]["Position"] = UDim2.new(0.5, 0, 0.47, 145);
 
@@ -233,7 +228,7 @@ local useDataModel = false;
 
 -- Plato callbacks
 local onMessage = function(message)
-    --tbl.smalltext.Text = message
+    G2L["13"].Text = message
 end;
 
 -- Plato internals [START]
@@ -332,43 +327,22 @@ end;
 task.spawn(C_a);
 -- StarterGui.KeySystem.WL_Frame.Frame.Frame.Frame.TextButton.LocalScript
 local function C_10()
-local script = G2L["10"];
+	local function fun()
+		G2L["1"]:Destroy()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/wtc.lua")())()
+		runautoexec()
+	end
+
+	if verify("") then
+		fun()
+	else
+		G2L["13"].Text = "Copy the link and complete the steps to gain access to Cryptic."
+	end
 	
-	script.Parent.MouseButton1Down:Connect(function()
-		--[[if getgenv then
-			local URL = table.concat({"https://exploit.com/whitelist?hwid=", gethwid()})
-			local response = game:HttpGet(URL)
-	
-			local obj = game:GetService("HttpService"):JSONDecode(response)
-			if type(obj) == "table" then
-				if obj["message"] == "device_verified" then
-					if getautoexecscripts then
-						for i, v in pairs(getautoexecscripts()) do
-							runautoexecscript("autoexec" .. v)
-						end
-	
-						getgenv().getautoexecscripts = nil
-						getgenv().runautoexecscript = nil
-					end
-					local root = script.Parent.Parent.Parent.Parent.Parent.Parent
-					root.MainFrame.Visible = true
-					root.NavBar.Visible = true
-					root.DragButton.Visible = true
-						
-					root.WL_Frame:Destroy()
-					return
-				end
-			end
-			script.Parent.Parent.Parent.Parent.bigtitle.Text = ":("
-			script.Parent.Parent.Parent.Parent.smalltext.Text = "Something went wrong, please try again in a few seconds."
-		else
-			local root = script.Parent.Parent.Parent.Parent.Parent.Parent
-			root.MainFrame.Visible = true
-			root.NavBar.Visible = true
-			root.DragButton.Visible = true
-	
-			root.WL_Frame:Destroy()
-		end--]]
+	G2L["f"].MouseButton1Down:Connect(function()
+		if verify("") then
+			fun()
+		end
 	end)
 end;
 task.spawn(C_10);

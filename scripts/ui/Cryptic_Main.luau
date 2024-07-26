@@ -6130,9 +6130,6 @@ local script = G2L["47"];
 				Cryptic.Frame.UIScale.Scale = ((ratio.X + ratio.Y)/2)*2
 				Cryptic.MainUI.Position = UDim2.new(0, Workspace.CurrentCamera.ViewportSize.X/2, 0, Workspace.CurrentCamera.ViewportSize.Y/2)
 			end)
-			if not success then
-				print(ret)
-			end
 		end
 	
 		do -- Initialize the scripts table
@@ -6390,7 +6387,6 @@ local script = G2L["47"];
 			end)
 			
 			GlobalScripts.Search.TextBox.FocusLost:Connect(function()
-				print(GlobalScripts.Search.TextBox.Text)
 				performSearch()
 			end)
 	
@@ -6550,7 +6546,6 @@ local script = G2L["47"];
 											local folderExists = isfolder("Saved_Scripts")
 											if folderExists then
 												for i,v in pairs(listfiles("Saved_Scripts")) do
-													print(i,v)
 													local title = string.gsub(tostring(v), "Saved_Scripts/", "")
 													local newScript = Cryptic.MainUI.Tabs["Local Scripts"].Example:Clone()
 													newScript.Parent = Cryptic.MainUI.Tabs["Local Scripts"].Features
@@ -6836,11 +6831,6 @@ local script = G2L["47"];
 						ServerHopData = HttpService:JSONDecode(fileContent)
 					end
 	
-					-- Optional log feature
-					if ServerHopData.LastTimeHop then
-						print("Took", os.time() - ServerHopData.LastTimeHop, "seconds to server hop")
-					end
-	
 					local ServerTypes = { ["Normal"] = "desc", ["Low"] = "asc" }
 	
 					function ServerHop(serverType)
@@ -6902,9 +6892,6 @@ local script = G2L["47"];
 					end)
 				end
 			end)
-			if not success then
-				print(ret)
-			end
 		end
 	
 		do -- Set up Console tab
@@ -7698,9 +7685,6 @@ local script = G2L["47"];
 					Cryptic.Frame.UIScale.Scale = ((ratio.X + ratio.Y)/2)*2
 					Cryptic.MainUI.Position = UDim2.new(0, Workspace.CurrentCamera.ViewportSize.X/2 - Cryptic.MainUI.AbsoluteSize.X/2, 0, Workspace.CurrentCamera.ViewportSize.Y/2 - Cryptic.MainUI.AbsoluteSize.Y/2)
 				end)
-				if not success then
-					print(ret)
-				end
 			end)
 			
 			RunService.RenderStepped:Connect(function()
@@ -7709,9 +7693,6 @@ local script = G2L["47"];
 					--print((ratio.X + ratio.Y)/2)
 					Cryptic.MainUI.UIScale.Scale = ((ratio.X + ratio.Y)/2)*2
 				end)
-				if not success then
-					print(ret)
-				end
 			end)
 		end
 	
@@ -7826,7 +7807,6 @@ local script = G2L["47"];
 							end)
 						end
 					end)
-					if not success then print(ret) end
 				end) -- Noooooooooooooooooo when the sus😭😭😭 (If yu remov I get angi)
 			end
 		end
@@ -7987,7 +7967,6 @@ local script = G2L["47"];
 								local success, ret = pcall(function()
 									FuniLine = Drawing.new("Line")
 								end)
-								if not success and RunService:IsStudio() then print(ret) end
 	
 								local RenderConnection; RenderConnection = RunService.RenderStepped:Connect(function()
 									local success, ret = pcall(function()
@@ -8190,9 +8169,6 @@ local script = G2L["47"];
 												v.Visible = false
 											end
 										end)
-										if not success then
-											print(ret)
-										end
 									end)
 								end
 							end)
@@ -8405,9 +8381,6 @@ local script = G2L["47"];
 								fov.Visible = false
 							end
 						end)
-						if not success then
-							print(ret)
-						end
 					end
 	
 					task.spawn(function()
@@ -8459,7 +8432,6 @@ local script = G2L["47"];
 						else
 							Aimbot.targetPos = closestPlayer.Character:FindFirstChild("Head", true) ~= nil and closestPlayer.Character:FindFirstChild("Head", true):GetPivot().Position or closestPlayerPosition
 							if EmulatorMode then
-								print("EMULATOR")
 								if Aimbot.HoldingAimKey then
 									Workspace.CurrentCamera.CFrame = CFrame.new(Workspace.CurrentCamera.CFrame.Position, Aimbot.targetPos)
 									if Aimbot.RageBot and Aimbot.AutoTrigger then
@@ -8467,7 +8439,6 @@ local script = G2L["47"];
 									end
 								end
 							elseif not EmulatorMode then
-								print("NO EMULATOR")
 								Workspace.CurrentCamera.CFrame = CFrame.new(Workspace.CurrentCamera.CFrame.Position, Aimbot.targetPos)
 								if Aimbot.RageBot and Aimbot.AutoTrigger then
 									mouse1click()
@@ -8477,9 +8448,6 @@ local script = G2L["47"];
 					end
 				end
 			end)
-			if not success then
-				print(ret)
-			end
 		end)
 	end
 end;

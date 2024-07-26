@@ -30,7 +30,6 @@ G2L["close"].TextColor3 = Color3.fromRGB(255, 255, 255)
 G2L["close"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 G2L["close"].Text = "close cryptic"
 G2L["close"].BackgroundTransparency = 1
-G2L["close"].Parent = tbl.WL_Frame
 
 task.spawn(function()
 	G2L["close"].MouseButton1Down:Connect(function()

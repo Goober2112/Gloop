@@ -700,7 +700,8 @@ G2L["41"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]
 G2L["41"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["41"]["Size"] = UDim2.new(0, 90, 0, 25);
 G2L["41"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["41"]["Text"] = [[v2.634.513]];
+local _, version = identifyexecutor();
+G2L["41"]["Text"] = version;
 G2L["41"]["Name"] = [[version]];
 G2L["41"]["Position"] = UDim2.new(0, 90, 0, -51);
 

@@ -62,10 +62,10 @@ end
 
 do -- This may look completely useless, but it allows TextBounds to update without yielding and therefore breaking the metamethods.
 	local fonts = {
-		Font.new("rbxasset://fonts/families/OpenSans.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal),
-		Font.new("rbxasset://fonts/families/MicrosoftSansSerif.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal),
-		Font.new("rbxasset://fonts/families/IBMPlexSans.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal),
-		Font.new("rbxasset://fonts/families/SpaceMono.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+		Font.new("rbxasset://fonts/families/Arial.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal),
+		Font.new("rbxasset://fonts/families/HighwayGothic.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal),
+		Font.new("rbxasset://fonts/families/Roboto.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal),
+		Font.new("rbxasset://fonts/families/Ubuntu.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	};
 
 	for i, v in fonts do

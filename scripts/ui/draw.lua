@@ -37,8 +37,6 @@ local _vector2new = clonefunction(renv.Vector2.new);
 local _destroy = clonefunction(game.Destroy);
 local _gettextboundsasync = clonefunction(textService.GetTextBoundsAsync);
 
-local _httpget = clonefunction(game:HttpGet);
-
 --[[ Functions ]]--
 
 local function create(className, properties, children)

@@ -1,6 +1,6 @@
-repeat wait() until game:IsLoaded() -- precaution
-
 --[[ Variables ]]--
+
+repeat wait() until game:IsLoaded() -- precaution
 
 local textService = cloneref(game:GetService("TextService"));
 
@@ -37,6 +37,9 @@ local _vector2new = clonefunction(renv.Vector2.new);
 local _destroy = clonefunction(game.Destroy);
 local _gettextboundsasync = clonefunction(textService.GetTextBoundsAsync);
 
+local _httpget = clonefunction(game.HttpGet);
+local _writecustomasset = clonefunction(getcustomasset);
+
 --[[ Functions ]]--
 
 local function create(className, properties, children)
@@ -59,21 +62,19 @@ end
 
 do -- This may look completely useless, but it allows TextBounds to update without yielding and therefore breaking the metamethods.
 	local fonts = {
-		Font.new("rbxasset://fonts/families/Arial.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal),
-		Font.new("rbxasset://fonts/families/HighwayGothic.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal),
-		Font.new("rbxasset://fonts/families/Roboto.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal),
-		Font.new("rbxasset://fonts/families/Ubuntu.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+		Font.new("rbxasset://fonts/families/OpenSans.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal),
+		Font.new("rbxasset://fonts/families/MicrosoftSansSerif.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal),
+		Font.new("rbxasset://fonts/families/IBMPlexSans.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal),
+		Font.new("rbxasset://fonts/families/SpaceMono.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	};
 
 	for i, v in fonts do
-		pcall(function()
-			game:GetService("TextService"):GetTextBoundsAsync(create("GetTextBoundsParams", {
-				Text = "Hi",
-				Size = 12,
-				Font = v,
-				Width = huge
-			}));
-		end)
+		game:GetService("TextService"):GetTextBoundsAsync(create("GetTextBoundsParams", {
+			Text = "Hi",
+			Size = 12,
+			Font = v,
+			Width = huge
+		}));
 	end
 end
 
@@ -297,10 +298,10 @@ do
 
 	do
 		local enumToFont = {
-			[drawing.Fonts.UI] = Font.new("rbxasset://fonts/families/Arial.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal),
-			[drawing.Fonts.System] = Font.new("rbxasset://fonts/families/HighwayGothic.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal),
-			[drawing.Fonts.Plex] = Font.new("rbxasset://fonts/families/Roboto.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal),
-			[drawing.Fonts.Monospace] = Font.new("rbxasset://fonts/families/Ubuntu.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+			[drawing.Fonts.UI] = Font.new("rbxasset://fonts/families/OpenSans.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal),
+			[drawing.Fonts.System] = Font.new("rbxasset://fonts/families/MicrosoftSansSerif.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal),
+			[drawing.Fonts.Plex] = Font.new("rbxasset://fonts/families/IBMPlexSans.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal),
+			[drawing.Fonts.Monospace] = Font.new("rbxasset://fonts/families/SpaceMono.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 		};
 
 		local text = {};
@@ -523,6 +524,119 @@ do
 
 		square.Remove = square.Destroy;
 		classes.Square = square;
+	end
+	
+	do
+		local image = {};
+
+		function image.new()
+			itemCounter = itemCounter + 1;
+			local id = itemCounter;
+
+			local newImage = _setmetatable({
+				_id = id,
+				_imageId = 0,
+				__OBJECT_EXISTS = true,
+				_properties = {
+					Color = _color3new(1, 1, 1),
+					Data = "",
+					Position = _vector2new(),
+					Rounding = 0,
+					Size = _vector2new(),
+					Transparency = 1,
+					Uri = "",
+					Visible = false,
+					ZIndex = 0
+				},
+				_frame = create("ImageLabel", {
+					BackgroundTransparency = 1,
+					BorderSizePixel = 0,
+					Image = "",
+					ImageColor3 = _color3new(1, 1, 1),
+					Parent = drawingDirectory,
+                    Position = _udim2new(),
+                    Size = _udim2new(),
+                    Visible = false,
+                    ZIndex = 0
+				}, {
+					create("UICorner", {
+						Name = "_corner",
+						CornerRadius = _udimnew()
+					})
+				})
+			}, image);
+			
+			cache[id] = newImage;
+			return newImage;
+		end
+
+		function image:__index(k)
+			_assert(k ~= "Data", _stringformat("Attempt to read writeonly property '%s'", k));
+			if k == "Loaded" then
+				return self._frame.IsLoaded;
+			end
+			local prop = self._properties[k];
+			if prop ~= nil then
+				return prop;
+			end
+			return image[k];
+		end
+
+		function image:__newindex(k, v)
+			if self.__OBJECT_EXISTS == true then
+				self._properties[k] = v;
+				if k == "Color" then
+					self._frame.ImageColor3 = v;
+				elseif k == "Data" then
+					self:_newImage(v);
+				elseif k == "Position" then
+					self._frame.Position = _udim2fromoffset(v.X, v.Y);
+				elseif k == "Rounding" then
+					self._frame._corner.CornerRadius = _udimnew(0, v);
+				elseif k == "Size" then
+					self._frame.Size = _udim2fromoffset(v.X, v.Y);
+				elseif k == "Transparency" then
+					self._frame.ImageTransparency = 1 - v;
+				elseif k == "Uri" then
+					self:_newImage(v, true);
+				elseif k == "Visible" then
+					self._frame.Visible = v;
+				elseif k == "ZIndex" then
+					self._frame.ZIndex = v;
+				end
+			end
+		end
+		
+		function image:__iter()
+            return next, self._properties;
+        end
+		
+		function image:__tostring()
+			return "Drawing";
+		end
+
+		function image:Destroy()
+			cache[self._id] = nil;
+			self.__OBJECT_EXISTS = false;
+			_destroy(self._frame);
+		end
+
+		function image:_newImage(data, isUri)
+			_taskspawn(function() -- this is fucked but u can't yield in a metamethod
+				self._imageId = self._imageId + 1;
+				local path = _stringformat("%s-%s.png", self._id, self._imageId);
+				if isUri then
+					data = _httpget(game, data, true);
+					self._properties.Data = data;
+				else
+					self._properties.Uri = "";
+				end
+				self._frame.Image = _writecustomasset(path, data);
+			end);
+		end
+
+		image.Remove = image.Destroy;
+		classes.Image = image;
 	end
 
 	do

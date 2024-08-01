@@ -674,6 +674,16 @@ do
 		triangle.Remove = triangle.Destroy;
 		classes.Triangle = triangle;
 	end
+
+	do
+		local image = {};
+
+		function image.new() 
+			return {}
+		end
+
+		classes.Image = image;
+	end
 	
 	do
 		local quad = {};

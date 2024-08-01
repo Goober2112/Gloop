@@ -1,3 +1,5 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/updateChecker.lua"))();
+
 local httpService = cloneref(game:GetService("HttpService"));
 
 local _tablefind = clonefunction(table.find);
@@ -33,6 +35,8 @@ end
 -- Go to near end line for configs.
 
 local function executescript(sc) run_script(sc) end
+
+executescript(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/drawing_lib.lua"))
 
 --local executeclipboard = readclipboard_hideenv
 
@@ -4363,9 +4367,6 @@ getgenv().GrantAccess = function()
         script.Parent.Visible = false
         script.Parent.Parent.Sidebar.Visible = true
     end
-
-    run_script(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/drawing_lib.lua"))
-    run_script(game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))
 
     if(not isfile("disableautoexec")) then
         runautoexec()

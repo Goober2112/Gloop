@@ -1,6 +1,12 @@
 repeat wait() until game:IsLoaded() -- precaution
 
 --[[ Variables ]]--
+local renv = getrenv();
+local genv = getgenv();
+
+if genv.Drawing then
+	return
+end
 
 local textService = cloneref(game:GetService("TextService"));
 
@@ -12,9 +18,6 @@ local drawing = {
         Monospace = 3
     }
 };
-
-local renv = getrenv();
-local genv = getgenv();
 
 local pi = renv.math.pi;
 local huge = renv.math.huge;

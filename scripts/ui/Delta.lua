@@ -36,7 +36,7 @@ end
 
 local function executescript(sc) run_script(sc) end
 
-executescript(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/drawp.lua"))
+executescript(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/drawing.lua"))
 
 --local executeclipboard = readclipboard_hideenv
 

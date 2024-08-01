@@ -682,6 +682,10 @@ do
 			return {}
 		end
 
+		function image:__index(k)
+			return true;
+        	end
+
 		classes.Image = image;
 	end
 	

@@ -75,7 +75,7 @@ else
 end
 
 if not isfile("new_logo.png") then
-    local new_logo = request({Url = "https://raw.githubusercontent.com/delta-hydro/secret-host-haha/main/lxnnypfp7.png", Method = "GET"})
+    local new_logo = game:HttpGet("https://raw.githubusercontent.com/delta-hydro/secret-host-haha/main/lxnnypfp7.png")
     writefile("new_logo.png", new_logo.Body)
 end
 

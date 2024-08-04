@@ -4364,9 +4364,6 @@ getgenv().GrantAccess = function()
         script.Parent.Parent.Sidebar.Visible = true
     end
 
-    run_script(game.HttpGet(game, "https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/drawing_lib.lua"))
-    run_script(game.HttpGet(game, "https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))
-
     if(not isfile("disableautoexec")) then
         runautoexec()
     end

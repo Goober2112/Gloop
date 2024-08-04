@@ -75,7 +75,7 @@ else
 end
 
 if not isfile("new_logo.png") then
-    local new_logo = game.HttpGet(game, "https://raw.githubusercontent.com/delta-hydro/secret-host-haha/main/lxnnypfp7.png")
+    local new_logo = request({ ['Url'] = 'https://raw.githubusercontent.com/delta-hydro/secret-host-haha/main/lxnnypfp7.png', ['Method'] = 'GET' }).Body
     writefile("new_logo.png", new_logo)
 end
 
@@ -5746,7 +5746,7 @@ coroutine.wrap(function()
 end)()
 
 function checkkey()
-	local keyless = game.HttpGet(game, "https://raw.githubusercontent.com/lxnnydev/DeltaAndroid/main/iskeyless")
+	local keyless = request({ ['Url'] = 'https://raw.githubusercontent.com/lxnnydev/DeltaAndroid/main/iskeyless', ['Method'] = 'GET' }).Body
 	if string.find(keyless, "true") then
 		GrantAccess()
         return true

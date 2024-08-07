@@ -8,10 +8,6 @@ local GuiService = game:GetService("GuiService")
 
 makefolder("d_android_script_dir")
 
-if gethui():FindFirstChild("DeltaGui") then
-    gethui():FindFirstChild("DeltaGui"):Destroy()
-end
-
 if not isfile("iconsize") then
     writefile("iconsize", "Medium")
 end
@@ -42,15 +38,9 @@ getgenv().readclipboard_hideenv = nil
 local DELTA = {};
 getgenv().Vm9vaE59PzVBeTVNdyY4JDsieDglUzdwRDNabyExbjR1ezBmYHNNT2kjOXk = true
 
-
-
-if gethui():FindFirstChild("Delta") then
-    gethui():FindFirstChild("Delta"):Destroy()
-end
-
 -- StarterGui.Delta
 DELTA["1"] = Instance.new("ScreenGui", gethui());
-DELTA["1"]["Name"] = [[Delta]];
+DELTA["1"]["Name"] = tostring({}):sub(10);
 DELTA["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 DELTA["1"]["ResetOnSpawn"] = false;
 DELTA["1"]["DisplayOrder"] = 10;
@@ -59,7 +49,7 @@ DELTA["1"].Enabled = false
 -- Dis is for floating icon Players
 DELTA["Ui"] = Instance.new("ScreenGui", gethui())
 DELTA["Ui"].Enabled = false
-DELTA["Ui"].Name = "DeltaIcon"
+DELTA["Ui"].Name = tostring({}):sub(10)
 
 DELTA["DaIcon"] = Instance.new("ImageButton", DELTA["Ui"])
 
@@ -104,9 +94,6 @@ else
     DELTA["das"]["CornerRadius"] = UDim.new(0.20000000298023224, 0);
 end
 
-
-
-
 DELTA["daStroke"] = Instance.new("UIStroke", DELTA["DaIcon"])
 DELTA["daStroke"].Thickness = 2
 DELTA["daStroke"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
@@ -121,7 +108,6 @@ else
     DELTA["daStroke"].Color = Color3.fromRGB(65, 169, 255)
 end
 
-
 -- StarterGui.Delta.KeySystem
 DELTA["2"] = Instance.new("Frame", DELTA["1"]);
 DELTA["2"]["BackgroundColor3"] = Color3.fromRGB(26, 28, 36);
@@ -129,7 +115,7 @@ DELTA["2"]["AnchorPoint"] = Vector2.new(1, 0.5);
 DELTA["2"]["Size"] = UDim2.new(0.328000009059906, 0, 1.2, 0);
 DELTA["2"]["Position"] = UDim2.new(1, 0, 0.5, 0);
 DELTA["2"]["Visible"] = false;
-DELTA["2"]["Name"] = [[KeySystem]];
+DELTA["2"]["Name"] = tostring({}):sub(10);
 
 -- StarterGui.Delta.KeySystem.Holder
 DELTA["3"] = Instance.new("Frame", DELTA["2"]);
@@ -4431,13 +4417,6 @@ buttons.Button2.MouseButton1Click:Connect(function()
     setclipboard("https://discord.gg/deltaex")
     end)
 
-
-
-
-
-if gethui():FindFirstChild("DeltaGui") then
-    gethui():FindFirstChild("DeltaGui"):Destroy()
-end
 
 
 

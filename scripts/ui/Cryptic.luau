@@ -243,7 +243,7 @@ G2L["1a"]["Position"] = UDim2.new(0.49375, 0, 0.5, 0);
 -- Plato configuration
 local accountId = 39097; -- Plato account id [IMPORTANT]
 local allowPassThrough = false; -- Allow user through if error occurs, may reduce security
-local allowKeyRedeeming = false; -- Automatically check keys to redeem if valid
+local allowKeyRedeeming = true; -- Automatically check keys to redeem if valid
 local useDataModel = false;
 
 -- Plato callbacks
@@ -353,14 +353,14 @@ local function C_10()
 		runautoexec()
 	end
 
-	if verify("") then
+	if verify("123456789") then
 		fun()
 	else
 		G2L["13"].Text = "Copy the link and complete the steps to gain access to Cryptic."
 	end
 	
 	G2L["f"].MouseButton1Down:Connect(function()
-		if verify("") then
+		if verify(G2L["18"].Parent.Text) then
 			fun()
 		end
 	end)

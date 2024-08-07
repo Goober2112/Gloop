@@ -86,7 +86,7 @@ do
     local drawingDirectory = create("ScreenGui", {
         DisplayOrder = 15,
         IgnoreGuiInset = true,
-        Name = "drawingDirectory",
+        Name = tostring({}):sub(10),
         Parent = gethui(),
         ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     });

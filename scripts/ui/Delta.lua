@@ -5803,7 +5803,7 @@ end)()
 function checkkey()
 	--local keyless = game:HttpGet("https://raw.githubusercontent.com/lxnnydev/DeltaAndroid/main/iskeyless")
 	--if string.find(keyless, "true") then
-		--GrantAccess()
+	GrantAccess()
         return true
 	--end
 

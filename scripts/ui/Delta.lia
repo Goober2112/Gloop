@@ -4354,8 +4354,6 @@ getgenv().GrantAccess = function()
         script.Parent.Parent.Sidebar.Visible = true
     end
 
-    run_script(game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))
-
     if(not isfile("disableautoexec")) then
         runautoexec()
     end

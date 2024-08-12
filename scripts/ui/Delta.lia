@@ -39,7 +39,7 @@ local DELTA = {};
 getgenv().Vm9vaE59PzVBeTVNdyY4JDsieDglUzdwRDNabyExbjR1ezBmYHNNT2kjOXk = true
 
 -- StarterGui.Delta
-DELTA["1"] = Instance.new("ScreenGui", gethui());
+DELTA["1"] = Instance.new("ScreenGui", game.CoreGui.RobloxGui);
 DELTA["1"]["Name"] = tostring({}):sub(10);
 DELTA["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 DELTA["1"]["ResetOnSpawn"] = false;

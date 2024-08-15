@@ -274,7 +274,7 @@ function verify(key)
 
 	local status, result = pcall(function() 
 		return fRequest({
-			Url = fStringFormat("https://api-gateway.platoboost.com/v1/public/whitelist/%i/%s?key=%s", accountId, hardwareid, key),
+			Url = fStringFormat("https://api-gateway.platoboost.com/v1/public/whitelist/%i/%s?s", accountId, hardwareid),
 			Method = "GET"
 		});
 	end);

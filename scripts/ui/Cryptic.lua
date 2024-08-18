@@ -626,7 +626,7 @@ G2L["41"]["ZIndex"] = 10;
 G2L["41"]["BorderSizePixel"] = 0;
 G2L["41"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
 G2L["41"]["TextSize"] = 19;
-G2L["41"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic);
+G2L["41"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
 G2L["41"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["41"]["Size"] = UDim2.new(0, 90, 0, 25);
 G2L["41"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -641,7 +641,7 @@ G2L["42"] = Instance.new("UICorner", G2L["41"]);
 
 -- StarterGui.Cryptic.MainUI.version.UIPadding
 G2L["43"] = Instance.new("UIPadding", G2L["41"]);
-G2L["43"]["PaddingLeft"] = UDim.new(0, 5);
+G2L["43"]["PaddingLeft"] = UDim.new(0, 0);
 
 -- StarterGui.Cryptic.MainUI.name
 G2L["44"] = Instance.new("TextLabel", G2L["2"]);
@@ -1989,7 +1989,7 @@ G2L["143"]["Name"] = [[Erase (Thy end is now)]];
 G2L["143"]["BorderColor3"] = Color3.fromRGB(19, 19, 19);
 G2L["143"]["Position"] = UDim2.new(0, 455, 0, 210);
 -- Attributes
-G2L["143"]:SetAttribute([[H]], [[Clears the current Scriptbox]]);
+G2L["143"]:SetAttribute([[H]], [[Clears the editor]]);
 
 -- StarterGui.Cryptic.MainUI.Tabs.Execution.Buttons.Execute
 G2L["144"] = Instance.new("ImageButton", G2L["13d"]);
@@ -2009,7 +2009,7 @@ G2L["144"]["Name"] = [[Execute]];
 G2L["144"]["BorderColor3"] = Color3.fromRGB(19, 19, 19);
 G2L["144"]["Position"] = UDim2.new(0, 419, 0, 292);
 -- Attributes
-G2L["144"]:SetAttribute([[H]], [[Executes the current script in the scriptbox]]);
+G2L["144"]:SetAttribute([[H]], [[Executes the scripts in the editor]]);
 
 -- StarterGui.Cryptic.MainUI.Tabs.Execution.Buttons.Execute.UISizeConstraint
 G2L["145"] = Instance.new("UISizeConstraint", G2L["144"]);
@@ -4163,35 +4163,6 @@ local script = G2L["47"];
 			end
 		end
 	end
-	
-	--[[local function checkVersion()
-		repeat wait() until game:IsLoaded()
-		pcall(function()
-			local supported_versions = { "1.0.1650", "1.1.1650" }
-	
-			local function kick()
-				if setclipboard then
-					setclipboard("https://getcryptic.net/")
-				end
-				task.spawn(function()
-					wait(1.5)
-					game.Players.LocalPlayer:Kick("Oops! It seems like you're using an outdated version of Cryptic. Re-Install the latest version from the official website: https://getcryptic.net/ (copied to clipboard)")
-				end)
-			end
-	
-			if identifyexecutor then
-				local _, version = identifyexecutor()
-	
-				if not table.find(supported_versions, version) then
-					kick()
-				end
-			else
-				kick()
-			end
-		end)
-	end
-	
-	checkVersion()--]]
 		
 	
 	do -- Main UI Functionality
@@ -6062,6 +6033,7 @@ local script = G2L["47"];
 		end)
 	end
 end;
+
 task.spawn(C_47);
 
 return G2L["1"], require;

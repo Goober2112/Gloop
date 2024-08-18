@@ -5028,6 +5028,8 @@ local script = G2L["47"];
 								LocalPlayer_Features.speedHack = state
 							elseif feature == "Jump Power" then
 								LocalPlayer_Features.jumpPowerHack = state
+							elseif feature == "FOV" then
+								LocalPlayer_Features.customFOV = state
 							elseif feature == "EmulatorMode" then
 								EmulatorMode = state
 							elseif feature == "FPSUnlocker" then
@@ -5814,7 +5816,7 @@ local script = G2L["47"];
 							end)
 						end
 					end)
-				end) -- Noooooooooooooooooo when the sus😭😭😭 (If yu remov I get angi)
+				end)
 			end
 		end
 	end 
@@ -5840,19 +5842,6 @@ local script = G2L["47"];
 	
 			UpdatePlayers()
 			
-			if ESP.RainbowWeapon then
-				pcall(function()
-					local tool = Players.LocalPlayer.Character:FindFirstChildWhichIsA("Tool", true)
-					if tool then
-						for i,v in pairs(tool:GetDescendants()) do
-							pcall(function()
-								v.Color = ESP.Colors.RainbowColor
-							end)
-						end
-					end
-				end)	
-			end
-			
 			for i,v in pairs(ESP.Players) do
 				local success, ret = pcall(function()
 					local character = v.Character
@@ -5868,319 +5857,6 @@ local script = G2L["47"];
 					if isLocalPlayer then
 						return
 					end
-	
-					do -- higlight and outline
-						if not Highlight then
-							local FuniHightlight = Instance.new("Highlight")
-							FuniHightlight.Name = "FuniHighlight"
-							FuniHightlight.Enabled = ESP.Outline or ESP.Highlight
-							FuniHightlight.Parent = character
-							FuniHightlight.Adornee = character
-							FuniHightlight.OutlineColor = ESP.RainbowMode and ESP.Colors.RainbowColor or Color3.fromRGB(255,255,255)
-							FuniHightlight.FillColor = ESP.RainbowMode and ESP.Colors.RainbowColor or Color3.fromRGB(170,0,0)
-							FuniHightlight.FillTransparency = ESP.Highlight and 0.5 or 1
-							FuniHightlight.OutlineTransparency = ESP.Outline and 0.5 or 1
-						else
-							if v.Team == Players.LocalPlayer.Team then
-								if ESP.IgnoreTeam then
-									Highlight.Enabled = false
-								else
-									Highlight.Enabled = ESP.Outline or ESP.Highlight
-								end
-							else
-								if ESP.IgnoreEnemies then
-									Highlight.Enabled = false
-								else
-									Highlight.Enabled = ESP.Outline or ESP.Highlight
-								end
-							end
-							Highlight.FillTransparency = ESP.Highlight and 0.5 or 1
-							Highlight.OutlineTransparency = ESP.Outline and 0.5 or 1
-							Highlight.OutlineColor = ESP.RainbowMode and ESP.Colors.RainbowColor or Color3.fromRGB(255,255,255)
-							Highlight.FillColor = ESP.RainbowMode and ESP.Colors.RainbowColor or ESP.UseTeamColor and v.TeamColor.Color or Color3.fromRGB(170,0,0)
-						end
-					end
-	
-					do -- distance- and name esp
-						if not TextESP then
-							local funiText = Instance.new("BillboardGui")
-							local TextLabel = Instance.new("TextLabel")
-	
-							funiText.Enabled = ESP.NameESP or ESP.DistanceESP
-							funiText.Name = "FuniText"
-							funiText.Parent = v.Character.Head
-							funiText.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-							funiText.Active = true
-							funiText.Adornee = v.Character.Head
-							funiText.AlwaysOnTop = true
-							funiText.LightInfluence = 1.000
-							funiText.Size = UDim2.new(0, 200, 0, 50)
-	
-							TextLabel.Parent = funiText
-							TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-							TextLabel.BackgroundTransparency = 1.000
-							TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-							TextLabel.BorderSizePixel = 0
-							TextLabel.Size = UDim2.new(0, 200, 0, 50)
-							TextLabel.Font = Enum.Font.SourceSans
-							TextLabel.Text = string.format("[%s]\n[%d]", v.Name, math.round(Players.LocalPlayer:DistanceFromCharacter(v.Character:GetPivot().Position)))
-							if not ESP.RainbowMode then
-								TextLabel.TextColor3 = ESP.Colors.NameESP
-							else
-								TextLabel.TextColor3 = ESP.Colors.RainbowColor
-							end
-							TextLabel.TextSize = 15.000
-							TextLabel.TextWrapped = true
-						else
-							if sameTeam then
-								if ESP.IgnoreTeam then
-									TextESP.Enabled = false
-								else
-									TextESP.Enabled = ESP.DistanceESP or ESP.NameESP
-								end
-							else
-								if ESP.IgnoreEnemies then
-									TextESP.Enabled = false	
-								else
-									TextESP.Enabled = ESP.DistanceESP or ESP.NameESP
-								end
-							end
-							TextESP.TextLabel.TextColor3 = ESP.RainbowMode and ESP.Colors.RainbowColor or ESP.UseTeamColor and v.TeamColor.Color or ESP.Colors.NameESP
-	
-							local newText = ""
-							if ESP.NameESP then
-								newText = string.format("[%s]", newText..tostring(v.Name))
-								newText = newText.."\n"
-							end
-							if ESP.DistanceESP then
-								local metric = ""
-								local dist = Players.LocalPlayer:DistanceFromCharacter(v.Character:GetPivot().Position)
-								if math.round(dist) == 1 then
-									metric = " stud"
-								else
-									metric = " studs"
-								end
-								newText = newText.."["..tostring(math.round(dist))..metric.."]"
-							end
-							TextESP.TextLabel.Text = newText
-						end
-					end
-	
-					do -- tracers
-						if not hasTracers then
-							v:SetAttribute("FuniLine", true)
-							task.spawn(function()
-								local FuniLine
-								local success, ret = pcall(function()
-									FuniLine = Drawing.new("Line")
-								end)
-	
-								local RenderConnection; RenderConnection = RunService.RenderStepped:Connect(function()
-									local success, ret = pcall(function()
-										if ESP.Tracers then
-											if Player.Team == game.Players.LocalPlayer.Team then
-												if ESP.IgnoreTeam then
-													FuniLine.Visible = false
-													return
-												end
-											else
-												if ESP.IgnoreEnemies then
-													FuniLine.Visible = false
-													return
-												end
-											end
-											local Character = v.Character
-											if not Character then
-												FuniLine.Visible = false
-											else
-												local Pos, OnScreen = Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position)
-												if not OnScreen then
-													--print("aint visible")
-													FuniLine.Visible = false
-												else
-													--print(":O when the sus???")
-	
-													FuniLine.Visible = true
-													FuniLine.Thickness = 1
-													FuniLine.Color = ESP.RainbowMode and ESP.Colors.RainbowColor or ESP.UseTeamColor and v.TeamColor.Color or ESP.Colors.Tracers
-													FuniLine.From = EmulatorMode and Vector2.new(Players.LocalPlayer:GetMouse().X, Players.LocalPlayer:GetMouse().Y+35) or Vector2.new(Workspace.CurrentCamera.ViewportSize.X/2, Workspace.CurrentCamera.ViewportSize.Y/2)
-													FuniLine.To = Vector2.new(Pos.X, Pos.Y)
-												end
-											end
-										else
-											FuniLine.Visible = false
-										end
-									end)
-									if not success then
-										--FuniLine.Visible = false
-										RenderConnection:Disconnect()
-									end
-								end)
-							end)
-						end
-					end
-	
-					do -- Box esp
-						if not BoxESP then
-							local Player = v
-							Player:SetAttribute("FuniCell", false)
-							task.spawn(function()
-								local BoxLines = {
-									["line_upper_left"] = Drawing.new("Line"),
-									["line_upper_right"] = Drawing.new("Line"),
-									["line_upper_front"] = Drawing.new("Line"),
-									["line_upper_back"] = Drawing.new("Line"),
-									["line_middle_left"] = Drawing.new("Line"),
-									["line_middle_right"] = Drawing.new("Line"),
-									["line_middle_front"] = Drawing.new("Line"),
-									["line_middle_back"] = Drawing.new("Line"),
-									["line_bottom_left"] = Drawing.new("Line"),
-									["line_bottom_right"] = Drawing.new("Line"),
-									["line_bottom_front"] = Drawing.new("Line"),
-									["line_bottom_back"] = Drawing.new("Line")
-								}
-	
-								local BoxPositions = {
-									["line_upper_left"] = {
-										["First"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(Character:GetModelSize().X/2, Character:GetModelSize().Y/2, Character:GetModelSize().Z/2))
-										end,
-										["Second"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(Character:GetModelSize().X/2, Character:GetModelSize().Y/2, -Character:GetModelSize().Z/2))
-										end,
-									},
-									["line_upper_right"] = {
-										["First"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(-Character:GetModelSize().X/2, Character:GetModelSize().Y/2, Character:GetModelSize().Z/2))
-										end,
-										["Second"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(-Character:GetModelSize().X/2, Character:GetModelSize().Y/2, -Character:GetModelSize().Z/2))
-										end,
-									},
-									["line_upper_front"] = {
-										["First"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(Character:GetModelSize().X/2, Character:GetModelSize().Y/2, Character:GetModelSize().Z/2))
-										end,
-										["Second"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(-Character:GetModelSize().X/2, Character:GetModelSize().Y/2, Character:GetModelSize().Z/2))
-										end,
-									},
-									["line_upper_back"] 		= {
-										["First"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(Character:GetModelSize().X/2, Character:GetModelSize().Y/2, -Character:GetModelSize().Z/2))
-										end,
-										["Second"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(-Character:GetModelSize().X/2, Character:GetModelSize().Y/2, -Character:GetModelSize().Z/2))
-										end,
-									},
-									["line_middle_left"] 		= {
-										["First"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(Character:GetModelSize().X/2, Character:GetModelSize().Y/2, Character:GetModelSize().Z/2))
-										end,
-										["Second"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(Character:GetModelSize().X/2, -Character:GetModelSize().Y/2, Character:GetModelSize().Z/2))
-										end,
-									},
-									["line_middle_right"] 		= {
-										["First"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(Character:GetModelSize().X/2, Character:GetModelSize().Y/2, -Character:GetModelSize().Z/2))
-										end,
-										["Second"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(Character:GetModelSize().X/2, -Character:GetModelSize().Y/2, -Character:GetModelSize().Z/2))
-										end,
-									},
-									["line_middle_front"] 		= {
-										["First"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(-Character:GetModelSize().X/2, Character:GetModelSize().Y/2, -Character:GetModelSize().Z/2))
-										end,
-										["Second"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(-Character:GetModelSize().X/2, -Character:GetModelSize().Y/2, -Character:GetModelSize().Z/2))
-										end,
-									},
-									["line_middle_back"] 		= {
-										["First"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(-Character:GetModelSize().X/2, Character:GetModelSize().Y/2, Character:GetModelSize().Z/2))
-										end,
-										["Second"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(-Character:GetModelSize().X/2, -Character:GetModelSize().Y/2, Character:GetModelSize().Z/2))
-										end,
-									},
-									["line_bottom_left"] 		= {
-										["First"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(Character:GetModelSize().X/2, -Character:GetModelSize().Y/2, Character:GetModelSize().Z/2))
-										end,
-										["Second"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(Character:GetModelSize().X/2, -Character:GetModelSize().Y/2, -Character:GetModelSize().Z/2))
-										end,
-									},
-									["line_bottom_right"] 		= {
-										["First"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(-Character:GetModelSize().X/2, -Character:GetModelSize().Y/2, Character:GetModelSize().Z/2))
-										end,
-										["Second"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(-Character:GetModelSize().X/2, -Character:GetModelSize().Y/2, -Character:GetModelSize().Z/2))
-										end,
-									},
-									["line_bottom_front"] 		= {
-										["First"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(Character:GetModelSize().X/2, -Character:GetModelSize().Y/2, Character:GetModelSize().Z/2))
-										end,
-										["Second"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(-Character:GetModelSize().X/2, -Character:GetModelSize().Y/2, Character:GetModelSize().Z/2))
-										end,
-									},
-									["line_bottom_back"] 		= {
-										["First"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(Character:GetModelSize().X/2, -Character:GetModelSize().Y/2, -Character:GetModelSize().Z/2))
-										end,
-										["Second"] = function(Character)
-											return Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position + Vector3.new(-Character:GetModelSize().X/2, -Character:GetModelSize().Y/2, -Character:GetModelSize().Z/2))
-										end,
-									}
-								}
-								for i,v in pairs(BoxLines) do
-									--print(v.Color)
-									local RenderConnection; RenderConnection = RunService.RenderStepped:Connect(function()
-										local success, ret = pcall(function()
-											if ESP.BoxESP then
-												if Player.Team == game.Players.LocalPlayer.Team then
-													if ESP.IgnoreTeam then
-														v.Visible = false
-														return
-													end
-												else
-													if ESP.IgnoreEnemies then
-														v.Visible = false
-														return
-													end
-												end
-												local Character = Player.Character
-												if not Character then
-													v.Visible = false
-												else
-													local Pos, OnScreen = Workspace.CurrentCamera:WorldToViewportPoint(Character:GetPivot().Position)
-													if OnScreen then
-														local firstPos = BoxPositions[i].First(Character)
-														local secondPos = BoxPositions[i].Second(Character)
-	
-														v.Thickness = 1
-														v.Color = ESP.RainbowMode and ESP.Colors.RainbowColor or ESP.UseTeamColor and Player.TeamColor.Color or ESP.Colors.BoxESP
-														v.Visible = true
-														v.From = Vector2.new(firstPos.X, firstPos.Y)
-														v.To = Vector2.new(secondPos.X, secondPos.Y)
-													else
-														v.Visible = false
-													end
-												end
-											else
-												v.Visible = false
-											end
-										end)
-									end)
-								end
-							end)
-						end
-					end	
 					
 					do -- Health ESP
 						if not hasHealthESP then
@@ -6333,36 +6009,6 @@ local script = G2L["47"];
 			return closestPlayer
 		end
 	
-		--local lastPos = Vector3.new(0,0,0)
-		--Workspace.CurrentCamera:GetPropertyChangedSignal("CFrame"):Connect(function()
-		--	if Aimbot.Enabled and Aimbot.HoldingAimKey then
-		--		Workspace.CurrentCamera.CFrame = CFrame.new(Workspace.CurrentCamera.CFrame.Position, Aimbot.targetPos)
-		--	end
-		--end)
-	
-		Aimbot.HoldingAimKey = false
-		Players.LocalPlayer:GetMouse().Button2Down:Connect(function()
-			pcall(function()
-				Aimbot.CurrentTarget = nil
-				Aimbot.HoldingAimKey = true
-			end)
-		end)
-	
-		Players.LocalPlayer:GetMouse().Button2Up:Connect(function()
-			pcall(function()
-				Aimbot.HoldingAimKey = false
-			end)
-		end)
-	
-		local snapline
-		task.spawn(function()
-			pcall(function()
-				snapline = Drawing.new("Line")
-				snapline.Thickness = 1
-				snapline.Visible = false
-			end)
-		end)
-	
 		local fov = nil
 		if not RunService:IsStudio() then
 			fov = Drawing.new("Circle")
@@ -6389,49 +6035,7 @@ local script = G2L["47"];
 							end
 						end)
 					end
-	
-					task.spawn(function()
-						pcall(function()
-							Aimbot.UpdatePlayers()
-						end)
-					end)
 					
-					
-					--do -- Snaplines
-					--	local success, ret = pcall(function()
-					--		if true --[[Aimbot.Snaplines]] then
-					--			local closestPlayer = Aimbot.getClosestPlayerToMouse(Aimbot.FOV and Aimbot.FOV_Value or Aimbot.RageBot and 100000 or 0)
-					--			if closestPlayer then
-					--				local closestPlayerPosition = closestPlayer.Character:GetPivot().Position
-					--				local Pos, OnScreen = Workspace.CurrentCamera:WorldToViewportPoint(closestPlayerPosition)
-					--				if OnScreen and Aimbot.Snaplines then
-					--					snapline.Color = ESP.RainbowMode and ESP.Colors.RainbowColor or Color3.new(255,255,255)
-					--					snapline.Visible = true
-					--					snapline.From = EmulatorMode and Vector2.new(Players.LocalPlayer:GetMouse().X, Players.LocalPlayer:GetMouse().Y+35) or Vector2.new(Workspace.CurrentCamera.ViewportSize.X/2, Workspace.CurrentCamera.ViewportSize.Y/2)
-					--					snapline.To = Vector2.new(Pos.X, Pos.Y)	
-					--				else
-					--					snapline.Visible = false
-					--				end
-					--			else
-					--				snapline.Visible = false
-					--			end
-					--		else
-					--			snapline.Visible = false
-					--		end
-					--	end)
-					--	if not success then
-					--		print(ret)
-					--	end
-					--end
-					
-					if Aimbot.Sticky and Aimbot.CurrentTarget == nil or true then
-						local closestPlayer = Aimbot.getClosestPlayerToMouse(Aimbot.FOV and Aimbot.FOV_Value or Aimbot.RageBot and 100000 or 0)
-						Aimbot.CurrentTarget = closestPlayer
-					end
-					if not Aimbot.Sticky then
-						local closestPlayer = Aimbot.getClosestPlayerToMouse(Aimbot.FOV and Aimbot.FOV_Value or Aimbot.RageBot and 100000 or 0)
-						Aimbot.CurrentTarget = closestPlayer
-					end
 					local closestPlayer = Aimbot.CurrentTarget
 					--print(Aimbot.getClosestPlayerToMouse(Aimbot.FOV and Aimbot.FOV_Value or Aimbot.RageBot and 100000 or 0))
 					if closestPlayer then

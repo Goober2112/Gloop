@@ -3894,21 +3894,6 @@ local script = G2L["47"];
 		["Platform_Fly"] = false,
 		["Platform_Fly_Speed"] = 1
 	}
-	local ESP = {
-		["RainbowWeapon"] = false,
-		["IgnoreTeam"] = false,
-		["UseTeamColor"] = false,
-		["Players"] = {},
-		["RainbowMode"] = false,
-		["IgnoreEnemies"] = false,
-		["Colors"] = {
-			["Tracers"] = Color3.fromRGB(255,255,255),
-			["DistanceESP"] = Color3.fromRGB(255,255,255),
-			["NameESP"] = Color3.fromRGB(255,255,255),
-			["BoxESP"] = Color3.fromRGB(255,255,255),
-			["RainbowColor"] = Color3.fromHSV(0,1,1)
-		}
-	}
 
 	local UserInputService = game:GetService("UserInputService")
 	local Players = game:GetService("Players")
@@ -4222,14 +4207,14 @@ local script = G2L["47"];
 			end)
 		end
 	
-		do -- Initialize the scripts table
-			localScripts.Mobile["Infinite Yield"] = [[loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()]]
-			localScripts.Mobile["Dex Explorer"] = [[loadstring(game:HttpGet("https://raw.githubusercontent.com/justasleepycat/DexExplorer/main/DexExplorer.lua"))()]]
-			localScripts.Mobile["Hydroxide"] = [[local v0="Upbolt";local v1="revision";local function v2(v3) return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/Hydroxide/%s/%s.lua"):format(v0,v1,v3)),v3   .. ".lua" )();end v2("init");v2("ui/main");]]
-			localScripts.Mobile["Simple Spy"] = [[loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RS/main/SimpleSpyMobile"))()]]
-			localScripts.Mobile["Reaper Hub"] = [[loadstring((http.request{Url="https://reaperscripts.com/loader?l=1"}).Body,"0zek8y2bld7.qowl6c7o~1")();]]	
-			localScripts.Mobile["SleepySpy"] = ""
-		end
+        do -- Initialize the scripts table
+            localScripts.Mobile["Infinite Yield"] = [[loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()]]
+            localScripts.Mobile["Dex Explorer"] = [[loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()]]
+            localScripts.Mobile["Hydroxide"] = [[local v0="Upbolt";local v1="revision";local function v2(v3) return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/Hydroxide/%s/%s.lua"):format(v0,v1,v3)),v3   .. ".lua" )();end v2("init");v2("ui/main");]]
+            localScripts.Mobile["Simple Spy"] = [[loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RS/main/SimpleSpyMobile"))()]]
+            localScripts.Mobile["Reaper Hub"] = [[loadstring((http.request{Url="https://reaperscripts.com/loader?l=1"}).Body,"0zek8y2bld7.qowl6c7o~1")();]]    
+            localScripts.Mobile["UNC Test"] = [[loadstring(game:HttpGet("https://raw.githubusercontent.com/unified-naming-convention/NamingStandard/main/UNCCheckEnv.lua", true))()]]
+        end
 	
 		do -- Initializing tabs and their functions
 			for i,v in pairs(Cryptic.MainUI.TABSBAR.Folder:GetChildren()) do
@@ -6038,7 +6023,7 @@ local script = G2L["47"];
 					do -- Box esp
 						if not BoxESP then
 							local Player = v
-							Player:SetAttribute("FuniCell", true)
+							Player:SetAttribute("FuniCell", false)
 							task.spawn(function()
 								local BoxLines = {
 									["line_upper_left"] = Drawing.new("Line"),

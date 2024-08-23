@@ -4523,7 +4523,7 @@ function Verify()
         
         if status then
             if string.find(result, "true") then
-                onMessage("Successfully whitelisted!");
+                DELTA["18"]["Text"] = "Successfully whitelisted key!";
                 return true;
             elseif string.find(result, "false") then
                 if (#key > 0) then

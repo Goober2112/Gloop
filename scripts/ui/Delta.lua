@@ -5557,10 +5557,10 @@ function delta.Settings:AddDropdown(a,b,c,d)
     UILib.Settings:AddDropdown(a,b,c,d)
 end
 
-makefolder("DeltaPlugins")
+--[[makefolder("DeltaPlugins")
 for _,file in pairs(listfiles("DeltaPlugins")) do
     loadstring(readfile(file))()
-end
+end--]]
 
 -------------------------------------------------------------------------
 -- Home: Popup Handler

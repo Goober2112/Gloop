@@ -4517,7 +4517,40 @@ function Verify()
 
     DELTA["18"]["Text"] = "Checking key...";
 
-    local response = request({
+	local status, result = pcall(function() 
+            return game:HttpGetAsync("https://api-gateway.platoboost.com/v1/public/whitelist/8/" .. auth_id .. "?s");
+        end);
+        
+        if status then
+            if string.find(result, "true") then
+                onMessage("Successfully whitelisted!");
+                return true;
+            elseif string.find(result, "false") then
+                if (#key > 0) then
+	                local redeemResponse = request({
+	                    Url = "https://api-gateway.platoboost.com/v1/authenticators/redeem/8/" .. auth_id .. "/" .. key,
+	                    Method = "POST"
+	                });
+	
+	                if redeemResponse.StatusCode == 200 then
+	                    if string.find(redeemResponse.Body, "true") then
+	                        DELTA["18"]["Text"] = "Successfully redeemed key!";
+	                        return true
+	                    end
+	                end           
+	            end
+	            DELTA["18"]["Text"] = "Invalid key detected, please try again!";
+	            return false
+            else
+		DELTA["18"]["Text"] = "An error has occured in the server, please wait 3 seconds and try again.";
+                return false;
+            end;
+        else
+            DELTA["18"]["Text"] = "Invalid key detected, please try again!";
+            return false;
+        end;
+
+    --[[local response = request({
         Url = "https://api-gateway.platoboost.com/v1/public/whitelist/8/" .. auth_id .. "?s",
         Method = "GET"
     })
@@ -4572,10 +4605,8 @@ function Verify()
             wait(3) 
             errorWait = false 
         end)
-    end
+    end--]]
 end
-
-
 
 -- Continue
 buttons.Buttons.Button1.MouseButton1Click:Connect(function()

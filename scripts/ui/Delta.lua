@@ -4626,7 +4626,7 @@ buttons.Buttons.Button2.MouseButton1Click:Connect(function()
 
 -- Close
 script.Parent.ImageButton.MouseButton1Click:Connect(function()
-    gethui().Delta.Enabled = false
+    DELTA["1"].Enabled = false
     end)
 end;
 task.spawn(C_21);

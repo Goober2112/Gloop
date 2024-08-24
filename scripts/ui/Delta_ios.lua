@@ -4494,7 +4494,7 @@ local AccountId = 2;
 local auth_id = gethwid()
 
 function GetLink()
-    return string.format("https://gateway.platoboost.com/a/%s?id=" .. auth_id, AccountId);
+    return string.format("https://gateway.platoboost.com/a/%i?id=" .. auth_id, AccountId);
 end
 
 local rateLimit = false;

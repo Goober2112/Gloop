@@ -5024,17 +5024,17 @@ local localplr = game:GetService("Players").LocalPlayer
 
 -- Get players in real-time
 local function GetPlrs()
-return #game.Players:GetPlayers()
+return #game:GetService("Players"):GetPlayers()
 end
 local function SetTextForPlr()
 Network.Overlay.Holder.Information.Players.Text = "<font color=\"#4FA4F2\">" .. tostring(GetPlrs()) .. "</font> players"
 end
 SetTextForPlr()
 
-game.Players.PlayerAdded:Connect(function()
+game:GetService("Players").PlayerAdded:Connect(function()
     SetTextForPlr()
     end)
-game.Players.PlayerAdded:Connect(function()
+game:GetService("Players").PlayerAdded:Connect(function()
     SetTextForPlr()
     end)
 
@@ -5288,7 +5288,7 @@ local UILib = require(script.Parent.UILibrary)
 
 -- Actual Init stuffs
 
-game.Players.LocalPlayer.Chatted:Connect(function(msg)
+game:GetService("Players").LocalPlayer.Chatted:Connect(function(msg)
     if msg:match("/e sd") then
         
         if DELTA["1"].Enabled == true then
@@ -5432,7 +5432,7 @@ local Server, Next; repeat
    Next = Servers.nextPageCursor
 until Server
 
-TPS:TeleportToPlaceInstance(_place,Server.id,game.Players.LocalPlayer)
+TPS:TeleportToPlaceInstance(_place,Server.id,game:GetService("Players").LocalPlayer)
         end)  
 
 UILib.Settings:AddButton("Serverhop", "Teleport to a new server", function()
@@ -5486,7 +5486,7 @@ function TPReturner()
                 pcall(function()
                     writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
                     wait()
-                    game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+                    game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game:GetService("Players").LocalPlayer)
                 end)
                 wait(4)
             end

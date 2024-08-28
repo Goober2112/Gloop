@@ -5509,7 +5509,7 @@ UILib.SavedScripts:Add("HoHo Hub", "loadstring(game:HttpGet('https://raw.githubu
 
 -- Get all scripts and load em' (make sure Built-In scripts first otherwise Built-In scripts gonna under thr saved scripts) --nvm this shit
 for _,file in ipairs(listfiles("d_ios_script_dir")) do
-UILib.SavedScripts:Add(file:sub(22, #file), readfile(file))
+UILib.SavedScripts:Add(file:sub(18, #file), readfile(file))
 end
 
 

@@ -1,5798 +1,3512 @@
-local G2L = {};
-
--- StarterGui.Cryptic
-G2L["1"] = Instance.new("ScreenGui");
-G2L["1"]["IgnoreGuiInset"] = true;
-G2L["1"]["DisplayOrder"] = 1000000000;
-G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.DeviceSafeInsets;
-G2L["1"]["Name"] = [[Cryptic]];
-G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
-G2L["1"]["ResetOnSpawn"] = false;
-G2L["1"].Parent = gethui();
-
--- StarterGui.Cryptic.MainUI
-G2L["2"] = Instance.new("Frame", G2L["1"]);
-G2L["2"]["BorderSizePixel"] = 0;
-G2L["2"]["BackgroundColor3"] = Color3.fromRGB(26, 26, 26);
-G2L["2"]["Size"] = UDim2.new(0, 551, 0, 250);
-G2L["2"]["Position"] = UDim2.new(0, 250, 0, 238);
-G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2"]["Name"] = [[MainUI]];
-
--- StarterGui.Cryptic.MainUI.UICorner
-G2L["3"] = Instance.new("UICorner", G2L["2"]);
-
-
--- StarterGui.Cryptic.MainUI.TABSBAR
-G2L["4"] = Instance.new("Frame", G2L["2"]);
-G2L["4"]["BorderSizePixel"] = 0;
-G2L["4"]["BackgroundColor3"] = Color3.fromRGB(31, 31, 31);
-G2L["4"]["Size"] = UDim2.new(0, 551, 0, 50);
-G2L["4"]["Position"] = UDim2.new(0, 0, 0, 266);
-G2L["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["4"]["Name"] = [[TABSBAR]];
-
--- StarterGui.Cryptic.MainUI.TABSBAR.UICorner
-G2L["5"] = Instance.new("UICorner", G2L["4"]);
-
-
--- StarterGui.Cryptic.MainUI.TABSBAR.DropShadowHolder
-G2L["6"] = Instance.new("Frame", G2L["4"]);
-G2L["6"]["ZIndex"] = 0;
-G2L["6"]["BorderSizePixel"] = 0;
-G2L["6"]["Size"] = UDim2.new(0, 551, 0, 50);
-G2L["6"]["Name"] = [[DropShadowHolder]];
-G2L["6"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.TABSBAR.DropShadowHolder.DropShadow
-G2L["7"] = Instance.new("ImageLabel", G2L["6"]);
-G2L["7"]["ZIndex"] = 0;
-G2L["7"]["BorderSizePixel"] = 0;
-G2L["7"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["7"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["7"]["ImageTransparency"] = 0.5;
-G2L["7"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["7"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["7"]["Image"] = [[rbxassetid://6014261993]];
-G2L["7"]["Size"] = UDim2.new(0, 598, 0, 97);
-G2L["7"]["BackgroundTransparency"] = 1;
-G2L["7"]["Name"] = [[DropShadow]];
-G2L["7"]["Position"] = UDim2.new(0, 275, 0, 25);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.DropShadowHolder
-G2L["8"] = Instance.new("Frame", G2L["4"]);
-G2L["8"]["ZIndex"] = 0;
-G2L["8"]["BorderSizePixel"] = 0;
-G2L["8"]["Size"] = UDim2.new(0, 551, 0, 50);
-G2L["8"]["Name"] = [[DropShadowHolder]];
-G2L["8"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.TABSBAR.DropShadowHolder.DropShadow
-G2L["9"] = Instance.new("ImageLabel", G2L["8"]);
-G2L["9"]["ZIndex"] = 0;
-G2L["9"]["BorderSizePixel"] = 0;
-G2L["9"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["9"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["9"]["ImageTransparency"] = 0.5;
-G2L["9"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["9"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["9"]["Image"] = [[rbxassetid://6014261993]];
-G2L["9"]["Size"] = UDim2.new(0, 598, 0, 97);
-G2L["9"]["BackgroundTransparency"] = 1;
-G2L["9"]["Name"] = [[DropShadow]];
-G2L["9"]["Position"] = UDim2.new(0, 275, 0, 25);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder
-G2L["a"] = Instance.new("Folder", G2L["4"]);
-
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.UIListLayout
-G2L["b"] = Instance.new("UIListLayout", G2L["a"]);
-G2L["b"]["Padding"] = UDim.new(0, 1);
-G2L["b"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
-G2L["b"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-G2L["b"]["FillDirection"] = Enum.FillDirection.Horizontal;
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.EXECUTIONTAB
-G2L["12"] = Instance.new("ImageButton", G2L["a"]);
-G2L["12"]["BorderSizePixel"] = 0;
-G2L["12"]["ScaleType"] = Enum.ScaleType.Fit;
-G2L["12"]["SelectionOrder"] = 4;
-G2L["12"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["12"]["Image"] = [[rbxassetid://11419714821]];
-G2L["12"]["Size"] = UDim2.new(0, 40, 0, 30);
-G2L["12"]["BackgroundTransparency"] = 1;
-G2L["12"]["Name"] = [[EXECUTIONTAB]];
-G2L["12"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["12"]["Position"] = UDim2.new(0, 33, 0, 10);
--- Attributes
-G2L["12"]:SetAttribute([[tab]], [[Execution]]);
-G2L["12"]:SetAttribute([[H]], [[Editor]]);
-G2L["12"]:SetAttribute([[name]], [[Editor]]);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.EXECUTIONTAB.UICorner
-G2L["13"] = Instance.new("UICorner", G2L["12"]);
-
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.EXECUTIONTAB.DropShadowHolder
-G2L["14"] = Instance.new("Frame", G2L["12"]);
-G2L["14"]["ZIndex"] = 0;
-G2L["14"]["BorderSizePixel"] = 0;
-G2L["14"]["Size"] = UDim2.new(0, 40, 0, 30);
-G2L["14"]["Name"] = [[DropShadowHolder]];
-G2L["14"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.EXECUTIONTAB.DropShadowHolder.DropShadow
-G2L["15"] = Instance.new("ImageLabel", G2L["14"]);
-G2L["15"]["ZIndex"] = 0;
-G2L["15"]["BorderSizePixel"] = 0;
-G2L["15"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["15"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["15"]["ImageTransparency"] = 1;
-G2L["15"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["15"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["15"]["Image"] = [[rbxassetid://6014261993]];
-G2L["15"]["Size"] = UDim2.new(0, 87, 0, 77);
-G2L["15"]["BackgroundTransparency"] = 1;
-G2L["15"]["Name"] = [[DropShadow]];
-G2L["15"]["Position"] = UDim2.new(0, 20, 0, 15);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.EXECUTIONTAB.selectionOutline
-G2L["16"] = Instance.new("ImageLabel", G2L["12"]);
-G2L["16"]["BorderSizePixel"] = 0;
-G2L["16"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["16"]["ImageTransparency"] = 1;
-G2L["16"]["ImageColor3"] = Color3.fromRGB(90, 126, 214);
-G2L["16"]["Image"] = [[rbxassetid://18604282010]];
-G2L["16"]["Size"] = UDim2.new(0, 30, 0, 30);
-G2L["16"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["16"]["BackgroundTransparency"] = 1;
-G2L["16"]["Name"] = [[selectionOutline]];
-G2L["16"]["Position"] = UDim2.new(0, 5, 0, 18);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.LOCALSCRIPTSTAB
-G2L["17"] = Instance.new("ImageButton", G2L["a"]);
-G2L["17"]["BorderSizePixel"] = 0;
-G2L["17"]["ScaleType"] = Enum.ScaleType.Fit;
-G2L["17"]["SelectionOrder"] = 6;
-G2L["17"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["17"]["LayoutOrder"] = 2;
-G2L["17"]["Image"] = [[rbxassetid://18609769135]];
-G2L["17"]["Size"] = UDim2.new(0, 40, 0, 30);
-G2L["17"]["BackgroundTransparency"] = 1;
-G2L["17"]["Name"] = [[LOCALSCRIPTSTAB]];
-G2L["17"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["17"]["Position"] = UDim2.new(0, 193, 0, 10);
--- Attributes
-G2L["17"]:SetAttribute([[tab]], [[Local Scripts]]);
-G2L["17"]:SetAttribute([[H]], [[Local Scripts]]);
-G2L["17"]:SetAttribute([[name]], [[Local Scripts]]);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.LOCALSCRIPTSTAB.UICorner
-G2L["18"] = Instance.new("UICorner", G2L["17"]);
-
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.LOCALSCRIPTSTAB.selectionOutline
-G2L["19"] = Instance.new("ImageLabel", G2L["17"]);
-G2L["19"]["BorderSizePixel"] = 0;
-G2L["19"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["19"]["ImageTransparency"] = 1;
-G2L["19"]["ImageColor3"] = Color3.fromRGB(90, 126, 214);
-G2L["19"]["Image"] = [[rbxassetid://18604282010]];
-G2L["19"]["Size"] = UDim2.new(0, 30, 0, 30);
-G2L["19"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["19"]["BackgroundTransparency"] = 1;
-G2L["19"]["Name"] = [[selectionOutline]];
-G2L["19"]["Position"] = UDim2.new(0, 5, 0, 18);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.LPTAB
-G2L["1a"] = Instance.new("ImageButton", G2L["a"]);
-G2L["1a"]["BorderSizePixel"] = 0;
-G2L["1a"]["ScaleType"] = Enum.ScaleType.Fit;
-G2L["1a"]["SelectionOrder"] = 3;
-G2L["1a"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["1a"]["LayoutOrder"] = 5;
-G2L["1a"]["Image"] = [[rbxassetid://18646919214]];
-G2L["1a"]["Size"] = UDim2.new(0, 40, 0, 30);
-G2L["1a"]["BackgroundTransparency"] = 1;
-G2L["1a"]["Name"] = [[LPTAB]];
-G2L["1a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1a"]["Position"] = UDim2.new(0, 233, 0, 10);
--- Attributes
-G2L["1a"]:SetAttribute([[tab]], [[LocalPlayer]]);
-G2L["1a"]:SetAttribute([[H]], [[Local Player]]);
-G2L["1a"]:SetAttribute([[name]], [[Local Player]]);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.LPTAB.UICorner
-G2L["1b"] = Instance.new("UICorner", G2L["1a"]);
-
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.LPTAB.selectionOutline
-G2L["1c"] = Instance.new("ImageLabel", G2L["1a"]);
-G2L["1c"]["BorderSizePixel"] = 0;
-G2L["1c"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["1c"]["ImageTransparency"] = 1;
-G2L["1c"]["ImageColor3"] = Color3.fromRGB(90, 126, 214);
-G2L["1c"]["Image"] = [[rbxassetid://18604282010]];
-G2L["1c"]["Size"] = UDim2.new(0, 30, 0, 30);
-G2L["1c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1c"]["BackgroundTransparency"] = 1;
-G2L["1c"]["Name"] = [[selectionOutline]];
-G2L["1c"]["Position"] = UDim2.new(0, 5, 0, 18);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.GLOBALSCRIPTSTAB
-G2L["1d"] = Instance.new("ImageButton", G2L["a"]);
-G2L["1d"]["BorderSizePixel"] = 0;
-G2L["1d"]["ScaleType"] = Enum.ScaleType.Fit;
-G2L["1d"]["SelectionOrder"] = 5;
-G2L["1d"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["1d"]["LayoutOrder"] = 2;
-G2L["1d"]["Image"] = [[rbxassetid://18609768674]];
-G2L["1d"]["Size"] = UDim2.new(0, 40, 0, 30);
-G2L["1d"]["BackgroundTransparency"] = 1;
-G2L["1d"]["Name"] = [[GLOBALSCRIPTSTAB]];
-G2L["1d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1d"]["Position"] = UDim2.new(0, 113, 0, 10);
--- Attributes
-G2L["1d"]:SetAttribute([[tab]], [[Global Scripts]]);
-G2L["1d"]:SetAttribute([[H]], [[Global Scripts]]);
-G2L["1d"]:SetAttribute([[name]], [[Global Scripts]]);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.GLOBALSCRIPTSTAB.UICorner
-G2L["1e"] = Instance.new("UICorner", G2L["1d"]);
-
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.GLOBALSCRIPTSTAB.selectionOutline
-G2L["1f"] = Instance.new("ImageLabel", G2L["1d"]);
-G2L["1f"]["BorderSizePixel"] = 0;
-G2L["1f"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["1f"]["ImageTransparency"] = 1;
-G2L["1f"]["ImageColor3"] = Color3.fromRGB(90, 126, 214);
-G2L["1f"]["Image"] = [[rbxassetid://18604282010]];
-G2L["1f"]["Size"] = UDim2.new(0, 30, 0, 30);
-G2L["1f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1f"]["BackgroundTransparency"] = 1;
-G2L["1f"]["Name"] = [[selectionOutline]];
-G2L["1f"]["Position"] = UDim2.new(0, 5, 0, 18);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.SETTINGSTAB
-G2L["20"] = Instance.new("ImageButton", G2L["a"]);
-G2L["20"]["BorderSizePixel"] = 0;
-G2L["20"]["ScaleType"] = Enum.ScaleType.Fit;
-G2L["20"]["SelectionOrder"] = 3;
-G2L["20"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["20"]["LayoutOrder"] = 9;
-G2L["20"]["Image"] = [[rbxassetid://18646919915]];
-G2L["20"]["Size"] = UDim2.new(0, 40, 0, 30);
-G2L["20"]["BackgroundTransparency"] = 1;
-G2L["20"]["Name"] = [[SETTINGSTAB]];
-G2L["20"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["20"]["Position"] = UDim2.new(0, 502, 0, 10);
--- Attributes
-G2L["20"]:SetAttribute([[tab]], [[Settings]]);
-G2L["20"]:SetAttribute([[H]], [[Settings]]);
-G2L["20"]:SetAttribute([[name]], [[Settings]]);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.SETTINGSTAB.UICorner
-G2L["21"] = Instance.new("UICorner", G2L["20"]);
-
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.SETTINGSTAB.selectionOutline
-G2L["22"] = Instance.new("ImageLabel", G2L["20"]);
-G2L["22"]["BorderSizePixel"] = 0;
-G2L["22"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["22"]["ImageTransparency"] = 1;
-G2L["22"]["ImageColor3"] = Color3.fromRGB(90, 126, 214);
-G2L["22"]["Image"] = [[rbxassetid://18604282010]];
-G2L["22"]["Size"] = UDim2.new(0, 30, 0, 30);
-G2L["22"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["22"]["BackgroundTransparency"] = 1;
-G2L["22"]["Name"] = [[selectionOutline]];
-G2L["22"]["Position"] = UDim2.new(0, 5, 0, 18);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.MISCTAB
-G2L["23"] = Instance.new("ImageButton", G2L["a"]);
-G2L["23"]["BorderSizePixel"] = 0;
-G2L["23"]["ScaleType"] = Enum.ScaleType.Fit;
-G2L["23"]["SelectionOrder"] = 3;
-G2L["23"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["23"]["LayoutOrder"] = 8;
-G2L["23"]["Image"] = [[rbxassetid://18646921032]];
-G2L["23"]["Size"] = UDim2.new(0, 40, 0, 30);
-G2L["23"]["BackgroundTransparency"] = 1;
-G2L["23"]["Name"] = [[MISCTAB]];
-G2L["23"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["23"]["Position"] = UDim2.new(0, 502, 0, 10);
--- Attributes
-G2L["23"]:SetAttribute([[tab]], [[Misc]]);
-G2L["23"]:SetAttribute([[H]], [[Misc]]);
-G2L["23"]:SetAttribute([[name]], [[Misc]]);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.MISCTAB.UICorner
-G2L["24"] = Instance.new("UICorner", G2L["23"]);
-
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.MISCTAB.selectionOutline
-G2L["25"] = Instance.new("ImageLabel", G2L["23"]);
-G2L["25"]["BorderSizePixel"] = 0;
-G2L["25"]["BackgroundColor3"] = Color3.fromRGB(90, 126, 214);
-G2L["25"]["ImageTransparency"] = 1;
-G2L["25"]["ImageColor3"] = Color3.fromRGB(90, 126, 214);
-G2L["25"]["Image"] = [[rbxassetid://18604282010]];
-G2L["25"]["Size"] = UDim2.new(0, 30, 0, 30);
-G2L["25"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["25"]["BackgroundTransparency"] = 1;
-G2L["25"]["Name"] = [[selectionOutline]];
-G2L["25"]["Position"] = UDim2.new(0, 5, 0, 18);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.PLACEHOLDER
-G2L["26"] = Instance.new("ImageButton", G2L["a"]);
-G2L["26"]["BorderSizePixel"] = 0;
-G2L["26"]["ScaleType"] = Enum.ScaleType.Fit;
-G2L["26"]["SelectionOrder"] = 3;
-G2L["26"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["26"]["LayoutOrder"] = 6;
-G2L["26"]["Size"] = UDim2.new(0, 40, 0, 30);
-G2L["26"]["BackgroundTransparency"] = 1;
-G2L["26"]["Name"] = [[PLACEHOLDER]];
-G2L["26"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["26"]["Position"] = UDim2.new(0, 502, 0, 10);
--- Attributes
-G2L["26"]:SetAttribute([[name]], [[]]);
-G2L["26"]:SetAttribute([[H]], [[]]);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.PLACEHOLDER.UICorner
-G2L["27"] = Instance.new("UICorner", G2L["26"]);
-
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.PLACEHOLDER.selectionOutline
-G2L["28"] = Instance.new("ImageLabel", G2L["26"]);
-G2L["28"]["BorderSizePixel"] = 0;
-G2L["28"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["28"]["ImageTransparency"] = 1;
-G2L["28"]["ImageColor3"] = Color3.fromRGB(90, 126, 214);
-G2L["28"]["Image"] = [[rbxassetid://18604282010]];
-G2L["28"]["Size"] = UDim2.new(0, 30, 0, 30);
-G2L["28"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["28"]["BackgroundTransparency"] = 1;
-G2L["28"]["Name"] = [[selectionOutline]];
-G2L["28"]["Position"] = UDim2.new(0, 5, 0, 18);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.PLACEHOLDER
-G2L["29"] = Instance.new("ImageButton", G2L["a"]);
-G2L["29"]["BorderSizePixel"] = 0;
-G2L["29"]["ScaleType"] = Enum.ScaleType.Fit;
-G2L["29"]["SelectionOrder"] = 3;
-G2L["29"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["29"]["LayoutOrder"] = 6;
-G2L["29"]["Size"] = UDim2.new(0, 40, 0, 30);
-G2L["29"]["BackgroundTransparency"] = 1;
-G2L["29"]["Name"] = [[PLACEHOLDER]];
-G2L["29"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["29"]["Position"] = UDim2.new(0, 502, 0, 10);
--- Attributes
-G2L["29"]:SetAttribute([[name]], [[]]);
-G2L["29"]:SetAttribute([[H]], [[]]);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.PLACEHOLDER.UICorner
-G2L["2a"] = Instance.new("UICorner", G2L["29"]);
-
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.PLACEHOLDER.selectionOutline
-G2L["2b"] = Instance.new("ImageLabel", G2L["29"]);
-G2L["2b"]["BorderSizePixel"] = 0;
-G2L["2b"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["2b"]["ImageTransparency"] = 1;
-G2L["2b"]["ImageColor3"] = Color3.fromRGB(90, 126, 214);
-G2L["2b"]["Image"] = [[rbxassetid://18604282010]];
-G2L["2b"]["Size"] = UDim2.new(0, 30, 0, 30);
-G2L["2b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2b"]["BackgroundTransparency"] = 1;
-G2L["2b"]["Name"] = [[selectionOutline]];
-G2L["2b"]["Position"] = UDim2.new(0, 5, 0, 18);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.PLACEHOLDER
-G2L["2c"] = Instance.new("ImageButton", G2L["a"]);
-G2L["2c"]["BorderSizePixel"] = 0;
-G2L["2c"]["ScaleType"] = Enum.ScaleType.Fit;
-G2L["2c"]["SelectionOrder"] = 3;
-G2L["2c"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["2c"]["LayoutOrder"] = 6;
-G2L["2c"]["Size"] = UDim2.new(0, 40, 0, 30);
-G2L["2c"]["BackgroundTransparency"] = 1;
-G2L["2c"]["Name"] = [[PLACEHOLDER]];
-G2L["2c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2c"]["Position"] = UDim2.new(0, 502, 0, 10);
--- Attributes
-G2L["2c"]:SetAttribute([[name]], [[]]);
-G2L["2c"]:SetAttribute([[H]], [[]]);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.PLACEHOLDER.UICorner
-G2L["2d"] = Instance.new("UICorner", G2L["2c"]);
-
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.PLACEHOLDER.selectionOutline
-G2L["2e"] = Instance.new("ImageLabel", G2L["2c"]);
-G2L["2e"]["BorderSizePixel"] = 0;
-G2L["2e"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["2e"]["ImageTransparency"] = 1;
-G2L["2e"]["ImageColor3"] = Color3.fromRGB(90, 126, 214);
-G2L["2e"]["Image"] = [[rbxassetid://18604282010]];
-G2L["2e"]["Size"] = UDim2.new(0, 30, 0, 30);
-G2L["2e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2e"]["BackgroundTransparency"] = 1;
-G2L["2e"]["Name"] = [[selectionOutline]];
-G2L["2e"]["Position"] = UDim2.new(0, 5, 0, 18);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.PLACEHOLDER
-G2L["2f"] = Instance.new("ImageButton", G2L["a"]);
-G2L["2f"]["BorderSizePixel"] = 0;
-G2L["2f"]["ScaleType"] = Enum.ScaleType.Fit;
-G2L["2f"]["SelectionOrder"] = 3;
-G2L["2f"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["2f"]["LayoutOrder"] = 6;
-G2L["2f"]["Size"] = UDim2.new(0, 40, 0, 30);
-G2L["2f"]["BackgroundTransparency"] = 1;
-G2L["2f"]["Name"] = [[PLACEHOLDER]];
-G2L["2f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2f"]["Position"] = UDim2.new(0, 502, 0, 10);
--- Attributes
-G2L["2f"]:SetAttribute([[name]], [[]]);
-G2L["2f"]:SetAttribute([[H]], [[]]);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.PLACEHOLDER.UICorner
-G2L["30"] = Instance.new("UICorner", G2L["2f"]);
-
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.PLACEHOLDER.selectionOutline
-G2L["31"] = Instance.new("ImageLabel", G2L["2f"]);
-G2L["31"]["BorderSizePixel"] = 0;
-G2L["31"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["31"]["ImageTransparency"] = 1;
-G2L["31"]["ImageColor3"] = Color3.fromRGB(90, 126, 214);
-G2L["31"]["Image"] = [[rbxassetid://18604282010]];
-G2L["31"]["Size"] = UDim2.new(0, 30, 0, 30);
-G2L["31"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["31"]["BackgroundTransparency"] = 1;
-G2L["31"]["Name"] = [[selectionOutline]];
-G2L["31"]["Position"] = UDim2.new(0, 5, 0, 18);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.PLACEHOLDER
-G2L["32"] = Instance.new("ImageButton", G2L["a"]);
-G2L["32"]["BorderSizePixel"] = 0;
-G2L["32"]["ScaleType"] = Enum.ScaleType.Fit;
-G2L["32"]["SelectionOrder"] = 3;
-G2L["32"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["32"]["LayoutOrder"] = 6;
-G2L["32"]["Size"] = UDim2.new(0, 15, 0, 30);
-G2L["32"]["BackgroundTransparency"] = 1;
-G2L["32"]["Name"] = [[PLACEHOLDER]];
-G2L["32"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["32"]["Position"] = UDim2.new(0, 502, 0, 10);
--- Attributes
-G2L["32"]:SetAttribute([[name]], [[]]);
-G2L["32"]:SetAttribute([[H]], [[]]);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.PLACEHOLDER.UICorner
-G2L["33"] = Instance.new("UICorner", G2L["32"]);
-
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.PLACEHOLDER.selectionOutline
-G2L["34"] = Instance.new("ImageLabel", G2L["32"]);
-G2L["34"]["BorderSizePixel"] = 0;
-G2L["34"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["34"]["ImageTransparency"] = 1;
-G2L["34"]["ImageColor3"] = Color3.fromRGB(90, 126, 214);
-G2L["34"]["Image"] = [[rbxassetid://18604282010]];
-G2L["34"]["Size"] = UDim2.new(0, 30, 0, 30);
-G2L["34"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["34"]["BackgroundTransparency"] = 1;
-G2L["34"]["Name"] = [[selectionOutline]];
-G2L["34"]["Position"] = UDim2.new(0, 5, 0, 18);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.CONSOLETAB
-G2L["35"] = Instance.new("ImageButton", G2L["a"]);
-G2L["35"]["BorderSizePixel"] = 0;
-G2L["35"]["ScaleType"] = Enum.ScaleType.Fit;
-G2L["35"]["SelectionOrder"] = 3;
-G2L["35"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["35"]["LayoutOrder"] = 7;
-G2L["35"]["Image"] = [[rbxassetid://18646942090]];
-G2L["35"]["Size"] = UDim2.new(0, 40, 0, 30);
-G2L["35"]["BackgroundTransparency"] = 1;
-G2L["35"]["Name"] = [[CONSOLETAB]];
-G2L["35"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["35"]["Position"] = UDim2.new(0, 502, 0, 10);
--- Attributes
-G2L["35"]:SetAttribute([[tab]], [[Console]]);
-G2L["35"]:SetAttribute([[H]], [[Console]]);
-G2L["35"]:SetAttribute([[name]], [[Console]]);
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.CONSOLETAB.UICorner
-G2L["36"] = Instance.new("UICorner", G2L["35"]);
-
-
--- StarterGui.Cryptic.MainUI.TABSBAR.Folder.CONSOLETAB.selectionOutline
-G2L["37"] = Instance.new("ImageLabel", G2L["35"]);
-G2L["37"]["BorderSizePixel"] = 0;
-G2L["37"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["37"]["ImageTransparency"] = 1;
-G2L["37"]["ImageColor3"] = Color3.fromRGB(90, 126, 214);
-G2L["37"]["Image"] = [[rbxassetid://18604282010]];
-G2L["37"]["Size"] = UDim2.new(0, 30, 0, 30);
-G2L["37"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["37"]["BackgroundTransparency"] = 1;
-G2L["37"]["Name"] = [[selectionOutline]];
-G2L["37"]["Position"] = UDim2.new(0, 5, 0, 18);
-
--- StarterGui.Cryptic.MainUI.TITLEBAR
-G2L["38"] = Instance.new("Frame", G2L["2"]);
-G2L["38"]["ZIndex"] = 0;
-G2L["38"]["BorderSizePixel"] = 0;
-G2L["38"]["BackgroundColor3"] = Color3.fromRGB(76, 76, 76);
-G2L["38"]["Size"] = UDim2.new(0, 551, 0, 72);
-G2L["38"]["Position"] = UDim2.new(0, 0, 0, -68);
-G2L["38"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["38"]["Name"] = [[TITLEBAR]];
-
--- StarterGui.Cryptic.MainUI.TITLEBAR.UICorner
-G2L["39"] = Instance.new("UICorner", G2L["38"]);
-
-
--- StarterGui.Cryptic.MainUI.TITLEBAR.DropShadowHolder
-G2L["3a"] = Instance.new("Frame", G2L["38"]);
-G2L["3a"]["Visible"] = false;
-G2L["3a"]["ZIndex"] = 0;
-G2L["3a"]["BorderSizePixel"] = 0;
-G2L["3a"]["Size"] = UDim2.new(0, 551, 0, 72);
-G2L["3a"]["Name"] = [[DropShadowHolder]];
-G2L["3a"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.TITLEBAR.DropShadowHolder.DropShadow
-G2L["3b"] = Instance.new("ImageLabel", G2L["3a"]);
-G2L["3b"]["ZIndex"] = 0;
-G2L["3b"]["BorderSizePixel"] = 0;
-G2L["3b"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["3b"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["3b"]["ImageTransparency"] = 0.5;
-G2L["3b"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["3b"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["3b"]["Image"] = [[rbxassetid://6014261993]];
-G2L["3b"]["Size"] = UDim2.new(0, 598, 0, 97);
-G2L["3b"]["BackgroundTransparency"] = 1;
-G2L["3b"]["Name"] = [[DropShadow]];
-G2L["3b"]["Position"] = UDim2.new(0, 274, 0, 24);
-
--- StarterGui.Cryptic.MainUI.TITLEBAR.DropShadowHolder
-G2L["3c"] = Instance.new("Frame", G2L["38"]);
-G2L["3c"]["Visible"] = false;
-G2L["3c"]["ZIndex"] = 0;
-G2L["3c"]["BorderSizePixel"] = 0;
-G2L["3c"]["Size"] = UDim2.new(0, 551, 0, 72);
-G2L["3c"]["Name"] = [[DropShadowHolder]];
-G2L["3c"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.TITLEBAR.DropShadowHolder.DropShadow
-G2L["3d"] = Instance.new("ImageLabel", G2L["3c"]);
-G2L["3d"]["ZIndex"] = 0;
-G2L["3d"]["BorderSizePixel"] = 0;
-G2L["3d"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["3d"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["3d"]["ImageTransparency"] = 0.5;
-G2L["3d"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["3d"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["3d"]["Image"] = [[rbxassetid://6014261993]];
-G2L["3d"]["Size"] = UDim2.new(0, 598, 0, 97);
-G2L["3d"]["BackgroundTransparency"] = 1;
-G2L["3d"]["Name"] = [[DropShadow]];
-G2L["3d"]["Position"] = UDim2.new(0, 274, 0, 24);
-
--- StarterGui.Cryptic.MainUI.TITLEBAR.TITLEBAR
-G2L["3e"] = Instance.new("Frame", G2L["38"]);
-G2L["3e"]["BorderSizePixel"] = 0;
-G2L["3e"]["BackgroundColor3"] = Color3.fromRGB(76, 76, 76);
-G2L["3e"]["Size"] = UDim2.new(0, 551, 0, 72);
-G2L["3e"]["Position"] = UDim2.new(0, 0, 0, 23);
-G2L["3e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["3e"]["Name"] = [[TITLEBAR]];
-
--- StarterGui.Cryptic.MainUI.DropShadowHolder
-G2L["3f"] = Instance.new("Frame", G2L["2"]);
-G2L["3f"]["ZIndex"] = 0;
-G2L["3f"]["BorderSizePixel"] = 0;
-G2L["3f"]["Size"] = UDim2.new(0, 551, 0, 250);
-G2L["3f"]["Name"] = [[DropShadowHolder]];
-G2L["3f"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.DropShadowHolder.DropShadow
-G2L["40"] = Instance.new("ImageLabel", G2L["3f"]);
-G2L["40"]["ZIndex"] = 0;
-G2L["40"]["BorderSizePixel"] = 0;
-G2L["40"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["40"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["40"]["ImageTransparency"] = 1;
-G2L["40"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["40"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["40"]["Image"] = [[rbxassetid://6014261993]];
-G2L["40"]["Size"] = UDim2.new(0, 598, 0, 297);
-G2L["40"]["BackgroundTransparency"] = 1;
-G2L["40"]["Name"] = [[DropShadow]];
-G2L["40"]["Position"] = UDim2.new(0, 275, 0, 125);
-
--- StarterGui.Cryptic.MainUI.version
-G2L["41"] = Instance.new("TextLabel", G2L["2"]);
-G2L["41"]["TextWrapped"] = true;
-G2L["41"]["ZIndex"] = 10;
-G2L["41"]["BorderSizePixel"] = 0;
-G2L["41"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["41"]["TextSize"] = 19;
-G2L["41"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["41"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["41"]["Size"] = UDim2.new(0, 90, 0, 25);
-G2L["41"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-local _, version = identifyexecutor();
-G2L["41"]["Text"] = version;
-G2L["41"]["Name"] = [[version]];
-G2L["41"]["Position"] = UDim2.new(0, 90, 0, -51);
-
--- StarterGui.Cryptic.MainUI.version.UICorner
-G2L["42"] = Instance.new("UICorner", G2L["41"]);
-
-
--- StarterGui.Cryptic.MainUI.version.UIPadding
-G2L["43"] = Instance.new("UIPadding", G2L["41"]);
-G2L["43"]["PaddingLeft"] = UDim.new(0, 0);
-
--- StarterGui.Cryptic.MainUI.name
-G2L["44"] = Instance.new("TextLabel", G2L["2"]);
-G2L["44"]["TextStrokeTransparency"] = 0;
-G2L["44"]["ZIndex"] = 10;
-G2L["44"]["BorderSizePixel"] = 0;
-G2L["44"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["44"]["TextSize"] = 27;
-G2L["44"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic);
-G2L["44"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["44"]["BackgroundTransparency"] = 1;
-G2L["44"]["Size"] = UDim2.new(0, 104, 0, 50);
-G2L["44"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["44"]["Text"] = [[Cryptic]];
-G2L["44"]["Name"] = [[name]];
-G2L["44"]["Position"] = UDim2.new(0, -6, 0, -63);
-
--- StarterGui.Cryptic.MainUI.COLLAPSEBUTTON
-G2L["45"] = Instance.new("ImageButton", G2L["2"]);
-G2L["45"]["BorderSizePixel"] = 0;
-G2L["45"]["ScaleType"] = Enum.ScaleType.Fit;
-G2L["45"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["45"]["ZIndex"] = 10;
-G2L["45"]["Image"] = [[rbxassetid://18610090779]];
-G2L["45"]["Size"] = UDim2.new(0, 30, 0, 30);
-G2L["45"]["Name"] = [[COLLAPSEBUTTON]];
-G2L["45"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["45"]["Rotation"] = 180;
-G2L["45"]["Position"] = UDim2.new(0, 501, 0, -51);
-
--- StarterGui.Cryptic.MainUI.COLLAPSEBUTTON.UICorner
-G2L["46"] = Instance.new("UICorner", G2L["45"]);
-
-
--- StarterGui.Cryptic.MainUI.LocalScript
-G2L["47"] = Instance.new("LocalScript", G2L["2"]);
-
-
--- StarterGui.Cryptic.MainUI.CurrentTab
-G2L["48"] = Instance.new("TextLabel", G2L["2"]);
-G2L["48"]["TextWrapped"] = true;
-G2L["48"]["ZIndex"] = 5;
-G2L["48"]["BorderSizePixel"] = 0;
-G2L["48"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["48"]["TextScaled"] = true;
-G2L["48"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["48"]["TextSize"] = 25;
-G2L["48"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["48"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["48"]["BackgroundTransparency"] = 1;
-G2L["48"]["Size"] = UDim2.new(0, 159, 0, 27);
-G2L["48"]["Visible"] = false;
-G2L["48"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["48"]["Text"] = [[Editor]];
-G2L["48"]["Name"] = [[CurrentTab]];
-G2L["48"]["Position"] = UDim2.new(0, 25, 0, 0);
-
--- StarterGui.Cryptic.MainUI.Tabs
-G2L["49"] = Instance.new("Folder", G2L["2"]);
-G2L["49"]["Name"] = [[Tabs]];
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer
-G2L["ae"] = Instance.new("Frame", G2L["49"]);
-G2L["ae"]["Visible"] = false;
-G2L["ae"]["ZIndex"] = 2;
-G2L["ae"]["BorderSizePixel"] = 0;
-G2L["ae"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["ae"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["ae"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["ae"]["Name"] = [[LocalPlayer]];
-G2L["ae"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.UICorner
-G2L["af"] = Instance.new("UICorner", G2L["ae"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Frame
-G2L["b0"] = Instance.new("Frame", G2L["ae"]);
-G2L["b0"]["ZIndex"] = 0;
-G2L["b0"]["BorderSizePixel"] = 0;
-G2L["b0"]["BackgroundColor3"] = Color3.fromRGB(26, 26, 26);
-G2L["b0"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["b0"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Frame.UICorner
-G2L["b1"] = Instance.new("UICorner", G2L["b0"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Frame.DropShadowHolder
-G2L["b2"] = Instance.new("Frame", G2L["b0"]);
-G2L["b2"]["ZIndex"] = 3;
-G2L["b2"]["BorderSizePixel"] = 0;
-G2L["b2"]["Size"] = UDim2.new(0, 550, 0, 318);
-G2L["b2"]["Position"] = UDim2.new(0, 0, 0, -68);
-G2L["b2"]["Name"] = [[DropShadowHolder]];
-G2L["b2"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Frame.DropShadowHolder.DropShadow
-G2L["b3"] = Instance.new("ImageLabel", G2L["b2"]);
-G2L["b3"]["ZIndex"] = 0;
-G2L["b3"]["BorderSizePixel"] = 0;
-G2L["b3"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["b3"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["b3"]["ImageTransparency"] = 0.5;
-G2L["b3"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["b3"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["b3"]["Image"] = [[rbxassetid://6014261993]];
-G2L["b3"]["Size"] = UDim2.new(0, 597, 0, 365);
-G2L["b3"]["BackgroundTransparency"] = 1;
-G2L["b3"]["Name"] = [[DropShadow]];
-G2L["b3"]["Position"] = UDim2.new(0, 275, 0, 159);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Frame.DropShadowHolder
-G2L["b4"] = Instance.new("Frame", G2L["b0"]);
-G2L["b4"]["ZIndex"] = 3;
-G2L["b4"]["BorderSizePixel"] = 0;
-G2L["b4"]["Size"] = UDim2.new(0, 550, 0, 318);
-G2L["b4"]["Position"] = UDim2.new(0, 0, 0, -68);
-G2L["b4"]["Name"] = [[DropShadowHolder]];
-G2L["b4"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Frame.DropShadowHolder.DropShadow
-G2L["b5"] = Instance.new("ImageLabel", G2L["b4"]);
-G2L["b5"]["ZIndex"] = 0;
-G2L["b5"]["BorderSizePixel"] = 0;
-G2L["b5"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["b5"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["b5"]["ImageTransparency"] = 0.5;
-G2L["b5"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["b5"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["b5"]["Image"] = [[rbxassetid://6014261993]];
-G2L["b5"]["Size"] = UDim2.new(0, 597, 0, 365);
-G2L["b5"]["BackgroundTransparency"] = 1;
-G2L["b5"]["Name"] = [[DropShadow]];
-G2L["b5"]["Position"] = UDim2.new(0, 275, 0, 159);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features
-G2L["b6"] = Instance.new("ScrollingFrame", G2L["ae"]);
-G2L["b6"]["Active"] = true;
-G2L["b6"]["ScrollingDirection"] = Enum.ScrollingDirection.Y;
-G2L["b6"]["BorderSizePixel"] = 0;
-G2L["b6"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
-G2L["b6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["b6"]["Name"] = [[Features]];
-G2L["b6"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
-G2L["b6"]["Size"] = UDim2.new(0, 551, 0, 249);
-G2L["b6"]["ScrollBarImageColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["b6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["b6"]["ScrollBarThickness"] = 5;
-G2L["b6"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.UIPadding
-G2L["b7"] = Instance.new("UIPadding", G2L["b6"]);
-G2L["b7"]["PaddingTop"] = UDim.new(0, 5);
-G2L["b7"]["PaddingRight"] = UDim.new(0, 25);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Infinite Jump
-G2L["b8"] = Instance.new("Frame", G2L["b6"]);
-G2L["b8"]["BorderSizePixel"] = 0;
-G2L["b8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["b8"]["Size"] = UDim2.new(0, 249, 0, 38);
-G2L["b8"]["Position"] = UDim2.new(0, 16, 0, 110);
-G2L["b8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["b8"]["Name"] = [[Infinite Jump]];
-G2L["b8"]["LayoutOrder"] = 2;
-G2L["b8"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Infinite Jump.UICorner
-G2L["b9"] = Instance.new("UICorner", G2L["b8"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Infinite Jump.UIStroke
-G2L["ba"] = Instance.new("UIStroke", G2L["b8"]);
-G2L["ba"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Infinite Jump.TextLabel
-G2L["bb"] = Instance.new("TextLabel", G2L["b8"]);
-G2L["bb"]["BorderSizePixel"] = 0;
-G2L["bb"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["bb"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["bb"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["bb"]["TextSize"] = 20;
-G2L["bb"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["bb"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["bb"]["BackgroundTransparency"] = 1;
-G2L["bb"]["Size"] = UDim2.new(0, 163, 0, 38);
-G2L["bb"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["bb"]["Text"] = [[Infinite Jump]];
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Infinite Jump.TextLabel.UIPadding
-G2L["bc"] = Instance.new("UIPadding", G2L["bb"]);
-G2L["bc"]["PaddingLeft"] = UDim.new(0, 10);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Infinite Jump.Toggle
-G2L["bd"] = Instance.new("TextButton", G2L["b8"]);
-G2L["bd"]["BorderSizePixel"] = 0;
-G2L["bd"]["TextSize"] = 14;
-G2L["bd"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["bd"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5);
-G2L["bd"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["bd"]["Size"] = UDim2.new(0, 23, 0, 23);
-G2L["bd"]["Name"] = [[Toggle]];
-G2L["bd"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["bd"]["Text"] = [[]];
-G2L["bd"]["Position"] = UDim2.new(0, 211, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Infinite Jump.Toggle.UICorner
-G2L["be"] = Instance.new("UICorner", G2L["bd"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Noclip
-G2L["bf"] = Instance.new("Frame", G2L["b6"]);
-G2L["bf"]["BorderSizePixel"] = 0;
-G2L["bf"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["bf"]["Size"] = UDim2.new(0, 249, 0, 38);
-G2L["bf"]["Position"] = UDim2.new(0, 16, 0, 60);
-G2L["bf"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["bf"]["Name"] = [[Noclip]];
-G2L["bf"]["LayoutOrder"] = 1;
-G2L["bf"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Noclip.UICorner
-G2L["c0"] = Instance.new("UICorner", G2L["bf"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Noclip.UIStroke
-G2L["c1"] = Instance.new("UIStroke", G2L["bf"]);
-G2L["c1"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Noclip.TextLabel
-G2L["c2"] = Instance.new("TextLabel", G2L["bf"]);
-G2L["c2"]["BorderSizePixel"] = 0;
-G2L["c2"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["c2"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["c2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["c2"]["TextSize"] = 20;
-G2L["c2"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["c2"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["c2"]["BackgroundTransparency"] = 1;
-G2L["c2"]["Size"] = UDim2.new(0, 163, 0, 38);
-G2L["c2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["c2"]["Text"] = [[Noclip]];
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Noclip.TextLabel.UIPadding
-G2L["c3"] = Instance.new("UIPadding", G2L["c2"]);
-G2L["c3"]["PaddingLeft"] = UDim.new(0, 10);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Noclip.Toggle
-G2L["c4"] = Instance.new("TextButton", G2L["bf"]);
-G2L["c4"]["BorderSizePixel"] = 0;
-G2L["c4"]["TextSize"] = 14;
-G2L["c4"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["c4"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5);
-G2L["c4"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["c4"]["Size"] = UDim2.new(0, 23, 0, 23);
-G2L["c4"]["Name"] = [[Toggle]];
-G2L["c4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["c4"]["Text"] = [[]];
-G2L["c4"]["Position"] = UDim2.new(0, 211, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Noclip.Toggle.UICorner
-G2L["c5"] = Instance.new("UICorner", G2L["c4"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Fly
---[[G2L["c6"] = Instance.new("Frame", G2L["b6"]);
-G2L["c6"]["BorderSizePixel"] = 0;
-G2L["c6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["c6"]["Size"] = UDim2.new(0, 249, 0, 38);
-G2L["c6"]["Position"] = UDim2.new(0, 16, 0, 10);
-G2L["c6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["c6"]["Name"] = "Fly";
-G2L["c6"]["LayoutOrder"] = 3;
-G2L["c6"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Fly.UICorner
-G2L["c7"] = Instance.new("UICorner", G2L["c6"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Fly.UIStroke
-G2L["c8"] = Instance.new("UIStroke", G2L["c6"]);
-G2L["c8"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Fly.TextLabel
-G2L["c9"] = Instance.new("TextLabel", G2L["c6"]);
-G2L["c9"]["BorderSizePixel"] = 0;
-G2L["c9"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["c9"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["c9"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["c9"]["TextSize"] = 20;
-G2L["c9"]["FontFace"] = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["c9"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["c9"]["BackgroundTransparency"] = 1;
-G2L["c9"]["Size"] = UDim2.new(0, 163, 0, 38);
-G2L["c9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["c9"]["Text"] = "Fly;
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Fly.TextLabel.UIPadding
-G2L["ca"] = Instance.new("UIPadding", G2L["c9"]);
-G2L["ca"]["PaddingLeft"] = UDim.new(0, 10);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Fly.Toggle
-G2L["cb"] = Instance.new("TextButton", G2L["c6"]);
-G2L["cb"]["BorderSizePixel"] = 0;
-G2L["cb"]["TextSize"] = 14;
-G2L["cb"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["cb"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5);
-G2L["cb"]["FontFace"] = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["cb"]["Size"] = UDim2.new(0, 23, 0, 23);
-G2L["cb"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["cb"]["Text"] = "";
-G2L["cb"]["Position"] = UDim2.new(0, 211, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Fly.Toggle.UICorner
-G2L["cc"] = Instance.new("UICorner", G2L["cb"]);--]]
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Jump Power
-G2L["cd"] = Instance.new("Frame", G2L["b6"]);
-G2L["cd"]["BorderSizePixel"] = 0;
-G2L["cd"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["cd"]["Size"] = UDim2.new(0, 249, 0, 38);
-G2L["cd"]["Position"] = UDim2.new(0, 16, 0, 210);
-G2L["cd"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["cd"]["Name"] = [[Jump Power]];
-G2L["cd"]["LayoutOrder"] = 4;
-G2L["cd"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Jump Power.UICorner
-G2L["ce"] = Instance.new("UICorner", G2L["cd"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Jump Power.UIStroke
-G2L["cf"] = Instance.new("UIStroke", G2L["cd"]);
-G2L["cf"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Jump Power.TextLabel
-G2L["d0"] = Instance.new("TextLabel", G2L["cd"]);
-G2L["d0"]["BorderSizePixel"] = 0;
-G2L["d0"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["d0"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["d0"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["d0"]["TextSize"] = 20;
-G2L["d0"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["d0"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["d0"]["BackgroundTransparency"] = 1;
-G2L["d0"]["Size"] = UDim2.new(0, 163, 0, 38);
-G2L["d0"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["d0"]["Text"] = [[Jump Power]];
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Jump Power.TextLabel.UIPadding
-G2L["d1"] = Instance.new("UIPadding", G2L["d0"]);
-G2L["d1"]["PaddingLeft"] = UDim.new(0, 10);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Jump Power.Toggle
-G2L["d2"] = Instance.new("TextButton", G2L["cd"]);
-G2L["d2"]["BorderSizePixel"] = 0;
-G2L["d2"]["TextSize"] = 14;
-G2L["d2"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["d2"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5);
-G2L["d2"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["d2"]["Size"] = UDim2.new(0, 23, 0, 23);
-G2L["d2"]["Name"] = [[Toggle]];
-G2L["d2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["d2"]["Text"] = [[]];
-G2L["d2"]["Position"] = UDim2.new(0, 211, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Jump Power.Toggle.UICorner
-G2L["d3"] = Instance.new("UICorner", G2L["d2"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.WalkSpeed_Slider
-G2L["d4"] = Instance.new("Frame", G2L["b6"]);
-G2L["d4"]["BorderSizePixel"] = 0;
-G2L["d4"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["d4"]["Size"] = UDim2.new(0, 100, 0, 100);
-G2L["d4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["d4"]["Name"] = [[WalkSpeed_Slider]];
-G2L["d4"]["LayoutOrder"] = 9;
-G2L["d4"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.WalkSpeed_Slider.UICorner
-G2L["d5"] = Instance.new("UICorner", G2L["d4"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.WalkSpeed_Slider.UIStroke
-G2L["d6"] = Instance.new("UIStroke", G2L["d4"]);
-G2L["d6"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.WalkSpeed_Slider.SliderRegion
-G2L["d7"] = Instance.new("TextLabel", G2L["d4"]);
-G2L["d7"]["Interactable"] = false;
-G2L["d7"]["BorderSizePixel"] = 0;
-G2L["d7"]["BackgroundColor3"] = Color3.fromRGB(32, 32, 32);
-G2L["d7"]["TextSize"] = 14;
-G2L["d7"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["d7"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["d7"]["Size"] = UDim2.new(0, 240, 0, 23);
-G2L["d7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["d7"]["Text"] = [[]];
-G2L["d7"]["Name"] = [[SliderRegion]];
-G2L["d7"]["Position"] = UDim2.new(0, 5, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.WalkSpeed_Slider.SliderRegion.UICorner
-G2L["d8"] = Instance.new("UICorner", G2L["d7"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.WalkSpeed_Slider.SliderButton
-G2L["d9"] = Instance.new("TextButton", G2L["d4"]);
-G2L["d9"]["TextWrapped"] = true;
-G2L["d9"]["BorderSizePixel"] = 0;
-G2L["d9"]["TextSize"] = 14;
-G2L["d9"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["d9"]["TextScaled"] = true;
-G2L["d9"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["d9"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["d9"]["Size"] = UDim2.new(0, 24, 0, 23);
-G2L["d9"]["Name"] = [[SliderButton]];
-G2L["d9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["d9"]["Text"] = [[45345]];
-G2L["d9"]["Position"] = UDim2.new(0, 5, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.WalkSpeed_Slider.SliderButton.UICorner
-G2L["da"] = Instance.new("UICorner", G2L["d9"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Walk Speed
-G2L["db"] = Instance.new("Frame", G2L["b6"]);
-G2L["db"]["BorderSizePixel"] = 0;
-G2L["db"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["db"]["Size"] = UDim2.new(0, 249, 0, 38);
-G2L["db"]["Position"] = UDim2.new(0, 16, 0, 160);
-G2L["db"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["db"]["Name"] = [[Walk Speed]];
-G2L["db"]["LayoutOrder"] = 7;
-G2L["db"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Walk Speed.UICorner
-G2L["dc"] = Instance.new("UICorner", G2L["db"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Walk Speed.UIStroke
-G2L["dd"] = Instance.new("UIStroke", G2L["db"]);
-G2L["dd"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Walk Speed.TextLabel
-G2L["de"] = Instance.new("TextLabel", G2L["db"]);
-G2L["de"]["BorderSizePixel"] = 0;
-G2L["de"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["de"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["de"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["de"]["TextSize"] = 20;
-G2L["de"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["de"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["de"]["BackgroundTransparency"] = 1;
-G2L["de"]["Size"] = UDim2.new(0, 163, 0, 38);
-G2L["de"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["de"]["Text"] = [[Walk Speed]];
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Walk Speed.TextLabel.UIPadding
-G2L["df"] = Instance.new("UIPadding", G2L["de"]);
-G2L["df"]["PaddingLeft"] = UDim.new(0, 10);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Walk Speed.Toggle
-G2L["e0"] = Instance.new("TextButton", G2L["db"]);
-G2L["e0"]["BorderSizePixel"] = 0;
-G2L["e0"]["TextSize"] = 14;
-G2L["e0"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["e0"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5);
-G2L["e0"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["e0"]["Size"] = UDim2.new(0, 23, 0, 23);
-G2L["e0"]["Name"] = [[Toggle]];
-G2L["e0"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["e0"]["Text"] = [[]];
-G2L["e0"]["Position"] = UDim2.new(0, 211, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Walk Speed.Toggle.UICorner
-G2L["e1"] = Instance.new("UICorner", G2L["e0"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.JumpPower_Slider
-G2L["e2"] = Instance.new("Frame", G2L["b6"]);
-G2L["e2"]["BorderSizePixel"] = 0;
-G2L["e2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["e2"]["Size"] = UDim2.new(0, 100, 0, 100);
-G2L["e2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["e2"]["Name"] = [[JumpPower_Slider]];
-G2L["e2"]["LayoutOrder"] = 6;
-G2L["e2"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.JumpPower_Slider.UICorner
-G2L["e3"] = Instance.new("UICorner", G2L["e2"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.JumpPower_Slider.UIStroke
-G2L["e4"] = Instance.new("UIStroke", G2L["e2"]);
-G2L["e4"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.JumpPower_Slider.SliderRegion
-G2L["e5"] = Instance.new("TextLabel", G2L["e2"]);
-G2L["e5"]["Interactable"] = false;
-G2L["e5"]["BorderSizePixel"] = 0;
-G2L["e5"]["BackgroundColor3"] = Color3.fromRGB(32, 32, 32);
-G2L["e5"]["TextSize"] = 14;
-G2L["e5"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["e5"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["e5"]["Size"] = UDim2.new(0, 240, 0, 23);
-G2L["e5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["e5"]["Text"] = [[]];
-G2L["e5"]["Name"] = [[SliderRegion]];
-G2L["e5"]["Position"] = UDim2.new(0, 5, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.JumpPower_Slider.SliderRegion.UICorner
-G2L["e6"] = Instance.new("UICorner", G2L["e5"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.JumpPower_Slider.SliderButton
-G2L["e7"] = Instance.new("TextButton", G2L["e2"]);
-G2L["e7"]["TextWrapped"] = true;
-G2L["e7"]["BorderSizePixel"] = 0;
-G2L["e7"]["TextSize"] = 14;
-G2L["e7"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["e7"]["TextScaled"] = true;
-G2L["e7"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["e7"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["e7"]["Size"] = UDim2.new(0, 24, 0, 23);
-G2L["e7"]["Name"] = [[SliderButton]];
-G2L["e7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["e7"]["Text"] = [[45345]];
-G2L["e7"]["Position"] = UDim2.new(0, 5, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.JumpPower_Slider.SliderButton.UICorner
-G2L["e8"] = Instance.new("UICorner", G2L["e7"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.FlySpeed_Slider
-G2L["e9"] = Instance.new("Frame", G2L["b6"]);
-G2L["e9"]["BorderSizePixel"] = 0;
-G2L["e9"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["e9"]["Size"] = UDim2.new(0, 100, 0, 100);
-G2L["e9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["e9"]["Name"] = [[FlySpeed_Slider]];
-G2L["e9"]["LayoutOrder"] = 5;
-G2L["e9"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.FlySpeed_Slider.UICorner
-G2L["ea"] = Instance.new("UICorner", G2L["e9"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.FlySpeed_Slider.UIStroke
-G2L["eb"] = Instance.new("UIStroke", G2L["e9"]);
-G2L["eb"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.FlySpeed_Slider.SliderRegion
-G2L["ec"] = Instance.new("TextLabel", G2L["e9"]);
-G2L["ec"]["Interactable"] = false;
-G2L["ec"]["BorderSizePixel"] = 0;
-G2L["ec"]["BackgroundColor3"] = Color3.fromRGB(32, 32, 32);
-G2L["ec"]["TextSize"] = 14;
-G2L["ec"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["ec"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["ec"]["Size"] = UDim2.new(0, 240, 0, 23);
-G2L["ec"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["ec"]["Text"] = [[]];
-G2L["ec"]["Name"] = [[SliderRegion]];
-G2L["ec"]["Position"] = UDim2.new(0, 5, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.FlySpeed_Slider.SliderRegion.UICorner
-G2L["ed"] = Instance.new("UICorner", G2L["ec"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.FlySpeed_Slider.SliderButton
-G2L["ee"] = Instance.new("TextButton", G2L["e9"]);
-G2L["ee"]["TextWrapped"] = true;
-G2L["ee"]["BorderSizePixel"] = 0;
-G2L["ee"]["TextSize"] = 14;
-G2L["ee"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["ee"]["TextScaled"] = true;
-G2L["ee"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["ee"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["ee"]["Size"] = UDim2.new(0, 24, 0, 23);
-G2L["ee"]["Name"] = [[SliderButton]];
-G2L["ee"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["ee"]["Text"] = [[45345]];
-G2L["ee"]["Position"] = UDim2.new(0, 5, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.FlySpeed_Slider.SliderButton.UICorner
-G2L["ef"] = Instance.new("UICorner", G2L["ee"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.UIGridLayout
-G2L["f0"] = Instance.new("UIGridLayout", G2L["b6"]);
-G2L["f0"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Right;
-G2L["f0"]["CellSize"] = UDim2.new(0, 250, 0, 38);
-G2L["f0"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.FOV
-G2L["f1"] = Instance.new("Frame", G2L["b6"]);
-G2L["f1"]["BorderSizePixel"] = 0;
-G2L["f1"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["f1"]["Size"] = UDim2.new(0, 249, 0, 38);
-G2L["f1"]["Position"] = UDim2.new(0, 16, 0, 160);
-G2L["f1"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["f1"]["Name"] = [[FOV]];
-G2L["f1"]["LayoutOrder"] = 7;
-G2L["f1"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.FOV.UICorner
-G2L["f2"] = Instance.new("UICorner", G2L["f1"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.FOV.UIStroke
-G2L["f3"] = Instance.new("UIStroke", G2L["f1"]);
-G2L["f3"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.FOV.TextLabel
-G2L["f4"] = Instance.new("TextLabel", G2L["f1"]);
-G2L["f4"]["BorderSizePixel"] = 0;
-G2L["f4"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["f4"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["f4"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["f4"]["TextSize"] = 20;
-G2L["f4"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["f4"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["f4"]["BackgroundTransparency"] = 1;
-G2L["f4"]["Size"] = UDim2.new(0, 163, 0, 38);
-G2L["f4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["f4"]["Text"] = [[FOV]];
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.FOV.TextLabel.UIPadding
-G2L["f5"] = Instance.new("UIPadding", G2L["f4"]);
-G2L["f5"]["PaddingLeft"] = UDim.new(0, 10);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.FOV.Toggle
-G2L["f6"] = Instance.new("TextButton", G2L["f1"]);
-G2L["f6"]["BorderSizePixel"] = 0;
-G2L["f6"]["TextSize"] = 14;
-G2L["f6"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["f6"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5);
-G2L["f6"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["f6"]["Size"] = UDim2.new(0, 23, 0, 23);
-G2L["f6"]["Name"] = [[Toggle]];
-G2L["f6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["f6"]["Text"] = [[]];
-G2L["f6"]["Position"] = UDim2.new(0, 211, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.FOV.Toggle.UICorner
-G2L["f7"] = Instance.new("UICorner", G2L["f6"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.FOV_Slider
-G2L["f8"] = Instance.new("Frame", G2L["b6"]);
-G2L["f8"]["BorderSizePixel"] = 0;
-G2L["f8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["f8"]["Size"] = UDim2.new(0, 100, 0, 100);
-G2L["f8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["f8"]["Name"] = [[FOV_Slider]];
-G2L["f8"]["LayoutOrder"] = 9;
-G2L["f8"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.FOV_Slider.UICorner
-G2L["f9"] = Instance.new("UICorner", G2L["f8"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.FOV_Slider.UIStroke
-G2L["fa"] = Instance.new("UIStroke", G2L["f8"]);
-G2L["fa"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.FOV_Slider.SliderRegion
-G2L["fb"] = Instance.new("TextLabel", G2L["f8"]);
-G2L["fb"]["Interactable"] = false;
-G2L["fb"]["BorderSizePixel"] = 0;
-G2L["fb"]["BackgroundColor3"] = Color3.fromRGB(32, 32, 32);
-G2L["fb"]["TextSize"] = 14;
-G2L["fb"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["fb"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["fb"]["Size"] = UDim2.new(0, 240, 0, 23);
-G2L["fb"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["fb"]["Text"] = [[]];
-G2L["fb"]["Name"] = [[SliderRegion]];
-G2L["fb"]["Position"] = UDim2.new(0, 5, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.FOV_Slider.SliderRegion.UICorner
-G2L["fc"] = Instance.new("UICorner", G2L["fb"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.FOV_Slider.SliderButton
-G2L["fd"] = Instance.new("TextButton", G2L["f8"]);
-G2L["fd"]["TextWrapped"] = true;
-G2L["fd"]["BorderSizePixel"] = 0;
-G2L["fd"]["TextSize"] = 14;
-G2L["fd"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["fd"]["TextScaled"] = true;
-G2L["fd"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["fd"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["fd"]["Size"] = UDim2.new(0, 24, 0, 23);
-G2L["fd"]["Name"] = [[SliderButton]];
-G2L["fd"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["fd"]["Text"] = [[45345]];
-G2L["fd"]["Position"] = UDim2.new(0, 5, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.FOV_Slider.SliderButton.UICorner
-G2L["fe"] = Instance.new("UICorner", G2L["fd"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.PlatformFly
-G2L["ff"] = Instance.new("Frame", G2L["b6"]);
-G2L["ff"]["BorderSizePixel"] = 0;
-G2L["ff"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["ff"]["Size"] = UDim2.new(0, 249, 0, 38);
-G2L["ff"]["Position"] = UDim2.new(0, 16, 0, 10);
-G2L["ff"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["ff"]["Name"] = [[PlatformFly]];
-G2L["ff"]["LayoutOrder"] = 10;
-G2L["ff"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.PlatformFly.UICorner
-G2L["100"] = Instance.new("UICorner", G2L["ff"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.PlatformFly.UIStroke
-G2L["101"] = Instance.new("UIStroke", G2L["ff"]);
-G2L["101"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.PlatformFly.TextLabel
-G2L["102"] = Instance.new("TextLabel", G2L["ff"]);
-G2L["102"]["BorderSizePixel"] = 0;
-G2L["102"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["102"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["102"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["102"]["TextSize"] = 20;
-G2L["102"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["102"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["102"]["BackgroundTransparency"] = 1;
-G2L["102"]["Size"] = UDim2.new(0, 163, 0, 38);
-G2L["102"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["102"]["Text"] = [[Platform Fly]];
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.PlatformFly.TextLabel.UIPadding
-G2L["103"] = Instance.new("UIPadding", G2L["102"]);
-G2L["103"]["PaddingLeft"] = UDim.new(0, 10);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.PlatformFly.Toggle
-G2L["104"] = Instance.new("TextButton", G2L["ff"]);
-G2L["104"]["BorderSizePixel"] = 0;
-G2L["104"]["TextSize"] = 14;
-G2L["104"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["104"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5);
-G2L["104"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["104"]["Size"] = UDim2.new(0, 23, 0, 23);
-G2L["104"]["Name"] = [[Toggle]];
-G2L["104"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["104"]["Text"] = [[]];
-G2L["104"]["Position"] = UDim2.new(0, 211, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.PlatformFly.Toggle.UICorner
-G2L["105"] = Instance.new("UICorner", G2L["104"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Gravity
-G2L["106"] = Instance.new("Frame", G2L["b6"]);
-G2L["106"]["BorderSizePixel"] = 0;
-G2L["106"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["106"]["Size"] = UDim2.new(0, 249, 0, 38);
-G2L["106"]["Position"] = UDim2.new(0, 16, 0, 10);
-G2L["106"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["106"]["Name"] = [[Gravity]];
-G2L["106"]["LayoutOrder"] = 11;
-G2L["106"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Gravity.UICorner
-G2L["107"] = Instance.new("UICorner", G2L["106"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Gravity.UIStroke
-G2L["108"] = Instance.new("UIStroke", G2L["106"]);
-G2L["108"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Gravity.TextLabel
-G2L["109"] = Instance.new("TextLabel", G2L["106"]);
-G2L["109"]["BorderSizePixel"] = 0;
-G2L["109"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["109"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["109"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["109"]["TextSize"] = 20;
-G2L["109"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["109"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["109"]["BackgroundTransparency"] = 1;
-G2L["109"]["Size"] = UDim2.new(0, 163, 0, 38);
-G2L["109"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["109"]["Text"] = [[Gravity]];
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Gravity.TextLabel.UIPadding
-G2L["10a"] = Instance.new("UIPadding", G2L["109"]);
-G2L["10a"]["PaddingLeft"] = UDim.new(0, 10);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Gravity.Toggle
-G2L["10b"] = Instance.new("TextButton", G2L["106"]);
-G2L["10b"]["BorderSizePixel"] = 0;
-G2L["10b"]["TextSize"] = 14;
-G2L["10b"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["10b"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5);
-G2L["10b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["10b"]["Size"] = UDim2.new(0, 23, 0, 23);
-G2L["10b"]["Name"] = [[Toggle]];
-G2L["10b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["10b"]["Text"] = [[]];
-G2L["10b"]["Position"] = UDim2.new(0, 211, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Gravity.Toggle.UICorner
-G2L["10c"] = Instance.new("UICorner", G2L["10b"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.PlatformFly_Speed_Slider
-G2L["10d"] = Instance.new("Frame", G2L["b6"]);
-G2L["10d"]["BorderSizePixel"] = 0;
-G2L["10d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["10d"]["Size"] = UDim2.new(0, 100, 0, 100);
-G2L["10d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["10d"]["Name"] = [[PlatformFly_Speed_Slider]];
-G2L["10d"]["LayoutOrder"] = 11;
-G2L["10d"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.PlatformFly_Speed_Slider.UICorner
-G2L["10e"] = Instance.new("UICorner", G2L["10d"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.PlatformFly_Speed_Slider.UIStroke
-G2L["10f"] = Instance.new("UIStroke", G2L["10d"]);
-G2L["10f"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.PlatformFly_Speed_Slider.SliderRegion
-G2L["110"] = Instance.new("TextLabel", G2L["10d"]);
-G2L["110"]["Interactable"] = false;
-G2L["110"]["BorderSizePixel"] = 0;
-G2L["110"]["BackgroundColor3"] = Color3.fromRGB(32, 32, 32);
-G2L["110"]["TextSize"] = 14;
-G2L["110"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["110"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["110"]["Size"] = UDim2.new(0, 240, 0, 23);
-G2L["110"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["110"]["Text"] = [[]];
-G2L["110"]["Name"] = [[SliderRegion]];
-G2L["110"]["Position"] = UDim2.new(0, 5, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.PlatformFly_Speed_Slider.SliderRegion.UICorner
-G2L["111"] = Instance.new("UICorner", G2L["110"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.PlatformFly_Speed_Slider.SliderButton
-G2L["112"] = Instance.new("TextButton", G2L["10d"]);
-G2L["112"]["TextWrapped"] = true;
-G2L["112"]["BorderSizePixel"] = 0;
-G2L["112"]["TextSize"] = 14;
-G2L["112"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["112"]["TextScaled"] = true;
-G2L["112"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["112"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["112"]["Size"] = UDim2.new(0, 24, 0, 23);
-G2L["112"]["Name"] = [[SliderButton]];
-G2L["112"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["112"]["Text"] = [[45345]];
-G2L["112"]["Position"] = UDim2.new(0, 5, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.PlatformFly_Speed_Slider.SliderButton.UICorner
-G2L["113"] = Instance.new("UICorner", G2L["112"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Gravity_Slider
-G2L["114"] = Instance.new("Frame", G2L["b6"]);
-G2L["114"]["BorderSizePixel"] = 0;
-G2L["114"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["114"]["Size"] = UDim2.new(0, 100, 0, 100);
-G2L["114"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["114"]["Name"] = [[Gravity_Slider]];
-G2L["114"]["LayoutOrder"] = 12;
-G2L["114"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Gravity_Slider.UICorner
-G2L["115"] = Instance.new("UICorner", G2L["114"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Gravity_Slider.UIStroke
-G2L["116"] = Instance.new("UIStroke", G2L["114"]);
-G2L["116"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Gravity_Slider.SliderRegion
-G2L["117"] = Instance.new("TextLabel", G2L["114"]);
-G2L["117"]["Interactable"] = false;
-G2L["117"]["BorderSizePixel"] = 0;
-G2L["117"]["BackgroundColor3"] = Color3.fromRGB(32, 32, 32);
-G2L["117"]["TextSize"] = 14;
-G2L["117"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["117"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["117"]["Size"] = UDim2.new(0, 240, 0, 23);
-G2L["117"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["117"]["Text"] = [[]];
-G2L["117"]["Name"] = [[SliderRegion]];
-G2L["117"]["Position"] = UDim2.new(0, 5, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Gravity_Slider.SliderRegion.UICorner
-G2L["118"] = Instance.new("UICorner", G2L["117"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Gravity_Slider.SliderButton
-G2L["119"] = Instance.new("TextButton", G2L["114"]);
-G2L["119"]["TextWrapped"] = true;
-G2L["119"]["BorderSizePixel"] = 0;
-G2L["119"]["TextSize"] = 14;
-G2L["119"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["119"]["TextScaled"] = true;
-G2L["119"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["119"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["119"]["Size"] = UDim2.new(0, 24, 0, 23);
-G2L["119"]["Name"] = [[SliderButton]];
-G2L["119"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["119"]["Text"] = [[45345]];
-G2L["119"]["Position"] = UDim2.new(0, 5, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.Features.Gravity_Slider.SliderButton.UICorner
-G2L["11a"] = Instance.new("UICorner", G2L["119"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.DropShadowHolder
-G2L["11b"] = Instance.new("Frame", G2L["ae"]);
-G2L["11b"]["ZIndex"] = 0;
-G2L["11b"]["BorderSizePixel"] = 0;
-G2L["11b"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["11b"]["Name"] = [[DropShadowHolder]];
-G2L["11b"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.DropShadowHolder.DropShadow
-G2L["11c"] = Instance.new("ImageLabel", G2L["11b"]);
-G2L["11c"]["ZIndex"] = 0;
-G2L["11c"]["BorderSizePixel"] = 0;
-G2L["11c"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["11c"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["11c"]["ImageTransparency"] = 0.5;
-G2L["11c"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["11c"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["11c"]["Image"] = [[rbxassetid://6014261993]];
-G2L["11c"]["Size"] = UDim2.new(0, 597, 0, 297);
-G2L["11c"]["BackgroundTransparency"] = 1;
-G2L["11c"]["Name"] = [[DropShadow]];
-G2L["11c"]["Position"] = UDim2.new(0, 275, 0, 125);
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.DropShadowHolder
-G2L["11d"] = Instance.new("Frame", G2L["ae"]);
-G2L["11d"]["ZIndex"] = 0;
-G2L["11d"]["BorderSizePixel"] = 0;
-G2L["11d"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["11d"]["Name"] = [[DropShadowHolder]];
-G2L["11d"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.LocalPlayer.DropShadowHolder.DropShadow
-G2L["11e"] = Instance.new("ImageLabel", G2L["11d"]);
-G2L["11e"]["Interactable"] = false;
-G2L["11e"]["ZIndex"] = 0;
-G2L["11e"]["BorderSizePixel"] = 0;
-G2L["11e"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["11e"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["11e"]["ImageTransparency"] = 0.5;
-G2L["11e"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["11e"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["11e"]["Image"] = [[rbxassetid://6014261993]];
-G2L["11e"]["Size"] = UDim2.new(0, 598, 0, 368);
-G2L["11e"]["BackgroundTransparency"] = 1;
-G2L["11e"]["Name"] = [[DropShadow]];
-G2L["11e"]["Position"] = UDim2.new(0, 274, 0, 92);
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution
-G2L["11f"] = Instance.new("Frame", G2L["49"]);
-G2L["11f"]["Visible"] = false;
-G2L["11f"]["ZIndex"] = 2;
-G2L["11f"]["BorderSizePixel"] = 0;
-G2L["11f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["11f"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["11f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["11f"]["Name"] = [[Execution]];
-G2L["11f"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.UICorner
-G2L["120"] = Instance.new("UICorner", G2L["11f"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Frame
-G2L["121"] = Instance.new("Frame", G2L["11f"]);
-G2L["121"]["ZIndex"] = 0;
-G2L["121"]["BorderSizePixel"] = 0;
-G2L["121"]["BackgroundColor3"] = Color3.fromRGB(26, 26, 26);
-G2L["121"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["121"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Frame.UICorner
-G2L["122"] = Instance.new("UICorner", G2L["121"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Frame.DropShadowHolder
-G2L["123"] = Instance.new("Frame", G2L["121"]);
-G2L["123"]["ZIndex"] = 3;
-G2L["123"]["BorderSizePixel"] = 0;
-G2L["123"]["Size"] = UDim2.new(0, 550, 0, 318);
-G2L["123"]["Position"] = UDim2.new(0, 0, 0, -68);
-G2L["123"]["Name"] = [[DropShadowHolder]];
-G2L["123"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Frame.DropShadowHolder.DropShadow
-G2L["124"] = Instance.new("ImageLabel", G2L["123"]);
-G2L["124"]["ZIndex"] = 0;
-G2L["124"]["BorderSizePixel"] = 0;
-G2L["124"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["124"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["124"]["ImageTransparency"] = 0.5;
-G2L["124"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["124"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["124"]["Image"] = [[rbxassetid://6014261993]];
-G2L["124"]["Size"] = UDim2.new(0, 597, 0, 365);
-G2L["124"]["BackgroundTransparency"] = 1;
-G2L["124"]["Name"] = [[DropShadow]];
-G2L["124"]["Position"] = UDim2.new(0, 275, 0, 159);
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Frame.DropShadowHolder
-G2L["125"] = Instance.new("Frame", G2L["121"]);
-G2L["125"]["ZIndex"] = 3;
-G2L["125"]["BorderSizePixel"] = 0;
-G2L["125"]["Size"] = UDim2.new(0, 550, 0, 318);
-G2L["125"]["Position"] = UDim2.new(0, 0, 0, -68);
-G2L["125"]["Name"] = [[DropShadowHolder]];
-G2L["125"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Frame.DropShadowHolder.DropShadow
-G2L["126"] = Instance.new("ImageLabel", G2L["125"]);
-G2L["126"]["ZIndex"] = 0;
-G2L["126"]["BorderSizePixel"] = 0;
-G2L["126"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["126"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["126"]["ImageTransparency"] = 0.5;
-G2L["126"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["126"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["126"]["Image"] = [[rbxassetid://6014261993]];
-G2L["126"]["Size"] = UDim2.new(0, 597, 0, 365);
-G2L["126"]["BackgroundTransparency"] = 1;
-G2L["126"]["Name"] = [[DropShadow]];
-G2L["126"]["Position"] = UDim2.new(0, 275, 0, 159);
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Features
-G2L["127"] = Instance.new("ScrollingFrame", G2L["11f"]);
-G2L["127"]["Active"] = true;
-G2L["127"]["ScrollingDirection"] = Enum.ScrollingDirection.Y;
-G2L["127"]["ZIndex"] = 2;
-G2L["127"]["BorderSizePixel"] = 0;
-G2L["127"]["CanvasSize"] = UDim2.new(0, 0, 0, 100000);
-G2L["127"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
-G2L["127"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["127"]["Name"] = [[Features]];
-G2L["127"]["Size"] = UDim2.new(0, 530, 0, 215);
-G2L["127"]["ScrollBarImageColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["127"]["Position"] = UDim2.new(0, 1, 0, 28);
-G2L["127"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["127"]["ScrollBarThickness"] = 5;
-G2L["127"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Features.TextBox
-G2L["128"] = Instance.new("TextBox", G2L["127"]);
-G2L["128"]["Visible"] = false;
-G2L["128"]["TextColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["128"]["PlaceholderColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["128"]["SizeConstraint"] = Enum.SizeConstraint.RelativeYY;
-G2L["128"]["BorderSizePixel"] = 0;
-G2L["128"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["128"]["TextSize"] = 14;
-G2L["128"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-G2L["128"]["BackgroundColor3"] = Color3.fromRGB(19, 19, 19);
-G2L["128"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["128"]["RichText"] = true;
-G2L["128"]["MultiLine"] = true;
-G2L["128"]["ClearTextOnFocus"] = false;
-G2L["128"]["PlaceholderText"] = [[-- print("CrypticOnTop!")]];
-G2L["128"]["Size"] = UDim2.new(0, 511, 0, 10000000);
-G2L["128"]["Position"] = UDim2.new(0, 19, 0, 5);
-G2L["128"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["128"]["Text"] = [[]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Features.TextBox.UICorner
-G2L["129"] = Instance.new("UICorner", G2L["128"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Features.TextBox.UIPadding
-G2L["12a"] = Instance.new("UIPadding", G2L["128"]);
-G2L["12a"]["PaddingRight"] = UDim.new(0, 5);
-G2L["12a"]["PaddingLeft"] = UDim.new(0, 5);
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.DropShadowHolder
-G2L["12b"] = Instance.new("Frame", G2L["11f"]);
-G2L["12b"]["ZIndex"] = 0;
-G2L["12b"]["BorderSizePixel"] = 0;
-G2L["12b"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["12b"]["Name"] = [[DropShadowHolder]];
-G2L["12b"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.DropShadowHolder.DropShadow
-G2L["12c"] = Instance.new("ImageLabel", G2L["12b"]);
-G2L["12c"]["ZIndex"] = 0;
-G2L["12c"]["BorderSizePixel"] = 0;
-G2L["12c"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["12c"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["12c"]["ImageTransparency"] = 0.5;
-G2L["12c"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["12c"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["12c"]["Image"] = [[rbxassetid://6014261993]];
-G2L["12c"]["Size"] = UDim2.new(0, 597, 0, 297);
-G2L["12c"]["BackgroundTransparency"] = 1;
-G2L["12c"]["Name"] = [[DropShadow]];
-G2L["12c"]["Position"] = UDim2.new(0, 275, 0, 125);
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.DropShadowHolder
-G2L["12d"] = Instance.new("Frame", G2L["11f"]);
-G2L["12d"]["ZIndex"] = 0;
-G2L["12d"]["BorderSizePixel"] = 0;
-G2L["12d"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["12d"]["Name"] = [[DropShadowHolder]];
-G2L["12d"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.DropShadowHolder.DropShadow
-G2L["12e"] = Instance.new("ImageLabel", G2L["12d"]);
-G2L["12e"]["Interactable"] = false;
-G2L["12e"]["BorderSizePixel"] = 0;
-G2L["12e"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["12e"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["12e"]["ImageTransparency"] = 0.5;
-G2L["12e"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["12e"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["12e"]["Image"] = [[rbxassetid://6014261993]];
-G2L["12e"]["Size"] = UDim2.new(0, 598, 0, 368);
-G2L["12e"]["BackgroundTransparency"] = 1;
-G2L["12e"]["Name"] = [[DropShadow]];
-G2L["12e"]["Position"] = UDim2.new(0, 274, 0, 92);
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Tabs
-G2L["12f"] = Instance.new("ScrollingFrame", G2L["11f"]);
-G2L["12f"]["Active"] = true;
-G2L["12f"]["ScrollingDirection"] = Enum.ScrollingDirection.X;
-G2L["12f"]["BorderSizePixel"] = 0;
-G2L["12f"]["CanvasSize"] = UDim2.new(0, 20000, 2, 0);
-G2L["12f"]["BackgroundColor3"] = Color3.fromRGB(54, 54, 54);
-G2L["12f"]["Name"] = [[Tabs]];
-G2L["12f"]["VerticalScrollBarPosition"] = Enum.VerticalScrollBarPosition.Left;
-G2L["12f"]["Size"] = UDim2.new(0, 510, 0, 28);
-G2L["12f"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["12f"]["Position"] = UDim2.new(0.03636, 0, 0, 0);
-G2L["12f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["12f"]["ScrollBarThickness"] = 0;
-G2L["12f"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Tabs.UIPadding
-G2L["130"] = Instance.new("UIPadding", G2L["12f"]);
-G2L["130"]["PaddingTop"] = UDim.new(0, 5);
-G2L["130"]["PaddingLeft"] = UDim.new(0, 5);
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Tabs.UICorner
-G2L["131"] = Instance.new("UICorner", G2L["12f"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Tabs.AddTab
-G2L["132"] = Instance.new("ImageButton", G2L["12f"]);
-G2L["132"]["BorderSizePixel"] = 0;
-G2L["132"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["132"]["LayoutOrder"] = 10000;
-G2L["132"]["Image"] = [[rbxassetid://18646066297]];
-G2L["132"]["Size"] = UDim2.new(0, 75, 0, 20);
-G2L["132"]["BackgroundTransparency"] = 1;
-G2L["132"]["Name"] = [[AddTab]];
-G2L["132"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Tabs.AddTab.UISizeConstraint
-G2L["133"] = Instance.new("UISizeConstraint", G2L["132"]);
-G2L["133"]["MaxSize"] = Vector2.new(20, 20);
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Tabs.UIListLayout
-G2L["134"] = Instance.new("UIListLayout", G2L["12f"]);
-G2L["134"]["Padding"] = UDim.new(0, 2);
-G2L["134"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-G2L["134"]["FillDirection"] = Enum.FillDirection.Horizontal;
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.ExampleTab
-G2L["135"] = Instance.new("Frame", G2L["11f"]);
-G2L["135"]["Visible"] = false;
-G2L["135"]["BorderSizePixel"] = 0;
-G2L["135"]["BackgroundColor3"] = Color3.fromRGB(96, 96, 96);
-G2L["135"]["Size"] = UDim2.new(0, 120, 0, 20);
-G2L["135"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["135"]["Name"] = [[ExampleTab]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.ExampleTab.UICorner
-G2L["136"] = Instance.new("UICorner", G2L["135"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.ExampleTab.NameBox
-G2L["137"] = Instance.new("TextBox", G2L["135"]);
-G2L["137"]["Interactable"] = false;
-G2L["137"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["137"]["BorderSizePixel"] = 0;
-G2L["137"]["TextEditable"] = false;
-G2L["137"]["TextSize"] = 14;
-G2L["137"]["Name"] = [[NameBox]];
-G2L["137"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["137"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["137"]["ClearTextOnFocus"] = false;
-G2L["137"]["Size"] = UDim2.new(0, 75, 0, 20);
-G2L["137"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["137"]["Text"] = [[Default]];
-G2L["137"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.ExampleTab.Rename
-G2L["138"] = Instance.new("ImageButton", G2L["135"]);
-G2L["138"]["BorderSizePixel"] = 0;
-G2L["138"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["138"]["Image"] = [[rbxassetid://18646171741]];
-G2L["138"]["Size"] = UDim2.new(0, 20, 0, 20);
-G2L["138"]["BackgroundTransparency"] = 1;
-G2L["138"]["Name"] = [[Rename]];
-G2L["138"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["138"]["Position"] = UDim2.new(0, 75, 0, 0);
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.ExampleTab.TextBox
-G2L["139"] = Instance.new("TextBox", G2L["135"]);
-G2L["139"]["Visible"] = false;
-G2L["139"]["TextColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["139"]["PlaceholderColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["139"]["SizeConstraint"] = Enum.SizeConstraint.RelativeYY;
-G2L["139"]["BorderSizePixel"] = 0;
-G2L["139"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["139"]["TextSize"] = 14;
-G2L["139"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-G2L["139"]["BackgroundColor3"] = Color3.fromRGB(19, 19, 19);
-G2L["139"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["139"]["RichText"] = true;
-G2L["139"]["MultiLine"] = true;
-G2L["139"]["ClearTextOnFocus"] = false;
-G2L["139"]["PlaceholderText"] = [[-- print("CrypticOnTop!")]];
-G2L["139"]["Size"] = UDim2.new(0, 511, 0, 10000000);
-G2L["139"]["Position"] = UDim2.new(0, 19, 0, 5);
-G2L["139"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["139"]["Text"] = [[]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.ExampleTab.TextBox.UICorner
-G2L["13a"] = Instance.new("UICorner", G2L["139"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.ExampleTab.TextBox.UIPadding
-G2L["13b"] = Instance.new("UIPadding", G2L["139"]);
-G2L["13b"]["PaddingRight"] = UDim.new(0, 5);
-G2L["13b"]["PaddingLeft"] = UDim.new(0, 5);
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.ExampleTab.Delete
-G2L["13c"] = Instance.new("ImageButton", G2L["135"]);
-G2L["13c"]["BorderSizePixel"] = 0;
-G2L["13c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["13c"]["Image"] = [[rbxassetid://18647411560]];
-G2L["13c"]["Size"] = UDim2.new(0, 20, 0, 20);
-G2L["13c"]["BackgroundTransparency"] = 1;
-G2L["13c"]["Name"] = [[Delete]];
-G2L["13c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["13c"]["Position"] = UDim2.new(0, 95, 0, 0);
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Buttons
-G2L["13d"] = Instance.new("Frame", G2L["11f"]);
-G2L["13d"]["ZIndex"] = 10;
-G2L["13d"]["BorderSizePixel"] = 0;
-G2L["13d"]["BackgroundColor3"] = Color3.fromRGB(96, 96, 96);
-G2L["13d"]["Size"] = UDim2.new(0, 510, 0, 28);
-G2L["13d"]["Position"] = UDim2.new(0.036, 0, 0, 210);
-G2L["13d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["13d"]["Name"] = [[Buttons]];
-G2L["13d"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Buttons.UIGridLayout
-G2L["13e"] = Instance.new("UIGridLayout", G2L["13d"]);
-G2L["13e"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
-G2L["13e"]["CellSize"] = UDim2.new(0, 20, 0, 20);
-G2L["13e"]["VerticalAlignment"] = Enum.VerticalAlignment.Center;
-G2L["13e"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-G2L["13e"]["CellPadding"] = UDim2.new(0, 20, 0, 5);
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Buttons.UIPadding
-G2L["13f"] = Instance.new("UIPadding", G2L["13d"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Buttons.SaveScript
-G2L["140"] = Instance.new("ImageButton", G2L["13d"]);
-G2L["140"]["BorderSizePixel"] = 0;
-G2L["140"]["AutoButtonColor"] = false;
-G2L["140"]["ScaleType"] = Enum.ScaleType.Crop;
-G2L["140"]["BackgroundColor3"] = Color3.fromRGB(19, 19, 19);
-G2L["140"]["ImageColor3"] = Color3.fromRGB(200, 200, 200);
-G2L["140"]["BorderMode"] = Enum.BorderMode.Middle;
-G2L["140"]["LayoutOrder"] = 1;
-G2L["140"]["ZIndex"] = 9;
-G2L["140"]["Image"] = [[rbxassetid://18647078584]];
-G2L["140"]["Size"] = UDim2.new(0, 25, 0, 25);
-G2L["140"]["BackgroundTransparency"] = 1;
-G2L["140"]["Name"] = [[SaveScript]];
-G2L["140"]["BorderColor3"] = Color3.fromRGB(19, 19, 19);
-G2L["140"]["Position"] = UDim2.new(0, 365, 0, 213);
--- Attributes
-G2L["140"]:SetAttribute([[H]], [[Saves the current script on your device and adds it to Local Scripts]]);
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Buttons.SaveScript.UISizeConstraint
-G2L["141"] = Instance.new("UISizeConstraint", G2L["140"]);
-G2L["141"]["MaxSize"] = Vector2.new(16.5, 16.5);
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Buttons.CopyToClipboard
-G2L["142"] = Instance.new("ImageButton", G2L["13d"]);
-G2L["142"]["BorderSizePixel"] = 0;
-G2L["142"]["AutoButtonColor"] = false;
-G2L["142"]["ScaleType"] = Enum.ScaleType.Crop;
-G2L["142"]["BackgroundColor3"] = Color3.fromRGB(19, 19, 19);
-G2L["142"]["ImageColor3"] = Color3.fromRGB(200, 200, 200);
-G2L["142"]["BorderMode"] = Enum.BorderMode.Middle;
-G2L["142"]["LayoutOrder"] = 2;
-G2L["142"]["ZIndex"] = 9;
-G2L["142"]["Image"] = [[rbxassetid://18609948242]];
-G2L["142"]["Size"] = UDim2.new(0, 25, 0, 25);
-G2L["142"]["BackgroundTransparency"] = 1;
-G2L["142"]["Name"] = [[CopyToClipboard]];
-G2L["142"]["BorderColor3"] = Color3.fromRGB(19, 19, 19);
-G2L["142"]["Position"] = UDim2.new(0, 395, 0, 210);
--- Attributes
-G2L["142"]:SetAttribute([[H]], [[Copies the current script to your clipboard]]);
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Buttons.Erase (Thy end is now)
-G2L["143"] = Instance.new("ImageButton", G2L["13d"]);
-G2L["143"]["BorderSizePixel"] = 0;
-G2L["143"]["AutoButtonColor"] = false;
-G2L["143"]["ScaleType"] = Enum.ScaleType.Crop;
-G2L["143"]["BackgroundColor3"] = Color3.fromRGB(19, 19, 19);
-G2L["143"]["ImageColor3"] = Color3.fromRGB(200, 200, 200);
-G2L["143"]["BorderMode"] = Enum.BorderMode.Middle;
-G2L["143"]["LayoutOrder"] = 4;
-G2L["143"]["ZIndex"] = 9;
-G2L["143"]["Image"] = [[rbxassetid://10190648035]];
-G2L["143"]["Size"] = UDim2.new(0, 25, 0, 25);
-G2L["143"]["BackgroundTransparency"] = 1;
-G2L["143"]["Name"] = [[Erase (Thy end is now)]];
-G2L["143"]["BorderColor3"] = Color3.fromRGB(19, 19, 19);
-G2L["143"]["Position"] = UDim2.new(0, 455, 0, 210);
--- Attributes
-G2L["143"]:SetAttribute([[H]], [[Clears the editor]]);
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Buttons.Execute
-G2L["144"] = Instance.new("ImageButton", G2L["13d"]);
-G2L["144"]["BorderSizePixel"] = 0;
-G2L["144"]["AutoButtonColor"] = false;
-G2L["144"]["SliceScale"] = 0;
-G2L["144"]["ScaleType"] = Enum.ScaleType.Crop;
-G2L["144"]["BackgroundColor3"] = Color3.fromRGB(19, 19, 19);
-G2L["144"]["ImageColor3"] = Color3.fromRGB(200, 200, 200);
-G2L["144"]["BorderMode"] = Enum.BorderMode.Middle;
-G2L["144"]["LayoutOrder"] = 5;
-G2L["144"]["ZIndex"] = 9;
-G2L["144"]["Image"] = [[rbxassetid://18609769471]];
-G2L["144"]["Size"] = UDim2.new(0, 44, 0, 32);
-G2L["144"]["BackgroundTransparency"] = 1;
-G2L["144"]["Name"] = [[Execute]];
-G2L["144"]["BorderColor3"] = Color3.fromRGB(19, 19, 19);
-G2L["144"]["Position"] = UDim2.new(0, 419, 0, 292);
--- Attributes
-G2L["144"]:SetAttribute([[H]], [[Executes the scripts in the editor]]);
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Buttons.Execute.UISizeConstraint
-G2L["145"] = Instance.new("UISizeConstraint", G2L["144"]);
-G2L["145"]["MaxSize"] = Vector2.new(20, 18);
-
--- StarterGui.Cryptic.MainUI.Tabs.Execution.Buttons.ExecuteFromClipboard
-G2L["146"] = Instance.new("ImageButton", G2L["13d"]);
-G2L["146"]["BorderSizePixel"] = 0;
-G2L["146"]["AutoButtonColor"] = false;
-G2L["146"]["ScaleType"] = Enum.ScaleType.Crop;
-G2L["146"]["BackgroundColor3"] = Color3.fromRGB(19, 19, 19);
-G2L["146"]["ImageColor3"] = Color3.fromRGB(200, 200, 200);
-G2L["146"]["BorderMode"] = Enum.BorderMode.Middle;
-G2L["146"]["LayoutOrder"] = 3;
-G2L["146"]["ZIndex"] = 9;
-G2L["146"]["Image"] = [[rbxassetid://18609948397]];
-G2L["146"]["Size"] = UDim2.new(0, 25, 0, 25);
-G2L["146"]["BackgroundTransparency"] = 1;
-G2L["146"]["Name"] = [[ExecuteFromClipboard]];
-G2L["146"]["BorderColor3"] = Color3.fromRGB(19, 19, 19);
-G2L["146"]["Position"] = UDim2.new(0, 425, 0, 210);
--- Attributes
-G2L["146"]:SetAttribute([[H]], [[Executes the code from your clipboard]]);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts
-G2L["147"] = Instance.new("Frame", G2L["49"]);
-G2L["147"]["Visible"] = false;
-G2L["147"]["ZIndex"] = 2;
-G2L["147"]["BorderSizePixel"] = 0;
-G2L["147"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["147"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["147"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["147"]["Name"] = [[Local Scripts]];
-G2L["147"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.UICorner
-G2L["148"] = Instance.new("UICorner", G2L["147"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features
-G2L["149"] = Instance.new("ScrollingFrame", G2L["147"]);
-G2L["149"]["Active"] = true;
-G2L["149"]["ScrollingDirection"] = Enum.ScrollingDirection.Y;
-G2L["149"]["BorderSizePixel"] = 0;
-G2L["149"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
-G2L["149"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["149"]["Name"] = [[Features]];
-G2L["149"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
-G2L["149"]["Size"] = UDim2.new(0, 551, 0, 222);
-G2L["149"]["ScrollBarImageColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["149"]["Position"] = UDim2.new(0, 0, 0.108, 0);
-G2L["149"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["149"]["ScrollBarThickness"] = 5;
-G2L["149"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Simple Spy
-G2L["14a"] = Instance.new("Frame", G2L["149"]);
-G2L["14a"]["BorderSizePixel"] = 0;
-G2L["14a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["14a"]["Size"] = UDim2.new(0, 249, 0, 38);
-G2L["14a"]["Position"] = UDim2.new(0, 16, 0, 60);
-G2L["14a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["14a"]["Name"] = [[Simple Spy]];
-G2L["14a"]["LayoutOrder"] = 6;
-G2L["14a"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Simple Spy.UICorner
-G2L["14b"] = Instance.new("UICorner", G2L["14a"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Simple Spy.UIStroke
-G2L["14c"] = Instance.new("UIStroke", G2L["14a"]);
-G2L["14c"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Simple Spy.TextLabel
-G2L["14d"] = Instance.new("TextLabel", G2L["14a"]);
-G2L["14d"]["BorderSizePixel"] = 0;
-G2L["14d"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["14d"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["14d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["14d"]["TextSize"] = 20;
-G2L["14d"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["14d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["14d"]["BackgroundTransparency"] = 1;
-G2L["14d"]["Size"] = UDim2.new(0, 163, 0, 38);
-G2L["14d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["14d"]["Text"] = [[Simple Spy]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Simple Spy.TextLabel.UIPadding
-G2L["14e"] = Instance.new("UIPadding", G2L["14d"]);
-G2L["14e"]["PaddingLeft"] = UDim.new(0, 10);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Simple Spy.Button
-G2L["14f"] = Instance.new("TextButton", G2L["14a"]);
-G2L["14f"]["BorderSizePixel"] = 0;
-G2L["14f"]["TextSize"] = 14;
-G2L["14f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["14f"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["14f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["14f"]["Size"] = UDim2.new(0, 60, 0, 25);
-G2L["14f"]["Name"] = [[Button]];
-G2L["14f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["14f"]["Text"] = [[Execute]];
-G2L["14f"]["Position"] = UDim2.new(0, 176, 0, 7);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Simple Spy.Button.UICorner
-G2L["150"] = Instance.new("UICorner", G2L["14f"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Reaper Hub
-G2L["151"] = Instance.new("Frame", G2L["149"]);
-G2L["151"]["BorderSizePixel"] = 0;
-G2L["151"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["151"]["Size"] = UDim2.new(0, 249, 0, 38);
-G2L["151"]["Position"] = UDim2.new(0, 16, 0, 10);
-G2L["151"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["151"]["Name"] = [[Reaper Hub]];
-G2L["151"]["LayoutOrder"] = 3;
-G2L["151"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Reaper Hub.UICorner
-G2L["152"] = Instance.new("UICorner", G2L["151"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Reaper Hub.UIStroke
-G2L["153"] = Instance.new("UIStroke", G2L["151"]);
-G2L["153"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Reaper Hub.TextLabel
-G2L["154"] = Instance.new("TextLabel", G2L["151"]);
-G2L["154"]["BorderSizePixel"] = 0;
-G2L["154"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["154"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["154"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["154"]["TextSize"] = 20;
-G2L["154"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["154"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["154"]["BackgroundTransparency"] = 1;
-G2L["154"]["Size"] = UDim2.new(0, 163, 0, 38);
-G2L["154"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["154"]["Text"] = [[Reaper Hub]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Reaper Hub.TextLabel.UIPadding
-G2L["155"] = Instance.new("UIPadding", G2L["154"]);
-G2L["155"]["PaddingLeft"] = UDim.new(0, 10);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Reaper Hub.Button
-G2L["156"] = Instance.new("TextButton", G2L["151"]);
-G2L["156"]["BorderSizePixel"] = 0;
-G2L["156"]["TextSize"] = 14;
-G2L["156"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["156"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["156"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["156"]["Size"] = UDim2.new(0, 60, 0, 25);
-G2L["156"]["Name"] = [[Button]];
-G2L["156"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["156"]["Text"] = [[Execute]];
-G2L["156"]["Position"] = UDim2.new(0, 176, 0, 7);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Reaper Hub.Button.UICorner
-G2L["157"] = Instance.new("UICorner", G2L["156"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Hydroxide
-G2L["158"] = Instance.new("Frame", G2L["149"]);
-G2L["158"]["BorderSizePixel"] = 0;
-G2L["158"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["158"]["Size"] = UDim2.new(0, 249, 0, 38);
-G2L["158"]["Position"] = UDim2.new(0, 16, 0, 110);
-G2L["158"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["158"]["Name"] = [[Hydroxide]];
-G2L["158"]["LayoutOrder"] = 7;
-G2L["158"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Hydroxide.UICorner
-G2L["159"] = Instance.new("UICorner", G2L["158"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Hydroxide.UIStroke
-G2L["15a"] = Instance.new("UIStroke", G2L["158"]);
-G2L["15a"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Hydroxide.TextLabel
-G2L["15b"] = Instance.new("TextLabel", G2L["158"]);
-G2L["15b"]["BorderSizePixel"] = 0;
-G2L["15b"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["15b"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["15b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["15b"]["TextSize"] = 20;
-G2L["15b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["15b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["15b"]["BackgroundTransparency"] = 1;
-G2L["15b"]["Size"] = UDim2.new(0, 163, 0, 38);
-G2L["15b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["15b"]["Text"] = [[Hydroxide]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Hydroxide.TextLabel.UIPadding
-G2L["15c"] = Instance.new("UIPadding", G2L["15b"]);
-G2L["15c"]["PaddingLeft"] = UDim.new(0, 10);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Hydroxide.Button
-G2L["15d"] = Instance.new("TextButton", G2L["158"]);
-G2L["15d"]["BorderSizePixel"] = 0;
-G2L["15d"]["TextSize"] = 14;
-G2L["15d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["15d"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["15d"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["15d"]["Size"] = UDim2.new(0, 60, 0, 25);
-G2L["15d"]["Name"] = [[Button]];
-G2L["15d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["15d"]["Text"] = [[Execute]];
-G2L["15d"]["Position"] = UDim2.new(0, 176, 0, 7);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Hydroxide.Button.UICorner
-G2L["15e"] = Instance.new("UICorner", G2L["15d"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Dex Explorer
-G2L["15f"] = Instance.new("Frame", G2L["149"]);
-G2L["15f"]["BorderSizePixel"] = 0;
-G2L["15f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["15f"]["Size"] = UDim2.new(0, 249, 0, 38);
-G2L["15f"]["Position"] = UDim2.new(0, 16, 0, 160);
-G2L["15f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["15f"]["Name"] = [[Dex Explorer]];
-G2L["15f"]["LayoutOrder"] = 5;
-G2L["15f"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Dex Explorer.UICorner
-G2L["160"] = Instance.new("UICorner", G2L["15f"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Dex Explorer.UIStroke
-G2L["161"] = Instance.new("UIStroke", G2L["15f"]);
-G2L["161"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Dex Explorer.TextLabel
-G2L["162"] = Instance.new("TextLabel", G2L["15f"]);
-G2L["162"]["BorderSizePixel"] = 0;
-G2L["162"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["162"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["162"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["162"]["TextSize"] = 20;
-G2L["162"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["162"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["162"]["BackgroundTransparency"] = 1;
-G2L["162"]["Size"] = UDim2.new(0, 163, 0, 38);
-G2L["162"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["162"]["Text"] = [[Dex Explorer]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Dex Explorer.TextLabel.UIPadding
-G2L["163"] = Instance.new("UIPadding", G2L["162"]);
-G2L["163"]["PaddingLeft"] = UDim.new(0, 10);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Dex Explorer.Button
-G2L["164"] = Instance.new("TextButton", G2L["15f"]);
-G2L["164"]["BorderSizePixel"] = 0;
-G2L["164"]["TextSize"] = 14;
-G2L["164"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["164"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["164"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["164"]["Size"] = UDim2.new(0, 60, 0, 25);
-G2L["164"]["Name"] = [[Button]];
-G2L["164"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["164"]["Text"] = [[Execute]];
-G2L["164"]["Position"] = UDim2.new(0, 176, 0, 7);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Dex Explorer.Button.UICorner
-G2L["165"] = Instance.new("UICorner", G2L["164"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Infinite Yield
-G2L["166"] = Instance.new("Frame", G2L["149"]);
-G2L["166"]["BorderSizePixel"] = 0;
-G2L["166"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["166"]["Size"] = UDim2.new(0, 249, 0, 38);
-G2L["166"]["Position"] = UDim2.new(0, 16, 0, 210);
-G2L["166"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["166"]["Name"] = [[Infinite Yield]];
-G2L["166"]["LayoutOrder"] = 4;
-G2L["166"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Infinite Yield.UICorner
-G2L["167"] = Instance.new("UICorner", G2L["166"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Infinite Yield.UIStroke
-G2L["168"] = Instance.new("UIStroke", G2L["166"]);
-G2L["168"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Infinite Yield.TextLabel
-G2L["169"] = Instance.new("TextLabel", G2L["166"]);
-G2L["169"]["BorderSizePixel"] = 0;
-G2L["169"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["169"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["169"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["169"]["TextSize"] = 20;
-G2L["169"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["169"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["169"]["BackgroundTransparency"] = 1;
-G2L["169"]["Size"] = UDim2.new(0, 163, 0, 38);
-G2L["169"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["169"]["Text"] = [[Infinite Yield]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Infinite Yield.TextLabel.UIPadding
-G2L["16a"] = Instance.new("UIPadding", G2L["169"]);
-G2L["16a"]["PaddingLeft"] = UDim.new(0, 10);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Infinite Yield.Button
-G2L["16b"] = Instance.new("TextButton", G2L["166"]);
-G2L["16b"]["BorderSizePixel"] = 0;
-G2L["16b"]["TextSize"] = 14;
-G2L["16b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["16b"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["16b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["16b"]["Size"] = UDim2.new(0, 60, 0, 25);
-G2L["16b"]["Name"] = [[Button]];
-G2L["16b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["16b"]["Text"] = [[Execute]];
-G2L["16b"]["Position"] = UDim2.new(0, 176, 0, 7);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.Infinite Yield.Button.UICorner
-G2L["16c"] = Instance.new("UICorner", G2L["16b"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.UIGridLayout
-G2L["16d"] = Instance.new("UIGridLayout", G2L["149"]);
-G2L["16d"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Right;
-G2L["16d"]["CellSize"] = UDim2.new(0, 250, 0, 38);
-G2L["16d"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.UIPadding
-G2L["16e"] = Instance.new("UIPadding", G2L["149"]);
-G2L["16e"]["PaddingTop"] = UDim.new(0, 5);
-G2L["16e"]["PaddingRight"] = UDim.new(0, 25);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.UNCTest
-G2L["16f"] = Instance.new("Frame", G2L["149"]);
-G2L["16f"]["BorderSizePixel"] = 0;
-G2L["16f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["16f"]["Size"] = UDim2.new(0, 249, 0, 38);
-G2L["16f"]["Position"] = UDim2.new(0, 16, 0, 110);
-G2L["16f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["16f"]["Name"] = [[UNC Test]];
-G2L["16f"]["LayoutOrder"] = 7;
-G2L["16f"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.UNCTest.UICorner
-G2L["170"] = Instance.new("UICorner", G2L["16f"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.UNCTest.UIStroke
-G2L["171"] = Instance.new("UIStroke", G2L["16f"]);
-G2L["171"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.UNCTest.TextLabel
-G2L["172"] = Instance.new("TextLabel", G2L["16f"]);
-G2L["172"]["BorderSizePixel"] = 0;
-G2L["172"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["172"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["172"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["172"]["TextSize"] = 20;
-G2L["172"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["172"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["172"]["BackgroundTransparency"] = 1;
-G2L["172"]["Size"] = UDim2.new(0, 163, 0, 38);
-G2L["172"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["172"]["Text"] = [[UNC Test]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.UNCTest.TextLabel.UIPadding
-G2L["173"] = Instance.new("UIPadding", G2L["172"]);
-G2L["173"]["PaddingLeft"] = UDim.new(0, 10);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.UNCTest.Button
-G2L["174"] = Instance.new("TextButton", G2L["16f"]);
-G2L["174"]["BorderSizePixel"] = 0;
-G2L["174"]["TextSize"] = 14;
-G2L["174"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["174"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["174"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["174"]["Size"] = UDim2.new(0, 60, 0, 25);
-G2L["174"]["Name"] = [[Button]];
-G2L["174"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["174"]["Text"] = [[Execute]];
-G2L["174"]["Position"] = UDim2.new(0, 176, 0, 7);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Features.UNCTest.Button.UICorner
-G2L["175"] = Instance.new("UICorner", G2L["174"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.DropShadowHolder
-G2L["176"] = Instance.new("Frame", G2L["147"]);
-G2L["176"]["ZIndex"] = 0;
-G2L["176"]["BorderSizePixel"] = 0;
-G2L["176"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["176"]["Name"] = [[DropShadowHolder]];
-G2L["176"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.DropShadowHolder.DropShadow
-G2L["177"] = Instance.new("ImageLabel", G2L["176"]);
-G2L["177"]["ZIndex"] = 0;
-G2L["177"]["BorderSizePixel"] = 0;
-G2L["177"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["177"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["177"]["ImageTransparency"] = 0.5;
-G2L["177"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["177"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["177"]["Image"] = [[rbxassetid://6014261993]];
-G2L["177"]["Size"] = UDim2.new(0, 597, 0, 297);
-G2L["177"]["BackgroundTransparency"] = 1;
-G2L["177"]["Name"] = [[DropShadow]];
-G2L["177"]["Position"] = UDim2.new(0, 275, 0, 125);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.DropShadowHolder
-G2L["178"] = Instance.new("Frame", G2L["147"]);
-G2L["178"]["ZIndex"] = 0;
-G2L["178"]["BorderSizePixel"] = 0;
-G2L["178"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["178"]["Name"] = [[DropShadowHolder]];
-G2L["178"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.DropShadowHolder.DropShadow
-G2L["179"] = Instance.new("ImageLabel", G2L["178"]);
-G2L["179"]["Interactable"] = false;
-G2L["179"]["ZIndex"] = 0;
-G2L["179"]["BorderSizePixel"] = 0;
-G2L["179"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["179"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["179"]["ImageTransparency"] = 0.5;
-G2L["179"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["179"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["179"]["Image"] = [[rbxassetid://6014261993]];
-G2L["179"]["Size"] = UDim2.new(0, 598, 0, 368);
-G2L["179"]["BackgroundTransparency"] = 1;
-G2L["179"]["Name"] = [[DropShadow]];
-G2L["179"]["Position"] = UDim2.new(0, 274, 0, 92);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Frame
-G2L["17a"] = Instance.new("Frame", G2L["147"]);
-G2L["17a"]["ZIndex"] = 0;
-G2L["17a"]["BorderSizePixel"] = 0;
-G2L["17a"]["BackgroundColor3"] = Color3.fromRGB(26, 26, 26);
-G2L["17a"]["Size"] = UDim2.new(0, 249, 0, 38);
-G2L["17a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["17a"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Frame.UICorner
-G2L["17b"] = Instance.new("UICorner", G2L["17a"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Frame.DropShadowHolder
-G2L["17c"] = Instance.new("Frame", G2L["17a"]);
-G2L["17c"]["ZIndex"] = 3;
-G2L["17c"]["BorderSizePixel"] = 0;
-G2L["17c"]["Size"] = UDim2.new(0, 550, 0, 318);
-G2L["17c"]["Position"] = UDim2.new(0, 0, 0, -68);
-G2L["17c"]["Name"] = [[DropShadowHolder]];
-G2L["17c"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Frame.DropShadowHolder.DropShadow
-G2L["17d"] = Instance.new("ImageLabel", G2L["17c"]);
-G2L["17d"]["ZIndex"] = 0;
-G2L["17d"]["BorderSizePixel"] = 0;
-G2L["17d"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["17d"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["17d"]["ImageTransparency"] = 0.5;
-G2L["17d"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["17d"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["17d"]["Image"] = [[rbxassetid://6014261993]];
-G2L["17d"]["Size"] = UDim2.new(0, 597, 0, 365);
-G2L["17d"]["BackgroundTransparency"] = 1;
-G2L["17d"]["Name"] = [[DropShadow]];
-G2L["17d"]["Position"] = UDim2.new(0, 275, 0, 159);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Frame.DropShadowHolder
-G2L["17e"] = Instance.new("Frame", G2L["17a"]);
-G2L["17e"]["ZIndex"] = 3;
-G2L["17e"]["BorderSizePixel"] = 0;
-G2L["17e"]["Size"] = UDim2.new(0, 550, 0, 318);
-G2L["17e"]["Position"] = UDim2.new(0, 0, 0, -68);
-G2L["17e"]["Name"] = [[DropShadowHolder]];
-G2L["17e"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Frame.DropShadowHolder.DropShadow
-G2L["17f"] = Instance.new("ImageLabel", G2L["17e"]);
-G2L["17f"]["ZIndex"] = 0;
-G2L["17f"]["BorderSizePixel"] = 0;
-G2L["17f"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["17f"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["17f"]["ImageTransparency"] = 0.5;
-G2L["17f"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["17f"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["17f"]["Image"] = [[rbxassetid://6014261993]];
-G2L["17f"]["Size"] = UDim2.new(0, 597, 0, 365);
-G2L["17f"]["BackgroundTransparency"] = 1;
-G2L["17f"]["Name"] = [[DropShadow]];
-G2L["17f"]["Position"] = UDim2.new(0, 275, 0, 159);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Search
-G2L["180"] = Instance.new("Frame", G2L["147"]);
-G2L["180"]["BorderSizePixel"] = 0;
-G2L["180"]["BackgroundColor3"] = Color3.fromRGB(54, 54, 54);
-G2L["180"]["Size"] = UDim2.new(0, 258, 0, 40);
-G2L["180"]["Position"] = UDim2.new(0, 20, 0, -14);
-G2L["180"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["180"]["Name"] = [[Search]];
-G2L["180"]["BackgroundTransparency"] = 0.5;
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Search.UICorner
-G2L["181"] = Instance.new("UICorner", G2L["180"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Search.UIStroke
-G2L["182"] = Instance.new("UIStroke", G2L["180"]);
-G2L["182"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Search.TextBox
-G2L["183"] = Instance.new("TextBox", G2L["180"]);
-G2L["183"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["183"]["BorderSizePixel"] = 0;
-G2L["183"]["TextSize"] = 11;
-G2L["183"]["BackgroundColor3"] = Color3.fromRGB(54, 54, 54);
-G2L["183"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["183"]["PlaceholderText"] = [[Search for any local scripts]];
-G2L["183"]["Size"] = UDim2.new(0, 194, 0, 25);
-G2L["183"]["Position"] = UDim2.new(0.03876, 0, 0.175, 0);
-G2L["183"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["183"]["Text"] = [[]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Search.TextBox.UICorner
-G2L["184"] = Instance.new("UICorner", G2L["183"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Search.Button
-G2L["185"] = Instance.new("ImageButton", G2L["180"]);
-G2L["185"]["BorderSizePixel"] = 0;
-G2L["185"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["185"]["Image"] = [[rbxassetid://18625077222]];
-G2L["185"]["Size"] = UDim2.new(0, 36, 0, 35);
-G2L["185"]["BackgroundTransparency"] = 1;
-G2L["185"]["Name"] = [[Button]];
-G2L["185"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["185"]["Position"] = UDim2.new(0.83333, 0, 0, 0);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Search.Button.UICorner
-G2L["186"] = Instance.new("UICorner", G2L["185"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Example
-G2L["187"] = Instance.new("Frame", G2L["147"]);
-G2L["187"]["Visible"] = false;
-G2L["187"]["BorderSizePixel"] = 0;
-G2L["187"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["187"]["Size"] = UDim2.new(0, 249, 0, 38);
-G2L["187"]["Position"] = UDim2.new(0, 16, 0, 160);
-G2L["187"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["187"]["Name"] = [[Example]];
-G2L["187"]["LayoutOrder"] = 7;
-G2L["187"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Example.UICorner
-G2L["188"] = Instance.new("UICorner", G2L["187"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Example.UIStroke
-G2L["189"] = Instance.new("UIStroke", G2L["187"]);
-G2L["189"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Example.TextLabel
-G2L["18a"] = Instance.new("TextLabel", G2L["187"]);
-G2L["18a"]["BorderSizePixel"] = 0;
-G2L["18a"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["18a"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["18a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["18a"]["TextSize"] = 20;
-G2L["18a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["18a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["18a"]["BackgroundTransparency"] = 1;
-G2L["18a"]["Size"] = UDim2.new(0, 163, 0, 38);
-G2L["18a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["18a"]["Text"] = [[Dex Explorer]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Example.TextLabel.UIPadding
-G2L["18b"] = Instance.new("UIPadding", G2L["18a"]);
-G2L["18b"]["PaddingLeft"] = UDim.new(0, 10);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Example.Button
-G2L["18c"] = Instance.new("TextButton", G2L["187"]);
-G2L["18c"]["BorderSizePixel"] = 0;
-G2L["18c"]["TextSize"] = 14;
-G2L["18c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["18c"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["18c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["18c"]["Size"] = UDim2.new(0, 60, 0, 25);
-G2L["18c"]["Name"] = [[Button]];
-G2L["18c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["18c"]["Text"] = [[Execute]];
-G2L["18c"]["Position"] = UDim2.new(0, 176, 0, 7);
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Example.Button.UICorner
-G2L["18d"] = Instance.new("UICorner", G2L["18c"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Local Scripts.Example.Delete
-G2L["18e"] = Instance.new("ImageButton", G2L["187"]);
-G2L["18e"]["BorderSizePixel"] = 0;
-G2L["18e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["18e"]["Image"] = [[rbxassetid://18647411560]];
-G2L["18e"]["Size"] = UDim2.new(0, 25, 0, 25);
-G2L["18e"]["BackgroundTransparency"] = 1;
-G2L["18e"]["Name"] = [[Delete]];
-G2L["18e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["18e"]["Position"] = UDim2.new(0, 146, 0, 7);
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts
-G2L["18f"] = Instance.new("Frame", G2L["49"]);
-G2L["18f"]["Visible"] = false;
-G2L["18f"]["ZIndex"] = 2;
-G2L["18f"]["BorderSizePixel"] = 0;
-G2L["18f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["18f"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["18f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["18f"]["Name"] = [[Global Scripts]];
-G2L["18f"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.UICorner
-G2L["190"] = Instance.new("UICorner", G2L["18f"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Features
-G2L["191"] = Instance.new("ScrollingFrame", G2L["18f"]);
-G2L["191"]["Active"] = true;
-G2L["191"]["ScrollingDirection"] = Enum.ScrollingDirection.Y;
-G2L["191"]["BorderSizePixel"] = 0;
-G2L["191"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
-G2L["191"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["191"]["Name"] = [[Features]];
-G2L["191"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
-G2L["191"]["Size"] = UDim2.new(0, 551, 0, 222);
-G2L["191"]["ScrollBarImageColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["191"]["Position"] = UDim2.new(0, 0, 0.108, 0);
-G2L["191"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["191"]["ScrollBarThickness"] = 5;
-G2L["191"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Features.Example
-G2L["192"] = Instance.new("Frame", G2L["191"]);
-G2L["192"]["Visible"] = false;
-G2L["192"]["ZIndex"] = 0;
-G2L["192"]["BorderSizePixel"] = 0;
-G2L["192"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["192"]["Size"] = UDim2.new(0, 249, 0, 38);
-G2L["192"]["Position"] = UDim2.new(0, 16, 0, 110);
-G2L["192"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["192"]["Name"] = [[Example]];
-G2L["192"]["LayoutOrder"] = 7;
-G2L["192"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Features.Example.UICorner
-G2L["193"] = Instance.new("UICorner", G2L["192"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Features.Example.UIStroke
-G2L["194"] = Instance.new("UIStroke", G2L["192"]);
-G2L["194"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Features.Example.TextLabel
-G2L["195"] = Instance.new("TextLabel", G2L["192"]);
-G2L["195"]["TextWrapped"] = true;
-G2L["195"]["BorderSizePixel"] = 0;
-G2L["195"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["195"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["195"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["195"]["TextSize"] = 14;
-G2L["195"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["195"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["195"]["BackgroundTransparency"] = 1;
-G2L["195"]["Size"] = UDim2.new(0, 163, 0, 38);
-G2L["195"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["195"]["Text"] = [[Hydroxide]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Features.Example.TextLabel.UIPadding
-G2L["196"] = Instance.new("UIPadding", G2L["195"]);
-G2L["196"]["PaddingLeft"] = UDim.new(0, 10);
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Features.Example.Button
-G2L["197"] = Instance.new("TextButton", G2L["192"]);
-G2L["197"]["BorderSizePixel"] = 0;
-G2L["197"]["TextSize"] = 14;
-G2L["197"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["197"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["197"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["197"]["Size"] = UDim2.new(0, 60, 0, 25);
-G2L["197"]["Name"] = [[Button]];
-G2L["197"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["197"]["Text"] = [[Execute]];
-G2L["197"]["Position"] = UDim2.new(0, 176, 0, 7);
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Features.Example.Button.UICorner
-G2L["198"] = Instance.new("UICorner", G2L["197"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Features.Results
-G2L["199"] = Instance.new("Folder", G2L["191"]);
-G2L["199"]["Name"] = [[Results]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Features.Results.UIGridLayout
-G2L["19a"] = Instance.new("UIGridLayout", G2L["199"]);
-G2L["19a"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Right;
-G2L["19a"]["CellSize"] = UDim2.new(0, 250, 0, 38);
-G2L["19a"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Features.UIPadding
-G2L["19b"] = Instance.new("UIPadding", G2L["191"]);
-G2L["19b"]["PaddingTop"] = UDim.new(0, 10);
-G2L["19b"]["PaddingRight"] = UDim.new(0, 25);
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.DropShadowHolder
-G2L["19c"] = Instance.new("Frame", G2L["18f"]);
-G2L["19c"]["ZIndex"] = 0;
-G2L["19c"]["BorderSizePixel"] = 0;
-G2L["19c"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["19c"]["Name"] = [[DropShadowHolder]];
-G2L["19c"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.DropShadowHolder.DropShadow
-G2L["19d"] = Instance.new("ImageLabel", G2L["19c"]);
-G2L["19d"]["ZIndex"] = 0;
-G2L["19d"]["BorderSizePixel"] = 0;
-G2L["19d"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["19d"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["19d"]["ImageTransparency"] = 0.5;
-G2L["19d"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["19d"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["19d"]["Image"] = [[rbxassetid://6014261993]];
-G2L["19d"]["Size"] = UDim2.new(0, 597, 0, 297);
-G2L["19d"]["BackgroundTransparency"] = 1;
-G2L["19d"]["Name"] = [[DropShadow]];
-G2L["19d"]["Position"] = UDim2.new(0, 275, 0, 125);
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.DropShadowHolder
-G2L["19e"] = Instance.new("Frame", G2L["18f"]);
-G2L["19e"]["ZIndex"] = 0;
-G2L["19e"]["BorderSizePixel"] = 0;
-G2L["19e"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["19e"]["Name"] = [[DropShadowHolder]];
-G2L["19e"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.DropShadowHolder.DropShadow
-G2L["19f"] = Instance.new("ImageLabel", G2L["19e"]);
-G2L["19f"]["Interactable"] = false;
-G2L["19f"]["ZIndex"] = 0;
-G2L["19f"]["BorderSizePixel"] = 0;
-G2L["19f"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["19f"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["19f"]["ImageTransparency"] = 0.5;
-G2L["19f"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["19f"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["19f"]["Image"] = [[rbxassetid://6014261993]];
-G2L["19f"]["Size"] = UDim2.new(0, 598, 0, 368);
-G2L["19f"]["BackgroundTransparency"] = 1;
-G2L["19f"]["Name"] = [[DropShadow]];
-G2L["19f"]["Position"] = UDim2.new(0, 274, 0, 92);
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Frame
-G2L["1a0"] = Instance.new("Frame", G2L["18f"]);
-G2L["1a0"]["ZIndex"] = 0;
-G2L["1a0"]["BorderSizePixel"] = 0;
-G2L["1a0"]["BackgroundColor3"] = Color3.fromRGB(26, 26, 26);
-G2L["1a0"]["Size"] = UDim2.new(0, 249, 0, 38);
-G2L["1a0"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1a0"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Frame.UICorner
-G2L["1a1"] = Instance.new("UICorner", G2L["1a0"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Frame.DropShadowHolder
-G2L["1a2"] = Instance.new("Frame", G2L["1a0"]);
-G2L["1a2"]["ZIndex"] = 3;
-G2L["1a2"]["BorderSizePixel"] = 0;
-G2L["1a2"]["Size"] = UDim2.new(0, 550, 0, 318);
-G2L["1a2"]["Position"] = UDim2.new(0, 0, 0, -68);
-G2L["1a2"]["Name"] = [[DropShadowHolder]];
-G2L["1a2"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Frame.DropShadowHolder.DropShadow
-G2L["1a3"] = Instance.new("ImageLabel", G2L["1a2"]);
-G2L["1a3"]["ZIndex"] = 0;
-G2L["1a3"]["BorderSizePixel"] = 0;
-G2L["1a3"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["1a3"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["1a3"]["ImageTransparency"] = 0.5;
-G2L["1a3"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1a3"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["1a3"]["Image"] = [[rbxassetid://6014261993]];
-G2L["1a3"]["Size"] = UDim2.new(0, 597, 0, 365);
-G2L["1a3"]["BackgroundTransparency"] = 1;
-G2L["1a3"]["Name"] = [[DropShadow]];
-G2L["1a3"]["Position"] = UDim2.new(0, 275, 0, 159);
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Frame.DropShadowHolder
-G2L["1a4"] = Instance.new("Frame", G2L["1a0"]);
-G2L["1a4"]["ZIndex"] = 3;
-G2L["1a4"]["BorderSizePixel"] = 0;
-G2L["1a4"]["Size"] = UDim2.new(0, 550, 0, 318);
-G2L["1a4"]["Position"] = UDim2.new(0, 0, 0, -68);
-G2L["1a4"]["Name"] = [[DropShadowHolder]];
-G2L["1a4"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Frame.DropShadowHolder.DropShadow
-G2L["1a5"] = Instance.new("ImageLabel", G2L["1a4"]);
-G2L["1a5"]["ZIndex"] = 0;
-G2L["1a5"]["BorderSizePixel"] = 0;
-G2L["1a5"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["1a5"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["1a5"]["ImageTransparency"] = 0.5;
-G2L["1a5"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1a5"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["1a5"]["Image"] = [[rbxassetid://6014261993]];
-G2L["1a5"]["Size"] = UDim2.new(0, 597, 0, 365);
-G2L["1a5"]["BackgroundTransparency"] = 1;
-G2L["1a5"]["Name"] = [[DropShadow]];
-G2L["1a5"]["Position"] = UDim2.new(0, 275, 0, 159);
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.ApiButton
-G2L["1a6"] = Instance.new("TextButton", G2L["18f"]);
-G2L["1a6"]["BorderSizePixel"] = 0;
-G2L["1a6"]["TextSize"] = 14;
-G2L["1a6"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1a6"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["1a6"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["1a6"]["Size"] = UDim2.new(0, 75, 0, 25);
-G2L["1a6"]["Name"] = [[ApiButton]];
-G2L["1a6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1a6"]["Text"] = [[ScriptBlox API]];
-G2L["1a6"]["Position"] = UDim2.new(0, 456, 0, -6);
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.ApiButton.UICorner
-G2L["1a7"] = Instance.new("UICorner", G2L["1a6"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Search
-G2L["1a8"] = Instance.new("Frame", G2L["18f"]);
-G2L["1a8"]["BorderSizePixel"] = 0;
-G2L["1a8"]["BackgroundColor3"] = Color3.fromRGB(54, 54, 54);
-G2L["1a8"]["Size"] = UDim2.new(0, 258, 0, 40);
-G2L["1a8"]["Position"] = UDim2.new(0, 20, 0, -14);
-G2L["1a8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1a8"]["Name"] = [[Search]];
-G2L["1a8"]["BackgroundTransparency"] = 0.5;
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Search.UICorner
-G2L["1a9"] = Instance.new("UICorner", G2L["1a8"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Search.UIStroke
-G2L["1aa"] = Instance.new("UIStroke", G2L["1a8"]);
-G2L["1aa"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Search.TextBox
-G2L["1ab"] = Instance.new("TextBox", G2L["1a8"]);
-G2L["1ab"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1ab"]["BorderSizePixel"] = 0;
-G2L["1ab"]["TextSize"] = 11;
-G2L["1ab"]["BackgroundColor3"] = Color3.fromRGB(54, 54, 54);
-G2L["1ab"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["1ab"]["ClearTextOnFocus"] = false;
-G2L["1ab"]["PlaceholderText"] = [[Search scriptblox.com]];
-G2L["1ab"]["Size"] = UDim2.new(0, 194, 0, 25);
-G2L["1ab"]["Position"] = UDim2.new(0.03876, 0, 0.175, 0);
-G2L["1ab"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1ab"]["Text"] = [[]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Search.TextBox.UICorner
-G2L["1ac"] = Instance.new("UICorner", G2L["1ab"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Search.SearchButton
-G2L["1ad"] = Instance.new("ImageButton", G2L["1a8"]);
-G2L["1ad"]["BorderSizePixel"] = 0;
-G2L["1ad"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1ad"]["Image"] = [[rbxassetid://18625077222]];
-G2L["1ad"]["Size"] = UDim2.new(0, 36, 0, 35);
-G2L["1ad"]["BackgroundTransparency"] = 1;
-G2L["1ad"]["Name"] = [[SearchButton]];
-G2L["1ad"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1ad"]["Position"] = UDim2.new(0.83333, 0, 0, 0);
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.Search.SearchButton.UICorner
-G2L["1ae"] = Instance.new("UICorner", G2L["1ad"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.CurrentPage
-G2L["1af"] = Instance.new("TextBox", G2L["18f"]);
-G2L["1af"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1af"]["ZIndex"] = 2;
-G2L["1af"]["BorderSizePixel"] = 0;
-G2L["1af"]["TextSize"] = 14;
-G2L["1af"]["Name"] = [[CurrentPage]];
-G2L["1af"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["1af"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["1af"]["Size"] = UDim2.new(0, 25, 0, 25);
-G2L["1af"]["Position"] = UDim2.new(0, 263, 0, 200);
-G2L["1af"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1af"]["Text"] = [[]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.CurrentPage.UICorner
-G2L["1b0"] = Instance.new("UICorner", G2L["1af"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.CurrentPage.nextPage
-G2L["1b1"] = Instance.new("ImageButton", G2L["1af"]);
-G2L["1b1"]["BorderSizePixel"] = 0;
-G2L["1b1"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1b1"]["ZIndex"] = 2;
-G2L["1b1"]["Image"] = [[rbxassetid://18625493608]];
-G2L["1b1"]["Size"] = UDim2.new(0, 25, 0, 25);
-G2L["1b1"]["BackgroundTransparency"] = 1;
-G2L["1b1"]["Name"] = [[nextPage]];
-G2L["1b1"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1b1"]["Position"] = UDim2.new(0, 28, 0, 0);
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.CurrentPage.nextPage.UICorner
-G2L["1b2"] = Instance.new("UICorner", G2L["1b1"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.CurrentPage.lastPage
-G2L["1b3"] = Instance.new("ImageButton", G2L["1af"]);
-G2L["1b3"]["BorderSizePixel"] = 0;
-G2L["1b3"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1b3"]["ZIndex"] = 2;
-G2L["1b3"]["Image"] = [[rbxassetid://18625493797]];
-G2L["1b3"]["Size"] = UDim2.new(0, 25, 0, 25);
-G2L["1b3"]["BackgroundTransparency"] = 1;
-G2L["1b3"]["Name"] = [[lastPage]];
-G2L["1b3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1b3"]["Position"] = UDim2.new(0, -28, 0, 0);
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.CurrentPage.lastPage.UICorner
-G2L["1b4"] = Instance.new("UICorner", G2L["1b3"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.CurrentPage_Background
-G2L["1b5"] = Instance.new("Frame", G2L["18f"]);
-G2L["1b5"]["BorderSizePixel"] = 0;
-G2L["1b5"]["BackgroundColor3"] = Color3.fromRGB(54, 54, 54);
-G2L["1b5"]["Size"] = UDim2.new(0, 81, 0, 40);
-G2L["1b5"]["Position"] = UDim2.new(0, 235, 0, 192);
-G2L["1b5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1b5"]["Name"] = [[CurrentPage_Background]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Global Scripts.CurrentPage_Background.UICorner
-G2L["1b6"] = Instance.new("UICorner", G2L["1b5"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Console
-G2L["1b7"] = Instance.new("Frame", G2L["49"]);
-G2L["1b7"]["ZIndex"] = 2;
-G2L["1b7"]["BorderSizePixel"] = 0;
-G2L["1b7"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1b7"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["1b7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1b7"]["Name"] = [[Console]];
-G2L["1b7"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Console.UICorner
-G2L["1b8"] = Instance.new("UICorner", G2L["1b7"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Console.Frame
-G2L["1b9"] = Instance.new("Frame", G2L["1b7"]);
-G2L["1b9"]["ZIndex"] = 0;
-G2L["1b9"]["BorderSizePixel"] = 0;
-G2L["1b9"]["BackgroundColor3"] = Color3.fromRGB(26, 26, 26);
-G2L["1b9"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["1b9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-
--- StarterGui.Cryptic.MainUI.Tabs.Console.Frame.UICorner
-G2L["1ba"] = Instance.new("UICorner", G2L["1b9"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Console.Frame.DropShadowHolder
-G2L["1bb"] = Instance.new("Frame", G2L["1b9"]);
-G2L["1bb"]["ZIndex"] = 3;
-G2L["1bb"]["BorderSizePixel"] = 0;
-G2L["1bb"]["Size"] = UDim2.new(0, 550, 0, 318);
-G2L["1bb"]["Position"] = UDim2.new(0, 0, 0, -68);
-G2L["1bb"]["Name"] = [[DropShadowHolder]];
-G2L["1bb"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Console.Frame.DropShadowHolder.DropShadow
-G2L["1bc"] = Instance.new("ImageLabel", G2L["1bb"]);
-G2L["1bc"]["ZIndex"] = 0;
-G2L["1bc"]["BorderSizePixel"] = 0;
-G2L["1bc"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["1bc"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["1bc"]["ImageTransparency"] = 0.5;
-G2L["1bc"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1bc"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["1bc"]["Image"] = [[rbxassetid://6014261993]];
-G2L["1bc"]["Size"] = UDim2.new(0, 597, 0, 365);
-G2L["1bc"]["BackgroundTransparency"] = 1;
-G2L["1bc"]["Name"] = [[DropShadow]];
-G2L["1bc"]["Position"] = UDim2.new(0, 275, 0, 159);
-
--- StarterGui.Cryptic.MainUI.Tabs.Console.Frame.DropShadowHolder
-G2L["1bd"] = Instance.new("Frame", G2L["1b9"]);
-G2L["1bd"]["ZIndex"] = 3;
-G2L["1bd"]["BorderSizePixel"] = 0;
-G2L["1bd"]["Size"] = UDim2.new(0, 550, 0, 318);
-G2L["1bd"]["Position"] = UDim2.new(0, 0, 0, -68);
-G2L["1bd"]["Name"] = [[DropShadowHolder]];
-G2L["1bd"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Console.Frame.DropShadowHolder.DropShadow
-G2L["1be"] = Instance.new("ImageLabel", G2L["1bd"]);
-G2L["1be"]["ZIndex"] = 0;
-G2L["1be"]["BorderSizePixel"] = 0;
-G2L["1be"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["1be"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["1be"]["ImageTransparency"] = 0.5;
-G2L["1be"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1be"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["1be"]["Image"] = [[rbxassetid://6014261993]];
-G2L["1be"]["Size"] = UDim2.new(0, 597, 0, 365);
-G2L["1be"]["BackgroundTransparency"] = 1;
-G2L["1be"]["Name"] = [[DropShadow]];
-G2L["1be"]["Position"] = UDim2.new(0, 275, 0, 159);
-
--- StarterGui.Cryptic.MainUI.Tabs.Console.DropShadowHolder
-G2L["1bf"] = Instance.new("Frame", G2L["1b7"]);
-G2L["1bf"]["ZIndex"] = 0;
-G2L["1bf"]["BorderSizePixel"] = 0;
-G2L["1bf"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["1bf"]["Name"] = [[DropShadowHolder]];
-G2L["1bf"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Console.DropShadowHolder.DropShadow
-G2L["1c0"] = Instance.new("ImageLabel", G2L["1bf"]);
-G2L["1c0"]["ZIndex"] = 0;
-G2L["1c0"]["BorderSizePixel"] = 0;
-G2L["1c0"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["1c0"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["1c0"]["ImageTransparency"] = 0.5;
-G2L["1c0"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1c0"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["1c0"]["Image"] = [[rbxassetid://6014261993]];
-G2L["1c0"]["Size"] = UDim2.new(0, 597, 0, 297);
-G2L["1c0"]["BackgroundTransparency"] = 1;
-G2L["1c0"]["Name"] = [[DropShadow]];
-G2L["1c0"]["Position"] = UDim2.new(0, 275, 0, 125);
-
--- StarterGui.Cryptic.MainUI.Tabs.Console.DropShadowHolder
-G2L["1c1"] = Instance.new("Frame", G2L["1b7"]);
-G2L["1c1"]["ZIndex"] = 0;
-G2L["1c1"]["BorderSizePixel"] = 0;
-G2L["1c1"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["1c1"]["Name"] = [[DropShadowHolder]];
-G2L["1c1"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Console.DropShadowHolder.DropShadow
-G2L["1c2"] = Instance.new("ImageLabel", G2L["1c1"]);
-G2L["1c2"]["Interactable"] = false;
-G2L["1c2"]["BorderSizePixel"] = 0;
-G2L["1c2"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["1c2"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["1c2"]["ImageTransparency"] = 0.5;
-G2L["1c2"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1c2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["1c2"]["Image"] = [[rbxassetid://6014261993]];
-G2L["1c2"]["Size"] = UDim2.new(0, 598, 0, 368);
-G2L["1c2"]["BackgroundTransparency"] = 1;
-G2L["1c2"]["Name"] = [[DropShadow]];
-G2L["1c2"]["Position"] = UDim2.new(0, 274, 0, 92);
-
--- StarterGui.Cryptic.MainUI.Tabs.Console.ScrollingFrame
-G2L["1c3"] = Instance.new("ScrollingFrame", G2L["1b7"]);
-G2L["1c3"]["Active"] = true;
-G2L["1c3"]["ScrollingDirection"] = Enum.ScrollingDirection.Y;
-G2L["1c3"]["BorderSizePixel"] = 0;
-G2L["1c3"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1c3"]["ScrollBarImageTransparency"] = 1;
-G2L["1c3"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
-G2L["1c3"]["Size"] = UDim2.new(0, 550, 0, 242);
-G2L["1c3"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1c3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1c3"]["ScrollBarThickness"] = 0;
-G2L["1c3"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Console.ScrollingFrame.Frame
-G2L["1c4"] = Instance.new("Frame", G2L["1c3"]);
-G2L["1c4"]["BorderSizePixel"] = 0;
-G2L["1c4"]["BackgroundColor3"] = Color3.fromRGB(19, 19, 19);
-G2L["1c4"]["Size"] = UDim2.new(0, 530, 0, 10000000);
-G2L["1c4"]["Position"] = UDim2.new(0, 10, 0, 0);
-G2L["1c4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-
--- StarterGui.Cryptic.MainUI.Tabs.Console.ScrollingFrame.Frame.UICorner
-G2L["1c5"] = Instance.new("UICorner", G2L["1c4"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Console.ScrollingFrame.Frame.Log
-G2L["1c6"] = Instance.new("TextLabel", G2L["1c4"]);
-G2L["1c6"]["BorderSizePixel"] = 0;
-G2L["1c6"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["1c6"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-G2L["1c6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1c6"]["TextSize"] = 14;
-G2L["1c6"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["1c6"]["TextDirection"] = Enum.TextDirection.LeftToRight;
-G2L["1c6"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1c6"]["BackgroundTransparency"] = 1;
-G2L["1c6"]["RichText"] = true;
-G2L["1c6"]["Size"] = UDim2.new(0, 530, 0, 10000000);
-G2L["1c6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1c6"]["Text"] = [[-- Welcome to Cryptic]];
-G2L["1c6"]["Name"] = [[Log]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Console.ScrollingFrame.Frame.UIPadding
-G2L["1c7"] = Instance.new("UIPadding", G2L["1c4"]);
-G2L["1c7"]["PaddingTop"] = UDim.new(0, 5);
-G2L["1c7"]["PaddingLeft"] = UDim.new(0, 5);
-
--- StarterGui.Cryptic.MainUI.Tabs.Console.Folder
-G2L["1c8"] = Instance.new("Folder", G2L["1b7"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Console.Folder.Frame
-G2L["1c9"] = Instance.new("Frame", G2L["1c8"]);
-G2L["1c9"]["BorderSizePixel"] = 0;
-G2L["1c9"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1c9"]["Size"] = UDim2.new(0, 530, 0, 100);
-G2L["1c9"]["Position"] = UDim2.new(0, 10, 0.56923, 0);
-G2L["1c9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1c9"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Console.Folder.Frame.UIListLayout
-G2L["1ca"] = Instance.new("UIListLayout", G2L["1c9"]);
-G2L["1ca"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
-G2L["1ca"]["VerticalAlignment"] = Enum.VerticalAlignment.Bottom;
-G2L["1ca"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
--- StarterGui.Cryptic.MainUI.Tabs.Console.Folder.Frame.Clear
-G2L["1cb"] = Instance.new("ImageButton", G2L["1c9"]);
-G2L["1cb"]["BorderSizePixel"] = 0;
-G2L["1cb"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1cb"]["Image"] = [[rbxassetid://18647411560]];
-G2L["1cb"]["Size"] = UDim2.new(0, 25, 0, 25);
-G2L["1cb"]["BackgroundTransparency"] = 1;
-G2L["1cb"]["Name"] = [[Clear]];
-G2L["1cb"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1cb"]["Position"] = UDim2.new(1.54423, 0, 1.46538, 0);
-
--- StarterGui.Cryptic.MainUI.Tabs.Console.Folder.Frame.UIPadding
-G2L["1cc"] = Instance.new("UIPadding", G2L["1c9"]);
-G2L["1cc"]["PaddingBottom"] = UDim.new(0, 10);
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings
-G2L["24c"] = Instance.new("Frame", G2L["49"]);
-G2L["24c"]["Visible"] = false;
-G2L["24c"]["ZIndex"] = 2;
-G2L["24c"]["BorderSizePixel"] = 0;
-G2L["24c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["24c"]["Size"] = UDim2.new(0, 551, 0, 249);
-G2L["24c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["24c"]["Name"] = [[Settings]];
-G2L["24c"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.UICorner
-G2L["24d"] = Instance.new("UICorner", G2L["24c"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Frame
-G2L["24e"] = Instance.new("Frame", G2L["24c"]);
-G2L["24e"]["ZIndex"] = 0;
-G2L["24e"]["BorderSizePixel"] = 0;
-G2L["24e"]["BackgroundColor3"] = Color3.fromRGB(26, 26, 26);
-G2L["24e"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["24e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Frame.UICorner
-G2L["24f"] = Instance.new("UICorner", G2L["24e"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Frame.DropShadowHolder
-G2L["250"] = Instance.new("Frame", G2L["24e"]);
-G2L["250"]["ZIndex"] = 3;
-G2L["250"]["BorderSizePixel"] = 0;
-G2L["250"]["Size"] = UDim2.new(0, 550, 0, 318);
-G2L["250"]["Position"] = UDim2.new(0, 0, 0, -68);
-G2L["250"]["Name"] = [[DropShadowHolder]];
-G2L["250"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Frame.DropShadowHolder.DropShadow
-G2L["251"] = Instance.new("ImageLabel", G2L["250"]);
-G2L["251"]["ZIndex"] = 0;
-G2L["251"]["BorderSizePixel"] = 0;
-G2L["251"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["251"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["251"]["ImageTransparency"] = 0.5;
-G2L["251"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["251"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["251"]["Image"] = [[rbxassetid://6014261993]];
-G2L["251"]["Size"] = UDim2.new(0, 597, 0, 365);
-G2L["251"]["BackgroundTransparency"] = 1;
-G2L["251"]["Name"] = [[DropShadow]];
-G2L["251"]["Position"] = UDim2.new(0, 275, 0, 159);
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Frame.DropShadowHolder
-G2L["252"] = Instance.new("Frame", G2L["24e"]);
-G2L["252"]["ZIndex"] = 3;
-G2L["252"]["BorderSizePixel"] = 0;
-G2L["252"]["Size"] = UDim2.new(0, 550, 0, 318);
-G2L["252"]["Position"] = UDim2.new(0, 0, 0, -68);
-G2L["252"]["Name"] = [[DropShadowHolder]];
-G2L["252"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Frame.DropShadowHolder.DropShadow
-G2L["253"] = Instance.new("ImageLabel", G2L["252"]);
-G2L["253"]["ZIndex"] = 0;
-G2L["253"]["BorderSizePixel"] = 0;
-G2L["253"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["253"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["253"]["ImageTransparency"] = 0.5;
-G2L["253"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["253"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["253"]["Image"] = [[rbxassetid://6014261993]];
-G2L["253"]["Size"] = UDim2.new(0, 597, 0, 365);
-G2L["253"]["BackgroundTransparency"] = 1;
-G2L["253"]["Name"] = [[DropShadow]];
-G2L["253"]["Position"] = UDim2.new(0, 275, 0, 159);
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features
-G2L["254"] = Instance.new("ScrollingFrame", G2L["24c"]);
-G2L["254"]["Active"] = true;
-G2L["254"]["BorderSizePixel"] = 0;
-G2L["254"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
-G2L["254"]["ScrollingEnabled"] = false;
-G2L["254"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["254"]["Name"] = [[Features]];
-G2L["254"]["ScrollBarImageTransparency"] = 1;
-G2L["254"]["Size"] = UDim2.new(0, 551, 0, 249);
-G2L["254"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["254"]["ScrollBarThickness"] = 0;
-G2L["254"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.UIPadding
-G2L["255"] = Instance.new("UIPadding", G2L["254"]);
-G2L["255"]["PaddingTop"] = UDim.new(0, 5);
-G2L["255"]["PaddingRight"] = UDim.new(0, 25);
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.UIGridLayout
-G2L["256"] = Instance.new("UIGridLayout", G2L["254"]);
-G2L["256"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Right;
-G2L["256"]["CellSize"] = UDim2.new(0, 250, 0, 38);
-G2L["256"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.EmulatorMode
-G2L["257"] = Instance.new("Frame", G2L["254"]);
-G2L["257"]["BorderSizePixel"] = 0;
-G2L["257"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["257"]["Size"] = UDim2.new(0, 249, 0, 38);
-G2L["257"]["Position"] = UDim2.new(0, 16, 0, 160);
-G2L["257"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["257"]["Name"] = [[EmulatorMode]];
-G2L["257"]["LayoutOrder"] = 1;
-G2L["257"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.EmulatorMode.UICorner
-G2L["258"] = Instance.new("UICorner", G2L["257"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.EmulatorMode.UIStroke
-G2L["259"] = Instance.new("UIStroke", G2L["257"]);
-G2L["259"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.EmulatorMode.TextLabel
-G2L["25a"] = Instance.new("TextLabel", G2L["257"]);
-G2L["25a"]["BorderSizePixel"] = 0;
-G2L["25a"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["25a"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["25a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["25a"]["TextSize"] = 20;
-G2L["25a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["25a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["25a"]["BackgroundTransparency"] = 1;
-G2L["25a"]["Size"] = UDim2.new(0, 163, 0, 38);
-G2L["25a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["25a"]["Text"] = [[Emulator Mode]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.EmulatorMode.TextLabel.UIPadding
-G2L["25b"] = Instance.new("UIPadding", G2L["25a"]);
-G2L["25b"]["PaddingLeft"] = UDim.new(0, 10);
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.EmulatorMode.Toggle
-G2L["25c"] = Instance.new("TextButton", G2L["257"]);
-G2L["25c"]["BorderSizePixel"] = 0;
-G2L["25c"]["TextSize"] = 14;
-G2L["25c"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["25c"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5);
-G2L["25c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["25c"]["Size"] = UDim2.new(0, 23, 0, 23);
-G2L["25c"]["Name"] = [[Toggle]];
-G2L["25c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["25c"]["Text"] = [[]];
-G2L["25c"]["Position"] = UDim2.new(0, 211, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.EmulatorMode.Toggle.UICorner
-G2L["25d"] = Instance.new("UICorner", G2L["25c"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.FPSUnlocker
-G2L["25e"] = Instance.new("Frame", G2L["254"]);
-G2L["25e"]["BorderSizePixel"] = 0;
-G2L["25e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["25e"]["Size"] = UDim2.new(0, 325, 0, 49);
-G2L["25e"]["Position"] = UDim2.new(0, 20, 0, 207);
-G2L["25e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["25e"]["Name"] = [[FPSUnlocker]];
-G2L["25e"]["LayoutOrder"] = 2;
-G2L["25e"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.FPSUnlocker.UICorner
-G2L["25f"] = Instance.new("UICorner", G2L["25e"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.FPSUnlocker.UIStroke
-G2L["260"] = Instance.new("UIStroke", G2L["25e"]);
-G2L["260"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.FPSUnlocker.TextLabel
-G2L["261"] = Instance.new("TextLabel", G2L["25e"]);
-G2L["261"]["BorderSizePixel"] = 0;
-G2L["261"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["261"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["261"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["261"]["TextSize"] = 20;
-G2L["261"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["261"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["261"]["BackgroundTransparency"] = 1;
-G2L["261"]["Size"] = UDim2.new(0, 163, 0, 38);
-G2L["261"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["261"]["Text"] = [[FPS Unlocker]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.FPSUnlocker.TextLabel.UIPadding
-G2L["262"] = Instance.new("UIPadding", G2L["261"]);
-G2L["262"]["PaddingLeft"] = UDim.new(0, 10);
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.FPSUnlocker.Toggle
-G2L["263"] = Instance.new("TextButton", G2L["25e"]);
-G2L["263"]["BorderSizePixel"] = 0;
-G2L["263"]["TextSize"] = 14;
-G2L["263"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["263"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5);
-G2L["263"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["263"]["Size"] = UDim2.new(0, 23, 0, 23);
-G2L["263"]["Name"] = [[Toggle]];
-G2L["263"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["263"]["Text"] = [[]];
-G2L["263"]["Position"] = UDim2.new(0, 211, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.FPSUnlocker.Toggle.UICorner
-G2L["264"] = Instance.new("UICorner", G2L["263"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.Vsync
-G2L["265"] = Instance.new("Frame", G2L["254"]);
-G2L["265"]["Interactable"] = false;
-G2L["265"]["BorderSizePixel"] = 0;
-G2L["265"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["265"]["Size"] = UDim2.new(0, 325, 0, 49);
-G2L["265"]["Position"] = UDim2.new(0, 20, 0, 207);
-G2L["265"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["265"]["Name"] = [[Vsync]];
-G2L["265"]["LayoutOrder"] = 3;
-G2L["265"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.Vsync.UICorner
-G2L["266"] = Instance.new("UICorner", G2L["265"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.Vsync.UIStroke
-G2L["267"] = Instance.new("UIStroke", G2L["265"]);
-G2L["267"]["Transparency"] = 1;
-G2L["267"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.Vsync.TextLabel
-G2L["268"] = Instance.new("TextLabel", G2L["265"]);
-G2L["268"]["BorderSizePixel"] = 0;
-G2L["268"]["TextStrokeColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["268"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["268"]["TextTransparency"] = 1;
-G2L["268"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["268"]["TextSize"] = 20;
-G2L["268"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["268"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["268"]["BackgroundTransparency"] = 1;
-G2L["268"]["Size"] = UDim2.new(0, 163, 0, 38);
-G2L["268"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["268"]["Text"] = [[Vsync]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.Vsync.TextLabel.UIPadding
-G2L["269"] = Instance.new("UIPadding", G2L["268"]);
-G2L["269"]["PaddingLeft"] = UDim.new(0, 10);
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.Vsync.Toggle
-G2L["26a"] = Instance.new("TextButton", G2L["265"]);
-G2L["26a"]["BorderSizePixel"] = 0;
-G2L["26a"]["TextTransparency"] = 1;
-G2L["26a"]["TextSize"] = 14;
-G2L["26a"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["26a"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 5);
-G2L["26a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["26a"]["Size"] = UDim2.new(0, 23, 0, 23);
-G2L["26a"]["BackgroundTransparency"] = 1;
-G2L["26a"]["Name"] = [[Toggle]];
-G2L["26a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["26a"]["Text"] = [[]];
-G2L["26a"]["Position"] = UDim2.new(0, 211, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.Vsync.Toggle.UICorner
-G2L["26b"] = Instance.new("UICorner", G2L["26a"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.FPSUnlocker_Slider
-G2L["26c"] = Instance.new("Frame", G2L["254"]);
-G2L["26c"]["BorderSizePixel"] = 0;
-G2L["26c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["26c"]["Size"] = UDim2.new(0, 325, 0, 49);
-G2L["26c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["26c"]["Name"] = [[FPSUnlocker_Slider]];
-G2L["26c"]["LayoutOrder"] = 4;
-G2L["26c"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.FPSUnlocker_Slider.UICorner
-G2L["26d"] = Instance.new("UICorner", G2L["26c"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.FPSUnlocker_Slider.UIStroke
-G2L["26e"] = Instance.new("UIStroke", G2L["26c"]);
-G2L["26e"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.FPSUnlocker_Slider.SliderRegion
-G2L["26f"] = Instance.new("TextLabel", G2L["26c"]);
-G2L["26f"]["Interactable"] = false;
-G2L["26f"]["BorderSizePixel"] = 0;
-G2L["26f"]["BackgroundColor3"] = Color3.fromRGB(32, 32, 32);
-G2L["26f"]["TextSize"] = 14;
-G2L["26f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["26f"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["26f"]["Size"] = UDim2.new(0, 240, 0, 23);
-G2L["26f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["26f"]["Text"] = [[]];
-G2L["26f"]["Name"] = [[SliderRegion]];
-G2L["26f"]["Position"] = UDim2.new(0, 5, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.FPSUnlocker_Slider.SliderRegion.UICorner
-G2L["270"] = Instance.new("UICorner", G2L["26f"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.FPSUnlocker_Slider.SliderButton
-G2L["271"] = Instance.new("TextButton", G2L["26c"]);
-G2L["271"]["TextWrapped"] = true;
-G2L["271"]["BorderSizePixel"] = 0;
-G2L["271"]["TextSize"] = 14;
-G2L["271"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["271"]["TextScaled"] = true;
-G2L["271"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["271"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["271"]["Size"] = UDim2.new(0, 24, 0, 23);
-G2L["271"]["Name"] = [[SliderButton]];
-G2L["271"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["271"]["Text"] = [[45345]];
-G2L["271"]["Position"] = UDim2.new(0, 5, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.Features.FPSUnlocker_Slider.SliderButton.UICorner
-G2L["272"] = Instance.new("UICorner", G2L["271"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.DropShadowHolder
-G2L["273"] = Instance.new("Frame", G2L["24c"]);
-G2L["273"]["ZIndex"] = 0;
-G2L["273"]["BorderSizePixel"] = 0;
-G2L["273"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["273"]["Name"] = [[DropShadowHolder]];
-G2L["273"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.DropShadowHolder.DropShadow
-G2L["274"] = Instance.new("ImageLabel", G2L["273"]);
-G2L["274"]["ZIndex"] = 0;
-G2L["274"]["BorderSizePixel"] = 0;
-G2L["274"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["274"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["274"]["ImageTransparency"] = 0.5;
-G2L["274"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["274"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["274"]["Image"] = [[rbxassetid://6014261993]];
-G2L["274"]["Size"] = UDim2.new(0, 597, 0, 297);
-G2L["274"]["BackgroundTransparency"] = 1;
-G2L["274"]["Name"] = [[DropShadow]];
-G2L["274"]["Position"] = UDim2.new(0, 275, 0, 125);
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.DropShadowHolder
-G2L["275"] = Instance.new("Frame", G2L["24c"]);
-G2L["275"]["ZIndex"] = 0;
-G2L["275"]["BorderSizePixel"] = 0;
-G2L["275"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["275"]["Name"] = [[DropShadowHolder]];
-G2L["275"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Settings.DropShadowHolder.DropShadow
-G2L["276"] = Instance.new("ImageLabel", G2L["275"]);
-G2L["276"]["Interactable"] = false;
-G2L["276"]["ZIndex"] = 0;
-G2L["276"]["BorderSizePixel"] = 0;
-G2L["276"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["276"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["276"]["ImageTransparency"] = 0.5;
-G2L["276"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["276"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["276"]["Image"] = [[rbxassetid://6014261993]];
-G2L["276"]["Size"] = UDim2.new(0, 598, 0, 368);
-G2L["276"]["BackgroundTransparency"] = 1;
-G2L["276"]["Name"] = [[DropShadow]];
-G2L["276"]["Position"] = UDim2.new(0, 274, 0, 92);
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc
-G2L["277"] = Instance.new("Frame", G2L["49"]);
-G2L["277"]["Visible"] = false;
-G2L["277"]["ZIndex"] = 2;
-G2L["277"]["BorderSizePixel"] = 0;
-G2L["277"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["277"]["Size"] = UDim2.new(0, 551, 0, 249);
-G2L["277"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["277"]["Name"] = [[Misc]];
-G2L["277"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.UICorner
-G2L["278"] = Instance.new("UICorner", G2L["277"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.Frame
-G2L["279"] = Instance.new("Frame", G2L["277"]);
-G2L["279"]["ZIndex"] = 0;
-G2L["279"]["BorderSizePixel"] = 0;
-G2L["279"]["BackgroundColor3"] = Color3.fromRGB(26, 26, 26);
-G2L["279"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["279"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.Frame.UICorner
-G2L["27a"] = Instance.new("UICorner", G2L["279"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.Frame.DropShadowHolder
-G2L["27b"] = Instance.new("Frame", G2L["279"]);
-G2L["27b"]["ZIndex"] = 3;
-G2L["27b"]["BorderSizePixel"] = 0;
-G2L["27b"]["Size"] = UDim2.new(0, 550, 0, 318);
-G2L["27b"]["Position"] = UDim2.new(0, 0, 0, -68);
-G2L["27b"]["Name"] = [[DropShadowHolder]];
-G2L["27b"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.Frame.DropShadowHolder.DropShadow
-G2L["27c"] = Instance.new("ImageLabel", G2L["27b"]);
-G2L["27c"]["ZIndex"] = 0;
-G2L["27c"]["BorderSizePixel"] = 0;
-G2L["27c"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["27c"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["27c"]["ImageTransparency"] = 0.5;
-G2L["27c"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["27c"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["27c"]["Image"] = [[rbxassetid://6014261993]];
-G2L["27c"]["Size"] = UDim2.new(0, 597, 0, 365);
-G2L["27c"]["BackgroundTransparency"] = 1;
-G2L["27c"]["Name"] = [[DropShadow]];
-G2L["27c"]["Position"] = UDim2.new(0, 275, 0, 159);
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.Frame.DropShadowHolder
-G2L["27d"] = Instance.new("Frame", G2L["279"]);
-G2L["27d"]["ZIndex"] = 3;
-G2L["27d"]["BorderSizePixel"] = 0;
-G2L["27d"]["Size"] = UDim2.new(0, 550, 0, 318);
-G2L["27d"]["Position"] = UDim2.new(0, 0, 0, -68);
-G2L["27d"]["Name"] = [[DropShadowHolder]];
-G2L["27d"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.Frame.DropShadowHolder.DropShadow
-G2L["27e"] = Instance.new("ImageLabel", G2L["27d"]);
-G2L["27e"]["ZIndex"] = 0;
-G2L["27e"]["BorderSizePixel"] = 0;
-G2L["27e"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["27e"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["27e"]["ImageTransparency"] = 0.5;
-G2L["27e"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["27e"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["27e"]["Image"] = [[rbxassetid://6014261993]];
-G2L["27e"]["Size"] = UDim2.new(0, 597, 0, 365);
-G2L["27e"]["BackgroundTransparency"] = 1;
-G2L["27e"]["Name"] = [[DropShadow]];
-G2L["27e"]["Position"] = UDim2.new(0, 275, 0, 159);
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.Features
-G2L["27f"] = Instance.new("ScrollingFrame", G2L["277"]);
-G2L["27f"]["Active"] = true;
-G2L["27f"]["BorderSizePixel"] = 0;
-G2L["27f"]["ElasticBehavior"] = Enum.ElasticBehavior.Never;
-G2L["27f"]["ScrollingEnabled"] = false;
-G2L["27f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["27f"]["Name"] = [[Features]];
-G2L["27f"]["ScrollBarImageTransparency"] = 1;
-G2L["27f"]["Size"] = UDim2.new(0, 551, 0, 249);
-G2L["27f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["27f"]["ScrollBarThickness"] = 0;
-G2L["27f"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.Features.UIPadding
-G2L["280"] = Instance.new("UIPadding", G2L["27f"]);
-G2L["280"]["PaddingTop"] = UDim.new(0, 5);
-G2L["280"]["PaddingRight"] = UDim.new(0, 25);
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.Features.UIGridLayout
-G2L["281"] = Instance.new("UIGridLayout", G2L["27f"]);
-G2L["281"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Right;
-G2L["281"]["CellSize"] = UDim2.new(0, 250, 0, 38);
-G2L["281"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.Features.ServerhopCustom
-G2L["282"] = Instance.new("TextButton", G2L["27f"]);
-G2L["282"]["BorderSizePixel"] = 0;
-G2L["282"]["TextSize"] = 14;
-G2L["282"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["282"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["282"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["282"]["Size"] = UDim2.new(0, 200, 0, 50);
-G2L["282"]["LayoutOrder"] = 1;
-G2L["282"]["Name"] = [[ServerhopCustom]];
-G2L["282"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["282"]["Text"] = [[Server hop to server with custom amount of players]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.Features.ServerhopCustom.UICorner
-G2L["283"] = Instance.new("UICorner", G2L["282"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.Features.ServerhopLowest
-G2L["284"] = Instance.new("TextButton", G2L["27f"]);
-G2L["284"]["BorderSizePixel"] = 0;
-G2L["284"]["TextSize"] = 14;
-G2L["284"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["284"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["284"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["284"]["Size"] = UDim2.new(0, 200, 0, 50);
-G2L["284"]["LayoutOrder"] = 2;
-G2L["284"]["Name"] = [[ServerhopLowest]];
-G2L["284"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["284"]["Text"] = [[Server hop to lowest player count server]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.Features.ServerhopLowest.UICorner
-G2L["285"] = Instance.new("UICorner", G2L["284"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.Features.ServerhopCustom_Slider
-G2L["286"] = Instance.new("Frame", G2L["27f"]);
-G2L["286"]["BorderSizePixel"] = 0;
-G2L["286"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["286"]["Size"] = UDim2.new(0, 100, 0, 100);
-G2L["286"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["286"]["Name"] = [[ServerhopCustom_Slider]];
-G2L["286"]["LayoutOrder"] = 3;
-G2L["286"]["BackgroundTransparency"] = 0.99;
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.Features.ServerhopCustom_Slider.UICorner
-G2L["287"] = Instance.new("UICorner", G2L["286"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.Features.ServerhopCustom_Slider.UIStroke
-G2L["288"] = Instance.new("UIStroke", G2L["286"]);
-G2L["288"]["Color"] = Color3.fromRGB(34, 34, 34);
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.Features.ServerhopCustom_Slider.SliderRegion
-G2L["289"] = Instance.new("TextLabel", G2L["286"]);
-G2L["289"]["Interactable"] = false;
-G2L["289"]["BorderSizePixel"] = 0;
-G2L["289"]["BackgroundColor3"] = Color3.fromRGB(32, 32, 32);
-G2L["289"]["TextSize"] = 14;
-G2L["289"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["289"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["289"]["Size"] = UDim2.new(0, 240, 0, 23);
-G2L["289"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["289"]["Text"] = [[]];
-G2L["289"]["Name"] = [[SliderRegion]];
-G2L["289"]["Position"] = UDim2.new(0, 5, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.Features.ServerhopCustom_Slider.SliderRegion.UICorner
-G2L["28a"] = Instance.new("UICorner", G2L["289"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.Features.ServerhopCustom_Slider.SliderButton
-G2L["28b"] = Instance.new("TextButton", G2L["286"]);
-G2L["28b"]["TextWrapped"] = true;
-G2L["28b"]["BorderSizePixel"] = 0;
-G2L["28b"]["TextSize"] = 14;
-G2L["28b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["28b"]["TextScaled"] = true;
-G2L["28b"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["28b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["28b"]["Size"] = UDim2.new(0, 24, 0, 23);
-G2L["28b"]["Name"] = [[SliderButton]];
-G2L["28b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["28b"]["Text"] = [[45345]];
-G2L["28b"]["Position"] = UDim2.new(0, 5, 0, 8);
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.Features.ServerhopCustom_Slider.SliderButton.UICorner
-G2L["28c"] = Instance.new("UICorner", G2L["28b"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.Features.ServerhopNormal
-G2L["28d"] = Instance.new("TextButton", G2L["27f"]);
-G2L["28d"]["BorderSizePixel"] = 0;
-G2L["28d"]["TextSize"] = 14;
-G2L["28d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["28d"]["BackgroundColor3"] = Color3.fromRGB(26, 156, 255);
-G2L["28d"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["28d"]["Size"] = UDim2.new(0, 200, 0, 50);
-G2L["28d"]["LayoutOrder"] = 4;
-G2L["28d"]["Name"] = [[ServerhopNormal]];
-G2L["28d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["28d"]["Text"] = [[Normal Server hop]];
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.Features.ServerhopNormal.UICorner
-G2L["28e"] = Instance.new("UICorner", G2L["28d"]);
-
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.DropShadowHolder
-G2L["28f"] = Instance.new("Frame", G2L["277"]);
-G2L["28f"]["ZIndex"] = 0;
-G2L["28f"]["BorderSizePixel"] = 0;
-G2L["28f"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["28f"]["Name"] = [[DropShadowHolder]];
-G2L["28f"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.DropShadowHolder.DropShadow
-G2L["290"] = Instance.new("ImageLabel", G2L["28f"]);
-G2L["290"]["ZIndex"] = 0;
-G2L["290"]["BorderSizePixel"] = 0;
-G2L["290"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["290"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["290"]["ImageTransparency"] = 0.5;
-G2L["290"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["290"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["290"]["Image"] = [[rbxassetid://6014261993]];
-G2L["290"]["Size"] = UDim2.new(0, 597, 0, 297);
-G2L["290"]["BackgroundTransparency"] = 1;
-G2L["290"]["Name"] = [[DropShadow]];
-G2L["290"]["Position"] = UDim2.new(0, 275, 0, 125);
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.DropShadowHolder
-G2L["291"] = Instance.new("Frame", G2L["277"]);
-G2L["291"]["ZIndex"] = 0;
-G2L["291"]["BorderSizePixel"] = 0;
-G2L["291"]["Size"] = UDim2.new(0, 550, 0, 250);
-G2L["291"]["Name"] = [[DropShadowHolder]];
-G2L["291"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.MainUI.Tabs.Misc.DropShadowHolder.DropShadow
-G2L["292"] = Instance.new("ImageLabel", G2L["291"]);
-G2L["292"]["Interactable"] = false;
-G2L["292"]["ZIndex"] = 0;
-G2L["292"]["BorderSizePixel"] = 0;
-G2L["292"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["292"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["292"]["ImageTransparency"] = 0.5;
-G2L["292"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["292"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["292"]["Image"] = [[rbxassetid://6014261993]];
-G2L["292"]["Size"] = UDim2.new(0, 598, 0, 368);
-G2L["292"]["BackgroundTransparency"] = 1;
-G2L["292"]["Name"] = [[DropShadow]];
-G2L["292"]["Position"] = UDim2.new(0, 274, 0, 92);
-
--- StarterGui.Cryptic.MainUI.UIScale
-G2L["293"] = Instance.new("UIScale", G2L["2"]);
-G2L["293"]["Scale"] = 1.3;
-
--- StarterGui.Cryptic.Frame
-G2L["294"] = Instance.new("Frame", G2L["1"]);
-G2L["294"]["ZIndex"] = 100;
-G2L["294"]["BorderSizePixel"] = 0;
-G2L["294"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["294"]["Selectable"] = true;
-G2L["294"]["Size"] = UDim2.new(0, 41, 0, 41);
-G2L["294"]["Position"] = UDim2.new(0, 582, 0, 14);
-G2L["294"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["294"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.Frame.UICorner
-G2L["295"] = Instance.new("UICorner", G2L["294"]);
-
-
--- StarterGui.Cryptic.Frame.DropShadowHolder
-G2L["296"] = Instance.new("Frame", G2L["294"]);
-G2L["296"]["ZIndex"] = 0;
-G2L["296"]["BorderSizePixel"] = 0;
-G2L["296"]["Size"] = UDim2.new(0, 41, 0, 41);
-G2L["296"]["Name"] = [[DropShadowHolder]];
-G2L["296"]["BackgroundTransparency"] = 1;
-
--- StarterGui.Cryptic.Frame.DropShadowHolder.DropShadow
-G2L["297"] = Instance.new("ImageLabel", G2L["296"]);
-G2L["297"]["ZIndex"] = 0;
-G2L["297"]["BorderSizePixel"] = 0;
-G2L["297"]["SliceCenter"] = Rect.new(49, 49, 450, 450);
-G2L["297"]["ScaleType"] = Enum.ScaleType.Slice;
-G2L["297"]["ImageTransparency"] = 0.5;
-G2L["297"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["297"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["297"]["Image"] = [[rbxassetid://6014261993]];
-G2L["297"]["Size"] = UDim2.new(0, 88, 0, 88);
-G2L["297"]["BackgroundTransparency"] = 1;
-G2L["297"]["Name"] = [[DropShadow]];
-G2L["297"]["Position"] = UDim2.new(0, 20, 0, 20);
-
--- StarterGui.Cryptic.Frame.UIScale
-G2L["298"] = Instance.new("UIScale", G2L["294"]);
-
-
--- StarterGui.Cryptic.Frame.Frame
-G2L["299"] = Instance.new("Frame", G2L["294"]);
-G2L["299"]["BorderSizePixel"] = 0;
-G2L["299"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["299"]["Size"] = UDim2.new(0, 41, 0, 41);
-G2L["299"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-
--- StarterGui.Cryptic.Frame.Frame.UICorner
-G2L["29a"] = Instance.new("UICorner", G2L["299"]);
-
-
--- StarterGui.Cryptic.Frame.en/exi
-G2L["29b"] = Instance.new("ImageButton", G2L["294"]);
-G2L["29b"]["BorderSizePixel"] = 0;
-G2L["29b"]["ScaleType"] = Enum.ScaleType.Fit;
-G2L["29b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["29b"]["ZIndex"] = 101;
-G2L["29b"]["Image"] = [[rbxassetid://18648153660]];
-G2L["29b"]["Size"] = UDim2.new(0, 41, 0, 41);
-G2L["29b"]["BackgroundTransparency"] = 1;
-G2L["29b"]["Name"] = [[en/exi]];
-G2L["29b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["29b"]["Position"] = UDim2.new(-0.17073, 0, -0.17073, 0);
-
--- StarterGui.Cryptic.Frame.en/exi.UICorner
-G2L["29c"] = Instance.new("UICorner", G2L["29b"]);
-
-
--- StarterGui.Cryptic.Frame.en/exi.UIScale
-G2L["29d"] = Instance.new("UIScale", G2L["29b"]);
-G2L["29d"]["Scale"] = 1.3;
-
--- StarterGui.Cryptic.MainUI.LocalScript
-local function C_47()
-local script = G2L["47"];
-	local EmulatorMode = false
-	local FPSUnlocker = false
-	local FPSUnlocker_Value = 60
-	local Vsync = false
-	local oldGravity = game:GetService("Workspace").Gravity
-	local serverhop_custom_value = 1
+local CrypticsUniqueDesign = {
+	CrypticsUniqueDesign = Instance.new("ScreenGui"),
+	MainShell = Instance.new("Frame"),
+	UICorner = Instance.new("UICorner"),
+	MainFrame = Instance.new("Frame"),
+	UICorner_2 = Instance.new("UICorner"),
+	ScriptEditorTab = Instance.new("Frame"),
+	Tabs = Instance.new("Frame"),
+	ScrollingFrame = Instance.new("ScrollingFrame"),
+	Scriptbox = Instance.new("TextBox"),
+	UITextSizeConstraint = Instance.new("UITextSizeConstraint"),
+	ScriptingButtons = Instance.new("Frame"),
+	UIListLayout = Instance.new("UIListLayout"),
+	Execute = Instance.new("TextButton"),
+	TextLabel = Instance.new("TextLabel"),
+	ImageLabel = Instance.new("ImageLabel"),
+	Frame = Instance.new("Frame"),
+	UIGradient = Instance.new("UIGradient"),
+	UIGradient_2 = Instance.new("UIGradient"),
+	Clear = Instance.new("TextButton"),
+	TextLabel_2 = Instance.new("TextLabel"),
+	ImageLabel_2 = Instance.new("ImageLabel"),
+	Frame_2 = Instance.new("Frame"),
+	UIGradient_3 = Instance.new("UIGradient"),
+	UIGradient_4 = Instance.new("UIGradient"),
+	Copy = Instance.new("TextButton"),
+	TextLabel_3 = Instance.new("TextLabel"),
+	ImageLabel_3 = Instance.new("ImageLabel"),
+	Frame_3 = Instance.new("Frame"),
+	UIGradient_5 = Instance.new("UIGradient"),
+	UIGradient_6 = Instance.new("UIGradient"),
+	Paste = Instance.new("TextButton"),
+	TextLabel_4 = Instance.new("TextLabel"),
+	ImageLabel_4 = Instance.new("ImageLabel"),
+	Frame_4 = Instance.new("Frame"),
+	UIGradient_7 = Instance.new("UIGradient"),
+	UIGradient_8 = Instance.new("UIGradient"),
+	UIPadding = Instance.new("UIPadding"),
+	ExecuteClipboard = Instance.new("TextButton"),
+	TextLabel_5 = Instance.new("TextLabel"),
+	ImageLabel_5 = Instance.new("ImageLabel"),
+	Frame_5 = Instance.new("Frame"),
+	UIGradient_9 = Instance.new("UIGradient"),
+	UIGradient_10 = Instance.new("UIGradient"),
+	UICorner_3 = Instance.new("UICorner"),
+	SavedScripts = Instance.new("Frame"),
+	UICorner_4 = Instance.new("UICorner"),
+	Scripts = Instance.new("ScrollingFrame"),
+	UIGridLayout = Instance.new("UIGridLayout"),
+	UIPadding_2 = Instance.new("UIPadding"),
+	Execute_2 = Instance.new("TextButton"),
+	CopyToClipboard = Instance.new("TextButton"),
+	Imgar = Instance.new("ImageLabel"),
+	Title = Instance.new("TextLabel"),
+	Frame_6 = Instance.new("Frame"),
+	Description = Instance.new("TextLabel"),
+	GlobalScripts = Instance.new("Frame"),
+	UICorner_5 = Instance.new("UICorner"),
+	SearchBar = Instance.new("Frame"),
+	Searchbar = Instance.new("TextBox"),
+	ImageButton = Instance.new("ImageButton"),
+	UIGradient_11 = Instance.new("UIGradient"),
+	TextButton = Instance.new("TextButton"),
+	UIGradient_12 = Instance.new("UIGradient"),
+	TextLabel_6 = Instance.new("TextLabel"),
+	ScriptsBackdrop = Instance.new("Frame"),
+	Scripts_2 = Instance.new("ScrollingFrame"),
+	UIGridLayout_2 = Instance.new("UIGridLayout"),
+	UIPadding_3 = Instance.new("UIPadding"),
+	Scriptblox = Instance.new("Frame"),
+	UICorner_6 = Instance.new("UICorner"),
+	Frame_7 = Instance.new("Frame"),
+	UICorner_7 = Instance.new("UICorner"),
+	Cover = Instance.new("Frame"),
+	ImageLabel_6 = Instance.new("ImageLabel"),
+	UICorner_8 = Instance.new("UICorner"),
+	FoP = Instance.new("Frame"),
+	UICorner_9 = Instance.new("UICorner"),
+	ImageLabel_7 = Instance.new("ImageLabel"),
+	TextLabel_7 = Instance.new("TextLabel"),
+	Title_2 = Instance.new("TextLabel"),
+	Game = Instance.new("TextLabel"),
+	Execute_3 = Instance.new("TextButton"),
+	ImageLabel_8 = Instance.new("ImageLabel"),
+	UICorner_10 = Instance.new("UICorner"),
+	UIGradient_13 = Instance.new("UIGradient"),
+	rscripts = Instance.new("Frame"),
+	UICorner_11 = Instance.new("UICorner"),
+	ImageLabel_9 = Instance.new("ImageLabel"),
+	UICorner_12 = Instance.new("UICorner"),
+	Free = Instance.new("Frame"),
+	UICorner_13 = Instance.new("UICorner"),
+	TextLabel_8 = Instance.new("TextLabel"),
+	Paid = Instance.new("Frame"),
+	UICorner_14 = Instance.new("UICorner"),
+	TextLabel_9 = Instance.new("TextLabel"),
+	Title_3 = Instance.new("TextLabel"),
+	Game_2 = Instance.new("TextLabel"),
+	Execute_4 = Instance.new("TextButton"),
+	ImageLabel_10 = Instance.new("ImageLabel"),
+	UICorner_15 = Instance.new("UICorner"),
+	UIGradient_14 = Instance.new("UIGradient"),
+	UIGradient_15 = Instance.new("UIGradient"),
+	UICorner_16 = Instance.new("UICorner"),
+	NextPage = Instance.new("TextButton"),
+	UIGradient_16 = Instance.new("UIGradient"),
+	TextLabel_10 = Instance.new("TextLabel"),
+	PreviousPage = Instance.new("TextButton"),
+	UIGradient_17 = Instance.new("UIGradient"),
+	TextLabel_11 = Instance.new("TextLabel"),
+	Frame_8 = Instance.new("Frame"),
+	TextLabel_12 = Instance.new("TextLabel"),
+	UIGradient_18 = Instance.new("UIGradient"),
+	ConsoleTab = Instance.new("Frame"),
+	UICorner_17 = Instance.new("UICorner"),
+	ScrollingFrame_2 = Instance.new("ScrollingFrame"),
+	UIListLayout_2 = Instance.new("UIListLayout"),
+	Version = Instance.new("Frame"),
+	UICorner_18 = Instance.new("UICorner"),
+	Backdrop = Instance.new("Frame"),
+	UICorner_19 = Instance.new("UICorner"),
+	TextLabel_13 = Instance.new("TextLabel"),
+	UIGradient_19 = Instance.new("UIGradient"),
+	TextButton_2 = Instance.new("TextButton"),
+	ImageLabel_11 = Instance.new("ImageLabel"),
+	Title_4 = Instance.new("TextLabel"),
+	SideShell = Instance.new("Frame"),
+	UICorner_20 = Instance.new("UICorner"),
+	Frame_9 = Instance.new("Frame"),
+	UICorner_21 = Instance.new("UICorner"),
+	UIListLayout_3 = Instance.new("UIListLayout"),
+	PplayerYetToRemove = Instance.new("TextButton"),
+	UICorner_22 = Instance.new("UICorner"),
+	Frame_10 = Instance.new("Frame"),
+	ImageLabel_12 = Instance.new("ImageLabel"),
+	UISizeConstraint = Instance.new("UISizeConstraint"),
+	UICorner_23 = Instance.new("UICorner"),
+	UIGradient_20 = Instance.new("UIGradient"),
+	A = Instance.new("TextButton"),
+	UICorner_24 = Instance.new("UICorner"),
+	Frame_11 = Instance.new("Frame"),
+	UICorner_25 = Instance.new("UICorner"),
+	ImageLabel_13 = Instance.new("ImageLabel"),
+	UIGradient_21 = Instance.new("UIGradient"),
+	B = Instance.new("TextButton"),
+	UICorner_26 = Instance.new("UICorner"),
+	Frame_12 = Instance.new("Frame"),
+	UICorner_27 = Instance.new("UICorner"),
+	ImageLabel_14 = Instance.new("ImageLabel"),
+	UIGradient_22 = Instance.new("UIGradient"),
+	C = Instance.new("TextButton"),
+	UICorner_28 = Instance.new("UICorner"),
+	Frame_13 = Instance.new("Frame"),
+	UICorner_29 = Instance.new("UICorner"),
+	ImageLabel_15 = Instance.new("ImageLabel"),
+	UIGradient_23 = Instance.new("UIGradient"),
+	D = Instance.new("TextButton"),
+	UICorner_30 = Instance.new("UICorner"),
+	Frame_14 = Instance.new("Frame"),
+	UICorner_31 = Instance.new("UICorner"),
+	ImageLabel_16 = Instance.new("ImageLabel"),
+	UIGradient_24 = Instance.new("UIGradient"),
+	F = Instance.new("TextButton"),
+	UICorner_32 = Instance.new("UICorner"),
+	Frame_15 = Instance.new("Frame"),
+	UICorner_33 = Instance.new("UICorner"),
+	ImageLabel_17 = Instance.new("ImageLabel"),
+	UISizeConstraint_2 = Instance.new("UISizeConstraint"),
+	UIGradient_25 = Instance.new("UIGradient"),
+	G = Instance.new("TextButton"),
+	UICorner_34 = Instance.new("UICorner"),
+	H = Instance.new("TextButton"),
+	UICorner_35 = Instance.new("UICorner"),
+	Frame_16 = Instance.new("Frame"),
+	UICorner_36 = Instance.new("UICorner"),
+	ImageLabel_18 = Instance.new("ImageLabel"),
+	UISizeConstraint_3 = Instance.new("UISizeConstraint"),
+	UIGradient_26 = Instance.new("UIGradient"),
+	Subtitle = Instance.new("TextLabel"),
+	UIScale = Instance.new("UIScale"),
+	Notifier = Instance.new("Frame"),
+	UIListLayout_4 = Instance.new("UIListLayout"),
+	UIPadding_4 = Instance.new("UIPadding"),
+	Hidden = Instance.new("Frame"),
+	Hidden_2 = Instance.new("Frame"),
+	Hidden_3 = Instance.new("Frame"),
+	Hidden_4 = Instance.new("Frame"),
+	Hidden_5 = Instance.new("Frame"),
+	Hidden_6 = Instance.new("Frame"),
+	Hidden_7 = Instance.new("Frame"),
+	Hidden_8 = Instance.new("Frame"),
+	Hidden_9 = Instance.new("Frame"),
+	Hidden_10 = Instance.new("Frame"),
+	Hidden_11 = Instance.new("Frame"),
+	Hidden_12 = Instance.new("Frame"),
+	Hidden_13 = Instance.new("Frame"),
+	Hidden_14 = Instance.new("Frame"),
+	Hidden_15 = Instance.new("Frame"),
+	Hidden_16 = Instance.new("Frame"),
+	Toggle = Instance.new("TextButton"),
+	Frame_17 = Instance.new("Frame"),
+	ImageLabel_19 = Instance.new("ImageLabel"),
+	UIGradient_27 = Instance.new("UIGradient"),
+	UICorner_37 = Instance.new("UICorner"),
+	UICorner_38 = Instance.new("UICorner"),
+}
+
+CrypticsUniqueDesign.CrypticsUniqueDesign.Name = math.random(1, 99999999)
+CrypticsUniqueDesign.CrypticsUniqueDesign.Parent = game.CoreGui
+CrypticsUniqueDesign.CrypticsUniqueDesign.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+CrypticsUniqueDesign.MainShell.Name = "MainShell"
+CrypticsUniqueDesign.MainShell.Parent = CrypticsUniqueDesign.CrypticsUniqueDesign
+CrypticsUniqueDesign.MainShell.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.MainShell.BackgroundColor3 = Color3.fromRGB(50, 72, 120)
+CrypticsUniqueDesign.MainShell.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.MainShell.BorderSizePixel = 0
+CrypticsUniqueDesign.MainShell.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.MainShell.Size = UDim2.new(0.75, 0, 0.75, 0)
+
+CrypticsUniqueDesign.UICorner.CornerRadius = UDim.new(0, 4)
+CrypticsUniqueDesign.UICorner.Parent = CrypticsUniqueDesign.MainShell
+
+CrypticsUniqueDesign.MainFrame.Name = "MainFrame"
+CrypticsUniqueDesign.MainFrame.Parent = CrypticsUniqueDesign.MainShell
+CrypticsUniqueDesign.MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.MainFrame.BackgroundColor3 = Color3.fromRGB(25, 33, 57)
+CrypticsUniqueDesign.MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.MainFrame.BorderSizePixel = 0
+CrypticsUniqueDesign.MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.MainFrame.Size = UDim2.new(1, -1, 1, -1)
+CrypticsUniqueDesign.MainFrame.ZIndex = 2
+
+CrypticsUniqueDesign.UICorner_2.CornerRadius = UDim.new(0, 4)
+CrypticsUniqueDesign.UICorner_2.Parent = CrypticsUniqueDesign.MainFrame
+
+CrypticsUniqueDesign.ScriptEditorTab.Name = "Script Editor Tab"
+CrypticsUniqueDesign.ScriptEditorTab.Parent = CrypticsUniqueDesign.MainFrame
+CrypticsUniqueDesign.ScriptEditorTab.AnchorPoint = Vector2.new(0.5, 0)
+CrypticsUniqueDesign.ScriptEditorTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ScriptEditorTab.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ScriptEditorTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ScriptEditorTab.BorderSizePixel = 0
+CrypticsUniqueDesign.ScriptEditorTab.Position = UDim2.new(0.5, 0, 0.120000057, 0)
+CrypticsUniqueDesign.ScriptEditorTab.Size = UDim2.new(0.979999959, 0, 0.86622721, 0)
+CrypticsUniqueDesign.ScriptEditorTab.ZIndex = 3
+
+CrypticsUniqueDesign.Tabs.Name = "Tabs"
+CrypticsUniqueDesign.Tabs.Parent = CrypticsUniqueDesign.ScriptEditorTab
+CrypticsUniqueDesign.Tabs.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.Tabs.BackgroundColor3 = Color3.fromRGB(15, 23, 42)
+CrypticsUniqueDesign.Tabs.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Tabs.BorderSizePixel = 0
+CrypticsUniqueDesign.Tabs.Position = UDim2.new(0.5, 0, 0.434140116, 0)
+CrypticsUniqueDesign.Tabs.Size = UDim2.new(1.00000012, 0, 0.868280232, 0)
+CrypticsUniqueDesign.Tabs.ZIndex = 4
+
+CrypticsUniqueDesign.ScrollingFrame.Parent = CrypticsUniqueDesign.Tabs
+CrypticsUniqueDesign.ScrollingFrame.Active = true
+CrypticsUniqueDesign.ScrollingFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ScrollingFrame.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ScrollingFrame.BorderSizePixel = 0
+CrypticsUniqueDesign.ScrollingFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.ScrollingFrame.Size = UDim2.new(1, -6, 1, -6)
+CrypticsUniqueDesign.ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
+CrypticsUniqueDesign.ScrollingFrame.ScrollBarThickness = 2
+
+CrypticsUniqueDesign.Scriptbox.Name = "Scriptbox"
+CrypticsUniqueDesign.Scriptbox.Parent = CrypticsUniqueDesign.ScrollingFrame
+CrypticsUniqueDesign.Scriptbox.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.Scriptbox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Scriptbox.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.Scriptbox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Scriptbox.BorderSizePixel = 0
+CrypticsUniqueDesign.Scriptbox.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.Scriptbox.Size = UDim2.new(1, 0, 1, 0)
+CrypticsUniqueDesign.Scriptbox.ZIndex = 5
+CrypticsUniqueDesign.Scriptbox.ClearTextOnFocus = false
+CrypticsUniqueDesign.Scriptbox.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.Scriptbox.MultiLine = true
+CrypticsUniqueDesign.Scriptbox.PlaceholderColor3 = Color3.fromRGB(129, 129, 129)
+CrypticsUniqueDesign.Scriptbox.PlaceholderText = "-- print('Cryptic On Top!')"
+CrypticsUniqueDesign.Scriptbox.Text = ""
+CrypticsUniqueDesign.Scriptbox.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Scriptbox.TextScaled = true
+CrypticsUniqueDesign.Scriptbox.TextSize = 20.000
+CrypticsUniqueDesign.Scriptbox.TextWrapped = true
+CrypticsUniqueDesign.Scriptbox.TextXAlignment = Enum.TextXAlignment.Left
+CrypticsUniqueDesign.Scriptbox.TextYAlignment = Enum.TextYAlignment.Top
+
+CrypticsUniqueDesign.UITextSizeConstraint.Parent = CrypticsUniqueDesign.Scriptbox
+CrypticsUniqueDesign.UITextSizeConstraint.MaxTextSize = 20
+CrypticsUniqueDesign.UITextSizeConstraint.MinTextSize = 15
+
+CrypticsUniqueDesign.ScriptingButtons.Name = "Scripting Buttons"
+CrypticsUniqueDesign.ScriptingButtons.Parent = CrypticsUniqueDesign.ScriptEditorTab
+CrypticsUniqueDesign.ScriptingButtons.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.ScriptingButtons.BackgroundColor3 = Color3.fromRGB(20, 18, 24)
+CrypticsUniqueDesign.ScriptingButtons.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ScriptingButtons.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ScriptingButtons.BorderSizePixel = 0
+CrypticsUniqueDesign.ScriptingButtons.Position = UDim2.new(0.5, 0, 0.941549301, 0)
+CrypticsUniqueDesign.ScriptingButtons.Size = UDim2.new(1.00000012, 0, 0.146538049, 0)
+CrypticsUniqueDesign.ScriptingButtons.ZIndex = 4
+
+CrypticsUniqueDesign.UIListLayout.Parent = CrypticsUniqueDesign.ScriptingButtons
+CrypticsUniqueDesign.UIListLayout.FillDirection = Enum.FillDirection.Horizontal
+CrypticsUniqueDesign.UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+CrypticsUniqueDesign.UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+CrypticsUniqueDesign.UIListLayout.Padding = UDim.new(0.00999999978, 0)
+
+CrypticsUniqueDesign.Execute.Name = "Execute"
+CrypticsUniqueDesign.Execute.Parent = CrypticsUniqueDesign.ScriptingButtons
+CrypticsUniqueDesign.Execute.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Execute.BackgroundTransparency = 0.800
+CrypticsUniqueDesign.Execute.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Execute.BorderSizePixel = 0
+CrypticsUniqueDesign.Execute.Size = UDim2.new(0.189999998, 0, 0.5, 0)
+CrypticsUniqueDesign.Execute.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.Execute.Text = " "
+CrypticsUniqueDesign.Execute.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Execute.TextSize = 14.000
+
+CrypticsUniqueDesign.TextLabel.Parent = CrypticsUniqueDesign.Execute
+CrypticsUniqueDesign.TextLabel.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel.Position = UDim2.new(0.0399999991, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel.Size = UDim2.new(0.685000002, 0, 0.649999976, 0)
+CrypticsUniqueDesign.TextLabel.ZIndex = 2
+CrypticsUniqueDesign.TextLabel.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel.Text = "Execute"
+CrypticsUniqueDesign.TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel.TextScaled = true
+CrypticsUniqueDesign.TextLabel.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel.TextWrapped = true
+CrypticsUniqueDesign.TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+CrypticsUniqueDesign.ImageLabel.Parent = CrypticsUniqueDesign.Execute
+CrypticsUniqueDesign.ImageLabel.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ImageLabel.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ImageLabel.BorderSizePixel = 0
+CrypticsUniqueDesign.ImageLabel.Position = UDim2.new(0.850000024, 0, 0.5, 0)
+CrypticsUniqueDesign.ImageLabel.Size = UDim2.new(0.109999999, 0, 0.550000012, 0)
+CrypticsUniqueDesign.ImageLabel.ZIndex = 2
+CrypticsUniqueDesign.ImageLabel.Image = "rbxassetid://132749501798426"
+
+CrypticsUniqueDesign.Frame.Parent = CrypticsUniqueDesign.Execute
+CrypticsUniqueDesign.Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Frame.BorderSizePixel = 0
+CrypticsUniqueDesign.Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.Frame.Size = UDim2.new(1, -2, 1, -2)
+
+CrypticsUniqueDesign.UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+CrypticsUniqueDesign.UIGradient.Rotation = -89
+CrypticsUniqueDesign.UIGradient.Parent = CrypticsUniqueDesign.Frame
+
+CrypticsUniqueDesign.UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(51, 64, 115)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(0, 204, 255)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(0, 204, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(51, 64, 115))}
+CrypticsUniqueDesign.UIGradient_2.Parent = CrypticsUniqueDesign.Execute
+
+CrypticsUniqueDesign.Clear.Name = "Clear"
+CrypticsUniqueDesign.Clear.Parent = CrypticsUniqueDesign.ScriptingButtons
+CrypticsUniqueDesign.Clear.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Clear.BackgroundTransparency = 0.800
+CrypticsUniqueDesign.Clear.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Clear.BorderSizePixel = 0
+CrypticsUniqueDesign.Clear.Size = UDim2.new(0.189999998, 0, 0.5, 0)
+CrypticsUniqueDesign.Clear.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.Clear.Text = " "
+CrypticsUniqueDesign.Clear.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Clear.TextSize = 14.000
+
+CrypticsUniqueDesign.TextLabel_2.Parent = CrypticsUniqueDesign.Clear
+CrypticsUniqueDesign.TextLabel_2.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_2.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_2.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_2.Position = UDim2.new(0.0399999991, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_2.Size = UDim2.new(0.685000002, 0, 0.649999976, 0)
+CrypticsUniqueDesign.TextLabel_2.ZIndex = 2
+CrypticsUniqueDesign.TextLabel_2.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_2.Text = "Clear"
+CrypticsUniqueDesign.TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_2.TextScaled = true
+CrypticsUniqueDesign.TextLabel_2.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_2.TextWrapped = true
+CrypticsUniqueDesign.TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
+
+CrypticsUniqueDesign.ImageLabel_2.Parent = CrypticsUniqueDesign.Clear
+CrypticsUniqueDesign.ImageLabel_2.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ImageLabel_2.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ImageLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ImageLabel_2.BorderSizePixel = 0
+CrypticsUniqueDesign.ImageLabel_2.Position = UDim2.new(0.850000024, 0, 0.5, 0)
+CrypticsUniqueDesign.ImageLabel_2.Size = UDim2.new(0.109999999, 0, 0.550000012, 0)
+CrypticsUniqueDesign.ImageLabel_2.ZIndex = 2
+CrypticsUniqueDesign.ImageLabel_2.Image = "rbxassetid://91750280265941"
+
+CrypticsUniqueDesign.Frame_2.Parent = CrypticsUniqueDesign.Clear
+CrypticsUniqueDesign.Frame_2.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.Frame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Frame_2.BorderSizePixel = 0
+CrypticsUniqueDesign.Frame_2.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.Frame_2.Size = UDim2.new(1, -2, 1, -2)
+
+CrypticsUniqueDesign.UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+CrypticsUniqueDesign.UIGradient_3.Rotation = -89
+CrypticsUniqueDesign.UIGradient_3.Parent = CrypticsUniqueDesign.Frame_2
+
+CrypticsUniqueDesign.UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(51, 64, 115)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(0, 204, 255)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(0, 204, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(51, 64, 115))}
+CrypticsUniqueDesign.UIGradient_4.Parent = CrypticsUniqueDesign.Clear
+
+CrypticsUniqueDesign.Copy.Name = "Copy"
+CrypticsUniqueDesign.Copy.Parent = CrypticsUniqueDesign.ScriptingButtons
+CrypticsUniqueDesign.Copy.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Copy.BackgroundTransparency = 0.800
+CrypticsUniqueDesign.Copy.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Copy.BorderSizePixel = 0
+CrypticsUniqueDesign.Copy.Size = UDim2.new(0.189999998, 0, 0.5, 0)
+CrypticsUniqueDesign.Copy.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.Copy.Text = " "
+CrypticsUniqueDesign.Copy.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Copy.TextSize = 14.000
+
+CrypticsUniqueDesign.TextLabel_3.Parent = CrypticsUniqueDesign.Copy
+CrypticsUniqueDesign.TextLabel_3.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_3.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_3.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_3.Position = UDim2.new(0.0399999991, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_3.Size = UDim2.new(0.685000002, 0, 0.649999976, 0)
+CrypticsUniqueDesign.TextLabel_3.ZIndex = 2
+CrypticsUniqueDesign.TextLabel_3.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_3.Text = "Copy"
+CrypticsUniqueDesign.TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_3.TextScaled = true
+CrypticsUniqueDesign.TextLabel_3.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_3.TextWrapped = true
+CrypticsUniqueDesign.TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
+
+CrypticsUniqueDesign.ImageLabel_3.Parent = CrypticsUniqueDesign.Copy
+CrypticsUniqueDesign.ImageLabel_3.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.ImageLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ImageLabel_3.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ImageLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ImageLabel_3.BorderSizePixel = 0
+CrypticsUniqueDesign.ImageLabel_3.Position = UDim2.new(0.850000024, 0, 0.5, 0)
+CrypticsUniqueDesign.ImageLabel_3.Size = UDim2.new(0.109999999, 0, 0.550000012, 0)
+CrypticsUniqueDesign.ImageLabel_3.ZIndex = 2
+CrypticsUniqueDesign.ImageLabel_3.Image = "rbxassetid://123135985172660"
+
+CrypticsUniqueDesign.Frame_3.Parent = CrypticsUniqueDesign.Copy
+CrypticsUniqueDesign.Frame_3.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.Frame_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Frame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Frame_3.BorderSizePixel = 0
+CrypticsUniqueDesign.Frame_3.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.Frame_3.Size = UDim2.new(1, -2, 1, -2)
+
+CrypticsUniqueDesign.UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+CrypticsUniqueDesign.UIGradient_5.Rotation = -89
+CrypticsUniqueDesign.UIGradient_5.Parent = CrypticsUniqueDesign.Frame_3
+
+CrypticsUniqueDesign.UIGradient_6.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(51, 64, 115)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(0, 204, 255)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(0, 204, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(51, 64, 115))}
+CrypticsUniqueDesign.UIGradient_6.Parent = CrypticsUniqueDesign.Copy
+
+CrypticsUniqueDesign.Paste.Name = "Paste"
+CrypticsUniqueDesign.Paste.Parent = CrypticsUniqueDesign.ScriptingButtons
+CrypticsUniqueDesign.Paste.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Paste.BackgroundTransparency = 0.800
+CrypticsUniqueDesign.Paste.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Paste.BorderSizePixel = 0
+CrypticsUniqueDesign.Paste.Size = UDim2.new(0.189999998, 0, 0.5, 0)
+CrypticsUniqueDesign.Paste.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.Paste.Text = " "
+CrypticsUniqueDesign.Paste.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Paste.TextSize = 14.000
+
+CrypticsUniqueDesign.TextLabel_4.Parent = CrypticsUniqueDesign.Paste
+CrypticsUniqueDesign.TextLabel_4.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_4.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_4.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_4.Position = UDim2.new(0.0399999991, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_4.Size = UDim2.new(0.685000002, 0, 0.649999976, 0)
+CrypticsUniqueDesign.TextLabel_4.ZIndex = 2
+CrypticsUniqueDesign.TextLabel_4.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_4.Text = "Paste"
+CrypticsUniqueDesign.TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_4.TextScaled = true
+CrypticsUniqueDesign.TextLabel_4.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_4.TextWrapped = true
+CrypticsUniqueDesign.TextLabel_4.TextXAlignment = Enum.TextXAlignment.Left
+
+CrypticsUniqueDesign.ImageLabel_4.Parent = CrypticsUniqueDesign.Paste
+CrypticsUniqueDesign.ImageLabel_4.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.ImageLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ImageLabel_4.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ImageLabel_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ImageLabel_4.BorderSizePixel = 0
+CrypticsUniqueDesign.ImageLabel_4.Position = UDim2.new(0.850000024, 0, 0.5, 0)
+CrypticsUniqueDesign.ImageLabel_4.Size = UDim2.new(0.109999999, 0, 0.550000012, 0)
+CrypticsUniqueDesign.ImageLabel_4.ZIndex = 2
+CrypticsUniqueDesign.ImageLabel_4.Image = "rbxassetid://119219987560258"
+
+CrypticsUniqueDesign.Frame_4.Parent = CrypticsUniqueDesign.Paste
+CrypticsUniqueDesign.Frame_4.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.Frame_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Frame_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Frame_4.BorderSizePixel = 0
+CrypticsUniqueDesign.Frame_4.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.Frame_4.Size = UDim2.new(1, -2, 1, -2)
+
+CrypticsUniqueDesign.UIGradient_7.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+CrypticsUniqueDesign.UIGradient_7.Rotation = -89
+CrypticsUniqueDesign.UIGradient_7.Parent = CrypticsUniqueDesign.Frame_4
+
+CrypticsUniqueDesign.UIGradient_8.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(51, 64, 115)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(0, 204, 255)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(0, 204, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(51, 64, 115))}
+CrypticsUniqueDesign.UIGradient_8.Parent = CrypticsUniqueDesign.Paste
+
+CrypticsUniqueDesign.UIPadding.Parent = CrypticsUniqueDesign.ScriptingButtons
+CrypticsUniqueDesign.UIPadding.PaddingLeft = UDim.new(0.00999999978, 0)
+
+CrypticsUniqueDesign.ExecuteClipboard.Name = "ExecuteClipboard"
+CrypticsUniqueDesign.ExecuteClipboard.Parent = CrypticsUniqueDesign.ScriptingButtons
+CrypticsUniqueDesign.ExecuteClipboard.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ExecuteClipboard.BackgroundTransparency = 0.800
+CrypticsUniqueDesign.ExecuteClipboard.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ExecuteClipboard.BorderSizePixel = 0
+CrypticsUniqueDesign.ExecuteClipboard.Size = UDim2.new(0.189999998, 0, 0.5, 0)
+CrypticsUniqueDesign.ExecuteClipboard.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.ExecuteClipboard.Text = " "
+CrypticsUniqueDesign.ExecuteClipboard.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ExecuteClipboard.TextSize = 14.000
+
+CrypticsUniqueDesign.TextLabel_5.Parent = CrypticsUniqueDesign.ExecuteClipboard
+CrypticsUniqueDesign.TextLabel_5.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.TextLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_5.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_5.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_5.Position = UDim2.new(0.0399999991, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_5.Size = UDim2.new(0.685000002, 0, 0.649999976, 0)
+CrypticsUniqueDesign.TextLabel_5.ZIndex = 2
+CrypticsUniqueDesign.TextLabel_5.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_5.Text = "Execute Clipboard"
+CrypticsUniqueDesign.TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_5.TextScaled = true
+CrypticsUniqueDesign.TextLabel_5.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_5.TextWrapped = true
+CrypticsUniqueDesign.TextLabel_5.TextXAlignment = Enum.TextXAlignment.Left
+
+CrypticsUniqueDesign.ImageLabel_5.Parent = CrypticsUniqueDesign.ExecuteClipboard
+CrypticsUniqueDesign.ImageLabel_5.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.ImageLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ImageLabel_5.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ImageLabel_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ImageLabel_5.BorderSizePixel = 0
+CrypticsUniqueDesign.ImageLabel_5.Position = UDim2.new(0.850000024, 0, 0.5, 0)
+CrypticsUniqueDesign.ImageLabel_5.Size = UDim2.new(0.109999999, 0, 0.550000012, 0)
+CrypticsUniqueDesign.ImageLabel_5.ZIndex = 2
+CrypticsUniqueDesign.ImageLabel_5.Image = "rbxassetid://88107751282377"
+
+CrypticsUniqueDesign.Frame_5.Parent = CrypticsUniqueDesign.ExecuteClipboard
+CrypticsUniqueDesign.Frame_5.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.Frame_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Frame_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Frame_5.BorderSizePixel = 0
+CrypticsUniqueDesign.Frame_5.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.Frame_5.Size = UDim2.new(1, -2, 1, -2)
+
+CrypticsUniqueDesign.UIGradient_9.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+CrypticsUniqueDesign.UIGradient_9.Rotation = -89
+CrypticsUniqueDesign.UIGradient_9.Parent = CrypticsUniqueDesign.Frame_5
+
+CrypticsUniqueDesign.UIGradient_10.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(51, 64, 115)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(0, 204, 255)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(0, 204, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(51, 64, 115))}
+CrypticsUniqueDesign.UIGradient_10.Parent = CrypticsUniqueDesign.ExecuteClipboard
+
+CrypticsUniqueDesign.UICorner_3.CornerRadius = UDim.new(0, 2)
+CrypticsUniqueDesign.UICorner_3.Parent = CrypticsUniqueDesign.ScriptEditorTab
+
+CrypticsUniqueDesign.SavedScripts.Name = "Saved Scripts"
+CrypticsUniqueDesign.SavedScripts.Parent = CrypticsUniqueDesign.MainFrame
+CrypticsUniqueDesign.SavedScripts.AnchorPoint = Vector2.new(0.5, 0)
+CrypticsUniqueDesign.SavedScripts.BackgroundColor3 = Color3.fromRGB(34, 34, 42)
+CrypticsUniqueDesign.SavedScripts.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.SavedScripts.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.SavedScripts.BorderSizePixel = 0
+CrypticsUniqueDesign.SavedScripts.Position = UDim2.new(0.5, 0, 0.120000057, 0)
+CrypticsUniqueDesign.SavedScripts.Size = UDim2.new(0.979999959, 0, 0.872109532, 0)
+CrypticsUniqueDesign.SavedScripts.Visible = false
+CrypticsUniqueDesign.SavedScripts.ZIndex = 3
+
+CrypticsUniqueDesign.UICorner_4.Parent = CrypticsUniqueDesign.SavedScripts
+
+CrypticsUniqueDesign.Scripts.Name = "Scripts"
+CrypticsUniqueDesign.Scripts.Parent = CrypticsUniqueDesign.SavedScripts
+CrypticsUniqueDesign.Scripts.Active = true
+CrypticsUniqueDesign.Scripts.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Scripts.BackgroundTransparency = 0.750
+CrypticsUniqueDesign.Scripts.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Scripts.BorderSizePixel = 0
+CrypticsUniqueDesign.Scripts.Position = UDim2.new(0.000288756302, 0, 0.000588802272, 0)
+CrypticsUniqueDesign.Scripts.Size = UDim2.new(0.218111292, 0, 0.99042958, 0)
+CrypticsUniqueDesign.Scripts.ScrollBarThickness = 0
+
+CrypticsUniqueDesign.UIGridLayout.Parent = CrypticsUniqueDesign.Scripts
+CrypticsUniqueDesign.UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+CrypticsUniqueDesign.UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+CrypticsUniqueDesign.UIGridLayout.CellPadding = UDim2.new(0, 0, 0.00999999978, 0)
+CrypticsUniqueDesign.UIGridLayout.CellSize = UDim2.new(0.920000017, 0, 0.0500000007, 0)
+
+CrypticsUniqueDesign.UIPadding_2.Parent = CrypticsUniqueDesign.Scripts
+CrypticsUniqueDesign.UIPadding_2.PaddingTop = UDim.new(0.00800000038, 0)
+
+CrypticsUniqueDesign.Execute_2.Name = "Execute"
+CrypticsUniqueDesign.Execute_2.Parent = CrypticsUniqueDesign.SavedScripts
+CrypticsUniqueDesign.Execute_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Execute_2.BackgroundTransparency = 0.600
+CrypticsUniqueDesign.Execute_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Execute_2.BorderSizePixel = 0
+CrypticsUniqueDesign.Execute_2.Position = UDim2.new(0.227122724, 0, 0.918753982, 0)
+CrypticsUniqueDesign.Execute_2.Size = UDim2.new(0.378690124, 0, 0.0722646639, 0)
+CrypticsUniqueDesign.Execute_2.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.Execute_2.Text = "Execute"
+CrypticsUniqueDesign.Execute_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Execute_2.TextSize = 14.000
+CrypticsUniqueDesign.Execute_2.TextWrapped = true
+
+CrypticsUniqueDesign.CopyToClipboard.Name = "Copy To Clipboard"
+CrypticsUniqueDesign.CopyToClipboard.Parent = CrypticsUniqueDesign.SavedScripts
+CrypticsUniqueDesign.CopyToClipboard.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.CopyToClipboard.BackgroundTransparency = 0.600
+CrypticsUniqueDesign.CopyToClipboard.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.CopyToClipboard.BorderSizePixel = 0
+CrypticsUniqueDesign.CopyToClipboard.Position = UDim2.new(0.613276958, 0, 0.918753982, 0)
+CrypticsUniqueDesign.CopyToClipboard.Size = UDim2.new(0.385848761, 0, 0.0722646639, 0)
+CrypticsUniqueDesign.CopyToClipboard.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.CopyToClipboard.Text = "Copy To Clipboard"
+CrypticsUniqueDesign.CopyToClipboard.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.CopyToClipboard.TextSize = 14.000
+CrypticsUniqueDesign.CopyToClipboard.TextWrapped = true
+
+CrypticsUniqueDesign.Imgar.Name = "Imgar"
+CrypticsUniqueDesign.Imgar.Parent = CrypticsUniqueDesign.SavedScripts
+CrypticsUniqueDesign.Imgar.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Imgar.BackgroundTransparency = 0.500
+CrypticsUniqueDesign.Imgar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Imgar.BorderSizePixel = 0
+CrypticsUniqueDesign.Imgar.Position = UDim2.new(0.227122664, 0, 0.0708393082, 0)
+CrypticsUniqueDesign.Imgar.Size = UDim2.new(0.77074492, 0, 0.608659148, 0)
+
+CrypticsUniqueDesign.Title.Name = "Title"
+CrypticsUniqueDesign.Title.Parent = CrypticsUniqueDesign.SavedScripts
+CrypticsUniqueDesign.Title.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Title.BackgroundTransparency = 0.750
+CrypticsUniqueDesign.Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Title.BorderSizePixel = 0
+CrypticsUniqueDesign.Title.Position = UDim2.new(0.227122203, 0, 0.000588840339, 0)
+CrypticsUniqueDesign.Title.Size = UDim2.new(0.770745575, 0, 0.0533922762, 0)
+CrypticsUniqueDesign.Title.Font = Enum.Font.SourceSansBold
+CrypticsUniqueDesign.Title.Text = ""
+CrypticsUniqueDesign.Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Title.TextScaled = true
+CrypticsUniqueDesign.Title.TextSize = 14.000
+CrypticsUniqueDesign.Title.TextWrapped = true
+
+CrypticsUniqueDesign.Frame_6.Parent = CrypticsUniqueDesign.SavedScripts
+CrypticsUniqueDesign.Frame_6.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Frame_6.BackgroundTransparency = 0.750
+CrypticsUniqueDesign.Frame_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Frame_6.BorderSizePixel = 0
+CrypticsUniqueDesign.Frame_6.Position = UDim2.new(0.226999998, 0, 0.698000014, 0)
+CrypticsUniqueDesign.Frame_6.Size = UDim2.new(0.771000028, 0, 0.202000007, 0)
+
+CrypticsUniqueDesign.Description.Name = "Description"
+CrypticsUniqueDesign.Description.Parent = CrypticsUniqueDesign.Frame_6
+CrypticsUniqueDesign.Description.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.Description.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+CrypticsUniqueDesign.Description.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.Description.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Description.BorderSizePixel = 0
+CrypticsUniqueDesign.Description.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.Description.Size = UDim2.new(0.97729218, -2, 0.999999881, -2)
+CrypticsUniqueDesign.Description.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.Description.Text = ""
+CrypticsUniqueDesign.Description.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Description.TextSize = 14.000
+CrypticsUniqueDesign.Description.TextXAlignment = Enum.TextXAlignment.Left
+CrypticsUniqueDesign.Description.TextYAlignment = Enum.TextYAlignment.Top
+
+CrypticsUniqueDesign.GlobalScripts.Name = "Global Scripts"
+CrypticsUniqueDesign.GlobalScripts.Parent = CrypticsUniqueDesign.MainFrame
+CrypticsUniqueDesign.GlobalScripts.AnchorPoint = Vector2.new(0.5, 0)
+CrypticsUniqueDesign.GlobalScripts.BackgroundColor3 = Color3.fromRGB(34, 34, 42)
+CrypticsUniqueDesign.GlobalScripts.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.GlobalScripts.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.GlobalScripts.BorderSizePixel = 0
+CrypticsUniqueDesign.GlobalScripts.Position = UDim2.new(0.5, 0, 0.120000057, 0)
+CrypticsUniqueDesign.GlobalScripts.Size = UDim2.new(0.979999959, 0, 0.872109532, 0)
+CrypticsUniqueDesign.GlobalScripts.Visible = false
+CrypticsUniqueDesign.GlobalScripts.ZIndex = 3
+
+CrypticsUniqueDesign.UICorner_5.CornerRadius = UDim.new(0.00999999978, 0)
+CrypticsUniqueDesign.UICorner_5.Parent = CrypticsUniqueDesign.GlobalScripts
+
+CrypticsUniqueDesign.SearchBar.Name = "Search Bar"
+CrypticsUniqueDesign.SearchBar.Parent = CrypticsUniqueDesign.GlobalScripts
+CrypticsUniqueDesign.SearchBar.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.SearchBar.BackgroundTransparency = 0.600
+CrypticsUniqueDesign.SearchBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.SearchBar.BorderSizePixel = 0
+CrypticsUniqueDesign.SearchBar.Position = UDim2.new(-6.49434568e-08, 0, 0, 0)
+CrypticsUniqueDesign.SearchBar.Size = UDim2.new(0.724953294, 0, 0.0709999874, 0)
+
+CrypticsUniqueDesign.Searchbar.Name = "Searchbar"
+CrypticsUniqueDesign.Searchbar.Parent = CrypticsUniqueDesign.SearchBar
+CrypticsUniqueDesign.Searchbar.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.Searchbar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Searchbar.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.Searchbar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Searchbar.BorderSizePixel = 0
+CrypticsUniqueDesign.Searchbar.Position = UDim2.new(0.0450000018, 0, 0.5, 0)
+CrypticsUniqueDesign.Searchbar.Size = UDim2.new(0.954999983, 0, 0.550000012, 0)
+CrypticsUniqueDesign.Searchbar.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.Searchbar.PlaceholderText = "Powered by scriptblox.com"
+CrypticsUniqueDesign.Searchbar.Text = ""
+CrypticsUniqueDesign.Searchbar.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Searchbar.TextScaled = true
+CrypticsUniqueDesign.Searchbar.TextSize = 14.000
+CrypticsUniqueDesign.Searchbar.TextWrapped = true
+CrypticsUniqueDesign.Searchbar.TextXAlignment = Enum.TextXAlignment.Left
+
+CrypticsUniqueDesign.ImageButton.Parent = CrypticsUniqueDesign.SearchBar
+CrypticsUniqueDesign.ImageButton.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ImageButton.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ImageButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ImageButton.BorderSizePixel = 0
+CrypticsUniqueDesign.ImageButton.Position = UDim2.new(0.00999999978, 0, 0.5, 0)
+CrypticsUniqueDesign.ImageButton.Size = UDim2.new(0.0264946036, 0, 0.610483944, 0)
+CrypticsUniqueDesign.ImageButton.Image = "rbxassetid://95819382701779"
+
+CrypticsUniqueDesign.UIGradient_11.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(35, 35, 35)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(31, 31, 31))}
+CrypticsUniqueDesign.UIGradient_11.Rotation = 89
+CrypticsUniqueDesign.UIGradient_11.Parent = CrypticsUniqueDesign.SearchBar
+
+CrypticsUniqueDesign.TextButton.Parent = CrypticsUniqueDesign.GlobalScripts
+CrypticsUniqueDesign.TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextButton.BackgroundTransparency = 0.300
+CrypticsUniqueDesign.TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextButton.BorderSizePixel = 0
+CrypticsUniqueDesign.TextButton.Position = UDim2.new(0.731337428, 0, 0.000387193344, 0)
+CrypticsUniqueDesign.TextButton.Size = UDim2.new(0.130466521, 0, 0.0706127957, 0)
+CrypticsUniqueDesign.TextButton.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextButton.Text = ""
+CrypticsUniqueDesign.TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextButton.TextSize = 14.000
+
+CrypticsUniqueDesign.UIGradient_12.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+CrypticsUniqueDesign.UIGradient_12.Rotation = -89
+CrypticsUniqueDesign.UIGradient_12.Parent = CrypticsUniqueDesign.TextButton
+
+CrypticsUniqueDesign.TextLabel_6.Parent = CrypticsUniqueDesign.TextButton
+CrypticsUniqueDesign.TextLabel_6.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.TextLabel_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_6.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_6.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_6.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_6.Size = UDim2.new(1, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_6.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_6.Text = "API: scriptblox.com"
+CrypticsUniqueDesign.TextLabel_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_6.TextScaled = true
+CrypticsUniqueDesign.TextLabel_6.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_6.TextWrapped = true
+
+CrypticsUniqueDesign.ScriptsBackdrop.Name = "Scripts Backdrop"
+CrypticsUniqueDesign.ScriptsBackdrop.Parent = CrypticsUniqueDesign.GlobalScripts
+CrypticsUniqueDesign.ScriptsBackdrop.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ScriptsBackdrop.BackgroundTransparency = 0.600
+CrypticsUniqueDesign.ScriptsBackdrop.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ScriptsBackdrop.BorderSizePixel = 0
+CrypticsUniqueDesign.ScriptsBackdrop.Position = UDim2.new(0, 0, 0.0810000002, 0)
+CrypticsUniqueDesign.ScriptsBackdrop.Size = UDim2.new(0.998000026, 0, 0.907999992, 0)
+
+CrypticsUniqueDesign.Scripts_2.Name = "Scripts"
+CrypticsUniqueDesign.Scripts_2.Parent = CrypticsUniqueDesign.ScriptsBackdrop
+CrypticsUniqueDesign.Scripts_2.Active = true
+CrypticsUniqueDesign.Scripts_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Scripts_2.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.Scripts_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Scripts_2.BorderSizePixel = 0
+CrypticsUniqueDesign.Scripts_2.Size = UDim2.new(1, 0, 1, 0)
+CrypticsUniqueDesign.Scripts_2.CanvasSize = UDim2.new(0, 0, 1.5, 0)
+CrypticsUniqueDesign.Scripts_2.ScrollBarThickness = 0
+
+CrypticsUniqueDesign.UIGridLayout_2.Parent = CrypticsUniqueDesign.Scripts_2
+CrypticsUniqueDesign.UIGridLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+CrypticsUniqueDesign.UIGridLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+CrypticsUniqueDesign.UIGridLayout_2.CellPadding = UDim2.new(0.00800000038, 0, 0.00999999978, 0)
+CrypticsUniqueDesign.UIGridLayout_2.CellSize = UDim2.new(0.239999995, 0, 0.239999995, 0)
+
+CrypticsUniqueDesign.UIPadding_3.Parent = CrypticsUniqueDesign.Scripts_2
+CrypticsUniqueDesign.UIPadding_3.PaddingTop = UDim.new(0.00999999978, 0)
+
+CrypticsUniqueDesign.Scriptblox.Name = "Scriptblox"
+CrypticsUniqueDesign.Scriptblox.Parent = CrypticsUniqueDesign.Scripts_2
+CrypticsUniqueDesign.Scriptblox.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+CrypticsUniqueDesign.Scriptblox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Scriptblox.BorderSizePixel = 0
+CrypticsUniqueDesign.Scriptblox.ClipsDescendants = true
+CrypticsUniqueDesign.Scriptblox.Size = UDim2.new(0, 100, 0, 100)
+
+CrypticsUniqueDesign.UICorner_6.CornerRadius = UDim.new(0.0399999991, 0)
+CrypticsUniqueDesign.UICorner_6.Parent = CrypticsUniqueDesign.Scriptblox
+
+CrypticsUniqueDesign.Frame_7.Parent = CrypticsUniqueDesign.Scriptblox
+CrypticsUniqueDesign.Frame_7.BackgroundColor3 = Color3.fromRGB(39, 48, 88)
+CrypticsUniqueDesign.Frame_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Frame_7.BorderSizePixel = 0
+CrypticsUniqueDesign.Frame_7.Position = UDim2.new(0, 0, 0.779998362, 0)
+CrypticsUniqueDesign.Frame_7.Size = UDim2.new(1, 0, 0.220001742, 0)
+CrypticsUniqueDesign.Frame_7.ZIndex = 2
+
+CrypticsUniqueDesign.UICorner_7.CornerRadius = UDim.new(0.185000002, 0)
+CrypticsUniqueDesign.UICorner_7.Parent = CrypticsUniqueDesign.Frame_7
+
+CrypticsUniqueDesign.Cover.Name = "Cover"
+CrypticsUniqueDesign.Cover.Parent = CrypticsUniqueDesign.Scriptblox
+CrypticsUniqueDesign.Cover.BackgroundColor3 = Color3.fromRGB(39, 48, 88)
+CrypticsUniqueDesign.Cover.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Cover.BorderSizePixel = 0
+CrypticsUniqueDesign.Cover.Position = UDim2.new(0, 0, 0.779998362, 0)
+CrypticsUniqueDesign.Cover.Size = UDim2.new(0.999999881, 0, 0.0755798072, 0)
+CrypticsUniqueDesign.Cover.ZIndex = 2
+
+CrypticsUniqueDesign.ImageLabel_6.Parent = CrypticsUniqueDesign.Scriptblox
+CrypticsUniqueDesign.ImageLabel_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ImageLabel_6.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ImageLabel_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ImageLabel_6.BorderSizePixel = 0
+CrypticsUniqueDesign.ImageLabel_6.Size = UDim2.new(0.999999762, 0, 0.896465421, 0)
+CrypticsUniqueDesign.ImageLabel_6.Image = "rbxassetid://80968262842323"
+
+CrypticsUniqueDesign.UICorner_8.CornerRadius = UDim.new(0.0299999993, 0)
+CrypticsUniqueDesign.UICorner_8.Parent = CrypticsUniqueDesign.ImageLabel_6
+
+CrypticsUniqueDesign.FoP.Name = "FoP"
+CrypticsUniqueDesign.FoP.Parent = CrypticsUniqueDesign.Scriptblox
+CrypticsUniqueDesign.FoP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.FoP.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.FoP.BorderSizePixel = 0
+CrypticsUniqueDesign.FoP.Position = UDim2.new(0.732989073, 0, 0.613470495, 0)
+CrypticsUniqueDesign.FoP.Size = UDim2.new(0.233693138, 0, 0.114887804, 0)
+CrypticsUniqueDesign.FoP.ZIndex = 2
+
+CrypticsUniqueDesign.UICorner_9.CornerRadius = UDim.new(0.200000003, 0)
+CrypticsUniqueDesign.UICorner_9.Parent = CrypticsUniqueDesign.FoP
+
+CrypticsUniqueDesign.ImageLabel_7.Parent = CrypticsUniqueDesign.FoP
+CrypticsUniqueDesign.ImageLabel_7.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.ImageLabel_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ImageLabel_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ImageLabel_7.BorderSizePixel = 0
+CrypticsUniqueDesign.ImageLabel_7.Position = UDim2.new(0.100000001, 0, 0.5, 0)
+CrypticsUniqueDesign.ImageLabel_7.Size = UDim2.new(0.286714822, 0, 0.800000012, 0)
+CrypticsUniqueDesign.ImageLabel_7.Image = "rbxassetid://140301153361858"
+
+CrypticsUniqueDesign.TextLabel_7.Parent = CrypticsUniqueDesign.FoP
+CrypticsUniqueDesign.TextLabel_7.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.TextLabel_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_7.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_7.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_7.Position = UDim2.new(0.337000012, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_7.Size = UDim2.new(0.662999988, 0, 0.699999988, 0)
+CrypticsUniqueDesign.TextLabel_7.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_7.Text = "Free"
+CrypticsUniqueDesign.TextLabel_7.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_7.TextScaled = true
+CrypticsUniqueDesign.TextLabel_7.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_7.TextWrapped = true
+
+CrypticsUniqueDesign.Title_2.Name = "Title"
+CrypticsUniqueDesign.Title_2.Parent = CrypticsUniqueDesign.Scriptblox
+CrypticsUniqueDesign.Title_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Title_2.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.Title_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Title_2.BorderSizePixel = 0
+CrypticsUniqueDesign.Title_2.Position = UDim2.new(0.0530000106, 0, 0.850000024, 0)
+CrypticsUniqueDesign.Title_2.Size = UDim2.new(0.77788204, 0, 0.128122389, 0)
+CrypticsUniqueDesign.Title_2.ZIndex = 3
+CrypticsUniqueDesign.Title_2.Font = Enum.Font.SourceSansBold
+CrypticsUniqueDesign.Title_2.Text = "Title of script"
+CrypticsUniqueDesign.Title_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Title_2.TextScaled = true
+CrypticsUniqueDesign.Title_2.TextSize = 14.000
+CrypticsUniqueDesign.Title_2.TextWrapped = true
+CrypticsUniqueDesign.Title_2.TextXAlignment = Enum.TextXAlignment.Left
+
+CrypticsUniqueDesign.Game.Name = "Game"
+CrypticsUniqueDesign.Game.Parent = CrypticsUniqueDesign.Scriptblox
+CrypticsUniqueDesign.Game.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Game.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.Game.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Game.BorderSizePixel = 0
+CrypticsUniqueDesign.Game.Position = UDim2.new(0.0530000106, 0, 0.804889798, 0)
+CrypticsUniqueDesign.Game.Size = UDim2.new(0.773439646, 0, 0.0669879019, 0)
+CrypticsUniqueDesign.Game.ZIndex = 3
+CrypticsUniqueDesign.Game.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.Game.Text = "Game name"
+CrypticsUniqueDesign.Game.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Game.TextScaled = true
+CrypticsUniqueDesign.Game.TextSize = 14.000
+CrypticsUniqueDesign.Game.TextWrapped = true
+CrypticsUniqueDesign.Game.TextXAlignment = Enum.TextXAlignment.Left
+
+CrypticsUniqueDesign.Execute_3.Name = "Execute"
+CrypticsUniqueDesign.Execute_3.Parent = CrypticsUniqueDesign.Scriptblox
+CrypticsUniqueDesign.Execute_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Execute_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Execute_3.BorderSizePixel = 0
+CrypticsUniqueDesign.Execute_3.Position = UDim2.new(0.860000014, 0, 0.810000002, 0)
+CrypticsUniqueDesign.Execute_3.Size = UDim2.new(0.119999997, 0, 0.165999994, 0)
+CrypticsUniqueDesign.Execute_3.ZIndex = 5
+CrypticsUniqueDesign.Execute_3.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.Execute_3.Text = ""
+CrypticsUniqueDesign.Execute_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Execute_3.TextSize = 14.000
+
+CrypticsUniqueDesign.ImageLabel_8.Parent = CrypticsUniqueDesign.Execute_3
+CrypticsUniqueDesign.ImageLabel_8.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.ImageLabel_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ImageLabel_8.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ImageLabel_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ImageLabel_8.BorderSizePixel = 0
+CrypticsUniqueDesign.ImageLabel_8.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.ImageLabel_8.Size = UDim2.new(0.600000024, 0, 0.600000024, 0)
+CrypticsUniqueDesign.ImageLabel_8.Image = "rbxassetid://102018991556897"
+
+CrypticsUniqueDesign.UICorner_10.CornerRadius = UDim.new(0.200000003, 0)
+CrypticsUniqueDesign.UICorner_10.Parent = CrypticsUniqueDesign.Execute_3
+
+CrypticsUniqueDesign.UIGradient_13.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+CrypticsUniqueDesign.UIGradient_13.Rotation = -61
+CrypticsUniqueDesign.UIGradient_13.Parent = CrypticsUniqueDesign.Execute_3
+
+CrypticsUniqueDesign.rscripts.Name = "rscripts"
+CrypticsUniqueDesign.rscripts.Parent = CrypticsUniqueDesign.Scripts_2
+CrypticsUniqueDesign.rscripts.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+CrypticsUniqueDesign.rscripts.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.rscripts.BorderSizePixel = 0
+CrypticsUniqueDesign.rscripts.Size = UDim2.new(0, 100, 0, 100)
+
+CrypticsUniqueDesign.UICorner_11.CornerRadius = UDim.new(0.0399999991, 0)
+CrypticsUniqueDesign.UICorner_11.Parent = CrypticsUniqueDesign.rscripts
+
+CrypticsUniqueDesign.ImageLabel_9.Parent = CrypticsUniqueDesign.rscripts
+CrypticsUniqueDesign.ImageLabel_9.AnchorPoint = Vector2.new(0.5, 0)
+CrypticsUniqueDesign.ImageLabel_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ImageLabel_9.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ImageLabel_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ImageLabel_9.BorderSizePixel = 0
+CrypticsUniqueDesign.ImageLabel_9.Position = UDim2.new(0.5, 0, 0.0314963944, 0)
+CrypticsUniqueDesign.ImageLabel_9.Size = UDim2.new(0.954999983, 0, 0.716503561, 0)
+CrypticsUniqueDesign.ImageLabel_9.Image = "rbxassetid://111560955989987"
+
+CrypticsUniqueDesign.UICorner_12.CornerRadius = UDim.new(0.0399999991, 0)
+CrypticsUniqueDesign.UICorner_12.Parent = CrypticsUniqueDesign.ImageLabel_9
+
+CrypticsUniqueDesign.Free.Name = "Free"
+CrypticsUniqueDesign.Free.Parent = CrypticsUniqueDesign.rscripts
+CrypticsUniqueDesign.Free.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Free.BackgroundTransparency = 0.100
+CrypticsUniqueDesign.Free.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Free.BorderSizePixel = 0
+CrypticsUniqueDesign.Free.Position = UDim2.new(0.789019942, 0, 0.574675083, 0)
+CrypticsUniqueDesign.Free.Size = UDim2.new(0.163327098, 0, 0.125000015, 0)
+CrypticsUniqueDesign.Free.ZIndex = 2
+
+CrypticsUniqueDesign.UICorner_13.CornerRadius = UDim.new(0.200000003, 0)
+CrypticsUniqueDesign.UICorner_13.Parent = CrypticsUniqueDesign.Free
+
+CrypticsUniqueDesign.TextLabel_8.Parent = CrypticsUniqueDesign.Free
+CrypticsUniqueDesign.TextLabel_8.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.TextLabel_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_8.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_8.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_8.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_8.Size = UDim2.new(1, -4, 0.800000012, 0)
+CrypticsUniqueDesign.TextLabel_8.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_8.Text = "Free"
+CrypticsUniqueDesign.TextLabel_8.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_8.TextScaled = true
+CrypticsUniqueDesign.TextLabel_8.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_8.TextWrapped = true
+
+CrypticsUniqueDesign.Paid.Name = "Paid"
+CrypticsUniqueDesign.Paid.Parent = CrypticsUniqueDesign.rscripts
+CrypticsUniqueDesign.Paid.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+CrypticsUniqueDesign.Paid.BackgroundTransparency = 0.100
+CrypticsUniqueDesign.Paid.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Paid.BorderSizePixel = 0
+CrypticsUniqueDesign.Paid.Position = UDim2.new(0.682403028, 0, 0.574675083, 0)
+CrypticsUniqueDesign.Paid.Size = UDim2.new(0.269944131, 0, 0.125000015, 0)
+CrypticsUniqueDesign.Paid.Visible = false
+CrypticsUniqueDesign.Paid.ZIndex = 2
+
+CrypticsUniqueDesign.UICorner_14.CornerRadius = UDim.new(0.200000003, 0)
+CrypticsUniqueDesign.UICorner_14.Parent = CrypticsUniqueDesign.Paid
+
+CrypticsUniqueDesign.TextLabel_9.Parent = CrypticsUniqueDesign.Paid
+CrypticsUniqueDesign.TextLabel_9.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.TextLabel_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_9.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_9.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_9.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_9.Size = UDim2.new(1, -4, 0.800000012, 0)
+CrypticsUniqueDesign.TextLabel_9.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_9.Text = "Key System"
+CrypticsUniqueDesign.TextLabel_9.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_9.TextScaled = true
+CrypticsUniqueDesign.TextLabel_9.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_9.TextWrapped = true
+
+CrypticsUniqueDesign.Title_3.Name = "Title"
+CrypticsUniqueDesign.Title_3.Parent = CrypticsUniqueDesign.rscripts
+CrypticsUniqueDesign.Title_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Title_3.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.Title_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Title_3.BorderSizePixel = 0
+CrypticsUniqueDesign.Title_3.Position = UDim2.new(0.0530002825, 0, 0.850000024, 0)
+CrypticsUniqueDesign.Title_3.Size = UDim2.new(0.807000041, 0, 0.128122389, 0)
+CrypticsUniqueDesign.Title_3.ZIndex = 3
+CrypticsUniqueDesign.Title_3.Font = Enum.Font.SourceSansBold
+CrypticsUniqueDesign.Title_3.Text = "Title of script"
+CrypticsUniqueDesign.Title_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Title_3.TextScaled = true
+CrypticsUniqueDesign.Title_3.TextSize = 14.000
+CrypticsUniqueDesign.Title_3.TextWrapped = true
+CrypticsUniqueDesign.Title_3.TextXAlignment = Enum.TextXAlignment.Left
+
+CrypticsUniqueDesign.Game_2.Name = "Game"
+CrypticsUniqueDesign.Game_2.Parent = CrypticsUniqueDesign.rscripts
+CrypticsUniqueDesign.Game_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Game_2.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.Game_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Game_2.BorderSizePixel = 0
+CrypticsUniqueDesign.Game_2.Position = UDim2.new(0.0530000106, 0, 0.774852455, 0)
+CrypticsUniqueDesign.Game_2.Size = UDim2.new(0.807000101, 0, 0.0669879019, 0)
+CrypticsUniqueDesign.Game_2.ZIndex = 3
+CrypticsUniqueDesign.Game_2.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.Game_2.Text = "Game name"
+CrypticsUniqueDesign.Game_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Game_2.TextScaled = true
+CrypticsUniqueDesign.Game_2.TextSize = 14.000
+CrypticsUniqueDesign.Game_2.TextWrapped = true
+CrypticsUniqueDesign.Game_2.TextXAlignment = Enum.TextXAlignment.Left
+
+CrypticsUniqueDesign.Execute_4.Name = "Execute"
+CrypticsUniqueDesign.Execute_4.Parent = CrypticsUniqueDesign.rscripts
+CrypticsUniqueDesign.Execute_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Execute_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Execute_4.BorderSizePixel = 0
+CrypticsUniqueDesign.Execute_4.Position = UDim2.new(0.860000014, 0, 0.810000002, 0)
+CrypticsUniqueDesign.Execute_4.Size = UDim2.new(0.119999997, 0, 0.165999994, 0)
+CrypticsUniqueDesign.Execute_4.ZIndex = 5
+CrypticsUniqueDesign.Execute_4.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.Execute_4.Text = ""
+CrypticsUniqueDesign.Execute_4.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Execute_4.TextSize = 14.000
+
+CrypticsUniqueDesign.ImageLabel_10.Parent = CrypticsUniqueDesign.Execute_4
+CrypticsUniqueDesign.ImageLabel_10.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.ImageLabel_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ImageLabel_10.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ImageLabel_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ImageLabel_10.BorderSizePixel = 0
+CrypticsUniqueDesign.ImageLabel_10.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.ImageLabel_10.Size = UDim2.new(0.600000024, 0, 0.600000024, 0)
+CrypticsUniqueDesign.ImageLabel_10.Image = "rbxassetid://102018991556897"
+
+CrypticsUniqueDesign.UICorner_15.CornerRadius = UDim.new(0.200000003, 0)
+CrypticsUniqueDesign.UICorner_15.Parent = CrypticsUniqueDesign.Execute_4
+
+CrypticsUniqueDesign.UIGradient_14.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+CrypticsUniqueDesign.UIGradient_14.Rotation = -61
+CrypticsUniqueDesign.UIGradient_14.Parent = CrypticsUniqueDesign.Execute_4
+
+CrypticsUniqueDesign.UIGradient_15.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(35, 35, 35)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
+CrypticsUniqueDesign.UIGradient_15.Rotation = 92
+CrypticsUniqueDesign.UIGradient_15.Parent = CrypticsUniqueDesign.ScriptsBackdrop
+
+CrypticsUniqueDesign.UICorner_16.CornerRadius = UDim.new(0.00499999989, 0)
+CrypticsUniqueDesign.UICorner_16.Parent = CrypticsUniqueDesign.ScriptsBackdrop
+
+CrypticsUniqueDesign.NextPage.Name = "Next Page"
+CrypticsUniqueDesign.NextPage.Parent = CrypticsUniqueDesign.GlobalScripts
+CrypticsUniqueDesign.NextPage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.NextPage.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.NextPage.BorderSizePixel = 0
+CrypticsUniqueDesign.NextPage.Position = UDim2.new(0.957566798, 0, 0, 0)
+CrypticsUniqueDesign.NextPage.Size = UDim2.new(0.0404332764, 0, 0.0709999874, 0)
+CrypticsUniqueDesign.NextPage.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.NextPage.Text = ">"
+CrypticsUniqueDesign.NextPage.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.NextPage.TextSize = 14.000
+
+CrypticsUniqueDesign.UIGradient_16.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+CrypticsUniqueDesign.UIGradient_16.Rotation = -89
+CrypticsUniqueDesign.UIGradient_16.Parent = CrypticsUniqueDesign.NextPage
+
+CrypticsUniqueDesign.TextLabel_10.Parent = CrypticsUniqueDesign.NextPage
+CrypticsUniqueDesign.TextLabel_10.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.TextLabel_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_10.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_10.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_10.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_10.Size = UDim2.new(1, 0, 1, 0)
+CrypticsUniqueDesign.TextLabel_10.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_10.Text = ">"
+CrypticsUniqueDesign.TextLabel_10.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_10.TextScaled = true
+CrypticsUniqueDesign.TextLabel_10.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_10.TextWrapped = true
+
+CrypticsUniqueDesign.PreviousPage.Name = "Previous Page"
+CrypticsUniqueDesign.PreviousPage.Parent = CrypticsUniqueDesign.GlobalScripts
+CrypticsUniqueDesign.PreviousPage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.PreviousPage.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.PreviousPage.BorderSizePixel = 0
+CrypticsUniqueDesign.PreviousPage.Position = UDim2.new(0.868187964, 0, 0, 0)
+CrypticsUniqueDesign.PreviousPage.Size = UDim2.new(0.0404332764, 0, 0.0709999874, 0)
+CrypticsUniqueDesign.PreviousPage.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.PreviousPage.Text = "<"
+CrypticsUniqueDesign.PreviousPage.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.PreviousPage.TextSize = 14.000
+
+CrypticsUniqueDesign.UIGradient_17.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+CrypticsUniqueDesign.UIGradient_17.Rotation = -89
+CrypticsUniqueDesign.UIGradient_17.Parent = CrypticsUniqueDesign.PreviousPage
+
+CrypticsUniqueDesign.TextLabel_11.Parent = CrypticsUniqueDesign.PreviousPage
+CrypticsUniqueDesign.TextLabel_11.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.TextLabel_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_11.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_11.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_11.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_11.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_11.Size = UDim2.new(1, 0, 1, 0)
+CrypticsUniqueDesign.TextLabel_11.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_11.Text = "<"
+CrypticsUniqueDesign.TextLabel_11.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_11.TextScaled = true
+CrypticsUniqueDesign.TextLabel_11.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_11.TextWrapped = true
+
+CrypticsUniqueDesign.Frame_8.Parent = CrypticsUniqueDesign.GlobalScripts
+CrypticsUniqueDesign.Frame_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Frame_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Frame_8.BorderSizePixel = 0
+CrypticsUniqueDesign.Frame_8.Position = UDim2.new(0.908693612, 0, 0, 0)
+CrypticsUniqueDesign.Frame_8.Size = UDim2.new(0.0490000024, 0, 0.0709999949, 0)
+
+CrypticsUniqueDesign.TextLabel_12.Parent = CrypticsUniqueDesign.Frame_8
+CrypticsUniqueDesign.TextLabel_12.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.TextLabel_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_12.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_12.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_12.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_12.Position = UDim2.new(0, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_12.Size = UDim2.new(1, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_12.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_12.Text = "1/250"
+CrypticsUniqueDesign.TextLabel_12.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_12.TextScaled = true
+CrypticsUniqueDesign.TextLabel_12.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_12.TextWrapped = true
+
+CrypticsUniqueDesign.UIGradient_18.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+CrypticsUniqueDesign.UIGradient_18.Rotation = -89
+CrypticsUniqueDesign.UIGradient_18.Parent = CrypticsUniqueDesign.Frame_8
+
+CrypticsUniqueDesign.ConsoleTab.Name = "Console Tab"
+CrypticsUniqueDesign.ConsoleTab.Parent = CrypticsUniqueDesign.MainFrame
+CrypticsUniqueDesign.ConsoleTab.AnchorPoint = Vector2.new(0.5, 0)
+CrypticsUniqueDesign.ConsoleTab.BackgroundColor3 = Color3.fromRGB(15, 23, 42)
+CrypticsUniqueDesign.ConsoleTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ConsoleTab.BorderSizePixel = 0
+CrypticsUniqueDesign.ConsoleTab.Position = UDim2.new(0.5, 0, 0.120000057, 0)
+CrypticsUniqueDesign.ConsoleTab.Size = UDim2.new(0.979999959, 0, 0.86622721, 0)
+CrypticsUniqueDesign.ConsoleTab.Visible = false
+CrypticsUniqueDesign.ConsoleTab.ZIndex = 3
+
+CrypticsUniqueDesign.UICorner_17.CornerRadius = UDim.new(0, 2)
+CrypticsUniqueDesign.UICorner_17.Parent = CrypticsUniqueDesign.ConsoleTab
+
+CrypticsUniqueDesign.ScrollingFrame_2.Parent = CrypticsUniqueDesign.ConsoleTab
+CrypticsUniqueDesign.ScrollingFrame_2.Active = true
+CrypticsUniqueDesign.ScrollingFrame_2.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.ScrollingFrame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ScrollingFrame_2.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ScrollingFrame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ScrollingFrame_2.BorderSizePixel = 0
+CrypticsUniqueDesign.ScrollingFrame_2.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.ScrollingFrame_2.Size = UDim2.new(1, -6, 1, -6)
+CrypticsUniqueDesign.ScrollingFrame_2.CanvasSize = UDim2.new(0, 0, 0, 0)
+CrypticsUniqueDesign.ScrollingFrame_2.ScrollBarThickness = 2
+
+CrypticsUniqueDesign.UIListLayout_2.Parent = CrypticsUniqueDesign.ScrollingFrame_2
+CrypticsUniqueDesign.UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+
+CrypticsUniqueDesign.Version.Name = "Version"
+CrypticsUniqueDesign.Version.Parent = CrypticsUniqueDesign.MainShell
+CrypticsUniqueDesign.Version.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.Version.BackgroundColor3 = Color3.fromRGB(34, 34, 42)
+CrypticsUniqueDesign.Version.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Version.BorderSizePixel = 0
+CrypticsUniqueDesign.Version.Position = UDim2.new(0.837309241, 0, 0.058639314, 0)
+CrypticsUniqueDesign.Version.Size = UDim2.new(0.149669781, 0, 0.0407302566, 0)
+CrypticsUniqueDesign.Version.ZIndex = 3
+
+CrypticsUniqueDesign.UICorner_18.CornerRadius = UDim.new(0, 4)
+CrypticsUniqueDesign.UICorner_18.Parent = CrypticsUniqueDesign.Version
+
+CrypticsUniqueDesign.Backdrop.Name = "Backdrop"
+CrypticsUniqueDesign.Backdrop.Parent = CrypticsUniqueDesign.Version
+CrypticsUniqueDesign.Backdrop.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.Backdrop.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Backdrop.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Backdrop.BorderSizePixel = 0
+CrypticsUniqueDesign.Backdrop.Position = UDim2.new(0.492978722, 0, 0.48944357, 0)
+CrypticsUniqueDesign.Backdrop.Size = UDim2.new(1, -2, 1.20828652, -2)
+
+CrypticsUniqueDesign.UICorner_19.CornerRadius = UDim.new(0, 4)
+CrypticsUniqueDesign.UICorner_19.Parent = CrypticsUniqueDesign.Backdrop
+
+CrypticsUniqueDesign.TextLabel_13.Parent = CrypticsUniqueDesign.Backdrop
+CrypticsUniqueDesign.TextLabel_13.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.TextLabel_13.BackgroundColor3 = Color3.fromRGB(0, 145, 185)
+CrypticsUniqueDesign.TextLabel_13.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_13.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_13.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_13.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_13.Size = UDim2.new(0.959999979, 0, 0.939999998, 0)
+CrypticsUniqueDesign.TextLabel_13.Font = Enum.Font.Ubuntu
+CrypticsUniqueDesign.TextLabel_13.Text = "1.0.638.610"
+CrypticsUniqueDesign.TextLabel_13.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_13.TextScaled = true
+CrypticsUniqueDesign.TextLabel_13.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_13.TextWrapped = true
+
+CrypticsUniqueDesign.UIGradient_19.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+CrypticsUniqueDesign.UIGradient_19.Rotation = 90
+CrypticsUniqueDesign.UIGradient_19.Parent = CrypticsUniqueDesign.Backdrop
+
+CrypticsUniqueDesign.TextButton_2.Parent = CrypticsUniqueDesign.Backdrop
+CrypticsUniqueDesign.TextButton_2.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextButton_2.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextButton_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextButton_2.BorderSizePixel = 0
+CrypticsUniqueDesign.TextButton_2.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.TextButton_2.Size = UDim2.new(1, 0, 1, 0)
+CrypticsUniqueDesign.TextButton_2.ZIndex = 10
+CrypticsUniqueDesign.TextButton_2.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextButton_2.Text = ""
+CrypticsUniqueDesign.TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextButton_2.TextSize = 14.000
+
+CrypticsUniqueDesign.ImageLabel_11.Parent = CrypticsUniqueDesign.MainShell
+CrypticsUniqueDesign.ImageLabel_11.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.ImageLabel_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ImageLabel_11.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ImageLabel_11.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ImageLabel_11.BorderSizePixel = 0
+CrypticsUniqueDesign.ImageLabel_11.Position = UDim2.new(0.059957251, 0, 0.0601466857, 0)
+CrypticsUniqueDesign.ImageLabel_11.Rotation = 20.000
+CrypticsUniqueDesign.ImageLabel_11.Size = UDim2.new(-0.0425117798, 0, 0.075409703, 0)
+CrypticsUniqueDesign.ImageLabel_11.ZIndex = 3
+CrypticsUniqueDesign.ImageLabel_11.Image = "rbxassetid://19005999590"
+
+CrypticsUniqueDesign.Title_4.Name = "Title"
+CrypticsUniqueDesign.Title_4.Parent = CrypticsUniqueDesign.MainShell
+CrypticsUniqueDesign.Title_4.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.Title_4.BackgroundColor3 = Color3.fromRGB(220, 225, 240)
+CrypticsUniqueDesign.Title_4.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.Title_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Title_4.BorderSizePixel = 0
+CrypticsUniqueDesign.Title_4.Position = UDim2.new(0.370586991, 0, 0.0453531928, 0)
+CrypticsUniqueDesign.Title_4.Size = UDim2.new(0.256600261, 0, 0.0721091554, 0)
+CrypticsUniqueDesign.Title_4.ZIndex = 3
+CrypticsUniqueDesign.Title_4.Font = Enum.Font.Unknown
+CrypticsUniqueDesign.Title_4.Text = "Cryptic"
+CrypticsUniqueDesign.Title_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Title_4.TextScaled = true
+CrypticsUniqueDesign.Title_4.TextSize = 14.000
+CrypticsUniqueDesign.Title_4.TextWrapped = true
+
+CrypticsUniqueDesign.SideShell.Name = "SideShell"
+CrypticsUniqueDesign.SideShell.Parent = CrypticsUniqueDesign.MainShell
+CrypticsUniqueDesign.SideShell.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.SideShell.BackgroundColor3 = Color3.fromRGB(50, 72, 120)
+CrypticsUniqueDesign.SideShell.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.SideShell.BorderSizePixel = 0
+CrypticsUniqueDesign.SideShell.Position = UDim2.new(1.04200006, 0, 0.5, 0)
+CrypticsUniqueDesign.SideShell.Size = UDim2.new(0.0729999989, 0, 1, 0)
+
+CrypticsUniqueDesign.UICorner_20.CornerRadius = UDim.new(0, 4)
+CrypticsUniqueDesign.UICorner_20.Parent = CrypticsUniqueDesign.SideShell
+
+CrypticsUniqueDesign.Frame_9.Parent = CrypticsUniqueDesign.SideShell
+CrypticsUniqueDesign.Frame_9.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.Frame_9.BackgroundColor3 = Color3.fromRGB(25, 33, 57)
+CrypticsUniqueDesign.Frame_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Frame_9.BorderSizePixel = 0
+CrypticsUniqueDesign.Frame_9.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.Frame_9.Size = UDim2.new(1, -2, 1, -2)
+CrypticsUniqueDesign.Frame_9.ZIndex = 2
+
+CrypticsUniqueDesign.UICorner_21.CornerRadius = UDim.new(0, 4)
+CrypticsUniqueDesign.UICorner_21.Parent = CrypticsUniqueDesign.Frame_9
+
+CrypticsUniqueDesign.UIListLayout_3.Parent = CrypticsUniqueDesign.Frame_9
+CrypticsUniqueDesign.UIListLayout_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
+CrypticsUniqueDesign.UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
+CrypticsUniqueDesign.UIListLayout_3.VerticalAlignment = Enum.VerticalAlignment.Center
+CrypticsUniqueDesign.UIListLayout_3.Padding = UDim.new(0.00400000019, 0)
+
+CrypticsUniqueDesign.PplayerYetToRemove.Name = "Pplayer Yet To Remove"
+CrypticsUniqueDesign.PplayerYetToRemove.Parent = CrypticsUniqueDesign.UIListLayout_3
+CrypticsUniqueDesign.PplayerYetToRemove.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.PplayerYetToRemove.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.PplayerYetToRemove.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.PplayerYetToRemove.BorderSizePixel = 0
+CrypticsUniqueDesign.PplayerYetToRemove.Size = UDim2.new(0.899999976, 0, 0.115000002, 0)
+CrypticsUniqueDesign.PplayerYetToRemove.ZIndex = 3
+CrypticsUniqueDesign.PplayerYetToRemove.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.PplayerYetToRemove.Text = ""
+CrypticsUniqueDesign.PplayerYetToRemove.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.PplayerYetToRemove.TextSize = 14.000
+
+CrypticsUniqueDesign.UICorner_22.CornerRadius = UDim.new(0, 6)
+CrypticsUniqueDesign.UICorner_22.Parent = CrypticsUniqueDesign.PplayerYetToRemove
+
+CrypticsUniqueDesign.Frame_10.Parent = CrypticsUniqueDesign.PplayerYetToRemove
+CrypticsUniqueDesign.Frame_10.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.Frame_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Frame_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Frame_10.BorderSizePixel = 0
+CrypticsUniqueDesign.Frame_10.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.Frame_10.Size = UDim2.new(1, -2, 1, -2)
+
+CrypticsUniqueDesign.ImageLabel_12.Parent = CrypticsUniqueDesign.Frame_10
+CrypticsUniqueDesign.ImageLabel_12.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.ImageLabel_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ImageLabel_12.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ImageLabel_12.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ImageLabel_12.BorderSizePixel = 0
+CrypticsUniqueDesign.ImageLabel_12.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.ImageLabel_12.Size = UDim2.new(0.800000012, 0, 0.800000012, 0)
+CrypticsUniqueDesign.ImageLabel_12.Image = "rbxassetid://19005169807"
+
+CrypticsUniqueDesign.UISizeConstraint.Parent = CrypticsUniqueDesign.ImageLabel_12
+CrypticsUniqueDesign.UISizeConstraint.MaxSize = Vector2.new(40, 40)
+
+CrypticsUniqueDesign.UICorner_23.CornerRadius = UDim.new(0.0500000007, 0)
+CrypticsUniqueDesign.UICorner_23.Parent = CrypticsUniqueDesign.Frame_10
+
+CrypticsUniqueDesign.UIGradient_20.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+CrypticsUniqueDesign.UIGradient_20.Rotation = 180
+CrypticsUniqueDesign.UIGradient_20.Parent = CrypticsUniqueDesign.Frame_10
+
+CrypticsUniqueDesign.A.Name = "A"
+CrypticsUniqueDesign.A.Parent = CrypticsUniqueDesign.Frame_9
+CrypticsUniqueDesign.A.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.A.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.A.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.A.BorderSizePixel = 0
+CrypticsUniqueDesign.A.Position = UDim2.new(0.0208253805, 0, 0, 0)
+CrypticsUniqueDesign.A.Size = UDim2.new(0.899999976, 0, 0.115000002, 0)
+CrypticsUniqueDesign.A.ZIndex = 3
+CrypticsUniqueDesign.A.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.A.Text = ""
+CrypticsUniqueDesign.A.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.A.TextSize = 14.000
+
+CrypticsUniqueDesign.UICorner_24.CornerRadius = UDim.new(0, 2)
+CrypticsUniqueDesign.UICorner_24.Parent = CrypticsUniqueDesign.A
+
+CrypticsUniqueDesign.Frame_11.Parent = CrypticsUniqueDesign.A
+CrypticsUniqueDesign.Frame_11.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.Frame_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Frame_11.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Frame_11.BorderSizePixel = 0
+CrypticsUniqueDesign.Frame_11.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.Frame_11.Size = UDim2.new(1, -2, 1, -2)
+
+CrypticsUniqueDesign.UICorner_25.CornerRadius = UDim.new(0.0500000007, 0)
+CrypticsUniqueDesign.UICorner_25.Parent = CrypticsUniqueDesign.Frame_11
+
+CrypticsUniqueDesign.ImageLabel_13.Parent = CrypticsUniqueDesign.Frame_11
+CrypticsUniqueDesign.ImageLabel_13.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.ImageLabel_13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ImageLabel_13.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ImageLabel_13.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ImageLabel_13.BorderSizePixel = 0
+CrypticsUniqueDesign.ImageLabel_13.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.ImageLabel_13.Size = UDim2.new(0.600000024, 0, 0.600000024, 0)
+CrypticsUniqueDesign.ImageLabel_13.Image = "rbxassetid://19005195224"
+
+CrypticsUniqueDesign.UIGradient_21.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+CrypticsUniqueDesign.UIGradient_21.Rotation = 135
+CrypticsUniqueDesign.UIGradient_21.Parent = CrypticsUniqueDesign.Frame_11
+
+CrypticsUniqueDesign.B.Name = "B"
+CrypticsUniqueDesign.B.Parent = CrypticsUniqueDesign.Frame_9
+CrypticsUniqueDesign.B.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.B.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.B.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.B.BorderSizePixel = 0
+CrypticsUniqueDesign.B.Size = UDim2.new(0.899999976, 0, 0.115000002, 0)
+CrypticsUniqueDesign.B.ZIndex = 3
+CrypticsUniqueDesign.B.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.B.Text = ""
+CrypticsUniqueDesign.B.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.B.TextSize = 14.000
+
+CrypticsUniqueDesign.UICorner_26.CornerRadius = UDim.new(0, 2)
+CrypticsUniqueDesign.UICorner_26.Parent = CrypticsUniqueDesign.B
+
+CrypticsUniqueDesign.Frame_12.Parent = CrypticsUniqueDesign.B
+CrypticsUniqueDesign.Frame_12.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.Frame_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Frame_12.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Frame_12.BorderSizePixel = 0
+CrypticsUniqueDesign.Frame_12.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.Frame_12.Size = UDim2.new(1, -2, 1, -2)
+
+CrypticsUniqueDesign.UICorner_27.CornerRadius = UDim.new(0.0500000007, 0)
+CrypticsUniqueDesign.UICorner_27.Parent = CrypticsUniqueDesign.Frame_12
+
+CrypticsUniqueDesign.ImageLabel_14.Parent = CrypticsUniqueDesign.Frame_12
+CrypticsUniqueDesign.ImageLabel_14.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.ImageLabel_14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ImageLabel_14.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ImageLabel_14.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ImageLabel_14.BorderSizePixel = 0
+CrypticsUniqueDesign.ImageLabel_14.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.ImageLabel_14.Size = UDim2.new(0.600000024, 0, 0.600000024, 0)
+CrypticsUniqueDesign.ImageLabel_14.Image = "rbxassetid://19005189497"
+
+CrypticsUniqueDesign.UIGradient_22.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+CrypticsUniqueDesign.UIGradient_22.Rotation = 180
+CrypticsUniqueDesign.UIGradient_22.Parent = CrypticsUniqueDesign.Frame_12
+
+CrypticsUniqueDesign.C.Name = "C"
+CrypticsUniqueDesign.C.Parent = CrypticsUniqueDesign.Frame_9
+CrypticsUniqueDesign.C.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.C.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.C.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.C.BorderSizePixel = 0
+CrypticsUniqueDesign.C.Size = UDim2.new(0.899999976, 0, 0.115000002, 0)
+CrypticsUniqueDesign.C.ZIndex = 3
+CrypticsUniqueDesign.C.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.C.Text = ""
+CrypticsUniqueDesign.C.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.C.TextSize = 14.000
+
+CrypticsUniqueDesign.UICorner_28.CornerRadius = UDim.new(0, 6)
+CrypticsUniqueDesign.UICorner_28.Parent = CrypticsUniqueDesign.C
+
+CrypticsUniqueDesign.Frame_13.Parent = CrypticsUniqueDesign.C
+CrypticsUniqueDesign.Frame_13.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.Frame_13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Frame_13.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Frame_13.BorderSizePixel = 0
+CrypticsUniqueDesign.Frame_13.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.Frame_13.Size = UDim2.new(1, -2, 1, -2)
+
+CrypticsUniqueDesign.UICorner_29.CornerRadius = UDim.new(0.0500000007, 0)
+CrypticsUniqueDesign.UICorner_29.Parent = CrypticsUniqueDesign.Frame_13
+
+CrypticsUniqueDesign.ImageLabel_15.Parent = CrypticsUniqueDesign.Frame_13
+CrypticsUniqueDesign.ImageLabel_15.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.ImageLabel_15.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ImageLabel_15.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ImageLabel_15.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ImageLabel_15.BorderSizePixel = 0
+CrypticsUniqueDesign.ImageLabel_15.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.ImageLabel_15.Size = UDim2.new(0.600000024, 0, 0.600000024, 0)
+CrypticsUniqueDesign.ImageLabel_15.Image = "rbxassetid://19005178312"
+
+CrypticsUniqueDesign.UIGradient_23.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+CrypticsUniqueDesign.UIGradient_23.Rotation = 180
+CrypticsUniqueDesign.UIGradient_23.Parent = CrypticsUniqueDesign.Frame_13
+
+CrypticsUniqueDesign.D.Name = "D"
+CrypticsUniqueDesign.D.Parent = CrypticsUniqueDesign.Frame_9
+CrypticsUniqueDesign.D.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.D.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.D.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.D.BorderSizePixel = 0
+CrypticsUniqueDesign.D.Size = UDim2.new(0.899999976, 0, 0.115000002, 0)
+CrypticsUniqueDesign.D.ZIndex = 3
+CrypticsUniqueDesign.D.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.D.Text = ""
+CrypticsUniqueDesign.D.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.D.TextSize = 14.000
+
+CrypticsUniqueDesign.UICorner_30.CornerRadius = UDim.new(0, 6)
+CrypticsUniqueDesign.UICorner_30.Parent = CrypticsUniqueDesign.D
+
+CrypticsUniqueDesign.Frame_14.Parent = CrypticsUniqueDesign.D
+CrypticsUniqueDesign.Frame_14.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.Frame_14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Frame_14.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Frame_14.BorderSizePixel = 0
+CrypticsUniqueDesign.Frame_14.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.Frame_14.Size = UDim2.new(1, -2, 1, -2)
+
+CrypticsUniqueDesign.UICorner_31.CornerRadius = UDim.new(0.0500000007, 0)
+CrypticsUniqueDesign.UICorner_31.Parent = CrypticsUniqueDesign.Frame_14
+
+CrypticsUniqueDesign.ImageLabel_16.Parent = CrypticsUniqueDesign.Frame_14
+CrypticsUniqueDesign.ImageLabel_16.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.ImageLabel_16.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ImageLabel_16.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ImageLabel_16.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ImageLabel_16.BorderSizePixel = 0
+CrypticsUniqueDesign.ImageLabel_16.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.ImageLabel_16.Size = UDim2.new(0.600000024, 0, 0.600000024, 0)
+CrypticsUniqueDesign.ImageLabel_16.Image = "rbxassetid://19005163350"
+
+CrypticsUniqueDesign.UIGradient_24.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+CrypticsUniqueDesign.UIGradient_24.Rotation = -56
+CrypticsUniqueDesign.UIGradient_24.Parent = CrypticsUniqueDesign.Frame_14
+
+CrypticsUniqueDesign.F.Name = "F"
+CrypticsUniqueDesign.F.Parent = CrypticsUniqueDesign.Frame_9
+CrypticsUniqueDesign.F.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.F.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.F.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.F.BorderSizePixel = 0
+CrypticsUniqueDesign.F.Size = UDim2.new(0.899999976, 0, 0.115000002, 0)
+CrypticsUniqueDesign.F.ZIndex = 3
+CrypticsUniqueDesign.F.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.F.Text = ""
+CrypticsUniqueDesign.F.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.F.TextSize = 14.000
+
+CrypticsUniqueDesign.UICorner_32.CornerRadius = UDim.new(0, 6)
+CrypticsUniqueDesign.UICorner_32.Parent = CrypticsUniqueDesign.F
+
+CrypticsUniqueDesign.Frame_15.Parent = CrypticsUniqueDesign.F
+CrypticsUniqueDesign.Frame_15.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.Frame_15.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Frame_15.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Frame_15.BorderSizePixel = 0
+CrypticsUniqueDesign.Frame_15.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.Frame_15.Size = UDim2.new(1, -2, 1, -2)
+
+CrypticsUniqueDesign.UICorner_33.CornerRadius = UDim.new(0.0500000007, 0)
+CrypticsUniqueDesign.UICorner_33.Parent = CrypticsUniqueDesign.Frame_15
+
+CrypticsUniqueDesign.ImageLabel_17.Parent = CrypticsUniqueDesign.Frame_15
+CrypticsUniqueDesign.ImageLabel_17.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.ImageLabel_17.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ImageLabel_17.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ImageLabel_17.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ImageLabel_17.BorderSizePixel = 0
+CrypticsUniqueDesign.ImageLabel_17.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.ImageLabel_17.Size = UDim2.new(0.800000012, 0, 0.800000012, 0)
+CrypticsUniqueDesign.ImageLabel_17.Visible = false
+CrypticsUniqueDesign.ImageLabel_17.Image = "rbxassetid://19005153058"
+
+CrypticsUniqueDesign.UISizeConstraint_2.Parent = CrypticsUniqueDesign.ImageLabel_17
+CrypticsUniqueDesign.UISizeConstraint_2.MaxSize = Vector2.new(30, 30)
+
+CrypticsUniqueDesign.UIGradient_25.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+CrypticsUniqueDesign.UIGradient_25.Rotation = 180
+CrypticsUniqueDesign.UIGradient_25.Parent = CrypticsUniqueDesign.Frame_15
+
+CrypticsUniqueDesign.G.Name = "G"
+CrypticsUniqueDesign.G.Parent = CrypticsUniqueDesign.Frame_9
+CrypticsUniqueDesign.G.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.G.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.G.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.G.BorderSizePixel = 0
+CrypticsUniqueDesign.G.Size = UDim2.new(0.899999976, 0, 0.275000006, 0)
+CrypticsUniqueDesign.G.ZIndex = 3
+CrypticsUniqueDesign.G.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.G.Text = ""
+CrypticsUniqueDesign.G.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.G.TextSize = 14.000
+
+CrypticsUniqueDesign.UICorner_34.Parent = CrypticsUniqueDesign.G
+
+CrypticsUniqueDesign.H.Name = "H"
+CrypticsUniqueDesign.H.Parent = CrypticsUniqueDesign.Frame_9
+CrypticsUniqueDesign.H.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.H.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.H.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.H.BorderSizePixel = 0
+CrypticsUniqueDesign.H.Size = UDim2.new(0.899999976, 0, 0.115000002, 0)
+CrypticsUniqueDesign.H.ZIndex = 3
+CrypticsUniqueDesign.H.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.H.Text = ""
+CrypticsUniqueDesign.H.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.H.TextSize = 14.000
+
+CrypticsUniqueDesign.UICorner_35.CornerRadius = UDim.new(0, 6)
+CrypticsUniqueDesign.UICorner_35.Parent = CrypticsUniqueDesign.H
+
+CrypticsUniqueDesign.Frame_16.Parent = CrypticsUniqueDesign.H
+CrypticsUniqueDesign.Frame_16.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.Frame_16.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Frame_16.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Frame_16.BorderSizePixel = 0
+CrypticsUniqueDesign.Frame_16.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.Frame_16.Size = UDim2.new(1, -2, 1, -2)
+
+CrypticsUniqueDesign.UICorner_36.CornerRadius = UDim.new(0.0500000007, 0)
+CrypticsUniqueDesign.UICorner_36.Parent = CrypticsUniqueDesign.Frame_16
+
+CrypticsUniqueDesign.ImageLabel_18.Parent = CrypticsUniqueDesign.Frame_16
+CrypticsUniqueDesign.ImageLabel_18.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.ImageLabel_18.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ImageLabel_18.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ImageLabel_18.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ImageLabel_18.BorderSizePixel = 0
+CrypticsUniqueDesign.ImageLabel_18.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.ImageLabel_18.Size = UDim2.new(0.800000012, 0, 0.800000012, 0)
+CrypticsUniqueDesign.ImageLabel_18.Visible = false
+CrypticsUniqueDesign.ImageLabel_18.Image = "rbxassetid://19005146588"
+
+CrypticsUniqueDesign.UISizeConstraint_3.Parent = CrypticsUniqueDesign.ImageLabel_18
+CrypticsUniqueDesign.UISizeConstraint_3.MaxSize = Vector2.new(30, 30)
+
+CrypticsUniqueDesign.UIGradient_26.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+CrypticsUniqueDesign.UIGradient_26.Rotation = -118
+CrypticsUniqueDesign.UIGradient_26.Parent = CrypticsUniqueDesign.Frame_16
+
+CrypticsUniqueDesign.Subtitle.Name = "Subtitle"
+CrypticsUniqueDesign.Subtitle.Parent = CrypticsUniqueDesign.MainShell
+CrypticsUniqueDesign.Subtitle.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.Subtitle.BackgroundColor3 = Color3.fromRGB(220, 225, 240)
+CrypticsUniqueDesign.Subtitle.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.Subtitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Subtitle.BorderSizePixel = 0
+CrypticsUniqueDesign.Subtitle.Position = UDim2.new(0.490036339, 0, 0.0961343795, 0)
+CrypticsUniqueDesign.Subtitle.Size = UDim2.new(0.111830518, 0, 0.0316132158, 0)
+CrypticsUniqueDesign.Subtitle.ZIndex = 3
+CrypticsUniqueDesign.Subtitle.Font = Enum.Font.Unknown
+CrypticsUniqueDesign.Subtitle.Text = "Beta UI"
+CrypticsUniqueDesign.Subtitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Subtitle.TextScaled = true
+CrypticsUniqueDesign.Subtitle.TextSize = 14.000
+CrypticsUniqueDesign.Subtitle.TextWrapped = true
+
+CrypticsUniqueDesign.UIScale.Parent = CrypticsUniqueDesign.MainShell
+
+CrypticsUniqueDesign.Notifier.Name = "Notifier"
+CrypticsUniqueDesign.Notifier.Parent = CrypticsUniqueDesign.CrypticsUniqueDesign
+CrypticsUniqueDesign.Notifier.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.Notifier.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Notifier.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.Notifier.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Notifier.BorderSizePixel = 0
+CrypticsUniqueDesign.Notifier.Position = UDim2.new(0.824999988, 0, 0.5, 0)
+CrypticsUniqueDesign.Notifier.Size = UDim2.new(0.174999997, 0, 1, 0)
+
+CrypticsUniqueDesign.UIListLayout_4.Parent = CrypticsUniqueDesign.Notifier
+CrypticsUniqueDesign.UIListLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
+CrypticsUniqueDesign.UIListLayout_4.VerticalAlignment = Enum.VerticalAlignment.Bottom
+CrypticsUniqueDesign.UIListLayout_4.Padding = UDim.new(0.00499999989, 0)
+
+CrypticsUniqueDesign.UIPadding_4.Parent = CrypticsUniqueDesign.Notifier
+CrypticsUniqueDesign.UIPadding_4.PaddingBottom = UDim.new(0.00499999989, 0)
+
+CrypticsUniqueDesign.Hidden.Name = "Hidden"
+CrypticsUniqueDesign.Hidden.Parent = CrypticsUniqueDesign.CrypticsUniqueDesign
+CrypticsUniqueDesign.Hidden.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Hidden.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Hidden.BorderSizePixel = 0
+CrypticsUniqueDesign.Hidden.Size = UDim2.new(0, 100, 0, 100)
+CrypticsUniqueDesign.Hidden.Visible = false
+
+CrypticsUniqueDesign.Hidden_2.Name = "Hidden"
+CrypticsUniqueDesign.Hidden_2.Parent = CrypticsUniqueDesign.Hidden
+CrypticsUniqueDesign.Hidden_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Hidden_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Hidden_2.BorderSizePixel = 0
+CrypticsUniqueDesign.Hidden_2.Size = UDim2.new(0, 100, 0, 100)
+CrypticsUniqueDesign.Hidden_2.Visible = false
+
+CrypticsUniqueDesign.Hidden_3.Name = "Hidden"
+CrypticsUniqueDesign.Hidden_3.Parent = CrypticsUniqueDesign.Hidden
+CrypticsUniqueDesign.Hidden_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Hidden_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Hidden_3.BorderSizePixel = 0
+CrypticsUniqueDesign.Hidden_3.Size = UDim2.new(0, 100, 0, 100)
+CrypticsUniqueDesign.Hidden_3.Visible = false
+
+CrypticsUniqueDesign.Hidden_4.Name = "Hidden"
+CrypticsUniqueDesign.Hidden_4.Parent = CrypticsUniqueDesign.Hidden
+CrypticsUniqueDesign.Hidden_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Hidden_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Hidden_4.BorderSizePixel = 0
+CrypticsUniqueDesign.Hidden_4.Size = UDim2.new(0, 100, 0, 100)
+CrypticsUniqueDesign.Hidden_4.Visible = false
+
+CrypticsUniqueDesign.Hidden_5.Name = "Hidden"
+CrypticsUniqueDesign.Hidden_5.Parent = CrypticsUniqueDesign.Hidden
+CrypticsUniqueDesign.Hidden_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Hidden_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Hidden_5.BorderSizePixel = 0
+CrypticsUniqueDesign.Hidden_5.Size = UDim2.new(0, 100, 0, 100)
+CrypticsUniqueDesign.Hidden_5.Visible = false
+
+CrypticsUniqueDesign.Hidden_6.Name = "Hidden"
+CrypticsUniqueDesign.Hidden_6.Parent = CrypticsUniqueDesign.Hidden
+CrypticsUniqueDesign.Hidden_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Hidden_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Hidden_6.BorderSizePixel = 0
+CrypticsUniqueDesign.Hidden_6.Size = UDim2.new(0, 100, 0, 100)
+CrypticsUniqueDesign.Hidden_6.Visible = false
+
+CrypticsUniqueDesign.Hidden_7.Name = "Hidden"
+CrypticsUniqueDesign.Hidden_7.Parent = CrypticsUniqueDesign.Hidden
+CrypticsUniqueDesign.Hidden_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Hidden_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Hidden_7.BorderSizePixel = 0
+CrypticsUniqueDesign.Hidden_7.Size = UDim2.new(0, 100, 0, 100)
+CrypticsUniqueDesign.Hidden_7.Visible = false
+
+CrypticsUniqueDesign.Hidden_8.Name = "Hidden"
+CrypticsUniqueDesign.Hidden_8.Parent = CrypticsUniqueDesign.Hidden
+CrypticsUniqueDesign.Hidden_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Hidden_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Hidden_8.BorderSizePixel = 0
+CrypticsUniqueDesign.Hidden_8.Size = UDim2.new(0, 100, 0, 100)
+CrypticsUniqueDesign.Hidden_8.Visible = false
+
+CrypticsUniqueDesign.Hidden_9.Name = "Hidden"
+CrypticsUniqueDesign.Hidden_9.Parent = CrypticsUniqueDesign.Hidden
+CrypticsUniqueDesign.Hidden_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Hidden_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Hidden_9.BorderSizePixel = 0
+CrypticsUniqueDesign.Hidden_9.Size = UDim2.new(0, 100, 0, 100)
+CrypticsUniqueDesign.Hidden_9.Visible = false
+
+CrypticsUniqueDesign.Hidden_10.Name = "Hidden"
+CrypticsUniqueDesign.Hidden_10.Parent = CrypticsUniqueDesign.Hidden
+CrypticsUniqueDesign.Hidden_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Hidden_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Hidden_10.BorderSizePixel = 0
+CrypticsUniqueDesign.Hidden_10.Size = UDim2.new(0, 100, 0, 100)
+CrypticsUniqueDesign.Hidden_10.Visible = false
+
+CrypticsUniqueDesign.Hidden_11.Name = "Hidden"
+CrypticsUniqueDesign.Hidden_11.Parent = CrypticsUniqueDesign.Hidden
+CrypticsUniqueDesign.Hidden_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Hidden_11.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Hidden_11.BorderSizePixel = 0
+CrypticsUniqueDesign.Hidden_11.Size = UDim2.new(0, 100, 0, 100)
+CrypticsUniqueDesign.Hidden_11.Visible = false
+
+CrypticsUniqueDesign.Hidden_12.Name = "Hidden"
+CrypticsUniqueDesign.Hidden_12.Parent = CrypticsUniqueDesign.Hidden
+CrypticsUniqueDesign.Hidden_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Hidden_12.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Hidden_12.BorderSizePixel = 0
+CrypticsUniqueDesign.Hidden_12.Size = UDim2.new(0, 100, 0, 100)
+CrypticsUniqueDesign.Hidden_12.Visible = false
+
+CrypticsUniqueDesign.Hidden_13.Name = "Hidden"
+CrypticsUniqueDesign.Hidden_13.Parent = CrypticsUniqueDesign.Hidden
+CrypticsUniqueDesign.Hidden_13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Hidden_13.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Hidden_13.BorderSizePixel = 0
+CrypticsUniqueDesign.Hidden_13.Size = UDim2.new(0, 100, 0, 100)
+CrypticsUniqueDesign.Hidden_13.Visible = false
+
+CrypticsUniqueDesign.Hidden_14.Name = "Hidden"
+CrypticsUniqueDesign.Hidden_14.Parent = CrypticsUniqueDesign.Hidden
+CrypticsUniqueDesign.Hidden_14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Hidden_14.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Hidden_14.BorderSizePixel = 0
+CrypticsUniqueDesign.Hidden_14.Size = UDim2.new(0, 100, 0, 100)
+CrypticsUniqueDesign.Hidden_14.Visible = false
+
+CrypticsUniqueDesign.Hidden_15.Name = "Hidden"
+CrypticsUniqueDesign.Hidden_15.Parent = CrypticsUniqueDesign.Hidden
+CrypticsUniqueDesign.Hidden_15.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Hidden_15.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Hidden_15.BorderSizePixel = 0
+CrypticsUniqueDesign.Hidden_15.Size = UDim2.new(0, 100, 0, 100)
+CrypticsUniqueDesign.Hidden_15.Visible = false
+
+CrypticsUniqueDesign.Hidden_16.Name = "Hidden"
+CrypticsUniqueDesign.Hidden_16.Parent = CrypticsUniqueDesign.Hidden
+CrypticsUniqueDesign.Hidden_16.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Hidden_16.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Hidden_16.BorderSizePixel = 0
+CrypticsUniqueDesign.Hidden_16.Size = UDim2.new(0, 100, 0, 100)
+CrypticsUniqueDesign.Hidden_16.Visible = false
+
+CrypticsUniqueDesign.Toggle.Name = "Toggle"
+CrypticsUniqueDesign.Toggle.Parent = CrypticsUniqueDesign.CrypticsUniqueDesign
+CrypticsUniqueDesign.Toggle.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.Toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Toggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Toggle.BorderSizePixel = 0
+CrypticsUniqueDesign.Toggle.Position = UDim2.new(0.497739583, 0, 0.0500000007, 0)
+CrypticsUniqueDesign.Toggle.Size = UDim2.new(0.0334791653, 0, 0.0599999875, 0)
+CrypticsUniqueDesign.Toggle.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.Toggle.Text = ""
+CrypticsUniqueDesign.Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Toggle.TextSize = 14.000
+
+CrypticsUniqueDesign.Frame_17.Parent = CrypticsUniqueDesign.Toggle
+CrypticsUniqueDesign.Frame_17.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.Frame_17.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Frame_17.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Frame_17.BorderSizePixel = 0
+CrypticsUniqueDesign.Frame_17.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.Frame_17.Size = UDim2.new(1, -2, 1, -2)
+CrypticsUniqueDesign.Frame_17.ZIndex = 100
+
+CrypticsUniqueDesign.ImageLabel_19.Parent = CrypticsUniqueDesign.Frame_17
+CrypticsUniqueDesign.ImageLabel_19.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.ImageLabel_19.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.ImageLabel_19.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.ImageLabel_19.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.ImageLabel_19.BorderSizePixel = 0
+CrypticsUniqueDesign.ImageLabel_19.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.ImageLabel_19.Rotation = 20.000
+CrypticsUniqueDesign.ImageLabel_19.Size = UDim2.new(0.800000012, 0, 0.800000012, 0)
+CrypticsUniqueDesign.ImageLabel_19.ZIndex = 3
+CrypticsUniqueDesign.ImageLabel_19.Image = "rbxassetid://19005999590"
+
+CrypticsUniqueDesign.UIGradient_27.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+CrypticsUniqueDesign.UIGradient_27.Rotation = 92
+CrypticsUniqueDesign.UIGradient_27.Parent = CrypticsUniqueDesign.Frame_17
+
+CrypticsUniqueDesign.UICorner_37.CornerRadius = UDim.new(0.140000001, 0)
+CrypticsUniqueDesign.UICorner_37.Parent = CrypticsUniqueDesign.Frame_17
+
+CrypticsUniqueDesign.UICorner_38.CornerRadius = UDim.new(0.151999995, 0)
+CrypticsUniqueDesign.UICorner_38.Parent = CrypticsUniqueDesign.Toggle
+
+local Lib = {}
+local NotificationSystem = {}
+local Database = {
+    Tabs = {}
+}
+
+local Shell = CrypticsUniqueDesign.CrypticsUniqueDesign.MainShell
+local Notif = CrypticsUniqueDesign.CrypticsUniqueDesign.Notifier
+local MainFrame = CrypticsUniqueDesign.CrypticsUniqueDesign.MainShell.MainFrame
+local Buttons = CrypticsUniqueDesign.CrypticsUniqueDesign.MainShell.SideShell
+local Togglebtn = CrypticsUniqueDesign.CrypticsUniqueDesign.Toggle
+
+local TweenService, RunService, Players, HttpService, UserInputService = cloneref(game:GetService('TweenService')), cloneref(game:GetService('RunService')), cloneref(game:GetService('Players')), cloneref(game:GetService('HttpService')), cloneref(game:GetService('UserInputService'))
+local Requesting = request or http_request or (http and http.request)
+local SavedScript, ExecSS = "", ""
+
+--------------------------------------------------------- [[ Library Functions ]] ---------------------------------------------------------
+
+local function makeDraggable(gui)
+    local dragToggle, dragStart, startPos
+
+    gui.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then 
+            dragToggle = true
+            dragStart = input.Position
+            startPos = gui.Position
+
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then
+                    dragToggle = false
+                end
+            end)
+        end
+    end)
+
+    UserInputService.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+            if dragToggle then
+                local delta = input.Position - dragStart
+                local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+
+                TweenService:Create(gui, TweenInfo.new(0.1), {Position = position}):Play()
+            end
+        end
+    end)
+end
+
+-- Self Explanitory please dont touch
+function Lib:CreateScriptTab()
+	local Scriptbox = Instance.new("TextBox")
+	local UICorner = Instance.new("UICorner")
+	local TextButton = Instance.new("TextButton")
+	local UICorner_2 = Instance.new("UICorner")
+	local Frame = Instance.new("Frame")
+	local UICorner_3 = Instance.new("UICorner")
+	local TextLabel = Instance.new("TextLabel")
+	local Garbage = Instance.new("ImageButton")
+
+	Scriptbox.Name = "Scriptbox"
+	Scriptbox.Parent = MainFrame["Script Editor Tab"]["Tabs"]
+	Scriptbox.AnchorPoint = Vector2.new(0.5, 0.5)
+	Scriptbox.BackgroundColor3 = Color3.fromRGB(20, 18, 24)
+	Scriptbox.BackgroundTransparency = 1.000
+	Scriptbox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Scriptbox.BorderSizePixel = 0
+	Scriptbox.Position = UDim2.new(0.5, 0, 0.5, 0)
+	Scriptbox.Size = UDim2.new(1, -6, 1, -2)
+	Scriptbox.ZIndex = 5
+	Scriptbox.ClearTextOnFocus = false
+	Scriptbox.Font = Enum.Font.SourceSans
+	Scriptbox.PlaceholderText = "--print('A Cryptic Hello!')"
+	Scriptbox.Text = ""
+	Scriptbox.TextColor3 = Color3.fromRGB(0, 166, 255)
+	Scriptbox.TextSize = 12.000
+	Scriptbox.TextWrapped = true
+	Scriptbox.TextXAlignment = Enum.TextXAlignment.Left
+	Scriptbox.TextYAlignment = Enum.TextYAlignment.Top
+
+	UICorner.CornerRadius = UDim.new(0, 4)
+	UICorner.Parent = Scriptbox
+
+	TextButton.Parent = MainFrame["Script Editor Tab"]["Button Tabs"]
+	TextButton.BackgroundColor3 = Color3.fromRGB(34, 34, 42)
+	TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TextButton.BorderSizePixel = 0
+	TextButton.Size = UDim2.new(0, 125, 0.779999971, 0)
+	TextButton.Font = Enum.Font.SourceSans
+	TextButton.Text = ""
+	TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+	TextButton.TextSize = 14.000
+
+	UICorner_2.CornerRadius = UDim.new(0, 4)
+	UICorner_2.Parent = TextButton
+
+	Frame.Parent = TextButton
+	Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+	Frame.BackgroundColor3 = Color3.fromRGB(20, 18, 24)
+	Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Frame.BorderSizePixel = 0
+	Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+	Frame.Size = UDim2.new(1, -2, 1, -2)
+
+	UICorner_3.CornerRadius = UDim.new(0, 4)
+	UICorner_3.Parent = Frame
+
+	TextLabel.Parent = Frame
+	TextLabel.AnchorPoint = Vector2.new(0, 0.5)
+	TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TextLabel.BackgroundTransparency = 1.000
+	TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TextLabel.BorderSizePixel = 0
+	TextLabel.Position = UDim2.new(0.0309999045, 0, 0.499999881, 0)
+	TextLabel.Size = UDim2.new(0.652333498, 0, 0.764147103, 0)
+	TextLabel.Font = Enum.Font.SourceSans
+	TextLabel.Text = "Tab " .. (#MainFrame["Script Editor Tab"]["Tabs"]:GetChildren() - 1)
+	TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextLabel.TextScaled = true
+	TextLabel.TextSize = 14.000
+	TextLabel.TextWrapped = true
+	TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+	Garbage.Name = "Garbage"
+	Garbage.Parent = Frame
+	Garbage.AnchorPoint = Vector2.new(0, 0.5)
+	Garbage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Garbage.BackgroundTransparency = 1.000
+	Garbage.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Garbage.BorderSizePixel = 0
+	Garbage.Position = UDim2.new(0.795000017, 0, 0.5, 0)
+	Garbage.Size = UDim2.new(0.202000007, 0, 1, 0)
+	Garbage.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+
+
+	for _, tab in pairs(MainFrame["Script Editor Tab"]["Tabs"]:GetChildren()) do
+		if tab:IsA('TextBox') then
+			tab.Visible = false
+		end
+	end
+
+	Scriptbox.Visible = true
+
+
+
+	TextButton.MouseButton1Click:Connect(function()
+		for _, tab in pairs(MainFrame["Script Editor Tab"]["Tabs"]:GetChildren()) do
+			if tab:IsA('TextBox') then
+				tab.Visible = false
+			end
+		end
+
+		Scriptbox.Visible = true
+	end)
+	Garbage.MouseButton1Click:Connect(function()
+		TextButton:Destroy()
+		Scriptbox:Destroy()
+	end)
+end
+function Lib:SwitchTabs(Button: string, name: string)
+	Buttons.Frame[Button].MouseButton1Click:Connect(function()
+		for _, tab in pairs(MainFrame:GetChildren()) do
+			if tab:IsA('Frame') then
+				tab.Visible = false
+			end
+		end
+
+		MainFrame[name].Visible = true
+	end)
+end
+function Lib:CreateSavedScript(scr: string, name: string, description: string, image: string, exe: string)
+	local TextButton = Instance.new("TextButton")
+	local UIGradient = Instance.new("UIGradient")
+	local UICorner = Instance.new("UICorner")
+	local TextLabel = Instance.new("TextLabel")
 	
-	local LocalPlayer_Features = {
-		["infJump"] = false,
-		--["flyHack"] = false,
-		--["flySpeed"] = 1,
-		["noclip"] = false,
-		["speedHack"] = false,
-		["speedHack_Speed"] = 16,
-		["jumpPowerHack"] = false,
-		["jumpPowerHack_Power"] = 50,
-		["customFOV"] = false,
-		["customFOV_Value"] = 70,
-		["Gravity"] = false,
-		["Gravity_Value"] = game:GetService("Workspace").Gravity,
-		["Platform_Fly"] = false,
-		["Platform_Fly_Speed"] = 1
-	}
+	TextButton.Parent = MainFrame["Saved Scripts"]["Scripts"]
+	TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TextButton.BorderSizePixel = 0
+	TextButton.Size = UDim2.new(0, 200, 0, 50)
+	TextButton.Font = Enum.Font.SourceSans
+	TextButton.Text = ""
+	TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextButton.TextSize = 14.000
 
-	local UserInputService = game:GetService("UserInputService")
-	local Players = game:GetService("Players")
-	local Workspace = game:GetService("Workspace")
-	local RunService = game:GetService("RunService")
-	local TweenService = game:GetService("TweenService")
+	UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+	UIGradient.Rotation = -45
+	UIGradient.Parent = TextButton
+
+	UICorner.CornerRadius = UDim.new(0, 3)
+	UICorner.Parent = TextButton
+
+	TextLabel.Parent = TextButton
+	TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+	TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TextLabel.BackgroundTransparency = 1.000
+	TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TextLabel.BorderSizePixel = 0
+	TextLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
+	TextLabel.Size = UDim2.new(1, 0, 0.5, 0)
+	TextLabel.Font = Enum.Font.SourceSans
+	TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextLabel.TextScaled = true
+	TextLabel.TextSize = 14.000
+	TextLabel.TextWrapped = true
+	TextLabel.Text = name
 	
-	-- ui variables
-	local Cryptic = script.Parent.Parent -- this should be the only thing that needs to be set in order for the UI to work
-	do -- if it's not in roblox studio set Cryptics Parent to CoreGui
-		pcall(function()
-			if not RunService:IsStudio() then
-				Cryptic.Parent = game:GetService("CoreGui")
+	MainFrame["Saved Scripts"].Title.Text = name
+	MainFrame["Saved Scripts"].Imgar.Image = image
+	MainFrame["Saved Scripts"].Frame.Description.Text = description
+	
+	SavedScript = scr
+	ExecSS = exe
+	
+	
+	TextButton.MouseButton1Click:Connect(function()
+		MainFrame["Saved Scripts"].Title.Text = name
+		MainFrame["Saved Scripts"].Imgar.Image = image
+		MainFrame["Saved Scripts"].Frame.Description.Text = description
+		
+		SavedScript = scr
+		ExecSS = exe
+	end)
+end
+function Lib:CreateNotification(text: string, await: IntValue)
+    local Frame = Instance.new("Frame")
+    local TextLabel = Instance.new("TextLabel")
+    local UICorner = Instance.new("UICorner")
+    local UICorner_2 = Instance.new("UICorner")
+    local UIGradient = Instance.new("UIGradient")
+
+    Frame.Parent = Notif
+    Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    Frame.BorderSizePixel = 0
+    Frame.Size = UDim2.new(1, 0, 0.0399999991, 0)
+
+    TextLabel.Parent = Frame
+    TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+    TextLabel.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+    TextLabel.BackgroundTransparency = 1.000
+    TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    TextLabel.BorderSizePixel = 0
+    TextLabel.Position = UDim2.new(0.5, 0, 0.527917266, 0)
+    TextLabel.Size = UDim2.new(1, 0, 0.5, 0)
+    TextLabel.Font = Enum.Font.SourceSans
+    TextLabel.Text = text
+    TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TextLabel.TextScaled = true
+    TextLabel.TextSize = 14.000
+    TextLabel.TextWrapped = true
+
+    UICorner.CornerRadius = UDim.new(0.100000001, 0)
+    UICorner.Parent = TextLabel
+
+    UICorner_2.CornerRadius = UDim.new(0.100000001, 0)
+    UICorner_2.Parent = Frame
+
+    UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+    UIGradient.Rotation = 80
+    UIGradient.Parent = Frame
+
+	wait(await)
+	
+	Frame:Destroy()
+end
+function Lib:CreateGlobalScript(source: string, title: string, sgame: string, payment: boolean, img: string, scr: string)
+	if source == "rscripts" then
+		local rscripts = Instance.new("Frame")
+        local UICorner = Instance.new("UICorner")
+        local ImageLabel = Instance.new("ImageLabel")
+        local UICorner_2 = Instance.new("UICorner")
+        local Free = Instance.new("Frame")
+        local UICorner_3 = Instance.new("UICorner")
+        local TextLabel = Instance.new("TextLabel")
+        local Paid = Instance.new("Frame")
+        local UICorner_4 = Instance.new("UICorner")
+        local TextLabel_2 = Instance.new("TextLabel")
+        local Title = Instance.new("TextLabel")
+        local Game = Instance.new("TextLabel")
+        local Execute = Instance.new("TextButton")
+        local ImageLabel_2 = Instance.new("ImageLabel")
+        local UICorner_5 = Instance.new("UICorner")
+        local UIGradient = Instance.new("UIGradient")
+
+        rscripts.Name = "rscripts"
+        rscripts.Parent = MainFrame["Global Scripts"]["Scripts Backdrop"].Scripts
+        rscripts.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+        rscripts.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        rscripts.BorderSizePixel = 0
+        rscripts.Size = UDim2.new(0, 100, 0, 100)
+
+        UICorner.CornerRadius = UDim.new(0.0399999991, 0)
+        UICorner.Parent = rscripts
+
+        ImageLabel.Parent = rscripts
+        ImageLabel.AnchorPoint = Vector2.new(0.5, 0)
+        ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        ImageLabel.BackgroundTransparency = 1.000
+        ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        ImageLabel.BorderSizePixel = 0
+        ImageLabel.Position = UDim2.new(0.5, 0, 0.0314963944, 0)
+        ImageLabel.Size = UDim2.new(0.954999983, 0, 0.716503561, 0)
+        ImageLabel.Image = "rbxassetid://111560955989987" -- [[ img ]]
+
+        UICorner_2.CornerRadius = UDim.new(0.0399999991, 0)
+        UICorner_2.Parent = ImageLabel
+
+        Free.Name = "Free"
+        Free.Parent = rscripts
+        Free.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+        Free.BackgroundTransparency = 0.100
+        Free.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        Free.BorderSizePixel = 0
+        Free.Position = UDim2.new(0.789019942, 0, 0.574675083, 0)
+        Free.Size = UDim2.new(0.163327098, 0, 0.125000015, 0)
+        Free.ZIndex = 2
+
+        UICorner_3.CornerRadius = UDim.new(0.200000003, 0)
+        UICorner_3.Parent = Free
+
+        TextLabel.Parent = Free
+        TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+        TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        TextLabel.BackgroundTransparency = 1.000
+        TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        TextLabel.BorderSizePixel = 0
+        TextLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
+        TextLabel.Size = UDim2.new(1, -4, 0.800000012, 0)
+        TextLabel.Font = Enum.Font.SourceSans
+        TextLabel.Text = "Free"
+        TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+        TextLabel.TextScaled = true
+        TextLabel.TextSize = 14.000
+        TextLabel.TextWrapped = true
+
+        Paid.Name = "Paid"
+        Paid.Parent = rscripts
+        Paid.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+        Paid.BackgroundTransparency = 0.100
+        Paid.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        Paid.BorderSizePixel = 0
+        Paid.Position = UDim2.new(0.682403028, 0, 0.574675083, 0)
+        Paid.Size = UDim2.new(0.269944131, 0, 0.125000015, 0)
+        Paid.Visible = false
+        Paid.ZIndex = 2
+
+        UICorner_4.CornerRadius = UDim.new(0.200000003, 0)
+        UICorner_4.Parent = Paid
+
+        TextLabel_2.Parent = Paid
+        TextLabel_2.AnchorPoint = Vector2.new(0.5, 0.5)
+        TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        TextLabel_2.BackgroundTransparency = 1.000
+        TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        TextLabel_2.BorderSizePixel = 0
+        TextLabel_2.Position = UDim2.new(0.5, 0, 0.5, 0)
+        TextLabel_2.Size = UDim2.new(1, -4, 0.800000012, 0)
+        TextLabel_2.Font = Enum.Font.SourceSans
+        TextLabel_2.Text = "Key System"
+        TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+        TextLabel_2.TextScaled = true
+        TextLabel_2.TextSize = 14.000
+        TextLabel_2.TextWrapped = true
+
+        Title.Name = "Title"
+        Title.Parent = rscripts
+        Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Title.BackgroundTransparency = 1.000
+        Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        Title.BorderSizePixel = 0
+        Title.Position = UDim2.new(0.0530002825, 0, 0.850000024, 0)
+        Title.Size = UDim2.new(0.807000041, 0, 0.128122389, 0)
+        Title.ZIndex = 3
+        Title.Font = Enum.Font.SourceSansBold
+        Title.Text = title
+        Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+        Title.TextScaled = true
+        Title.TextSize = 14.000
+        Title.TextWrapped = true
+        Title.TextXAlignment = Enum.TextXAlignment.Left
+
+        Game.Name = "Game"
+        Game.Parent = rscripts
+        Game.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Game.BackgroundTransparency = 1.000
+        Game.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        Game.BorderSizePixel = 0
+        Game.Position = UDim2.new(0.0530000106, 0, 0.774852455, 0)
+        Game.Size = UDim2.new(0.807000101, 0, 0.0669879019, 0)
+        Game.ZIndex = 3
+        Game.Font = Enum.Font.SourceSans
+        Game.Text = sgame
+        Game.TextColor3 = Color3.fromRGB(255, 255, 255)
+        Game.TextScaled = true
+        Game.TextSize = 14.000
+        Game.TextWrapped = true
+        Game.TextXAlignment = Enum.TextXAlignment.Left
+
+        Execute.Name = "Execute"
+        Execute.Parent = rscripts
+        Execute.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Execute.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        Execute.BorderSizePixel = 0
+        Execute.Position = UDim2.new(0.860000014, 0, 0.810000002, 0)
+        Execute.Size = UDim2.new(0.119999997, 0, 0.165999994, 0)
+        Execute.ZIndex = 5
+        Execute.Font = Enum.Font.SourceSans
+        Execute.Text = ""
+        Execute.TextColor3 = Color3.fromRGB(0, 0, 0)
+        Execute.TextSize = 14.000
+
+        ImageLabel_2.Parent = Execute
+        ImageLabel_2.AnchorPoint = Vector2.new(0.5, 0.5)
+        ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        ImageLabel_2.BackgroundTransparency = 1.000
+        ImageLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        ImageLabel_2.BorderSizePixel = 0
+        ImageLabel_2.Position = UDim2.new(0.5, 0, 0.5, 0)
+        ImageLabel_2.Size = UDim2.new(0.600000024, 0, 0.600000024, 0)
+        ImageLabel_2.Image = "rbxassetid://102018991556897"
+
+        UICorner_5.CornerRadius = UDim.new(0.200000003, 0)
+        UICorner_5.Parent = Execute
+
+        UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+        UIGradient.Rotation = -60
+        UIGradient.Parent = Execute
+			
+		if payment then
+			Free.Visible = false
+
+			Paid.Visible = true
+		end
+		
+		Execute.MouseButton1Click:Connect(function()
+            local s, e = task.spawn(function()
+                local s, e = pcall(function()
+                    run_script(tostring(scr))
+                end)
+
+                return s, e
+            end)
+            
+			if not s then
+				Lib:CreateNotification('Error while executing script!', 5)
+			else
+				Lib:CreateNotification('Executed script!', 5)
+			end
+		end)
+	elseif source == "scriptblox" then
+		local Scriptblox = Instance.new("Frame")
+        local UICorner = Instance.new("UICorner")
+        local Frame = Instance.new("Frame")
+        local UICorner_2 = Instance.new("UICorner")
+        local Cover = Instance.new("Frame")
+        local ImageLabel = Instance.new("ImageLabel")
+        local UICorner_3 = Instance.new("UICorner")
+        local FoP = Instance.new("Frame")
+        local UICorner_4 = Instance.new("UICorner")
+        local ImageLabel_2 = Instance.new("ImageLabel")
+        local TextLabel = Instance.new("TextLabel")
+        local Title = Instance.new("TextLabel")
+        local Game = Instance.new("TextLabel")
+        local Execute = Instance.new("TextButton")
+        local ImageLabel_3 = Instance.new("ImageLabel")
+        local UICorner_5 = Instance.new("UICorner")
+        local UIGradient = Instance.new("UIGradient")
+
+        Scriptblox.Name = "Scriptblox"
+        Scriptblox.Parent = MainFrame["Global Scripts"]["Scripts Backdrop"].Scripts
+        Scriptblox.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+        Scriptblox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        Scriptblox.BorderSizePixel = 0
+        Scriptblox.ClipsDescendants = true
+        Scriptblox.Size = UDim2.new(0, 100, 0, 100)
+
+        UICorner.CornerRadius = UDim.new(0.0399999991, 0)
+        UICorner.Parent = Scriptblox
+
+        Frame.Parent = Scriptblox
+        Frame.BackgroundColor3 = Color3.fromRGB(39, 48, 88)
+        Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        Frame.BorderSizePixel = 0
+        Frame.Position = UDim2.new(0, 0, 0.779998362, 0)
+        Frame.Size = UDim2.new(1, 0, 0.220001742, 0)
+        Frame.ZIndex = 2
+
+        UICorner_2.CornerRadius = UDim.new(0.185000002, 0)
+        UICorner_2.Parent = Frame
+
+        Cover.Name = "Cover"
+        Cover.Parent = Scriptblox
+        Cover.BackgroundColor3 = Color3.fromRGB(39, 48, 88)
+        Cover.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        Cover.BorderSizePixel = 0
+        Cover.Position = UDim2.new(0, 0, 0.779998362, 0)
+        Cover.Size = UDim2.new(0.999999881, 0, 0.0755798072, 0)
+        Cover.ZIndex = 2
+
+        ImageLabel.Parent = Scriptblox
+        ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        ImageLabel.BackgroundTransparency = 1.000
+        ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        ImageLabel.BorderSizePixel = 0
+        ImageLabel.Size = UDim2.new(0.999999762, 0, 0.896465421, 0)
+        ImageLabel.Image = "rbxassetid://80968262842323" -- [[ img ]]
+
+        UICorner_3.CornerRadius = UDim.new(0.03, 0)
+        UICorner_3.Parent = ImageLabel
+
+        FoP.Name = "FoP"
+        FoP.Parent = Scriptblox
+        FoP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        FoP.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        FoP.BorderSizePixel = 0
+        FoP.Position = UDim2.new(0.732989073, 0, 0.613470495, 0)
+        FoP.Size = UDim2.new(0.233693138, 0, 0.114887804, 0)
+        FoP.ZIndex = 2
+
+        UICorner_4.CornerRadius = UDim.new(0.200000003, 0)
+        UICorner_4.Parent = FoP
+
+        ImageLabel_2.Parent = FoP
+        ImageLabel_2.AnchorPoint = Vector2.new(0, 0.5)
+        ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        ImageLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        ImageLabel_2.BorderSizePixel = 0
+        ImageLabel_2.Position = UDim2.new(0.100000001, 0, 0.5, 0)
+        ImageLabel_2.Size = UDim2.new(0.286714822, 0, 0.800000012, 0)
+        ImageLabel_2.Image = "rbxassetid://140301153361858"
+
+        TextLabel.Parent = FoP
+        TextLabel.AnchorPoint = Vector2.new(0, 0.5)
+        TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        TextLabel.BackgroundTransparency = 1.000
+        TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        TextLabel.BorderSizePixel = 0
+        TextLabel.Position = UDim2.new(0.337000012, 0, 0.5, 0)
+        TextLabel.Size = UDim2.new(0.662999988, 0, 0.699999988, 0)
+        TextLabel.Font = Enum.Font.SourceSans
+        TextLabel.Text = "Free"
+        TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+        TextLabel.TextScaled = true
+        TextLabel.TextSize = 14.000
+        TextLabel.TextWrapped = true
+
+        Title.Name = "Title"
+        Title.Parent = Scriptblox
+        Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Title.BackgroundTransparency = 1.000
+        Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        Title.BorderSizePixel = 0
+        Title.Position = UDim2.new(0.0530000106, 0, 0.850000024, 0)
+        Title.Size = UDim2.new(0.77788204, 0, 0.128122389, 0)
+        Title.ZIndex = 3
+        Title.Font = Enum.Font.SourceSansBold
+        Title.Text = title
+        Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+        Title.TextScaled = true
+        Title.TextSize = 14.000
+        Title.TextWrapped = true
+        Title.TextXAlignment = Enum.TextXAlignment.Left
+
+        Game.Name = "Game"
+        Game.Parent = Scriptblox
+        Game.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Game.BackgroundTransparency = 1.000
+        Game.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        Game.BorderSizePixel = 0
+        Game.Position = UDim2.new(0.0530000106, 0, 0.804889798, 0)
+        Game.Size = UDim2.new(0.773439646, 0, 0.0669879019, 0)
+        Game.ZIndex = 3
+        Game.Font = Enum.Font.SourceSans
+        Game.Text = sgame
+        Game.TextColor3 = Color3.fromRGB(255, 255, 255)
+        Game.TextScaled = true
+        Game.TextSize = 14.000
+        Game.TextWrapped = true
+        Game.TextXAlignment = Enum.TextXAlignment.Left
+
+        Execute.Name = "Execute"
+        Execute.Parent = Scriptblox
+        Execute.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Execute.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        Execute.BorderSizePixel = 0
+        Execute.Position = UDim2.new(0.860000014, 0, 0.810000002, 0)
+        Execute.Size = UDim2.new(0.119999997, 0, 0.165999994, 0)
+        Execute.ZIndex = 5
+        Execute.Font = Enum.Font.SourceSans
+        Execute.Text = ""
+        Execute.TextColor3 = Color3.fromRGB(0, 0, 0)
+        Execute.TextSize = 14.000
+
+        ImageLabel_3.Parent = Execute
+        ImageLabel_3.AnchorPoint = Vector2.new(0.5, 0.5)
+        ImageLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        ImageLabel_3.BackgroundTransparency = 1.000
+        ImageLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        ImageLabel_3.BorderSizePixel = 0
+        ImageLabel_3.Position = UDim2.new(0.5, 0, 0.5, 0)
+        ImageLabel_3.Size = UDim2.new(0.600000024, 0, 0.600000024, 0)
+        ImageLabel_3.Image = "rbxassetid://102018991556897"
+
+        UICorner_5.CornerRadius = UDim.new(0.200000003, 0)
+        UICorner_5.Parent = Execute
+
+        UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+        UIGradient.Rotation = -60
+        UIGradient.Parent = Execute
+		
+		if payment then
+			TextLabel.Text = 'Paid'
+		end
+		
+		Execute.MouseButton1Click:Connect(function()
+			local s, e = task.spawn(function()
+                local s, e = pcall(function()
+                    run_script(tostring(scr))
+                end)
+
+                return s, e
+            end)
+
+			if not s then
+				Lib:CreateNotification('Error while executing script!', 5)
+			else
+				Lib:CreateNotification('Executed script!', 5)
 			end
 		end)
 	end
-	local MainUI = {}
-	local MainUIVisibility = true
-	local UIToggleButton = Cryptic.Frame["en/exi"]
-	local UIToggleButton_isDragging = false
-	local UITittleBar = Cryptic.MainUI.TITLEBAR
-	local UITittleBar_isDragging = false
-	local currentTabLabel = Cryptic.MainUI.CurrentTab
-	local ConsoleLogs = Cryptic.MainUI.Tabs.Console.ScrollingFrame.Frame.Log
-	local Colors = {
-		["Toggle"] = {
-			["Enabled"] = Color3.fromRGB(0, 255, 0),
-			["Disabled"] = Color3.fromRGB(255, 0, 4)
-		}
-	}
-	local toggles = {}
-	local buttons = {}
-	local sliders = {}
-	local tabs = {}
-	local currentTab = Cryptic.MainUI.TABSBAR.Folder.LPTAB
-	local currentTabFrame = nil
-	local localScripts = {
-		["Mobile"] = {
-	
-		},
-		["PC"] = {
-	
-		}
-	}
-	local Players = game:GetService("Players")
-	local ReplicatedStorage = game:GetService("ReplicatedStorage")
-	local TweenService = game:GetService("TweenService")
-	local funiPlatform = Instance.new("Part")
-	
-	
-	local NotificationSystem = {}
-	NotificationSystem.__index = NotificationSystem
-	
-	local function CreateNotificationSystem()
-		local Players = game:GetService("Players")
-		local TweenService = game:GetService("TweenService")
-		local RunService = game:GetService("RunService")
-	
-		local NotificationSystem = {}
-		NotificationSystem.__index = NotificationSystem
-	
-		function NotificationSystem.new(width)
-			local self = setmetatable({}, NotificationSystem)
-			self.notifications = {}
-			self.maxNotifications = 20
-			self.yOffset = 10  -- Initial offset from bottom
-			self.notificationHeight = 60  -- Height of each notification
-			self.notificationGap = 10  -- Gap between notifications
-			self.notificationWidth = width or 300  -- Default width, can be customized
-			self:createUI()
-			return self
-		end
-	
-		function NotificationSystem:createUI()
-			self.screenGui = Instance.new("ScreenGui")
-			self.screenGui.DisplayOrder = 1e9
-			self.screenGui.Name = "NotificationSystem"
-			self.screenGui.ResetOnSpawn = false
-	
-			self.container = Instance.new("Frame")
-			self.container.Name = "NotificationContainer"
-			self.container.AnchorPoint = Vector2.new(1, 1)
-			self.container.Position = UDim2.new(1, -10, 1, -10)
-			self.container.Size = UDim2.new(0, self.notificationWidth, 1, -20)
-			self.container.BackgroundTransparency = 1
-			self.container.ClipsDescendants = true
-			self.container.Parent = self.screenGui
-	
-			self.screenGui.Parent = not RunService:IsStudio() and game:GetService("CoreGui") or Players.LocalPlayer:WaitForChild("PlayerGui")
-		end
-	
-		function NotificationSystem:createNotification(params)
-			local message = params.Message or "Notification"
-			local duration = params.Duration or 5
-			local animationSpeed = params.AnimationSpeed or 0.5
-			local colorTop = params.TopColor or Color3.fromRGB(30, 30, 30)
-			local colorBottom = params.BottomColor or Color3.fromRGB(50, 50, 50)
-	
-			local notification = Instance.new("Frame")
-			notification.Name = "Notification"
-			notification.Size = UDim2.new(1, 0, 0, self.notificationHeight)
-			notification.Position = UDim2.new(1, 0, 1, -self.yOffset - self.notificationHeight)  -- Start off-screen to the right
-			notification.BackgroundTransparency = 1  -- Start fully transparent
-			notification.BorderSizePixel = 0
-	
-			local uiCorner = Instance.new("UICorner")
-			uiCorner.CornerRadius = UDim.new(0, 8)
-			uiCorner.Parent = notification
-	
-			local uiGradient = Instance.new("UIGradient")
-			uiGradient.Color = ColorSequence.new({
-				ColorSequenceKeypoint.new(0, colorTop),
-				ColorSequenceKeypoint.new(1, colorBottom)
-			})
-			uiGradient.Rotation = 90
-			uiGradient.Parent = notification
-	
-			local textLabel = Instance.new("TextLabel")
-			textLabel.Name = "Message"
-			textLabel.Size = UDim2.new(1, -20, 1, 0)
-			textLabel.Position = UDim2.new(0, 10, 0, 0)
-			textLabel.BackgroundTransparency = 1
-			textLabel.Font = Enum.Font.GothamSemibold
-			textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-			textLabel.TextTransparency = 1  -- Start fully transparent
-			textLabel.TextSize = 14
-			textLabel.Text = ""
-			textLabel.TextWrapped = true
-			textLabel.TextXAlignment = Enum.TextXAlignment.Center
-			textLabel.TextYAlignment = Enum.TextYAlignment.Center
-			textLabel.Parent = notification
-	
-			notification.Parent = self.container
-	
-			table.insert(self.notifications, 1, notification)
-			self:updateNotifications()
-	
-			-- Slide-in and fade-in animation
-			local slideInTween = TweenService:Create(notification, TweenInfo.new(animationSpeed, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {
-				Position = UDim2.new(0, 0, 1, -self.yOffset - self.notificationHeight),
-				BackgroundTransparency = 0
-			})
-			local textFadeTween = TweenService:Create(textLabel, TweenInfo.new(animationSpeed, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {
-				TextTransparency = 0
-			})
-	
-			slideInTween:Play()
-			textFadeTween:Play()
-	
-			-- Typing animation (non-blocking)
-			coroutine.wrap(function()
-				self:typeText(textLabel, message, 0.05)
-			end)()
-	
-			task.delay(duration, function()
-				self:removeNotification(notification)
-			end)
-		end
-	
-		function NotificationSystem:typeText(textLabel, message, delay)
-			for i = 1, #message do
-				textLabel.Text = string.sub(message, 1, i)
-				task.wait(delay)
-			end
-		end
-	
-		function NotificationSystem:updateNotifications()
-			for i = #self.notifications, self.maxNotifications + 1, -1 do
-				self:removeNotification(self.notifications[i])
-			end
-	
-			for i, notification in ipairs(self.notifications) do
-				local yPos = self.yOffset + ((i - 1) * (self.notificationHeight + self.notificationGap))
-				local targetPosition = UDim2.new(0, 0, 1, -yPos - self.notificationHeight)
-				TweenService:Create(notification, TweenInfo.new(0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {
-					Position = targetPosition
-				}):Play()
-			end
-		end
-	
-		function NotificationSystem:removeNotification(notification)
-			for i, notif in ipairs(self.notifications) do
-				if notif == notification then
-					table.remove(self.notifications, i)
-					break
-				end
-			end
-	
-			-- Slide-out and fade-out animation
-			local slideOutTween = TweenService:Create(notification, TweenInfo.new(0.5, Enum.EasingStyle.Quart, Enum.EasingDirection.In), {
-				Position = UDim2.new(1, 0, notification.Position.Y.Scale, notification.Position.Y.Offset),
-				BackgroundTransparency = 1
-			})
-	
-			local messageLabel = notification:FindFirstChild("Message")
-			if messageLabel and messageLabel:IsA("TextLabel") then
-				local textFadeOutTween = TweenService:Create(messageLabel, TweenInfo.new(0.5, Enum.EasingStyle.Quart, Enum.EasingDirection.In), {
-					TextTransparency = 1
-				})
-				textFadeOutTween:Play()
-			end
-	
-			slideOutTween:Play()
-	
-			slideOutTween.Completed:Connect(function()
-				notification:Destroy()
-				self:updateNotifications()
-			end)
-		end
-	
-		return NotificationSystem
-	end
-	
-	-- Initialize the notification system
-	local NotificationSystem = CreateNotificationSystem()
-	local notificationSystem = NotificationSystem.new(400)  -- 400 pixel width
-	
-	
-	local function changeTab(newTab)
-		if newTab ~= currentTab then		
-			for _, tabFrame in pairs(Cryptic.MainUI.Tabs:GetChildren()) do
-				if tabFrame.Name == newTab:GetAttribute("tab") then
-					tabFrame.Visible = true
-					currentTabFrame = tabFrame
-				else
-					tabFrame.Visible = false
-				end
-			end
-	
-			do
-				if newTab:GetAttribute("tab") == "Local Scripts" then
-					Cryptic.MainUI.CurrentTab.Position = UDim2.new(0, 25,0, 0)
-				else
-					Cryptic.MainUI.CurrentTab.Position = UDim2.new(0, 20,0, 0)
-				end
-			end
-	
-			do -- Highlight the new tab and unhighlight the old one
-				local tweenOld = game:GetService("TweenService"):Create(currentTab, TweenInfo.new(0.3, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-					ImageColor3 = Color3.fromRGB(255, 255, 255)
-				})
-				tweenOld:Play()
-	
-				local tweenOld = game:GetService("TweenService"):Create(currentTab.selectionOutline, TweenInfo.new(0.3, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-					ImageTransparency = 1
-				})
-				tweenOld:Play()
-	
-				currentTab = newTab
-	
-				task.spawn(function()
-					for i = 1, string.len(currentTab:GetAttribute("name")) do
-						currentTabLabel.Text = string.sub(currentTab:GetAttribute("name"), 1, i)
-						task.wait(0.01)
-					end
-				end)
-	
-				local tweenNew = game:GetService("TweenService"):Create(currentTab, TweenInfo.new(0.3, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-					ImageColor3 = Color3.fromRGB(89, 125, 213)
-				})
-				tweenNew:Play()
-	
-				local tweenNew = game:GetService("TweenService"):Create(currentTab.selectionOutline, TweenInfo.new(0.3, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-					ImageTransparency = 0
-				})
-				tweenNew:Play()
-			end
-		end
-	end
-		
-	
-	do -- Main UI Functionality
-		changeTab(Cryptic.MainUI.TABSBAR.Folder.EXECUTIONTAB) -- The Default tab
-		
-		do -- Adjust UI scale
-			local ratio = Vector2.new(Workspace.CurrentCamera.ViewportSize.X, Workspace.CurrentCamera.ViewportSize.Y) / Vector2.new(1920, 1080)
-			local success, ret = pcall(function()
-				--print((ratio.X + ratio.Y)/2)
-				Cryptic.MainUI.UIScale.Scale = ((ratio.X + ratio.Y)/2)*2
-				Cryptic.Frame.UIScale.Scale = ((ratio.X + ratio.Y)/2)*2
-				Cryptic.MainUI.Position = UDim2.new(0, Workspace.CurrentCamera.ViewportSize.X/2, 0, Workspace.CurrentCamera.ViewportSize.Y/2)
-			end)
-		end
-	
-        do -- Initialize the scripts table
-            localScripts.Mobile["Infinite Yield"] = [[loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()]]
-            localScripts.Mobile["Dex Explorer"] = [[loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()]]
-            localScripts.Mobile["Hydroxide"] = [[local v0="Upbolt";local v1="revision";local function v2(v3) return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/Hydroxide/%s/%s.lua"):format(v0,v1,v3)),v3   .. ".lua" )();end v2("init");v2("ui/main");]]
-            localScripts.Mobile["Simple Spy"] = [[loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RS/main/SimpleSpyMobile"))()]]
-            localScripts.Mobile["Reaper Hub"] = [[loadstring((http.request{Url="https://reaperscripts.com/loader?l=1"}).Body,"0zek8y2bld7.qowl6c7o~1")();]]    
-            localScripts.Mobile["UNC Test"] = [[loadstring(game:HttpGet("https://raw.githubusercontent.com/unified-naming-convention/NamingStandard/main/UNCCheckEnv.lua", true))()]]
+end
+function Lib:ClearGlobalScript()
+    for _, frame in pairs(MainFrame["Global Scripts"]["Scripts Backdrop"]["Scripts"]:GetChildren()) do
+        if frame:IsA('Frame') then
+            frame:Destroy()
         end
-	
-		do -- Initializing tabs and their functions
-			for i,v in pairs(Cryptic.MainUI.TABSBAR.Folder:GetChildren()) do
-				if string.find(v.Name, "TAB") then
-					table.insert(tabs, v)
-				end
-			end
-			for i,v in pairs(tabs) do
-				do -- Show hints after hovering the mouse over the toggle for 0.6 seconds
-					local TweenService = game:GetService("TweenService")
-					local function showHint(parent, text : string)	
-						if not parent:FindFirstChild("Hint") then
-							local Hint = Instance.new("TextLabel")
-							local UICorner = Instance.new("UICorner")
-	
-							Hint.Name = "Hint"
-							Hint.Parent = parent
-							Hint.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-							Hint.BorderColor3 = Color3.fromRGB(0, 0, 0)
-							Hint.BorderSizePixel = 0
-							Hint.Position = UDim2.new(0, 128, 0, 145)
-							Hint.Font = Enum.Font.SourceSans
-							Hint.Text = "this is a message"
-							Hint.TextColor3 = Color3.fromRGB(255, 255, 255)
-							Hint.TextSize = 14.000
-							Hint.TextWrapped = true
-	
-							UICorner.Parent = Hint
-	
-							Hint.Text = text
-							Hint.Size = UDim2.new(0,0,0,15)
-	
-							local targetSize
-							local targetPosition
-							do -- Calculate the target Position and Size
-								for i = 1,300 do
-									if not Hint.TextFits then
-										local targetPos = UDim2.new(0, (parent.Size.X.Offset - Hint.Size.X.Offset)/2, 0, -20)
-	
-										Hint.Position = targetPos
-										Hint.Text = text
-										Hint.Size = UDim2.new(0, i, 0, Hint.Size.Y.Offset)
-									else
-										Hint.Size = UDim2.new(0, Hint.Size.X.Offset*1.3, 0, Hint.Size.Y.Offset)
-	
-										local targetPos = UDim2.new(0, (parent.Size.X.Offset - Hint.Size.X.Offset)/2, 0, -20)
-										Hint.Position = targetPos
-										Hint.Text = text
-										targetPosition = targetPos
-										targetSize = Hint.Size
-										break
-									end
-								end
-								if not Hint.TextFits then
-									Hint.Size = UDim2.new(0, Hint.Size.X.Offset, 0, 15)
-									for i = 1,300 do
-										if not Hint.TextFits then
-											Hint.Size = UDim2.new(0, Hint.Size.X.Offset, 0, Hint.Size.Y.Offset + 1)
-											Hint.Position = UDim2.new(0, Hint.Position.X.Offset, 0, (parent.Size.Y.Offset - Hint.Size.Y.Offset) - parent.Size.Y.Offset)
-											targetPosition = Hint.Position	
-											targetSize = Hint.Size
-										else
-											break
-										end
-									end
-								end
-							end
-	
-							Hint.Size = UDim2.new(0,0,0,0)
-							Hint.Position = UDim2.new(0,Hint.Position.X.Offset,0,0)
-	
-							local twen = game:GetService("TweenService"):Create(Hint, TweenInfo.new(0.3, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-								Size = targetSize,
-								Position = targetPosition
-							})
-							twen:Play()
-						end
-					end
-	
-					local function removeHint(parent)
-						local Hint = parent:FindFirstChild("Hint")
-						if Hint then
-							local twen = game:GetService("TweenService"):Create(Hint, TweenInfo.new(0.3, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-								Size = UDim2.new(0,0,0,0),
-								Position = UDim2.new(0,Hint.Position.X.Offset,0,0)
-							})
-							twen:Play()
-							twen.Completed:Connect(function()
-								Hint:Destroy()
-							end)
-						end
-					end
-	
-					local hoverTime = 0
-					local beingHovered = false
-					v.MouseEnter:Connect(function()
-						showHint(v, v:GetAttribute("H"))
-						hoverTime = 0
-						beingHovered = true
-					end)
-					v.MouseLeave:Connect(function()
-						removeHint(v)
-						beingHovered = false
-					end)
-					RunService.RenderStepped:Connect(function(deltaTime)
-						if beingHovered then
-							hoverTime += deltaTime
-						end
-					end)
-				end
-	
-				v.MouseButton1Click:Connect(function()
-					changeTab(v)
-				end)
-			end
-		end
-	
-		do -- Initialize Global Scripts
-			local currentPage = 1
-			local GlobalScripts = Cryptic.MainUI.Tabs["Global Scripts"]
-			local ApiButton = GlobalScripts.ApiButton
-	
-			GlobalScripts.CurrentPage.Text = tostring(currentPage)
-	
-			local function performSearch()
-				local success, ret = pcall(function()
-					if ApiButton.Text == "ScriptBlox API" then
-						for i,v in pairs(GlobalScripts.Features.Results:GetChildren()) do
-							if not v:IsA("UIGridLayout") then
-								v:Destroy()
-							end
-						end
-	
-						local searchText = string.gsub(GlobalScripts.Search.TextBox.Text, " ", "-")
-						local results = game:HttpGet(string.format("https://www.scriptblox.com/api/script/search?q=%s&mode=free&max=6&page=%d", searchText, currentPage))
-						results = game:GetService("HttpService"):JSONDecode(results)
-	
-						for i,v in pairs(results["result"]["scripts"]) do
-							local scriptFrame = GlobalScripts.Features.Example:Clone()
-							scriptFrame.Visible = true
-							scriptFrame.Name = v["title"]
-							scriptFrame.TextLabel.Text = v["title"]
-							scriptFrame.Parent = GlobalScripts.Features.Results
-							scriptFrame.Button.MouseButton1Click:Connect(function()
-								local success, ret = pcall(function()
-									run_script(v["script"])
-								end)
-								if not success then
-									notificationSystem:createNotification({
-										Message = string.format("Failed to execute script!\n%s", tostring(ret)),
-										Duration = 5,
-										AnimationSpeed = 0.3,
-										TopColor = Color3.fromRGB(50, 100, 150),
-										BottomColor = Color3.fromRGB(20, 40, 80)
-									})
-								else
-									notificationSystem:createNotification({
-										Message = string.format("Successfully executed script!"),
-										Duration = 5,
-										AnimationSpeed = 0.3,
-										TopColor = Color3.fromRGB(50, 100, 150),
-										BottomColor = Color3.fromRGB(20, 40, 80)
-									})
-								end
-							end)
-						end
-					elseif ApiButton.Text == "Rscripts API" then
-						for i,v in pairs(GlobalScripts.Features.Results:GetChildren()) do
-							if not v:IsA("UIGridLayout") then
-								v:Destroy()
-							end
-						end
-	
-						local searchText = string.gsub(GlobalScripts.Search.TextBox.Text, " ", "-")
-						local results = game:HttpGet(string.format("https://rscripts.net/api/scripts?page=%d&orderBy=date&sort=desc&q=%s", currentPage, searchText))
-						results = game:GetService("HttpService"):JSONDecode(results)
-	
-						local debugging = false
-	
-						for i,v in pairs(results["scripts"]) do
-							if debugging then
-								for i,v in pairs(v) do
-									notificationSystem:createNotification({
-										Message = string.format("%s %s", tostring(i), tostring(v)),
-										Duration = 5,
-										AnimationSpeed = 0.7,
-										TopColor = Color3.fromRGB(50, 100, 150),
-										BottomColor = Color3.fromRGB(20, 40, 80)
-									})
-								end
-								break
-							end
-	
-							local title = v["title"]
-							do -- Add button for the script
-								local scriptFrame = GlobalScripts.Features.Example:Clone()
-								scriptFrame.Visible = true
-								scriptFrame.Name = title
-								scriptFrame.TextLabel.Text = title
-								scriptFrame.Parent = GlobalScripts.Features.Results
-								scriptFrame.Button.MouseButton1Click:Connect(function()
-									local success, ret = pcall(function()
-										--print(game:HttpGet(string.format("https://rscripts.net/raw/%s", v["download"])))
-										run_script(game:HttpGet(string.format("https://rscripts.net/raw/%s", v["download"])))
-									end)
-									if not success then
-										notificationSystem:createNotification({
-											Message = string.format("Failed to execute script!\n%s", tostring(ret)),
-											Duration = 5,
-											AnimationSpeed = 0.3,
-											TopColor = Color3.fromRGB(50, 100, 150),
-											BottomColor = Color3.fromRGB(20, 40, 80)
-										})
-									else
-										notificationSystem:createNotification({
-											Message = string.format("Successfully executed script!"),
-											Duration = 5,
-											AnimationSpeed = 0.3,
-											TopColor = Color3.fromRGB(50, 100, 150),
-											BottomColor = Color3.fromRGB(20, 40, 80)
-										})
-									end
-								end)
-							end
-						end
-					end
-				end)
-				if not success then
-					notificationSystem:createNotification({
-						Message = string.format("Search failed!\n%s", tostring(ret)),
-						Duration = 5,
-						AnimationSpeed = 0.3,
-						TopColor = Color3.fromRGB(50, 100, 150),
-						BottomColor = Color3.fromRGB(20, 40, 80)
-					})
-				end
-			end
-	
-			ApiButton.MouseButton1Click:Connect(function()
-                if ApiButton.Text == "ScriptBlox API" then
-                    ApiButton.Text = "Rscripts API"
-                    GlobalScripts.Search.TextBox.PlaceholderText = "Search rscripts.net" --new line
-                elseif ApiButton.Text == "Rscripts API" then
-                    ApiButton.Text = "ScriptBlox API"
-                    GlobalScripts.Search.TextBox.PlaceholderText = "Search scriptblox.com" --new line
-                end
+    end
+end
+function Lib:DevConsole(t: string, text: string)
+    local Print = Instance.new("Frame")
+    local LuaC = Instance.new("TextBox")
+    local Time = Instance.new("TextLabel")
+    
+    Print.Name = t
+    Print.Parent = MainFrame["Console Tab"].ScrollingFrame
+    Print.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Print.BackgroundTransparency = 1.000
+    Print.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    Print.BorderSizePixel = 0
+    Print.Size = UDim2.new(1, 0, 0, 25)
+    
+    LuaC.Name = "LuaC"
+    LuaC.Parent = Print
+    LuaC.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    LuaC.BackgroundTransparency = 1.000
+    LuaC.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    LuaC.BorderSizePixel = 0
+    LuaC.Position = UDim2.new(0.150000006, 0, 0, 0)
+    LuaC.Size = UDim2.new(0.850000024, 0, 1, 0)
+    LuaC.ClearTextOnFocus = false
+    LuaC.MultiLine = true
+    LuaC.TextEditable = false
+    LuaC.Font = Enum.Font.SourceSans
+    LuaC.Text = text
+    LuaC.TextColor3 = Color3.fromRGB(255, 255, 255)
+    LuaC.TextSize = 13.000
+    LuaC.TextXAlignment = Enum.TextXAlignment.Left
+    
+    Time.Name = "Time"
+    Time.Parent = Print
+    Time.AnchorPoint = Vector2.new(0, 0.5)
+    Time.BackgroundColor3 = Color3.fromRGB(125, 125, 125)
+    Time.BackgroundTransparency = 1.000
+    Time.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    Time.BorderSizePixel = 0
+    Time.Position = UDim2.new(0, 0, 0.5, 0)
+    Time.Size = UDim2.new(0.150000006, 0, 0.600000024, 0)
+    Time.Font = Enum.Font.SourceSans
+    Time.Text = tostring(os.date("%H:%M:%S"))
+    Time.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Time.TextSize = 13.000
+    Time.TextWrapped = true
+
+    if t == "print" then
+        LuaC.TextColor3 = Color3.fromRGB(255, 255, 255)
+    elseif t == "warn" then
+        LuaC.TextColor3 = Color3.fromRGB(255, 213, 0)
+    elseif t == "error" then
+        LuaC.TextColor3 = Color3.fromRGB(255, 67, 67)
+    end
+
+    Print.Size = UDim2.new(1, 0, 0, LuaC.TextBounds.Y + 12)
+
+    MainFrame["Console Tab"].ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, MainFrame["Console Tab"].ScrollingFrame.UIListLayout.AbsoluteContentSize.Y)
+end
+function Lib:DataChecking()
+    if (readfile and writefile and isfile and isfolder and makefolder) then
+        for _, Folder in next, {"Cryptic", "Cryptic/Tabs"} do
+            if not isfolder(Folder) then
+                makefolder(Folder)
+            end
+        end
+
+        if not isfile("Cryptic/Tabs/Tab1.cryptic") then
+            writefile("Cryptic/Tabs/Tab1.cryptic", "{}")
+
+            Database["Tabs"]["Tab1"] = ""
+        else
+            Database["Tabs"]["Tab1"] = tostring(HttpService:JSONDecode(readfile("Cryptic/Tabs/Tab1.cryptic")))
+        end
+    end
+end
+function Lib:Savedata()
+    if (readfile and writefile and isfile and isfolder and makefolder) then
+        Lib:DataChecking()
+
+        writefile("Cryptic/Tabs/Tab1.cryptic", HttpService:JSONEncode(Database["Tabs"]["Tab1"]))
+    end
+end
+
+--------------------------------------------------------- [[ Random Stuff ]] ---------------------------------------------------------
+
+Shell.Version.Backdrop.TextButton.MouseButton1Click:Connect(function()
+    Buttons.Visible = not Buttons.Visible
+end)
+Togglebtn.MouseButton1Click:Connect(function()
+    Shell.Visible = not Shell.Visible
+end)
+
+Shell.Title.Text = "<b><i>Cryptic</i></b>"
+Shell.Subtitle.Text = "<b><i>Beta UI v1.1</i></b>"
+Shell.Version.Backdrop.TextLabel.Text = "Version: 2.639.688"
+
+Shell.Title.RichText = true
+Shell.Subtitle.RichText = true
+
+Shell.Visible = false
+
+Lib:DataChecking()
+
+pcall(function()
+    game:GetService("LogService").MessageOut:Connect(function(message: string, messageType: Enum.MessageType) 
+        if messageType == Enum.MessageType.MessageOutput then
+            Lib:DevConsole('print', message)
+        elseif messageType == Enum.MessageType.MessageInfo then
+            Lib:DevConsole('print', message)
+        elseif messageType == Enum.MessageType.MessageError then
+            Lib:DevConsole('error', message)
+        elseif messageType == Enum.MessageType.MessageWarning then
+            Lib:DevConsole('warn', message)
+        end
+    end)
+end)
+
+--------------------------------------------------------- [[ Implementing Save Features ]] ---------------------------------------------------------
+--[[
+local vpr = HttpService:JSONDecode(Database["Tabs"]["Tab1"])
+
+if vpr ~= nil and type(vpr) == "string" then
+    MainFrame["Script Editor Tab"]["Tabs"].ScrollingFrame.Scriptbox.Text = tostring(vpr)
+end]]
+
+--------------------------------------------------------- [[ CODING TAB ]] ---------------------------------------------------------
+
+-- Auto Save
+MainFrame["Script Editor Tab"]["Tabs"].ScrollingFrame.Scriptbox.FocusLost:Connect(function()
+    Database["Tabs"]["Tab1"] = MainFrame["Script Editor Tab"]["Tabs"].ScrollingFrame.Scriptbox.Text
+
+    Lib:Savedata()
+end)
+
+-- Execute the current shown tab [[ EXECUTE TAB ]]
+MainFrame["Script Editor Tab"]["Scripting Buttons"].Execute.MouseButton1Click:Connect(function()
+	for _, tab in pairs(MainFrame["Script Editor Tab"]["Tabs"].ScrollingFrame:GetChildren()) do
+		if tab:IsA('TextBox') and tab.Visible then
+            local s, e = task.spawn(function()
+                local s, e = pcall(function()
+                    run_script(tostring(tab.Text))
+                end)
+
+                return s, e
             end)
 			
-			GlobalScripts.Search.TextBox.FocusLost:Connect(function()
-				performSearch()
-			end)
-	
-			GlobalScripts.Search.SearchButton.MouseButton1Click:Connect(function()
-				performSearch()
-			end)
-	
-			GlobalScripts.CurrentPage.lastPage.MouseButton1Click:Connect(function()
-				if currentPage > 1 then
-					currentPage -= 1
-					Cryptic.MainUI.Tabs["Global Scripts"].CurrentPage.Text = tostring(currentPage)
-					performSearch()
-				end
-			end)
-	
-			GlobalScripts.CurrentPage.nextPage.MouseButton1Click:Connect(function()
-				currentPage += 1
-				Cryptic.MainUI.Tabs["Global Scripts"].CurrentPage.Text = tostring(currentPage)
-				performSearch()
-			end)
-	
-			GlobalScripts.CurrentPage.FocusLost:Connect(function()
-				currentPage = tonumber(Cryptic.MainUI.Tabs["Global Scripts"].CurrentPage.Text)
-				performSearch()
-			end)
-		end
-	
-		do -- Load saved localscripts
-			task.spawn(function()
-				pcall(function()
-					local folderExists = isfolder("Saved_Scripts")
-					if folderExists then
-						for i,v in pairs(listfiles("Saved_Scripts")) do
-							local title = string.gsub(tostring(v), "Saved_Scripts/", "")
-							local newScript = Cryptic.MainUI.Tabs["Local Scripts"].Example:Clone()
-							newScript.Parent = Cryptic.MainUI.Tabs["Local Scripts"].Features
-							newScript.TextLabel.Text = string.gsub(title, ".txt", "")
-							newScript.Visible = true
-							newScript.Delete.InputBegan:Connect(function(input: InputObject) 
-								if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-									newScript:Destroy()
-									delfile(string.format("Saved_Scripts/%s", title))
-								end	
-							end)
-							
-							newScript.Button.InputBegan:Connect(function(input: InputObject) 
-								if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-									run_script(tostring(readfile(v)))
-								end	
-							end)
-						end
-					end
-				end)
-			end)
-		end
-	
-		do -- Initialize Editor Tabs
-			local currentTab = nil
-			local currentScriptBox = nil
-			local Execution = Cryptic.MainUI.Tabs.Execution
-			
-			local function selectTab(tab)
-				if currentTab ~= tab then
-					if currentTab ~= nil then
-						do -- Make the old script box invisible and move it to the tab button to save it
-							currentScriptBox.Parent = currentTab
-							currentScriptBox.Visible = false
-						end
-	
-						do -- Fade the old tab backgroundcolor to its original greyish color
-							local twen = TweenService:Create(currentTab, TweenInfo.new(0.3, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-								BackgroundColor3 = Color3.fromRGB(95, 95, 95)
-							})
-							twen:Play()
-						end
-					end
-					do -- assign the new currentTab and highlight it, also move its scriptbox
-						currentTab = tab
-						currentScriptBox = currentTab.TextBox
-						currentScriptBox.Parent = Execution.Features
-						currentScriptBox.Visible = true
-						local twen = TweenService:Create(currentTab, TweenInfo.new(0.3, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-							BackgroundColor3 = Color3.fromRGB(25, 155, 255)
-						})
-						twen:Play()
-					end
-				end
+			if not s then
+                Lib:DevConsole('error', e)
+                
+				Lib:CreateNotification('An Error Has Occured!', 5)
+			else
+				Lib:CreateNotification('Executed Successfully!', 5)
 			end
-			
-			local function AddTab()
-				local tab = Cryptic.MainUI.Tabs.Execution.ExampleTab:Clone()
-				tab.Parent = Cryptic.MainUI.Tabs.Execution.Tabs
-				tab.NameBox.Text = "Default"
-				tab.Visible = true
-				tab.Name = tostring(tab.NameBox.Text)
-				tab.Rename.InputBegan:Connect(function(input)
-					if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-						tab.NameBox.TextEditable = true
-						tab.NameBox.Interactable = true
-					end
-				end)
-				
-				tab.Delete.InputBegan:Connect(function(input: InputObject) 
-					pcall(function()
-						if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-							tab:Destroy()
-						end
-					end)
-				end)
-				
-				tab.NameBox.FocusLost:Connect(function()
-					pcall(function()
-						tab.NameBox.TextEditable = false
-						tab.NameBox.Interactable = false
-						tab.Name = tostring(tab.NameBox.Text)
-					end)
-				end)
-				tab.InputBegan:Connect(function(input: InputObject) 			
-					pcall(function()
-						if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-							selectTab(tab)
-						end	
-					end)
-				end)
-				return tab
-			end
-			
-			local defaultTab = AddTab()
-			selectTab(defaultTab)
-			
-			Execution.Tabs.AddTab.MouseButton1Click:Connect(function()
-				AddTab()
-			end)
-			
-			do -- Save script implementation
-				Execution.Buttons.SaveScript.InputBegan:Connect(function(input : InputObject)
-					if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-						task.spawn(function()
-							local success, ret = pcall(function()
-								local folderExists = isfolder("Saved_Scripts")
-								if not folderExists then
-									makefolder("Saved_Scripts")
-								end
-	
-								writefile(string.format("Saved_Scripts/%s.txt", currentTab.NameBox.Text), currentScriptBox.Text)
-								
-								
-								for i,v in pairs(Cryptic.MainUI.Tabs["Local Scripts"].Features:GetChildren()) do
-									if v:FindFirstChild("Delete") then
-										v:Destroy()
-									end
-								end
-								
-								do -- Load saved localscripts
-									task.spawn(function()
-										pcall(function()
-											local folderExists = isfolder("Saved_Scripts")
-											if folderExists then
-												for i,v in pairs(listfiles("Saved_Scripts")) do
-													local title = string.gsub(tostring(v), "Saved_Scripts/", "")
-													local newScript = Cryptic.MainUI.Tabs["Local Scripts"].Example:Clone()
-													newScript.Parent = Cryptic.MainUI.Tabs["Local Scripts"].Features
-													newScript.TextLabel.Text = string.gsub(title, ".txt", "")
-													newScript.Visible = true
-													newScript.Delete.InputBegan:Connect(function(input: InputObject) 
-														if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-															newScript:Destroy()
-															delfile(string.format("Saved_Scripts/%s", title))
-														end	
-													end)
-													
-													newScript.Button.InputBegan:Connect(function(input: InputObject) 
-														if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-															run_script(tostring(readfile(v)))
-														end
-													end)
-												end
-											end
-										end)
-									end)
-								end
-							end)
-						end)
-					end
-				end)
-			end
-			
-			do -- Execution textbox handling
-				currentScriptBox.Focused:Connect(function()
-					currentScriptBox.PlaceholderText = ""
-				end)
-	
-				currentScriptBox.FocusLost:Connect(function()
-					currentScriptBox.PlaceholderText = [[print("CrypticOnTop!")]]
-				end)
-			end
-	
-			do -- Execution button functionalities
-				local ExecutionTab = Cryptic.MainUI.Tabs.Execution
-				local ClearButton = ExecutionTab.Buttons["Erase (Thy end is now)"]
-				local CopyButton = ExecutionTab.Buttons.CopyToClipboard
-				local ExecuteClipboardButton = ExecutionTab.Buttons.ExecuteFromClipboard
-				local ExecuteButton = ExecutionTab.Buttons.Execute
-	
-				local function blinkButton(button) -- Highlight the button temporary before changing its color back to the original
-					local twen = TweenService:Create(button, TweenInfo.new(0.3, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-						ImageColor3 = Color3.fromRGB(89, 125, 213)
-					})
-					twen:Play()
-					twen.Completed:Connect(function()
-						local twen = TweenService:Create(button, TweenInfo.new(0.3, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-							ImageColor3 = Color3.fromRGB(199, 199, 199)
-						})
-						twen:Play()
-					end)
-				end
-	
-	
-				ClearButton.InputBegan:Connect(function(input: InputObject) 
-					if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-						currentScriptBox.Text = ""
-						blinkButton(ClearButton)
-					end	
-				end)
-				
-				CopyButton.InputBegan:Connect(function(input: InputObject)
-					if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-						blinkButton(CopyButton)
-						setclipboard(currentScriptBox.Text)
-					end
-				end)
-				
-				ExecuteClipboardButton.InputBegan:Connect(function(input: InputObject)
-					if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-						blinkButton(ExecuteClipboardButton)
-						local success, ret = pcall(function()
-							run_script(getclipboard())
-						end)
-						if not success then
-							notificationSystem:createNotification({
-								Message = string.format("Failed to execute script!\n%s", tostring(ret)),
-								Duration = 5,
-								AnimationSpeed = 0.3,
-								TopColor = Color3.fromRGB(50, 100, 150),
-								BottomColor = Color3.fromRGB(20, 40, 80)
-							})
-						else
-							notificationSystem:createNotification({
-								Message = string.format("Successfully executed script!"),
-								Duration = 5,
-								AnimationSpeed = 0.3,
-								TopColor = Color3.fromRGB(50, 100, 150),
-								BottomColor = Color3.fromRGB(20, 40, 80)
-							})
-						end
-					end
-				end)
-	
-				ExecuteButton.InputBegan:Connect(function(input: InputObject)
-					if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-						blinkButton(ExecuteButton)
-						local success, ret = pcall(function()
-							run_script(currentScriptBox.Text)
-						end)
-						if not success then
-							notificationSystem:createNotification({
-								Message = string.format("Failed to execute script!\n%s", tostring(ret)),
-								Duration = 5,
-								AnimationSpeed = 0.3,
-								TopColor = Color3.fromRGB(50, 100, 150),
-								BottomColor = Color3.fromRGB(20, 40, 80)
-							})
-						else 
-							notificationSystem:createNotification({
-								Message = string.format("Successfully executed script!"),
-								Duration = 5,
-								AnimationSpeed = 0.3,
-								TopColor = Color3.fromRGB(50, 100, 150),
-								BottomColor = Color3.fromRGB(20, 40, 80)
-							})
-						end
-					end
-				end)
-			end
-			
-			do -- Hints for the Editor Tab
-				local TweenService = game:GetService("TweenService")
-				local function showHint(parent, text : string)	
-					if not parent:FindFirstChild("Hint") then
-						local Hint = Instance.new("TextLabel")
-						local UICorner = Instance.new("UICorner")
-	
-						Hint.Name = "Hint"
-						Hint.Parent = parent
-						Hint.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-						Hint.BorderColor3 = Color3.fromRGB(0, 0, 0)
-						Hint.BorderSizePixel = 0
-						Hint.Position = UDim2.new(0, 128, 0, 145)
-						Hint.Font = Enum.Font.SourceSans
-						Hint.Text = "this is a message"
-						Hint.TextColor3 = Color3.fromRGB(255, 255, 255)
-						Hint.TextSize = 14.000
-						Hint.TextWrapped = true
-	
-						UICorner.Parent = Hint
-	
-						Hint.Text = text
-						Hint.Size = UDim2.new(0,0,0,15)
-	
-						local targetSize
-						local targetPosition
-						do -- Calculate the target Position and Size
-							for i = 1,300 do
-								if not Hint.TextFits then
-									local targetPos = UDim2.new(0, (parent.Size.X.Offset - Hint.Size.X.Offset)/2, 0, -20)
-	
-									Hint.Position = targetPos
-									Hint.Text = text
-									Hint.Size = UDim2.new(0, i, 0, Hint.Size.Y.Offset)
-								else
-									Hint.Size = UDim2.new(0, Hint.Size.X.Offset*1.3, 0, Hint.Size.Y.Offset)
-	
-									local targetPos = UDim2.new(0, (parent.Size.X.Offset - Hint.Size.X.Offset)/2, 0, -20)
-									Hint.Position = targetPos
-									Hint.Text = text
-									targetPosition = targetPos
-									targetSize = Hint.Size
-									break
-								end
-							end
-							if not Hint.TextFits then
-								Hint.Size = UDim2.new(0, Hint.Size.X.Offset, 0, 15)
-								for i = 1,300 do
-									if not Hint.TextFits then
-										Hint.Size = UDim2.new(0, Hint.Size.X.Offset, 0, Hint.Size.Y.Offset + 1)
-										Hint.Position = UDim2.new(0, Hint.Position.X.Offset, 0, (parent.Size.Y.Offset - Hint.Size.Y.Offset) - parent.Size.Y.Offset)
-										targetPosition = Hint.Position	
-										targetSize = Hint.Size
-									else
-										break
-									end
-								end
-							end
-						end
-	
-						Hint.Size = UDim2.new(0,0,0,0)
-						Hint.Position = UDim2.new(0,Hint.Position.X.Offset,0,0)
-	
-						local twen = game:GetService("TweenService"):Create(Hint, TweenInfo.new(0.3, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-							Size = targetSize,
-							Position = targetPosition
-						})
-						twen:Play()
-					end
-				end
-				local function removeHint(parent)
-					local Hint = parent:FindFirstChild("Hint")
-					if Hint then
-						local twen = game:GetService("TweenService"):Create(Hint, TweenInfo.new(0.3, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-							Size = UDim2.new(0,0,0,0),
-							Position = UDim2.new(0,Hint.Position.X.Offset,0,0)
-						})
-						twen:Play()
-						twen.Completed:Connect(function()
-							Hint:Destroy()
-						end)
-					end
-				end
-				
-				local Buttons = Cryptic.MainUI.Tabs.Execution.Buttons
-				
-				do -- Show hints
-					Buttons.CopyToClipboard.MouseEnter:Connect(function()
-						showHint(Buttons.CopyToClipboard, Buttons.CopyToClipboard:GetAttribute("H"))
-					end)
-	
-					Buttons["Erase (Thy end is now)"].MouseEnter:Connect(function()
-						showHint(Buttons["Erase (Thy end is now)"], Buttons["Erase (Thy end is now)"]:GetAttribute("H"))
-					end)
-	
-					Buttons.Execute.MouseEnter:Connect(function()
-						showHint(Buttons.Execute, Buttons.Execute:GetAttribute("H"))
-					end)
-	
-					Buttons.ExecuteFromClipboard.MouseEnter:Connect(function()
-						showHint(Buttons.ExecuteFromClipboard, Buttons.ExecuteFromClipboard:GetAttribute("H"))
-					end)
-	
-					Buttons.SaveScript.MouseEnter:Connect(function()
-						showHint(Buttons.SaveScript, Buttons.SaveScript:GetAttribute("H"))
-					end)
-				end
-			
-				do -- Remove hints
-					Buttons.CopyToClipboard.MouseLeave:Connect(function()
-						removeHint(Buttons.CopyToClipboard)
-					end)
-					
-					Buttons["Erase (Thy end is now)"].MouseLeave:Connect(function()
-						removeHint(Buttons["Erase (Thy end is now)"])
-					end)
-					
-					Buttons.Execute.MouseLeave:Connect(function()
-						removeHint(Buttons.Execute)
-					end)
-					
-					Buttons.ExecuteFromClipboard.MouseLeave:Connect(function()
-						removeHint(Buttons.ExecuteFromClipboard)
-					end)
-					
-					Buttons.SaveScript.MouseLeave:Connect(function()
-						removeHint(Buttons.SaveScript)
-					end)
-				end
-			end		
-		end
-	
-		do -- Initialize Misc tab
-			local success, ret = pcall(function()
-				local MINIMUM_PLAYERS = 1
-	
-				do
-					--// Services
-					local Players = game:GetService("Players")
-					local HttpService = game:GetService("HttpService")
-					local TeleportService = game:GetService("TeleportService")
-					local LocalPlayer = Players.LocalPlayer
-	
-					--// Variables
-					local PlaceId = game.PlaceId
-					local fileName = string.format("%s_servers.json", tostring(PlaceId))
-					local ServerHopData = { 
-						CheckedServers = {},
-						LastTimeHop = nil,
-						CreatedAt = os.time() -- We can use it later to clear the checked servers
-						-- TODO: Save the cursor? Prob this can help on fast-hops
-					}
-	
-					-- Load data from disk/workspace
-					if isfile(fileName) then
-						local fileContent = readfile(fileName)
-						ServerHopData = HttpService:JSONDecode(fileContent)
-					end
-	
-					local ServerTypes = { ["Normal"] = "desc", ["Low"] = "asc" }
-	
-					function ServerHop(serverType)
-						serverType = serverType or "Normal" -- Default parameter
-						if not ServerTypes[serverType] then serverType = "Normal" end
-	
-						local function GetServerList(cursor)
-							cursor = cursor and "&cursor=" .. cursor or ""
-							local API_URL = string.format('https://games.roblox.com/v1/games/%s/servers/Public?sortOrder=%s&limit=100', tostring(PlaceId), ServerTypes[serverType])
-							return HttpService:JSONDecode(game:HttpGet(API_URL .. cursor))
-						end
-	
-						local currentPageCursor = nil
-						while true do 
-							local serverList = GetServerList(currentPageCursor)
-							currentPageCursor = serverList.nextPageCursor
-	
-							for _, server in ipairs(serverList.data) do
-								if server.playing and tonumber(server.playing) >= MINIMUM_PLAYERS and tonumber(server.playing) < Players.MaxPlayers and not table.find(ServerHopData.CheckedServers, tostring(server.id)) then     
-									-- Save current data to disk/workspace
-									ServerHopData.LastTimeHop = os.time() -- Last time that tried to hop
-									table.insert(ServerHopData.CheckedServers, server.id) -- Insert on our list
-									writefile(fileName, HttpService:JSONEncode(ServerHopData)) -- Save our data
-									TeleportService:TeleportToPlaceInstance(PlaceId, server.id, LocalPlayer) -- Actually teleport the player
-									-- Change the wait time if you take long times to hop (or it will add more than 1 server in the file)
-									wait(0.25)
-								end
-							end
-	
-							if not currentPageCursor then break else wait(0.25) end
-						end  
-					end
-				end
-	
-				do -- Just hop server
-					Cryptic.MainUI.Tabs.Misc.Features.ServerhopNormal.InputBegan:Connect(function(input: InputObject) 
-						if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-							MINIMUM_PLAYERS = 1
-							ServerHop("Normal")
-						end	
-					end)
-				end
-				
-				do -- Hop to lowest server
-					Cryptic.MainUI.Tabs.Misc.Features.ServerhopLowest.InputBegan:Connect(function(input: InputObject) 
-						if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-							MINIMUM_PLAYERS = 1
-							ServerHop("Low")
-						end		
-					end)
-				end
-				
-				do -- Hop to custom server
-					Cryptic.MainUI.Tabs.Misc.Features.ServerhopCustom.InputBegan:Connect(function(input: InputObject) 
-						if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-							MINIMUM_PLAYERS = serverhop_custom_value
-							ServerHop("Low")
-						end		
-					end)
-				end
-			end)
-		end
-	
-		do -- Set up Console tab
-			pcall(function()
-				game:GetService("LogService").MessageOut:Connect(function(message: string, messageType: Enum.MessageType) 
-					if messageType == Enum.MessageType.MessageOutput then
-						Cryptic.MainUI.Tabs.Console.ScrollingFrame.Frame.Log.Text = Cryptic.MainUI.Tabs.Console.ScrollingFrame.Frame.Log.Text.."\n".."-- "..string.format([[<font color="rgb(255, 255, 255)">%s</font>]], tostring(message))
-					elseif messageType == Enum.MessageType.MessageInfo then
-						Cryptic.MainUI.Tabs.Console.ScrollingFrame.Frame.Log.Text = Cryptic.MainUI.Tabs.Console.ScrollingFrame.Frame.Log.Text.."\n".."-- "..string.format([[<font color="rgb(0, 162, 255)">%s</font>]], tostring(message))
-					elseif messageType == Enum.MessageType.MessageError then
-						Cryptic.MainUI.Tabs.Console.ScrollingFrame.Frame.Log.Text = Cryptic.MainUI.Tabs.Console.ScrollingFrame.Frame.Log.Text.."\n".."-- "..string.format([[<font color="rgb(215, 90, 74)">%s</font>]], tostring(message))
-					elseif messageType == Enum.MessageType.MessageWarning then
-						Cryptic.MainUI.Tabs.Console.ScrollingFrame.Frame.Log.Text = Cryptic.MainUI.Tabs.Console.ScrollingFrame.Frame.Log.Text.."\n".."-- "..string.format([[<font color="rgb(255, 218, 68)">%s</font>]], tostring(message))
-					end
-				end)
-	
-				Cryptic.MainUI.Tabs.Console.Folder.Frame.Clear.InputBegan:Connect(function(input: InputObject) 
-					if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-						Cryptic.MainUI.Tabs.Console.ScrollingFrame.Frame.Log.Text = "-- Welcome to Cryptic"
-					end	
-				end)
-			end)
-		end
-	
-		do -- Toggles
-			for i,v in pairs(Cryptic:GetDescendants()) do
-				if v.Name == "Toggle" then			
-					v.BackgroundColor3 = Colors.Toggle.Disabled
-					v.MouseButton1Click:Connect(function()
-						local feature = v.Parent.Name
-						local state = v.BackgroundColor3 == Colors.Toggle.Enabled
-	
-						do -- Change the BackgroundColor of the Toggle depending on the new state
-							if v.BackgroundColor3 == Colors.Toggle.Enabled then
-								state = false
-								local twen = game:GetService("TweenService"):Create(v, TweenInfo.new(0.3, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut, 0, false, 0), {
-									BackgroundColor3 = Colors.Toggle.Disabled
-								})
-								twen:Play()
-							elseif v.BackgroundColor3 == Colors.Toggle.Disabled then
-								state = true
-								local twen = game:GetService("TweenService"):Create(v, TweenInfo.new(0.3, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut, 0, false, 0), {
-									BackgroundColor3 = Colors.Toggle.Enabled
-								})
-								twen:Play()
-							end
-						end
-	
-						do -- Toggle features of Cryptic
-							if feature == "Infinite Jump" then
-								LocalPlayer_Features.infJump = state
-							elseif feature == "Noclip" then
-								LocalPlayer_Features.noclip = state
-							--elseif feature == "Fly" then
-							--	LocalPlayer_Features.flyHack = state
-							elseif feature == "Walk Speed" then
-								LocalPlayer_Features.speedHack = state
-							elseif feature == "Jump Power" then
-								LocalPlayer_Features.jumpPowerHack = state
-							elseif feature == "FOV" then
-								LocalPlayer_Features.customFOV = state
-							elseif feature == "EmulatorMode" then
-								EmulatorMode = state
-							elseif feature == "FPSUnlocker" then
-								FPSUnlocker = state
-								if not state then
-									FPSUnlocker_Value = 60
-								end
-							elseif feature == "Vsync" then
-								Vsync = state
-							elseif feature == "PlatformFly" then
-								funiPlatform:PivotTo(CFrame.new(Players.LocalPlayer.Character:GetPivot().Position + Vector3.new(0, -Players.LocalPlayer.Character:GetModelSize().Y/2 - funiPlatform.Size.Y/2, 0)))
-								LocalPlayer_Features.Platform_Fly = state
-							elseif feature == "Gravity" then
-								if not state then
-									LocalPlayer_Features.Gravity_Value = oldGravity
-								end
-								LocalPlayer_Features.Gravity = state
-							end
-						end
-					end)
-				end
-			end
-		end
-	
-		do -- Buttons
-			for i,v in pairs(Cryptic:GetDescendants()) do
-				pcall(function()
-					if tostring(v) == "Button" then
-						table.insert(buttons, v)
-					end
-				end)
-			end
-	
-			for i,v in pairs(buttons) do
-				v.MouseButton1Click:Connect(function()
-					local feature = tostring(v.Parent)
-					if v:FindFirstAncestor(Cryptic.MainUI.Tabs["Local Scripts"].Features.Name, true) then
-						local success, ret = pcall(function()
-							if not v.Parent:FindFirstChild("Delete") then
-								run_script(localScripts.Mobile[feature])
-							end
-						end)
-						do -- Tell the user visually that an error occured
-							if not success then 
-								local twen = TweenService:Create(v, TweenInfo.new(0.3, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-									BackgroundColor3 = Color3.fromRGB(170,0,0)
-								})
-								twen:Play()
-								twen.Completed:Connect(function()
-									local twen = TweenService:Create(v, TweenInfo.new(0.3, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-										BackgroundColor3 = Color3.fromRGB(25, 155, 255)
-									})
-									twen:Play()
-								end)
-								notificationSystem:createNotification({
-									Message = string.format("Failed to execute script!\n%s", tostring(ret)),
-									Duration = 5,
-									AnimationSpeed = 0.3,
-									TopColor = Color3.fromRGB(50, 100, 150),
-									BottomColor = Color3.fromRGB(20, 40, 80)
-								})
-							else
-								notificationSystem:createNotification({
-									Message = string.format("Successfully executed script!"),
-									Duration = 5,
-									AnimationSpeed = 0.3,
-									TopColor = Color3.fromRGB(50, 100, 150),
-									BottomColor = Color3.fromRGB(20, 40, 80)
-								})
-							end
-						end
-					elseif v:FindFirstAncestor(Cryptic.MainUI.Tabs["Local Scripts"].Search.Name) then
-						local scripts = Cryptic.MainUI.Tabs["Local Scripts"].Features:GetChildren()
-						for i,v in pairs(scripts) do
-							if v:IsA("Frame") and string.find(string.lower(tostring(v)), string.lower(Cryptic.MainUI.Tabs["Local Scripts"].Search.TextBox.Text)) then
-								v.Visible = true
-							else
-								if v:IsA("Frame") then
-									v.Visible = false
-								end
-							end
-						end
-					end
-				end)
-			end
-		end	
-	
-		do -- Sliders
-			for i,v in pairs(Cryptic:GetDescendants()) do
-				pcall(function()
-					if string.find(string.lower(v.Name), "_slider") then
-						table.insert(sliders, v)
-					end
-				end)
-			end
-	
-			local function round(num, numDecimalPlaces)
-				local mult = 10^(numDecimalPlaces or 0)
-				return math.floor(num * mult + 0.5) / mult
-			end
-			for i,v in pairs(sliders) do
-				local Slider = v
-				local minValue = 0
-				local maxValue = 100
-				local decimals = 0
-				--[[if tostring(Slider) == "FlySpeed_Slider" then
-					minValue = 0.1
-					maxValue = 9.9
-					decimals = 1
-					LocalPlayer_Features.flySpeed = minValue--]]
-				if tostring(Slider) == "FOV_Slider" then
-					minValue = 10
-					maxValue = 110
-					LocalPlayer_Features.customFOV_Value = minValue
-				elseif tostring(Slider) == "WalkSpeed_Slider" then
-					minValue = 15
-					maxValue = 85
-					LocalPlayer_Features.speedHack_Speed = minValue
-				elseif tostring(Slider) == "JumpPower_Slider" then
-					minValue = 15
-					maxValue = 85
-					LocalPlayer_Features.jumpPowerHack_Power = minValue
-				elseif tostring(Slider) == "FPSUnlocker_Slider" then
-					minValue = 10
-					maxValue = 230
-					LocalPlayer_Features.FPSUnlocker_Value = 60
-				elseif tostring(Slider) == "Gravity_Slider" then
-					minValue = 0
-					maxValue = 300
-					LocalPlayer_Features.Gravity_Value = minValue
-				elseif tostring(Slider) == "PlatformFly_Speed_Slider" then
-					minValue = 0.1
-					maxValue = 9.9
-					decimals = 1
-					LocalPlayer_Features.Platform_Fly_Speed = minValue
-				elseif tostring(Slider) == "ServerhopCustom_Slider" then
-					minValue = 1
-					maxValue = 20
-					serverhop_custom_value = minValue
-				end
-				local currentValue = minValue
-	
-				local dragging = false
-				local startPos = Slider.SliderButton.Position
-				local lastPos
-	
-				Slider.SliderButton.Text = currentValue
-	
-				Slider.SliderButton.InputBegan:Connect(function(input)
-					if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseButton1 then
-						dragging = true
-						input:GetPropertyChangedSignal("UserInputState"):Connect(function()
-							if input.UserInputState == Enum.UserInputState.End then
-								dragging = false
-							end
-						end)
-					end
-				end)
-	
-				RunService.RenderStepped:Connect(function()
-					if dragging then
-						lastPos = UserInputService:GetMouseLocation()
-						local newDirection = lastPos.X - (Slider.SliderButton.AbsolutePosition.X + Slider.SliderButton.AbsoluteSize.X/2)
-						local newXPos = Slider.SliderButton.Position.X.Offset + newDirection
-	
-						local withinDragRegion = newXPos <= 221 and newXPos >= 5
-						if withinDragRegion then
-							Slider.SliderButton.Position = UDim2.new(0, newXPos, 0, Slider.SliderButton.Position.Y.Offset)
-						elseif newXPos > 221 then
-							newXPos = 221
-							Slider.SliderButton.Position = UDim2.new(0, 221, 0, Slider.SliderButton.Position.Y.Offset)
-						elseif newXPos < 5 then
-							newXPos = 5
-							Slider.SliderButton.Position = UDim2.new(0, 5, 0, Slider.SliderButton.Position.Y.Offset)
-						end
-						local pixelPerPercent = 100/221
-						currentValue = maxValue*((pixelPerPercent*newXPos)/100) + minValue
-						if newXPos <= 5 then
-							currentValue = minValue
-						end
-						Slider.SliderButton.Text = round(currentValue, decimals)
-						if tostring(Slider) == "WalkSpeed_Slider" then
-							LocalPlayer_Features.speedHack_Speed = currentValue
-						elseif tostring(Slider) == "JumpPower_Slider" then
-							LocalPlayer_Features.jumpPowerHack_Power = currentValue
-						--elseif tostring(Slider) == "FlySpeed_Slider" then
-						--	LocalPlayer_Features.flySpeed = currentValue
-						elseif tostring(Slider) == "FOV_Slider" then
-							LocalPlayer_Features.customFOV_Value = currentValue
-						elseif tostring(Slider) == "FPSUnlocker_Slider" then
-							FPSUnlocker_Value = math.round(currentValue)
-						elseif tostring(Slider) == "Gravity_Slider" then
-							LocalPlayer_Features.Gravity_Value = currentValue
-						elseif tostring(Slider) == "PlatformFly_Speed_Slider" then
-							LocalPlayer_Features.Platform_Fly_Speed = currentValue
-						elseif tostring(Slider) == "ServerhopCustom_Slider" then
-							serverhop_custom_value = currentValue
-						end
-						--print(currentValue, pixelPerPercent*newXPos)
-					end
-				end)
-			end
-		end	
-	end
-	
-	do -- Scale the UI
-	
-	end
-	
-	local toggleVisibility
-	do -- UI Visibility
-		do -- Cryptic logo toggle
-			local totalTweens = -1
-			local tweensCompleted = 0
-	
-			local isTweening = false
-			local frame = Cryptic.MainUI
-			local isVisible = true
-			local tweenInfo = TweenInfo.new(
-				0.5,
-				Enum.EasingStyle.Quad,
-				Enum.EasingDirection.InOut
-			)
-	
-			local elementStates = {}
-	
-			local function updateElementState(element)
-				local state = {}
-	
-				if element:IsA("GuiObject") and element:GetAttribute("IgnoreFade") ~= true then
-					if element:FindFirstChildOfClass("UIGradient") then
-						state.UIGradientTransparency = element:FindFirstChildOfClass("UIGradient").Transparency
-					end
-					if element.BackgroundTransparency ~= nil then
-						state.BackgroundTransparency = element.BackgroundTransparency
-					end
-					if element:IsA("TextLabel") or element:IsA("TextButton") or element:IsA("TextBox") then
-						state.TextTransparency = element.TextTransparency
-						state.TextStrokeTransparency = element.TextStrokeTransparency
-					end
-					if element:IsA("ImageLabel") or element:IsA("ImageButton") then
-						state.ImageTransparency = element.ImageTransparency
-					end
-					if element:IsA("ScrollingFrame") then
-						state.ScrollBarImageTransparency = element.ScrollBarImageTransparency
-					end
-	
-					state.Visible = element.Visible
-					state.Active = element.Active
-				end
-	
-				if next(state) then
-					elementStates[element] = state
-				end
-			end
-	
-			local function fadeElement(element, fadeAmount)
-				--print(tweensCompleted)
-	
-				local state = elementStates[element]
-				if not state then
-					updateElementState(element)
-					state = elementStates[element]
-				end
-	
-				if state then
-					local properties = {}
-					for prop, origValue in pairs(state) do
-						if prop == "UIGradientTransparency" then
-							local uiGradient = element:FindFirstChildOfClass("UIGradient")
-							if uiGradient then
-								local newTransparency = origValue + (1 - origValue) * fadeAmount
-								local twen = TweenService:Create(uiGradient, tweenInfo, {Transparency = newTransparency})
-								twen:Play()
-								twen.Completed:Connect(function()
-									tweensCompleted += 1
-									--print("done")
-								end)
-								totalTweens += 1
-							end
-						elseif prop ~= "Visible" and prop ~= "Active" then
-							properties[prop] = origValue + (1 - origValue) * fadeAmount
-						end
-					end
-	
-					if next(properties) then
-						local tween = TweenService:Create(element, tweenInfo, properties)
-						tween:Play()
-						totalTweens += 1
-	
-						tween.Completed:Connect(function()
-							--print(tweensCompleted, totalTweens)
-							isTweening = tweensCompleted ~= totalTweens
-							tweensCompleted += 1
-							if fadeAmount == 1 then
-								element.Visible = false
-								element.Active = false
-							else
-								element.Visible = state.Visible
-								element.Active = state.Active
-							end
-						end)
-					end
-				end
-	
-				for _, child in ipairs(element:GetChildren()) do
-					fadeElement(child, fadeAmount)
-				end
-	
-			end
-	
-			local function updateAllStates(element)
-				updateElementState(element)
-				for _, child in ipairs(element:GetChildren()) do
-					updateAllStates(child)
-				end
-			end
-	
-			function MainUI.toggleVisibility()
-				if not isTweening then
-					isTweening = true
-					totalTweens = -1
-					tweensCompleted = 0
-	
-					isVisible = not isVisible
-					local fadeAmount = isVisible and 0 or 1
-	
-					if not isVisible then
-						updateAllStates(frame)
-					else
-						local function makeVisible(element)
-							local state = elementStates[element]
-							if state then
-								element.Visible = state.Visible
-							end
-							for _, child in ipairs(element:GetChildren()) do
-								makeVisible(child)
-							end
-						end
-						makeVisible(frame)
-					end
-	
-					fadeElement(frame, fadeAmount)
-	
-				end
-			end
-			updateAllStates(frame)
-		end
-	
-		do -- Cryptic collapse toggle
-			local tabsBar = Cryptic.MainUI.TABSBAR
-			local collapseButton = Cryptic.MainUI.COLLAPSEBUTTON
-			local totalTweens = -1
-			local tweensCompleted = 0
-	
-			local isTweening = false
-			local frame = tabsBar
-			local isVisible = true
-			local tweenInfo = TweenInfo.new(
-				0.5,
-				Enum.EasingStyle.Quad,
-				Enum.EasingDirection.InOut
-			)
-	
-			local elementStates = {}
-	
-			local function updateElementState(element)
-				local state = {}
-	
-				if element:IsA("GuiObject") and element:GetAttribute("IgnoreFade") ~= true then
-					if element:FindFirstChildOfClass("UIGradient") then
-						state.UIGradientTransparency = element:FindFirstChildOfClass("UIGradient").Transparency
-					end
-					if element.BackgroundTransparency ~= nil then
-						state.BackgroundTransparency = element.BackgroundTransparency
-					end
-					if element:IsA("TextLabel") or element:IsA("TextButton") or element:IsA("TextBox") then
-						state.TextTransparency = element.TextTransparency
-						state.TextStrokeTransparency = element.TextStrokeTransparency
-					end
-					if element:IsA("ImageLabel") or element:IsA("ImageButton") then
-						state.ImageTransparency = element.ImageTransparency
-					end
-					if element:IsA("ScrollingFrame") then
-						state.ScrollBarImageTransparency = element.ScrollBarImageTransparency
-					end
-	
-					state.Visible = element.Visible
-					state.Active = element.Active
-				end
-	
-				if next(state) then
-					elementStates[element] = state
-				end
-			end
-	
-			local function fadeElement(element, fadeAmount)
-				--print(tweensCompleted)
-	
-				local state = elementStates[element]
-				if not state then
-					updateElementState(element)
-					state = elementStates[element]
-				end
-	
-				if state then
-					local properties = {}
-					for prop, origValue in pairs(state) do
-						if prop == "UIGradientTransparency" then
-							local uiGradient = element:FindFirstChildOfClass("UIGradient")
-							if uiGradient then
-								local newTransparency = origValue + (1 - origValue) * fadeAmount
-								local twen = TweenService:Create(uiGradient, tweenInfo, {Transparency = newTransparency})
-								twen:Play()
-								twen.Completed:Connect(function()
-									tweensCompleted += 1
-									--print("done")
-								end)
-								totalTweens += 1
-							end
-						elseif prop ~= "Visible" and prop ~= "Active" then
-							properties[prop] = origValue + (1 - origValue) * fadeAmount
-						end
-					end
-	
-					if next(properties) then
-						local tween = TweenService:Create(element, tweenInfo, properties)
-						tween:Play()
-						totalTweens += 1
-	
-						tween.Completed:Connect(function()
-							--print(tweensCompleted, totalTweens)
-							isTweening = tweensCompleted ~= totalTweens
-							tweensCompleted += 1
-							if fadeAmount == 1 then
-								element.Visible = false
-								element.Active = false
-							else
-								element.Visible = state.Visible
-								element.Active = state.Active
-							end
-						end)
-					end
-				end
-	
-				for _, child in ipairs(element:GetChildren()) do
-					fadeElement(child, fadeAmount)
-				end
-	
-			end
-	
-			local function updateAllStates(element)
-				updateElementState(element)
-				for _, child in ipairs(element:GetChildren()) do
-					updateAllStates(child)
-				end
-			end
-	
-			local function toggleVisibility()
-				if not isTweening then
-					local oldPos = tabsBar.Position
-					local newPos = isVisible and tabsBar.Position - UDim2.new(0, 0, 0, 100) or tabsBar.Position + UDim2.new(0, 0, 0, 100)
-					local twen = TweenService:Create(tabsBar, TweenInfo.new(0.3, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-						Position = newPos
-					})
-					twen:Play()
-	
-					isTweening = true
-					totalTweens = -1
-					tweensCompleted = 0
-	
-					isVisible = not isVisible
-					local fadeAmount = isVisible and 0 or 1
-	
-					if not isVisible then
-						updateAllStates(frame)
-						local twen = game:GetService("TweenService"):Create(Cryptic.MainUI.COLLAPSEBUTTON, TweenInfo.new(0.3, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-							Rotation = 0
-						})
-						twen:Play()
-					else
-						local twen = game:GetService("TweenService"):Create(Cryptic.MainUI.COLLAPSEBUTTON, TweenInfo.new(0.3, Enum.EasingStyle.Exponential, Enum.EasingDirection.InOut), {
-							Rotation = 180
-						})
-						twen:Play()
-						local function makeVisible(element)
-							local state = elementStates[element]
-							if state then
-								element.Visible = state.Visible
-							end
-							for _, child in ipairs(element:GetChildren()) do
-								makeVisible(child)
-							end
-						end
-						makeVisible(frame)
-					end
-	
-					fadeElement(frame, fadeAmount)
-	
-				end
-			end
-			updateAllStates(frame)
-	
-	
-			collapseButton.MouseButton1Click:Connect(function()
-				toggleVisibility()
-			end)
 		end
 	end
-	
-	do -- UI Dragging
-		local UserInputService = game:GetService("UserInputService")
-		local RunService = game:GetService("RunService")
-	
-	
-	
-		local function setupDraggableFrame(frame, dragHandle)
-			dragHandle = dragHandle or frame
-	
-			local dragging = false
-			local dragInput
-			local dragStart
-			local startPos
-			local targetPosition
-			local currentPosition
-	
-			local function getScaleFactor()
-				local screenSize = workspace.CurrentCamera.ViewportSize
-				return math.min(screenSize.X / 1920, screenSize.Y / 1080)
-			end
-	
-			local function updateScaledValues()
-				local scaleFactor = getScaleFactor()
-				local baseSmoothing = 0.2
-				local baseDragThreshold = 5
-				local baseClickDuration = 0.2
-	
-				return {
-					smoothing = baseSmoothing * scaleFactor,
-					clickThreshold = baseDragThreshold * scaleFactor,
-					maxClickDuration = baseClickDuration
-				}
-			end
-	
-			local scaledValues = updateScaledValues()
-	
-			local function updatePosition(input)
-				local delta = input.Position - dragStart
-				local newPosition = UDim2.new(
-					startPos.X.Scale, 
-					startPos.X.Offset + delta.X,
-					startPos.Y.Scale, 
-					startPos.Y.Offset + delta.Y
-				)
-	
-				local absoluteSize = frame.AbsoluteSize
-				local screenSize = workspace.CurrentCamera.ViewportSize
-				local minX = 0
-				local maxX = screenSize.X - absoluteSize.X
-				local minY = 0
-				local maxY = screenSize.Y - absoluteSize.Y
-				targetPosition = UDim2.new(
-					0, math.clamp(newPosition.X.Offset, minX, maxX),
-					0, math.clamp(newPosition.Y.Offset, minY, maxY)
-				)
-			end
-	
-			local function centerFrame()
-				if tostring(frame) == "Frame" and tostring(dragHandle) == "en/exi" then
-					--print(frame:GetFullName())
-					local screenSize = workspace.CurrentCamera.ViewportSize
-					local frameSize = frame.AbsoluteSize
-					return UDim2.new(
-						0, (screenSize.X - frameSize.X) / 2,
-						0, 10
-					)
-				else
-					local screenSize = workspace.CurrentCamera.ViewportSize
-					local frameSize = frame.AbsoluteSize
-					return UDim2.new(
-						0, (screenSize.X - frameSize.X) / 2,
-						0, (screenSize.Y - frameSize.Y) / 2
-					)
-				end
-			end
-	
-			local centeredPosition = centerFrame()
-			currentPosition = centeredPosition
-			targetPosition = centeredPosition
-			frame.Position = centeredPosition
-	
-			dragHandle.InputBegan:Connect(function(input)
-				if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-					dragging = true
-					dragStart = input.Position
-					startPos = currentPosition
-					local dragStartTime = tick()
-					local dragConnection
-					dragConnection = input.Changed:Connect(function()
-						if input.UserInputState == Enum.UserInputState.End then
-							dragging = false
-							dragConnection:Disconnect()
-	
-							local dragDistance = (input.Position - dragStart).Magnitude
-							local dragDuration = tick() - dragStartTime
-							if dragDistance <= scaledValues.clickThreshold and dragDuration <= scaledValues.maxClickDuration then -- this is basically to prevent accidental clicks when no longer dragging
-								if tostring(dragHandle) == "en/exi" then
-									MainUIVisibility = not MainUIVisibility
-									MainUI.toggleVisibility()
-								end
-							end
-						end
-					end)
-				end
-			end)
-	
-			dragHandle.InputChanged:Connect(function(input)
-				if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-					dragInput = input
-				end
-			end)
-	
-			RunService.RenderStepped:Connect(function()
-				if dragging and dragInput then
-					updatePosition(dragInput)
-				end
-				currentPosition = UDim2.new(
-					0, currentPosition.X.Offset + (targetPosition.X.Offset - currentPosition.X.Offset) * scaledValues.smoothing,
-					0, currentPosition.Y.Offset + (targetPosition.Y.Offset - currentPosition.Y.Offset) * scaledValues.smoothing
-				)
-				frame.Position = currentPosition
-			end)
-	
-			frame:GetPropertyChangedSignal("Position"):Connect(function()
-				if not dragging then
-					targetPosition = frame.Position
-				end
-			end)
-	
-			Workspace.CurrentCamera:GetPropertyChangedSignal("ViewportSize"):Connect(function()
-				if not dragging then
-					local centeredPosition = centerFrame()
-					targetPosition = centeredPosition
-					currentPosition = centeredPosition
-				end
-				scaledValues = updateScaledValues()
-			end)
-		end
-	
-		setupDraggableFrame(Cryptic.MainUI, Cryptic.MainUI.TITLEBAR)
-		setupDraggableFrame(Cryptic.Frame, Cryptic.Frame["en/exi"])
-	end
-	
-	do -- Connections
-		do -- Reposition the UI if the ViewportSize (Resolution) changes
-			game:GetService("Workspace").CurrentCamera:GetPropertyChangedSignal("ViewportSize"):Connect(function()
-				Cryptic.Frame.Position = UDim2.new(0, Workspace.CurrentCamera.ViewportSize.X/2, 0, 0)
-				local ratio = Vector2.new(Workspace.CurrentCamera.ViewportSize.X, Workspace.CurrentCamera.ViewportSize.Y) / Vector2.new(1920, 1080)
-				local success, ret = pcall(function()
-					--print((ratio.X + ratio.Y)/2)
-					Cryptic.MainUI.UIScale.Scale = ((ratio.X + ratio.Y)/2)*2
-					Cryptic.Frame.UIScale.Scale = ((ratio.X + ratio.Y)/2)*2
-					Cryptic.MainUI.Position = UDim2.new(0, Workspace.CurrentCamera.ViewportSize.X/2 - Cryptic.MainUI.AbsoluteSize.X/2, 0, Workspace.CurrentCamera.ViewportSize.Y/2 - Cryptic.MainUI.AbsoluteSize.Y/2)
-				end)
-			end)
-			
-			RunService.RenderStepped:Connect(function()
-				local ratio = Vector2.new(Workspace.CurrentCamera.ViewportSize.X, Workspace.CurrentCamera.ViewportSize.Y) / Vector2.new(1920, 1080)
-				local success, ret = pcall(function()
-					--print((ratio.X + ratio.Y)/2)
-					Cryptic.MainUI.UIScale.Scale = ((ratio.X + ratio.Y)/2)*2
-				end)
-			end)
-		end
-	
-		do -- Cryptic functions
-			do -- Noclip
-				game:GetService("RunService").RenderStepped:Connect(function(dt)
-					if FPSUnlocker then
-						setfpscap(FPSUnlocker_Value)
-					elseif Vsync then
-									
-					end
-					pcall(function()
-						if LocalPlayer_Features.noclip then
-							for i,v in pairs(Players.LocalPlayer.Character:GetChildren()) do
-								pcall(function()
-									v.CanCollide = false
-								end)
-							end
-						end
-					end)
-				end)
-			end
-	
-			do -- Rest of the features
-				local newFlyVelocity = Vector3.new(0,0.9,0)
-	
-				do -- Custom FOV bypass
-					Workspace.CurrentCamera:GetPropertyChangedSignal("FieldOfView"):Connect(function()
-						if LocalPlayer_Features.customFOV then
-							Workspace.CurrentCamera.FieldOfView = LocalPlayer_Features.customFOV_Value
-						end
-					end)
-				end
-	
-	
-				local autoFarm_targetPlayer = nil
-				game:GetService("RunService").RenderStepped:Connect(function()
-					local success, ret = pcall(function()
-						do -- Inf jump for PC
-							if LocalPlayer_Features.infJump then
-								if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.Space) and EmulatorMode then
-									Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
-								end
-							end
-						end
-	
-						do -- custom FOV
-							if LocalPlayer_Features.customFOV then
-								Workspace.CurrentCamera.FieldOfView = LocalPlayer_Features.customFOV_Value
-							end
-						end
-	
-						do -- jumpPower hack
-							if LocalPlayer_Features.jumpPowerHack then
-								Players.LocalPlayer.Character.Humanoid.JumpPower = LocalPlayer_Features.jumpPowerHack_Power*2
-								Players.LocalPlayer.Character.Humanoid.JumpHeight = LocalPlayer_Features.jumpPowerHack_Power*2
-							end
-						end
-	
-						do -- speedhack
-							if LocalPlayer_Features.speedHack then
-								Players.LocalPlayer.Character.Humanoid.WalkSpeed = LocalPlayer_Features.speedHack_Speed
-							end
-						end
-						
-						do -- Gravity
-							if LocalPlayer_Features.Gravity then
-								Workspace.Gravity = LocalPlayer_Features.Gravity_Value
-							end
-						end
-						
-						do -- Platform fly
-							funiPlatform.Anchored = true
-							funiPlatform.CanCollide = true
-							funiPlatform.Transparency = .2
-							funiPlatform.Material = Enum.Material.ForceField
-							
-							if LocalPlayer_Features.Platform_Fly then
-								funiPlatform.Parent = Workspace
-								funiPlatform.Size = Vector3.new(10,2,10)
-								local localPlayerPosition = Players.LocalPlayer.Character:GetPivot().Position
-								--funiPlatform:PivotTo(CFrame.new(localPlayerPosition.X, funiPlatform.CFrame.Position.Y, localPlayerPosition.Z))
-								funiPlatform:PivotTo(CFrame.new(Players.LocalPlayer.Character:GetPivot().Position + Vector3.new(0, -Players.LocalPlayer.Character:GetModelSize().Y/2 - funiPlatform.Size.Y/1.1, 0)))
-							else
-								funiPlatform.Parent = nil
-							end
-						end
-						
-						do -- Auto farm
-							local success, ret = pcall(function()
-								if Aimbot.AutoFarm then
-									Aimbot.UpdatePlayers()
-									for i,v in pairs(Aimbot.Players) do
-										if v ~= game.Players.LocalPlayer then
-											if not v.Character then
-											else
-												local Character = v.Character
-												local humanoid = Character:FindFirstChildWhichIsA("Humanoid", true)
-												local humanoidRootPart = Character:FindFirstChild("HumanoidRootPart", true)
-	
-												if humanoid and humanoid.Health > 0 and humanoidRootPart then
-													autoFarm_targetPlayer = v
-												end
-											end
-										end
-									end
-									if autoFarm_targetPlayer ~= nil then
-										Workspace.CurrentCamera.CFrame = CFrame.new(Workspace.CurrentCamera.CFrame.Position, autoFarm_targetPlayer.Character:GetPivot().Position)
-										Players.LocalPlayer.Character:PivotTo(autoFarm_targetPlayer.Character:GetPivot() + autoFarm_targetPlayer.Character:GetPivot().LookVector * -5)
-									end
-								end
-							end)
-						end
-					end)
-				end)
-			end
-		end
-	end 
-end;
+end)
 
-task.spawn(C_47);
+-- Setclipboard of the current shown tab [[ SETCLIPBOARD TAB ]]
+MainFrame["Script Editor Tab"]["Scripting Buttons"].Copy.MouseButton1Click:Connect(function()
+	for _, tab in pairs(MainFrame["Script Editor Tab"]["Tabs"].ScrollingFrame:GetChildren()) do
+		if tab:IsA('TextBox') and tab.Visible then
+			local s, e = pcall(function()
+				setclipboard(tab.Text)
+			end)
+			
+			if not s and e then
+                Lib:DevConsole('error', e)
+                
+				Lib:CreateNotification('Error While Copying To Clipboard', 5)
+			else
+				Lib:CreateNotification('Copied To Clipboard!', 5)
+			end
+		end
+	end
+end)
 
-return G2L["1"], require;
+-- Clear the current shown tab [[ CLEAR TAB ]]
+MainFrame["Script Editor Tab"]["Scripting Buttons"].Clear.MouseButton1Click:Connect(function()
+	for _, tab in pairs(MainFrame["Script Editor Tab"]["Tabs"].ScrollingFrame:GetChildren()) do
+		if tab:IsA('TextBox') and tab.Visible then
+			local s, e = pcall(function()
+				tab.Text = ""
+			end)
+			
+			if not s and e then
+                Lib:DevConsole('error', e)
+                
+				Lib:CreateNotification('Error while clearing tab!', 5)
+			else
+				Lib:CreateNotification('Cleared Editor!', 5)
+			end
+		end
+	end
+
+    MainFrame["Script Editor Tab"]["Tabs"]["ScrollingFrame"].CanvasSize = UDim2.new(0, MainFrame["Script Editor Tab"]["Tabs"]["ScrollingFrame"]["Scriptbox"].TextBounds.X, 0, MainFrame["Script Editor Tab"]["Tabs"]["ScrollingFrame"]["Scriptbox"].TextBounds.Y, 0)
+end)
+
+-- Paste your clipboard into the current shown tab [[ PASTE CLIPBOARD TO TAB ]]
+MainFrame["Script Editor Tab"]["Scripting Buttons"].Paste.MouseButton1Click:Connect(function()
+	for _, tab in pairs(MainFrame["Script Editor Tab"]["Tabs"].ScrollingFrame:GetChildren()) do
+		local s, e = pcall(function()
+			if tab:IsA('TextBox') and tab.Visible then
+				tab.Text = getclipboard()
+			end
+		end)
+		
+		if not s and e then
+            Lib:DevConsole('error', e)
+            
+			Lib:CreateNotification('Error While Pasting Clipboard!', 5)
+		else
+			Lib:CreateNotification('Pasted From Clipboard!', 5)
+		end
+	end
+
+    MainFrame["Script Editor Tab"]["Tabs"]["ScrollingFrame"].CanvasSize = UDim2.new(0, MainFrame["Script Editor Tab"]["Tabs"]["ScrollingFrame"]["Scriptbox"].TextBounds.X, 0, MainFrame["Script Editor Tab"]["Tabs"]["ScrollingFrame"]["Scriptbox"].TextBounds.Y, 0)
+end)
+
+-- Execute your clipboard [[ EXECUTE CLIPBOARD ]]
+MainFrame["Script Editor Tab"]["Scripting Buttons"].ExecuteClipboard.MouseButton1Click:Connect(function()
+    local s, e = task.spawn(function()
+        local s, e = pcall(function()
+            run_script(tostring(getclipboard))
+        end)
+
+        return s, e
+    end)
+
+	if not s then
+        Lib:DevConsole('error', e)
+
+		Lib:CreateNotification('Error While Executing From Clipboard!', 5)
+	else
+		Lib:CreateNotification('Executed Clipboard!', 5)
+	end
+end)
+
+-- Auto Reallocate Scriptbox
+MainFrame["Script Editor Tab"]["Tabs"]["ScrollingFrame"]["Scriptbox"].FocusLost:Connect(function()
+    MainFrame["Script Editor Tab"]["Tabs"]["ScrollingFrame"].CanvasSize = UDim2.new(0, MainFrame["Script Editor Tab"]["Tabs"]["ScrollingFrame"]["Scriptbox"].TextBounds.X, 0, MainFrame["Script Editor Tab"]["Tabs"]["ScrollingFrame"]["Scriptbox"].TextBounds.Y, 0)
+end)
+
+--------------------------------------------------------- [[ Presaved Scripts TAB ]] ---------------------------------------------------------
+
+-- Handling the Execute Button
+MainFrame["Saved Scripts"].Execute.MouseButton1Click:Connect(function()
+	if ExecSS and SavedScript then
+        local s, e = task.spawn(function()
+            local s, e = pcall(function()
+                run_script(tostring(SavedScript))
+            end)
+
+            return s, e
+        end)
+		
+		if not s then
+            Lib:DevConsole('error', e)
+            
+			Lib:CreateNotification('Error While Attempting To Execute The Script!', 5)
+		else
+			Lib:CreateNotification(ExecSS, 5)
+		end
+	end
+end)
+
+-- Copy script to clipboard
+MainFrame["Saved Scripts"]["Copy To Clipboard"].MouseButton1Click:Connect(function()
+	if ExecSS and SavedScript then
+		local s, e = pcall(function()
+			setclipboard(tostring(SavedScript))
+		end)
+		
+		if not s and e then
+            Lib:DevConsole('error', e)
+
+			Lib:CreateNotification('Error Copying To Clipboard!', 5)
+		else
+			Lib:CreateNotification('Copied To Clipboard!', 5)
+		end
+	end
+end)
+
+---------------------------------------------------------- [[ Global Scripts Tab ]] ----------------------------------------------------------
+
+local GlobalTab = { ShowingScripts = 0, CurrentPage = 1, Loading = false }
+
+MainFrame["Global Scripts"]["Search Bar"]["ImageButton"].MouseButton1Click:Connect(function()
+    GlobalTab.Loading = false
+
+    GlobalTab.CurrentPage = 1
+    
+    MainFrame["Global Scripts"]["Frame"]["TextLabel"].Text = "1/250"
+
+    task.wait(1)
+
+    GlobalTab.Loading = true
+
+
+    if MainFrame["Global Scripts"]["TextButton"].TextLabel.Text == "API: rscripts.net" then
+        if MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text ~= "" then
+            local SearchDebuff = string.gsub(MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text, " ", "-")
+            
+            Lib:ClearGlobalScript()
+
+            local success, response = pcall(function()
+                return Requesting({
+                    Url = "https://rscripts.net/api/scripts?page=1&orderBy=date&sort=desc&q=" .. SearchDebuff
+                })
+            end)
+            
+            GlobalTab.ShowingScripts = 0
+
+            if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+                local rscriptsdata = HttpService:JSONDecode(response.Body)
+        
+                if rscriptsdata then
+                    for _, scripts in pairs(rscriptsdata.scripts) do
+                        if not GlobalTab.Loading then
+                            break
+                        end
+
+                        local sourcecode = Requesting({
+                            Url = "https://rscripts.net/raw/" .. scripts.download
+                        })
+                        
+                        GlobalTab.ShowingScripts += 1
+
+                        if GlobalTab.ShowingScripts <= 16 then
+                            Lib:CreateGlobalScript("rscripts", scripts.title, "Unkown", scripts.paid or scripts.keySystem or false, scripts.gameThumbnail ~= "https://tr.rbxcdn.com/" and scripts.gameThumbnail or "INSERT RSCRIPTS WEBSITE LOGO HERE", tostring(sourcecode.Body))
+                        end
+                    end
+                end
+            end 
+        else
+            Lib:ClearGlobalScript()
+
+            GlobalTab.ShowingScripts = 0
+
+            local success, response = pcall(function()
+                return Requesting({
+                    Url = "https://rscripts.net/api/scripts?page=1&orderBy=date&sort=desc"
+                })
+            end)
+        
+            if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+                local rscriptsdata = HttpService:JSONDecode(response.Body)
+        
+                if rscriptsdata then
+                    for _, scripts in pairs(rscriptsdata.scripts) do
+                        if not GlobalTab.Loading then
+                            break
+                        end
+                        
+                        local sourcecode = Requesting({
+                            Url = "https://rscripts.net/raw/" .. scripts.download
+                        })
+                        
+                        GlobalTab.ShowingScripts += 1
+
+                        if GlobalTab.ShowingScripts <= 16 then
+                            Lib:CreateGlobalScript("rscripts", scripts.title, "Unkown", scripts.paid or scripts.keySystem or false, scripts.gameThumbnail ~= "https://tr.rbxcdn.com/" and scripts.gameThumbnail or "INSERT RSCRIPTS WEBSITE LOGO HERE", tostring(sourcecode.Body))
+                        end
+                    end
+                end
+            end 
+        end
+    elseif MainFrame["Global Scripts"]["TextButton"].TextLabel.Text == "API: scriptblox.com" then
+        if MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text ~= "" then
+            local SearchDebuff = string.gsub(MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text, " ", "-")
+            
+            Lib:ClearGlobalScript()
+
+            local success, response = pcall(function()
+                return Requesting({
+                    Url = "https://www.scriptblox.com/api/script/search?q=".. SearchDebuff .."&page="..GlobalTab.CurrentPage.."&max=16"
+                })
+            end)
+
+            GlobalTab.ShowingScripts = 0
+
+            if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+                local scriptblox = HttpService:JSONDecode(response.Body)
+
+                for _, script in pairs(scriptblox.result.scripts) do
+                    if not GlobalTab.Loading then
+                        break
+                    end
+
+                    GlobalTab.ShowingScripts += 1
+
+                    if GlobalTab.ShowingScripts <= 16 then
+                        Lib:CreateGlobalScript("scriptblox", script.title, game.name, script.key or false, script.game.imageUrl, script.script)
+                    end
+                end
+            end
+        else
+            Lib:ClearGlobalScript()
+
+            local success, response = pcall(function()
+                return Requesting({
+                    Url = "https://www.scriptblox.com/api/script/fetch?page=1&max=16"
+                })
+            end)
+
+            GlobalTab.ShowingScripts = 0
+
+            if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+                local scriptblox = HttpService:JSONDecode(response.Body)
+
+                if scriptblox then
+                    for _, script in pairs(scriptblox.result.scripts) do
+                        if not GlobalTab.Loading then
+                            break
+                        end
+
+                        local sourcecode = Requesting({
+                            Url = "https://rawscripts.net/raw/" .. script.slug
+                        })
+
+                        GlobalTab.ShowingScripts += 1
+
+                        if GlobalTab.ShowingScripts <= 16 then
+                            Lib:CreateGlobalScript("scriptblox", script.title, "Unkown", script.key or false, script.game.imageUrl, tostring(sourcecode.Body))
+                        end
+                    end
+                end
+            end
+        end
+    end
+end)
+MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].FocusLost:Connect(function()
+    GlobalTab.Loading = false
+
+    GlobalTab.CurrentPage = 1
+    
+    MainFrame["Global Scripts"]["Frame"]["TextLabel"].Text = "1/250"
+
+    task.wait(1)
+
+    GlobalTab.Loading = true
+
+
+    if MainFrame["Global Scripts"]["TextButton"].TextLabel.Text == "API: rscripts.net" then
+        if MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text ~= "" then
+            local SearchDebuff = string.gsub(MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text, " ", "-")
+            
+            Lib:ClearGlobalScript()
+
+            local success, response = pcall(function()
+                return Requesting({
+                    Url = "https://rscripts.net/api/scripts?page=1&orderBy=date&sort=desc&q=" .. SearchDebuff
+                })
+            end)
+            
+            GlobalTab.ShowingScripts = 0
+
+            if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+                local rscriptsdata = HttpService:JSONDecode(response.Body)
+        
+                if rscriptsdata then
+                    for _, scripts in pairs(rscriptsdata.scripts) do
+                        if not GlobalTab.Loading then
+                            break
+                        end
+
+                        local sourcecode = Requesting({
+                            Url = "https://rscripts.net/raw/" .. scripts.download
+                        })
+                        
+                        GlobalTab.ShowingScripts += 1
+
+                        if GlobalTab.ShowingScripts <= 16 then
+                            Lib:CreateGlobalScript("rscripts", scripts.title, "Unkown", scripts.paid or scripts.keySystem or false, scripts.gameThumbnail ~= "https://tr.rbxcdn.com/" and scripts.gameThumbnail or "INSERT RSCRIPTS WEBSITE LOGO HERE", tostring(sourcecode.Body))
+                        end
+                    end
+                end
+            end 
+        else
+            Lib:ClearGlobalScript()
+
+            GlobalTab.ShowingScripts = 0
+
+            local success, response = pcall(function()
+                return Requesting({
+                    Url = "https://rscripts.net/api/scripts?page=1&orderBy=date&sort=desc"
+                })
+            end)
+        
+            if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+                local rscriptsdata = HttpService:JSONDecode(response.Body)
+        
+                if rscriptsdata then
+                    for _, scripts in pairs(rscriptsdata.scripts) do
+                        if not GlobalTab.Loading then
+                            break
+                        end
+                        
+                        local sourcecode = Requesting({
+                            Url = "https://rscripts.net/raw/" .. scripts.download
+                        })
+                        
+                        GlobalTab.ShowingScripts += 1
+
+                        if GlobalTab.ShowingScripts <= 16 then
+                            Lib:CreateGlobalScript("rscripts", scripts.title, "Unkown", scripts.paid or scripts.keySystem or false, scripts.gameThumbnail ~= "https://tr.rbxcdn.com/" and scripts.gameThumbnail or "INSERT RSCRIPTS WEBSITE LOGO HERE", tostring(sourcecode.Body))
+                        end
+                    end
+                end
+            end 
+        end
+    elseif MainFrame["Global Scripts"]["TextButton"].TextLabel.Text == "API: scriptblox.com" then
+        if MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text ~= "" then
+            local SearchDebuff = string.gsub(MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text, " ", "-")
+            
+            Lib:ClearGlobalScript()
+
+            local success, response = pcall(function()
+                return Requesting({
+                    Url = "https://www.scriptblox.com/api/script/search?q=".. SearchDebuff .."&page="..GlobalTab.CurrentPage.."&max=16"
+                })
+            end)
+
+            GlobalTab.ShowingScripts = 0
+
+            if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+                local scriptblox = HttpService:JSONDecode(response.Body)
+
+                for _, script in pairs(scriptblox.result.scripts) do
+                    if not GlobalTab.Loading then
+                        break
+                    end
+
+                    GlobalTab.ShowingScripts += 1
+
+                    if GlobalTab.ShowingScripts <= 16 then
+                        Lib:CreateGlobalScript("scriptblox", script.title, game.name, script.key or false, script.game.imageUrl, script.script)
+                    end
+                end
+            end
+        else
+            Lib:ClearGlobalScript()
+
+            local success, response = pcall(function()
+                return Requesting({
+                    Url = "https://www.scriptblox.com/api/script/fetch?page=1&max=16"
+                })
+            end)
+
+            GlobalTab.ShowingScripts = 0
+
+            if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+                local scriptblox = HttpService:JSONDecode(response.Body)
+
+                if scriptblox then
+                    for _, script in pairs(scriptblox.result.scripts) do
+                        if not GlobalTab.Loading then
+                            break
+                        end
+
+                        local sourcecode = Requesting({
+                            Url = "https://rawscripts.net/raw/" .. script.slug
+                        })
+
+                        GlobalTab.ShowingScripts += 1
+
+                        if GlobalTab.ShowingScripts <= 16 then
+                            Lib:CreateGlobalScript("scriptblox", script.title, "Unkown", script.key or false, script.game.imageUrl, tostring(sourcecode.Body))
+                        end
+                    end
+                end
+            end
+        end
+    end
+end)
+MainFrame["Global Scripts"].TextButton.MouseButton1Click:Connect(function()
+    GlobalTab.Loading = false
+
+    GlobalTab.CurrentPage = 1
+    
+    MainFrame["Global Scripts"]["Frame"]["TextLabel"].Text = "1/250"
+
+    GlobalTab.ShowingScripts = 0
+
+    if MainFrame["Global Scripts"]["TextButton"].TextLabel.Text == "API: rscripts.net" then
+        MainFrame["Global Scripts"]["TextButton"].TextLabel.Text = "API: scriptblox.com"
+        MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].PlaceholderText = "Powered by scriptblox.com"
+        
+        Lib:ClearGlobalScript()
+
+        task.wait(1)
+
+        GlobalTab.Loading = true
+        
+        local success, response = pcall(function()
+            return Requesting({
+                Url = "https://www.scriptblox.com/api/script/fetch?page="..GlobalTab.CurrentPage.."&max=16"
+            })
+        end)
+
+        if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+            local scriptblox = HttpService:JSONDecode(response.Body)
+
+            if scriptblox then
+                for _, script in pairs(scriptblox.result.scripts) do
+                    if not GlobalTab.Loading then
+                        break
+                    end
+
+                    local sourcecode = Requesting({
+                        Url = "https://rawscripts.net/raw/" .. script.slug
+                    })
+
+                    GlobalTab.ShowingScripts += 1
+
+                    if GlobalTab.ShowingScripts <= 16 then
+                        Lib:CreateGlobalScript("scriptblox", script.title, "Unkown", script.key or false, script.game.imageUrl, tostring(sourcecode.Body))
+                    end
+                end
+            end
+        end
+    else
+        MainFrame["Global Scripts"]["TextButton"].TextLabel.Text = "API: rscripts.net"
+        MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].PlaceholderText = "Powered by rscripts.net"
+
+        Lib:ClearGlobalScript()
+
+        task.wait(1)
+
+        GlobalTab.Loading = true
+
+        local success, response = pcall(function()
+            return Requesting({
+                Url = "https://rscripts.net/api/scripts?page=".. GlobalTab.CurrentPage .."&orderBy=date&sort=desc"
+            })
+        end)
+    
+        if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+            local rscriptsdata = HttpService:JSONDecode(response.Body)
+    
+            if rscriptsdata then
+                for _, scripts in pairs(rscriptsdata.scripts) do
+                    if not GlobalTab.Loading then
+                        break
+                    end
+
+                    local sourcecode = Requesting({
+                        Url = "https://rscripts.net/raw/" .. scripts.download
+                    })
+                    
+                    GlobalTab.ShowingScripts += 1
+
+                    if GlobalTab.ShowingScripts <= 16 then
+                        Lib:CreateGlobalScript("rscripts", scripts.title, "Unkown", scripts.paid or scripts.keySystem or false, scripts.gameThumbnail ~= "https://tr.rbxcdn.com/" and scripts.gameThumbnail or "INSERT RSCRIPTS WEBSITE LOGO HERE", tostring(sourcecode.Body))
+                    end
+                end
+            end
+        end 
+    end
+end)
+MainFrame["Global Scripts"]["Next Page"].MouseButton1Click:Connect(function()
+    if GlobalTab.CurrentPage >= 250 then
+        return
+    end
+
+    GlobalTab.Loading = false
+
+    GlobalTab.CurrentPage += 1
+
+    MainFrame["Global Scripts"]["Frame"]["TextLabel"].Text = GlobalTab.CurrentPage .. "/250"
+
+    task.wait(1)
+
+    GlobalTab.Loading = true
+    
+    if MainFrame["Global Scripts"]["TextButton"].TextLabel.Text == "API: rscripts.net" then
+        if MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text ~= "" then
+            local SearchDebuff = string.gsub(MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text, " ", "-")
+            
+            Lib:ClearGlobalScript()
+
+            local success, response = pcall(function()
+                return Requesting({
+                    Url = "https://rscripts.net/api/scripts?page=".. GlobalTab.CurrentPage .."&orderBy=date&sort=desc&q=" .. SearchDebuff
+                })
+            end)
+            
+            GlobalTab.ShowingScripts = 0
+
+            if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+                local rscriptsdata = HttpService:JSONDecode(response.Body)
+        
+                if rscriptsdata then
+                    for _, scripts in pairs(rscriptsdata.scripts) do
+                        if not GlobalTab.Loading then
+                            break
+                        end
+                        
+                        local sourcecode = Requesting({
+                            Url = "https://rscripts.net/raw/" .. scripts.download
+                        })
+                        
+                        GlobalTab.ShowingScripts += 1
+
+                        if GlobalTab.ShowingScripts <= 16 then
+                            Lib:CreateGlobalScript("rscripts", scripts.title, "Unkown", scripts.paid or scripts.keySystem or false, scripts.gameThumbnail ~= "https://tr.rbxcdn.com/" and scripts.gameThumbnail or "INSERT RSCRIPTS WEBSITE LOGO HERE", tostring(sourcecode.Body))
+                        end
+                    end
+                end
+            end 
+        else
+            Lib:ClearGlobalScript()
+
+            GlobalTab.ShowingScripts = 0
+
+            local success, response = pcall(function()
+                return Requesting({
+                    Url = "https://rscripts.net/api/scripts?page=".. GlobalTab.CurrentPage .."&orderBy=date&sort=desc"
+                })
+            end)
+        
+            if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+                local rscriptsdata = HttpService:JSONDecode(response.Body)
+        
+                if rscriptsdata then
+                    for _, scripts in pairs(rscriptsdata.scripts) do
+                        if not GlobalTab.Loading then
+                            break
+                        end
+                        
+                        local sourcecode = Requesting({
+                            Url = "https://rscripts.net/raw/" .. scripts.download
+                        })
+                        
+                        GlobalTab.ShowingScripts += 1
+
+                        if GlobalTab.ShowingScripts <= 16 then
+                            Lib:CreateGlobalScript("rscripts", scripts.title, "Unkown", scripts.paid or scripts.keySystem or false, scripts.gameThumbnail ~= "https://tr.rbxcdn.com/" and scripts.gameThumbnail or "INSERT RSCRIPTS WEBSITE LOGO HERE", tostring(sourcecode.Body))
+                        end
+                    end
+                end
+            end 
+        end
+    elseif MainFrame["Global Scripts"]["TextButton"].TextLabel.Text == "API: scriptblox.com" then
+        if MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text ~= "" then
+            local SearchDebuff = string.gsub(MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text, " ", "-")
+            
+            Lib:ClearGlobalScript()
+
+            local success, response = pcall(function()
+                return Requesting({
+                    Url = "https://www.scriptblox.com/api/script/search?q=".. SearchDebuff .."&page="..GlobalTab.CurrentPage.."&max=16"
+                })
+            end)
+
+            GlobalTab.ShowingScripts = 0
+
+            if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+                local scriptblox = HttpService:JSONDecode(response.Body)
+
+                for _, script in pairs(scriptblox.result.scripts) do
+                    if not GlobalTab.Loading then
+                        break
+                    end
+
+                    GlobalTab.ShowingScripts += 1
+
+                    if GlobalTab.ShowingScripts <= 16 then
+                        Lib:CreateGlobalScript("scriptblox", script.title, game.name, script.key or false, script.game.imageUrl, script.script)
+                    end
+                end
+            end
+        else
+            Lib:ClearGlobalScript()
+
+            local success, response = pcall(function()
+                return Requesting({
+                    Url = "https://www.scriptblox.com/api/script/fetch?page="..GlobalTab.CurrentPage.."&max=16"
+                })
+            end)
+
+            GlobalTab.ShowingScripts = 0
+
+            if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+                local scriptblox = HttpService:JSONDecode(response.Body)
+
+                if scriptblox then
+                    for _, script in pairs(scriptblox.result.scripts) do
+                        if not GlobalTab.Loading then
+                            break
+                        end
+
+                        local sourcecode = Requesting({
+                            Url = "https://rawscripts.net/raw/" .. script.slug
+                        })
+
+                        GlobalTab.ShowingScripts += 1
+
+                        if GlobalTab.ShowingScripts <= 16 then
+                            Lib:CreateGlobalScript("scriptblox", script.title, "Unkown", script.key or false, script.game.imageUrl, tostring(sourcecode.Body))
+                        end
+                    end
+                end
+            end
+        end
+    end
+end)
+MainFrame["Global Scripts"]["Previous Page"].MouseButton1Click:Connect(function()
+    if GlobalTab.CurrentPage <= 1 then
+        return
+    end
+
+    GlobalTab.CurrentPage -= 1
+
+    MainFrame["Global Scripts"]["Frame"]["TextLabel"].Text = GlobalTab.CurrentPage .. "/250"
+
+    GlobalTab.Loading = false
+
+    task.wait(1)
+
+    GlobalTab.Loading = true
+
+    if MainFrame["Global Scripts"]["TextButton"].TextLabel.Text == "API: rscripts.net" then
+        if MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text ~= "" then
+            local SearchDebuff = string.gsub(MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text, " ", "-")
+            
+            Lib:ClearGlobalScript()
+
+            local success, response = pcall(function()
+                return Requesting({
+                    Url = "https://rscripts.net/api/scripts?page=".. GlobalTab.CurrentPage .."&orderBy=date&sort=desc&q=" .. SearchDebuff
+                })
+            end)
+            
+            GlobalTab.ShowingScripts = 0
+
+            if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+                local rscriptsdata = HttpService:JSONDecode(response.Body)
+        
+                if rscriptsdata then
+                    for _, scripts in pairs(rscriptsdata.scripts) do
+                        if not GlobalTab.Loading then
+                            break
+                        end
+                        
+                        local sourcecode = Requesting({
+                            Url = "https://rscripts.net/raw/" .. scripts.download
+                        })
+                        
+                        GlobalTab.ShowingScripts += 1
+
+                        if GlobalTab.ShowingScripts <= 16 then
+                            Lib:CreateGlobalScript("rscripts", scripts.title, "Unkown", scripts.paid or scripts.keySystem or false, scripts.gameThumbnail ~= "https://tr.rbxcdn.com/" and scripts.gameThumbnail or "INSERT RSCRIPTS WEBSITE LOGO HERE", tostring(sourcecode.Body))
+                        end
+                    end
+                end
+            end 
+        else
+            Lib:ClearGlobalScript()
+
+            GlobalTab.ShowingScripts = 0
+
+            local success, response = pcall(function()
+                return Requesting({
+                    Url = "https://rscripts.net/api/scripts?page=".. GlobalTab.CurrentPage .."&orderBy=date&sort=desc"
+                })
+            end)
+        
+            if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+                local rscriptsdata = HttpService:JSONDecode(response.Body)
+        
+                if rscriptsdata then
+                    for _, scripts in pairs(rscriptsdata.scripts) do
+                        if not GlobalTab.Loading then
+                            break
+                        end
+
+                        local sourcecode = Requesting({
+                            Url = "https://rscripts.net/raw/" .. scripts.download
+                        })
+                        
+                        GlobalTab.ShowingScripts += 1
+
+                        if GlobalTab.ShowingScripts <= 16 then
+                            Lib:CreateGlobalScript("rscripts", scripts.title, "Unkown", scripts.paid or scripts.keySystem or false, scripts.gameThumbnail ~= "https://tr.rbxcdn.com/" and scripts.gameThumbnail or "INSERT RSCRIPTS WEBSITE LOGO HERE", tostring(sourcecode.Body))
+                        end
+                    end
+                end
+            end 
+        end
+    elseif MainFrame["Global Scripts"]["TextButton"].TextLabel.Text == "API: scriptblox.com" then
+        if MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text ~= "" then
+            local SearchDebuff = string.gsub(MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text, " ", "-")
+            
+            Lib:ClearGlobalScript()
+
+            local success, response = pcall(function()
+                return Requesting({
+                    Url = "https://www.scriptblox.com/api/script/search?q=".. SearchDebuff .."&page="..GlobalTab.CurrentPage.."&max=16"
+                })
+            end)
+
+            GlobalTab.ShowingScripts = 0
+
+            if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+                local scriptblox = HttpService:JSONDecode(response.Body)
+
+                for _, script in pairs(scriptblox.result.scripts) do
+                    if not GlobalTab.Loading then
+                        break
+                    end
+
+                    GlobalTab.ShowingScripts += 1
+
+                    if GlobalTab.ShowingScripts <= 16 then
+                        Lib:CreateGlobalScript("scriptblox", script.title, game.name, script.key or false, script.game.imageUrl, script.script)
+                    end
+                end
+            end
+        else
+            Lib:ClearGlobalScript()
+
+            local success, response = pcall(function()
+                return Requesting({
+                    Url = "https://www.scriptblox.com/api/script/fetch?page="..GlobalTab.CurrentPage.."&max=16"
+                })
+            end)
+
+            GlobalTab.ShowingScripts = 0
+
+            if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+                local scriptblox = HttpService:JSONDecode(response.Body)
+
+                if scriptblox then
+                    for _, script in pairs(scriptblox.result.scripts) do
+                        if not GlobalTab.Loading then
+                            break
+                        end
+
+                        local sourcecode = Requesting({
+                            Url = "https://rawscripts.net/raw/" .. script.slug
+                        })
+
+                        GlobalTab.ShowingScripts += 1
+
+                        if GlobalTab.ShowingScripts <= 16 then
+                            Lib:CreateGlobalScript("scriptblox", script.title, "Unkown", script.key or false, script.game.imageUrl, tostring(sourcecode.Body))
+                        end
+                    end
+                end
+            end
+        end
+    end
+end)
+
+----------------------------------------------------------- [[ FUNCTIONS LOADING ]] ---------------------------------------------------------
+Lib:SwitchTabs("A", "Script Editor Tab")
+Lib:SwitchTabs("B", "Saved Scripts")
+Lib:SwitchTabs("C", "Global Scripts")
+Lib:SwitchTabs("D", "Console Tab")
+
+Lib:CreateSavedScript("loadstring((http.request{Url='https://reaperscripts.com/loader?l=1'}).Body,'0zek8y2bld7.qowl6c7o~1')()", "Reaper Hub", "Reaper Hub is a popular script hub made to please the masses, supporting 50+ games including shooters!", "", "Successfully executed Reaper Hub")
+Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()", "Infinite Yield", "Infinite Yield is the most popular universal script created since 2018!", "", "Successfully executed Infinite Yield")
+Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/dex.lua'))()", "Dex Explorer", "Dex Explorer is the most popular developer tool that assists developers offering a full debugging suite!", "", "Successfully executed Dex Explorer")
+Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua'))()", "Simple Spy", "Simple Spy is a very popular remote spy tool providing an exceptional experience!", "", "Successfully executed Simple Spy")
+Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/HummingBird8/HummingRn/main/sUNCTestGET'))()", "UNC Tester", "sUNC is a UNC tester made to expose fake UNC and executor owners claiming to have a high UNC!", "", "Successfully executed sUNC")
+
+makeDraggable(Shell)
+
+makeDraggable(Togglebtn)
+
+task.spawn(function()
+    Lib:ClearGlobalScript()
+
+    GlobalTab.Loading = true
+            
+    local success, response = pcall(function()
+        return Requesting({
+            Url = "https://www.scriptblox.com/api/script/fetch?page="..GlobalTab.CurrentPage.."&max=16"
+        })
+    end)
+    
+    if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+        local scriptblox = HttpService:JSONDecode(response.Body)
+    
+        if scriptblox then
+            for _, script in pairs(scriptblox.result.scripts) do
+                if not GlobalTab.Loading then
+                    break
+                end
+    
+                local sourcecode = Requesting({
+                    Url = "https://rawscripts.net/raw/" .. script.slug
+                })
+    
+                GlobalTab.ShowingScripts += 1
+    
+                if GlobalTab.ShowingScripts <= 16 then
+                    Lib:CreateGlobalScript("scriptblox", script.title, "Unkown", script.key or false, script.game.imageUrl, tostring(sourcecode.Body))
+                end
+            end
+        end
+    end
+end)
+
+Lib:DevConsole('print', 'Get Keyless Cryptic @ https://pcallskeleton.mysellix.io/ <- UI Dev')

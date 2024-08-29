@@ -2624,8 +2624,10 @@ end)
 
 --------------------------------------------------------- [[ Implementing Save Features ]] ---------------------------------------------------------
 
-if Database["Tabs"]["Tab1"] ~= nil and type(HttpService:JSONDecode(Database["Tabs"]["Tab1"])) == "string" then
-    MainFrame["Script Editor Tab"]["Tabs"].ScrollingFrame.Scriptbox.Text = tostring(Database["Tabs"]["Tab1"])
+local vpr = HttpService:JSONDecode(Database["Tabs"]["Tab1"])
+
+if vpr ~= nil and type(vpr) == "string" then
+    MainFrame["Script Editor Tab"]["Tabs"].ScrollingFrame.Scriptbox.Text = tostring(vpr)
 end
 
 --------------------------------------------------------- [[ CODING TAB ]] ---------------------------------------------------------

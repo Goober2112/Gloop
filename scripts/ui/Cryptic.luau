@@ -179,6 +179,11 @@ local CrypticsUniqueDesign = {
 	Notifier = Instance.new("Frame"),
 	UIListLayout_4 = Instance.new("UIListLayout"),
 	UIPadding_4 = Instance.new("UIPadding"),
+	Notification = Instance.new("Frame"),
+	TextLabel_14 = Instance.new("TextLabel"),
+	UICorner_37 = Instance.new("UICorner"),
+	UICorner_38 = Instance.new("UICorner"),
+	UIGradient_27 = Instance.new("UIGradient"),
 	Hidden = Instance.new("Frame"),
 	Hidden_2 = Instance.new("Frame"),
 	Hidden_3 = Instance.new("Frame"),
@@ -198,11 +203,10 @@ local CrypticsUniqueDesign = {
 	Toggle = Instance.new("TextButton"),
 	Frame_17 = Instance.new("Frame"),
 	ImageLabel_19 = Instance.new("ImageLabel"),
-	UIGradient_27 = Instance.new("UIGradient"),
-	UICorner_37 = Instance.new("UICorner"),
-	UICorner_38 = Instance.new("UICorner"),
+	UIGradient_28 = Instance.new("UIGradient"),
+	UICorner_39 = Instance.new("UICorner"),
+	UICorner_40 = Instance.new("UICorner"),
 }
-
 CrypticsUniqueDesign.CrypticsUniqueDesign.Name = "Cryptics 'Unique' Design"
 CrypticsUniqueDesign.CrypticsUniqueDesign.Parent = game.CoreGui
 CrypticsUniqueDesign.CrypticsUniqueDesign.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -262,6 +266,7 @@ CrypticsUniqueDesign.ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 CrypticsUniqueDesign.ScrollingFrame.BorderSizePixel = 0
 CrypticsUniqueDesign.ScrollingFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
 CrypticsUniqueDesign.ScrollingFrame.Size = UDim2.new(1, -6, 1, -6)
+CrypticsUniqueDesign.ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
 CrypticsUniqueDesign.ScrollingFrame.ScrollBarThickness = 2
 
 CrypticsUniqueDesign.Scriptbox.Name = "Scriptbox"
@@ -281,7 +286,7 @@ CrypticsUniqueDesign.Scriptbox.PlaceholderColor3 = Color3.fromRGB(129, 129, 129)
 CrypticsUniqueDesign.Scriptbox.PlaceholderText = "-- print('A Cryptic Hello!')"
 CrypticsUniqueDesign.Scriptbox.Text = ""
 CrypticsUniqueDesign.Scriptbox.TextColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.Scriptbox.TextSize = 13.000
+CrypticsUniqueDesign.Scriptbox.TextSize = 15.000
 CrypticsUniqueDesign.Scriptbox.TextXAlignment = Enum.TextXAlignment.Left
 CrypticsUniqueDesign.Scriptbox.TextYAlignment = Enum.TextYAlignment.Top
 
@@ -1670,12 +1675,13 @@ CrypticsUniqueDesign.Subtitle.TextWrapped = true
 
 CrypticsUniqueDesign.Notifier.Name = "Notifier"
 CrypticsUniqueDesign.Notifier.Parent = CrypticsUniqueDesign.CrypticsUniqueDesign
+CrypticsUniqueDesign.Notifier.AnchorPoint = Vector2.new(0, 0.5)
 CrypticsUniqueDesign.Notifier.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 CrypticsUniqueDesign.Notifier.BackgroundTransparency = 1.000
 CrypticsUniqueDesign.Notifier.BorderColor3 = Color3.fromRGB(0, 0, 0)
 CrypticsUniqueDesign.Notifier.BorderSizePixel = 0
-CrypticsUniqueDesign.Notifier.Position = UDim2.new(0.825340033, 0, 0, 0)
-CrypticsUniqueDesign.Notifier.Size = UDim2.new(0.169974729, 0, 1, 0)
+CrypticsUniqueDesign.Notifier.Position = UDim2.new(0.824999988, 0, 0.5, 0)
+CrypticsUniqueDesign.Notifier.Size = UDim2.new(0.174999997, 0, 1, 0)
 
 CrypticsUniqueDesign.UIListLayout_4.Parent = CrypticsUniqueDesign.Notifier
 CrypticsUniqueDesign.UIListLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
@@ -1684,6 +1690,38 @@ CrypticsUniqueDesign.UIListLayout_4.Padding = UDim.new(0.00499999989, 0)
 
 CrypticsUniqueDesign.UIPadding_4.Parent = CrypticsUniqueDesign.Notifier
 CrypticsUniqueDesign.UIPadding_4.PaddingBottom = UDim.new(0.00499999989, 0)
+
+CrypticsUniqueDesign.Notification.Name = "Notification"
+CrypticsUniqueDesign.Notification.Parent = CrypticsUniqueDesign.Notifier
+CrypticsUniqueDesign.Notification.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Notification.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Notification.BorderSizePixel = 0
+CrypticsUniqueDesign.Notification.Size = UDim2.new(1, 0, 0.0399999991, 0)
+
+CrypticsUniqueDesign.TextLabel_14.Parent = CrypticsUniqueDesign.Notification
+CrypticsUniqueDesign.TextLabel_14.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.TextLabel_14.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+CrypticsUniqueDesign.TextLabel_14.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_14.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_14.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_14.Position = UDim2.new(0.5, 0, 0.527917266, 0)
+CrypticsUniqueDesign.TextLabel_14.Size = UDim2.new(1, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_14.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_14.Text = "Mew"
+CrypticsUniqueDesign.TextLabel_14.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_14.TextScaled = true
+CrypticsUniqueDesign.TextLabel_14.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_14.TextWrapped = true
+
+CrypticsUniqueDesign.UICorner_37.CornerRadius = UDim.new(0.100000001, 0)
+CrypticsUniqueDesign.UICorner_37.Parent = CrypticsUniqueDesign.TextLabel_14
+
+CrypticsUniqueDesign.UICorner_38.CornerRadius = UDim.new(0.100000001, 0)
+CrypticsUniqueDesign.UICorner_38.Parent = CrypticsUniqueDesign.Notification
+
+CrypticsUniqueDesign.UIGradient_27.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+CrypticsUniqueDesign.UIGradient_27.Rotation = 81
+CrypticsUniqueDesign.UIGradient_27.Parent = CrypticsUniqueDesign.Notification
 
 CrypticsUniqueDesign.Hidden.Name = "Hidden"
 CrypticsUniqueDesign.Hidden.Parent = CrypticsUniqueDesign.CrypticsUniqueDesign
@@ -1847,15 +1885,15 @@ CrypticsUniqueDesign.ImageLabel_19.Size = UDim2.new(0.800000012, 0, 0.800000012,
 CrypticsUniqueDesign.ImageLabel_19.ZIndex = 3
 CrypticsUniqueDesign.ImageLabel_19.Image = "rbxassetid://19005999590"
 
-CrypticsUniqueDesign.UIGradient_27.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
-CrypticsUniqueDesign.UIGradient_27.Rotation = 92
-CrypticsUniqueDesign.UIGradient_27.Parent = CrypticsUniqueDesign.Frame_17
+CrypticsUniqueDesign.UIGradient_28.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
+CrypticsUniqueDesign.UIGradient_28.Rotation = 92
+CrypticsUniqueDesign.UIGradient_28.Parent = CrypticsUniqueDesign.Frame_17
 
-CrypticsUniqueDesign.UICorner_37.CornerRadius = UDim.new(0.140000001, 0)
-CrypticsUniqueDesign.UICorner_37.Parent = CrypticsUniqueDesign.Frame_17
+CrypticsUniqueDesign.UICorner_39.CornerRadius = UDim.new(0.140000001, 0)
+CrypticsUniqueDesign.UICorner_39.Parent = CrypticsUniqueDesign.Frame_17
 
-CrypticsUniqueDesign.UICorner_38.CornerRadius = UDim.new(0.151999995, 0)
-CrypticsUniqueDesign.UICorner_38.Parent = CrypticsUniqueDesign.Toggle
+CrypticsUniqueDesign.UICorner_40.CornerRadius = UDim.new(0.151999995, 0)
+CrypticsUniqueDesign.UICorner_40.Parent = CrypticsUniqueDesign.Toggle
 
 local Lib = {}
 local NotificationSystem = {}
@@ -3374,11 +3412,10 @@ Lib:SwitchTabs("B", "Saved Scripts")
 Lib:SwitchTabs("C", "Global Scripts")
 Lib:SwitchTabs("D", "Console Tab")
 
-Lib:CreateSavedScript("loadstring((http.request{Url='https://reaperscripts.com/loader?l=1'}).Body,'0zek8y2bld7.qowl6c7o~1')()", "Reaper Hub", "Reaper Hub is a popular script hub made to please the masses, supporting 50+ games including shooters!", "", "Successfully executed Reaper Hub")
-Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()", "Infinite Yield", "Infinite Yield is the most popular universal script created since 2018!", "", "Successfully executed Infinite Yield")
-Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/dex.lua'))()", "Dex Explorer", "Dex Explorer is the most popular developer tool that assists developers offering a full debugging suite!", "", "Successfully executed Dex Explorer")
-Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua'))()", "Simple Spy", "Simple Spy is a very popular remote spy tool providing an exceptional experience!", "", "Successfully executed Simple Spy")
-Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/HummingBird8/HummingRn/main/sUNCTestGET'))()", "UNC Tester", "sUNC is a UNC tester made to expose fake UNC and executor owners claiming to have a high UNC!", "", "Successfully executed sUNC")
+Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()", "Infinite Yield", "Infinite Yield the most popular universal script created since 2018!", "", "Successfully executed IY")
+Lib:CreateSavedScript("loadstring((http.request{Url='https://reaperscripts.com/loader?l=1'}).Body,'0zek8y2bld7.qowl6c7o~1')()", "Reaper Hub", "A script hub", "", "Successfully executed Reaper Hub")
+Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/dex.lua'))()", "Dev Explorer", "A very popular Dex explorer to help build scripts and view parts in the game!", "", "Successfully executed Dev Explorer")
+Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua'))()", "Simple Spy", "A very popular remote spy tool", "", "Successfully executed Simple Spy")
 
 makeDraggable(Shell)
 
@@ -3418,4 +3455,4 @@ task.spawn(function()
     end
 end)
 
-Lib:DevConsole('print', 'Get Keyless Cryptic @ https://pcallskeleton.mysellix.io/ (official reseller)')
+Lib:DevConsole('print', 'Get Keyless Cryptic @ https://pcallskeleton.mysellix.io/ <- UI Dev')

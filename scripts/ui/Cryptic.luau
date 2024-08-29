@@ -8,6 +8,7 @@ local CrypticsUniqueDesign = {
 	Tabs = Instance.new("Frame"),
 	ScrollingFrame = Instance.new("ScrollingFrame"),
 	Scriptbox = Instance.new("TextBox"),
+	UITextSizeConstraint = Instance.new("UITextSizeConstraint"),
 	ScriptingButtons = Instance.new("Frame"),
 	UIListLayout = Instance.new("UIListLayout"),
 	Execute = Instance.new("TextButton"),
@@ -176,6 +177,7 @@ local CrypticsUniqueDesign = {
 	UISizeConstraint_3 = Instance.new("UISizeConstraint"),
 	UIGradient_26 = Instance.new("UIGradient"),
 	Subtitle = Instance.new("TextLabel"),
+	UIScale = Instance.new("UIScale"),
 	Notifier = Instance.new("Frame"),
 	UIListLayout_4 = Instance.new("UIListLayout"),
 	UIPadding_4 = Instance.new("UIPadding"),
@@ -203,7 +205,7 @@ local CrypticsUniqueDesign = {
 	UICorner_38 = Instance.new("UICorner"),
 }
 
-CrypticsUniqueDesign.CrypticsUniqueDesign.Name = "Cryptics 'Unique' Design"
+CrypticsUniqueDesign.CrypticsUniqueDesign.Name = math.random(1, 99999999)
 CrypticsUniqueDesign.CrypticsUniqueDesign.Parent = game.CoreGui
 CrypticsUniqueDesign.CrypticsUniqueDesign.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -282,9 +284,15 @@ CrypticsUniqueDesign.Scriptbox.PlaceholderColor3 = Color3.fromRGB(129, 129, 129)
 CrypticsUniqueDesign.Scriptbox.PlaceholderText = "-- print('A Cryptic Hello!')"
 CrypticsUniqueDesign.Scriptbox.Text = ""
 CrypticsUniqueDesign.Scriptbox.TextColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.Scriptbox.TextSize = 17.000
+CrypticsUniqueDesign.Scriptbox.TextScaled = true
+CrypticsUniqueDesign.Scriptbox.TextSize = 20.000
+CrypticsUniqueDesign.Scriptbox.TextWrapped = true
 CrypticsUniqueDesign.Scriptbox.TextXAlignment = Enum.TextXAlignment.Left
 CrypticsUniqueDesign.Scriptbox.TextYAlignment = Enum.TextYAlignment.Top
+
+CrypticsUniqueDesign.UITextSizeConstraint.Parent = CrypticsUniqueDesign.Scriptbox
+CrypticsUniqueDesign.UITextSizeConstraint.MaxTextSize = 20
+CrypticsUniqueDesign.UITextSizeConstraint.MinTextSize = 15
 
 CrypticsUniqueDesign.ScriptingButtons.Name = "Scripting Buttons"
 CrypticsUniqueDesign.ScriptingButtons.Parent = CrypticsUniqueDesign.ScriptEditorTab
@@ -1668,6 +1676,8 @@ CrypticsUniqueDesign.Subtitle.TextScaled = true
 CrypticsUniqueDesign.Subtitle.TextSize = 14.000
 CrypticsUniqueDesign.Subtitle.TextWrapped = true
 
+CrypticsUniqueDesign.UIScale.Parent = CrypticsUniqueDesign.MainShell
+
 CrypticsUniqueDesign.Notifier.Name = "Notifier"
 CrypticsUniqueDesign.Notifier.Parent = CrypticsUniqueDesign.CrypticsUniqueDesign
 CrypticsUniqueDesign.Notifier.AnchorPoint = Vector2.new(0, 0.5)
@@ -2573,8 +2583,6 @@ function Lib:Savedata()
         Lib:DataChecking()
 
         writefile("Cryptic/Tabs/Tab1.cryptic", HttpService:JSONEncode(Database["Tabs"]["Tab1"]))
-
-        print(HttpService:JSONEncode(Database["Tabs"]))
     end
 end
 --------------------------------------------------------- [[ Random Stuff ]] ---------------------------------------------------------
@@ -2594,6 +2602,20 @@ Shell.Title.RichText = true
 Shell.Subtitle.RichText = true
 
 Lib:DataChecking()
+
+pcall(function()
+    game:GetService("LogService").MessageOut:Connect(function(message: string, messageType: Enum.MessageType) 
+        if messageType == Enum.MessageType.MessageOutput then
+            Lib:DevConsole('print', message)
+        elseif messageType == Enum.MessageType.MessageInfo then
+            Lib:DevConsole('print', message)
+        elseif messageType == Enum.MessageType.MessageError then
+            Lib:DevConsole('error', message)
+        elseif messageType == Enum.MessageType.MessageWarning then
+            Lib:DevConsole('warn', message)
+        end
+    end)
+end)
 
 --------------------------------------------------------- [[ Implementing Save Features ]] ---------------------------------------------------------
 
@@ -3436,10 +3458,10 @@ Lib:SwitchTabs("B", "Saved Scripts")
 Lib:SwitchTabs("C", "Global Scripts")
 Lib:SwitchTabs("D", "Console Tab")
 
-Lib:CreateSavedScript("loadstring((http.request{Url='https://reaperscripts.com/loader?l=1'}).Body,'0zek8y2bld7.qowl6c7o~1')()", "Reaper Hub", "A script hub", "", "Successfully executed Reaper Hub")
-Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua'))()", "Simple Spy", "A very popular remote spy tool", "", "Successfully executed Simple Spy")
-Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/dex.lua'))()", "Dev Explorer", "A very popular Dex explorer to help build scripts and view parts in the game!", "", "Successfully executed Dev Explorer")
-Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()", "Infinite Yield", "Infinite Yield the most popular universal script created since 2018!", "", "Successfully executed IY")
+Lib:CreateSavedScript("loadstring((http.request{Url='https://reaperscripts.com/loader?l=1'}).Body,'0zek8y2bld7.qowl6c7o~1')()", "Reaper Hub", "Reaper Hub is a popular script hub made to please the masses, supporting 50+ games including shooters!", "", "Successfully executed Reaper Hub")
+Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()", "Infinite Yield", "Infinite Yield is the most popular universal script created since 2018!", "", "Successfully executed Infinite Yield")
+Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/dex.lua'))()", "Dex Explorer", "Dex Explorer is the most popular developer tool that assists developers offering a full debugging suite!", "", "Successfully executed Dex Explorer")
+Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua'))()", "Simple Spy", "Simple Spy is a very popular remote spy tool providing an exceptional experience!", "", "Successfully executed Simple Spy")
 Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/HummingBird8/HummingRn/main/sUNCTestGET'))()", "UNC Tester", "sUNC is a UNC tester made to expose fake UNC and executor owners claiming to have a high UNC!", "", "Successfully executed sUNC")
 
 makeDraggable(Shell)

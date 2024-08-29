@@ -123,30 +123,29 @@ local CrypticsUniqueDesign = {
 	TextButton_2 = Instance.new("TextButton"),
 	ImageLabel_11 = Instance.new("ImageLabel"),
 	Title_4 = Instance.new("TextLabel"),
-	Title_5 = Instance.new("TextLabel"),
 	SideShell = Instance.new("Frame"),
 	UICorner_20 = Instance.new("UICorner"),
 	Frame_9 = Instance.new("Frame"),
 	UICorner_21 = Instance.new("UICorner"),
-	ScriptEditorTab_2 = Instance.new("TextButton"),
+	A = Instance.new("TextButton"),
 	UICorner_22 = Instance.new("UICorner"),
 	Frame_10 = Instance.new("Frame"),
 	UICorner_23 = Instance.new("UICorner"),
 	ImageLabel_12 = Instance.new("ImageLabel"),
 	UIGradient_20 = Instance.new("UIGradient"),
-	SavedScripts_2 = Instance.new("TextButton"),
+	B = Instance.new("TextButton"),
 	UICorner_24 = Instance.new("UICorner"),
 	Frame_11 = Instance.new("Frame"),
 	UICorner_25 = Instance.new("UICorner"),
 	ImageLabel_13 = Instance.new("ImageLabel"),
 	UIGradient_21 = Instance.new("UIGradient"),
-	GlobalScripts_2 = Instance.new("TextButton"),
+	C = Instance.new("TextButton"),
 	UICorner_26 = Instance.new("UICorner"),
 	Frame_12 = Instance.new("Frame"),
 	UICorner_27 = Instance.new("UICorner"),
 	ImageLabel_14 = Instance.new("ImageLabel"),
 	UIGradient_22 = Instance.new("UIGradient"),
-	ConsoleTab_2 = Instance.new("TextButton"),
+	D = Instance.new("TextButton"),
 	UICorner_28 = Instance.new("UICorner"),
 	Frame_13 = Instance.new("Frame"),
 	UICorner_29 = Instance.new("UICorner"),
@@ -176,6 +175,7 @@ local CrypticsUniqueDesign = {
 	UISizeConstraint_3 = Instance.new("UISizeConstraint"),
 	UICorner_36 = Instance.new("UICorner"),
 	UIGradient_26 = Instance.new("UIGradient"),
+	Subtitle = Instance.new("TextLabel"),
 	Notifier = Instance.new("Frame"),
 	UIListLayout_4 = Instance.new("UIListLayout"),
 	UIPadding_4 = Instance.new("UIPadding"),
@@ -202,6 +202,7 @@ local CrypticsUniqueDesign = {
 	UICorner_37 = Instance.new("UICorner"),
 	UICorner_38 = Instance.new("UICorner"),
 }
+
 CrypticsUniqueDesign.CrypticsUniqueDesign.Name = "Cryptics 'Unique' Design"
 CrypticsUniqueDesign.CrypticsUniqueDesign.Parent = game.CoreGui
 CrypticsUniqueDesign.CrypticsUniqueDesign.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -1252,7 +1253,7 @@ CrypticsUniqueDesign.TextLabel_13.BorderSizePixel = 0
 CrypticsUniqueDesign.TextLabel_13.Position = UDim2.new(0.5, 0, 0.5, 0)
 CrypticsUniqueDesign.TextLabel_13.Size = UDim2.new(0.959999979, 0, 0.939999998, 0)
 CrypticsUniqueDesign.TextLabel_13.Font = Enum.Font.Ubuntu
-CrypticsUniqueDesign.TextLabel_13.Text = "Version: 2.639.688"
+CrypticsUniqueDesign.TextLabel_13.Text = "1.0.638.610"
 CrypticsUniqueDesign.TextLabel_13.TextColor3 = Color3.fromRGB(255, 255, 255)
 CrypticsUniqueDesign.TextLabel_13.TextScaled = true
 CrypticsUniqueDesign.TextLabel_13.TextSize = 14.000
@@ -1295,32 +1296,15 @@ CrypticsUniqueDesign.Title_4.BackgroundColor3 = Color3.fromRGB(220, 225, 240)
 CrypticsUniqueDesign.Title_4.BackgroundTransparency = 1.000
 CrypticsUniqueDesign.Title_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
 CrypticsUniqueDesign.Title_4.BorderSizePixel = 0
-CrypticsUniqueDesign.Title_4.Position = UDim2.new(0.370587021, 0, 0.0571256429, 0)
-CrypticsUniqueDesign.Title_4.Size = UDim2.new(0.256600261, 0, 0.0814517811, 0)
+CrypticsUniqueDesign.Title_4.Position = UDim2.new(0.370586991, 0, 0.0453531928, 0)
+CrypticsUniqueDesign.Title_4.Size = UDim2.new(0.256600261, 0, 0.0721091554, 0)
 CrypticsUniqueDesign.Title_4.ZIndex = 3
-CrypticsUniqueDesign.Title_4.Font = Enum.Font.SourceSansBold
+CrypticsUniqueDesign.Title_4.Font = Enum.Font.Unknown
 CrypticsUniqueDesign.Title_4.Text = "Cryptic"
 CrypticsUniqueDesign.Title_4.TextColor3 = Color3.fromRGB(255, 255, 255)
 CrypticsUniqueDesign.Title_4.TextScaled = true
 CrypticsUniqueDesign.Title_4.TextSize = 14.000
 CrypticsUniqueDesign.Title_4.TextWrapped = true
-
-CrypticsUniqueDesign.Title_5.Name = "Title"
-CrypticsUniqueDesign.Title_5.Parent = CrypticsUniqueDesign.MainShell
-CrypticsUniqueDesign.Title_5.AnchorPoint = Vector2.new(0, 0.5)
-CrypticsUniqueDesign.Title_5.BackgroundColor3 = Color3.fromRGB(220, 225, 240)
-CrypticsUniqueDesign.Title_5.BackgroundTransparency = 1.000
-CrypticsUniqueDesign.Title_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.Title_5.BorderSizePixel = 0
-CrypticsUniqueDesign.Title_5.Position = UDim2.new(0.502856851, 0, 0.0933174714, 0)
-CrypticsUniqueDesign.Title_5.Size = UDim2.new(0.111830518, 0, 0.0316132158, 0)
-CrypticsUniqueDesign.Title_5.ZIndex = 3
-CrypticsUniqueDesign.Title_5.Font = Enum.Font.SourceSansBold
-CrypticsUniqueDesign.Title_5.Text = "Beta UI"
-CrypticsUniqueDesign.Title_5.TextColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.Title_5.TextScaled = true
-CrypticsUniqueDesign.Title_5.TextSize = 14.000
-CrypticsUniqueDesign.Title_5.TextWrapped = true
 
 CrypticsUniqueDesign.SideShell.Name = "SideShell"
 CrypticsUniqueDesign.SideShell.Parent = CrypticsUniqueDesign.MainShell
@@ -1346,24 +1330,24 @@ CrypticsUniqueDesign.Frame_9.ZIndex = 2
 CrypticsUniqueDesign.UICorner_21.CornerRadius = UDim.new(0, 4)
 CrypticsUniqueDesign.UICorner_21.Parent = CrypticsUniqueDesign.Frame_9
 
-CrypticsUniqueDesign.ScriptEditorTab_2.Name = "Script Editor Tab"
-CrypticsUniqueDesign.ScriptEditorTab_2.Parent = CrypticsUniqueDesign.Frame_9
-CrypticsUniqueDesign.ScriptEditorTab_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.ScriptEditorTab_2.BackgroundTransparency = 1.000
-CrypticsUniqueDesign.ScriptEditorTab_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.ScriptEditorTab_2.BorderSizePixel = 0
-CrypticsUniqueDesign.ScriptEditorTab_2.Position = UDim2.new(0.0208253805, 0, 0, 0)
-CrypticsUniqueDesign.ScriptEditorTab_2.Size = UDim2.new(0.899999976, 0, 0.115000002, 0)
-CrypticsUniqueDesign.ScriptEditorTab_2.ZIndex = 3
-CrypticsUniqueDesign.ScriptEditorTab_2.Font = Enum.Font.SourceSans
-CrypticsUniqueDesign.ScriptEditorTab_2.Text = ""
-CrypticsUniqueDesign.ScriptEditorTab_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.ScriptEditorTab_2.TextSize = 14.000
+CrypticsUniqueDesign.A.Name = "A"
+CrypticsUniqueDesign.A.Parent = CrypticsUniqueDesign.Frame_9
+CrypticsUniqueDesign.A.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.A.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.A.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.A.BorderSizePixel = 0
+CrypticsUniqueDesign.A.Position = UDim2.new(0.0208253805, 0, 0, 0)
+CrypticsUniqueDesign.A.Size = UDim2.new(0.899999976, 0, 0.115000002, 0)
+CrypticsUniqueDesign.A.ZIndex = 3
+CrypticsUniqueDesign.A.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.A.Text = ""
+CrypticsUniqueDesign.A.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.A.TextSize = 14.000
 
 CrypticsUniqueDesign.UICorner_22.CornerRadius = UDim.new(0, 2)
-CrypticsUniqueDesign.UICorner_22.Parent = CrypticsUniqueDesign.ScriptEditorTab_2
+CrypticsUniqueDesign.UICorner_22.Parent = CrypticsUniqueDesign.A
 
-CrypticsUniqueDesign.Frame_10.Parent = CrypticsUniqueDesign.ScriptEditorTab_2
+CrypticsUniqueDesign.Frame_10.Parent = CrypticsUniqueDesign.A
 CrypticsUniqueDesign.Frame_10.AnchorPoint = Vector2.new(0.5, 0.5)
 CrypticsUniqueDesign.Frame_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 CrypticsUniqueDesign.Frame_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -1388,23 +1372,23 @@ CrypticsUniqueDesign.UIGradient_20.Color = ColorSequence.new{ColorSequenceKeypoi
 CrypticsUniqueDesign.UIGradient_20.Rotation = 135
 CrypticsUniqueDesign.UIGradient_20.Parent = CrypticsUniqueDesign.Frame_10
 
-CrypticsUniqueDesign.SavedScripts_2.Name = "Saved Scripts"
-CrypticsUniqueDesign.SavedScripts_2.Parent = CrypticsUniqueDesign.Frame_9
-CrypticsUniqueDesign.SavedScripts_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.SavedScripts_2.BackgroundTransparency = 1.000
-CrypticsUniqueDesign.SavedScripts_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.SavedScripts_2.BorderSizePixel = 0
-CrypticsUniqueDesign.SavedScripts_2.Size = UDim2.new(0.899999976, 0, 0.115000002, 0)
-CrypticsUniqueDesign.SavedScripts_2.ZIndex = 3
-CrypticsUniqueDesign.SavedScripts_2.Font = Enum.Font.SourceSans
-CrypticsUniqueDesign.SavedScripts_2.Text = ""
-CrypticsUniqueDesign.SavedScripts_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.SavedScripts_2.TextSize = 14.000
+CrypticsUniqueDesign.B.Name = "B"
+CrypticsUniqueDesign.B.Parent = CrypticsUniqueDesign.Frame_9
+CrypticsUniqueDesign.B.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.B.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.B.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.B.BorderSizePixel = 0
+CrypticsUniqueDesign.B.Size = UDim2.new(0.899999976, 0, 0.115000002, 0)
+CrypticsUniqueDesign.B.ZIndex = 3
+CrypticsUniqueDesign.B.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.B.Text = ""
+CrypticsUniqueDesign.B.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.B.TextSize = 14.000
 
 CrypticsUniqueDesign.UICorner_24.CornerRadius = UDim.new(0, 2)
-CrypticsUniqueDesign.UICorner_24.Parent = CrypticsUniqueDesign.SavedScripts_2
+CrypticsUniqueDesign.UICorner_24.Parent = CrypticsUniqueDesign.B
 
-CrypticsUniqueDesign.Frame_11.Parent = CrypticsUniqueDesign.SavedScripts_2
+CrypticsUniqueDesign.Frame_11.Parent = CrypticsUniqueDesign.B
 CrypticsUniqueDesign.Frame_11.AnchorPoint = Vector2.new(0.5, 0.5)
 CrypticsUniqueDesign.Frame_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 CrypticsUniqueDesign.Frame_11.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -1429,23 +1413,23 @@ CrypticsUniqueDesign.UIGradient_21.Color = ColorSequence.new{ColorSequenceKeypoi
 CrypticsUniqueDesign.UIGradient_21.Rotation = 180
 CrypticsUniqueDesign.UIGradient_21.Parent = CrypticsUniqueDesign.Frame_11
 
-CrypticsUniqueDesign.GlobalScripts_2.Name = "Global Scripts"
-CrypticsUniqueDesign.GlobalScripts_2.Parent = CrypticsUniqueDesign.Frame_9
-CrypticsUniqueDesign.GlobalScripts_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.GlobalScripts_2.BackgroundTransparency = 1.000
-CrypticsUniqueDesign.GlobalScripts_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.GlobalScripts_2.BorderSizePixel = 0
-CrypticsUniqueDesign.GlobalScripts_2.Size = UDim2.new(0.899999976, 0, 0.115000002, 0)
-CrypticsUniqueDesign.GlobalScripts_2.ZIndex = 3
-CrypticsUniqueDesign.GlobalScripts_2.Font = Enum.Font.SourceSans
-CrypticsUniqueDesign.GlobalScripts_2.Text = ""
-CrypticsUniqueDesign.GlobalScripts_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.GlobalScripts_2.TextSize = 14.000
+CrypticsUniqueDesign.C.Name = "C"
+CrypticsUniqueDesign.C.Parent = CrypticsUniqueDesign.Frame_9
+CrypticsUniqueDesign.C.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.C.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.C.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.C.BorderSizePixel = 0
+CrypticsUniqueDesign.C.Size = UDim2.new(0.899999976, 0, 0.115000002, 0)
+CrypticsUniqueDesign.C.ZIndex = 3
+CrypticsUniqueDesign.C.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.C.Text = ""
+CrypticsUniqueDesign.C.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.C.TextSize = 14.000
 
 CrypticsUniqueDesign.UICorner_26.CornerRadius = UDim.new(0, 6)
-CrypticsUniqueDesign.UICorner_26.Parent = CrypticsUniqueDesign.GlobalScripts_2
+CrypticsUniqueDesign.UICorner_26.Parent = CrypticsUniqueDesign.C
 
-CrypticsUniqueDesign.Frame_12.Parent = CrypticsUniqueDesign.GlobalScripts_2
+CrypticsUniqueDesign.Frame_12.Parent = CrypticsUniqueDesign.C
 CrypticsUniqueDesign.Frame_12.AnchorPoint = Vector2.new(0.5, 0.5)
 CrypticsUniqueDesign.Frame_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 CrypticsUniqueDesign.Frame_12.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -1470,23 +1454,23 @@ CrypticsUniqueDesign.UIGradient_22.Color = ColorSequence.new{ColorSequenceKeypoi
 CrypticsUniqueDesign.UIGradient_22.Rotation = 180
 CrypticsUniqueDesign.UIGradient_22.Parent = CrypticsUniqueDesign.Frame_12
 
-CrypticsUniqueDesign.ConsoleTab_2.Name = "Console Tab"
-CrypticsUniqueDesign.ConsoleTab_2.Parent = CrypticsUniqueDesign.Frame_9
-CrypticsUniqueDesign.ConsoleTab_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.ConsoleTab_2.BackgroundTransparency = 1.000
-CrypticsUniqueDesign.ConsoleTab_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.ConsoleTab_2.BorderSizePixel = 0
-CrypticsUniqueDesign.ConsoleTab_2.Size = UDim2.new(0.899999976, 0, 0.115000002, 0)
-CrypticsUniqueDesign.ConsoleTab_2.ZIndex = 3
-CrypticsUniqueDesign.ConsoleTab_2.Font = Enum.Font.SourceSans
-CrypticsUniqueDesign.ConsoleTab_2.Text = ""
-CrypticsUniqueDesign.ConsoleTab_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.ConsoleTab_2.TextSize = 14.000
+CrypticsUniqueDesign.D.Name = "D"
+CrypticsUniqueDesign.D.Parent = CrypticsUniqueDesign.Frame_9
+CrypticsUniqueDesign.D.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.D.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.D.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.D.BorderSizePixel = 0
+CrypticsUniqueDesign.D.Size = UDim2.new(0.899999976, 0, 0.115000002, 0)
+CrypticsUniqueDesign.D.ZIndex = 3
+CrypticsUniqueDesign.D.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.D.Text = ""
+CrypticsUniqueDesign.D.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.D.TextSize = 14.000
 
 CrypticsUniqueDesign.UICorner_28.CornerRadius = UDim.new(0, 6)
-CrypticsUniqueDesign.UICorner_28.Parent = CrypticsUniqueDesign.ConsoleTab_2
+CrypticsUniqueDesign.UICorner_28.Parent = CrypticsUniqueDesign.D
 
-CrypticsUniqueDesign.Frame_13.Parent = CrypticsUniqueDesign.ConsoleTab_2
+CrypticsUniqueDesign.Frame_13.Parent = CrypticsUniqueDesign.D
 CrypticsUniqueDesign.Frame_13.AnchorPoint = Vector2.new(0.5, 0.5)
 CrypticsUniqueDesign.Frame_13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 CrypticsUniqueDesign.Frame_13.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -1666,6 +1650,23 @@ CrypticsUniqueDesign.UICorner_36.Parent = CrypticsUniqueDesign.Frame_16
 CrypticsUniqueDesign.UIGradient_26.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
 CrypticsUniqueDesign.UIGradient_26.Rotation = 180
 CrypticsUniqueDesign.UIGradient_26.Parent = CrypticsUniqueDesign.Frame_16
+
+CrypticsUniqueDesign.Subtitle.Name = "Subtitle"
+CrypticsUniqueDesign.Subtitle.Parent = CrypticsUniqueDesign.MainShell
+CrypticsUniqueDesign.Subtitle.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.Subtitle.BackgroundColor3 = Color3.fromRGB(220, 225, 240)
+CrypticsUniqueDesign.Subtitle.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.Subtitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.Subtitle.BorderSizePixel = 0
+CrypticsUniqueDesign.Subtitle.Position = UDim2.new(0.490036339, 0, 0.0961343795, 0)
+CrypticsUniqueDesign.Subtitle.Size = UDim2.new(0.111830518, 0, 0.0316132158, 0)
+CrypticsUniqueDesign.Subtitle.ZIndex = 3
+CrypticsUniqueDesign.Subtitle.Font = Enum.Font.Unknown
+CrypticsUniqueDesign.Subtitle.Text = "Beta UI"
+CrypticsUniqueDesign.Subtitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.Subtitle.TextScaled = true
+CrypticsUniqueDesign.Subtitle.TextSize = 14.000
+CrypticsUniqueDesign.Subtitle.TextWrapped = true
 
 CrypticsUniqueDesign.Notifier.Name = "Notifier"
 CrypticsUniqueDesign.Notifier.Parent = CrypticsUniqueDesign.CrypticsUniqueDesign
@@ -2011,8 +2012,8 @@ function Lib:CreateScriptTab()
 		Scriptbox:Destroy()
 	end)
 end
-function Lib:SwitchTabs(name: string)
-	Buttons.Frame[name].MouseButton1Click:Connect(function()
+function Lib:SwitchTabs(Button: string, name: string)
+	Buttons.Frame[Button].MouseButton1Click:Connect(function()
 		for _, tab in pairs(MainFrame:GetChildren()) do
 			if tab:IsA('Frame') then
 				tab.Visible = false
@@ -2084,7 +2085,7 @@ function Lib:CreateNotification(text: string, await: IntValue)
     local UICorner_2 = Instance.new("UICorner")
     local UIGradient = Instance.new("UIGradient")
 
-    Frame.Parent = Notifier
+    Frame.Parent = Notif
     Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Frame.BorderSizePixel = 0
@@ -2550,6 +2551,13 @@ Togglebtn.MouseButton1Click:Connect(function()
     Shell.Visible = not Shell.Visible
 end)
 
+Shell.Title.Text = "<b><i>Cryptic</i></b>"
+Shell.Subtitle.Text = "<b><i>Beta UI</i></b>"
+Shell.Version.Backdrop.TextLabel.Text = "Version: 2.639.688"
+
+Shell.Title.RichText = true
+Shell.Subtitle.RichText = true
+
 --------------------------------------------------------- [[ CODING TAB ]] ---------------------------------------------------------
 
 -- Execute the current shown tab [[ EXECUTE TAB ]]
@@ -2703,7 +2711,8 @@ MainFrame["Global Scripts"]["Search Bar"]["ImageButton"].MouseButton1Click:Conne
 
     GlobalTab.Loading = true
 
-    if MainFrame["Global Scripts"]["TextButton"].Text == "API: rscripts.net" then
+
+    if MainFrame["Global Scripts"]["TextButton"].TextLabel.Text == "API: rscripts.net" then
         if MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text ~= "" then
             local SearchDebuff = string.gsub(MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text, " ", "-")
             
@@ -2771,7 +2780,151 @@ MainFrame["Global Scripts"]["Search Bar"]["ImageButton"].MouseButton1Click:Conne
                 end
             end 
         end
-    elseif MainFrame["Global Scripts"]["TextButton"].Text == "API: scriptblox.com" then
+    elseif MainFrame["Global Scripts"]["TextButton"].TextLabel.Text == "API: scriptblox.com" then
+        if MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text ~= "" then
+            local SearchDebuff = string.gsub(MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text, " ", "-")
+            
+            Lib:ClearGlobalScript()
+
+            local success, response = pcall(function()
+                return Requesting({
+                    Url = "https://www.scriptblox.com/api/script/search?q=".. SearchDebuff .."&page="..GlobalTab.CurrentPage.."&max=16"
+                })
+            end)
+
+            GlobalTab.ShowingScripts = 0
+
+            if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+                local scriptblox = HttpService:JSONDecode(response.Body)
+
+                for _, script in pairs(scriptblox.result.scripts) do
+                    if not GlobalTab.Loading then
+                        break
+                    end
+
+                    GlobalTab.ShowingScripts += 1
+
+                    if GlobalTab.ShowingScripts <= 16 then
+                        Lib:CreateGlobalScript("scriptblox", script.title, game.name, script.key or false, script.game.imageUrl, script.script)
+                    end
+                end
+            end
+        else
+            Lib:ClearGlobalScript()
+
+            local success, response = pcall(function()
+                return Requesting({
+                    Url = "https://www.scriptblox.com/api/script/fetch?page=1&max=16"
+                })
+            end)
+
+            GlobalTab.ShowingScripts = 0
+
+            if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+                local scriptblox = HttpService:JSONDecode(response.Body)
+
+                if scriptblox then
+                    for _, script in pairs(scriptblox.result.scripts) do
+                        if not GlobalTab.Loading then
+                            break
+                        end
+
+                        local sourcecode = Requesting({
+                            Url = "https://rawscripts.net/raw/" .. script.slug
+                        })
+
+                        GlobalTab.ShowingScripts += 1
+
+                        if GlobalTab.ShowingScripts <= 16 then
+                            Lib:CreateGlobalScript("scriptblox", script.title, "Unkown", script.key or false, script.game.imageUrl, tostring(sourcecode.Body))
+                        end
+                    end
+                end
+            end
+        end
+    end
+end)
+MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].FocusLost:Connect(function()
+    GlobalTab.Loading = false
+
+    GlobalTab.CurrentPage = 1
+    
+    MainFrame["Global Scripts"]["Frame"]["TextLabel"].Text = "1/250"
+
+    task.wait(1)
+
+    GlobalTab.Loading = true
+
+
+    if MainFrame["Global Scripts"]["TextButton"].TextLabel.Text == "API: rscripts.net" then
+        if MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text ~= "" then
+            local SearchDebuff = string.gsub(MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text, " ", "-")
+            
+            Lib:ClearGlobalScript()
+
+            local success, response = pcall(function()
+                return Requesting({
+                    Url = "https://rscripts.net/api/scripts?page=1&orderBy=date&sort=desc&q=" .. SearchDebuff
+                })
+            end)
+            
+            GlobalTab.ShowingScripts = 0
+
+            if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+                local rscriptsdata = HttpService:JSONDecode(response.Body)
+        
+                if rscriptsdata then
+                    for _, scripts in pairs(rscriptsdata.scripts) do
+                        if not GlobalTab.Loading then
+                            break
+                        end
+
+                        local sourcecode = Requesting({
+                            Url = "https://rscripts.net/raw/" .. scripts.download
+                        })
+                        
+                        GlobalTab.ShowingScripts += 1
+
+                        if GlobalTab.ShowingScripts <= 16 then
+                            Lib:CreateGlobalScript("rscripts", scripts.title, "Unkown", scripts.paid or scripts.keySystem or false, scripts.gameThumbnail ~= "https://tr.rbxcdn.com/" and scripts.gameThumbnail or "INSERT RSCRIPTS WEBSITE LOGO HERE", tostring(sourcecode.Body))
+                        end
+                    end
+                end
+            end 
+        else
+            Lib:ClearGlobalScript()
+
+            GlobalTab.ShowingScripts = 0
+
+            local success, response = pcall(function()
+                return Requesting({
+                    Url = "https://rscripts.net/api/scripts?page=1&orderBy=date&sort=desc"
+                })
+            end)
+        
+            if success and response and GlobalTab.ShowingScripts <= 16 and GlobalTab.Loading then
+                local rscriptsdata = HttpService:JSONDecode(response.Body)
+        
+                if rscriptsdata then
+                    for _, scripts in pairs(rscriptsdata.scripts) do
+                        if not GlobalTab.Loading then
+                            break
+                        end
+                        
+                        local sourcecode = Requesting({
+                            Url = "https://rscripts.net/raw/" .. scripts.download
+                        })
+                        
+                        GlobalTab.ShowingScripts += 1
+
+                        if GlobalTab.ShowingScripts <= 16 then
+                            Lib:CreateGlobalScript("rscripts", scripts.title, "Unkown", scripts.paid or scripts.keySystem or false, scripts.gameThumbnail ~= "https://tr.rbxcdn.com/" and scripts.gameThumbnail or "INSERT RSCRIPTS WEBSITE LOGO HERE", tostring(sourcecode.Body))
+                        end
+                    end
+                end
+            end 
+        end
+    elseif MainFrame["Global Scripts"]["TextButton"].TextLabel.Text == "API: scriptblox.com" then
         if MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text ~= "" then
             local SearchDebuff = string.gsub(MainFrame["Global Scripts"]["Search Bar"]["Searchbar"].Text, " ", "-")
             
@@ -3216,16 +3369,15 @@ MainFrame["Global Scripts"]["Previous Page"].MouseButton1Click:Connect(function(
 end)
 
 ----------------------------------------------------------- [[ FUNCTIONS LOADING ]] ---------------------------------------------------------
-Lib:SwitchTabs("Script Editor Tab")
-Lib:SwitchTabs("Saved Scripts")
-Lib:SwitchTabs("Global Scripts")
-Lib:SwitchTabs("Console Tab")
+Lib:SwitchTabs("A", "Script Editor Tab")
+Lib:SwitchTabs("B", "Saved Scripts")
+Lib:SwitchTabs("C", "Global Scripts")
+Lib:SwitchTabs("D", "Console Tab")
 
-Lib:CreateSavedScript("loadstring((http.request{Url='https://reaperscripts.com/loader?l=1'}).Body,'0zek8y2bld7.qowl6c7o~1')()", "Reaper Hub", "Reaper Hub is a popular script hub made to please the masses, supporting 50+ games including shooters!", "", "Successfully executed Reaper Hub")
-Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()", "Infinite Yield", "Infinite Yield is the most popular universal script created since 2018!", "", "Successfully executed Infinite Yield")
-Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/dex.lua'))()", "Dex Explorer", "Dex Explorer is the most popular developer tool that assists developers offering a full debugging suite!", "", "Successfully executed Dex Explorer")
-Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua'))()", "Simple Spy", "Simple Spy is a very popular remote spy tool providing an exceptional experience!", "", "Successfully executed Simple Spy")
-Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/HummingBird8/HummingRn/main/sUNCTestGET'))()", "UNC Tester", "sUNC is a UNC tester made to expose fake UNC and executor owners claiming to have a high UNC!", "", "Successfully executed sUNC")
+Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()", "Infinite Yield", "Infinite Yield the most popular universal script created since 2018!", "", "Successfully executed IY")
+Lib:CreateSavedScript("loadstring((http.request{Url='https://reaperscripts.com/loader?l=1'}).Body,'0zek8y2bld7.qowl6c7o~1')()", "Reaper Hub", "A script hub", "", "Successfully executed Reaper Hub")
+Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/dex.lua'))()", "Dev Explorer", "A very popular Dex explorer to help build scripts and view parts in the game!", "", "Successfully executed Dev Explorer")
+Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua'))()", "Simple Spy", "A very popular remote spy tool", "", "Successfully executed Simple Spy")
 
 makeDraggable(Shell)
 
@@ -3265,4 +3417,4 @@ task.spawn(function()
     end
 end)
 
-Lib:DevConsole('print', 'Get Keyless Cryptic @ https://reapersoftwaredevelopment.mysellix.io')
+Lib:DevConsole('print', 'Get Keyless Cryptic @ https://pcallskeleton.mysellix.io/ (official reseller)')

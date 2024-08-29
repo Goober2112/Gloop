@@ -2573,6 +2573,8 @@ function Lib:DataChecking()
 
         if not isfile("Cryptic/Tabs/Tab1.cryptic") then
             writefile("Cryptic/Tabs/Tab1.cryptic", "{}")
+
+            Database["Tabs"]["Tab1"] = ""
         else
             Database["Tabs"]["Tab1"] = tostring(HttpService:JSONDecode(readfile("Cryptic/Tabs/Tab1.cryptic")))
         end

@@ -3374,10 +3374,11 @@ Lib:SwitchTabs("B", "Saved Scripts")
 Lib:SwitchTabs("C", "Global Scripts")
 Lib:SwitchTabs("D", "Console Tab")
 
-Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()", "Infinite Yield", "Infinite Yield the most popular universal script created since 2018!", "", "Successfully executed IY")
-Lib:CreateSavedScript("loadstring((http.request{Url='https://reaperscripts.com/loader?l=1'}).Body,'0zek8y2bld7.qowl6c7o~1')()", "Reaper Hub", "A script hub", "", "Successfully executed Reaper Hub")
-Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/dex.lua'))()", "Dev Explorer", "A very popular Dex explorer to help build scripts and view parts in the game!", "", "Successfully executed Dev Explorer")
-Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua'))()", "Simple Spy", "A very popular remote spy tool", "", "Successfully executed Simple Spy")
+Lib:CreateSavedScript("loadstring((http.request{Url='https://reaperscripts.com/loader?l=1'}).Body,'0zek8y2bld7.qowl6c7o~1')()", "Reaper Hub", "Reaper Hub is a popular script hub made to please the masses, supporting 50+ games including shooters!", "", "Successfully executed Reaper Hub")
+Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()", "Infinite Yield", "Infinite Yield is the most popular universal script created since 2018!", "", "Successfully executed Infinite Yield")
+Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/dex.lua'))()", "Dex Explorer", "Dex Explorer is the most popular developer tool that assists developers offering a full debugging suite!", "", "Successfully executed Dex Explorer")
+Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua'))()", "Simple Spy", "Simple Spy is a very popular remote spy tool providing an exceptional experience!", "", "Successfully executed Simple Spy")
+Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/HummingBird8/HummingRn/main/sUNCTestGET'))()", "UNC Tester", "sUNC is a UNC tester made to expose fake UNC and executor owners claiming to have a high UNC!", "", "Successfully executed sUNC")
 
 makeDraggable(Shell)
 

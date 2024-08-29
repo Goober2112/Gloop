@@ -2587,6 +2587,7 @@ function Lib:Savedata()
         writefile("Cryptic/Tabs/Tab1.cryptic", HttpService:JSONEncode(Database["Tabs"]["Tab1"]))
     end
 end
+
 --------------------------------------------------------- [[ Random Stuff ]] ---------------------------------------------------------
 
 Shell.Version.Backdrop.TextButton.MouseButton1Click:Connect(function()
@@ -2623,7 +2624,7 @@ end)
 
 --------------------------------------------------------- [[ Implementing Save Features ]] ---------------------------------------------------------
 
-if Database["Tabs"]["Tab1"] ~= nil and type(Database["Tabs"]["Tab1"]) ~= "table" then
+if Database["Tabs"]["Tab1"] ~= nil and type(HttpService:JSONDecode(Database["Tabs"]["Tab1"])) == "string" then
     MainFrame["Script Editor Tab"]["Tabs"].ScrollingFrame.Scriptbox.Text = tostring(Database["Tabs"]["Tab1"])
 end
 

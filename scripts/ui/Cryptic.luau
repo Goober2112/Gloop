@@ -1691,38 +1691,6 @@ CrypticsUniqueDesign.UIListLayout_4.Padding = UDim.new(0.00499999989, 0)
 CrypticsUniqueDesign.UIPadding_4.Parent = CrypticsUniqueDesign.Notifier
 CrypticsUniqueDesign.UIPadding_4.PaddingBottom = UDim.new(0.00499999989, 0)
 
-CrypticsUniqueDesign.Notification.Name = "Notification"
-CrypticsUniqueDesign.Notification.Parent = CrypticsUniqueDesign.Notifier
-CrypticsUniqueDesign.Notification.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.Notification.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.Notification.BorderSizePixel = 0
-CrypticsUniqueDesign.Notification.Size = UDim2.new(1, 0, 0.0399999991, 0)
-
-CrypticsUniqueDesign.TextLabel_14.Parent = CrypticsUniqueDesign.Notification
-CrypticsUniqueDesign.TextLabel_14.AnchorPoint = Vector2.new(0.5, 0.5)
-CrypticsUniqueDesign.TextLabel_14.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
-CrypticsUniqueDesign.TextLabel_14.BackgroundTransparency = 1.000
-CrypticsUniqueDesign.TextLabel_14.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.TextLabel_14.BorderSizePixel = 0
-CrypticsUniqueDesign.TextLabel_14.Position = UDim2.new(0.5, 0, 0.527917266, 0)
-CrypticsUniqueDesign.TextLabel_14.Size = UDim2.new(1, 0, 0.5, 0)
-CrypticsUniqueDesign.TextLabel_14.Font = Enum.Font.SourceSans
-CrypticsUniqueDesign.TextLabel_14.Text = "Mew"
-CrypticsUniqueDesign.TextLabel_14.TextColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_14.TextScaled = true
-CrypticsUniqueDesign.TextLabel_14.TextSize = 14.000
-CrypticsUniqueDesign.TextLabel_14.TextWrapped = true
-
-CrypticsUniqueDesign.UICorner_37.CornerRadius = UDim.new(0.100000001, 0)
-CrypticsUniqueDesign.UICorner_37.Parent = CrypticsUniqueDesign.TextLabel_14
-
-CrypticsUniqueDesign.UICorner_38.CornerRadius = UDim.new(0.100000001, 0)
-CrypticsUniqueDesign.UICorner_38.Parent = CrypticsUniqueDesign.Notification
-
-CrypticsUniqueDesign.UIGradient_27.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
-CrypticsUniqueDesign.UIGradient_27.Rotation = 81
-CrypticsUniqueDesign.UIGradient_27.Parent = CrypticsUniqueDesign.Notification
-
 CrypticsUniqueDesign.Hidden.Name = "Hidden"
 CrypticsUniqueDesign.Hidden.Parent = CrypticsUniqueDesign.CrypticsUniqueDesign
 CrypticsUniqueDesign.Hidden.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -3412,10 +3380,11 @@ Lib:SwitchTabs("B", "Saved Scripts")
 Lib:SwitchTabs("C", "Global Scripts")
 Lib:SwitchTabs("D", "Console Tab")
 
-Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()", "Infinite Yield", "Infinite Yield the most popular universal script created since 2018!", "", "Successfully executed IY")
-Lib:CreateSavedScript("loadstring((http.request{Url='https://reaperscripts.com/loader?l=1'}).Body,'0zek8y2bld7.qowl6c7o~1')()", "Reaper Hub", "A script hub", "", "Successfully executed Reaper Hub")
-Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/dex.lua'))()", "Dev Explorer", "A very popular Dex explorer to help build scripts and view parts in the game!", "", "Successfully executed Dev Explorer")
-Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua'))()", "Simple Spy", "A very popular remote spy tool", "", "Successfully executed Simple Spy")
+Lib:CreateSavedScript("loadstring((http.request{Url='https://reaperscripts.com/loader?l=1'}).Body,'0zek8y2bld7.qowl6c7o~1')()", "Reaper Hub", "Reaper Hub is a popular script hub made to please the masses, supporting 50+ games including shooters!", "", "Successfully executed Reaper Hub")
+Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()", "Infinite Yield", "Infinite Yield is the most popular universal script created since 2018!", "", "Successfully executed Infinite Yield")
+Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/dex.lua'))()", "Dex Explorer", "Dex Explorer is the most popular developer tool that assists developers offering a full debugging suite!", "", "Successfully executed Dex Explorer")
+Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua'))()", "Simple Spy", "Simple Spy is a very popular remote spy tool providing an exceptional experience!", "", "Successfully executed Simple Spy")
+Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/HummingBird8/HummingRn/main/sUNCTestGET'))()", "UNC Tester", "sUNC is a UNC tester made to expose fake UNC and executor owners claiming to have a high UNC!", "", "Successfully executed sUNC")
 
 makeDraggable(Shell)
 

@@ -2530,6 +2530,7 @@ function Lib:DevConsole(t: string, text: string)
     LuaC.ClearTextOnFocus = false
     LuaC.MultiLine = true
     LuaC.TextEditable = false
+    LuaC.Interactable = false
     LuaC.Font = Enum.Font.SourceSans
     LuaC.Text = text
     LuaC.TextColor3 = Color3.fromRGB(255, 255, 255)

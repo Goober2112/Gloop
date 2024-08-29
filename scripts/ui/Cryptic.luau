@@ -2601,6 +2601,8 @@ Shell.Version.Backdrop.TextLabel.Text = "Version: 2.639.688"
 Shell.Title.RichText = true
 Shell.Subtitle.RichText = true
 
+Shell.Visible = false
+
 Lib:DataChecking()
 
 pcall(function()
@@ -2619,7 +2621,7 @@ end)
 
 --------------------------------------------------------- [[ Implementing Save Features ]] ---------------------------------------------------------
 
-if Database["Tabs"]["Tab1"] ~= nil then
+if Database["Tabs"]["Tab1"] ~= nil and type(Database["Tabs"]["Tab1"]) ~= "table" then
     MainFrame["Script Editor Tab"]["Tabs"].ScrollingFrame.Scriptbox.Text = tostring(Database["Tabs"]["Tab1"])
 end
 

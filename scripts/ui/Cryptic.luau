@@ -2377,9 +2377,9 @@ function Lib:CreateGlobalScript(source: string, title: string, sgame: string, pa
             end)
             
 			if not s then
-				Lib:CreateNotification('Error while executing script!', 5)
+				Lib:CreateNotification('Error While Executing Script!', 5)
 			else
-				Lib:CreateNotification('Executed script!', 5)
+				Lib:CreateNotification('Executed Script!', 5)
 			end
 		end)
 	elseif source == "scriptblox" then
@@ -2557,9 +2557,9 @@ function Lib:CreateGlobalScript(source: string, title: string, sgame: string, pa
             end)
 
 			if not s then
-				Lib:CreateNotification('Error while executing script!', 5)
+				Lib:CreateNotification('Error While Executing Script!', 5)
 			else
-				Lib:CreateNotification('Executed script!', 5)
+				Lib:CreateNotification('Executed Script!', 5)
 			end
 		end)
 	end
@@ -2722,7 +2722,7 @@ MainFrame["Script Editor Tab"]["Scripting Buttons"].Execute.MouseButton1Click:Co
 			if not s then
                 Lib:DevConsole('error', e)
                 
-				Lib:CreateNotification('An error has occured!', 5)
+				Lib:CreateNotification('An Error Has Occured!', 5)
 			else
 				Lib:CreateNotification('Executed Successfully!', 5)
 			end
@@ -2741,9 +2741,9 @@ MainFrame["Script Editor Tab"]["Scripting Buttons"].Copy.MouseButton1Click:Conne
 			if not s and e then
                 Lib:DevConsole('error', e)
                 
-				Lib:CreateNotification('Error While Copying To Clipboard', 5)
+				Lib:CreateNotification('Error While Copying To Clipboard!', 5)
 			else
-				Lib:CreateNotification('Copied to clipboard!', 5)
+				Lib:CreateNotification('Copied To Clipboard!', 5)
 			end
 		end
 	end
@@ -2760,7 +2760,7 @@ MainFrame["Script Editor Tab"]["Scripting Buttons"].Clear.MouseButton1Click:Conn
 			if not s and e then
                 Lib:DevConsole('error', e)
                 
-				Lib:CreateNotification('Error while clearing tab!', 5)
+				Lib:CreateNotification('Error While Clearing Tab!', 5)
 			else
 				Lib:CreateNotification('Cleared Editor!', 5)
 			end
@@ -2806,7 +2806,7 @@ MainFrame["Script Editor Tab"]["Scripting Buttons"].ExecuteClipboard.MouseButton
 
 		Lib:CreateNotification('Error While Executing From Clipboard!', 5)
 	else
-		Lib:CreateNotification('Executed clipboard!', 5)
+		Lib:CreateNotification('Executed Clipboard!', 5)
 	end
 end)
 
@@ -2831,7 +2831,7 @@ MainFrame["Saved Scripts"].Execute.MouseButton1Click:Connect(function()
 		if not s then
             Lib:DevConsole('error', e)
             
-			Lib:CreateNotification('Error while attempting to execute the script!', 5)
+			Lib:CreateNotification('Error While Attempting To Execute The Script!', 5)
 		else
 			Lib:CreateNotification(ExecSS, 5)
 		end
@@ -2848,9 +2848,9 @@ MainFrame["Saved Scripts"]["Copy To Clipboard"].MouseButton1Click:Connect(functi
 		if not s and e then
             Lib:DevConsole('error', e)
 
-			Lib:CreateNotification('Error Coping to Clipboard!', 5)
+			Lib:CreateNotification('Error Copying To Clipboard!', 5)
 		else
-			Lib:CreateNotification('Copied To Clipboard', 5)
+			Lib:CreateNotification('Copied To Clipboard!', 5)
 		end
 	end
 end)

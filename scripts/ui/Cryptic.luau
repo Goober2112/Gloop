@@ -2692,11 +2692,11 @@ end)
 
 --------------------------------------------------------- [[ Implementing Save Features ]] ---------------------------------------------------------
 
-local vpr = Database["Tabs"]["Tab1"]
-
-if vpr ~= nil and type(vpr) == "string" then
-    MainFrame["Script Editor Tab"]["Tabs"].ScrollingFrame.Scriptbox.Text = tostring(vpr)
-end
+--local vpr = Database["Tabs"]["Tab1"]
+--
+--if vpr ~= nil and type(vpr) == "string" then
+--    MainFrame["Script Editor Tab"]["Tabs"].ScrollingFrame.Scriptbox.Text = tostring(vpr)
+--end
 
 --------------------------------------------------------- [[ CODING TAB ]] ---------------------------------------------------------
 
@@ -2713,7 +2713,7 @@ MainFrame["Script Editor Tab"]["Scripting Buttons"].Execute.MouseButton1Click:Co
 		if tab:IsA('TextBox') and tab.Visible then
             local s, e = task.spawn(function()
                 local s, e = pcall(function()
-                    run_script(tostring(tab.Text))
+                    run_script(tab.Text)
                 end)
 
                 return s, e
@@ -2795,7 +2795,7 @@ end)
 MainFrame["Script Editor Tab"]["Scripting Buttons"].ExecuteClipboard.MouseButton1Click:Connect(function()
     local s, e = task.spawn(function()
         local s, e = pcall(function()
-            run_script(tostring(getclipboard))
+            run_script(getclipboard())
         end)
 
         return s, e
@@ -2822,7 +2822,7 @@ MainFrame["Saved Scripts"].Execute.MouseButton1Click:Connect(function()
 	if ExecSS and SavedScript then
         local s, e = task.spawn(function()
             local s, e = pcall(function()
-                run_script(tostring(SavedScript))
+                run_script(SavedScript)
             end)
 
             return s, e
@@ -2842,7 +2842,7 @@ end)
 MainFrame["Saved Scripts"]["Copy To Clipboard"].MouseButton1Click:Connect(function()
 	if ExecSS and SavedScript then
 		local s, e = pcall(function()
-			setclipboard(tostring(SavedScript))
+			setclipboard(SavedScript)
 		end)
 		
 		if not s and e then

@@ -1714,6 +1714,7 @@ CrypticsUniqueDesign.ImageLabel_18.BorderSizePixel = 0
 CrypticsUniqueDesign.ImageLabel_18.Position = UDim2.new(0.5, 0, 0.5, 0)
 CrypticsUniqueDesign.ImageLabel_18.Size = UDim2.new(0.800000012, 0, 0.800000012, 0)
 CrypticsUniqueDesign.ImageLabel_18.Image = "rbxassetid://19005146588"
+CrypticsUniqueDesign.ImageLabel_18.Visible = false
 
 CrypticsUniqueDesign.UIGradient_26.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
 CrypticsUniqueDesign.UIGradient_26.Rotation = -118

@@ -4497,8 +4497,7 @@ buttons.Button2.MouseButton1Click:Connect(function()
 
 
 local AccountId = 8;
-local auth_id = game:GetService("Players").LocalPlayer.UserId
-
+local auth_id = gethwid()
 
 function GetLink()
     return string.format("https://gateway.platoboost.com/a/%i?id=" .. auth_id, AccountId);

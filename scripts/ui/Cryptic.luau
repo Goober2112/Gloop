@@ -2754,16 +2754,6 @@ function Lib:DevConsole(t: string, text: string)
         return
     end
 
-    if ConsoleInstances >= 250 then
-        for _, frame in pairs(MainFrame["Console Tab"].ScrollingFrame:GetChildren()) do
-            if frame:IsA('Frame') then
-                frame:Destroy()
-            end
-        end
-
-        ConsoleInstances = 0
-    end
-
     local Print = Instance.new("Frame")
     local LuaC = Instance.new("TextBox")
     local Time = Instance.new("TextLabel")
@@ -2809,8 +2799,6 @@ function Lib:DevConsole(t: string, text: string)
     Time.TextSize = 13.000
     Time.TextWrapped = true
 
-    ConsoleInstances += 1
-    
     if t == "print" then
         LuaC.TextColor3 = Color3.fromRGB(255, 255, 255)
     elseif t == "warn" then
@@ -2921,11 +2909,11 @@ end)
 
 --------------------------------------------------------- [[ Implementing Save Features ]] ---------------------------------------------------------
 
---local vpr = Database["Tabs"]["Tab1"]
---
---if vpr ~= nil and type(vpr) == "string" then
---    MainFrame["Script Editor Tab"]["Tabs"].ScrollingFrame.Scriptbox.Text = tostring(vpr)
---end
+local vpr = Database["Tabs"]["Tab1"]
+
+if vpr ~= nil and type(vpr) == "string" then
+    MainFrame["Script Editor Tab"]["Tabs"].ScrollingFrame.Scriptbox.Text = tostring(vpr)
+end
 
 --------------------------------------------------------- [[ CODING TAB ]] ---------------------------------------------------------
 

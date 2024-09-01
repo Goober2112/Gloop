@@ -2921,11 +2921,11 @@ end)
 
 --------------------------------------------------------- [[ Implementing Save Features ]] ---------------------------------------------------------
 
-local vpr = Database["Tabs"]["Tab1"]
-
-if vpr ~= nil and type(vpr) == "string" then
-    MainFrame["Script Editor Tab"]["Tabs"].ScrollingFrame.Scriptbox.Text = tostring(vpr)
-end
+--local vpr = Database["Tabs"]["Tab1"]
+--
+--if vpr ~= nil and type(vpr) == "string" then
+--    MainFrame["Script Editor Tab"]["Tabs"].ScrollingFrame.Scriptbox.Text = tostring(vpr)
+--end
 
 --------------------------------------------------------- [[ CODING TAB ]] ---------------------------------------------------------
 

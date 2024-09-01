@@ -2893,7 +2893,7 @@ Lib:DataChecking()
 
 pcall(function()
     game:GetService("LogService").MessageOut:Connect(function(message: string, messageType: Enum.MessageType) 
-        if Database.Settings["S1"] then
+        if not Database.Settings["S1"] then
             if messageType == Enum.MessageType.MessageOutput then
                 Lib:DevConsole('print', message)
             elseif messageType == Enum.MessageType.MessageInfo then
@@ -3822,22 +3822,24 @@ Players.LocalPlayer.Idled:connect(function()
 end)
 
 
+task.spawn(function()
+    repeat task.wait() until game:IsLoaded()
 
-if Database.Settings["S1"] then
-    MainFrame["Settings Tab"]["Settings1"].TextButton.TextLabel.Text = "✓"
-end
-if Database.Settings["S2"] then
-    MainFrame["Settings Tab"]["Settings2"].TextButton.TextLabel.Text = "✓"
-end
-if Database.Settings["S3"] then
-    setfpscap(0)
-
-    MainFrame["Settings Tab"]["Settings3"].TextButton.TextLabel.Text = "✓"
-end
-if Database.Settings["S4"] then
-    MainFrame["Settings Tab"]["Settings4"].TextButton.TextLabel.Text = "✓"
-end
-
+    if Database.Settings["S1"] then
+        MainFrame["Settings Tab"]["Settings1"].TextButton.TextLabel.Text = "✓"
+    end
+    if Database.Settings["S2"] then
+        MainFrame["Settings Tab"]["Settings2"].TextButton.TextLabel.Text = "✓"
+    end
+    if Database.Settings["S3"] then
+        setfpscap(0)
+    
+        MainFrame["Settings Tab"]["Settings3"].TextButton.TextLabel.Text = "✓"
+    end
+    if Database.Settings["S4"] then
+        MainFrame["Settings Tab"]["Settings4"].TextButton.TextLabel.Text = "✓"
+    end
+end)
 ----------------------------------------------------------- [[ FUNCTIONS LOADING ]] ---------------------------------------------------------
 Lib:SwitchTabs("A", "Script Editor Tab")
 Lib:SwitchTabs("B", "Saved Scripts")

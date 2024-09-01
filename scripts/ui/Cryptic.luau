@@ -2753,6 +2753,15 @@ function Lib:DevConsole(t: string, text: string)
     if Database.Settings["S2"] then
         return
     end
+    if (#MainFrame["Console Tab"].ScrollingFrame:GetChildren() - 1) >= 250 then
+        for _, frames in pairs(MainFrame["Console Tab"].ScrollingFrame:GetChildren()) do
+            if frames:IsA('Frame') then
+                frames:Destroy()
+            end
+        end
+
+        ConsoleInstances = 0
+    end
 
     local Print = Instance.new("Frame")
     local LuaC = Instance.new("TextBox")
@@ -2799,6 +2808,8 @@ function Lib:DevConsole(t: string, text: string)
     Time.TextSize = 13.000
     Time.TextWrapped = true
 
+    ConsoleInstances += 1
+    
     if t == "print" then
         LuaC.TextColor3 = Color3.fromRGB(255, 255, 255)
     elseif t == "warn" then
@@ -2932,7 +2943,7 @@ MainFrame["Script Editor Tab"]["Scripting Buttons"].Execute.MouseButton1Click:Co
 		if tab:IsA('TextBox') and tab.Visible then
             local s, e = task.spawn(function()
                 local s, e = pcall(function()
-                    run_script(tostring(tab.Text))
+                    run_script(tab.Text)
                 end)
 
                 return s, e
@@ -3014,7 +3025,7 @@ end)
 MainFrame["Script Editor Tab"]["Scripting Buttons"].ExecuteClipboard.MouseButton1Click:Connect(function()
     local s, e = task.spawn(function()
         local s, e = pcall(function()
-            run_script(tostring(getclipboard))
+            run_script(getclipboard())
         end)
 
         return s, e
@@ -3041,7 +3052,7 @@ MainFrame["Saved Scripts"].Execute.MouseButton1Click:Connect(function()
 	if ExecSS and SavedScript then
         local s, e = task.spawn(function()
             local s, e = pcall(function()
-                run_script(tostring(SavedScript))
+                run_script(SavedScript)
             end)
 
             return s, e

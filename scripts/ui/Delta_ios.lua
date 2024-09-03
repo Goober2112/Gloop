@@ -5825,11 +5825,12 @@ coroutine.wrap(function()
 end)()
 
 function checkkey()
-	--local keyless = game:HttpGet("https://raw.githubusercontent.com/lxnnydev/DeltaAndroid/main/iskeyless")
-	--if string.find(keyless, "true") then
-	--GrantAccess()
-        --return true
-	--end
+    local keyless = game:HttpGet("https://raw.githubusercontent.com/lxnnydev/DeltaAndroid/main/iskeyless")
+    if string.find(keyless, "true") then
+	GrantAccess()
+        return true
+    end
+end
 
 if Verify() then
       GrantAccess()

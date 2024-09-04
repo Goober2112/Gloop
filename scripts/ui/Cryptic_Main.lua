@@ -48,11 +48,15 @@ local CrypticsUniqueDesign = {
 	UIGridLayout = Instance.new("UIGridLayout"),
 	UIPadding_2 = Instance.new("UIPadding"),
 	Execute_2 = Instance.new("TextButton"),
+	TextLabel_6 = Instance.new("TextLabel"),
 	CopyToClipboard = Instance.new("TextButton"),
+	TextLabel_7 = Instance.new("TextLabel"),
 	Imgar = Instance.new("ImageLabel"),
 	Title = Instance.new("TextLabel"),
 	Frame_6 = Instance.new("Frame"),
 	Description = Instance.new("TextLabel"),
+	tof = Instance.new("TextButton"),
+	TextLabel_8 = Instance.new("TextLabel"),
 	GlobalScripts = Instance.new("Frame"),
 	UICorner_5 = Instance.new("UICorner"),
 	SearchBar = Instance.new("Frame"),
@@ -61,7 +65,7 @@ local CrypticsUniqueDesign = {
 	UIGradient_11 = Instance.new("UIGradient"),
 	TextButton = Instance.new("TextButton"),
 	UIGradient_12 = Instance.new("UIGradient"),
-	TextLabel_6 = Instance.new("TextLabel"),
+	TextLabel_9 = Instance.new("TextLabel"),
 	ScriptsBackdrop = Instance.new("Frame"),
 	Scripts_2 = Instance.new("ScrollingFrame"),
 	UIGridLayout_2 = Instance.new("UIGridLayout"),
@@ -76,7 +80,7 @@ local CrypticsUniqueDesign = {
 	FoP = Instance.new("Frame"),
 	UICorner_9 = Instance.new("UICorner"),
 	ImageLabel_7 = Instance.new("ImageLabel"),
-	TextLabel_7 = Instance.new("TextLabel"),
+	TextLabel_10 = Instance.new("TextLabel"),
 	Title_2 = Instance.new("TextLabel"),
 	Game = Instance.new("TextLabel"),
 	Execute_3 = Instance.new("TextButton"),
@@ -89,10 +93,10 @@ local CrypticsUniqueDesign = {
 	UICorner_12 = Instance.new("UICorner"),
 	Free = Instance.new("Frame"),
 	UICorner_13 = Instance.new("UICorner"),
-	TextLabel_8 = Instance.new("TextLabel"),
+	TextLabel_11 = Instance.new("TextLabel"),
 	Paid = Instance.new("Frame"),
 	UICorner_14 = Instance.new("UICorner"),
-	TextLabel_9 = Instance.new("TextLabel"),
+	TextLabel_12 = Instance.new("TextLabel"),
 	Title_3 = Instance.new("TextLabel"),
 	Game_2 = Instance.new("TextLabel"),
 	Execute_4 = Instance.new("TextButton"),
@@ -103,12 +107,12 @@ local CrypticsUniqueDesign = {
 	UICorner_16 = Instance.new("UICorner"),
 	NextPage = Instance.new("TextButton"),
 	UIGradient_16 = Instance.new("UIGradient"),
-	TextLabel_10 = Instance.new("TextLabel"),
+	TextLabel_13 = Instance.new("TextLabel"),
 	PreviousPage = Instance.new("TextButton"),
 	UIGradient_17 = Instance.new("UIGradient"),
-	TextLabel_11 = Instance.new("TextLabel"),
+	TextLabel_14 = Instance.new("TextLabel"),
 	Frame_8 = Instance.new("Frame"),
-	TextLabel_12 = Instance.new("TextLabel"),
+	TextLabel_15 = Instance.new("TextLabel"),
 	UIGradient_18 = Instance.new("UIGradient"),
 	ConsoleTab = Instance.new("Frame"),
 	UICorner_17 = Instance.new("UICorner"),
@@ -118,26 +122,26 @@ local CrypticsUniqueDesign = {
 	UIListLayout_3 = Instance.new("UIListLayout"),
 	Settings1 = Instance.new("Frame"),
 	TextButton_2 = Instance.new("TextButton"),
-	TextLabel_13 = Instance.new("TextLabel"),
-	TextLabel_14 = Instance.new("TextLabel"),
+	TextLabel_16 = Instance.new("TextLabel"),
+	TextLabel_17 = Instance.new("TextLabel"),
 	UIPadding_4 = Instance.new("UIPadding"),
 	Settings2 = Instance.new("Frame"),
 	TextButton_3 = Instance.new("TextButton"),
-	TextLabel_15 = Instance.new("TextLabel"),
-	TextLabel_16 = Instance.new("TextLabel"),
+	TextLabel_18 = Instance.new("TextLabel"),
+	TextLabel_19 = Instance.new("TextLabel"),
 	Settings3 = Instance.new("Frame"),
 	TextButton_4 = Instance.new("TextButton"),
-	TextLabel_17 = Instance.new("TextLabel"),
-	TextLabel_18 = Instance.new("TextLabel"),
+	TextLabel_20 = Instance.new("TextLabel"),
+	TextLabel_21 = Instance.new("TextLabel"),
 	Settings4 = Instance.new("Frame"),
 	TextButton_5 = Instance.new("TextButton"),
-	TextLabel_19 = Instance.new("TextLabel"),
-	TextLabel_20 = Instance.new("TextLabel"),
+	TextLabel_22 = Instance.new("TextLabel"),
+	TextLabel_23 = Instance.new("TextLabel"),
 	Version = Instance.new("Frame"),
 	UICorner_18 = Instance.new("UICorner"),
 	Backdrop = Instance.new("Frame"),
 	UICorner_19 = Instance.new("UICorner"),
-	TextLabel_21 = Instance.new("TextLabel"),
+	TextLabel_24 = Instance.new("TextLabel"),
 	UIGradient_19 = Instance.new("UIGradient"),
 	TextButton_6 = Instance.new("TextButton"),
 	ImageLabel_11 = Instance.new("ImageLabel"),
@@ -198,22 +202,6 @@ local CrypticsUniqueDesign = {
 	Notifier = Instance.new("Frame"),
 	UIListLayout_5 = Instance.new("UIListLayout"),
 	UIPadding_5 = Instance.new("UIPadding"),
-	Hidden = Instance.new("Frame"),
-	Hidden_2 = Instance.new("Frame"),
-	Hidden_3 = Instance.new("Frame"),
-	Hidden_4 = Instance.new("Frame"),
-	Hidden_5 = Instance.new("Frame"),
-	Hidden_6 = Instance.new("Frame"),
-	Hidden_7 = Instance.new("Frame"),
-	Hidden_8 = Instance.new("Frame"),
-	Hidden_9 = Instance.new("Frame"),
-	Hidden_10 = Instance.new("Frame"),
-	Hidden_11 = Instance.new("Frame"),
-	Hidden_12 = Instance.new("Frame"),
-	Hidden_13 = Instance.new("Frame"),
-	Hidden_14 = Instance.new("Frame"),
-	Hidden_15 = Instance.new("Frame"),
-	Hidden_16 = Instance.new("Frame"),
 	Toggle = Instance.new("TextButton"),
 	Frame_17 = Instance.new("Frame"),
 	ImageLabel_19 = Instance.new("ImageLabel"),
@@ -260,6 +248,7 @@ CrypticsUniqueDesign.ScriptEditorTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
 CrypticsUniqueDesign.ScriptEditorTab.BorderSizePixel = 0
 CrypticsUniqueDesign.ScriptEditorTab.Position = UDim2.new(0.5, 0, 0.120000057, 0)
 CrypticsUniqueDesign.ScriptEditorTab.Size = UDim2.new(0.979999959, 0, 0.86622721, 0)
+CrypticsUniqueDesign.ScriptEditorTab.Visible = false
 CrypticsUniqueDesign.ScriptEditorTab.ZIndex = 3
 
 CrypticsUniqueDesign.Tabs.Name = "Tabs"
@@ -613,7 +602,6 @@ CrypticsUniqueDesign.SavedScripts.BorderColor3 = Color3.fromRGB(0, 0, 0)
 CrypticsUniqueDesign.SavedScripts.BorderSizePixel = 0
 CrypticsUniqueDesign.SavedScripts.Position = UDim2.new(0.5, 0, 0.120000057, 0)
 CrypticsUniqueDesign.SavedScripts.Size = UDim2.new(0.979999959, 0, 0.872109532, 0)
-CrypticsUniqueDesign.SavedScripts.Visible = false
 CrypticsUniqueDesign.SavedScripts.ZIndex = 3
 
 CrypticsUniqueDesign.UICorner_4.Parent = CrypticsUniqueDesign.SavedScripts
@@ -625,8 +613,8 @@ CrypticsUniqueDesign.Scripts.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 CrypticsUniqueDesign.Scripts.BackgroundTransparency = 0.750
 CrypticsUniqueDesign.Scripts.BorderColor3 = Color3.fromRGB(0, 0, 0)
 CrypticsUniqueDesign.Scripts.BorderSizePixel = 0
-CrypticsUniqueDesign.Scripts.Position = UDim2.new(0.000288756302, 0, 0.000588802272, 0)
-CrypticsUniqueDesign.Scripts.Size = UDim2.new(0.218111292, 0, 0.99042958, 0)
+CrypticsUniqueDesign.Scripts.Position = UDim2.new(0.000288766139, 0, 0.094711639, 0)
+CrypticsUniqueDesign.Scripts.Size = UDim2.new(0.218111292, 0, 0.896306694, 0)
 CrypticsUniqueDesign.Scripts.ScrollBarThickness = 0
 
 CrypticsUniqueDesign.UIGridLayout.Parent = CrypticsUniqueDesign.Scripts
@@ -647,10 +635,25 @@ CrypticsUniqueDesign.Execute_2.BorderSizePixel = 0
 CrypticsUniqueDesign.Execute_2.Position = UDim2.new(0.227122724, 0, 0.918753982, 0)
 CrypticsUniqueDesign.Execute_2.Size = UDim2.new(0.378690124, 0, 0.0722646639, 0)
 CrypticsUniqueDesign.Execute_2.Font = Enum.Font.SourceSans
-CrypticsUniqueDesign.Execute_2.Text = "Execute"
+CrypticsUniqueDesign.Execute_2.Text = ""
 CrypticsUniqueDesign.Execute_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 CrypticsUniqueDesign.Execute_2.TextSize = 14.000
 CrypticsUniqueDesign.Execute_2.TextWrapped = true
+
+CrypticsUniqueDesign.TextLabel_6.Parent = CrypticsUniqueDesign.Execute_2
+CrypticsUniqueDesign.TextLabel_6.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.TextLabel_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_6.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_6.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_6.Position = UDim2.new(0, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_6.Size = UDim2.new(1, 0, 0.699999988, 0)
+CrypticsUniqueDesign.TextLabel_6.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_6.Text = "Execute"
+CrypticsUniqueDesign.TextLabel_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_6.TextScaled = true
+CrypticsUniqueDesign.TextLabel_6.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_6.TextWrapped = true
 
 CrypticsUniqueDesign.CopyToClipboard.Name = "Copy To Clipboard"
 CrypticsUniqueDesign.CopyToClipboard.Parent = CrypticsUniqueDesign.SavedScripts
@@ -661,10 +664,25 @@ CrypticsUniqueDesign.CopyToClipboard.BorderSizePixel = 0
 CrypticsUniqueDesign.CopyToClipboard.Position = UDim2.new(0.613276958, 0, 0.918753982, 0)
 CrypticsUniqueDesign.CopyToClipboard.Size = UDim2.new(0.385848761, 0, 0.0722646639, 0)
 CrypticsUniqueDesign.CopyToClipboard.Font = Enum.Font.SourceSans
-CrypticsUniqueDesign.CopyToClipboard.Text = "Copy To Clipboard"
+CrypticsUniqueDesign.CopyToClipboard.Text = ""
 CrypticsUniqueDesign.CopyToClipboard.TextColor3 = Color3.fromRGB(255, 255, 255)
 CrypticsUniqueDesign.CopyToClipboard.TextSize = 14.000
 CrypticsUniqueDesign.CopyToClipboard.TextWrapped = true
+
+CrypticsUniqueDesign.TextLabel_7.Parent = CrypticsUniqueDesign.CopyToClipboard
+CrypticsUniqueDesign.TextLabel_7.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.TextLabel_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_7.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_7.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_7.Position = UDim2.new(0, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_7.Size = UDim2.new(1, 0, 0.699999988, 0)
+CrypticsUniqueDesign.TextLabel_7.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_7.Text = "Copy To Clipboard"
+CrypticsUniqueDesign.TextLabel_7.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_7.TextScaled = true
+CrypticsUniqueDesign.TextLabel_7.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_7.TextWrapped = true
 
 CrypticsUniqueDesign.Imgar.Name = "Imgar"
 CrypticsUniqueDesign.Imgar.Parent = CrypticsUniqueDesign.SavedScripts
@@ -714,6 +732,36 @@ CrypticsUniqueDesign.Description.TextSize = 14.000
 CrypticsUniqueDesign.Description.TextWrapped = true
 CrypticsUniqueDesign.Description.TextXAlignment = Enum.TextXAlignment.Left
 CrypticsUniqueDesign.Description.TextYAlignment = Enum.TextYAlignment.Top
+
+CrypticsUniqueDesign.tof.Name = "tof"
+CrypticsUniqueDesign.tof.Parent = CrypticsUniqueDesign.SavedScripts
+CrypticsUniqueDesign.tof.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.tof.BackgroundTransparency = 0.600
+CrypticsUniqueDesign.tof.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.tof.BorderSizePixel = 0
+CrypticsUniqueDesign.tof.Position = UDim2.new(0, 0, -0.000318092032, 0)
+CrypticsUniqueDesign.tof.Size = UDim2.new(0.218400061, 0, 0.0783983842, 0)
+CrypticsUniqueDesign.tof.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.tof.Text = ""
+CrypticsUniqueDesign.tof.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.tof.TextScaled = true
+CrypticsUniqueDesign.tof.TextSize = 14.000
+CrypticsUniqueDesign.tof.TextWrapped = true
+
+CrypticsUniqueDesign.TextLabel_8.Parent = CrypticsUniqueDesign.tof
+CrypticsUniqueDesign.TextLabel_8.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.TextLabel_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_8.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_8.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_8.Position = UDim2.new(0, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_8.Size = UDim2.new(1, 0, 0.649999976, 0)
+CrypticsUniqueDesign.TextLabel_8.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_8.Text = "Presaved Scripts"
+CrypticsUniqueDesign.TextLabel_8.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_8.TextScaled = true
+CrypticsUniqueDesign.TextLabel_8.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_8.TextWrapped = true
 
 CrypticsUniqueDesign.GlobalScripts.Name = "Global Scripts"
 CrypticsUniqueDesign.GlobalScripts.Parent = CrypticsUniqueDesign.MainFrame
@@ -787,20 +835,20 @@ CrypticsUniqueDesign.UIGradient_12.Color = ColorSequence.new{ColorSequenceKeypoi
 CrypticsUniqueDesign.UIGradient_12.Rotation = -89
 CrypticsUniqueDesign.UIGradient_12.Parent = CrypticsUniqueDesign.TextButton
 
-CrypticsUniqueDesign.TextLabel_6.Parent = CrypticsUniqueDesign.TextButton
-CrypticsUniqueDesign.TextLabel_6.AnchorPoint = Vector2.new(0.5, 0.5)
-CrypticsUniqueDesign.TextLabel_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_6.BackgroundTransparency = 1.000
-CrypticsUniqueDesign.TextLabel_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.TextLabel_6.BorderSizePixel = 0
-CrypticsUniqueDesign.TextLabel_6.Position = UDim2.new(0.5, 0, 0.5, 0)
-CrypticsUniqueDesign.TextLabel_6.Size = UDim2.new(1, 0, 0.5, 0)
-CrypticsUniqueDesign.TextLabel_6.Font = Enum.Font.SourceSans
-CrypticsUniqueDesign.TextLabel_6.Text = "API: scriptblox.com"
-CrypticsUniqueDesign.TextLabel_6.TextColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_6.TextScaled = true
-CrypticsUniqueDesign.TextLabel_6.TextSize = 14.000
-CrypticsUniqueDesign.TextLabel_6.TextWrapped = true
+CrypticsUniqueDesign.TextLabel_9.Parent = CrypticsUniqueDesign.TextButton
+CrypticsUniqueDesign.TextLabel_9.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.TextLabel_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_9.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_9.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_9.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_9.Size = UDim2.new(1, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_9.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_9.Text = "API: scriptblox.com"
+CrypticsUniqueDesign.TextLabel_9.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_9.TextScaled = true
+CrypticsUniqueDesign.TextLabel_9.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_9.TextWrapped = true
 
 CrypticsUniqueDesign.ScriptsBackdrop.Name = "Scripts Backdrop"
 CrypticsUniqueDesign.ScriptsBackdrop.Parent = CrypticsUniqueDesign.GlobalScripts
@@ -894,20 +942,20 @@ CrypticsUniqueDesign.ImageLabel_7.Position = UDim2.new(0.100000001, 0, 0.5, 0)
 CrypticsUniqueDesign.ImageLabel_7.Size = UDim2.new(0.286714822, 0, 0.800000012, 0)
 CrypticsUniqueDesign.ImageLabel_7.Image = "rbxassetid://140301153361858"
 
-CrypticsUniqueDesign.TextLabel_7.Parent = CrypticsUniqueDesign.FoP
-CrypticsUniqueDesign.TextLabel_7.AnchorPoint = Vector2.new(0, 0.5)
-CrypticsUniqueDesign.TextLabel_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_7.BackgroundTransparency = 1.000
-CrypticsUniqueDesign.TextLabel_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.TextLabel_7.BorderSizePixel = 0
-CrypticsUniqueDesign.TextLabel_7.Position = UDim2.new(0.337000012, 0, 0.5, 0)
-CrypticsUniqueDesign.TextLabel_7.Size = UDim2.new(0.662999988, 0, 0.699999988, 0)
-CrypticsUniqueDesign.TextLabel_7.Font = Enum.Font.SourceSans
-CrypticsUniqueDesign.TextLabel_7.Text = "Free"
-CrypticsUniqueDesign.TextLabel_7.TextColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.TextLabel_7.TextScaled = true
-CrypticsUniqueDesign.TextLabel_7.TextSize = 14.000
-CrypticsUniqueDesign.TextLabel_7.TextWrapped = true
+CrypticsUniqueDesign.TextLabel_10.Parent = CrypticsUniqueDesign.FoP
+CrypticsUniqueDesign.TextLabel_10.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.TextLabel_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_10.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_10.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_10.Position = UDim2.new(0.337000012, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_10.Size = UDim2.new(0.662999988, 0, 0.699999988, 0)
+CrypticsUniqueDesign.TextLabel_10.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_10.Text = "Free"
+CrypticsUniqueDesign.TextLabel_10.TextColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_10.TextScaled = true
+CrypticsUniqueDesign.TextLabel_10.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_10.TextWrapped = true
 
 CrypticsUniqueDesign.Title_2.Name = "Title"
 CrypticsUniqueDesign.Title_2.Parent = CrypticsUniqueDesign.Scriptblox
@@ -1009,20 +1057,20 @@ CrypticsUniqueDesign.Free.ZIndex = 2
 CrypticsUniqueDesign.UICorner_13.CornerRadius = UDim.new(0.200000003, 0)
 CrypticsUniqueDesign.UICorner_13.Parent = CrypticsUniqueDesign.Free
 
-CrypticsUniqueDesign.TextLabel_8.Parent = CrypticsUniqueDesign.Free
-CrypticsUniqueDesign.TextLabel_8.AnchorPoint = Vector2.new(0.5, 0.5)
-CrypticsUniqueDesign.TextLabel_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_8.BackgroundTransparency = 1.000
-CrypticsUniqueDesign.TextLabel_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.TextLabel_8.BorderSizePixel = 0
-CrypticsUniqueDesign.TextLabel_8.Position = UDim2.new(0.5, 0, 0.5, 0)
-CrypticsUniqueDesign.TextLabel_8.Size = UDim2.new(1, -4, 0.800000012, 0)
-CrypticsUniqueDesign.TextLabel_8.Font = Enum.Font.SourceSans
-CrypticsUniqueDesign.TextLabel_8.Text = "Free"
-CrypticsUniqueDesign.TextLabel_8.TextColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_8.TextScaled = true
-CrypticsUniqueDesign.TextLabel_8.TextSize = 14.000
-CrypticsUniqueDesign.TextLabel_8.TextWrapped = true
+CrypticsUniqueDesign.TextLabel_11.Parent = CrypticsUniqueDesign.Free
+CrypticsUniqueDesign.TextLabel_11.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.TextLabel_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_11.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_11.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_11.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_11.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_11.Size = UDim2.new(1, -4, 0.800000012, 0)
+CrypticsUniqueDesign.TextLabel_11.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_11.Text = "Free"
+CrypticsUniqueDesign.TextLabel_11.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_11.TextScaled = true
+CrypticsUniqueDesign.TextLabel_11.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_11.TextWrapped = true
 
 CrypticsUniqueDesign.Paid.Name = "Paid"
 CrypticsUniqueDesign.Paid.Parent = CrypticsUniqueDesign.rscripts
@@ -1038,20 +1086,20 @@ CrypticsUniqueDesign.Paid.ZIndex = 2
 CrypticsUniqueDesign.UICorner_14.CornerRadius = UDim.new(0.200000003, 0)
 CrypticsUniqueDesign.UICorner_14.Parent = CrypticsUniqueDesign.Paid
 
-CrypticsUniqueDesign.TextLabel_9.Parent = CrypticsUniqueDesign.Paid
-CrypticsUniqueDesign.TextLabel_9.AnchorPoint = Vector2.new(0.5, 0.5)
-CrypticsUniqueDesign.TextLabel_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_9.BackgroundTransparency = 1.000
-CrypticsUniqueDesign.TextLabel_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.TextLabel_9.BorderSizePixel = 0
-CrypticsUniqueDesign.TextLabel_9.Position = UDim2.new(0.5, 0, 0.5, 0)
-CrypticsUniqueDesign.TextLabel_9.Size = UDim2.new(1, -4, 0.800000012, 0)
-CrypticsUniqueDesign.TextLabel_9.Font = Enum.Font.SourceSans
-CrypticsUniqueDesign.TextLabel_9.Text = "Key System"
-CrypticsUniqueDesign.TextLabel_9.TextColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_9.TextScaled = true
-CrypticsUniqueDesign.TextLabel_9.TextSize = 14.000
-CrypticsUniqueDesign.TextLabel_9.TextWrapped = true
+CrypticsUniqueDesign.TextLabel_12.Parent = CrypticsUniqueDesign.Paid
+CrypticsUniqueDesign.TextLabel_12.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.TextLabel_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_12.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_12.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_12.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_12.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_12.Size = UDim2.new(1, -4, 0.800000012, 0)
+CrypticsUniqueDesign.TextLabel_12.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_12.Text = "Key System"
+CrypticsUniqueDesign.TextLabel_12.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_12.TextScaled = true
+CrypticsUniqueDesign.TextLabel_12.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_12.TextWrapped = true
 
 CrypticsUniqueDesign.Title_3.Name = "Title"
 CrypticsUniqueDesign.Title_3.Parent = CrypticsUniqueDesign.rscripts
@@ -1140,20 +1188,20 @@ CrypticsUniqueDesign.UIGradient_16.Color = ColorSequence.new{ColorSequenceKeypoi
 CrypticsUniqueDesign.UIGradient_16.Rotation = -89
 CrypticsUniqueDesign.UIGradient_16.Parent = CrypticsUniqueDesign.NextPage
 
-CrypticsUniqueDesign.TextLabel_10.Parent = CrypticsUniqueDesign.NextPage
-CrypticsUniqueDesign.TextLabel_10.AnchorPoint = Vector2.new(0.5, 0.5)
-CrypticsUniqueDesign.TextLabel_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_10.BackgroundTransparency = 1.000
-CrypticsUniqueDesign.TextLabel_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.TextLabel_10.BorderSizePixel = 0
-CrypticsUniqueDesign.TextLabel_10.Position = UDim2.new(0.5, 0, 0.5, 0)
-CrypticsUniqueDesign.TextLabel_10.Size = UDim2.new(1, 0, 1, 0)
-CrypticsUniqueDesign.TextLabel_10.Font = Enum.Font.SourceSans
-CrypticsUniqueDesign.TextLabel_10.Text = ">"
-CrypticsUniqueDesign.TextLabel_10.TextColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_10.TextScaled = true
-CrypticsUniqueDesign.TextLabel_10.TextSize = 14.000
-CrypticsUniqueDesign.TextLabel_10.TextWrapped = true
+CrypticsUniqueDesign.TextLabel_13.Parent = CrypticsUniqueDesign.NextPage
+CrypticsUniqueDesign.TextLabel_13.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.TextLabel_13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_13.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_13.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_13.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_13.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_13.Size = UDim2.new(1, 0, 1, 0)
+CrypticsUniqueDesign.TextLabel_13.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_13.Text = ">"
+CrypticsUniqueDesign.TextLabel_13.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_13.TextScaled = true
+CrypticsUniqueDesign.TextLabel_13.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_13.TextWrapped = true
 
 CrypticsUniqueDesign.PreviousPage.Name = "Previous Page"
 CrypticsUniqueDesign.PreviousPage.Parent = CrypticsUniqueDesign.GlobalScripts
@@ -1171,20 +1219,20 @@ CrypticsUniqueDesign.UIGradient_17.Color = ColorSequence.new{ColorSequenceKeypoi
 CrypticsUniqueDesign.UIGradient_17.Rotation = -89
 CrypticsUniqueDesign.UIGradient_17.Parent = CrypticsUniqueDesign.PreviousPage
 
-CrypticsUniqueDesign.TextLabel_11.Parent = CrypticsUniqueDesign.PreviousPage
-CrypticsUniqueDesign.TextLabel_11.AnchorPoint = Vector2.new(0.5, 0.5)
-CrypticsUniqueDesign.TextLabel_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_11.BackgroundTransparency = 1.000
-CrypticsUniqueDesign.TextLabel_11.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.TextLabel_11.BorderSizePixel = 0
-CrypticsUniqueDesign.TextLabel_11.Position = UDim2.new(0.5, 0, 0.5, 0)
-CrypticsUniqueDesign.TextLabel_11.Size = UDim2.new(1, 0, 1, 0)
-CrypticsUniqueDesign.TextLabel_11.Font = Enum.Font.SourceSans
-CrypticsUniqueDesign.TextLabel_11.Text = "<"
-CrypticsUniqueDesign.TextLabel_11.TextColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_11.TextScaled = true
-CrypticsUniqueDesign.TextLabel_11.TextSize = 14.000
-CrypticsUniqueDesign.TextLabel_11.TextWrapped = true
+CrypticsUniqueDesign.TextLabel_14.Parent = CrypticsUniqueDesign.PreviousPage
+CrypticsUniqueDesign.TextLabel_14.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.TextLabel_14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_14.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_14.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_14.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_14.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_14.Size = UDim2.new(1, 0, 1, 0)
+CrypticsUniqueDesign.TextLabel_14.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_14.Text = "<"
+CrypticsUniqueDesign.TextLabel_14.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_14.TextScaled = true
+CrypticsUniqueDesign.TextLabel_14.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_14.TextWrapped = true
 
 CrypticsUniqueDesign.Frame_8.Parent = CrypticsUniqueDesign.GlobalScripts
 CrypticsUniqueDesign.Frame_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -1193,20 +1241,20 @@ CrypticsUniqueDesign.Frame_8.BorderSizePixel = 0
 CrypticsUniqueDesign.Frame_8.Position = UDim2.new(0.908693612, 0, 0, 0)
 CrypticsUniqueDesign.Frame_8.Size = UDim2.new(0.0490000024, 0, 0.0709999949, 0)
 
-CrypticsUniqueDesign.TextLabel_12.Parent = CrypticsUniqueDesign.Frame_8
-CrypticsUniqueDesign.TextLabel_12.AnchorPoint = Vector2.new(0, 0.5)
-CrypticsUniqueDesign.TextLabel_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_12.BackgroundTransparency = 1.000
-CrypticsUniqueDesign.TextLabel_12.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.TextLabel_12.BorderSizePixel = 0
-CrypticsUniqueDesign.TextLabel_12.Position = UDim2.new(0, 0, 0.5, 0)
-CrypticsUniqueDesign.TextLabel_12.Size = UDim2.new(1, 0, 0.5, 0)
-CrypticsUniqueDesign.TextLabel_12.Font = Enum.Font.SourceSans
-CrypticsUniqueDesign.TextLabel_12.Text = "1/250"
-CrypticsUniqueDesign.TextLabel_12.TextColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_12.TextScaled = true
-CrypticsUniqueDesign.TextLabel_12.TextSize = 14.000
-CrypticsUniqueDesign.TextLabel_12.TextWrapped = true
+CrypticsUniqueDesign.TextLabel_15.Parent = CrypticsUniqueDesign.Frame_8
+CrypticsUniqueDesign.TextLabel_15.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.TextLabel_15.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_15.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_15.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_15.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_15.Position = UDim2.new(0, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_15.Size = UDim2.new(1, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_15.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_15.Text = "1/250"
+CrypticsUniqueDesign.TextLabel_15.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_15.TextScaled = true
+CrypticsUniqueDesign.TextLabel_15.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_15.TextWrapped = true
 
 CrypticsUniqueDesign.UIGradient_18.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
 CrypticsUniqueDesign.UIGradient_18.Rotation = -89
@@ -1278,34 +1326,34 @@ CrypticsUniqueDesign.TextButton_2.Text = ""
 CrypticsUniqueDesign.TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
 CrypticsUniqueDesign.TextButton_2.TextSize = 14.000
 
-CrypticsUniqueDesign.TextLabel_13.Parent = CrypticsUniqueDesign.TextButton_2
-CrypticsUniqueDesign.TextLabel_13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_13.BackgroundTransparency = 1.000
-CrypticsUniqueDesign.TextLabel_13.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.TextLabel_13.BorderSizePixel = 0
-CrypticsUniqueDesign.TextLabel_13.Size = UDim2.new(1, 0, 1, 0)
-CrypticsUniqueDesign.TextLabel_13.Font = Enum.Font.SourceSans
-CrypticsUniqueDesign.TextLabel_13.Text = ""
-CrypticsUniqueDesign.TextLabel_13.TextColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_13.TextScaled = true
-CrypticsUniqueDesign.TextLabel_13.TextSize = 14.000
-CrypticsUniqueDesign.TextLabel_13.TextWrapped = true
+CrypticsUniqueDesign.TextLabel_16.Parent = CrypticsUniqueDesign.TextButton_2
+CrypticsUniqueDesign.TextLabel_16.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_16.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_16.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_16.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_16.Size = UDim2.new(1, 0, 1, 0)
+CrypticsUniqueDesign.TextLabel_16.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_16.Text = ""
+CrypticsUniqueDesign.TextLabel_16.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_16.TextScaled = true
+CrypticsUniqueDesign.TextLabel_16.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_16.TextWrapped = true
 
-CrypticsUniqueDesign.TextLabel_14.Parent = CrypticsUniqueDesign.Settings1
-CrypticsUniqueDesign.TextLabel_14.AnchorPoint = Vector2.new(0, 0.5)
-CrypticsUniqueDesign.TextLabel_14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_14.BackgroundTransparency = 1.000
-CrypticsUniqueDesign.TextLabel_14.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.TextLabel_14.BorderSizePixel = 0
-CrypticsUniqueDesign.TextLabel_14.Position = UDim2.new(0.0442747734, 0, 0.500000179, 0)
-CrypticsUniqueDesign.TextLabel_14.Size = UDim2.new(0.955725193, 0, 0.649999917, 0)
-CrypticsUniqueDesign.TextLabel_14.Font = Enum.Font.SourceSans
-CrypticsUniqueDesign.TextLabel_14.Text = "Disable Ingame Console Logging"
-CrypticsUniqueDesign.TextLabel_14.TextColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_14.TextScaled = true
-CrypticsUniqueDesign.TextLabel_14.TextSize = 14.000
-CrypticsUniqueDesign.TextLabel_14.TextWrapped = true
-CrypticsUniqueDesign.TextLabel_14.TextXAlignment = Enum.TextXAlignment.Left
+CrypticsUniqueDesign.TextLabel_17.Parent = CrypticsUniqueDesign.Settings1
+CrypticsUniqueDesign.TextLabel_17.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.TextLabel_17.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_17.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_17.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_17.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_17.Position = UDim2.new(0.0442747734, 0, 0.500000179, 0)
+CrypticsUniqueDesign.TextLabel_17.Size = UDim2.new(0.955725193, 0, 0.649999917, 0)
+CrypticsUniqueDesign.TextLabel_17.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_17.Text = "Disable Ingame Console Logging"
+CrypticsUniqueDesign.TextLabel_17.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_17.TextScaled = true
+CrypticsUniqueDesign.TextLabel_17.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_17.TextWrapped = true
+CrypticsUniqueDesign.TextLabel_17.TextXAlignment = Enum.TextXAlignment.Left
 
 CrypticsUniqueDesign.UIPadding_4.Parent = CrypticsUniqueDesign.SettingsTab
 CrypticsUniqueDesign.UIPadding_4.PaddingTop = UDim.new(0.00899999961, 0)
@@ -1331,34 +1379,34 @@ CrypticsUniqueDesign.TextButton_3.Text = ""
 CrypticsUniqueDesign.TextButton_3.TextColor3 = Color3.fromRGB(0, 0, 0)
 CrypticsUniqueDesign.TextButton_3.TextSize = 14.000
 
-CrypticsUniqueDesign.TextLabel_15.Parent = CrypticsUniqueDesign.TextButton_3
-CrypticsUniqueDesign.TextLabel_15.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_15.BackgroundTransparency = 1.000
-CrypticsUniqueDesign.TextLabel_15.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.TextLabel_15.BorderSizePixel = 0
-CrypticsUniqueDesign.TextLabel_15.Size = UDim2.new(1, 0, 1, 0)
-CrypticsUniqueDesign.TextLabel_15.Font = Enum.Font.SourceSans
-CrypticsUniqueDesign.TextLabel_15.Text = ""
-CrypticsUniqueDesign.TextLabel_15.TextColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_15.TextScaled = true
-CrypticsUniqueDesign.TextLabel_15.TextSize = 14.000
-CrypticsUniqueDesign.TextLabel_15.TextWrapped = true
+CrypticsUniqueDesign.TextLabel_18.Parent = CrypticsUniqueDesign.TextButton_3
+CrypticsUniqueDesign.TextLabel_18.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_18.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_18.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_18.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_18.Size = UDim2.new(1, 0, 1, 0)
+CrypticsUniqueDesign.TextLabel_18.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_18.Text = ""
+CrypticsUniqueDesign.TextLabel_18.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_18.TextScaled = true
+CrypticsUniqueDesign.TextLabel_18.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_18.TextWrapped = true
 
-CrypticsUniqueDesign.TextLabel_16.Parent = CrypticsUniqueDesign.Settings2
-CrypticsUniqueDesign.TextLabel_16.AnchorPoint = Vector2.new(0, 0.5)
-CrypticsUniqueDesign.TextLabel_16.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_16.BackgroundTransparency = 1.000
-CrypticsUniqueDesign.TextLabel_16.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.TextLabel_16.BorderSizePixel = 0
-CrypticsUniqueDesign.TextLabel_16.Position = UDim2.new(0.0442747734, 0, 0.500000179, 0)
-CrypticsUniqueDesign.TextLabel_16.Size = UDim2.new(0.955725193, 0, 0.649999917, 0)
-CrypticsUniqueDesign.TextLabel_16.Font = Enum.Font.SourceSans
-CrypticsUniqueDesign.TextLabel_16.Text = "Disable Console"
-CrypticsUniqueDesign.TextLabel_16.TextColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_16.TextScaled = true
-CrypticsUniqueDesign.TextLabel_16.TextSize = 14.000
-CrypticsUniqueDesign.TextLabel_16.TextWrapped = true
-CrypticsUniqueDesign.TextLabel_16.TextXAlignment = Enum.TextXAlignment.Left
+CrypticsUniqueDesign.TextLabel_19.Parent = CrypticsUniqueDesign.Settings2
+CrypticsUniqueDesign.TextLabel_19.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.TextLabel_19.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_19.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_19.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_19.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_19.Position = UDim2.new(0.0442747734, 0, 0.500000179, 0)
+CrypticsUniqueDesign.TextLabel_19.Size = UDim2.new(0.955725193, 0, 0.649999917, 0)
+CrypticsUniqueDesign.TextLabel_19.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_19.Text = "Disable Console"
+CrypticsUniqueDesign.TextLabel_19.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_19.TextScaled = true
+CrypticsUniqueDesign.TextLabel_19.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_19.TextWrapped = true
+CrypticsUniqueDesign.TextLabel_19.TextXAlignment = Enum.TextXAlignment.Left
 
 CrypticsUniqueDesign.Settings3.Name = "Settings3"
 CrypticsUniqueDesign.Settings3.Parent = CrypticsUniqueDesign.SettingsTab
@@ -1381,34 +1429,34 @@ CrypticsUniqueDesign.TextButton_4.Text = ""
 CrypticsUniqueDesign.TextButton_4.TextColor3 = Color3.fromRGB(0, 0, 0)
 CrypticsUniqueDesign.TextButton_4.TextSize = 14.000
 
-CrypticsUniqueDesign.TextLabel_17.Parent = CrypticsUniqueDesign.TextButton_4
-CrypticsUniqueDesign.TextLabel_17.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_17.BackgroundTransparency = 1.000
-CrypticsUniqueDesign.TextLabel_17.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.TextLabel_17.BorderSizePixel = 0
-CrypticsUniqueDesign.TextLabel_17.Size = UDim2.new(1, 0, 1, 0)
-CrypticsUniqueDesign.TextLabel_17.Font = Enum.Font.SourceSans
-CrypticsUniqueDesign.TextLabel_17.Text = ""
-CrypticsUniqueDesign.TextLabel_17.TextColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_17.TextScaled = true
-CrypticsUniqueDesign.TextLabel_17.TextSize = 14.000
-CrypticsUniqueDesign.TextLabel_17.TextWrapped = true
+CrypticsUniqueDesign.TextLabel_20.Parent = CrypticsUniqueDesign.TextButton_4
+CrypticsUniqueDesign.TextLabel_20.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_20.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_20.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_20.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_20.Size = UDim2.new(1, 0, 1, 0)
+CrypticsUniqueDesign.TextLabel_20.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_20.Text = ""
+CrypticsUniqueDesign.TextLabel_20.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_20.TextScaled = true
+CrypticsUniqueDesign.TextLabel_20.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_20.TextWrapped = true
 
-CrypticsUniqueDesign.TextLabel_18.Parent = CrypticsUniqueDesign.Settings3
-CrypticsUniqueDesign.TextLabel_18.AnchorPoint = Vector2.new(0, 0.5)
-CrypticsUniqueDesign.TextLabel_18.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_18.BackgroundTransparency = 1.000
-CrypticsUniqueDesign.TextLabel_18.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.TextLabel_18.BorderSizePixel = 0
-CrypticsUniqueDesign.TextLabel_18.Position = UDim2.new(0.0442747734, 0, 0.499999732, 0)
-CrypticsUniqueDesign.TextLabel_18.Size = UDim2.new(0.955725193, 0, 0.649999976, 0)
-CrypticsUniqueDesign.TextLabel_18.Font = Enum.Font.SourceSans
-CrypticsUniqueDesign.TextLabel_18.Text = "Unlock FPS"
-CrypticsUniqueDesign.TextLabel_18.TextColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_18.TextScaled = true
-CrypticsUniqueDesign.TextLabel_18.TextSize = 14.000
-CrypticsUniqueDesign.TextLabel_18.TextWrapped = true
-CrypticsUniqueDesign.TextLabel_18.TextXAlignment = Enum.TextXAlignment.Left
+CrypticsUniqueDesign.TextLabel_21.Parent = CrypticsUniqueDesign.Settings3
+CrypticsUniqueDesign.TextLabel_21.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.TextLabel_21.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_21.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_21.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_21.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_21.Position = UDim2.new(0.0442747734, 0, 0.499999732, 0)
+CrypticsUniqueDesign.TextLabel_21.Size = UDim2.new(0.955725193, 0, 0.649999976, 0)
+CrypticsUniqueDesign.TextLabel_21.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_21.Text = "Unlock FPS"
+CrypticsUniqueDesign.TextLabel_21.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_21.TextScaled = true
+CrypticsUniqueDesign.TextLabel_21.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_21.TextWrapped = true
+CrypticsUniqueDesign.TextLabel_21.TextXAlignment = Enum.TextXAlignment.Left
 
 CrypticsUniqueDesign.Settings4.Name = "Settings4"
 CrypticsUniqueDesign.Settings4.Parent = CrypticsUniqueDesign.SettingsTab
@@ -1431,34 +1479,34 @@ CrypticsUniqueDesign.TextButton_5.Text = ""
 CrypticsUniqueDesign.TextButton_5.TextColor3 = Color3.fromRGB(0, 0, 0)
 CrypticsUniqueDesign.TextButton_5.TextSize = 14.000
 
-CrypticsUniqueDesign.TextLabel_19.Parent = CrypticsUniqueDesign.TextButton_5
-CrypticsUniqueDesign.TextLabel_19.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_19.BackgroundTransparency = 1.000
-CrypticsUniqueDesign.TextLabel_19.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.TextLabel_19.BorderSizePixel = 0
-CrypticsUniqueDesign.TextLabel_19.Size = UDim2.new(1, 0, 1, 0)
-CrypticsUniqueDesign.TextLabel_19.Font = Enum.Font.SourceSans
-CrypticsUniqueDesign.TextLabel_19.Text = ""
-CrypticsUniqueDesign.TextLabel_19.TextColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_19.TextScaled = true
-CrypticsUniqueDesign.TextLabel_19.TextSize = 14.000
-CrypticsUniqueDesign.TextLabel_19.TextWrapped = true
+CrypticsUniqueDesign.TextLabel_22.Parent = CrypticsUniqueDesign.TextButton_5
+CrypticsUniqueDesign.TextLabel_22.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_22.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_22.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_22.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_22.Size = UDim2.new(1, 0, 1, 0)
+CrypticsUniqueDesign.TextLabel_22.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_22.Text = ""
+CrypticsUniqueDesign.TextLabel_22.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_22.TextScaled = true
+CrypticsUniqueDesign.TextLabel_22.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_22.TextWrapped = true
 
-CrypticsUniqueDesign.TextLabel_20.Parent = CrypticsUniqueDesign.Settings4
-CrypticsUniqueDesign.TextLabel_20.AnchorPoint = Vector2.new(0, 0.5)
-CrypticsUniqueDesign.TextLabel_20.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_20.BackgroundTransparency = 1.000
-CrypticsUniqueDesign.TextLabel_20.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.TextLabel_20.BorderSizePixel = 0
-CrypticsUniqueDesign.TextLabel_20.Position = UDim2.new(0.0442747734, 0, 0.499999732, 0)
-CrypticsUniqueDesign.TextLabel_20.Size = UDim2.new(0.955725193, 0, 0.649999976, 0)
-CrypticsUniqueDesign.TextLabel_20.Font = Enum.Font.SourceSans
-CrypticsUniqueDesign.TextLabel_20.Text = "Anti-Afk"
-CrypticsUniqueDesign.TextLabel_20.TextColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_20.TextScaled = true
-CrypticsUniqueDesign.TextLabel_20.TextSize = 14.000
-CrypticsUniqueDesign.TextLabel_20.TextWrapped = true
-CrypticsUniqueDesign.TextLabel_20.TextXAlignment = Enum.TextXAlignment.Left
+CrypticsUniqueDesign.TextLabel_23.Parent = CrypticsUniqueDesign.Settings4
+CrypticsUniqueDesign.TextLabel_23.AnchorPoint = Vector2.new(0, 0.5)
+CrypticsUniqueDesign.TextLabel_23.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_23.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_23.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_23.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_23.Position = UDim2.new(0.0442747734, 0, 0.499999732, 0)
+CrypticsUniqueDesign.TextLabel_23.Size = UDim2.new(0.955725193, 0, 0.649999976, 0)
+CrypticsUniqueDesign.TextLabel_23.Font = Enum.Font.SourceSans
+CrypticsUniqueDesign.TextLabel_23.Text = "Anti-Afk"
+CrypticsUniqueDesign.TextLabel_23.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_23.TextScaled = true
+CrypticsUniqueDesign.TextLabel_23.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_23.TextWrapped = true
+CrypticsUniqueDesign.TextLabel_23.TextXAlignment = Enum.TextXAlignment.Left
 
 CrypticsUniqueDesign.Version.Name = "Version"
 CrypticsUniqueDesign.Version.Parent = CrypticsUniqueDesign.MainShell
@@ -1485,20 +1533,20 @@ CrypticsUniqueDesign.Backdrop.Size = UDim2.new(1, -2, 1.20828652, -2)
 CrypticsUniqueDesign.UICorner_19.CornerRadius = UDim.new(0, 4)
 CrypticsUniqueDesign.UICorner_19.Parent = CrypticsUniqueDesign.Backdrop
 
-CrypticsUniqueDesign.TextLabel_21.Parent = CrypticsUniqueDesign.Backdrop
-CrypticsUniqueDesign.TextLabel_21.AnchorPoint = Vector2.new(0.5, 0.5)
-CrypticsUniqueDesign.TextLabel_21.BackgroundColor3 = Color3.fromRGB(0, 145, 185)
-CrypticsUniqueDesign.TextLabel_21.BackgroundTransparency = 1.000
-CrypticsUniqueDesign.TextLabel_21.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.TextLabel_21.BorderSizePixel = 0
-CrypticsUniqueDesign.TextLabel_21.Position = UDim2.new(0.5, 0, 0.5, 0)
-CrypticsUniqueDesign.TextLabel_21.Size = UDim2.new(0.959999979, 0, 0.939999998, 0)
-CrypticsUniqueDesign.TextLabel_21.Font = Enum.Font.Ubuntu
-CrypticsUniqueDesign.TextLabel_21.Text = "1.0.638.610"
-CrypticsUniqueDesign.TextLabel_21.TextColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.TextLabel_21.TextScaled = true
-CrypticsUniqueDesign.TextLabel_21.TextSize = 14.000
-CrypticsUniqueDesign.TextLabel_21.TextWrapped = true
+CrypticsUniqueDesign.TextLabel_24.Parent = CrypticsUniqueDesign.Backdrop
+CrypticsUniqueDesign.TextLabel_24.AnchorPoint = Vector2.new(0.5, 0.5)
+CrypticsUniqueDesign.TextLabel_24.BackgroundColor3 = Color3.fromRGB(0, 145, 185)
+CrypticsUniqueDesign.TextLabel_24.BackgroundTransparency = 1.000
+CrypticsUniqueDesign.TextLabel_24.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CrypticsUniqueDesign.TextLabel_24.BorderSizePixel = 0
+CrypticsUniqueDesign.TextLabel_24.Position = UDim2.new(0.5, 0, 0.5, 0)
+CrypticsUniqueDesign.TextLabel_24.Size = UDim2.new(0.959999979, 0, 0.939999998, 0)
+CrypticsUniqueDesign.TextLabel_24.Font = Enum.Font.Ubuntu
+CrypticsUniqueDesign.TextLabel_24.Text = "1.0.638.610"
+CrypticsUniqueDesign.TextLabel_24.TextColor3 = Color3.fromRGB(255, 255, 255)
+CrypticsUniqueDesign.TextLabel_24.TextScaled = true
+CrypticsUniqueDesign.TextLabel_24.TextSize = 14.000
+CrypticsUniqueDesign.TextLabel_24.TextWrapped = true
 
 CrypticsUniqueDesign.UIGradient_19.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(53, 76, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 128, 255))}
 CrypticsUniqueDesign.UIGradient_19.Rotation = 90
@@ -1926,134 +1974,6 @@ CrypticsUniqueDesign.UIListLayout_5.Padding = UDim.new(0.00499999989, 0)
 CrypticsUniqueDesign.UIPadding_5.Parent = CrypticsUniqueDesign.Notifier
 CrypticsUniqueDesign.UIPadding_5.PaddingBottom = UDim.new(0.00499999989, 0)
 
-CrypticsUniqueDesign.Hidden.Name = "Hidden"
-CrypticsUniqueDesign.Hidden.Parent = CrypticsUniqueDesign.CrypticsUniqueDesign
-CrypticsUniqueDesign.Hidden.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.Hidden.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.Hidden.BorderSizePixel = 0
-CrypticsUniqueDesign.Hidden.Size = UDim2.new(0, 100, 0, 100)
-CrypticsUniqueDesign.Hidden.Visible = false
-
-CrypticsUniqueDesign.Hidden_2.Name = "Hidden"
-CrypticsUniqueDesign.Hidden_2.Parent = CrypticsUniqueDesign.Hidden
-CrypticsUniqueDesign.Hidden_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.Hidden_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.Hidden_2.BorderSizePixel = 0
-CrypticsUniqueDesign.Hidden_2.Size = UDim2.new(0, 100, 0, 100)
-CrypticsUniqueDesign.Hidden_2.Visible = false
-
-CrypticsUniqueDesign.Hidden_3.Name = "Hidden"
-CrypticsUniqueDesign.Hidden_3.Parent = CrypticsUniqueDesign.Hidden
-CrypticsUniqueDesign.Hidden_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.Hidden_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.Hidden_3.BorderSizePixel = 0
-CrypticsUniqueDesign.Hidden_3.Size = UDim2.new(0, 100, 0, 100)
-CrypticsUniqueDesign.Hidden_3.Visible = false
-
-CrypticsUniqueDesign.Hidden_4.Name = "Hidden"
-CrypticsUniqueDesign.Hidden_4.Parent = CrypticsUniqueDesign.Hidden
-CrypticsUniqueDesign.Hidden_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.Hidden_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.Hidden_4.BorderSizePixel = 0
-CrypticsUniqueDesign.Hidden_4.Size = UDim2.new(0, 100, 0, 100)
-CrypticsUniqueDesign.Hidden_4.Visible = false
-
-CrypticsUniqueDesign.Hidden_5.Name = "Hidden"
-CrypticsUniqueDesign.Hidden_5.Parent = CrypticsUniqueDesign.Hidden
-CrypticsUniqueDesign.Hidden_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.Hidden_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.Hidden_5.BorderSizePixel = 0
-CrypticsUniqueDesign.Hidden_5.Size = UDim2.new(0, 100, 0, 100)
-CrypticsUniqueDesign.Hidden_5.Visible = false
-
-CrypticsUniqueDesign.Hidden_6.Name = "Hidden"
-CrypticsUniqueDesign.Hidden_6.Parent = CrypticsUniqueDesign.Hidden
-CrypticsUniqueDesign.Hidden_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.Hidden_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.Hidden_6.BorderSizePixel = 0
-CrypticsUniqueDesign.Hidden_6.Size = UDim2.new(0, 100, 0, 100)
-CrypticsUniqueDesign.Hidden_6.Visible = false
-
-CrypticsUniqueDesign.Hidden_7.Name = "Hidden"
-CrypticsUniqueDesign.Hidden_7.Parent = CrypticsUniqueDesign.Hidden
-CrypticsUniqueDesign.Hidden_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.Hidden_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.Hidden_7.BorderSizePixel = 0
-CrypticsUniqueDesign.Hidden_7.Size = UDim2.new(0, 100, 0, 100)
-CrypticsUniqueDesign.Hidden_7.Visible = false
-
-CrypticsUniqueDesign.Hidden_8.Name = "Hidden"
-CrypticsUniqueDesign.Hidden_8.Parent = CrypticsUniqueDesign.Hidden
-CrypticsUniqueDesign.Hidden_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.Hidden_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.Hidden_8.BorderSizePixel = 0
-CrypticsUniqueDesign.Hidden_8.Size = UDim2.new(0, 100, 0, 100)
-CrypticsUniqueDesign.Hidden_8.Visible = false
-
-CrypticsUniqueDesign.Hidden_9.Name = "Hidden"
-CrypticsUniqueDesign.Hidden_9.Parent = CrypticsUniqueDesign.Hidden
-CrypticsUniqueDesign.Hidden_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.Hidden_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.Hidden_9.BorderSizePixel = 0
-CrypticsUniqueDesign.Hidden_9.Size = UDim2.new(0, 100, 0, 100)
-CrypticsUniqueDesign.Hidden_9.Visible = false
-
-CrypticsUniqueDesign.Hidden_10.Name = "Hidden"
-CrypticsUniqueDesign.Hidden_10.Parent = CrypticsUniqueDesign.Hidden
-CrypticsUniqueDesign.Hidden_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.Hidden_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.Hidden_10.BorderSizePixel = 0
-CrypticsUniqueDesign.Hidden_10.Size = UDim2.new(0, 100, 0, 100)
-CrypticsUniqueDesign.Hidden_10.Visible = false
-
-CrypticsUniqueDesign.Hidden_11.Name = "Hidden"
-CrypticsUniqueDesign.Hidden_11.Parent = CrypticsUniqueDesign.Hidden
-CrypticsUniqueDesign.Hidden_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.Hidden_11.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.Hidden_11.BorderSizePixel = 0
-CrypticsUniqueDesign.Hidden_11.Size = UDim2.new(0, 100, 0, 100)
-CrypticsUniqueDesign.Hidden_11.Visible = false
-
-CrypticsUniqueDesign.Hidden_12.Name = "Hidden"
-CrypticsUniqueDesign.Hidden_12.Parent = CrypticsUniqueDesign.Hidden
-CrypticsUniqueDesign.Hidden_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.Hidden_12.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.Hidden_12.BorderSizePixel = 0
-CrypticsUniqueDesign.Hidden_12.Size = UDim2.new(0, 100, 0, 100)
-CrypticsUniqueDesign.Hidden_12.Visible = false
-
-CrypticsUniqueDesign.Hidden_13.Name = "Hidden"
-CrypticsUniqueDesign.Hidden_13.Parent = CrypticsUniqueDesign.Hidden
-CrypticsUniqueDesign.Hidden_13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.Hidden_13.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.Hidden_13.BorderSizePixel = 0
-CrypticsUniqueDesign.Hidden_13.Size = UDim2.new(0, 100, 0, 100)
-CrypticsUniqueDesign.Hidden_13.Visible = false
-
-CrypticsUniqueDesign.Hidden_14.Name = "Hidden"
-CrypticsUniqueDesign.Hidden_14.Parent = CrypticsUniqueDesign.Hidden
-CrypticsUniqueDesign.Hidden_14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.Hidden_14.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.Hidden_14.BorderSizePixel = 0
-CrypticsUniqueDesign.Hidden_14.Size = UDim2.new(0, 100, 0, 100)
-CrypticsUniqueDesign.Hidden_14.Visible = false
-
-CrypticsUniqueDesign.Hidden_15.Name = "Hidden"
-CrypticsUniqueDesign.Hidden_15.Parent = CrypticsUniqueDesign.Hidden
-CrypticsUniqueDesign.Hidden_15.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.Hidden_15.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.Hidden_15.BorderSizePixel = 0
-CrypticsUniqueDesign.Hidden_15.Size = UDim2.new(0, 100, 0, 100)
-CrypticsUniqueDesign.Hidden_15.Visible = false
-
-CrypticsUniqueDesign.Hidden_16.Name = "Hidden"
-CrypticsUniqueDesign.Hidden_16.Parent = CrypticsUniqueDesign.Hidden
-CrypticsUniqueDesign.Hidden_16.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CrypticsUniqueDesign.Hidden_16.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CrypticsUniqueDesign.Hidden_16.BorderSizePixel = 0
-CrypticsUniqueDesign.Hidden_16.Size = UDim2.new(0, 100, 0, 100)
-CrypticsUniqueDesign.Hidden_16.Visible = false
-
 CrypticsUniqueDesign.Toggle.Name = "Toggle"
 CrypticsUniqueDesign.Toggle.Parent = CrypticsUniqueDesign.CrypticsUniqueDesign
 CrypticsUniqueDesign.Toggle.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -2114,6 +2034,7 @@ local Database = {
         S4 = false
     }
 }
+
 local ConsoleInstances = 0
 local Shell = CrypticsUniqueDesign.CrypticsUniqueDesign.MainShell
 local Notif = CrypticsUniqueDesign.CrypticsUniqueDesign.Notifier
@@ -2809,7 +2730,7 @@ function Lib:DevConsole(t: string, text: string)
     Time.TextWrapped = true
 
     ConsoleInstances += 1
-    
+
     if t == "print" then
         LuaC.TextColor3 = Color3.fromRGB(255, 255, 255)
     elseif t == "warn" then
@@ -2823,7 +2744,7 @@ function Lib:DevConsole(t: string, text: string)
     MainFrame["Console Tab"].ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, MainFrame["Console Tab"].ScrollingFrame.UIListLayout.AbsoluteContentSize.Y)
 end
 function Lib:CheckFiles()
-    for _, Folder in next, {"Cryptic", "Cryptic/Tabs"} do
+    for _, Folder in next, {"Cryptic", "Cryptic/Tabs", "Cryptic/Local Scripts"} do
         if not isfolder(Folder) then
             makefolder(Folder)
         end
@@ -2841,7 +2762,7 @@ function Lib:CheckFiles()
 end
 function Lib:DataChecking()
     if (readfile and writefile and isfile and isfolder and makefolder) then
-        for _, Folder in next, {"Cryptic", "Cryptic/Tabs"} do
+        for _, Folder in next, {"Cryptic", "Cryptic/Tabs", "Cryptic/Local Scripts"} do
             if not isfolder(Folder) then
                 makefolder(Folder)
             end
@@ -2892,8 +2813,8 @@ Togglebtn.MouseButton1Click:Connect(function()
 end)
 
 Shell.Title.Text = "<b><i>Cryptic</i></b>"
-Shell.Subtitle.Text = "<b><i>Beta UI v1.3</i></b>"
-Shell.Version.Backdrop.TextLabel.Text = "Version: 2.639.688"
+Shell.Subtitle.Text = "<b><i>Beta UI v1.4</i></b>"
+Shell.Version.Backdrop.TextLabel.Text = "Version: 2.640.730"
 
 Shell.Title.RichText = true
 Shell.Subtitle.RichText = true
@@ -2952,7 +2873,7 @@ MainFrame["Script Editor Tab"]["Scripting Buttons"].Execute.MouseButton1Click:Co
 			if not s then
                 Lib:DevConsole('error', e)
                 
-				Lib:CreateNotification('An error has occured!', 5)
+				Lib:CreateNotification('An Error Has Occured!', 5)
 			else
 				Lib:CreateNotification('Executed Successfully!', 5)
 			end
@@ -2973,7 +2894,7 @@ MainFrame["Script Editor Tab"]["Scripting Buttons"].Copy.MouseButton1Click:Conne
                 
 				Lib:CreateNotification('Error While Copying To Clipboard', 5)
 			else
-				Lib:CreateNotification('Copied to clipboard!', 5)
+				Lib:CreateNotification('Copied To Clipboard!', 5)
 			end
 		end
 	end
@@ -2990,7 +2911,7 @@ MainFrame["Script Editor Tab"]["Scripting Buttons"].Clear.MouseButton1Click:Conn
 			if not s and e then
                 Lib:DevConsole('error', e)
                 
-				Lib:CreateNotification('Error while clearing tab!', 5)
+				Lib:CreateNotification('Error While Clearing Tab!', 5)
 			else
 				Lib:CreateNotification('Cleared Editor!', 5)
 			end
@@ -3036,7 +2957,7 @@ MainFrame["Script Editor Tab"]["Scripting Buttons"].ExecuteClipboard.MouseButton
 
 		Lib:CreateNotification('Error While Executing From Clipboard!', 5)
 	else
-		Lib:CreateNotification('Executed clipboard!', 5)
+		Lib:CreateNotification('Executed Clipboard!', 5)
 	end
 end)
 
@@ -3061,7 +2982,7 @@ MainFrame["Saved Scripts"].Execute.MouseButton1Click:Connect(function()
 		if not s then
             Lib:DevConsole('error', e)
             
-			Lib:CreateNotification('Error while attempting to execute the script!', 5)
+			Lib:CreateNotification('Error While Attempting To Execute The Script!', 5)
 		else
 			Lib:CreateNotification(ExecSS, 5)
 		end
@@ -3078,11 +2999,50 @@ MainFrame["Saved Scripts"]["Copy To Clipboard"].MouseButton1Click:Connect(functi
 		if not s and e then
             Lib:DevConsole('error', e)
 
-			Lib:CreateNotification('Error Coping to Clipboard!', 5)
+			Lib:CreateNotification('Error Copying To Clipboard!', 5)
 		else
 			Lib:CreateNotification('Copied To Clipboard', 5)
 		end
 	end
+end)
+
+-- Change Showed Scripts
+MainFrame["Saved Scripts"]["tof"].MouseButton1Click:Connect(function()
+    if MainFrame["Saved Scripts"]["tof"].TextLabel.Text == "Presaved Scripts" then
+        MainFrame["Saved Scripts"]["tof"].TextLabel.Text = "User Saved Scripts"
+
+        Lib:CheckFiles()
+
+        for _, box in pairs(MainFrame["Saved Scripts"]["Scripts"]:GetChildren()) do
+            if box:IsA('TextButton') then
+                box:Destroy()
+            end
+        end
+        
+        for i, lua in pairs(listfiles("Cryptic/Local Scripts")) do
+            local NameUncovered = tostring(lua)
+            local NewName = string.gsub(NameUncovered, "Cryptic/Local Scripts/", "")
+
+            NewName = string.gsub(NewName, ".lua", "")
+            NewName = string.gsub(NewName, ".txt", "")
+
+            Lib:CreateSavedScript(tostring(readfile(lua)), NewName, "", "", "Successfully Executed User Saved Script!")
+        end
+    else
+        MainFrame["Saved Scripts"]["tof"].TextLabel.Text = "Presaved Scripts"
+
+        for _, box in pairs(MainFrame["Saved Scripts"]["Scripts"]:GetChildren()) do
+            if box:IsA('TextButton') then
+                box:Destroy()
+            end
+        end
+
+        Lib:CreateSavedScript("loadstring((http.request{Url='https://reaperscripts.com/loader?l=1'}).Body,'0zek8y2bld7.qowl6c7o~1')()", "Reaper Hub", "Reaper Hub is a popular script hub made to please the masses, supporting 50+ games including shooters!", "", "Successfully executed Reaper Hub")
+        Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()", "Infinite Yield", "Infinite Yield is the most popular universal script created since 2018!", "", "Successfully executed Infinite Yield")
+        Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/dex.lua'))()", "Dex Explorer", "Dex Explorer is the most popular developer tool that assists developers offering a full debugging suite!", "", "Successfully executed Dex Explorer")
+        Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua'))()", "Simple Spy", "Simple Spy is a very popular remote spy tool providing an exceptional experience!", "", "Successfully executed Simple Spy")
+        Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/HummingBird8/HummingRn/main/sUNCTestGET'))()", "UNC Tester", "sUNC is a UNC tester made to expose fake UNC and executor owners claiming to have a high UNC!", "", "Successfully executed sUNC")
+    end
 end)
 
 ---------------------------------------------------------- [[ Global Scripts Tab ]] ----------------------------------------------------------

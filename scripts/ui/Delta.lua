@@ -1,5 +1,5 @@
 local title = "Delta Upgrade";
-local url = "https://deltaexploits.net";
+local url = "https://deltaexploits.gg";
 
 local versionsToUpdate = {"2.639.688"};
 

@@ -1,7 +1,7 @@
 local title = "Delta Upgrade";
 local url = "https://deltaexploits.net";
 
-local versionsToUpdate = {"2.635.590"};
+local versionsToUpdate = {"2.639.688"};
 
 -- Updater internals [START]
 local fVersion, fStringFormat = Version, string.format;

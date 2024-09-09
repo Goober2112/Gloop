@@ -285,7 +285,7 @@ local rateLimit, rateLimitCountdown, errorWait = false, 0, false;
 local hardwareid = gethwid()
 local CKey = false
 local accountId = 39097;
-local Players, thumbnailService = cloneref(game:GetService('Players')), cloneref(game:GetService('ThumbnailService'))
+local Players, thumbnailService = cloneref(game:GetService('Players')), "Hi"--cloneref(game:GetService('ThumbnailService'))
 
 local function getLink()
 	return fStringFormat("https://gateway.platoboost.com/a/%i?id=%s", accountId, hardwareid);
@@ -401,7 +401,7 @@ end)
 
 
 task.spawn(function()
-	ScreenGui.Frame.PFP.Image = thumbnailService:GetUserThumbnailAsync(Players.LocalPlayer.id, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
+	--ScreenGui.Frame.PFP.Image = thumbnailService:GetUserThumbnailAsync(Players.LocalPlayer.id, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
 end)
 
 

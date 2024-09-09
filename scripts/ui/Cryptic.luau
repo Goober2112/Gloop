@@ -287,7 +287,7 @@ local rateLimit, rateLimitCountdown, errorWait = false, 0, false;
 local hardwareid = gethwid()
 local CKey = false
 local accountId = 39097;
-local Players, thumbnailService = cloneref(game:GetService('Players')), cloneref(game:GetService('thumbnailService'))
+local Players, thumbnailService = cloneref(game:GetService('Players')), cloneref(game:GetService('ThumbnailService'))
 
 local function getLink()
 	return fStringFormat("https://gateway.platoboost.com/a/%i?id=%s", accountId, hardwareid);

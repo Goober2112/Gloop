@@ -280,8 +280,6 @@ UIGradient.Parent = Frame
 UICorner_9.CornerRadius = UDim.new(0.0199999996, 0)
 UICorner_9.Parent = Frame
 
-local KeyServer = ScreenGui
-
 local fRequest, fStringFormat, fSpawn, fWait = request or http.request or http_request, string.format, task.spawn, task.wait;
 local rateLimit, rateLimitCountdown, errorWait = false, 0, false;
 local hardwareid = gethwid()
@@ -293,11 +291,11 @@ local function getLink()
 	return fStringFormat("https://gateway.platoboost.com/a/%i?id=%s", accountId, hardwareid);
 end
 local function onMessage(str)
-	KeyServer.Frame["Get Key"].Frame.TextButton.Text = str
+	ScreenGui.Frame["Get Key"].Frame.TextButton.Text = str
 
 	task.wait(1.5)
 
-	KeyServer.Frame["Get Key"].Frame.TextButton.Text = "Insert Key Here"
+	ScreenGui.Frame["Get Key"].Frame.TextButton.Text = "Insert Key Here"
 end
 local function verify(key)
 	if errorWait or rateLimit then 
@@ -375,35 +373,35 @@ local key_link = getLink()
 
 
 
-KeyServer.Frame["Check Key"].TextButton.MouseButton1Click:Connect(function()
-	verify(KeyServer.Frame["Enter Key Here"].TextBox.Text)
+ScreenGui.Frame["Check Key"].TextButton.MouseButton1Click:Connect(function()
+	verify(ScreenGui.Frame["Enter Key Here"].TextBox.Text)
 end)
-KeyServer.Frame["Get Key"].TextButton.MouseButton1Click:Connect(function()
+ScreenGui.Frame["Get Key"].TextButton.MouseButton1Click:Connect(function()
 	setclipboard(tostring(key_link))
 	
-	KeyServer.Frame["Get Key"].Frame.TextButton.Text = "Copied To Clipboard"
+	ScreenGui.Frame["Get Key"].Frame.TextButton.Text = "Copied To Clipboard"
 
 	task.wait(2)
 
-	KeyServer.Frame["Get Key"].Frame.TextButton.Text = "GET KEY"
+	ScreenGui.Frame["Get Key"].Frame.TextButton.Text = "GET KEY"
 end)
-KeyServer.Frame["Official Store"].Frame.TextButton.MouseButton1Click:Connect(function()
+ScreenGui.Frame["Official Store"].Frame.TextButton.MouseButton1Click:Connect(function()
 	setclipboard('https://reapersoftwaredevelopment.mysellix.io/')
 	
-	KeyServer.Frame["Official Store"].Frame.TextButton.Text = "Copied To Clipboard"
+	ScreenGui.Frame["Official Store"].Frame.TextButton.Text = "Copied To Clipboard"
 	
 	task.wait(2)
 	
-	KeyServer.Frame["Official Store"].Frame.TextButton.Text = "Official Store"
+	ScreenGui.Frame["Official Store"].Frame.TextButton.Text = "Official Store"
 end)
-KeyServer.Frame["Close UI"].Frame.TextButton.MouseButton1Click:Connect(function()
-	KeyServer:Destroy()
+ScreenGui.Frame["Close UI"].Frame.TextButton.MouseButton1Click:Connect(function()
+	ScreenGui:Destroy()
 end)
 
 
 
 task.spawn(function()
-	KeyServer.Frame.PFP.Image = thumbnailService:GetUserThumbnailAsync(Players.LocalPlayer.id, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
+	ScreenGui.Frame.PFP.Image = thumbnailService:GetUserThumbnailAsync(Players.LocalPlayer.id, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
 end)
 
 
@@ -413,7 +411,7 @@ task.spawn(function()
 		if verify("CrypticOnTop") then
 			CKey = true
 			
-			KeyServer:Destroy()
+			ScreenGui:Destroy()
 
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/Cryptic_Main.lua"))()
 

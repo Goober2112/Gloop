@@ -86,7 +86,7 @@ Discord_2.TextWrapped = true
 PFP.Name = "PFP"
 PFP.Parent = Frame
 PFP.AnchorPoint = Vector2.new(0, 0.5)
-PFP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PFP.BackgroundColor3 = Color3.fromRGB(69, 103, 167)
 PFP.BorderColor3 = Color3.fromRGB(0, 0, 0)
 PFP.BorderSizePixel = 0
 PFP.Position = UDim2.new(0.0210000612, 0, 0.800054848, 0)
@@ -140,7 +140,7 @@ TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.BorderSizePixel = 0
 TextButton.Position = UDim2.new(0.5, 0, 0.5, 0)
 TextButton.Size = UDim2.new(1, 0, 0.800000012, 0)
-TextButton.Font = Enum.Font.SourceSansBold
+TextButton.Font = Enum.Font.Unknown
 TextButton.Text = "Close UI"
 TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextButton.TextScaled = true
@@ -179,7 +179,7 @@ TextButton_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_2.BorderSizePixel = 0
 TextButton_2.Position = UDim2.new(0.5, 0, 0.5, 0)
 TextButton_2.Size = UDim2.new(1, 0, 0.800000012, 0)
-TextButton_2.Font = Enum.Font.SourceSansBold
+TextButton_2.Font = Enum.Font.Unknown
 TextButton_2.Text = "Official Store"
 TextButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextButton_2.TextScaled = true
@@ -280,29 +280,29 @@ UIGradient.Parent = Frame
 UICorner_9.CornerRadius = UDim.new(0.0199999996, 0)
 UICorner_9.Parent = Frame
 
-local fRequest, fStringFormat, fSpawn, fWait = request or http.request or http_request, string.format, task.spawn, task.wait;
-local rateLimit, rateLimitCountdown, errorWait = false, 0, false;
-local hardwareid = gethwid()
 local CKey = false
 local accountId = 39097;
-local Players, thumbnailService = cloneref(game:GetService('Players')), "Hi"--cloneref(game:GetService('ThumbnailService'))
+local fRequest, fStringFormat = request or http.request or http_request, string.format
+local rateLimit, rateLimitCountdown, errorWait = false, 0, false;
+local hardwareid = gethwid()
+local Players = cloneref(game:GetService('Players'))
+
+
 
 local function getLink()
 	return fStringFormat("https://gateway.platoboost.com/a/%i?id=%s", accountId, hardwareid);
 end
 local function onMessage(str)
-	ScreenGui.Frame["Get Key"].Frame.TextButton.Text = str
+	ScreenGui.Frame["Enter Key Here"].TextBox.PlaceholderText = str
 
 	task.wait(1.5)
 
-	ScreenGui.Frame["Get Key"].Frame.TextButton.Text = "Insert Key Here"
+	ScreenGui.Frame["Enter Key Here"].TextBox.PlaceholderText = "Insert Key Here"
 end
 local function verify(key)
 	if errorWait or rateLimit then 
 		return false;
 	end;
-
-	onMessage("Checking key...");
 
 	local status, result = pcall(function() 
 		return fRequest({
@@ -343,10 +343,10 @@ local function verify(key)
 			if not rateLimit then 
 				rateLimit = true;
 				rateLimitCountdown = 10;
-				fSpawn(function() 
+				task.spawn(function() 
 					while rateLimit do
 						onMessage(fStringFormat("You are being rate-limited, please slow down. Try again in %i second(s).", rateLimitCountdown));
-						fWait(1);
+						task.wait(1);
 						rateLimitCountdown = rateLimitCountdown - 1;
 						if rateLimitCountdown < 0 then
 							rateLimit = false;
@@ -379,20 +379,16 @@ end)
 ScreenGui.Frame["Get Key"].TextButton.MouseButton1Click:Connect(function()
 	setclipboard(tostring(key_link))
 	
-	ScreenGui.Frame["Get Key"].Frame.TextButton.Text = "Copied To Clipboard"
-
-	task.wait(2)
-
-	ScreenGui.Frame["Get Key"].Frame.TextButton.Text = "GET KEY"
+	onMessage("Copied To Clipboard")
 end)
 ScreenGui.Frame["Official Store"].Frame.TextButton.MouseButton1Click:Connect(function()
 	setclipboard('https://reapersoftwaredevelopment.mysellix.io/')
 	
-	ScreenGui.Frame["Official Store"].Frame.TextButton.Text = "Copied To Clipboard"
+	ScreenGui.Frame["Official Store"].Frame.TextButton.PlaceholderText = "Copied To Clipboard"
 	
 	task.wait(2)
 	
-	ScreenGui.Frame["Official Store"].Frame.TextButton.Text = "Official Store"
+	ScreenGui.Frame["Official Store"].Frame.TextButton.PlaceholderText = "Official Store"
 end)
 ScreenGui.Frame["Close UI"].Frame.TextButton.MouseButton1Click:Connect(function()
 	ScreenGui:Destroy()
@@ -401,21 +397,33 @@ end)
 
 
 task.spawn(function()
-	--ScreenGui.Frame.PFP.Image = thumbnailService:GetUserThumbnailAsync(Players.LocalPlayer.id, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
+	ScreenGui.Frame.PFP.Image = "http://www.roblox.com/Thumbs/Avatar.ashx?x=500&y=500&format=png&username=" .. Players.LocalPlayer.Name
 end)
 
 
 
 task.spawn(function()
-	while task.wait(45) and not CKey do
-		if verify("CrypticOnTop") then
-			CKey = true
-			
-			ScreenGui:Destroy()
+	if verify("CrypticOnTop") then
+		CKey = true
 
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/Cryptic_Main.lua"))()
+		ScreenGui:Destroy()
 
-			runautoexec()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/Cryptic_Main.lua"))()
+
+		runautoexec()
+	else
+		while task.wait(45) and not CKey do
+			pcall(function()
+				if verify("CrypticOnTop") then
+					CKey = true
+
+					ScreenGui:Destroy()
+
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/Cryptic_Main.lua"))()
+
+					runautoexec()
+				end
+			end)
 		end
 	end
 end)

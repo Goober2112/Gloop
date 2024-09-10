@@ -140,7 +140,7 @@ TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.BorderSizePixel = 0
 TextButton.Position = UDim2.new(0.5, 0, 0.5, 0)
 TextButton.Size = UDim2.new(1, 0, 0.800000012, 0)
-TextButton.Font = Enum.Font.Unknown
+TextButton.Font = Enum.Font.SourceSansBold
 TextButton.Text = "Close UI"
 TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextButton.TextScaled = true
@@ -179,7 +179,7 @@ TextButton_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_2.BorderSizePixel = 0
 TextButton_2.Position = UDim2.new(0.5, 0, 0.5, 0)
 TextButton_2.Size = UDim2.new(1, 0, 0.800000012, 0)
-TextButton_2.Font = Enum.Font.Unknown
+TextButton_2.Font = Enum.Font.SourceSansBold
 TextButton_2.Text = "Official Store"
 TextButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextButton_2.TextScaled = true
@@ -384,11 +384,11 @@ end)
 ScreenGui.Frame["Official Store"].Frame.TextButton.MouseButton1Click:Connect(function()
 	setclipboard('https://reapersoftwaredevelopment.mysellix.io/')
 	
-	ScreenGui.Frame["Official Store"].Frame.TextButton.PlaceholderText = "Copied To Clipboard"
+	ScreenGui.Frame["Official Store"].Frame.TextButton.Text = "Copied To Clipboard"
 	
 	task.wait(2)
 	
-	ScreenGui.Frame["Official Store"].Frame.TextButton.PlaceholderText = "Official Store"
+	ScreenGui.Frame["Official Store"].Frame.TextButton.Text = "Official Store"
 end)
 ScreenGui.Frame["Close UI"].Frame.TextButton.MouseButton1Click:Connect(function()
 	ScreenGui:Destroy()

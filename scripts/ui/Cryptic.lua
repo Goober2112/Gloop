@@ -33,6 +33,7 @@ local UICorner_9 = Instance.new("UICorner")
 
 ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.DisplayOrder = math.huge
 
 Backdrop.Name = "Backdrop"
 Backdrop.Parent = ScreenGui
@@ -384,11 +385,11 @@ end)
 ScreenGui.Frame["Official Store"].Frame.TextButton.MouseButton1Click:Connect(function()
 	setclipboard('https://reapersoftwaredevelopment.mysellix.io/')
 	
-	ScreenGui.Frame["Official Store"].Frame.TextButton.Text = "Copied To Clipboard"
+	ScreenGui.Frame["Official Store"].Frame.TextButton.PlaceholderText = "Copied To Clipboard"
 	
 	task.wait(2)
 	
-	ScreenGui.Frame["Official Store"].Frame.TextButton.Text = "Official Store"
+	ScreenGui.Frame["Official Store"].Frame.TextButton.PlaceholderText = "Official Store"
 end)
 ScreenGui.Frame["Close UI"].Frame.TextButton.MouseButton1Click:Connect(function()
 	ScreenGui:Destroy()
@@ -412,7 +413,7 @@ task.spawn(function()
 
 		runautoexec()
 	else
-		while task.wait(45) and not CKey do
+		while task.wait(15) and not CKey do
 			pcall(function()
 				if verify("CrypticOnTop") then
 					CKey = true

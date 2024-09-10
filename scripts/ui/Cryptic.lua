@@ -1,276 +1,308 @@
-repeat wait() until game:IsLoaded()
-local G2L = {};
+repeat task.wait() until game:IsLoaded()
 
-G2L["1"] = Instance.new("ScreenGui");
-G2L["1"].IgnoreGuiInset = true
-G2L["1"].DisplayOrder=1/0
-G2L["1"].ScreenInsets = Enum.ScreenInsets.None
-G2L["1"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-G2L["1"].Parent = gethui()
+local ScreenGui = Instance.new("ScreenGui")
+local Backdrop = Instance.new("Frame")
+local Frame = Instance.new("Frame")
+local Discord = Instance.new("TextLabel")
+local Discord_2 = Instance.new("TextLabel")
+local PFP = Instance.new("ImageLabel")
+local UICorner = Instance.new("UICorner")
+local ImageLabel = Instance.new("ImageLabel")
+local CloseUI = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local Frame_2 = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local TextButton = Instance.new("TextButton")
+local OfficialStore = Instance.new("Frame")
+local UICorner_4 = Instance.new("UICorner")
+local Frame_3 = Instance.new("Frame")
+local UICorner_5 = Instance.new("UICorner")
+local TextButton_2 = Instance.new("TextButton")
+local CheckKey = Instance.new("Frame")
+local UICorner_6 = Instance.new("UICorner")
+local TextButton_3 = Instance.new("TextButton")
+local GetKey = Instance.new("Frame")
+local UICorner_7 = Instance.new("UICorner")
+local TextButton_4 = Instance.new("TextButton")
+local EnterKeyHere = Instance.new("Frame")
+local UICorner_8 = Instance.new("UICorner")
+local TextBox = Instance.new("TextBox")
+local UIScale = Instance.new("UIScale")
+local UIGradient = Instance.new("UIGradient")
+local UICorner_9 = Instance.new("UICorner")
 
--- StarterGui.KeySystem.WL_Frame
-G2L["2"] = Instance.new("Frame", G2L["1"]);
-G2L["2"]["BorderSizePixel"] = 0;
-G2L["2"]["BackgroundColor3"] = Color3.fromRGB(14, 14, 14);
-G2L["2"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2"]["Name"] = [[WL_Frame]];
-G2L["2"]["BackgroundTransparency"] = 0.1;
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-G2L["close"] = Instance.new("TextButton", G2L["2"]);
-G2L["close"].BorderSizePixel = 0
-G2L["close"].Position = UDim2.new(0.372026, 0, 0.937413, 0)
-G2L["close"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-G2L["close"].FontFace = Font.new("rbxassetid://11702779409", Enum.FontWeight.Medium, Enum.FontStyle.Normal)
-G2L["close"].TextSize = 14
-G2L["close"].Size = UDim2.new(0.255537, 0, 0.0904033, 0)
-G2L["close"].TextColor3 = Color3.fromRGB(255, 255, 255)
-G2L["close"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-G2L["close"].Text = "close cryptic"
-G2L["close"].BackgroundTransparency = 1
+Backdrop.Name = "Backdrop"
+Backdrop.Parent = ScreenGui
+Backdrop.AnchorPoint = Vector2.new(0.5, 0.5)
+Backdrop.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Backdrop.BackgroundTransparency = 0.400
+Backdrop.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Backdrop.BorderSizePixel = 0
+Backdrop.Position = UDim2.new(0.5, 0, 0.5, 0)
+Backdrop.Size = UDim2.new(1.5, 0, 1.5, 0)
 
-task.spawn(function()
-	G2L["close"].MouseButton1Down:Connect(function()
-		G2L["1"]:Destroy()
-	end)
-end)
+Frame.Parent = ScreenGui
+Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame.BackgroundColor3 = Color3.fromRGB(43, 62, 103)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+Frame.Size = UDim2.new(0, 400, 0, 317)
+Frame.ZIndex = 2
 
--- StarterGui.KeySystem.WL_Frame.Frame
-G2L["3"] = Instance.new("Frame", G2L["2"]);
-G2L["3"]["BorderSizePixel"] = 0;
-G2L["3"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["3"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["3"]["Size"] = UDim2.new(0, 200, 0, 200);
-G2L["3"]["Position"] = UDim2.new(0.5, 0, 0.5, -70);
-G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["3"]["BackgroundTransparency"] = 1;
+Discord.Name = "Discord"
+Discord.Parent = Frame
+Discord.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Discord.BackgroundTransparency = 1.000
+Discord.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Discord.BorderSizePixel = 0
+Discord.Position = UDim2.new(0.574372232, 0, 0.624605596, 0)
+Discord.Size = UDim2.new(0, 126, 0, 21)
+Discord.Font = Enum.Font.SourceSans
+Discord.Text = ".gg/getcryptic"
+Discord.TextColor3 = Color3.fromRGB(255, 255, 255)
+Discord.TextScaled = true
+Discord.TextSize = 14.000
+Discord.TextWrapped = true
 
--- StarterGui.KeySystem.WL_Frame.Frame.Frame
-G2L["4"] = Instance.new("Frame", G2L["3"]);
-G2L["4"]["BorderSizePixel"] = 0;
-G2L["4"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["4"]["AnchorPoint"] = Vector2.new(0.5, 0);
-G2L["4"]["Size"] = UDim2.new(0, 451, 0, 65);
-G2L["4"]["Position"] = UDim2.new(0.5, 0, 0, 200);
-G2L["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["4"]["BackgroundTransparency"] = 1;
+Discord_2.Name = "Discord"
+Discord_2.Parent = Frame
+Discord_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Discord_2.BackgroundTransparency = 1.000
+Discord_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Discord_2.BorderSizePixel = 0
+Discord_2.Position = UDim2.new(0.406000048, 0, 0.624605596, 0)
+Discord_2.Size = UDim2.new(0, 85, 0, 21)
+Discord_2.Font = Enum.Font.SourceSansBold
+Discord_2.Text = "DISCORD"
+Discord_2.TextColor3 = Color3.fromRGB(122, 105, 255)
+Discord_2.TextScaled = true
+Discord_2.TextSize = 14.000
+Discord_2.TextWrapped = true
 
--- StarterGui.KeySystem.WL_Frame.Frame.Frame.UIListLayout
-G2L["5"] = Instance.new("UIListLayout", G2L["4"]);
-G2L["5"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
-G2L["5"]["Padding"] = UDim.new(0, 10);
-G2L["5"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
-G2L["5"]["FillDirection"] = Enum.FillDirection.Horizontal;
+PFP.Name = "PFP"
+PFP.Parent = Frame
+PFP.AnchorPoint = Vector2.new(0, 0.5)
+PFP.BackgroundColor3 = Color3.fromRGB(69, 103, 167)
+PFP.BorderColor3 = Color3.fromRGB(0, 0, 0)
+PFP.BorderSizePixel = 0
+PFP.Position = UDim2.new(0.0210000612, 0, 0.800054848, 0)
+PFP.Size = UDim2.new(0.278372079, 0, 0.350898176, 0)
+PFP.ZIndex = 3
+PFP.Image = "rbxassetid://19005999590"
 
--- StarterGui.KeySystem.WL_Frame.Frame.Frame.Frame
-G2L["6"] = Instance.new("Frame", G2L["4"]);
-G2L["6"]["BorderSizePixel"] = 0;
-G2L["6"]["BackgroundColor3"] = Color3.fromRGB(18, 18, 18);
-G2L["6"]["Size"] = UDim2.new(0, 147, 0, 39);
-G2L["6"]["Position"] = UDim2.new(0.35588, 0, 0, 0);
-G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+UICorner.CornerRadius = UDim.new(0.0500000007, 0)
+UICorner.Parent = PFP
 
--- StarterGui.KeySystem.WL_Frame.Frame.Frame.Frame.UICorner
-G2L["7"] = Instance.new("UICorner", G2L["6"]);
-G2L["7"]["CornerRadius"] = UDim.new(0, 4);
+ImageLabel.Parent = Frame
+ImageLabel.AnchorPoint = Vector2.new(0, 0.5)
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0.436000049, 0, 0.103123009, 0)
+ImageLabel.Size = UDim2.new(0.123372138, 0, 0.154856145, 0)
+ImageLabel.ZIndex = 3
+ImageLabel.Image = "rbxassetid://19005999590"
 
--- StarterGui.KeySystem.WL_Frame.Frame.Frame.Frame.TextLabel
-G2L["8"] = Instance.new("TextLabel", G2L["6"]);
-G2L["8"]["BorderSizePixel"] = 0;
-G2L["8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["8"]["TextSize"] = 19;
-G2L["8"]["FontFace"] = Font.new([[rbxassetid://11702779409]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
-G2L["8"]["TextColor3"] = Color3.fromRGB(236, 236, 236);
-G2L["8"]["BackgroundTransparency"] = 1;
-G2L["8"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["8"]["Text"] = [[Copy Link]];
+CloseUI.Name = "Close UI"
+CloseUI.Parent = Frame
+CloseUI.AnchorPoint = Vector2.new(0.5, 0.5)
+CloseUI.BackgroundColor3 = Color3.fromRGB(26, 38, 63)
+CloseUI.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CloseUI.BorderSizePixel = 0
+CloseUI.Position = UDim2.new(0.650079668, 0, 0.923256159, 0)
+CloseUI.Size = UDim2.new(0.657384932, 0, 0.110250287, 0)
+CloseUI.ZIndex = 2
 
--- StarterGui.KeySystem.WL_Frame.Frame.Frame.Frame.TextButton
-G2L["9"] = Instance.new("TextButton", G2L["6"]);
-G2L["9"]["BorderSizePixel"] = 0;
-G2L["9"]["TextSize"] = 14;
-G2L["9"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["9"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["9"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["9"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["9"]["BackgroundTransparency"] = 1;
-G2L["9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["9"]["Text"] = [[]];
+UICorner_2.CornerRadius = UDim.new(0.150000006, 0)
+UICorner_2.Parent = CloseUI
 
--- StarterGui.KeySystem.WL_Frame.Frame.Frame.Frame.TextButton.LocalScript
-G2L["a"] = Instance.new("LocalScript", G2L["9"]);
+Frame_2.Parent = CloseUI
+Frame_2.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame_2.BackgroundColor3 = Color3.fromRGB(50, 72, 120)
+Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame_2.BorderSizePixel = 0
+Frame_2.Position = UDim2.new(0.5, 0, 0.5, 0)
+Frame_2.Size = UDim2.new(0.978999972, 0, 0.888999999, 0)
 
+UICorner_3.CornerRadius = UDim.new(0.150000006, 0)
+UICorner_3.Parent = Frame_2
 
--- StarterGui.KeySystem.WL_Frame.Frame.Frame.Frame.UIStroke
-G2L["b"] = Instance.new("UIStroke", G2L["6"]);
-G2L["b"]["Thickness"] = 1.5;
-G2L["b"]["Color"] = Color3.fromRGB(57, 253, 255);
+TextButton.Parent = Frame_2
+TextButton.AnchorPoint = Vector2.new(0.5, 0.5)
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.BackgroundTransparency = 1.000
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextButton.Size = UDim2.new(1, 0, 0.800000012, 0)
+TextButton.Font = Enum.Font.SourceSansBold
+TextButton.Text = "Close UI"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextScaled = true
+TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
 
--- StarterGui.KeySystem.WL_Frame.Frame.Frame.Frame
-G2L["c"] = Instance.new("Frame", G2L["4"]);
-G2L["c"]["BorderSizePixel"] = 0;
-G2L["c"]["BackgroundColor3"] = Color3.fromRGB(18, 18, 18);
-G2L["c"]["Size"] = UDim2.new(0, 147, 0, 39);
-G2L["c"]["Position"] = UDim2.new(0.35588, 0, 0, 0);
-G2L["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+OfficialStore.Name = "Official Store"
+OfficialStore.Parent = Frame
+OfficialStore.AnchorPoint = Vector2.new(0.5, 0.5)
+OfficialStore.BackgroundColor3 = Color3.fromRGB(26, 38, 63)
+OfficialStore.BorderColor3 = Color3.fromRGB(0, 0, 0)
+OfficialStore.BorderSizePixel = 0
+OfficialStore.Position = UDim2.new(0.650079489, 0, 0.787609518, 0)
+OfficialStore.Size = UDim2.new(0.657384634, 0, 0.110250287, 0)
+OfficialStore.ZIndex = 2
 
--- StarterGui.KeySystem.WL_Frame.Frame.Frame.Frame.UICorner
-G2L["d"] = Instance.new("UICorner", G2L["c"]);
-G2L["d"]["CornerRadius"] = UDim.new(0, 4);
+UICorner_4.CornerRadius = UDim.new(0.150000006, 0)
+UICorner_4.Parent = OfficialStore
 
--- StarterGui.KeySystem.WL_Frame.Frame.Frame.Frame.TextLabel
-G2L["e"] = Instance.new("TextLabel", G2L["c"]);
-G2L["e"]["BorderSizePixel"] = 0;
-G2L["e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["e"]["TextSize"] = 19;
-G2L["e"]["FontFace"] = Font.new([[rbxassetid://11702779409]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
-G2L["e"]["TextColor3"] = Color3.fromRGB(236, 236, 236);
-G2L["e"]["BackgroundTransparency"] = 1;
-G2L["e"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["e"]["Text"] = [[Check Key]];
+Frame_3.Parent = OfficialStore
+Frame_3.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame_3.BackgroundColor3 = Color3.fromRGB(50, 72, 120)
+Frame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame_3.BorderSizePixel = 0
+Frame_3.Position = UDim2.new(0.5, 0, 0.5, 0)
+Frame_3.Size = UDim2.new(0.978999972, 0, 0.888999999, 0)
 
--- StarterGui.KeySystem.WL_Frame.Frame.Frame.Frame.TextButton
-G2L["f"] = Instance.new("TextButton", G2L["c"]);
-G2L["f"]["BorderSizePixel"] = 0;
-G2L["f"]["TextSize"] = 14;
-G2L["f"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["f"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["f"]["BackgroundTransparency"] = 1;
-G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["f"]["Text"] = [[]];
+UICorner_5.CornerRadius = UDim.new(0.150000006, 0)
+UICorner_5.Parent = Frame_3
 
+TextButton_2.Parent = Frame_3
+TextButton_2.AnchorPoint = Vector2.new(0.5, 0.5)
+TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_2.BackgroundTransparency = 1.000
+TextButton_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.BorderSizePixel = 0
+TextButton_2.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextButton_2.Size = UDim2.new(1, 0, 0.800000012, 0)
+TextButton_2.Font = Enum.Font.SourceSansBold
+TextButton_2.Text = "Official Store"
+TextButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_2.TextScaled = true
+TextButton_2.TextSize = 14.000
+TextButton_2.TextWrapped = true
 
--- StarterGui.KeySystem.WL_Frame.Frame.Frame.Frame.UIStroke
-G2L["11"] = Instance.new("UIStroke", G2L["c"]);
-G2L["11"]["Thickness"] = 1.5;
-G2L["11"]["Color"] = Color3.fromRGB(57, 253, 255);
+CheckKey.Name = "Check Key"
+CheckKey.Parent = Frame
+CheckKey.AnchorPoint = Vector2.new(0.5, 0.5)
+CheckKey.BackgroundColor3 = Color3.fromRGB(50, 72, 120)
+CheckKey.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CheckKey.BorderSizePixel = 0
+CheckKey.Position = UDim2.new(0.499999911, 0, 0.534928083, 0)
+CheckKey.Size = UDim2.new(0.957543194, 0, 0.108538076, 0)
+CheckKey.ZIndex = 2
 
--- StarterGui.KeySystem.WL_Frame.Frame.bigtitle
-G2L["12"] = Instance.new("TextLabel", G2L["3"]);
-G2L["12"]["BorderSizePixel"] = 0;
-G2L["12"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["12"]["TextSize"] = 38;
-G2L["12"]["FontFace"] = Font.new([[rbxassetid://11702779409]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
-G2L["12"]["TextColor3"] = Color3.fromRGB(230, 230, 230);
-G2L["12"]["BackgroundTransparency"] = 1;
-G2L["12"]["AnchorPoint"] = Vector2.new(0.5, 0);
-G2L["12"]["Size"] = UDim2.new(0, 505, 0, 50);
-G2L["12"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["12"]["Text"] = [[Welcome to Cryptic!]];
-G2L["12"]["Name"] = [[bigtitle]];
-G2L["12"]["Position"] = UDim2.new(0.5, 0, 0.125, 120);
+UICorner_6.CornerRadius = UDim.new(0.150000006, 0)
+UICorner_6.Parent = CheckKey
 
--- StarterGui.KeySystem.WL_Frame.Frame.smalltext
-G2L["13"] = Instance.new("TextLabel", G2L["3"]);
-G2L["13"]["BorderSizePixel"] = 0;
-G2L["13"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["13"]["TextSize"] = 24;
-G2L["13"]["FontFace"] = Font.new([[rbxassetid://11702779409]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["13"]["TextColor3"] = Color3.fromRGB(230, 230, 230);
-G2L["13"]["BackgroundTransparency"] = 1;
-G2L["13"]["AnchorPoint"] = Vector2.new(0.5, 0);
-G2L["13"]["Size"] = UDim2.new(0, 505, 0, 50);
-G2L["13"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["13"]["Name"] = [[smalltext]];
-G2L["13"]["Position"] = UDim2.new(0.5, 0, 0.47, 145);
+TextButton_3.Parent = CheckKey
+TextButton_3.AnchorPoint = Vector2.new(0.5, 0.5)
+TextButton_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_3.BackgroundTransparency = 1.000
+TextButton_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_3.BorderSizePixel = 0
+TextButton_3.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextButton_3.Size = UDim2.new(1, 0, 0.649999976, 0)
+TextButton_3.Font = Enum.Font.SourceSansBold
+TextButton_3.Text = "CHECK KEY"
+TextButton_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_3.TextScaled = true
+TextButton_3.TextSize = 14.000
+TextButton_3.TextWrapped = true
 
--- StarterGui.KeySystem.WL_Frame.Frame.Frame
-G2L["14"] = Instance.new("Frame", G2L["3"]);
-G2L["14"]["BorderSizePixel"] = 0;
-G2L["14"]["BackgroundColor3"] = Color3.fromRGB(18, 18, 18);
-G2L["14"]["AnchorPoint"] = Vector2.new(0.5, 0);
-G2L["14"]["Size"] = UDim2.new(0, 700, 0, 30);
-G2L["14"]["Position"] = UDim2.new(0.5, 0, 0, 290);
-G2L["14"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+GetKey.Name = "Get Key"
+GetKey.Parent = Frame
+GetKey.AnchorPoint = Vector2.new(0.5, 0.5)
+GetKey.BackgroundColor3 = Color3.fromRGB(50, 72, 120)
+GetKey.BorderColor3 = Color3.fromRGB(0, 0, 0)
+GetKey.BorderSizePixel = 0
+GetKey.Position = UDim2.new(0.499999911, 0, 0.397972822, 0)
+GetKey.Size = UDim2.new(0.957543194, 0, 0.108538076, 0)
+GetKey.ZIndex = 2
 
--- StarterGui.KeySystem.WL_Frame.Frame.Frame.UICorner
-G2L["15"] = Instance.new("UICorner", G2L["14"]);
-G2L["15"]["CornerRadius"] = UDim.new(0, 4);
+UICorner_7.CornerRadius = UDim.new(0.150000006, 0)
+UICorner_7.Parent = GetKey
 
--- StarterGui.KeySystem.WL_Frame.Frame.Frame.UIStroke
-G2L["16"] = Instance.new("UIStroke", G2L["14"]);
-G2L["16"]["Thickness"] = 1.5;
-G2L["16"]["Color"] = Color3.fromRGB(57, 253, 255);
+TextButton_4.Parent = GetKey
+TextButton_4.AnchorPoint = Vector2.new(0.5, 0.5)
+TextButton_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_4.BackgroundTransparency = 1.000
+TextButton_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_4.BorderSizePixel = 0
+TextButton_4.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextButton_4.Size = UDim2.new(1, 0, 0.649999976, 0)
+TextButton_4.Font = Enum.Font.SourceSansBold
+TextButton_4.Text = "GET KEY"
+TextButton_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_4.TextScaled = true
+TextButton_4.TextSize = 14.000
+TextButton_4.TextWrapped = true
 
--- StarterGui.KeySystem.WL_Frame.Frame.Frame.TextBox
-G2L["17"] = Instance.new("TextBox", G2L["14"]);
-G2L["17"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["17"]["BorderSizePixel"] = 0;
-G2L["17"]["TextEditable"] = false;
-G2L["17"]["TextSize"] = 15;
-G2L["17"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["17"]["FontFace"] = Font.new([[rbxassetid://11702779409]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["17"]["ClearTextOnFocus"] = false;
-G2L["17"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["17"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["17"]["Text"] = [[]];
-G2L["17"]["BackgroundTransparency"] = 1;
+EnterKeyHere.Name = "Enter Key Here"
+EnterKeyHere.Parent = Frame
+EnterKeyHere.AnchorPoint = Vector2.new(0.5, 0.5)
+EnterKeyHere.BackgroundColor3 = Color3.fromRGB(50, 72, 120)
+EnterKeyHere.BorderColor3 = Color3.fromRGB(0, 0, 0)
+EnterKeyHere.BorderSizePixel = 0
+EnterKeyHere.Position = UDim2.new(0.499999911, 0, 0.26147899, 0)
+EnterKeyHere.Size = UDim2.new(0.957543194, 0, 0.108538099, 0)
+EnterKeyHere.ZIndex = 2
 
--- StarterGui.KeySystem.WL_Frame.Frame.Frame.TextBox.LocalScript
-G2L["18"] = Instance.new("LocalScript", G2L["17"]);
+UICorner_8.CornerRadius = UDim.new(0.150000006, 0)
+UICorner_8.Parent = EnterKeyHere
 
+TextBox.Parent = EnterKeyHere
+TextBox.AnchorPoint = Vector2.new(0.5, 0.5)
+TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.BackgroundTransparency = 1.000
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextBox.Size = UDim2.new(1, 0, 0.600000024, 0)
+TextBox.Font = Enum.Font.SourceSans
+TextBox.PlaceholderText = "Insert Key Here"
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextScaled = true
+TextBox.TextSize = 14.000
+TextBox.TextWrapped = true
 
--- StarterGui.KeySystem.WL_Frame.Frame.VLogo_big
-G2L["19"] = Instance.new("ImageLabel", G2L["3"]);
-G2L["19"]["BorderSizePixel"] = 0;
-G2L["19"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["19"]["ImageColor3"] = Color3.fromRGB(57, 253, 255);
-G2L["19"]["AnchorPoint"] = Vector2.new(0.5, 0);
-G2L["19"]["Image"] = [[rbxassetid://18400100869]];
-G2L["19"]["Size"] = UDim2.new(0, 80, 0, 70);
-G2L["19"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["19"]["BackgroundTransparency"] = 1;
-G2L["19"]["Name"] = [[VLogo_big]];
-G2L["19"]["Position"] = UDim2.new(0.5, 0, 0.295, 28);
+UIScale.Parent = Frame
 
--- StarterGui.KeySystem.WL_Frame.Frame.VLogo_big.BlurImage
-G2L["1a"] = Instance.new("ImageLabel", G2L["19"]);
-G2L["1a"]["BorderSizePixel"] = 0;
-G2L["1a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1a"]["ImageColor3"] = Color3.fromRGB(156, 248, 255);
-G2L["1a"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["1a"]["Image"] = [[rbxassetid://16268437782]];
-G2L["1a"]["Size"] = UDim2.new(0, 175, 0, 120);
-G2L["1a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1a"]["BackgroundTransparency"] = 1;
-G2L["1a"]["Name"] = [[BlurImage]];
-G2L["1a"]["Position"] = UDim2.new(0.49375, 0, 0.5, 0);
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(67, 67, 67)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient.Rotation = -90
+UIGradient.Parent = Frame
 
--- Plato configuration
-local accountId = 39097; -- Plato account id [IMPORTANT]
-local allowPassThrough = false; -- Allow user through if error occurs, may reduce security
-local allowKeyRedeeming = true; -- Automatically check keys to redeem if valid
-local useDataModel = false;
+UICorner_9.CornerRadius = UDim.new(0.0199999996, 0)
+UICorner_9.Parent = Frame
 
--- Plato callbacks
-local onMessage = function(message)
-    G2L["13"].Text = message
-end;
-
--- Plato internals [START]
-local fRequest, fStringFormat, fSpawn, fWait = request or http.request or http_request or syn.request, string.format, task.spawn, task.wait;
+local CKey = false
+local accountId = 39097;
+local fRequest, fStringFormat = request or http.request or http_request, string.format
 local rateLimit, rateLimitCountdown, errorWait = false, 0, false;
 local hardwareid = gethwid()
--- Plato internals [END]
+local Players = cloneref(game:GetService('Players'))
 
--- Plato global functions [START]
-function getLink()
-    return fStringFormat("https://gateway.platoboost.com/a/%i?id=%s", accountId, hardwareid);
-end;
 
-local key_link = getLink()
-G2L["18"].Parent.Text = key_link
 
-function verify(key)
-    if errorWait or rateLimit then 
-        return false;
-    end;
+local function getLink()
+	return fStringFormat("https://gateway.platoboost.com/a/%i?id=%s", accountId, hardwareid);
+end
+local function onMessage(str)
+	ScreenGui.Frame["Enter Key Here"].TextBox.PlaceholderText = str
 
-    onMessage("Checking key...");
+	task.wait(1.5)
+
+	ScreenGui.Frame["Enter Key Here"].TextBox.PlaceholderText = "Insert Key Here"
+end
+local function verify(key)
+	if errorWait or rateLimit then 
+		return false;
+	end;
 
 	local status, result = pcall(function() 
 		return fRequest({
@@ -285,24 +317,22 @@ function verify(key)
 				onMessage("Successfully whitelisted key!");
 				return true;
 			else
-				if (allowKeyRedeeming) then
-					local status1, result1 = pcall(function() 
-						return fRequest({
-							Url = fStringFormat("https://api-gateway.platoboost.com/v1/authenticators/redeem/%i/%s/%s", accountId, hardwareid, key),
-							Method = "POST"
-						});
-					end);
+				local status1, result1 = pcall(function() 
+					return fRequest({
+						Url = fStringFormat("https://api-gateway.platoboost.com/v1/authenticators/redeem/%i/%s/%s", accountId, hardwareid, key),
+						Method = "POST"
+					});
+				end);
 
-					if status1 then
-						if result1.StatusCode == 200 then
-							if string.find(result1.Body, "true") then
-								onMessage("Successfully redeemed key!");
-								return true;
-							end;
+				if status1 then
+					if result1.StatusCode == 200 then
+						if string.find(result1.Body, "true") then
+							onMessage("Successfully redeemed key!");
+							return true;
 						end;
 					end;
 				end;
-
+				
 				onMessage("Key invalid!");
 				return false;
 			end;
@@ -313,10 +343,10 @@ function verify(key)
 			if not rateLimit then 
 				rateLimit = true;
 				rateLimitCountdown = 10;
-				fSpawn(function() 
+				task.spawn(function() 
 					while rateLimit do
 						onMessage(fStringFormat("You are being rate-limited, please slow down. Try again in %i second(s).", rateLimitCountdown));
-						fWait(1);
+						task.wait(1);
 						rateLimitCountdown = rateLimitCountdown - 1;
 						if rateLimitCountdown < 0 then
 							rateLimit = false;
@@ -328,43 +358,72 @@ function verify(key)
 			end;
 		else
 			onMessage("Key invalid!");
-			return allowPassThrough;
+			return false;
 		end;    
 	else
 		onMessage("Key invalid!");
-		return allowPassThrough;
+
+		return false;
 	end;
 end;
--- Plato global functions [END]
 
--- StarterGui.KeySystem.WL_Frame.Frame.Frame.Frame.TextButton.LocalScript
-local function C_a()
-local script = G2L["a"];
-	script.Parent.MouseButton1Down:Connect(function()
-		setclipboard(key_link)
-	end)
-end;
-task.spawn(C_a);
--- StarterGui.KeySystem.WL_Frame.Frame.Frame.Frame.TextButton.LocalScript
-local function C_10()
-	local function fun()
-		G2L["1"]:Destroy()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/Cryptic_Main.lua"))()
-		runautoexec()
-	end
 
-	if verify("123456789") then
-		fun()
-	else
-		G2L["13"].Text = "Copy the link and complete the steps to gain access to Cryptic."
-	end
+
+local key_link = getLink()
+
+
+
+ScreenGui.Frame["Check Key"].TextButton.MouseButton1Click:Connect(function()
+	verify(ScreenGui.Frame["Enter Key Here"].TextBox.Text)
+end)
+ScreenGui.Frame["Get Key"].TextButton.MouseButton1Click:Connect(function()
+	setclipboard(tostring(key_link))
 	
-	G2L["f"].MouseButton1Down:Connect(function()
-		if verify(G2L["18"].Parent.Text) then
-			fun()
-		end
-	end)
-end;
-task.spawn(C_10);
+	onMessage("Copied To Clipboard")
+end)
+ScreenGui.Frame["Official Store"].Frame.TextButton.MouseButton1Click:Connect(function()
+	setclipboard('https://reapersoftwaredevelopment.mysellix.io/')
+	
+	ScreenGui.Frame["Official Store"].Frame.TextButton.Text = "Copied To Clipboard"
+	
+	task.wait(2)
+	
+	ScreenGui.Frame["Official Store"].Frame.TextButton.Text = "Official Store"
+end)
+ScreenGui.Frame["Close UI"].Frame.TextButton.MouseButton1Click:Connect(function()
+	ScreenGui:Destroy()
+end)
 
-return G2L["1"], require;
+
+
+task.spawn(function()
+	ScreenGui.Frame.PFP.Image = "http://www.roblox.com/Thumbs/Avatar.ashx?x=500&y=500&format=png&username=" .. Players.LocalPlayer.Name
+end)
+
+
+
+task.spawn(function()
+	if verify("CrypticOnTop") then
+		CKey = true
+
+		ScreenGui:Destroy()
+
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/Cryptic_Main.lua"))()
+
+		runautoexec()
+	else
+		while task.wait(45) and not CKey do
+			pcall(function()
+				if verify("CrypticOnTop") then
+					CKey = true
+
+					ScreenGui:Destroy()
+
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/Cryptic_Main.lua"))()
+
+					runautoexec()
+				end
+			end)
+		end
+	end
+end)

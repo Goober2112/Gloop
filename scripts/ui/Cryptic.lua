@@ -291,16 +291,31 @@ local Players = cloneref(game:GetService('Players'))
 
 
 local function getLink()
-	return fStringFormat("https://gateway.platoboost.com/a/%i?id=%s", accountId, hardwareid);
+	return string.format("https://gateway.platoboost.com/a/%i?id=%s", accountId, hardwareid);
 end
 local function onMessage(str)
-    pcall(function()
-        ScreenGui.Frame["Enter Key Here"].TextBox.PlaceholderText = str
+	task.spawn(function()
+    	pcall(function()
+			ScreenGui.Frame["Enter Key Here"].TextBox.PlaceholderText = str
 
-        task.wait(1.5)
-    
-        ScreenGui.Frame["Enter Key Here"].TextBox.PlaceholderText = "Insert Key Here"
+			task.wait(1.5)
+		
+			ScreenGui.Frame["Enter Key Here"].TextBox.PlaceholderText = "Insert Key Here"
+		end)
     end)
+end
+local function force()
+	CKey = true
+
+	ScreenGui:Destroy()
+
+	task.spawn(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/Cryptic_Main.lua"))()
+	end)
+	
+	task.wait()
+
+	runautoexec()
 end
 local function verify(key)
 	if errorWait or rateLimit then 
@@ -319,11 +334,7 @@ local function verify(key)
 			if string.find(result.Body, "true") then
 				onMessage("Successfully whitelisted key!");
 
-                ScreenGui:Destroy()
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/Cryptic_Main.lua"))()
-
-                runautoexec()
+                force()
 
 				return true;
 			else
@@ -339,11 +350,7 @@ local function verify(key)
 						if string.find(result1.Body, "true") then
 							onMessage("Successfully redeemed key!");
 
-                            ScreenGui:Destroy()
-
-                            loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/Cryptic_Main.lua"))()
-
-                            runautoexec()
+                            force()
                             
 							return true;
 						end;
@@ -420,11 +427,9 @@ end)
 
 
 task.spawn(function()
-	if verify("CrypticOnTop") then
-		CKey = true
-	else
-		while task.wait(30) and not CKey do
-			verify("CrypticOnTop")
-		end
+	verify("CrypticOnTop")
+
+	while task.wait(10) and CKey == false do
+		verify("CrypticOnTop")
 	end
 end)

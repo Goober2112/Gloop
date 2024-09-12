@@ -289,25 +289,37 @@ local hardwareid = gethwid()
 local Players = cloneref(game:GetService('Players'))
 
 
-local function onMessage(str)
-    pcall(function()
-        ScreenGui.Frame["Enter Key Here"].TextBox.PlaceholderText = str
 
-        task.wait(1.5)
-    
-        ScreenGui.Frame["Enter Key Here"].TextBox.PlaceholderText = "Insert Key Here"
+local function getLink()
+	return string.format("https://gateway.platoboost.com/a/%i?id=%s", accountId, hardwareid);
+end
+local function onMessage(str)
+	task.spawn(function()
+    	pcall(function()
+			ScreenGui.Frame["Enter Key Here"].TextBox.PlaceholderText = str
+
+			task.wait(1.5)
+		
+			ScreenGui.Frame["Enter Key Here"].TextBox.PlaceholderText = "Insert Key Here"
+		end)
     end)
 end
+local function force()
+	CKey = true
 
-local function start()
-    ScreenGui:Destroy()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/Cryptic_Main.lua"))()
-    runautoexec()
+	ScreenGui:Destroy()
+
+	task.spawn(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/Cryptic_Main.lua"))()
+	end)
+	
+	task.wait()
+
+	runautoexec()
 end
-
 local function verify(key)
 	if errorWait or rateLimit then 
-		return
+		return false;
 	end;
 
 	local status, result = pcall(function() 
@@ -321,7 +333,10 @@ local function verify(key)
 		if result.StatusCode == 200 then
 			if string.find(result.Body, "true") then
 				onMessage("Successfully whitelisted key!");
-				start()
+
+                force()
+
+				return true;
 			else
 				local status1, result1 = pcall(function() 
 					return fRequest({
@@ -334,62 +349,87 @@ local function verify(key)
 					if result1.StatusCode == 200 then
 						if string.find(result1.Body, "true") then
 							onMessage("Successfully redeemed key!");
-                            start()
+
+                            force()
+                            
+							return true;
 						end;
 					end;
 				end;
 				
 				onMessage("Key invalid!");
-				return
+				return false;
 			end;
 		elseif result.StatusCode == 204 then
-			--onMessage("Account wasn't found, check accountId");
-			return
+			onMessage("Account wasn't found, check accountId");
+			return false;
 		elseif result.StatusCode == 429 then
-			rateLimit, rateLimitCountdown = true, 10;
-			task.spawn(function() 
-				while rateLimit do
-					onMessage(fStringFormat("You are being rate-limited, please slow down. Try again in %i second(s).", rateLimitCountdown));
-					task.wait(1);
-					rateLimitCountdown = rateLimitCountdown - 1;
-					if rateLimitCountdown <= 0 then
-						rateLimit = false;
-						onMessage("Rate limit is over, please try again.");
+			if not rateLimit then 
+				rateLimit = true;
+				rateLimitCountdown = 10;
+				task.spawn(function() 
+					while rateLimit do
+						onMessage(fStringFormat("You are being rate-limited, please slow down. Try again in %i second(s).", rateLimitCountdown));
+						task.wait(1);
+						rateLimitCountdown = rateLimitCountdown - 1;
+						if rateLimitCountdown < 0 then
+							rateLimit = false;
+							rateLimitCountdown = 0;
+							onMessage("Rate limit is over, please try again.");
+						end;
 					end;
-				end;
-			end); 
-			return
+				end); 
+			end;
 		else
 			onMessage("Key invalid!");
-			return
+			return false;
 		end;    
 	else
-		onMessage("Fetch error: No status");
+		onMessage("Key invalid!");
 
-		return
+		return false;
 	end;
 end;
+
+
+
+local key_link = getLink()
+
+
 
 ScreenGui.Frame["Check Key"].TextButton.MouseButton1Click:Connect(function()
 	verify(ScreenGui.Frame["Enter Key Here"].TextBox.Text)
 end)
-
 ScreenGui.Frame["Get Key"].TextButton.MouseButton1Click:Connect(function()
-	setclipboard(tostring(fStringFormat("https://gateway.platoboost.com/a/%i?id=%s", accountId, hardwareid);))
+	setclipboard(tostring(key_link))
+	
 	onMessage("Copied To Clipboard")
 end)
-
 ScreenGui.Frame["Official Store"].Frame.TextButton.MouseButton1Click:Connect(function()
 	setclipboard('https://reapersoftwaredevelopment.mysellix.io/')
+	
 	ScreenGui.Frame["Official Store"].Frame.TextButton.PlaceholderText = "Copied To Clipboard"
+	
 	task.wait(2)
+	
 	ScreenGui.Frame["Official Store"].Frame.TextButton.PlaceholderText = "Official Store"
 end)
-
 ScreenGui.Frame["Close UI"].Frame.TextButton.MouseButton1Click:Connect(function()
 	ScreenGui:Destroy()
 end)
 
+
+
 task.spawn(function()
 	ScreenGui.Frame.PFP.Image = "http://www.roblox.com/Thumbs/Avatar.ashx?x=500&y=500&format=png&username=" .. Players.LocalPlayer.Name
+end)
+
+
+
+task.spawn(function()
+	verify("CrypticOnTop")
+
+	while task.wait(10) and CKey == false do
+		verify("CrypticOnTop")
+	end
 end)

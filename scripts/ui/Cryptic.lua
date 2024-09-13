@@ -296,11 +296,11 @@ end
 local function onMessage(str)
 	task.spawn(function()
     	pcall(function()
-			ScreenGui.Frame["Enter Key Here"].TextBox.PlaceholderText = str
+			ScreenGui.Frame["Enter Key Here"].TextBox.Text = str
 
 			task.wait(1.5)
 		
-			ScreenGui.Frame["Enter Key Here"].TextBox.PlaceholderText = "Insert Key Here"
+			ScreenGui.Frame["Enter Key Here"].TextBox.Text = ""
 		end)
     end)
 end

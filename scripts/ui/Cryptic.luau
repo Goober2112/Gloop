@@ -5045,8 +5045,8 @@ MainFrame["Settings Tab"]["Settings3"].TextButton.MouseButton1Click:Connect(func
     else
         Database.Settings["S3"] = true
 
-        setfpscap(tonumber(Database.Settings["S5"]))
-
+        setfpscap(tonumber(Database.Settings["S6"]))
+        
         MainFrame["Settings Tab"]["Settings3"].TextButton.Frame.Visible = false
         
         Lib:Savedata()

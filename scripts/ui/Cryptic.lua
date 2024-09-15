@@ -480,7 +480,7 @@ task.wait(0.5)
 local Secondary = false
 local AcceptedWhitelist = false
 
-local HWID = "testv1"--gethwid()
+local HWID = gethwid()
 local key_link = "https://gateway.platoboost.com/a/39097?id=" .. HWID
 local CRequest = request or http.request or http_request
 

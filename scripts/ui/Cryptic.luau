@@ -583,37 +583,39 @@ for i = 1,4 do
 	UpdateProgression(i)
 
 	if i == 1 then
-        if verify("Cryptionion") then
-			print('verified')
-        else
-            ChangeProgression('Key System', 'We require that you complete the Key System. Support Server: discord.gg/getcryptic')
+		verify("Cryptionion")
 
-            for _, child in ipairs(Loading:GetChildren()) do
-                if child:IsA("TextLabel") then
-                    FadeOutText(child, Enum.EasingStyle.Cubic)
-                end
-            end
+		task.wait(1)
 
-            TweenService:Create(Loading, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {BackgroundTransparency = 1}):Play()
 
-            repeat
-                task.wait(2.5)
+		if not AcceptedWhitelist then
+			ChangeProgression('Key System', 'We require that you complete the Key System. Support Server: discord.gg/getcryptic')
 
-                if Keysystem["Enter Key Here"]["TextBox"].Text ~= "" then
-                    verify(Keysystem["Enter Key Here"]["TextBox"].Text)
-                else
-                    verify("Cryptonite")
-                end
-            until AcceptedWhitelist == true
+			for _, child in ipairs(Loading:GetChildren()) do
+				if child:IsA("TextLabel") then
+					FadeOutText(child, Enum.EasingStyle.Cubic)
+				end
+			end
+	
+			TweenService:Create(Loading, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {BackgroundTransparency = 1}):Play()
 
-            for _, child in ipairs(Loading:GetChildren()) do
-                if child:IsA("TextLabel") then
-                    FadeInText(child, Enum.EasingStyle.Cubic)
-                end
-            end
-
-            TweenService:Create(Loading, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {BackgroundTransparency = 0}):Play()
-        end
+			while not AcceptedWhitelist and task.wait(5) do
+				if Keysystem["Enter Key Here"]["TextBox"].Text ~= "" then
+					verify(Keysystem["Enter Key Here"]["TextBox"].Text)
+				else
+					verify("Cryptonite")
+				end
+			end
+			
+	
+			for _, child in ipairs(Loading:GetChildren()) do
+				if child:IsA("TextLabel") then
+					FadeInText(child, Enum.EasingStyle.Cubic)
+				end
+			end
+	
+			TweenService:Create(Loading, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {BackgroundTransparency = 0}):Play()
+		end
 
         task.wait(0.5)
 	elseif i == 3 then

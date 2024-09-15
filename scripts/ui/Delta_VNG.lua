@@ -4514,7 +4514,7 @@ function Verify()
         return false
     end;
 
-    DELTA["18"]["Text"] = "Checking key...";
+    DELTA["18"]["Text"] = "Đang kiểm tra key!";
 
 	local status, result = pcall(function() 
             return game:HttpGetAsync("https://api-gateway.platoboost.com/v1/public/whitelist/8/" .. auth_id .. "?s");
@@ -4522,7 +4522,7 @@ function Verify()
         
         if status then
             if string.find(result, "true") then
-                DELTA["18"]["Text"] = "Successfully whitelisted key!";
+                DELTA["18"]["Text"] = "Key chính xác!";
                 return true;
             elseif string.find(result, "false") then
                 if (#key > 0) then
@@ -4533,7 +4533,7 @@ function Verify()
 	
 	                if redeemResponse.StatusCode == 200 then
 	                    if string.find(redeemResponse.Body, "true") then
-	                        DELTA["18"]["Text"] = "Successfully redeemed key!";
+	                        DELTA["18"]["Text"] = "Đã nhập key đúng";
 	                        return true
 	                    end
 	                end           
@@ -4541,7 +4541,7 @@ function Verify()
 	            DELTA["18"]["Text"] = "Invalid key detected, please try again!";
 	            return false
             else
-		DELTA["18"]["Text"] = "An error has occured in the server, please wait 3 seconds and try again.";
+		DELTA["18"]["Text"] = "Có lỗi ở máy chủ, vui lòng đợi 3 giây rồi thử lại";
                 return false;
             end;
         else
@@ -4620,7 +4620,7 @@ end)
 -- Get Key
 buttons.Buttons.Button2.MouseButton1Click:Connect(function()
     setclipboard(GetLink())
-    buttons.Buttons.Button2.Input.Text = "Copied Link"
+    buttons.Buttons.Button2.Input.Text = "Đã sao chép key link"
     end)
 
 -- Close

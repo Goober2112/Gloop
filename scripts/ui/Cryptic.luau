@@ -613,16 +613,13 @@ ScreenGui.Frame.Keysystem["Check Key"].TextButton.MouseButton1Click:Connect(func
 	end
 end)
 
-for i = 1,4 do
+for i = 1, 4 do
 	TweenDesc(Enum.EasingStyle.Cubic, Waypoints[i]["B"])
 	ChangeProgression(Descriptions[i]["A"], Descriptions[i]["B"])
 	UpdateProgression(i)
 
 	if i == 1 then
 		verify("Cryptionion")
-
-		task.wait(1)
-
 
 		if not AcceptedWhitelist then
 			ChangeProgression('Key System', 'We require that you complete the Key System. Support Server: discord.gg/getcryptic')

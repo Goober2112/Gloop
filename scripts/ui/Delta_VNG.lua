@@ -229,7 +229,7 @@ DELTA["7"]["TextSize"] = 14;
 DELTA["7"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 DELTA["7"]["AnchorPoint"] = Vector2.new(0.5, 0);
 DELTA["7"]["Size"] = UDim2.new(0.8398135900497437, 0, 0.4, 0);
-DELTA["7"]["Text"] = [[Welcome back!]];
+DELTA["7"]["Text"] = [[chào mừng trở lại]];
 DELTA["7"]["Name"] = [[Title]];
 DELTA["7"]["BackgroundTransparency"] = 1;
 DELTA["7"]["Position"] = UDim2.new(0.4199067950248718, 0, 0, 0);
@@ -245,7 +245,7 @@ DELTA["8"]["TextSize"] = 14;
 DELTA["8"]["TextColor3"] = Color3.fromRGB(115, 127, 152);
 DELTA["8"]["AnchorPoint"] = Vector2.new(0.5, 1);
 DELTA["8"]["Size"] = UDim2.new(0.8980631828308105, 0, 0.35361653566360474, 0);
-DELTA["8"]["Text"] = [[Access Delta through completing the key system, doesn't take long!]];
+DELTA["8"]["Text"] = [[Truy cập Delta chỉ với hoàn thành việc get key dễ dàng!]];
 DELTA["8"]["Name"] = [[Paragraph]];
 DELTA["8"]["BackgroundTransparency"] = 1;
 DELTA["8"]["Position"] = UDim2.new(0.4490315914154053, 0, 0.85361647605896, 0);
@@ -270,7 +270,7 @@ DELTA["a"]["TextSize"] = 14;
 DELTA["a"]["TextColor3"] = Color3.fromRGB(129, 143, 164);
 DELTA["a"]["AnchorPoint"] = Vector2.new(0.5, 0);
 DELTA["a"]["Size"] = UDim2.new(0.6213776469230652, 0, 0.2623675465583801, 0);
-DELTA["a"]["Text"] = [[Enter key]];
+DELTA["a"]["Text"] = [[Nhập Key]];
 DELTA["a"]["Name"] = [[Title]];
 DELTA["a"]["BackgroundTransparency"] = 1;
 DELTA["a"]["Position"] = UDim2.new(0.3106888234615326, 0, -2.339766922432318e-07, 0);
@@ -348,7 +348,7 @@ DELTA["12"]["TextSize"] = 14;
 DELTA["12"]["TextColor3"] = Color3.fromRGB(140, 206, 255);
 DELTA["12"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
 DELTA["12"]["Size"] = UDim2.new(0.8865329027175903, 0, 0.5, 0);
-DELTA["12"]["Text"] = [[Continue]];
+DELTA["12"]["Text"] = [[Tiếp Tục]];
 DELTA["12"]["Name"] = [[Input]];
 DELTA["12"]["BackgroundTransparency"] = 1;
 DELTA["12"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
@@ -384,7 +384,7 @@ DELTA["16"]["TextSize"] = 14;
 DELTA["16"]["TextColor3"] = Color3.fromRGB(162, 191, 212);
 DELTA["16"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
 DELTA["16"]["Size"] = UDim2.new(0.8865329027175903, 0, 0.5, 0);
-DELTA["16"]["Text"] = [[Receive Key]];
+DELTA["16"]["Text"] = [[Nhận Key]];
 DELTA["16"]["Name"] = [[Input]];
 DELTA["16"]["BackgroundTransparency"] = 1;
 DELTA["16"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
@@ -4538,14 +4538,14 @@ function Verify()
 	                    end
 	                end           
 	            end
-	            DELTA["18"]["Text"] = "Invalid key detected, please try again!";
+	            DELTA["18"]["Text"] = "Key sai, vui lòng thử lại!";
 	            return false
             else
 		DELTA["18"]["Text"] = "Có lỗi ở máy chủ, vui lòng đợi 3 giây rồi thử lại";
                 return false;
             end;
         else
-            DELTA["18"]["Text"] = "Invalid key detected, please try again!";
+            DELTA["18"]["Text"] = "Key sai, vui lòng thử lại!";
             return false;
         end;
 

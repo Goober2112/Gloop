@@ -619,8 +619,6 @@ for i = 1, 4 do
 	UpdateProgression(i)
 
 	if i == 1 then
-		verify("Cryptionion")
-
 		if not AcceptedWhitelist then
 			ChangeProgression('Key System', 'We require that you complete the Key System. Support Server: discord.gg/getcryptic')
 
@@ -632,13 +630,17 @@ for i = 1, 4 do
 	
 			TweenService:Create(Loading, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {BackgroundTransparency = 1}):Play()
 
+			
 			task.spawn(function()
+				verify("Cryptionion")
+
 				pcall(function()
 					while not AcceptedWhitelist and task.wait(math.random(50, 60)) do
 						verify("Cryptionion")
 					end
 				end)
 			end)
+			
 			
 			repeat task.wait(0.25) until AcceptedWhitelist ~= false
 

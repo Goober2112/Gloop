@@ -3960,7 +3960,7 @@ end)
 
 Shell.Title.Text = "<b><i>Cryptic</i></b>"
 Shell.Subtitle.Text = "<b><i>Beta UI v1.7</i></b>"
-Shell.Version.Backdrop.TextLabel.Text = "Version: 2.640.730"
+Shell.Version.Backdrop.TextLabel.Text = "Version: 2.642.635"
 
 Shell.Title.RichText = true
 Shell.Subtitle.RichText = true

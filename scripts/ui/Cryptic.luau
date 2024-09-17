@@ -3749,9 +3749,9 @@ else
                 end)
                 
                 if not s then
-                    Lib:CreateNotification('Error while executing script!', 5)
+                    Lib:CreateNotification('Error While Executing Script!', 5)
                 else
-                    Lib:CreateNotification('Executed script!', 5)
+                    Lib:CreateNotification('Executed Script!', 5)
                 end
             end)
             SaveScript.MouseButton1Click:Connect(function()
@@ -4368,7 +4368,7 @@ else
                 if not s then
                     Lib:DevConsole('error', e)
                     
-                    Lib:CreateNotification('An error has occured!', 5)
+                    Lib:CreateNotification('An Error Has Occured!', 5)
                 else
                     Lib:CreateNotification('Executed Successfully!', 5)
                 end
@@ -4387,9 +4387,9 @@ else
                 if not s and e then
                     Lib:DevConsole('error', e)
                     
-                    Lib:CreateNotification('Error While Copying To Clipboard', 5)
+                    Lib:CreateNotification('Error While Copying To Clipboard!', 5)
                 else
-                    Lib:CreateNotification('Copied to clipboard!', 5)
+                    Lib:CreateNotification('Copied To Clipboard!', 5)
                 end
             end
         end
@@ -4406,7 +4406,7 @@ else
                 if not s and e then
                     Lib:DevConsole('error', e)
                     
-                    Lib:CreateNotification('Error while clearing tab!', 5)
+                    Lib:CreateNotification('Error While Clearing Tab!', 5)
                 else
                     Lib:CreateNotification('Cleared Editor!', 5)
                 end
@@ -4452,7 +4452,7 @@ else
 
             Lib:CreateNotification('Error While Executing From Clipboard!', 5)
         else
-            Lib:CreateNotification('Executed clipboard!', 5)
+            Lib:CreateNotification('Executed Clipboard!', 5)
         end
     end)
 
@@ -4482,7 +4482,7 @@ else
             if not s then
                 Lib:DevConsole('error', e)
                 
-                Lib:CreateNotification('Error while attempting to execute the script!', 5)
+                Lib:CreateNotification('Error While Attempting To Execute The Script!', 5)
             else
                 Lib:CreateNotification(ExecSS, 5)
             end
@@ -4499,9 +4499,9 @@ else
             if not s and e then
                 Lib:DevConsole('error', e)
 
-                Lib:CreateNotification('Error Coping to Clipboard!', 5)
+                Lib:CreateNotification('Error Copying to Clipboard!', 5)
             else
-                Lib:CreateNotification('Copied To Clipboard', 5)
+                Lib:CreateNotification('Copied To Clipboard!', 5)
             end
         end
     end)
@@ -4518,7 +4518,7 @@ else
 
                 Lib:CreateNotification('Error Loading Script To Editor!', 5)
             else
-                Lib:CreateNotification('Loaded Script To Editor', 5)
+                Lib:CreateNotification('Loaded Script To Editor!', 5)
             end
         end
     end)
@@ -4537,7 +4537,7 @@ else
 
                 Lib:CreateNotification('Error Deleting Script!', 5)
             else
-                Lib:CreateNotification('Deleted Script', 5)
+                Lib:CreateNotification('Deleted Script!', 5)
             end
         end
     end)

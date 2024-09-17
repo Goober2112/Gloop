@@ -5499,7 +5499,7 @@ else
         end
         for i, a in pairs(MainFrame["Miscellaneous"].ScrollingFrame:GetChildren()) do
             if a:IsA('Frame') and a:FindFirstChild('TextButton') then
-                a.TextButton = Color3.fromRGB(RR, GG, BB)
+                a.TextButton.BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
             end
         end
 
@@ -5535,7 +5535,7 @@ else
         end
         for i, a in pairs(MainFrame["Miscellaneous"].ScrollingFrame:GetChildren()) do
             if a:IsA('Frame') and a:FindFirstChild('TextButton') then
-                a.TextButton = Color3.fromRGB(RR, GG, BB)
+                a.TextButton.BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
             end
         end
 

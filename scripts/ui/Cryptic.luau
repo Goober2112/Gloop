@@ -2992,7 +2992,7 @@ else
     Cryptic.B1.Position = UDim2.new(0.637062192, 0, 0.0188553482, 0)
     Cryptic.B1.Size = UDim2.new(0.142548412, 0, 0.099999994, 0)
     Cryptic.B1.Font = Enum.Font.SourceSans
-    Cryptic.B1.PlaceholderText = "BLUE: 0 - 255"
+    Cryptic.B1.PlaceholderText = "0 - 255"
     Cryptic.B1.Text = ""
     Cryptic.B1.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.B1.TextScaled = true
@@ -3007,7 +3007,7 @@ else
     Cryptic.G1.Position = UDim2.new(0.48203522, 0, 0.0188553482, 0)
     Cryptic.G1.Size = UDim2.new(0.142548352, 0, 0.099999994, 0)
     Cryptic.G1.Font = Enum.Font.SourceSans
-    Cryptic.G1.PlaceholderText = "GREEN: 0 - 255"
+    Cryptic.G1.PlaceholderText = "0 - 255"
     Cryptic.G1.Text = ""
     Cryptic.G1.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.G1.TextScaled = true
@@ -3022,7 +3022,7 @@ else
     Cryptic.R1.Position = UDim2.new(0.327926457, 0, 0.0188553482, 0)
     Cryptic.R1.Size = UDim2.new(0.142548442, 0, 0.099999994, 0)
     Cryptic.R1.Font = Enum.Font.SourceSans
-    Cryptic.R1.PlaceholderText = "RED: 0 - 255"
+    Cryptic.R1.PlaceholderText = "0 - 255"
     Cryptic.R1.Text = ""
     Cryptic.R1.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.R1.TextScaled = true
@@ -3036,7 +3036,7 @@ else
     Cryptic.TextLabel_34.Position = UDim2.new(0.0115197785, 0, 0.020000007, 0)
     Cryptic.TextLabel_34.Size = UDim2.new(0.271432161, 0, 0.099999994, 0)
     Cryptic.TextLabel_34.Font = Enum.Font.SourceSans
-    Cryptic.TextLabel_34.Text = "RGB Of Buttons"
+    Cryptic.TextLabel_34.Text = "Customize Tabs"
     Cryptic.TextLabel_34.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.TextLabel_34.TextScaled = true
     Cryptic.TextLabel_34.TextSize = 14.000
@@ -3049,7 +3049,7 @@ else
     Cryptic.TextLabel_35.Position = UDim2.new(0.0115197785, 0, 0.16448456, 0)
     Cryptic.TextLabel_35.Size = UDim2.new(0.271432161, 0, 0.099999994, 0)
     Cryptic.TextLabel_35.Font = Enum.Font.SourceSans
-    Cryptic.TextLabel_35.Text = "RGB Of Backdrops"
+    Cryptic.TextLabel_35.Text = "Customize Backdrops"
     Cryptic.TextLabel_35.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.TextLabel_35.TextScaled = true
     Cryptic.TextLabel_35.TextSize = 14.000
@@ -3063,7 +3063,7 @@ else
     Cryptic.B2.Position = UDim2.new(0.637062192, 0, 0.163462028, 0)
     Cryptic.B2.Size = UDim2.new(0.142548412, 0, 0.099999994, 0)
     Cryptic.B2.Font = Enum.Font.SourceSans
-    Cryptic.B2.PlaceholderText = "BLUE: 0 - 255"
+    Cryptic.B2.PlaceholderText = "0 - 255"
     Cryptic.B2.Text = ""
     Cryptic.B2.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.B2.TextScaled = true
@@ -3078,7 +3078,7 @@ else
     Cryptic.G2.Position = UDim2.new(0.48203522, 0, 0.163462028, 0)
     Cryptic.G2.Size = UDim2.new(0.142548352, 0, 0.099999994, 0)
     Cryptic.G2.Font = Enum.Font.SourceSans
-    Cryptic.G2.PlaceholderText = "GREEN: 0 - 255"
+    Cryptic.G2.PlaceholderText = "0 - 255"
     Cryptic.G2.Text = ""
     Cryptic.G2.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.G2.TextScaled = true
@@ -3093,7 +3093,7 @@ else
     Cryptic.R2.Position = UDim2.new(0.327926457, 0, 0.164906874, 0)
     Cryptic.R2.Size = UDim2.new(0.142548442, 0, 0.099999994, 0)
     Cryptic.R2.Font = Enum.Font.SourceSans
-    Cryptic.R2.PlaceholderText = "RED: 0 - 255"
+    Cryptic.R2.PlaceholderText = "0 - 255"
     Cryptic.R2.Text = ""
     Cryptic.R2.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.R2.TextScaled = true

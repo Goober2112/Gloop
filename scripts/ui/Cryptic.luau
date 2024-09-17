@@ -371,6 +371,7 @@ else
         C1 = Instance.new("TextButton"),
         C2 = Instance.new("TextButton"),
         TextLabel_36 = Instance.new("TextLabel"),
+        Reset = Instance.new("TextButton"),
         Notifier = Instance.new("Frame"),
         UIListLayout_6 = Instance.new("UIListLayout"),
         UIPadding_5 = Instance.new("UIPadding"),
@@ -382,7 +383,6 @@ else
         UICorner_69 = Instance.new("UICorner"),
         UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint"),
     }
-    
     Cryptic.Cryptic.Name = "Cryptic"
     Cryptic.Cryptic.Parent = game.CoreGui
     Cryptic.Cryptic.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -828,6 +828,7 @@ else
     Cryptic.ImageLabel_8.BorderSizePixel = 0
     Cryptic.ImageLabel_8.Position = UDim2.new(0.5, 0, 0.5, 0)
     Cryptic.ImageLabel_8.Size = UDim2.new(0.800000012, 0, 0.800000012, 0)
+    Cryptic.ImageLabel_8.Image = "rbxassetid://92855955242147"
     
     Cryptic.UISizeConstraint_7.Parent = Cryptic.ImageLabel_8
     Cryptic.UISizeConstraint_7.MaxSize = Vector2.new(40, 40)
@@ -3135,11 +3136,25 @@ else
     Cryptic.TextLabel_36.Position = UDim2.new(0.076108925, 0, 0.771785915, 0)
     Cryptic.TextLabel_36.Size = UDim2.new(0.846864343, 0, 0.111098155, 0)
     Cryptic.TextLabel_36.Font = Enum.Font.SourceSans
-    Cryptic.TextLabel_36.Text = "This is a Early Access Feature! This will not save!"
+    Cryptic.TextLabel_36.Text = "This is a Early Access Feature! This will not save! This feature is still in early beta. If you have any issues contact the UI dev: pcallskeleton"
     Cryptic.TextLabel_36.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.TextLabel_36.TextScaled = true
     Cryptic.TextLabel_36.TextSize = 14.000
     Cryptic.TextLabel_36.TextWrapped = true
+    
+    Cryptic.Reset.Name = "Reset"
+    Cryptic.Reset.Parent = Cryptic.CustomizeTab
+    Cryptic.Reset.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+    Cryptic.Reset.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    Cryptic.Reset.BorderSizePixel = 0
+    Cryptic.Reset.Position = UDim2.new(0.418389499, 0, 0.610941708, 0)
+    Cryptic.Reset.Size = UDim2.new(0.163151935, 0, 0.099999994, 0)
+    Cryptic.Reset.Font = Enum.Font.SourceSans
+    Cryptic.Reset.Text = "Reset All"
+    Cryptic.Reset.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Cryptic.Reset.TextScaled = true
+    Cryptic.Reset.TextSize = 14.000
+    Cryptic.Reset.TextWrapped = true
     
     Cryptic.Notifier.Name = "Notifier"
     Cryptic.Notifier.Parent = Cryptic.Cryptic
@@ -5478,6 +5493,42 @@ else
             end
         end
         for i, a in pairs(MainFrame["Global Scripts"]:GetChildren()) do
+            if a.Name == "Frame" or a:IsA('TextButton') then
+                a.BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
+            end
+        end
+        for i, a in pairs(MainFrame["Miscellaneous"].ScrollingFrame:GetChildren()) do
+            if a:IsA('Frame') and a:FindFirstChild('TextButton') then
+                a.TextButton = Color3.fromRGB(RR, GG, BB)
+            end
+        end
+
+        MainFrame["Saved Script"]["Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
+        MainFrame["Saved Script"]["User Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
+    end)
+    MainFrame["Customize Tab"].C2.MouseButton1Click:Connect(function()
+        local RR, GG, BB = MainFrame["Customize Tab"]["R2"].Text, MainFrame["Customize Tab"]["G2"].Text, MainFrame["Customize Tab"]["B2"].Text
+
+        Buttons.Frame.BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
+        MainFrame.BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
+    end)
+    MainFrame["Customize Tab"].Reset.MouseButton1Click:Connect(function()
+        local RR, GG, BB = 64, 128, 255
+
+        Buttons.Frame.BackgroundColor3 = Color3.fromRGB(25, 33, 57)
+        MainFrame.BackgroundColor3 = Color3.fromRGB(25, 33, 57)
+
+        for i, a in pairs(Buttons.Frame:GetChildren()) do
+            if a:IsA('TextButton') and a:FindFirstChild('Frame') then
+                a.Frame.BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
+            end
+        end
+        for i, a in pairs(MainFrame["Script Editor Tab"]["Scripting Buttons"]:GetChildren()) do
+            if a:IsA('TextButton') and a:FindFirstChild('Frame') then
+                a.Frame.BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
+            end
+        end
+        for i, a in pairs(MainFrame["Global Scripts"]:GetChildren()) do
             if a.Name == "Frame" or a:IsA('Button') then
                 a.BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
             end
@@ -5488,16 +5539,9 @@ else
             end
         end
 
-        MainFrame["Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
-        MainFrame["User Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
+        MainFrame["Saved Script"]["Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
+        MainFrame["Saved Script"]["User Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
     end)
-    MainFrame["Customize Tab"].C2.MouseButton1Click:Connect(function()
-        local RR, GG, BB = MainFrame["Customize Tab"]["R2"].Text, MainFrame["Customize Tab"]["G2"].Text, MainFrame["Customize Tab"]["B2"].Text
-
-        Buttons.Frame.BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
-        MainFrame.BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
-    end)
-
     ----------------------------------------------------------- [[ FUNCTIONS LOADING ]] ---------------------------------------------------------
     Lib:SwitchTabs("A", "Script Editor Tab")
     Lib:SwitchTabs("B", "Saved Scripts")

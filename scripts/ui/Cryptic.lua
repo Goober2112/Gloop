@@ -3,23 +3,26 @@ local Frame = Instance.new("Frame")
 local UIScale = Instance.new("UIScale")
 local UICorner = Instance.new("UICorner")
 local Keysystem = Instance.new("Frame")
-local GetKey = Instance.new("Frame")
+local OfficialStore = Instance.new("Frame")
 local UICorner_2 = Instance.new("UICorner")
 local TextButton = Instance.new("TextButton")
 local TextLabel = Instance.new("TextLabel")
 local EnterKeyHere = Instance.new("Frame")
 local UICorner_3 = Instance.new("UICorner")
 local TextBox = Instance.new("TextBox")
-local OfficialStore = Instance.new("Frame")
+local CloseUI = Instance.new("Frame")
 local UICorner_4 = Instance.new("UICorner")
 local TextButton_2 = Instance.new("TextButton")
 local UICorner_5 = Instance.new("UICorner")
-local CheckKey = Instance.new("Frame")
+local GetKey = Instance.new("Frame")
 local UICorner_6 = Instance.new("UICorner")
 local TextButton_3 = Instance.new("TextButton")
+local CheckKey = Instance.new("Frame")
+local UICorner_7 = Instance.new("UICorner")
+local TextButton_4 = Instance.new("TextButton")
 local ImageLabel = Instance.new("ImageLabel")
 local Description = Instance.new("Frame")
-local UICorner_7 = Instance.new("UICorner")
+local UICorner_8 = Instance.new("UICorner")
 local Title = Instance.new("TextLabel")
 local Description_2 = Instance.new("TextLabel")
 local UIGradient = Instance.new("UIGradient")
@@ -29,17 +32,17 @@ local Progession = Instance.new("Frame")
 local Progress = Instance.new("Frame")
 local Checkpoints = Instance.new("Folder")
 local _1 = Instance.new("Frame")
-local UICorner_8 = Instance.new("UICorner")
-local _4 = Instance.new("Frame")
 local UICorner_9 = Instance.new("UICorner")
-local _3 = Instance.new("Frame")
+local _4 = Instance.new("Frame")
 local UICorner_10 = Instance.new("UICorner")
-local _2 = Instance.new("Frame")
+local _3 = Instance.new("Frame")
 local UICorner_11 = Instance.new("UICorner")
+local _2 = Instance.new("Frame")
+local UICorner_12 = Instance.new("UICorner")
 local UIListLayout = Instance.new("UIListLayout")
 local Loading = Instance.new("Frame")
 local Title_2 = Instance.new("TextLabel")
-local UICorner_12 = Instance.new("UICorner")
+local UICorner_13 = Instance.new("UICorner")
 local Description_3 = Instance.new("TextLabel")
 local Description_4 = Instance.new("TextLabel")
 local Description_5 = Instance.new("TextLabel")
@@ -72,20 +75,20 @@ Keysystem.BorderSizePixel = 0
 Keysystem.Position = UDim2.new(0.58084774, 0, 0.0257352944, 0)
 Keysystem.Size = UDim2.new(0, 260, 0, 257)
 
-GetKey.Name = "Get Key"
-GetKey.Parent = Keysystem
-GetKey.AnchorPoint = Vector2.new(0.5, 0.5)
-GetKey.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
-GetKey.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GetKey.BorderSizePixel = 0
-GetKey.Position = UDim2.new(0.500000119, 0, 0.790968835, 0)
-GetKey.Size = UDim2.new(0.957543194, 0, 0.108538076, 0)
-GetKey.ZIndex = 2
+OfficialStore.Name = "Official Store"
+OfficialStore.Parent = Keysystem
+OfficialStore.AnchorPoint = Vector2.new(0.5, 0.5)
+OfficialStore.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+OfficialStore.BorderColor3 = Color3.fromRGB(0, 0, 0)
+OfficialStore.BorderSizePixel = 0
+OfficialStore.Position = UDim2.new(0.500000119, 0, 0.790968835, 0)
+OfficialStore.Size = UDim2.new(0.957543194, 0, 0.108538076, 0)
+OfficialStore.ZIndex = 2
 
 UICorner_2.CornerRadius = UDim.new(0.150000006, 0)
-UICorner_2.Parent = GetKey
+UICorner_2.Parent = OfficialStore
 
-TextButton.Parent = GetKey
+TextButton.Parent = OfficialStore
 TextButton.AnchorPoint = Vector2.new(0.5, 0.5)
 TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextButton.BackgroundTransparency = 1.000
@@ -94,7 +97,7 @@ TextButton.BorderSizePixel = 0
 TextButton.Position = UDim2.new(0.5, 0, 0.5, 0)
 TextButton.Size = UDim2.new(1, 0, 0.649999976, 0)
 TextButton.Font = Enum.Font.SourceSansBold
-TextButton.Text = "GET KEY LINK"
+TextButton.Text = "OFFICIAL STORE"
 TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextButton.TextScaled = true
 TextButton.TextSize = 14.000
@@ -143,20 +146,20 @@ TextBox.TextScaled = true
 TextBox.TextSize = 14.000
 TextBox.TextWrapped = true
 
-OfficialStore.Name = "Official Store"
-OfficialStore.Parent = Keysystem
-OfficialStore.AnchorPoint = Vector2.new(0.5, 0.5)
-OfficialStore.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
-OfficialStore.BorderColor3 = Color3.fromRGB(0, 0, 0)
-OfficialStore.BorderSizePixel = 0
-OfficialStore.Position = UDim2.new(0.500000119, 0, 0.923264563, 0)
-OfficialStore.Size = UDim2.new(0.957543194, 0, 0.108538076, 0)
-OfficialStore.ZIndex = 2
+CloseUI.Name = "Close UI"
+CloseUI.Parent = Keysystem
+CloseUI.AnchorPoint = Vector2.new(0.5, 0.5)
+CloseUI.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+CloseUI.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CloseUI.BorderSizePixel = 0
+CloseUI.Position = UDim2.new(0.500000119, 0, 0.923264563, 0)
+CloseUI.Size = UDim2.new(0.957543194, 0, 0.108538076, 0)
+CloseUI.ZIndex = 2
 
 UICorner_4.CornerRadius = UDim.new(0.150000006, 0)
-UICorner_4.Parent = OfficialStore
+UICorner_4.Parent = CloseUI
 
-TextButton_2.Parent = OfficialStore
+TextButton_2.Parent = CloseUI
 TextButton_2.AnchorPoint = Vector2.new(0.5, 0.5)
 TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextButton_2.BackgroundTransparency = 1.000
@@ -165,7 +168,7 @@ TextButton_2.BorderSizePixel = 0
 TextButton_2.Position = UDim2.new(0.5, 0, 0.5, 0)
 TextButton_2.Size = UDim2.new(1, 0, 0.649999976, 0)
 TextButton_2.Font = Enum.Font.SourceSansBold
-TextButton_2.Text = "OFFICIAL STORE"
+TextButton_2.Text = "CLOSE UI"
 TextButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextButton_2.TextScaled = true
 TextButton_2.TextSize = 14.000
@@ -174,20 +177,20 @@ TextButton_2.TextWrapped = true
 UICorner_5.CornerRadius = UDim.new(0.0149999997, 0)
 UICorner_5.Parent = Keysystem
 
-CheckKey.Name = "Check Key"
-CheckKey.Parent = Keysystem
-CheckKey.AnchorPoint = Vector2.new(0.5, 0.5)
-CheckKey.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
-CheckKey.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CheckKey.BorderSizePixel = 0
-CheckKey.Position = UDim2.new(0.500000119, 0, 0.654782057, 0)
-CheckKey.Size = UDim2.new(0.957543194, 0, 0.108538076, 0)
-CheckKey.ZIndex = 2
+GetKey.Name = "Get Key"
+GetKey.Parent = Keysystem
+GetKey.AnchorPoint = Vector2.new(0.5, 0.5)
+GetKey.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+GetKey.BorderColor3 = Color3.fromRGB(0, 0, 0)
+GetKey.BorderSizePixel = 0
+GetKey.Position = UDim2.new(0.500000119, 0, 0.654782057, 0)
+GetKey.Size = UDim2.new(0.957543194, 0, 0.108538076, 0)
+GetKey.ZIndex = 2
 
 UICorner_6.CornerRadius = UDim.new(0.150000006, 0)
-UICorner_6.Parent = CheckKey
+UICorner_6.Parent = GetKey
 
-TextButton_3.Parent = CheckKey
+TextButton_3.Parent = GetKey
 TextButton_3.AnchorPoint = Vector2.new(0.5, 0.5)
 TextButton_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextButton_3.BackgroundTransparency = 1.000
@@ -196,11 +199,39 @@ TextButton_3.BorderSizePixel = 0
 TextButton_3.Position = UDim2.new(0.5, 0, 0.5, 0)
 TextButton_3.Size = UDim2.new(1, 0, 0.649999976, 0)
 TextButton_3.Font = Enum.Font.SourceSansBold
-TextButton_3.Text = "CHECK KEY"
+TextButton_3.Text = "GET KEY LINK"
 TextButton_3.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextButton_3.TextScaled = true
 TextButton_3.TextSize = 14.000
 TextButton_3.TextWrapped = true
+
+CheckKey.Name = "Check Key"
+CheckKey.Parent = Keysystem
+CheckKey.AnchorPoint = Vector2.new(0.5, 0.5)
+CheckKey.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+CheckKey.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CheckKey.BorderSizePixel = 0
+CheckKey.Position = UDim2.new(0.5, 0, 0.519999981, 0)
+CheckKey.Size = UDim2.new(0.957543194, 0, 0.108538076, 0)
+CheckKey.ZIndex = 2
+
+UICorner_7.CornerRadius = UDim.new(0.150000006, 0)
+UICorner_7.Parent = CheckKey
+
+TextButton_4.Parent = CheckKey
+TextButton_4.AnchorPoint = Vector2.new(0.5, 0.5)
+TextButton_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_4.BackgroundTransparency = 1.000
+TextButton_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_4.BorderSizePixel = 0
+TextButton_4.Position = UDim2.new(0.5, 0, 0.5, 0)
+TextButton_4.Size = UDim2.new(1, 0, 0.649999976, 0)
+TextButton_4.Font = Enum.Font.SourceSansBold
+TextButton_4.Text = "CHECK KEY"
+TextButton_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_4.TextScaled = true
+TextButton_4.TextSize = 14.000
+TextButton_4.TextWrapped = true
 
 ImageLabel.Parent = Frame
 ImageLabel.AnchorPoint = Vector2.new(0, 0.5)
@@ -221,8 +252,8 @@ Description.Position = UDim2.new(0.0887755901, 0, 0.0847096145, 0)
 Description.Size = UDim2.new(0, 296, 0, 69)
 Description.ZIndex = 2
 
-UICorner_7.CornerRadius = UDim.new(0, 5)
-UICorner_7.Parent = Description
+UICorner_8.CornerRadius = UDim.new(0, 5)
+UICorner_8.Parent = Description
 
 Title.Name = "Title"
 Title.Parent = Description
@@ -324,8 +355,8 @@ _1.BorderSizePixel = 0
 _1.Position = UDim2.new(0.5, 0, 0, 0)
 _1.Size = UDim2.new(0, 19, 0, 19)
 
-UICorner_8.CornerRadius = UDim.new(2, 0)
-UICorner_8.Parent = _1
+UICorner_9.CornerRadius = UDim.new(2, 0)
+UICorner_9.Parent = _1
 
 _4.Name = "4"
 _4.Parent = Checkpoints
@@ -336,8 +367,8 @@ _4.BorderSizePixel = 0
 _4.Position = UDim2.new(0.5, 0, 0.915555537, 0)
 _4.Size = UDim2.new(0, 19, 0, 19)
 
-UICorner_9.CornerRadius = UDim.new(2, 0)
-UICorner_9.Parent = _4
+UICorner_10.CornerRadius = UDim.new(2, 0)
+UICorner_10.Parent = _4
 
 _3.Name = "3"
 _3.Parent = Checkpoints
@@ -348,8 +379,8 @@ _3.BorderSizePixel = 0
 _3.Position = UDim2.new(0.5, 0, 0.613333344, 0)
 _3.Size = UDim2.new(0, 19, 0, 19)
 
-UICorner_10.CornerRadius = UDim.new(2, 0)
-UICorner_10.Parent = _3
+UICorner_11.CornerRadius = UDim.new(2, 0)
+UICorner_11.Parent = _3
 
 _2.Name = "2"
 _2.Parent = Checkpoints
@@ -360,8 +391,8 @@ _2.BorderSizePixel = 0
 _2.Position = UDim2.new(0.5, 0, 0.293333322, 0)
 _2.Size = UDim2.new(0, 19, 0, 19)
 
-UICorner_11.CornerRadius = UDim.new(2, 0)
-UICorner_11.Parent = _2
+UICorner_12.CornerRadius = UDim.new(2, 0)
+UICorner_12.Parent = _2
 
 UIListLayout.Parent = Checkpoints
 UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -392,8 +423,8 @@ Title_2.TextSize = 14.000
 Title_2.TextWrapped = true
 Title_2.TextXAlignment = Enum.TextXAlignment.Left
 
-UICorner_12.CornerRadius = UDim.new(0.0149999997, 0)
-UICorner_12.Parent = Loading
+UICorner_13.CornerRadius = UDim.new(0.0149999997, 0)
+UICorner_13.Parent = Loading
 
 Description_3.Name = "Description"
 Description_3.Parent = Loading
@@ -493,10 +524,10 @@ local Descriptions = {
 	[4] = {A = "Initialized", B = "Successfully completed all validations! Now loading Main UI."}
 }
 local Waypoints = {
-	[1] = {A = UDim2.new(0, 14, 0, 0), B = UDim2.new(0.072, 0, 0.085, 0)},
-	[2] = {A = UDim2.new(0, 14, 0, 74), B = UDim2.new(0.072, 0, 0.338, 0)},
-	[3] = {A = UDim2.new(0, 14, 0, 141), B = UDim2.new(0.072, 0, 0.592, 0)},
-	[4] = {A = UDim2.new(0, 14, 0, 210), B = UDim2.new(0.072, 0, 0.669, 0)}
+	[1] = {A = UDim2.new(0, 14, 0, 0), B = UDim2.new(0.089, 0, 0.085, 0)},
+	[2] = {A = UDim2.new(0, 14, 0, 74), B = UDim2.new(0.089, 0, 0.338, 0)},
+	[3] = {A = UDim2.new(0, 14, 0, 141), B = UDim2.new(0.089, 0, 0.592, 0)},
+	[4] = {A = UDim2.new(0, 14, 0, 210), B = UDim2.new(0.089, 0, 0.669, 0)}
 }
 
 
@@ -598,6 +629,7 @@ local function verify(key)
 	end
 end
 
+local ClosedUI = false
 
 ScreenGui.Frame.Keysystem["Official Store"].TextButton.MouseButton1Click:Connect(function()
     setclipboard('https://reapersoftwaredevelopment.mysellix.io/')
@@ -612,8 +644,17 @@ ScreenGui.Frame.Keysystem["Check Key"].TextButton.MouseButton1Click:Connect(func
 		verify("Cryptonite")
 	end
 end)
+ScreenGui.Frame.Keysystem["Close UI"].TextButton.MouseButton1Click:Connect(function()
+    ScreenGui:Destroy()
+
+	ClosedUI = true
+end)
 
 for i = 1, 4 do
+	if ClosedUI then
+		return
+	end
+
 	TweenDesc(Enum.EasingStyle.Cubic, Waypoints[i]["B"])
 	ChangeProgression(Descriptions[i]["A"], Descriptions[i]["B"])
 	UpdateProgression(i)
@@ -635,14 +676,22 @@ for i = 1, 4 do
 				verify("Cryptionion")
 
 				pcall(function()
-					while not AcceptedWhitelist and task.wait(math.random(50, 60)) do
+					while not AcceptedWhitelist and task.wait(45) do
+						if ClosedUI then
+							return
+						end
+
 						verify("Cryptionion")
 					end
 				end)
 			end)
+
 			
-			
-			repeat task.wait(0.25) until AcceptedWhitelist ~= false
+			repeat task.wait(0.25) until AcceptedWhitelist ~= false or ClosedUI 
+
+			if ClosedUI then
+				return
+			end
 
 			for _, child in ipairs(Loading:GetChildren()) do
 				if child:IsA("TextLabel") then
@@ -660,7 +709,9 @@ for i = 1, 4 do
 		task.wait(0.75)
 	end
 end
-
+if ClosedUI then
+	return
+end
 ScreenGui:Destroy()
 
 task.spawn(function()

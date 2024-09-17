@@ -4544,8 +4544,8 @@ else
 
     -- Change Showed Scripts
     MainFrame["Saved Scripts"]["Saved Scripts Tab"].MouseButton1Click:Connect(function()
-        MainFrame["Saved Scripts"]["Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        MainFrame["Saved Scripts"]["User Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+        MainFrame["Saved Scripts"]["Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(64, 128, 255)
+        MainFrame["Saved Scripts"]["User Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(18, 37, 72)
 
         MainFrame["Saved Scripts"]["Imgar"].Visible = true
         MainFrame["Saved Scripts"]["Random"].Visible = false
@@ -4562,8 +4562,8 @@ else
         Lib:LoadPresavedScripts()
     end)
     MainFrame["Saved Scripts"]["User Saved Scripts Tab"].MouseButton1Click:Connect(function()
-        MainFrame["Saved Scripts"]["Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(100, 100, 100)
-        MainFrame["Saved Scripts"]["User Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        MainFrame["Saved Scripts"]["Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(18, 37, 72)
+        MainFrame["Saved Scripts"]["User Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(64, 128, 255)
 
         MainFrame["Saved Scripts"]["Imgar"].Visible = false
         MainFrame["Saved Scripts"]["Random"].Visible = true

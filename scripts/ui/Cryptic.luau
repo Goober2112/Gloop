@@ -3,7 +3,7 @@ if not game:IsLoaded() then
 end
 
 if Crypticbypc then
-    return
+    --return
 end
 
 getgenv().Crypticbypc = true
@@ -5503,8 +5503,8 @@ else
             end
         end
 
-        MainFrame["Saved Script"]["Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
-        MainFrame["Saved Script"]["User Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
+        MainFrame["Saved Scripts"]["Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
+        MainFrame["Saved Scripts"]["User Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
     end)
     MainFrame["Customize Tab"].C2.MouseButton1Click:Connect(function()
         local RR, GG, BB = MainFrame["Customize Tab"]["R2"].Text, MainFrame["Customize Tab"]["G2"].Text, MainFrame["Customize Tab"]["B2"].Text
@@ -5529,7 +5529,7 @@ else
             end
         end
         for i, a in pairs(MainFrame["Global Scripts"]:GetChildren()) do
-            if a.Name == "Frame" or a:IsA('Button') then
+            if a.Name == "Frame" or a:IsA('TextButton') then
                 a.BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
             end
         end
@@ -5539,8 +5539,8 @@ else
             end
         end
 
-        MainFrame["Saved Script"]["Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
-        MainFrame["Saved Script"]["User Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
+        MainFrame["Saved Scripts"]["Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
+        MainFrame["Saved Scripts"]["User Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(RR, GG, BB)
     end)
     ----------------------------------------------------------- [[ FUNCTIONS LOADING ]] ---------------------------------------------------------
     Lib:SwitchTabs("A", "Script Editor Tab")

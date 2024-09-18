@@ -22,7 +22,7 @@ local Database = {
         S5 = 0,
         S6 = 5,
         S7 = false,
-        S8 = 0.75
+        S8 = 100
     },
     UI = {
         Version = "Default",
@@ -1263,7 +1263,7 @@ else
     Cryptic.TextLabel_7.Size = UDim2.new(0.685000002, 0, 0.649999976, 0)
     Cryptic.TextLabel_7.ZIndex = 2
     Cryptic.TextLabel_7.Font = Enum.Font.SourceSans
-    Cryptic.TextLabel_7.Text = "Save Script"
+    Cryptic.TextLabel_7.Text = "Save as Local Script"
     Cryptic.TextLabel_7.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.TextLabel_7.TextScaled = true
     Cryptic.TextLabel_7.TextSize = 14.000
@@ -2359,7 +2359,7 @@ else
     Cryptic.TextLabel_22.Position = UDim2.new(0.5, 0, 0.5, 0)
     Cryptic.TextLabel_22.Size = UDim2.new(1, 0, 0.800000012, 0)
     Cryptic.TextLabel_22.Font = Enum.Font.SourceSans
-    Cryptic.TextLabel_22.Text = "Re-Join Server"
+    Cryptic.TextLabel_22.Text = "Rejoin Server"
     Cryptic.TextLabel_22.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.TextLabel_22.TextScaled = true
     Cryptic.TextLabel_22.TextSize = 14.000
@@ -2400,7 +2400,7 @@ else
     Cryptic.TextLabel_23.Position = UDim2.new(0.5, 0, 0.5, 0)
     Cryptic.TextLabel_23.Size = UDim2.new(1, 0, 0.800000012, 0)
     Cryptic.TextLabel_23.Font = Enum.Font.SourceSans
-    Cryptic.TextLabel_23.Text = "Server Hop To Least Populated Server"
+    Cryptic.TextLabel_23.Text = "Server Hop To Lowest Players Server"
     Cryptic.TextLabel_23.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.TextLabel_23.TextScaled = true
     Cryptic.TextLabel_23.TextSize = 14.000
@@ -2992,7 +2992,7 @@ else
     Cryptic.B1.Position = UDim2.new(0.637062192, 0, 0.0188553482, 0)
     Cryptic.B1.Size = UDim2.new(0.142548412, 0, 0.099999994, 0)
     Cryptic.B1.Font = Enum.Font.SourceSans
-    Cryptic.B1.PlaceholderText = "(0 - 255)"
+    Cryptic.B1.PlaceholderText = "BLUE: 0 - 255"
     Cryptic.B1.Text = ""
     Cryptic.B1.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.B1.TextScaled = true
@@ -3007,7 +3007,7 @@ else
     Cryptic.G1.Position = UDim2.new(0.48203522, 0, 0.0188553482, 0)
     Cryptic.G1.Size = UDim2.new(0.142548352, 0, 0.099999994, 0)
     Cryptic.G1.Font = Enum.Font.SourceSans
-    Cryptic.G1.PlaceholderText = "(0 - 255)"
+    Cryptic.G1.PlaceholderText = "GREEN: 0 - 255"
     Cryptic.G1.Text = ""
     Cryptic.G1.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.G1.TextScaled = true
@@ -3022,7 +3022,7 @@ else
     Cryptic.R1.Position = UDim2.new(0.327926457, 0, 0.0188553482, 0)
     Cryptic.R1.Size = UDim2.new(0.142548442, 0, 0.099999994, 0)
     Cryptic.R1.Font = Enum.Font.SourceSans
-    Cryptic.R1.PlaceholderText = "(0 - 255)"
+    Cryptic.R1.PlaceholderText = "RED: 0 - 255"
     Cryptic.R1.Text = ""
     Cryptic.R1.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.R1.TextScaled = true
@@ -3036,7 +3036,7 @@ else
     Cryptic.TextLabel_34.Position = UDim2.new(0.0115197785, 0, 0.020000007, 0)
     Cryptic.TextLabel_34.Size = UDim2.new(0.271432161, 0, 0.099999994, 0)
     Cryptic.TextLabel_34.Font = Enum.Font.SourceSans
-    Cryptic.TextLabel_34.Text = "Customize Tabs"
+    Cryptic.TextLabel_34.Text = "RGB Of Buttons"
     Cryptic.TextLabel_34.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.TextLabel_34.TextScaled = true
     Cryptic.TextLabel_34.TextSize = 14.000
@@ -3049,7 +3049,7 @@ else
     Cryptic.TextLabel_35.Position = UDim2.new(0.0115197785, 0, 0.16448456, 0)
     Cryptic.TextLabel_35.Size = UDim2.new(0.271432161, 0, 0.099999994, 0)
     Cryptic.TextLabel_35.Font = Enum.Font.SourceSans
-    Cryptic.TextLabel_35.Text = "Customize Backdrops"
+    Cryptic.TextLabel_35.Text = "RGB Of Backdrops"
     Cryptic.TextLabel_35.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.TextLabel_35.TextScaled = true
     Cryptic.TextLabel_35.TextSize = 14.000
@@ -3063,7 +3063,7 @@ else
     Cryptic.B2.Position = UDim2.new(0.637062192, 0, 0.163462028, 0)
     Cryptic.B2.Size = UDim2.new(0.142548412, 0, 0.099999994, 0)
     Cryptic.B2.Font = Enum.Font.SourceSans
-    Cryptic.B2.PlaceholderText = "(0 - 255)"
+    Cryptic.B2.PlaceholderText = "BLUE: 0 - 255"
     Cryptic.B2.Text = ""
     Cryptic.B2.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.B2.TextScaled = true
@@ -3078,7 +3078,7 @@ else
     Cryptic.G2.Position = UDim2.new(0.48203522, 0, 0.163462028, 0)
     Cryptic.G2.Size = UDim2.new(0.142548352, 0, 0.099999994, 0)
     Cryptic.G2.Font = Enum.Font.SourceSans
-    Cryptic.G2.PlaceholderText = "(0 - 255)"
+    Cryptic.G2.PlaceholderText = "GREEN: 0 - 255"
     Cryptic.G2.Text = ""
     Cryptic.G2.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.G2.TextScaled = true
@@ -3093,7 +3093,7 @@ else
     Cryptic.R2.Position = UDim2.new(0.327926457, 0, 0.164906874, 0)
     Cryptic.R2.Size = UDim2.new(0.142548442, 0, 0.099999994, 0)
     Cryptic.R2.Font = Enum.Font.SourceSans
-    Cryptic.R2.PlaceholderText = "(0 - 255)"
+    Cryptic.R2.PlaceholderText = "RED: 0 - 255"
     Cryptic.R2.Text = ""
     Cryptic.R2.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.R2.TextScaled = true
@@ -3108,7 +3108,7 @@ else
     Cryptic.C1.Position = UDim2.new(0.824000001, 0, 0.0199999996, 0)
     Cryptic.C1.Size = UDim2.new(0.163151935, 0, 0.099999994, 0)
     Cryptic.C1.Font = Enum.Font.SourceSans
-    Cryptic.C1.Text = "Confirm"
+    Cryptic.C1.Text = "Change"
     Cryptic.C1.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.C1.TextScaled = true
     Cryptic.C1.TextSize = 14.000
@@ -3122,7 +3122,7 @@ else
     Cryptic.C2.Position = UDim2.new(0.823701799, 0, 0.163447753, 0)
     Cryptic.C2.Size = UDim2.new(0.163151935, 0, 0.099999994, 0)
     Cryptic.C2.Font = Enum.Font.SourceSans
-    Cryptic.C2.Text = "Confirm"
+    Cryptic.C2.Text = "Change"
     Cryptic.C2.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.C2.TextScaled = true
     Cryptic.C2.TextSize = 14.000
@@ -3136,7 +3136,7 @@ else
     Cryptic.TextLabel_36.Position = UDim2.new(0.076108925, 0, 0.771785915, 0)
     Cryptic.TextLabel_36.Size = UDim2.new(0.846864343, 0, 0.111098155, 0)
     Cryptic.TextLabel_36.Font = Enum.Font.SourceSans
-    Cryptic.TextLabel_36.Text = "This tab is currently in early stage and we're providing it as an early access feature. Changes made on this tab will not be saved after server hopping / restarting. If you have any issues contact the UI dev: pcallskeleton"
+    Cryptic.TextLabel_36.Text = "This is a Early Access Feature! This will not save! This feature is still in early beta. If you have any issues contact the UI dev: pcallskeleton"
     Cryptic.TextLabel_36.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.TextLabel_36.TextScaled = true
     Cryptic.TextLabel_36.TextSize = 14.000
@@ -3150,7 +3150,7 @@ else
     Cryptic.Reset.Position = UDim2.new(0.418389499, 0, 0.610941708, 0)
     Cryptic.Reset.Size = UDim2.new(0.163151935, 0, 0.099999994, 0)
     Cryptic.Reset.Font = Enum.Font.SourceSans
-    Cryptic.Reset.Text = "Reset"
+    Cryptic.Reset.Text = "Reset All"
     Cryptic.Reset.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.Reset.TextScaled = true
     Cryptic.Reset.TextSize = 14.000
@@ -3749,9 +3749,9 @@ else
                 end)
                 
                 if not s then
-                    Lib:CreateNotification('Error While Executing Script!', 5)
+                    Lib:CreateNotification('Error while executing script!', 5)
                 else
-                    Lib:CreateNotification('Executed Script!', 5)
+                    Lib:CreateNotification('Executed script!', 5)
                 end
             end)
             SaveScript.MouseButton1Click:Connect(function()
@@ -4368,7 +4368,7 @@ else
                 if not s then
                     Lib:DevConsole('error', e)
                     
-                    Lib:CreateNotification('An Error Has Occured!', 5)
+                    Lib:CreateNotification('An error has occured!', 5)
                 else
                     Lib:CreateNotification('Executed Successfully!', 5)
                 end
@@ -4387,9 +4387,9 @@ else
                 if not s and e then
                     Lib:DevConsole('error', e)
                     
-                    Lib:CreateNotification('Error While Copying To Clipboard!', 5)
+                    Lib:CreateNotification('Error While Copying To Clipboard', 5)
                 else
-                    Lib:CreateNotification('Copied To Clipboard!', 5)
+                    Lib:CreateNotification('Copied to clipboard!', 5)
                 end
             end
         end
@@ -4406,7 +4406,7 @@ else
                 if not s and e then
                     Lib:DevConsole('error', e)
                     
-                    Lib:CreateNotification('Error While Clearing Tab!', 5)
+                    Lib:CreateNotification('Error while clearing tab!', 5)
                 else
                     Lib:CreateNotification('Cleared Editor!', 5)
                 end
@@ -4452,7 +4452,7 @@ else
 
             Lib:CreateNotification('Error While Executing From Clipboard!', 5)
         else
-            Lib:CreateNotification('Executed Clipboard!', 5)
+            Lib:CreateNotification('Executed clipboard!', 5)
         end
     end)
 
@@ -4482,7 +4482,7 @@ else
             if not s then
                 Lib:DevConsole('error', e)
                 
-                Lib:CreateNotification('Error While Attempting To Execute The Script!', 5)
+                Lib:CreateNotification('Error while attempting to execute the script!', 5)
             else
                 Lib:CreateNotification(ExecSS, 5)
             end
@@ -4499,9 +4499,9 @@ else
             if not s and e then
                 Lib:DevConsole('error', e)
 
-                Lib:CreateNotification('Error Copying to Clipboard!', 5)
+                Lib:CreateNotification('Error Coping to Clipboard!', 5)
             else
-                Lib:CreateNotification('Copied To Clipboard!', 5)
+                Lib:CreateNotification('Copied To Clipboard', 5)
             end
         end
     end)
@@ -4518,7 +4518,7 @@ else
 
                 Lib:CreateNotification('Error Loading Script To Editor!', 5)
             else
-                Lib:CreateNotification('Loaded Script To Editor!', 5)
+                Lib:CreateNotification('Loaded Script To Editor', 5)
             end
         end
     end)
@@ -4537,15 +4537,15 @@ else
 
                 Lib:CreateNotification('Error Deleting Script!', 5)
             else
-                Lib:CreateNotification('Deleted Script!', 5)
+                Lib:CreateNotification('Deleted Script', 5)
             end
         end
     end)
 
     -- Change Showed Scripts
     MainFrame["Saved Scripts"]["Saved Scripts Tab"].MouseButton1Click:Connect(function()
-        MainFrame["Saved Scripts"]["Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(64, 128, 255)
-        MainFrame["Saved Scripts"]["User Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(18, 37, 72)
+        MainFrame["Saved Scripts"]["Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        MainFrame["Saved Scripts"]["User Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(100, 100, 100)
 
         MainFrame["Saved Scripts"]["Imgar"].Visible = true
         MainFrame["Saved Scripts"]["Random"].Visible = false
@@ -4562,8 +4562,8 @@ else
         Lib:LoadPresavedScripts()
     end)
     MainFrame["Saved Scripts"]["User Saved Scripts Tab"].MouseButton1Click:Connect(function()
-        MainFrame["Saved Scripts"]["Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(18, 37, 72)
-        MainFrame["Saved Scripts"]["User Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(64, 128, 255)
+        MainFrame["Saved Scripts"]["Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+        MainFrame["Saved Scripts"]["User Saved Scripts Tab"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 
         MainFrame["Saved Scripts"]["Imgar"].Visible = false
         MainFrame["Saved Scripts"]["Random"].Visible = true
@@ -5474,7 +5474,11 @@ else
             MainFrame["Settings Tab"]["Settings7"].TextButton.Frame.Visible = false
         end
         if Database.Settings["S8"] then
-            Shell.Size = UDim2.new((Database.Settings["S8"] / 100), 0, (Database.Settings["S8"] / 100), 0)
+            if Database.Settings["S8"] <= 24 then
+                Shell.Size = UDim2.new(0.75, 0, 0.75, 0)
+            else
+                Shell.Size = UDim2.new((Database.Settings["S8"] / 100), 0, (Database.Settings["S8"] / 100), 0)
+            end
         end
     end)
 

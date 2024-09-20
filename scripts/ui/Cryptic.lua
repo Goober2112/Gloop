@@ -1,3 +1,7 @@
+repeat task.wait() until game:IsLoaded()
+
+task.wait(1)
+
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local UIScale = Instance.new("UIScale")
@@ -483,270 +487,268 @@ Sliding.Position = UDim2.new(1, 0, 0, 0)
 Sliding.Size = UDim2.new(-1, 0, 1, 0)
 Sliding.ZIndex = 50
 
+task.spawn(function()
+    pcall(function()
+        for i, point in pairs(Checkpoints:GetChildren()) do
+            if point:IsA('Frame') then
+                local UIStroke = Instance.new('UIStroke')
+                
+                UIStroke.Parent = point
+                UIStroke.Thickness = 3
+                UIStroke.Color = Color3.fromRGB(68, 68, 68)
+            end
+        end
+    end)
+end)
+
+
+local Database = {
+    Checkpoints = {
+        [1] = {A = UDim2.new(0, 14, 0, 0), B = UDim2.new(0.089, 0, 0.085, 0)},
+        [2] = {A = UDim2.new(0, 14, 0, 74), B = UDim2.new(0.089, 0, 0.338, 0)},
+        [3] = {A = UDim2.new(0, 14, 0, 141), B = UDim2.new(0.089, 0, 0.592, 0)},
+        [4] = {A = UDim2.new(0, 14, 0, 210), B = UDim2.new(0.089, 0, 0.669, 0)}
+    },
+    Descriptions = {
+        [1] = {A = "Initializing", B = "Please wait a moment while we start initializing."},
+        [2] = {A = "Checking Roblox Version", B = "We are ensuring the Roblox Version is current up-to-date!"},
+        [3] = {A = "Key System", B = "We are validating your access to the cryptic servers."},
+        [4] = {A = "Initialized", B = "Successfully completed all validations! Now loading Main UI."}
+    },
+    Other = {
+        HWID = gethwid() or 0,
+        KL = "https://gateway.platoboost.com/a/39097?id=" .. gethwid() or 0,
+        CRequest = request or http.request or http_request,
+        CheckpointsCleared = false,
+        ClosedUI = false
+    }
+}
+local Secondary = false
 local TweenService = cloneref(game:GetService('TweenService'))
 
-for i, point in pairs(Checkpoints:GetChildren()) do
-    if point:IsA('Frame') then
-        local UIStroke = Instance.new('UIStroke')
-        UIStroke.Parent = point
-        UIStroke.Thickness = 3
-        UIStroke.Color = Color3.fromRGB(68, 68, 68)
-    end
-end
-
-local PointsFolder = Checkpoints
-
-local PBar = Progession.Progress
-local Title1 = Description.Title
-local Title2 = Description.Title2
-local Description1 = Title1.Description
-local Description2 = Title2.Description2
-
-task.wait(0.10)
-
-TweenService:Create(Sliding, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), { Size = UDim2.new(0, 0, 1, 0) }):Play()
-
-task.wait(0.5)
-
-local Secondary = false
-local AcceptedWhitelist = false
-
-local HWID = gethwid()
-local key_link = "https://gateway.platoboost.com/a/39097?id=" .. HWID
-local CRequest = request or http.request or http_request
-
-
-
-local Descriptions = {
-	[1] = {A = "Checking Whitelist", B = "We are validating your Cryptic access with the server."},
-	[2] = {A = "Access Granted", B = "Whitelist has been detected as completed. Access granted to cryptic."},
-	[3] = {A = "Checking Roblox Version", B = "We are validating the roblox client version with our server."},
-	[4] = {A = "Initialized", B = "Successfully completed all validations! Now loading Main UI."}
-}
-local Waypoints = {
-	[1] = {A = UDim2.new(0, 14, 0, 0), B = UDim2.new(0.089, 0, 0.085, 0)},
-	[2] = {A = UDim2.new(0, 14, 0, 74), B = UDim2.new(0.089, 0, 0.338, 0)},
-	[3] = {A = UDim2.new(0, 14, 0, 141), B = UDim2.new(0.089, 0, 0.592, 0)},
-	[4] = {A = UDim2.new(0, 14, 0, 210), B = UDim2.new(0.089, 0, 0.669, 0)}
-}
-
-
-
-function TweenDesc(Style, Udim2)
-	TweenService:Create(Description, TweenInfo.new(1, Style), {Position = Udim2}):Play()
-end
-function ChangeProgression(Title, Description)
+local ChangeProgression = function(Title, Description)
 	if not Secondary then
 		Secondary = true
 
-		Title2.Text = Title
-		Description2.Text = Description
+		ScreenGui.Frame.Description.Title2.Text = Title
+		ScreenGui.Frame.Description.Title2.Description2.Text = Description
 
-		TweenService:Create(Title1, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 1}):Play()
-		TweenService:Create(Description1, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 1}):Play()
+		TweenService:Create(ScreenGui.Frame.Description.Title, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 1}):Play()
+		TweenService:Create(ScreenGui.Frame.Description.Title.Description, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 1}):Play()
 
-		TweenService:Create(Title2, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 0}):Play()
-		TweenService:Create(Description2, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 0}):Play()
+		TweenService:Create(ScreenGui.Frame.Description.Title2, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 0}):Play()
+		TweenService:Create(ScreenGui.Frame.Description.Title2.Description2, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 0}):Play()
 	else
 		Secondary = false
 
-		Title1.Text = Title
-		Description1.Text = Description
+		ScreenGui.Frame.Description.Title.Text = Title
+		ScreenGui.Frame.Description.Title.Description.Text = Description
 
-		TweenService:Create(Title2, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 1}):Play()
-		TweenService:Create(Description2, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 1}):Play()
+		TweenService:Create(ScreenGui.Frame.Description.Title2, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 1}):Play()
+		TweenService:Create(ScreenGui.Frame.Description.Title2.Description2, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 1}):Play()
 
-		TweenService:Create(Title1, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 0}):Play()
-		TweenService:Create(Description1, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 0}):Play()
+		TweenService:Create(ScreenGui.Frame.Description.Title, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 0}):Play()
+		TweenService:Create(ScreenGui.Frame.Description.Title.Description, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 0}):Play()
 	end
 end
-function UpdateProgression(Progress)
-	local Point = PointsFolder:FindFirstChild(Progress)
+local TweenDesc = function(Style, Udim2)
+	TweenService:Create(Description, TweenInfo.new(1, Style), {Position = Udim2}):Play()
+end
+local UpdateProgression = function(Progress)
+	local Point = ScreenGui.Frame.Progession.Checkpoints:FindFirstChild(Progress)
 
-	TweenService:Create(PBar, TweenInfo.new(0.4, Enum.EasingStyle.Cubic), {Size = Waypoints[Progress]["A"]}):Play()
+	TweenService:Create(ScreenGui.Frame.Progession.Progress, TweenInfo.new(0.4, Enum.EasingStyle.Cubic), {Size = Database.Checkpoints[Progress]["A"]}):Play()
 	task.wait(0.25)
 	TweenService:Create(Point, TweenInfo.new(0.3, Enum.EasingStyle.Cubic), {BackgroundColor3 = Color3.fromRGB(54, 78, 204)}):Play()
 end
-
-function FadeOutText(Part, EasingStyle)
+local FadeOutText = function(Part, EasingStyle)
     TweenService:Create(Part, TweenInfo.new(0.5, EasingStyle), { TextTransparency = 1 }):Play()
 end
-function FadeInText(Part, EasingStyle)
+local FadeInText = function(Part, EasingStyle)
     TweenService:Create(Part, TweenInfo.new(0.5, EasingStyle), { TextTransparency = 0 }):Play()
 end
 
-local rateLimit, rateLimitCountdown, errorWait = false, 0, false;
+local verify = function()
+    if ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text ~= "" and ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text ~= nil then
+        local status, result = pcall(function() 
+            return Database.Other.CRequest({
+                Url = string.format("https://api-gateway.platoboost.com/v1/authenticators/redeem/%i/%s/%s", 39097, Database.Other.HWID, ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text),
+                Method = "POST"
+            })
+        end)
 
-local function onMessage(str)
-	ChangeProgression('Key system', str)
-end
-local function verify(key)
-	if rateLimit then
-		return false
-	end
+        ChangeProgression('Checking Whitelist', 'We are validating your Cryptic Liscense access with our server.')
 
-	local status, result = pcall(function() 
-		return CRequest({
-			Url = string.format("https://api-gateway.platoboost.com/v1/public/whitelist/%i/%s?s", 39097, HWID),
-			Method = "GET"
-		})
-	end)
+        task.wait(0.5)
+
+        if status then
+            ChangeProgression('Checking Whitelist', 'Server has responded checking Liscense ######################.')
+
+            if result.StatusCode == 200 then
+                if string.find(result.Body, 'true') then
+                    ChangeProgression('Liscense Redeemed', 'Your liscense has successfully been activated! Thank you for your support.')
+    
+                    Database.Other.CheckpointsCleared = true
+    
+                    return true
+                end
+            elseif result.StatusCode == 429 then
+                ChangeProgression('Rate Limited', 'you are currently rate limited! Please allow 30s to pass!')
+    
+                return false
+            else
+                local status, result = pcall(function() 
+                    return Database.Other.CRequest({
+                        Url = string.format("https://api-gateway.platoboost.com/v1/public/whitelist/%i/%s?s", 39097, Database.Other.HWID),
+                        Method = "GET"
+                    })
+                end)
+        
+                ChangeProgression('Checking Whitelist', 'We are validating your Cryptic access with our server.')
+        
+                task.wait(0.5)
+        
+                if status then
+                    ChangeProgression('Checking Whitelist', 'Server has responded going through all database now.')
+        
+                    if result.StatusCode == 200 then
+                        if string.find(result.Body, 'true') then
+                            ChangeProgression('Checking Whitelist', 'Credentials have been validated initializing "Cryptic.lua"')
+        
+                            Database.Other.CheckpointsCleared = true
+            
+                            return true
+                        end
+                    elseif result.StatusCode == 429 then
+                        ChangeProgression('Rate Limited', 'you are currently rate limited! Please allow 30s to pass!')
+            
+                        return false
+                    else
+                        return false
+                    end
+                end
+            end
+        end
+    else
+        local status, result = pcall(function() 
+            return Database.Other.CRequest({
+                Url = string.format("https://api-gateway.platoboost.com/v1/public/whitelist/%i/%s?s", 39097, Database.Other.HWID),
+                Method = "GET"
+            })
+        end)
+
+        ChangeProgression('Checking Whitelist', 'We are validating your Cryptic access with our server.')
+
+        task.wait(0.5)
+
+        if status then
+            ChangeProgression('Checking Whitelist', 'Server has responded going through all database now.')
+
+            if result.StatusCode == 200 then
+                if string.find(result.Body, 'true') then
+                    ChangeProgression('Checking Whitelist', 'Credentials have been validated initializing "Cryptic.lua"')
+
+                    Database.Other.CheckpointsCleared = true
+    
+                    return true
+                end
+            elseif result.StatusCode == 429 then
+                ChangeProgression('Rate Limited', 'you are currently rate limited! Please allow 30s to pass!')
+    
+                return false
+            else
+                return false
+            end
+        end
+    end
+
+    ChangeProgression('ERROR', 'ERROR HAS OCCURED PLEASE LET UI DEV KNOW!')
+
+    return false
+end 
 
 
-	if status then
-		if result.StatusCode == 200 then
-			if string.find(result.Body, "true") then
-				onMessage("Successfully whitelisted key!")
-
-                AcceptedWhitelist = true
-
-				return true
-			else
-				local status1, result1 = pcall(function() 
-					return CRequest({
-						Url = string.format("https://api-gateway.platoboost.com/v1/authenticators/redeem/%i/%s/%s", 39097, HWID, key),
-						Method = "POST"
-					})
-				end)
-
-				if status1 then
-					if result1.StatusCode == 200 then
-						if string.find(result1.Body, "true") then
-							onMessage("Successfully redeemed key!")
-
-                            AcceptedWhitelist = true
-
-							return true;
-						end;
-					end;
-				end;
-				
-				onMessage("No Key that is valid has been provided! Support Server: discord.gg/getcryptic")
-                
-				return false
-			end
-		elseif result.StatusCode == 204 then
-			onMessage("Their was an issue with the account provided. Please let the UI Dev know!")
-
-			return false;
-		elseif result.StatusCode == 429 then
-			if not rateLimit then 
-				rateLimit = true
-				rateLimitCountdown = 5
-
-				task.spawn(function() 
-					while rateLimit do
-						onMessage(string.format("You are being rate-limited, please slow down. Try again in %i second(s).", rateLimitCountdown));
-						task.wait(1)
-						rateLimitCountdown = rateLimitCountdown - 1
-
-						if rateLimitCountdown < 0 then
-							rateLimit = false
-							rateLimitCountdown = 0
-
-							onMessage("Rate limit is over, please try again.")
-						end
-					end
-				end)
-			end
-		else
-			onMessage("Key you have provided is invalid/You did not complete the Whitelist!")
-
-			return false
-		end
-	else
-		onMessage("Error connecting to whitelist!")
-
-		return false
-	end
-end
-
-local ClosedUI = false
 
 ScreenGui.Frame.Keysystem["Official Store"].TextButton.MouseButton1Click:Connect(function()
     setclipboard('https://reapersoftwaredevelopment.mysellix.io/')
 end)
 ScreenGui.Frame.Keysystem["Get Key"].TextButton.MouseButton1Click:Connect(function()
-    setclipboard(tostring(key_link))
+    setclipboard(tostring(Database.Other.KL))
 end)
 ScreenGui.Frame.Keysystem["Check Key"].TextButton.MouseButton1Click:Connect(function()
-    if Keysystem["Enter Key Here"]["TextBox"].Text ~= "" then
-		verify(Keysystem["Enter Key Here"]["TextBox"].Text)
-	else
-		verify("Cryptonite")
-	end
+    verify()
 end)
 ScreenGui.Frame.Keysystem["Close UI"].TextButton.MouseButton1Click:Connect(function()
     ScreenGui:Destroy()
 
-	ClosedUI = true
+	Database.Other.ClosedUI = true
 end)
 
+
+TweenService:Create(Sliding, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), { Size = UDim2.new(0, 0, 1, 0) }):Play()
+
+task.wait(0.5)
+
 for i = 1, 4 do
-	if ClosedUI then
-		return
-	end
+    if Database.Other.ClosedUI then
+        return
+    end
 
-	TweenDesc(Enum.EasingStyle.Cubic, Waypoints[i]["B"])
-	ChangeProgression(Descriptions[i]["A"], Descriptions[i]["B"])
-	UpdateProgression(i)
+    TweenDesc(Enum.EasingStyle.Cubic, Database.Checkpoints[i]["B"])
+    ChangeProgression(Database.Descriptions[i]["A"], Database.Descriptions[i]["B"])
+    UpdateProgression(i)
 
-	if i == 1 then
-		if not AcceptedWhitelist then
-			ChangeProgression('Key System', 'We require that you complete the Key System. Support Server: discord.gg/getcryptic')
+    if i == 1 then
+        task.wait(1.5)
+    elseif i == 3 then
+        ChangeProgression('Key System', 'We require that you complete the Key System.')
 
-			for _, child in ipairs(Loading:GetChildren()) do
-				if child:IsA("TextLabel") then
-					FadeOutText(child, Enum.EasingStyle.Cubic)
-				end
-			end
-	
-			TweenService:Create(Loading, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {BackgroundTransparency = 1}):Play()
+        for _, child in ipairs(Loading:GetChildren()) do
+            if child:IsA("TextLabel") then
+                FadeOutText(child, Enum.EasingStyle.Cubic)
+            end
+        end
 
-			
-			task.spawn(function()
-				task.wait(2.5)
-				verify("Cryptionion")
-				task.wait(5)
-				verify("Cryptionion")
+        TweenService:Create(Loading, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {BackgroundTransparency = 1}):Play()
+        
+        task.wait(0.55)
 
-				pcall(function()
-					while not AcceptedWhitelist and task.wait(5) do
-						if ClosedUI then
-							return
-						end
+        if verify() then
+        else
+            while task.wait(math.random(10, 20)) and not verify() do
 
-						verify("Cryptionion")
-					end
-				end)
-			end)
+            end
+        end
 
-			
-			repeat task.wait(0.25) until AcceptedWhitelist ~= false or ClosedUI 
+        repeat task.wait(0.25) until Database.Other.CheckpointsCleared ~= false or Database.Other.ClosedUI 
 
-			if ClosedUI then
-				return
-			end
+        if Database.Other.ClosedUI then
+            return
+        end
 
-			for _, child in ipairs(Loading:GetChildren()) do
-				if child:IsA("TextLabel") then
-					FadeInText(child, Enum.EasingStyle.Cubic)
-				end
-			end
-	
-			TweenService:Create(Loading, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {BackgroundTransparency = 0}):Play()
-		end
+        for _, child in ipairs(Loading:GetChildren()) do
+            if child:IsA("TextLabel") then
+                FadeInText(child, Enum.EasingStyle.Cubic)
+            end
+        end
 
-       task.wait(1)
-	elseif i == 3 then
-        task.wait(1.25)
+        TweenService:Create(Loading, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {BackgroundTransparency = 0}):Play()
+
+        task.wait(0.55)
     else
-		task.wait(0.75)
-	end
+        task.wait(0.60)
+    end
 end
-if ClosedUI then
-	return
+
+
+repeat 
+    task.wait(1) 
+until Database.Other.CheckpointsCleared or Database.Other.ClosedUI
+
+if Database.Other.ClosedUI then
+    return
 end
+
 ScreenGui:Destroy()
 
 task.spawn(function()

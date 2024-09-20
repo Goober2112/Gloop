@@ -575,10 +575,16 @@ function FadeInText(Part, EasingStyle)
     TweenService:Create(Part, TweenInfo.new(0.5, EasingStyle), { TextTransparency = 0 }):Play()
 end
 
+local rateLimit, rateLimitCountdown, errorWait = false, 0, false;
+
 local function onMessage(str)
 	ChangeProgression('Key system', str)
 end
 local function verify(key)
+	if rateLimit then
+		return false
+	end
+
 	local status, result = pcall(function() 
 		return CRequest({
 			Url = string.format("https://api-gateway.platoboost.com/v1/public/whitelist/%i/%s?s", 39097, HWID),
@@ -619,7 +625,33 @@ local function verify(key)
                 
 				return false
 			end
+		elseif result.StatusCode == 204 then
+			onMessage("Their was an issue with the account provided. Please let the UI Dev know!")
+
+			return false;
+		elseif result.StatusCode == 429 then
+			if not rateLimit then 
+				rateLimit = true
+				rateLimitCountdown = 5
+
+				task.spawn(function() 
+					while rateLimit do
+						onMessage(fStringFormat("You are being rate-limited, please slow down. Try again in %i second(s).", rateLimitCountdown));
+						task.wait(1)
+						rateLimitCountdown = rateLimitCountdown - 1
+
+						if rateLimitCountdown < 0 then
+							rateLimit = false
+							rateLimitCountdown = 0
+
+							onMessage("Rate limit is over, please try again.")
+						end
+					end
+				end)
+			end
 		else
+			onMessage("Key you have provided is invalid/You did not complete the Whitelist!")
+
 			return false
 		end
 	else
@@ -673,10 +705,13 @@ for i = 1, 4 do
 
 			
 			task.spawn(function()
+				task.wait(2.5)
+				verify("Cryptionion")
+				task.wait(5)
 				verify("Cryptionion")
 
 				pcall(function()
-					while not AcceptedWhitelist and task.wait(45) do
+					while not AcceptedWhitelist and task.wait(5) do
 						if ClosedUI then
 							return
 						end

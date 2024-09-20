@@ -636,7 +636,7 @@ local function verify(key)
 
 				task.spawn(function() 
 					while rateLimit do
-						onMessage(fStringFormat("You are being rate-limited, please slow down. Try again in %i second(s).", rateLimitCountdown));
+						onMessage(string.format("You are being rate-limited, please slow down. Try again in %i second(s).", rateLimitCountdown));
 						task.wait(1)
 						rateLimitCountdown = rateLimitCountdown - 1
 

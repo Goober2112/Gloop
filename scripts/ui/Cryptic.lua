@@ -634,13 +634,44 @@ local verify = function()
 
                 return false
             end
+        end
+    end
+    
+    local status, result = pcall(function() 
+        return Database.Other.CRequest({
+            Url = string.format("https://api-gateway.platoboost.com/v1/public/whitelist/%i/%s?s", 39097, Database.Other.HWID),
+            Method = "GET"
+        })
+    end)
+
+    ChangeProgression('Checking Whitelist', 'We are validating your Cryptic access with our server.')
+
+    task.wait(0.5)
+
+    if status then
+        ChangeProgression('Checking Whitelist', 'Server has responded going through all database now.')
+
+        if result.StatusCode == 200 then
+            if string.find(result.Body, 'true') then
+                ChangeProgression('Checking Whitelist', 'Credentials have been validated initializing "Cryptic.lua"')
+
+                Database.Other.CheckpointsCleared = true
+
+                return true
+            end
+        elseif result.StatusCode == 429 then
+            ChangeProgression('Rate Limited', 'you are currently rate limited! Please allow 30s to pass!')
+
+            return false
         else
-            ChangeProgression('Whitelist Response', 'Unable to connect to plato at this time. Please try again! (Bad Wifi - User Issue)')
+            ChangeProgression('Whitelist Response', 'You need to complete the key system in order to gain access to cryptic!')
 
             return false
         end
     end
-   
+
+    ChangeProgression('Whitelist Response', 'Unable to connect to plato at this time. Please try again! (Bad Wifi - User Issue)')
+
     return false
 end 
 

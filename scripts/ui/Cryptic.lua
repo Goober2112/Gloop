@@ -567,98 +567,56 @@ end
 local FadeInText = function(Part, EasingStyle)
     TweenService:Create(Part, TweenInfo.new(0.5, EasingStyle), { TextTransparency = 0 }):Play()
 end
+local HandleCRequest = function(url, method)
+    success, result = pcall(function()
+        return Database.Other.CRequest({
+            Url = url,
+            Method = method
+        })
+    end)
+    return success and result or nil
+end
 
 local verify = function()
     if ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text ~= "" and ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text ~= nil then
-        local status, result = pcall(function() 
-            return Database.Other.CRequest({
-                Url = string.format("https://api-gateway.platoboost.com/v1/authenticators/redeem/%i/%s/%s", 39097, Database.Other.HWID, ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text),
-                Method = "POST"
-            })
-        end)
+        result = HandleCRequest(string.format("https://api-gateway.platoboost.com/v1/authenticators/redeem/%i/%s/%s", 39097, Database.Other.HWID, ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text), "POST")
 
         ChangeProgression('Checking Whitelist', 'We are validating your Cryptic Liscense access with our server.')
 
         task.wait(0.5)
 
-        if status then
+        if result then
             ChangeProgression('Checking Whitelist', 'Server has responded checking Liscense Key')
 
-            if result.StatusCode == 200 then
-                if string.find(result.Body, 'true') then
-                    ChangeProgression('Liscense Redeemed', 'Your liscense has successfully been activated! Thank you for your support.')
-    
-                    Database.Other.CheckpointsCleared = true
-    
-                    return true
-                end
+            if result.StatusCode == 200 and string.find(result.Body, 'true') then
+                ChangeProgression('Liscense Redeemed', 'Your liscense has successfully been activated! Thank you for your support.')
+
+                Database.Other.CheckpointsCleared = true
+
+                return true
             elseif result.StatusCode == 429 then
                 ChangeProgression('Rate Limited', 'you are currently rate limited! Please allow 30s to pass!')
     
-                return false
-            else
-                local status, result = pcall(function() 
-                    return Database.Other.CRequest({
-                        Url = string.format("https://api-gateway.platoboost.com/v1/public/whitelist/%i/%s?s", 39097, Database.Other.HWID),
-                        Method = "GET"
-                    })
-                end)
-            
-                ChangeProgression('Checking Whitelist', 'We are validating your Cryptic access with our server.')
-            
-                task.wait(0.5)
-            
-                if status then
-                    ChangeProgression('Checking Whitelist', 'Server has responded going through all database now.')
-            
-                    if result.StatusCode == 200 then
-                        if string.find(result.Body, 'true') then
-                            ChangeProgression('Checking Whitelist', 'Credentials have been validated initializing "Cryptic.lua"')
-            
-                            Database.Other.CheckpointsCleared = true
-            
-                            return true
-                        end
-                    elseif result.StatusCode == 429 then
-                        ChangeProgression('Rate Limited', 'you are currently rate limited! Please allow 30s to pass!')
-            
-                        return false
-                    else
-                        ChangeProgression('Whitelist Response', 'You need to complete the key system in order to gain access to cryptic!')
-
-                        return false
-                    end
-                end
-            
-                ChangeProgression('Whitelist Response', 'Unable to connect to plato at this time. Please try again! (Bad Wifi - User Issue)')
-
                 return false
             end
         end
     end
     
-    local status, result = pcall(function() 
-        return Database.Other.CRequest({
-            Url = string.format("https://api-gateway.platoboost.com/v1/public/whitelist/%i/%s?s", 39097, Database.Other.HWID),
-            Method = "GET"
-        })
-    end)
+    result = HandleCRequest(string.format("https://api-gateway.platoboost.com/v1/public/whitelist/%i/%s?s", 39097, Database.Other.HWID), "GET")
 
     ChangeProgression('Checking Whitelist', 'We are validating your Cryptic access with our server.')
 
     task.wait(0.5)
 
-    if status then
+    if result then
         ChangeProgression('Checking Whitelist', 'Server has responded going through all database now.')
 
-        if result.StatusCode == 200 then
-            if string.find(result.Body, 'true') then
-                ChangeProgression('Checking Whitelist', 'Credentials have been validated initializing "Cryptic.lua"')
+        if result.StatusCode == 200 and string.find(result.Body, 'true') then
+            ChangeProgression('Checking Whitelist', 'Credentials have been validated initializing "Cryptic.lua"')
 
-                Database.Other.CheckpointsCleared = true
+            Database.Other.CheckpointsCleared = true
 
-                return true
-            end
+            return true
         elseif result.StatusCode == 429 then
             ChangeProgression('Rate Limited', 'you are currently rate limited! Please allow 30s to pass!')
 

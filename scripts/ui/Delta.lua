@@ -1,7 +1,7 @@
 local title = "Delta Upgrade";
 local url = "https://deltaexploits.gg";
 
-local versionsToUpdate = {"2.633.513", "2.634.417", "2.635.590", "2.636.626", "2.637.730", "2.638.610", "2.640.730", "2.642.635", "2.641.635"};
+local versionsToUpdate = {"1.0.644.704", "1.0.645.655"};
 
 -- Updater internals [START]
 local fVersion, fStringFormat = Version, string.format;
@@ -67,7 +67,7 @@ function showModal(a,b,c)local d={}local e=game:GetService("GuiService")d["1"]=I
 
 local execname, execvers = identifyexecutor();
 
-if execvers ~= "1.0.644.704" and execvers ~= "1.0.645.655" then
+if not table.find(versionsToUpdate, execvers) then
 --for _, outdatedVersion in next, versionsToUpdate do
 --    if (currentVersion == outdatedVersion) then
         local message = fStringFormat(searchTranslationVector(translationVector2, sLocaleId), currentVersion);

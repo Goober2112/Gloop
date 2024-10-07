@@ -1,6 +1,4 @@
-repeat task.wait() until game:IsLoaded()
-
-task.wait(1)
+repeat task.wait(1) until game:IsLoaded()
 
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
@@ -52,8 +50,8 @@ local Description_4 = Instance.new("TextLabel")
 local Description_5 = Instance.new("TextLabel")
 local Sliding = Instance.new("Frame")
 
-ScreenGui.Parent = game.CoreGui
-ScreenGui.DisplayOrder = math.huge
+ScreenGui.Parent = game.CoreGui.RobloxGui
+ScreenGui.DisplayOrder = 999999
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Frame.Parent = ScreenGui
@@ -501,7 +499,6 @@ task.spawn(function()
     end)
 end)
 
-
 local Database = {
     Checkpoints = {
         [1] = {A = UDim2.new(0, 14, 0, 0), B = UDim2.new(0.089, 0, 0.085, 0)},
@@ -576,26 +573,25 @@ local HandleCRequest = function(url, method)
     end)
     return success and result or nil
 end
-
 local verify = function()
     if ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text ~= "" and ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text ~= nil then
         result = HandleCRequest(string.format("https://api-gateway.platoboost.com/v1/authenticators/redeem/%i/%s/%s", 39097, Database.Other.HWID, ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text), "POST")
 
         ChangeProgression('Checking Whitelist', 'We are validating your Cryptic Liscense access with our server.')
 
-        task.wait(0.5)
-
         if result then
             ChangeProgression('Checking Whitelist', 'Server has responded checking Liscense Key')
 
             if result.StatusCode == 200 and string.find(result.Body, 'true') then
-                ChangeProgression('Liscense Redeemed', 'Your liscense has successfully been activated! Thank you for your support.')
+                pcall(function()
+                    ChangeProgression('Liscense Redeemed', 'Your liscense has successfully been activated! Thank you for your support.')
+                end)
 
                 Database.Other.CheckpointsCleared = true
 
                 return true
             elseif result.StatusCode == 429 then
-                ChangeProgression('Rate Limited', 'you are currently rate limited! Please allow 30s to pass!')
+                ChangeProgression('Rate Limited', 'you are currently rate limited! Please allow 30s to pass before retrying!')
     
                 return false
             end
@@ -606,13 +602,13 @@ local verify = function()
 
     ChangeProgression('Checking Whitelist', 'We are validating your Cryptic access with our server.')
 
-    task.wait(0.5)
-
     if result then
         ChangeProgression('Checking Whitelist', 'Server has responded going through all database now.')
 
         if result.StatusCode == 200 and string.find(result.Body, 'true') then
-            ChangeProgression('Checking Whitelist', 'Credentials have been validated initializing "Cryptic.lua"')
+            pcall(function()
+                ChangeProgression('Checking Whitelist', 'Credentials have been validated initializing "Cryptic.lua"')
+            end)
 
             Database.Other.CheckpointsCleared = true
 
@@ -628,7 +624,7 @@ local verify = function()
         end
     end
 
-    ChangeProgression('Whitelist Response', 'Unable to connect to plato at this time. Please try again! (Bad Wifi - User Issue)')
+    ChangeProgression('Whitelist Response', 'Unable to connect to plato at this time. Please try again.')
 
     return false
 end 
@@ -667,26 +663,42 @@ for i = 1, 4 do
     if i == 1 then
         task.wait(1.5)
     elseif i == 3 then
-        ChangeProgression('Key System', 'We require that you complete the Key System.')
-
-        for _, child in ipairs(Loading:GetChildren()) do
-            if child:IsA("TextLabel") then
-                FadeOutText(child, Enum.EasingStyle.Cubic)
-            end
-        end
-
-        TweenService:Create(Loading, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {BackgroundTransparency = 1}):Play()
-        
         task.wait(0.55)
 
         if verify() then
         else
-            while task.wait(math.random(10, 20)) and not verify() and not Database.Other.CheckpointsCleared do
+            ChangeProgression('Key System', 'We require that you complete the Key System.')
 
+            for _, child in ipairs(Loading:GetChildren()) do
+                if child:IsA("TextLabel") then
+                    FadeOutText(child, Enum.EasingStyle.Cubic)
+                end
+            end
+
+            TweenService:Create(Loading, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {BackgroundTransparency = 1}):Play()
+
+            while task.wait(1) and not verify() and not Database.Other.CheckpointsCleared do
+                for i = 1, 20 do
+                    if not Database.Other.CheckpointsCleared then
+                        task.wait(1)
+                    else
+                        break
+                    end
+                end
+
+                if Database.Other.CheckpointsCleared then
+                    break
+                end
             end
         end
 
-        repeat task.wait(0.25) until Database.Other.CheckpointsCleared ~= false or Database.Other.ClosedUI 
+        repeat 
+            task.wait(0.25) 
+
+            if Database.Other.CloseUI then
+                break
+            end
+        until Database.Other.CheckpointsCleared
 
         if Database.Other.ClosedUI then
             return
@@ -709,7 +721,11 @@ end
 
 repeat 
     task.wait(1) 
-until Database.Other.CheckpointsCleared or Database.Other.ClosedUI
+
+    if Database.Other.CloseUI then
+        break
+    end
+until Database.Other.CheckpointsCleared
 
 if Database.Other.ClosedUI then
     return

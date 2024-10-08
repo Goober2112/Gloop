@@ -574,46 +574,46 @@ local HandleCRequest = function(url, method)
     return success and result or nil
 end
 local verify = function()
-    if ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text ~= "" and ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text ~= nil then
-        result = HandleCRequest(string.format("https://api-gateway.platoboost.com/v1/authenticators/redeem/%i/%s/%s", 39097, Database.Other.HWID, ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text), "POST")
+    ChangeProgression('Checking Whitelist', 'Checking Key System database for key system completion.')
 
-        ChangeProgression('Checking Whitelist', 'We are validating your Cryptic Liscense access with our server.')
+    result1 = HandleCRequest(string.format("https://api-gateway.platoboost.com/v1/public/whitelist/%i/%s?s", 39097, Database.Other.HWID), "GET")
 
-        if result then
-            ChangeProgression('Checking Whitelist', 'Server has responded checking Liscense Key')
+    if result1 then
+        ChangeProgression('Checking Whitelist', 'Server has responded going through all database now.')
 
-            if result.StatusCode == 200 and string.find(result.Body, 'true') then
-                pcall(function()
-                    ChangeProgression('Liscense Redeemed', 'Your liscense has successfully been activated! Thank you for your support.')
-                end)
+        task.wait(1)
+        
+        if result1.StatusCode == 200 then
+            if string.find(result1.Body, 'true') then
+                ChangeProgression('Checking Whitelist', 'Credentials have been validated "Key System" completed!')
 
                 Database.Other.CheckpointsCleared = true
 
                 return true
-            elseif result.StatusCode == 429 then
-                ChangeProgression('Rate Limited', 'you are currently rate limited! Please allow 30s to pass before retrying!')
+            else
+                result = HandleCRequest(string.format("https://api-gateway.platoboost.com/v1/authenticators/redeem/%i/%s/%s", 39097, Database.Other.HWID, ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text), "POST")
+
+                ChangeProgression('Checking Whitelist', 'Checking Liscense database for Active Liscense.')
+
+                task.wait(1)
+
+                if result then
+                    ChangeProgression('Checking Whitelist', 'Server has responded checking Liscense Key')
+        
+                    if result.StatusCode == 200 and string.find(result.Body, 'true') then
+                        ChangeProgression('Liscense Redeemed', 'Your liscense has successfully been activated! Thank you for your support Cryptic.')
     
-                return false
+                        Database.Other.CheckpointsCleared = true
+                        
+                        return true
+                    elseif result.StatusCode == 429 then
+                        ChangeProgression('Rate Limited', 'you are currently rate limited! Please allow 30s to pass before retrying!')
+            
+                        return false
+                    end
+                end
             end
-        end
-    end
-    
-    result = HandleCRequest(string.format("https://api-gateway.platoboost.com/v1/public/whitelist/%i/%s?s", 39097, Database.Other.HWID), "GET")
-
-    ChangeProgression('Checking Whitelist', 'We are validating your Cryptic access with our server.')
-
-    if result then
-        ChangeProgression('Checking Whitelist', 'Server has responded going through all database now.')
-
-        if result.StatusCode == 200 and string.find(result.Body, 'true') then
-            pcall(function()
-                ChangeProgression('Checking Whitelist', 'Credentials have been validated initializing "Cryptic.lua"')
-            end)
-
-            Database.Other.CheckpointsCleared = true
-
-            return true
-        elseif result.StatusCode == 429 then
+        elseif result1.StatusCode == 429 then
             ChangeProgression('Rate Limited', 'you are currently rate limited! Please allow 30s to pass!')
 
             return false

@@ -609,8 +609,6 @@ local verify = function()
             
                         return false
                     end
-                else
-                    print('no result given')
                 end
             end
         elseif result1.StatusCode == 429 then
@@ -622,8 +620,6 @@ local verify = function()
 
             return false
         end
-    else
-        print('no result given')
     end
 
     ChangeProgression('Whitelist Response', 'Unable to connect to plato at this time. Please try again.')
@@ -669,11 +665,7 @@ for i = 1, 4 do
 
         if verify() then
             Database.Other.CheckpointsCleared = true
-
-            print('cleared')
         else
-            print('not cleared')
-
             ChangeProgression('Key System', 'We require that you complete the Key System.')
 
             for _, child in ipairs(Loading:GetChildren()) do
@@ -686,7 +678,7 @@ for i = 1, 4 do
 
             while task.wait(1) and not verify() and not Database.Other.CheckpointsCleared do
                 for i = 1, 20 do
-                    ChangeProgression('Key System', 'You need to complete the key system in order to gain access to cryptic! Rechecking in: '.. i .. 's')
+                    ChangeProgression('Key System', 'You need to complete the key system in order to gain access to cryptic! Re-checking in: '.. 20 - i .. 's')
 
                     if not Database.Other.CheckpointsCleared then
                         task.wait(1)
@@ -727,8 +719,6 @@ end
 repeat 
     task.wait(1) 
 
-    print('cleared but not cleared???')
-    
     if Database.Other.CloseUI then
         break
     end

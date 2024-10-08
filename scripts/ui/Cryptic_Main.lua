@@ -2400,7 +2400,7 @@ else
     Cryptic.TextLabel_23.Position = UDim2.new(0.5, 0, 0.5, 0)
     Cryptic.TextLabel_23.Size = UDim2.new(1, 0, 0.800000012, 0)
     Cryptic.TextLabel_23.Font = Enum.Font.SourceSans
-    Cryptic.TextLabel_23.Text = "Server Hop To Lowest Players Server"
+    Cryptic.TextLabel_23.Text = "Server Hop To Least Populated Server"
     Cryptic.TextLabel_23.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.TextLabel_23.TextScaled = true
     Cryptic.TextLabel_23.TextSize = 14.000
@@ -4296,7 +4296,7 @@ else
 
     Shell.Title.Text = "<b><i>Cryptic</i></b>"
     Shell.Subtitle.Text = "<b><i>Beta UI v1.8</i></b>"
-    Shell.Version.Backdrop.TextLabel.Text = "Version: 2.642.730"
+    Shell.Version.Backdrop.TextLabel.Text = "Version: 2.645.665"
 
     Shell.Title.RichText = true
     Shell.Subtitle.RichText = true
@@ -4498,7 +4498,7 @@ else
             if not s and e then
                 Lib:DevConsole('error', e)
 
-                Lib:CreateNotification('Error Coping to Clipboard!', 5)
+                Lib:CreateNotification('Error Copying to Clipboard!', 5)
             else
                 Lib:CreateNotification('Copied To Clipboard', 5)
             end

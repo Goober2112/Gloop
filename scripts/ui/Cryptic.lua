@@ -566,12 +566,20 @@ local FadeInText = function(Part, EasingStyle)
 end
 local HandleCRequest = function(url, method)
     success, result = pcall(function()
-        return Database.Other.CRequest({
+        local response = Database.Other.CRequest({
             Url = url,
             Method = method
         })
+
+        return response
     end)
-    return success and result or nil
+
+    if success and result then
+    else
+        print('Response: success and result == nil')
+    end
+
+    return success and result or nil 
 end
 local verify = function()
     ChangeProgression('Checking Whitelist', 'Checking Key System database for key system completion.')
@@ -579,10 +587,6 @@ local verify = function()
     result1 = HandleCRequest(string.format("https://api-gateway.platoboost.com/v1/public/whitelist/%i/%s?s", 39097, Database.Other.HWID), "GET")
 
     if result1 then
-        ChangeProgression('Checking Whitelist', 'Server has responded going through all database now.')
-
-        task.wait(1)
-        
         if result1.StatusCode == 200 then
             if string.find(result1.Body, 'true') then
                 ChangeProgression('Checking Whitelist', 'Credentials have been validated "Key System" completed!')
@@ -593,13 +597,7 @@ local verify = function()
             else
                 result = HandleCRequest(string.format("https://api-gateway.platoboost.com/v1/authenticators/redeem/%i/%s/%s", 39097, Database.Other.HWID, ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text), "POST")
 
-                ChangeProgression('Checking Whitelist', 'Checking Liscense database for Active Liscense.')
-
-                task.wait(1)
-
                 if result then
-                    ChangeProgression('Checking Whitelist', 'Server has responded checking Liscense Key')
-        
                     if result.StatusCode == 200 and string.find(result.Body, 'true') then
                         ChangeProgression('Liscense Redeemed', 'Your liscense has successfully been activated! Thank you for your support Cryptic.')
     
@@ -611,6 +609,8 @@ local verify = function()
             
                         return false
                     end
+                else
+                    print('no result given')
                 end
             end
         elseif result1.StatusCode == 429 then
@@ -622,6 +622,8 @@ local verify = function()
 
             return false
         end
+    else
+        print('no result given')
     end
 
     ChangeProgression('Whitelist Response', 'Unable to connect to plato at this time. Please try again.')
@@ -666,7 +668,12 @@ for i = 1, 4 do
         task.wait(0.55)
 
         if verify() then
+            Database.Other.CheckpointsCleared = true
+
+            print('cleared')
         else
+            print('not cleared')
+
             ChangeProgression('Key System', 'We require that you complete the Key System.')
 
             for _, child in ipairs(Loading:GetChildren()) do
@@ -679,15 +686,13 @@ for i = 1, 4 do
 
             while task.wait(1) and not verify() and not Database.Other.CheckpointsCleared do
                 for i = 1, 20 do
+                    ChangeProgression('Key System', 'You need to complete the key system in order to gain access to cryptic! Rechecking in: '.. i .. 's')
+
                     if not Database.Other.CheckpointsCleared then
                         task.wait(1)
                     else
                         break
                     end
-                end
-
-                if Database.Other.CheckpointsCleared then
-                    break
                 end
             end
         end
@@ -722,6 +727,8 @@ end
 repeat 
     task.wait(1) 
 
+    print('cleared but not cleared???')
+    
     if Database.Other.CloseUI then
         break
     end

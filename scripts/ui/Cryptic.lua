@@ -671,6 +671,8 @@ for i = 1, 4 do
     elseif i == 3 then
         task.wait(0.55)
 
+        TweenService:Create(Loading, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {BackgroundTransparency = 1}):Play()
+
         if verify2() or verify() then
             Database.Other.CheckpointsCleared = true
         else
@@ -681,8 +683,6 @@ for i = 1, 4 do
                     FadeOutText(child, Enum.EasingStyle.Cubic)
                 end
             end
-
-            TweenService:Create(Loading, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {BackgroundTransparency = 1}):Play()
 
             while task.wait(1) and not verify() and not Database.Other.CheckpointsCleared do
                 for i = 1, 20 do

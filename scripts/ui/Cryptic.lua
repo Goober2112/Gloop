@@ -626,7 +626,15 @@ local verify = function()
 
     return false
 end 
+local verify2 = function()
+    res = HandleCRequest(string.format("https://api-gateway.platoboost.com/v1/public/whitelist/%i/%s?s", 39097, gethwid()), "GET")
 
+    if res and res.StatusCode == 200 and string.find(res.Body, 'true') then
+        Database.Other.CheckpointsCleared = true
+
+        return true
+    end
+end
 
 
 ScreenGui.Frame.Keysystem["Official Store"].TextButton.MouseButton1Click:Connect(function()
@@ -663,7 +671,7 @@ for i = 1, 4 do
     elseif i == 3 then
         task.wait(0.55)
 
-        if verify() then
+        if verify2() or verify() then
             Database.Other.CheckpointsCleared = true
         else
             ChangeProgression('Key System', 'We require that you complete the Key System.')

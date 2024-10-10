@@ -671,18 +671,20 @@ for i = 1, 4 do
     elseif i == 3 then
         task.wait(0.55)
 
-        TweenService:Create(Loading, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {BackgroundTransparency = 1}):Play()
-
-        if verify2() or verify() then
-            Database.Other.CheckpointsCleared = true
-        else
-            ChangeProgression('Key System', 'We require that you complete the Key System.')
+        pcall(function()
+            TweenService:Create(Loading, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {BackgroundTransparency = 1}):Play()
 
             for _, child in ipairs(Loading:GetChildren()) do
                 if child:IsA("TextLabel") then
                     FadeOutText(child, Enum.EasingStyle.Cubic)
                 end
             end
+        end)
+        
+        if verify2() or verify() then
+            Database.Other.CheckpointsCleared = true
+        else
+            ChangeProgression('Key System', 'We require that you complete the Key System.')
 
             while task.wait(1) and not verify() and not Database.Other.CheckpointsCleared do
                 for i = 1, 20 do

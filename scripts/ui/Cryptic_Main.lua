@@ -917,7 +917,7 @@ else
     Cryptic.Scriptbox.Font = Enum.Font.SourceSans
     Cryptic.Scriptbox.MultiLine = true
     Cryptic.Scriptbox.PlaceholderColor3 = Color3.fromRGB(129, 129, 129)
-    Cryptic.Scriptbox.PlaceholderText = "-- print('A Cryptic Hello!')"
+    Cryptic.Scriptbox.PlaceholderText = "-- print('Cryptic on top!')"
     Cryptic.Scriptbox.Text = ""
     Cryptic.Scriptbox.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.Scriptbox.TextScaled = true
@@ -1263,7 +1263,7 @@ else
     Cryptic.TextLabel_7.Size = UDim2.new(0.685000002, 0, 0.649999976, 0)
     Cryptic.TextLabel_7.ZIndex = 2
     Cryptic.TextLabel_7.Font = Enum.Font.SourceSans
-    Cryptic.TextLabel_7.Text = "Save as Local Script"
+    Cryptic.TextLabel_7.Text = "Save Script"
     Cryptic.TextLabel_7.TextColor3 = Color3.fromRGB(255, 255, 255)
     Cryptic.TextLabel_7.TextScaled = true
     Cryptic.TextLabel_7.TextSize = 14.000
@@ -3290,7 +3290,7 @@ else
         Scriptbox.ZIndex = 5
         Scriptbox.ClearTextOnFocus = false
         Scriptbox.Font = Enum.Font.SourceSans
-        Scriptbox.PlaceholderText = "--print('A Cryptic Hello!')"
+        Scriptbox.PlaceholderText = "--print('Cryptic on top!')"
         Scriptbox.Text = ""
         Scriptbox.TextColor3 = Color3.fromRGB(0, 166, 255)
         Scriptbox.TextSize = 12.000
@@ -4279,9 +4279,9 @@ else
         end
     end
     function Lib:LoadPresavedScripts()
-        Lib:CreateSavedScript("loadstring((http.request{Url='https://reaperscripts.com/loader?l=1'}).Body,'0zek8y2bld7.qowl6c7o~1')()", "Reaper Hub", "Reaper Hub is a popular script hub made to please the masses, supporting 50+ games including shooters!", "", "Successfully executed Reaper Hub", false)
+        Lib:CreateSavedScript("loadstring(game:HttpGet("https://reaperscripts.com/loader.lua"))()", "Reaper Hub", "Reaper Hub has been revived on 10/22/2024 and will be updated frequently, take Reaper Hub for a spin today!", "", "Successfully executed Reaper Hub", false)
         Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()", "Infinite Yield", "Infinite Yield is the most popular universal script created since 2018!", "", "Successfully executed Infinite Yield", false)
-        Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/dex.lua'))()", "Dex Explorer", "Dex Explorer is the most popular developer tool that assists developers offering a full debugging suite!", "", "Successfully executed Dex Explorer", false)
+        Lib:CreateSavedScript("loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()", "Dex Explorer", "Dex Explorer is the most popular developer tool that assists developers offering a full debugging suite!", "", "Successfully executed Dex Explorer", false)
         Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua'))()", "Simple Spy", "Simple Spy is a very popular remote spy tool providing an exceptional experience!", "", "Successfully executed Simple Spy", false)
         Lib:CreateSavedScript("loadstring(game:HttpGet('https://raw.githubusercontent.com/pcallskeleton/simplest/main/simplicity.lua'))()", "Simplicity", "Simplicity is a up-and-coming popular script! Currently supports 7 games despite only coming out 9/12/2024. Their are plans to have tons more games supported in the near future! Supported Games: [Bloxburg], [Murder Mystery 2], [Dahood], [Impossible Squid Game! Glass Bridge 2], [Spin For Free!], [Evade], [Dress To Impress]", "", "Successfully executed a Simple Script", false)
     end

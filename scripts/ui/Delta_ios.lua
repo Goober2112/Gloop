@@ -3,11 +3,11 @@ local url = "https://deltaexploits.gg";
 
 local versionsToUpdate = {"2.635.590"};
 
-local name, version = identifyexecutor();
+--[[local name, version = identifyexecutor();
 if version ~= "1.2.647.716" then
 	setclipboard("https://deltaexploits.gg");
 	game:GetService("Players").LocalPlayer:Kick("This version is broken. Please re-download Delta from https://deltaexploits.gg");
-end
+end--]]
 
 -- Updater internals [START]
 local fVersion, fStringFormat = Version, string.format;

@@ -632,10 +632,10 @@ end
 
 
 ScreenGui.Frame.Keysystem["Official Store"].TextButton.MouseButton1Click:Connect(function()
-    setclipboard('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
+    setclipboard('https://reapersoftwaredevelopment.mysellix.io/')
 end)
 ScreenGui.Frame.Keysystem["Get Key"].TextButton.MouseButton1Click:Connect(function()
-    setclipboard("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+    setclipboard(tostring(Database.Other.KL))
 end)
 ScreenGui.Frame.Keysystem["Check Key"].TextButton.MouseButton1Click:Connect(function()
     verify()

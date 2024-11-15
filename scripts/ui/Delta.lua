@@ -5840,12 +5840,12 @@ coroutine.wrap(function()
 end)()
 
 function checkkey()
---if Verify() then
+  if Verify() then
       GrantAccess()
       return true
---end
+  end
 
---return false
+  return false
 end
 
 

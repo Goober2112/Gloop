@@ -4436,7 +4436,7 @@ getgenv().GrantAccess = function()
     end
 
     --run_script([[if not Drawing then game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/drawing_lib.lua") end]])
-    --run_script(game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))
+    run_script(game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))
 
     if(not isfile("disableautoexec")) then
         runautoexec()

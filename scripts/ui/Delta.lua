@@ -5840,9 +5840,9 @@ coroutine.wrap(function()
 end)()
 
 function checkkey()
-  if Verify() then
+--/if Verify() then
       GrantAccess()
-      return true
+      --return true
   end
 
   return false

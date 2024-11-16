@@ -5842,10 +5842,10 @@ end)()
 function checkkey()
 --/if Verify() then
       GrantAccess()
-      return true
-  end
+      --return true
+  --end
 
-  return false
+  --return false
 end
 
 

@@ -5837,12 +5837,12 @@ function checkkey()
         --return true
 	--end
 
---if Verify() then
+if Verify() then
       GrantAccess()
       return true
---end
+end
 
---return false
+return false
 end
 
 

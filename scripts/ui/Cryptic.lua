@@ -1488,7 +1488,7 @@ end
 
 local completed = function()
     print("destroying...")
-    --ScreenGui:Destroy()
+    ScreenGui:Destroy()
 
     print("spawning")
     task.spawn(function()

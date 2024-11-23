@@ -1,503 +1,30 @@
-if game:GetService("Players").LocalPlayer.Name ~= "VegieSenpai" then
-    task.spawn(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/Cryptic_Main.lua"))()
-    end)
-
-    
-    task.wait()
-    runautoexec()
-
-    error("haha")
-end
-
 -------------------------------------------------------------------------------
--- ! json library
--- ! cryptography library
-local a = 2 ^ 32;
-local b = a - 1;
-local function c(d, e)
-    local f, g = 0, 1;
-    while d ~= 0 or e ~= 0 do
-        local h, i = d % 2, e % 2;
-        local j = (h + i) % 2;
-        f = f + j * g;
-        d = math.floor(d / 2)
-        e = math.floor(e / 2)
-        g = g * 2
-    end
-    return f % a
-end
-local function k(d, e, l, ...)
-    local m;
-    if e then
-        d = d % a;
-        e = e % a;
-        m = c(d, e)
-        if l then
-            m = k(m, l, ...)
-        end
-        return m
-    elseif d then
-        return d % a
-    else
-        return 0
-    end
-end
-local function n(d, e, l, ...)
-    local m;
-    if e then
-        d = d % a;
-        e = e % a;
-        m = (d + e - c(d, e)) / 2;
-        if l then
-            m = n(m, l, ...)
-        end
-        return m
-    elseif d then
-        return d % a
-    else
-        return b
-    end
-end
-local function o(p)
-    return b - p
-end
-local function q(d, r)
-    if r < 0 then
-        return lshift(d, -r)
-    end
-    return math.floor(d % 2 ^ 32 / 2 ^ r)
-end
-local function s(p, r)
-    if r > 31 or r < -31 then
-        return 0
-    end
-    return q(p % a, r)
-end
-local function lshift(d, r)
-    if r < 0 then
-        return s(d, -r)
-    end
-    return d * 2 ^ r % 2 ^ 32
-end
-local function t(p, r)
-    p = p % a;
-    r = r % 32;
-    local u = n(p, 2 ^ r - 1)
-    return s(p, r) + lshift(u, 32 - r)
-end
-local v = {0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5, 0xd807aa98,
-           0x12835b01, 0x243185be, 0x550c7dc3, 0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174, 0xe49b69c1, 0xefbe4786,
-           0x0fc19dc6, 0x240ca1cc, 0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da, 0x983e5152, 0xa831c66d, 0xb00327c8,
-           0xbf597fc7, 0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967, 0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13,
-           0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85, 0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3, 0xd192e819,
-           0xd6990624, 0xf40e3585, 0x106aa070, 0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5, 0x391c0cb3, 0x4ed8aa4a,
-           0x5b9cca4f, 0x682e6ff3, 0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7,
-           0xc67178f2}
-local function w(x)
-    return string.gsub(x, ".", function(l)
-        return string.format("%02x", string.byte(l))
-    end)
-end
-local function y(z, A)
-    local x = ""
-    for B = 1, A do
-        local C = z % 256;
-        x = string.char(C) .. x;
-        z = (z - C) / 256
-    end
-    return x
-end
-local function D(x, B)
-    local A = 0;
-    for B = B, B + 3 do
-        A = A * 256 + string.byte(x, B)
-    end
-    return A
-end
-local function E(F, G)
-    local H = 64 - (G + 9) % 64;
-    G = y(8 * G, 8)
-    F = F .. "\128" .. string.rep("\0", H) .. G;
-    assert(#F % 64 == 0)
-    return F
-end
-local function I(J)
-    J[1] = 0x6a09e667;
-    J[2] = 0xbb67ae85;
-    J[3] = 0x3c6ef372;
-    J[4] = 0xa54ff53a;
-    J[5] = 0x510e527f;
-    J[6] = 0x9b05688c;
-    J[7] = 0x1f83d9ab;
-    J[8] = 0x5be0cd19;
-    return J
-end
-local function K(F, B, J)
-    local L = {}
-    for M = 1, 16 do
-        L[M] = D(F, B + (M - 1) * 4)
-    end
-    for M = 17, 64 do
-        local N = L[M - 15]
-        local O = k(t(N, 7), t(N, 18), s(N, 3))
-        N = L[M - 2]
-        L[M] = (L[M - 16] + O + L[M - 7] + k(t(N, 17), t(N, 19), s(N, 10))) % a
-    end
-    local d, e, l, P, Q, R, S, T = J[1], J[2], J[3], J[4], J[5], J[6], J[7], J[8]
-    for B = 1, 64 do
-        local O = k(t(d, 2), t(d, 13), t(d, 22))
-        local U = k(n(d, e), n(d, l), n(e, l))
-        local V = (O + U) % a;
-        local W = k(t(Q, 6), t(Q, 11), t(Q, 25))
-        local X = k(n(Q, R), n(o(Q), S))
-        local Y = (T + W + X + v[B] + L[B]) % a;
-        T = S;
-        S = R;
-        R = Q;
-        Q = (P + Y) % a;
-        P = l;
-        l = e;
-        e = d;
-        d = (Y + V) % a
-    end
-    J[1] = (J[1] + d) % a;
-    J[2] = (J[2] + e) % a;
-    J[3] = (J[3] + l) % a;
-    J[4] = (J[4] + P) % a;
-    J[5] = (J[5] + Q) % a;
-    J[6] = (J[6] + R) % a;
-    J[7] = (J[7] + S) % a;
-    J[8] = (J[8] + T) % a
-end
-local function Z(F)
-    F = E(F, #F)
-    local J = I({})
-    for B = 1, #F, 64 do
-        K(F, B, J)
-    end
-    return w(y(J[1], 4) .. y(J[2], 4) .. y(J[3], 4) .. y(J[4], 4) .. y(J[5], 4) .. y(J[6], 4) .. y(J[7], 4) ..
-                 y(J[8], 4))
-end
-local e;
-local l = {
-    ["\\"] = "\\",
-    ["\""] = "\"",
-    ["\b"] = "b",
-    ["\f"] = "f",
-    ["\n"] = "n",
-    ["\r"] = "r",
-    ["\t"] = "t"
-}
-local P = {
-    ["/"] = "/"
-}
-for Q, R in pairs(l) do
-    P[R] = Q
-end
-local S = function(T)
-    return "\\" .. (l[T] or string.format("u%04x", T:byte()))
-end;
-local B = function(M)
-    return "null"
-end;
-local v = function(M, z)
-    local _ = {}
-    z = z or {}
-    if z[M] then
-        error("circular reference")
-    end
-    z[M] = true;
-    if rawget(M, 1) ~= nil or next(M) == nil then
-        local A = 0;
-        for Q in pairs(M) do
-            if type(Q) ~= "number" then
-                error("invalid table: mixed or invalid key types")
-            end
-            A = A + 1
-        end
-        if A ~= #M then
-            error("invalid table: sparse array")
-        end
-        for a0, R in ipairs(M) do
-            table.insert(_, e(R, z))
-        end
-        z[M] = nil;
-        return "[" .. table.concat(_, ",") .. "]"
-    else
-        for Q, R in pairs(M) do
-            if type(Q) ~= "string" then
-                error("invalid table: mixed or invalid key types")
-            end
-            table.insert(_, e(Q, z) .. ":" .. e(R, z))
-        end
-        z[M] = nil;
-        return "{" .. table.concat(_, ",") .. "}"
-    end
-end;
-local g = function(M)
-    return '"' .. M:gsub('[%z\1-\31\\"]', S) .. '"'
-end;
-local a1 = function(M)
-    if M ~= M or M <= -math.huge or M >= math.huge then
-        error("unexpected number value '" .. tostring(M) .. "'")
-    end
-    return string.format("%.14g", M)
-end;
-local j = {
-    ["nil"] = B,
-    ["table"] = v,
-    ["string"] = g,
-    ["number"] = a1,
-    ["boolean"] = tostring
-}
-e = function(M, z)
-    local x = type(M)
-    local a2 = j[x]
-    if a2 then
-        return a2(M, z)
-    end
-    error("unexpected type '" .. x .. "'")
-end;
-local a3 = function(M)
-    return e(M)
-end;
-local a4;
-local N = function(...)
-    local _ = {}
-    for a0 = 1, select("#", ...) do
-        _[select(a0, ...)] = true
-    end
-    return _
-end;
-local L = N(" ", "\t", "\r", "\n")
-local p = N(" ", "\t", "\r", "\n", "]", "}", ",")
-local a5 = N("\\", "/", '"', "b", "f", "n", "r", "t", "u")
-local m = N("true", "false", "null")
-local a6 = {
-    ["true"] = true,
-    ["false"] = false,
-    ["null"] = nil
-}
-local a7 = function(a8, a9, aa, ab)
-    for a0 = a9, #a8 do
-        if aa[a8:sub(a0, a0)] ~= ab then
-            return a0
-        end
-    end
-    return #a8 + 1
-end;
-local ac = function(a8, a9, J)
-    local ad = 1;
-    local ae = 1;
-    for a0 = 1, a9 - 1 do
-        ae = ae + 1;
-        if a8:sub(a0, a0) == "\n" then
-            ad = ad + 1;
-            ae = 1
-        end
-    end
-    error(string.format("%s at line %d col %d", J, ad, ae))
-end;
-local af = function(A)
-    local a2 = math.floor;
-    if A <= 0x7f then
-        return string.char(A)
-    elseif A <= 0x7ff then
-        return string.char(a2(A / 64) + 192, A % 64 + 128)
-    elseif A <= 0xffff then
-        return string.char(a2(A / 4096) + 224, a2(A % 4096 / 64) + 128, A % 64 + 128)
-    elseif A <= 0x10ffff then
-        return string.char(a2(A / 262144) + 240, a2(A % 262144 / 4096) + 128, a2(A % 4096 / 64) + 128, A % 64 + 128)
-    end
-    error(string.format("invalid unicode codepoint '%x'", A))
-end;
-local ag = function(ah)
-    local ai = tonumber(ah:sub(1, 4), 16)
-    local aj = tonumber(ah:sub(7, 10), 16)
-    if aj then
-        return af((ai - 0xd800) * 0x400 + aj - 0xdc00 + 0x10000)
-    else
-        return af(ai)
-    end
-end;
-local ak = function(a8, a0)
-    local _ = ""
-    local al = a0 + 1;
-    local Q = al;
-    while al <= #a8 do
-        local am = a8:byte(al)
-        if am < 32 then
-            ac(a8, al, "control character in string")
-        elseif am == 92 then
-            _ = _ .. a8:sub(Q, al - 1)
-            al = al + 1;
-            local T = a8:sub(al, al)
-            if T == "u" then
-                local an = a8:match("^[dD][89aAbB]%x%x\\u%x%x%x%x", al + 1) or a8:match("^%x%x%x%x", al + 1) or
-                               ac(a8, al - 1, "invalid unicode escape in string")
-                _ = _ .. ag(an)
-                al = al + #an
-            else
-                if not a5[T] then
-                    ac(a8, al - 1, "invalid escape char '" .. T .. "' in string")
-                end
-                _ = _ .. P[T]
-            end
-            Q = al + 1
-        elseif am == 34 then
-            _ = _ .. a8:sub(Q, al - 1)
-            return _, al + 1
-        end
-        al = al + 1
-    end
-    ac(a8, a0, "expected closing quote for string")
-end;
-local ao = function(a8, a0)
-    local am = a7(a8, a0, p)
-    local ah = a8:sub(a0, am - 1)
-    local A = tonumber(ah)
-    if not A then
-        ac(a8, a0, "invalid number '" .. ah .. "'")
-    end
-    return A, am
-end;
-local ap = function(a8, a0)
-    local am = a7(a8, a0, p)
-    local aq = a8:sub(a0, am - 1)
-    if not m[aq] then
-        ac(a8, a0, "invalid literal '" .. aq .. "'")
-    end
-    return a6[aq], am
-end;
-local ar = function(a8, a0)
-    local _ = {}
-    local A = 1;
-    a0 = a0 + 1;
-    while 1 do
-        local am;
-        a0 = a7(a8, a0, L, true)
-        if a8:sub(a0, a0) == "]" then
-            a0 = a0 + 1;
-            break
-        end
-        am, a0 = a4(a8, a0)
-        _[A] = am;
-        A = A + 1;
-        a0 = a7(a8, a0, L, true)
-        local as = a8:sub(a0, a0)
-        a0 = a0 + 1;
-        if as == "]" then
-            break
-        end
-        if as ~= "," then
-            ac(a8, a0, "expected ']' or ','")
-        end
-    end
-    return _, a0
-end;
-local at = function(a8, a0)
-    local _ = {}
-    a0 = a0 + 1;
-    while 1 do
-        local au, M;
-        a0 = a7(a8, a0, L, true)
-        if a8:sub(a0, a0) == "}" then
-            a0 = a0 + 1;
-            break
-        end
-        if a8:sub(a0, a0) ~= '"' then
-            ac(a8, a0, "expected string for key")
-        end
-        au, a0 = a4(a8, a0)
-        a0 = a7(a8, a0, L, true)
-        if a8:sub(a0, a0) ~= ":" then
-            ac(a8, a0, "expected ':' after key")
-        end
-        a0 = a7(a8, a0 + 1, L, true)
-        M, a0 = a4(a8, a0)
-        _[au] = M;
-        a0 = a7(a8, a0, L, true)
-        local as = a8:sub(a0, a0)
-        a0 = a0 + 1;
-        if as == "}" then
-            break
-        end
-        if as ~= "," then
-            ac(a8, a0, "expected '}' or ','")
-        end
-    end
-    return _, a0
-end;
-local av = {
-    ['"'] = ak,
-    ["0"] = ao,
-    ["1"] = ao,
-    ["2"] = ao,
-    ["3"] = ao,
-    ["4"] = ao,
-    ["5"] = ao,
-    ["6"] = ao,
-    ["7"] = ao,
-    ["8"] = ao,
-    ["9"] = ao,
-    ["-"] = ao,
-    ["t"] = ap,
-    ["f"] = ap,
-    ["n"] = ap,
-    ["["] = ar,
-    ["{"] = at
-}
-a4 = function(a8, a9)
-    local as = a8:sub(a9, a9)
-    local a2 = av[as]
-    if a2 then
-        return a2(a8, a9)
-    end
-    ac(a8, a9, "unexpected character '" .. as .. "'")
-end;
-local aw = function(a8)
-    if type(a8) ~= "string" then
-        error("expected argument of type string, got " .. type(a8))
-    end
-    local _, a9 = a4(a8, a7(a8, 1, L, true))
-    a9 = a7(a8, a9, L, true)
-    if a9 <= #a8 then
-        ac(a8, a9, "trailing garbage")
-    end
-    return _
-end;
+--! json library
+--! cryptography library
+local a=2^32;local b=a-1;local function c(d,e)local f,g=0,1;while d~=0 or e~=0 do local h,i=d%2,e%2;local j=(h+i)%2;f=f+j*g;d=math.floor(d/2)e=math.floor(e/2)g=g*2 end;return f%a end;local function k(d,e,l,...)local m;if e then d=d%a;e=e%a;m=c(d,e)if l then m=k(m,l,...)end;return m elseif d then return d%a else return 0 end end;local function n(d,e,l,...)local m;if e then d=d%a;e=e%a;m=(d+e-c(d,e))/2;if l then m=n(m,l,...)end;return m elseif d then return d%a else return b end end;local function o(p)return b-p end;local function q(d,r)if r<0 then return lshift(d,-r)end;return math.floor(d%2^32/2^r)end;local function s(p,r)if r>31 or r<-31 then return 0 end;return q(p%a,r)end;local function lshift(d,r)if r<0 then return s(d,-r)end;return d*2^r%2^32 end;local function t(p,r)p=p%a;r=r%32;local u=n(p,2^r-1)return s(p,r)+lshift(u,32-r)end;local v={0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2}local function w(x)return string.gsub(x,".",function(l)return string.format("%02x",string.byte(l))end)end;local function y(z,A)local x=""for B=1,A do local C=z%256;x=string.char(C)..x;z=(z-C)/256 end;return x end;local function D(x,B)local A=0;for B=B,B+3 do A=A*256+string.byte(x,B)end;return A end;local function E(F,G)local H=64-(G+9)%64;G=y(8*G,8)F=F.."\128"..string.rep("\0",H)..G;assert(#F%64==0)return F end;local function I(J)J[1]=0x6a09e667;J[2]=0xbb67ae85;J[3]=0x3c6ef372;J[4]=0xa54ff53a;J[5]=0x510e527f;J[6]=0x9b05688c;J[7]=0x1f83d9ab;J[8]=0x5be0cd19;return J end;local function K(F,B,J)local L={}for M=1,16 do L[M]=D(F,B+(M-1)*4)end;for M=17,64 do local N=L[M-15]local O=k(t(N,7),t(N,18),s(N,3))N=L[M-2]L[M]=(L[M-16]+O+L[M-7]+k(t(N,17),t(N,19),s(N,10)))%a end;local d,e,l,P,Q,R,S,T=J[1],J[2],J[3],J[4],J[5],J[6],J[7],J[8]for B=1,64 do local O=k(t(d,2),t(d,13),t(d,22))local U=k(n(d,e),n(d,l),n(e,l))local V=(O+U)%a;local W=k(t(Q,6),t(Q,11),t(Q,25))local X=k(n(Q,R),n(o(Q),S))local Y=(T+W+X+v[B]+L[B])%a;T=S;S=R;R=Q;Q=(P+Y)%a;P=l;l=e;e=d;d=(Y+V)%a end;J[1]=(J[1]+d)%a;J[2]=(J[2]+e)%a;J[3]=(J[3]+l)%a;J[4]=(J[4]+P)%a;J[5]=(J[5]+Q)%a;J[6]=(J[6]+R)%a;J[7]=(J[7]+S)%a;J[8]=(J[8]+T)%a end;local function Z(F)F=E(F,#F)local J=I({})for B=1,#F,64 do K(F,B,J)end;return w(y(J[1],4)..y(J[2],4)..y(J[3],4)..y(J[4],4)..y(J[5],4)..y(J[6],4)..y(J[7],4)..y(J[8],4))end;local e;local l={["\\"]="\\",["\""]="\"",["\b"]="b",["\f"]="f",["\n"]="n",["\r"]="r",["\t"]="t"}local P={["/"]="/"}for Q,R in pairs(l)do P[R]=Q end;local S=function(T)return"\\"..(l[T]or string.format("u%04x",T:byte()))end;local B=function(M)return"null"end;local v=function(M,z)local _={}z=z or{}if z[M]then error("circular reference")end;z[M]=true;if rawget(M,1)~=nil or next(M)==nil then local A=0;for Q in pairs(M)do if type(Q)~="number"then error("invalid table: mixed or invalid key types")end;A=A+1 end;if A~=#M then error("invalid table: sparse array")end;for a0,R in ipairs(M)do table.insert(_,e(R,z))end;z[M]=nil;return"["..table.concat(_,",").."]"else for Q,R in pairs(M)do if type(Q)~="string"then error("invalid table: mixed or invalid key types")end;table.insert(_,e(Q,z)..":"..e(R,z))end;z[M]=nil;return"{"..table.concat(_,",").."}"end end;local g=function(M)return'"'..M:gsub('[%z\1-\31\\"]',S)..'"'end;local a1=function(M)if M~=M or M<=-math.huge or M>=math.huge then error("unexpected number value '"..tostring(M).."'")end;return string.format("%.14g",M)end;local j={["nil"]=B,["table"]=v,["string"]=g,["number"]=a1,["boolean"]=tostring}e=function(M,z)local x=type(M)local a2=j[x]if a2 then return a2(M,z)end;error("unexpected type '"..x.."'")end;local a3=function(M)return e(M)end;local a4;local N=function(...)local _={}for a0=1,select("#",...)do _[select(a0,...)]=true end;return _ end;local L=N(" ","\t","\r","\n")local p=N(" ","\t","\r","\n","]","}",",")local a5=N("\\","/",'"',"b","f","n","r","t","u")local m=N("true","false","null")local a6={["true"]=true,["false"]=false,["null"]=nil}local a7=function(a8,a9,aa,ab)for a0=a9,#a8 do if aa[a8:sub(a0,a0)]~=ab then return a0 end end;return#a8+1 end;local ac=function(a8,a9,J)local ad=1;local ae=1;for a0=1,a9-1 do ae=ae+1;if a8:sub(a0,a0)=="\n"then ad=ad+1;ae=1 end end;error(string.format("%s at line %d col %d",J,ad,ae))end;local af=function(A)local a2=math.floor;if A<=0x7f then return string.char(A)elseif A<=0x7ff then return string.char(a2(A/64)+192,A%64+128)elseif A<=0xffff then return string.char(a2(A/4096)+224,a2(A%4096/64)+128,A%64+128)elseif A<=0x10ffff then return string.char(a2(A/262144)+240,a2(A%262144/4096)+128,a2(A%4096/64)+128,A%64+128)end;error(string.format("invalid unicode codepoint '%x'",A))end;local ag=function(ah)local ai=tonumber(ah:sub(1,4),16)local aj=tonumber(ah:sub(7,10),16)if aj then return af((ai-0xd800)*0x400+aj-0xdc00+0x10000)else return af(ai)end end;local ak=function(a8,a0)local _=""local al=a0+1;local Q=al;while al<=#a8 do local am=a8:byte(al)if am<32 then ac(a8,al,"control character in string")elseif am==92 then _=_..a8:sub(Q,al-1)al=al+1;local T=a8:sub(al,al)if T=="u"then local an=a8:match("^[dD][89aAbB]%x%x\\u%x%x%x%x",al+1)or a8:match("^%x%x%x%x",al+1)or ac(a8,al-1,"invalid unicode escape in string")_=_..ag(an)al=al+#an else if not a5[T]then ac(a8,al-1,"invalid escape char '"..T.."' in string")end;_=_..P[T]end;Q=al+1 elseif am==34 then _=_..a8:sub(Q,al-1)return _,al+1 end;al=al+1 end;ac(a8,a0,"expected closing quote for string")end;local ao=function(a8,a0)local am=a7(a8,a0,p)local ah=a8:sub(a0,am-1)local A=tonumber(ah)if not A then ac(a8,a0,"invalid number '"..ah.."'")end;return A,am end;local ap=function(a8,a0)local am=a7(a8,a0,p)local aq=a8:sub(a0,am-1)if not m[aq]then ac(a8,a0,"invalid literal '"..aq.."'")end;return a6[aq],am end;local ar=function(a8,a0)local _={}local A=1;a0=a0+1;while 1 do local am;a0=a7(a8,a0,L,true)if a8:sub(a0,a0)=="]"then a0=a0+1;break end;am,a0=a4(a8,a0)_[A]=am;A=A+1;a0=a7(a8,a0,L,true)local as=a8:sub(a0,a0)a0=a0+1;if as=="]"then break end;if as~=","then ac(a8,a0,"expected ']' or ','")end end;return _,a0 end;local at=function(a8,a0)local _={}a0=a0+1;while 1 do local au,M;a0=a7(a8,a0,L,true)if a8:sub(a0,a0)=="}"then a0=a0+1;break end;if a8:sub(a0,a0)~='"'then ac(a8,a0,"expected string for key")end;au,a0=a4(a8,a0)a0=a7(a8,a0,L,true)if a8:sub(a0,a0)~=":"then ac(a8,a0,"expected ':' after key")end;a0=a7(a8,a0+1,L,true)M,a0=a4(a8,a0)_[au]=M;a0=a7(a8,a0,L,true)local as=a8:sub(a0,a0)a0=a0+1;if as=="}"then break end;if as~=","then ac(a8,a0,"expected '}' or ','")end end;return _,a0 end;local av={['"']=ak,["0"]=ao,["1"]=ao,["2"]=ao,["3"]=ao,["4"]=ao,["5"]=ao,["6"]=ao,["7"]=ao,["8"]=ao,["9"]=ao,["-"]=ao,["t"]=ap,["f"]=ap,["n"]=ap,["["]=ar,["{"]=at}a4=function(a8,a9)local as=a8:sub(a9,a9)local a2=av[as]if a2 then return a2(a8,a9)end;ac(a8,a9,"unexpected character '"..as.."'")end;local aw=function(a8)if type(a8)~="string"then error("expected argument of type string, got "..type(a8))end;local _,a9=a4(a8,a7(a8,1,L,true))a9=a7(a8,a9,L,true)if a9<=#a8 then ac(a8,a9,"trailing garbage")end;return _ end;
 local lEncode, lDecode, lDigest = a3, aw, Z;
 -------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------
--- ! platoboost library
+--! platoboost library
 
--- ! configuration
-local service = 7; -- your service id, this is used to identify your service.
-local secret = "nonoudontneedthislol"; -- make sure to obfuscate this if you want to ensure security.
-local useNonce = false; -- use a nonce to prevent replay attacks and request tampering.
+--! configuration
+local service = 7;  -- your service id, this is used to identify your service.
+local secret = "empty";  -- make sure to obfuscate this if you want to ensure security.
+local useNonce = false;  -- use a nonce to prevent replay attacks and request tampering.
 
--- ! callbacks
-local onMessage = function(message)
-    warn(message)
-end;
+--! callbacks
+local onMessage = function(message) end;
 
--- ! wait for game to load
-repeat
-    task.wait(1)
-until game:IsLoaded();
+--! wait for game to load
+repeat task.wait(1) until game:IsLoaded();
 
--- ! functions
+--! functions
 local requestSending = false;
-local fSetClipboard, fRequest, fStringChar, fToString, fStringSub, fOsTime, fMathRandom, fMathFloor, fGetHwid =
-    setclipboard or toclipboard, request or http_request or syn_request, string.char, tostring, string.sub, os.time,
-    math.random, math.floor, gethwid or function()
-        return game:GetService("Players").LocalPlayer.UserId
-    end
+local fSetClipboard, fRequest, fStringChar, fToString, fStringSub, fOsTime, fMathRandom, fMathFloor, fGetHwid = setclipboard or toclipboard, request or http_request or syn_request, string.char, tostring, string.sub, os.time, math.random, math.floor, gethwid or function() return game:GetService("Players").LocalPlayer.UserId end
 local cachedLink, cachedTime = "", 0;
 
--- ! pick host
+--! pick host
 local host = "https://api.platoboost.com";
 local hostResponse = fRequest({
     Url = host .. "/public/connectivity",
@@ -507,8 +34,9 @@ if hostResponse.StatusCode ~= 200 or hostResponse.StatusCode ~= 429 then
     host = "https://api.platoboost.net";
 end
 
+--!optimize 2
 function cacheLink()
-    if cachedTime + (10 * 60) < fOsTime() then
+    if cachedTime + (10*60) < fOsTime() then
         local response = fRequest({
             Url = host .. "/public/start",
             Method = "POST",
@@ -548,6 +76,7 @@ end
 
 cacheLink();
 
+--!optimize 2
 local generateNonce = function()
     local str = ""
     for _ = 1, 16 do
@@ -556,6 +85,7 @@ local generateNonce = function()
     return str
 end
 
+--!optimize 1
 for _ = 1, 5 do
     local oNonce = generateNonce();
     task.wait(0.2)
@@ -566,14 +96,16 @@ for _ = 1, 5 do
     end
 end
 
+--!optimize 2
 local copyLink = function()
     local success, link = cacheLink();
-
+    
     if success then
         fSetClipboard(link);
     end
 end
 
+--!optimize 2
 local redeemKey = function(key)
     local nonce = generateNonce();
     local endpoint = host .. "/public/redeem/" .. fToString(service);
@@ -607,7 +139,7 @@ local redeemKey = function(key)
                     else
                         onMessage("failed to verify integrity.");
                         return false;
-                    end
+                    end    
                 else
                     return true;
                 end
@@ -629,10 +161,11 @@ local redeemKey = function(key)
         return false;
     else
         onMessage("server returned an invalid status code, please try again later.");
-        return false;
+        return false; 
     end
 end
 
+--!optimize 2
 local verifyKey = function(key)
     if requestSending == true then
         onMessage("a request is already being sent, please slow down.");
@@ -642,8 +175,7 @@ local verifyKey = function(key)
     end
 
     local nonce = generateNonce();
-    local endpoint = host .. "/public/whitelist/" .. fToString(service) .. "?identifier=" .. lDigest(fGetHwid()) ..
-                         "&key=" .. key;
+    local endpoint = host .. "/public/whitelist/" .. fToString(service) .. "?identifier=" .. lDigest(fGetHwid()) .. "&key=" .. key;
 
     if useNonce then
         endpoint = endpoint .. "&nonce=" .. nonce;
@@ -651,7 +183,7 @@ local verifyKey = function(key)
 
     local response = fRequest({
         Url = endpoint,
-        Method = "GET"
+        Method = "GET",
     });
 
     requestSending = false;
@@ -692,6 +224,7 @@ local verifyKey = function(key)
     end
 end
 
+--!optimize 2
 local getFlag = function(name)
     local nonce = generateNonce();
     local endpoint = host .. "/public/flag/" .. fToString(service) .. "?name=" .. name;
@@ -702,7 +235,7 @@ local getFlag = function(name)
 
     local response = fRequest({
         Url = endpoint,
-        Method = "GET"
+        Method = "GET",
     });
 
     if response.StatusCode == 200 then
@@ -729,58 +262,7 @@ local getFlag = function(name)
 end
 -------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
--- ! platoboost usage documentation
--- copyLink() -> string
--- verifyKey(key: string) -> boolean
--- getFlag(name: string) -> boolean, string | boolean | number
-
--- use copyLink() to copy a link to the clipboard, in which the user will paste it into their browser and complete the keysystem.
--- use verifyKey(key) to verify a key, this will return a boolean value, true means the key was valid, false means it is invalid.
--- use getFlag(name) to get a flag from the server, this will return nil if an error occurs, if no error occurs, the value configured in the platoboost dashboard will be returned.
-
--- IMPORTANT: onMessage is a callback, it will be called upon status update, use it to provide information to user.
--- EXAMPLE: 
---[[
-onMessage = function(message)
-    game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "Platoboost status",
-        Text = message
-    })
-end
-]] --
-
--- NOTE: PLACE THIS ENTIRE SCRIPT AT THE TOP OF YOUR SCRIPT, ADD THE LOGIC, THEN OBFUSCATE YOUR SCRIPT.
-
--- ! example usage
---[[
-copyButton.MouseButton1Click:Connect(function()
-    copyLink();
-end)
-
-verifyButton.MouseButton1Click:Connect(function()
-    local key = keyBox.Text;
-    local success = verifyKey(key);
-
-    if success then
-        print("key is valid.");
-    else
-        print("key is invalid.");
-    end
-end)
-
-local flag = getFlag("example_flag");
-if flag ~= nil then
-    print("flag value: " .. flag);
-else
-    print("failed to get flag.");
-end
-]] --
--------------------------------------------------------------------------------
-
-repeat
-    task.wait(1)
-until game:IsLoaded()
+repeat task.wait(1) until game:IsLoaded()
 
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
@@ -1072,8 +554,7 @@ Description_2.TextWrapped = true
 Description_2.TextXAlignment = Enum.TextXAlignment.Left
 Description_2.TextYAlignment = Enum.TextYAlignment.Top
 
-UIGradient.Color = ColorSequence.new {ColorSequenceKeypoint.new(0.00, Color3.fromRGB(54, 78, 204)),
-                                      ColorSequenceKeypoint.new(1.00, Color3.fromRGB(45, 66, 141))}
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(54, 78, 204)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(45, 66, 141))}
 UIGradient.Rotation = 90
 UIGradient.Parent = Description
 
@@ -1273,7 +754,7 @@ task.spawn(function()
         for i, point in pairs(Checkpoints:GetChildren()) do
             if point:IsA('Frame') then
                 local UIStroke = Instance.new('UIStroke')
-
+                
                 UIStroke.Parent = point
                 UIStroke.Thickness = 3
                 UIStroke.Color = Color3.fromRGB(68, 68, 68)
@@ -1284,40 +765,16 @@ end)
 
 local Database = {
     Checkpoints = {
-        [1] = {
-            A = UDim2.new(0, 14, 0, 0),
-            B = UDim2.new(0.089, 0, 0.085, 0)
-        },
-        [2] = {
-            A = UDim2.new(0, 14, 0, 74),
-            B = UDim2.new(0.089, 0, 0.338, 0)
-        },
-        [3] = {
-            A = UDim2.new(0, 14, 0, 141),
-            B = UDim2.new(0.089, 0, 0.592, 0)
-        },
-        [4] = {
-            A = UDim2.new(0, 14, 0, 210),
-            B = UDim2.new(0.089, 0, 0.669, 0)
-        }
+        [1] = {A = UDim2.new(0, 14, 0, 0), B = UDim2.new(0.089, 0, 0.085, 0)},
+        [2] = {A = UDim2.new(0, 14, 0, 74), B = UDim2.new(0.089, 0, 0.338, 0)},
+        [3] = {A = UDim2.new(0, 14, 0, 141), B = UDim2.new(0.089, 0, 0.592, 0)},
+        [4] = {A = UDim2.new(0, 14, 0, 210), B = UDim2.new(0.089, 0, 0.669, 0)}
     },
     Descriptions = {
-        [1] = {
-            A = "Initializing",
-            B = "Please wait a moment while we start initializing."
-        },
-        [2] = {
-            A = "Checking Roblox Version",
-            B = "We are ensuring the Roblox Version is current up-to-date!"
-        },
-        [3] = {
-            A = "Key System",
-            B = "We are validating your access to the cryptic servers."
-        },
-        [4] = {
-            A = "Initialized",
-            B = "Successfully completed all validations! Now loading Main UI."
-        }
+        [1] = {A = "Initializing", B = "Please wait a moment while we start initializing."},
+        [2] = {A = "Checking Roblox Version", B = "We are ensuring the Roblox Version is current up-to-date!"},
+        [3] = {A = "Key System", B = "We are validating your access to the cryptic servers."},
+        [4] = {A = "Initialized", B = "Successfully completed all validations! Now loading Main UI."}
     },
     Other = {
         HWID = gethwid() or 0,
@@ -1331,73 +788,45 @@ local Secondary = false
 local TweenService = cloneref(game:GetService('TweenService'))
 
 local ChangeProgression = function(Title, Description)
-    if not Secondary then
-        Secondary = true
+	if not Secondary then
+		Secondary = true
 
-        ScreenGui.Frame.Description.Title2.Text = Title
-        ScreenGui.Frame.Description.Title2.Description2.Text = Description
+		ScreenGui.Frame.Description.Title2.Text = Title
+		ScreenGui.Frame.Description.Title2.Description2.Text = Description
 
-        TweenService:Create(ScreenGui.Frame.Description.Title, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {
-            TextTransparency = 1
-        }):Play()
-        TweenService:Create(ScreenGui.Frame.Description.Title.Description, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {
-            TextTransparency = 1
-        }):Play()
+		TweenService:Create(ScreenGui.Frame.Description.Title, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 1}):Play()
+		TweenService:Create(ScreenGui.Frame.Description.Title.Description, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 1}):Play()
 
-        TweenService:Create(ScreenGui.Frame.Description.Title2, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {
-            TextTransparency = 0
-        }):Play()
-        TweenService:Create(ScreenGui.Frame.Description.Title2.Description2, TweenInfo.new(0.5, Enum.EasingStyle.Cubic),
-            {
-                TextTransparency = 0
-            }):Play()
-    else
-        Secondary = false
+		TweenService:Create(ScreenGui.Frame.Description.Title2, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 0}):Play()
+		TweenService:Create(ScreenGui.Frame.Description.Title2.Description2, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 0}):Play()
+	else
+		Secondary = false
 
-        ScreenGui.Frame.Description.Title.Text = Title
-        ScreenGui.Frame.Description.Title.Description.Text = Description
+		ScreenGui.Frame.Description.Title.Text = Title
+		ScreenGui.Frame.Description.Title.Description.Text = Description
 
-        TweenService:Create(ScreenGui.Frame.Description.Title2, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {
-            TextTransparency = 1
-        }):Play()
-        TweenService:Create(ScreenGui.Frame.Description.Title2.Description2, TweenInfo.new(0.5, Enum.EasingStyle.Cubic),
-            {
-                TextTransparency = 1
-            }):Play()
+		TweenService:Create(ScreenGui.Frame.Description.Title2, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 1}):Play()
+		TweenService:Create(ScreenGui.Frame.Description.Title2.Description2, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 1}):Play()
 
-        TweenService:Create(ScreenGui.Frame.Description.Title, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {
-            TextTransparency = 0
-        }):Play()
-        TweenService:Create(ScreenGui.Frame.Description.Title.Description, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {
-            TextTransparency = 0
-        }):Play()
-    end
+		TweenService:Create(ScreenGui.Frame.Description.Title, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 0}):Play()
+		TweenService:Create(ScreenGui.Frame.Description.Title.Description, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {TextTransparency = 0}):Play()
+	end
 end
 local TweenDesc = function(Style, Udim2)
-    TweenService:Create(Description, TweenInfo.new(1, Style), {
-        Position = Udim2
-    }):Play()
+	TweenService:Create(Description, TweenInfo.new(1, Style), {Position = Udim2}):Play()
 end
 local UpdateProgression = function(Progress)
-    local Point = ScreenGui.Frame.Progession.Checkpoints:FindFirstChild(Progress)
+	local Point = ScreenGui.Frame.Progession.Checkpoints:FindFirstChild(Progress)
 
-    TweenService:Create(ScreenGui.Frame.Progession.Progress, TweenInfo.new(0.4, Enum.EasingStyle.Cubic), {
-        Size = Database.Checkpoints[Progress]["A"]
-    }):Play()
-    task.wait(0.25)
-    TweenService:Create(Point, TweenInfo.new(0.3, Enum.EasingStyle.Cubic), {
-        BackgroundColor3 = Color3.fromRGB(54, 78, 204)
-    }):Play()
+	TweenService:Create(ScreenGui.Frame.Progession.Progress, TweenInfo.new(0.4, Enum.EasingStyle.Cubic), {Size = Database.Checkpoints[Progress]["A"]}):Play()
+	task.wait(0.25)
+	TweenService:Create(Point, TweenInfo.new(0.3, Enum.EasingStyle.Cubic), {BackgroundColor3 = Color3.fromRGB(54, 78, 204)}):Play()
 end
 local FadeOutText = function(Part, EasingStyle)
-    TweenService:Create(Part, TweenInfo.new(0.5, EasingStyle), {
-        TextTransparency = 1
-    }):Play()
+    TweenService:Create(Part, TweenInfo.new(0.5, EasingStyle), { TextTransparency = 1 }):Play()
 end
 local FadeInText = function(Part, EasingStyle)
-    TweenService:Create(Part, TweenInfo.new(0.5, EasingStyle), {
-        TextTransparency = 0
-    }):Play()
+    TweenService:Create(Part, TweenInfo.new(0.5, EasingStyle), { TextTransparency = 0 }):Play()
 end
 local HandleCRequest = function(url, method)
     success, result = pcall(function()
@@ -1414,13 +843,12 @@ local HandleCRequest = function(url, method)
         print('Response: success and result == nil')
     end
 
-    return success and result or nil
+    return success and result or nil 
 end
 local verify = function()
     ChangeProgression('Checking Whitelist', 'Checking Key System database for key system completion.')
 
-    result1 = HandleCRequest(string.format("https://api-gateway.platoboost.com/v1/public/whitelist/%i/%s?s", 39097,
-        Database.Other.HWID), "GET")
+    result1 = HandleCRequest(string.format("https://api-gateway.platoboost.com/v1/public/whitelist/%i/%s?s", 39097, Database.Other.HWID), "GET")
 
     if result1 then
         if result1.StatusCode == 200 then
@@ -1431,22 +859,18 @@ local verify = function()
 
                 return true
             else
-                result = HandleCRequest(string.format(
-                    "https://api-gateway.platoboost.com/v1/authenticators/redeem/%i/%s/%s", 39097, Database.Other.HWID,
-                    ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text), "POST")
+                result = HandleCRequest(string.format("https://api-gateway.platoboost.com/v1/authenticators/redeem/%i/%s/%s", 39097, Database.Other.HWID, ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text), "POST")
 
                 if result then
                     if result.StatusCode == 200 and string.find(result.Body, 'true') then
-                        ChangeProgression('Liscense Redeemed',
-                            'Your liscense has successfully been activated! Thank you for your support Cryptic.')
-
+                        ChangeProgression('Liscense Redeemed', 'Your liscense has successfully been activated! Thank you for your support Cryptic.')
+    
                         Database.Other.CheckpointsCleared = true
-
+                        
                         return true
                     elseif result.StatusCode == 429 then
-                        ChangeProgression('Rate Limited',
-                            'you are currently rate limited! Please allow 30s to pass before retrying!')
-
+                        ChangeProgression('Rate Limited', 'you are currently rate limited! Please allow 30s to pass before retrying!')
+            
                         return false
                     end
                 end
@@ -1456,8 +880,7 @@ local verify = function()
 
             return false
         else
-            ChangeProgression('Whitelist Response',
-                'You need to complete the key system in order to gain access to cryptic!')
+            ChangeProgression('Whitelist Response', 'You need to complete the key system in order to gain access to cryptic!')
 
             return false
         end
@@ -1466,10 +889,9 @@ local verify = function()
     ChangeProgression('Whitelist Response', 'Unable to connect to plato at this time. Please try again.')
 
     return false
-end
+end 
 local verify2 = function()
-    res = HandleCRequest(string.format("https://api-gateway.platoboost.com/v1/public/whitelist/%i/%s?s", 39097,
-        gethwid()), "GET")
+    res = HandleCRequest(string.format("https://api-gateway.platoboost.com/v1/public/whitelist/%i/%s?s", 39097, gethwid()), "GET")
 
     if res and res.StatusCode == 200 and string.find(res.Body, 'true') then
         Database.Other.CheckpointsCleared = true
@@ -1482,66 +904,33 @@ ScreenGui.Frame.Keysystem["Official Store"].TextButton.MouseButton1Click:Connect
     setclipboard('https://reapersoftwaredevelopment.mysellix.io/')
 end)
 ScreenGui.Frame.Keysystem["Get Key"].TextButton.MouseButton1Click:Connect(function()
-    -- setclipboard(tostring(Database.Other.KL))
+    --setclipboard(tostring(Database.Other.KL))
     copyLink()
 end)
 
-onMessage = function(message)
-    ChangeProgression('Key status', message)
-end
-
-local completed = function()
-    print("destroying... meow")
-
-    local s, e = pcall(function()
-        ScreenGui.Parent = nil
-        task.spawn(function()
-            task.wait(4)
-            ScreenGui:Destroy()
-        end)
-    end)
-
-    warn(s, e)
-
-    print("spawning")
-    task.spawn(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/Cryptic_Main.lua"))()
-    end)
-
-    print("autoexec")
-    task.wait()
-    runautoexec()
+onMessage = function(msg)
+    ChangeProgression('Key system', msg)
 end
 
 ScreenGui.Frame.Keysystem["Check Key"].TextButton.MouseButton1Click:Connect(function()
-    ChangeProgression('Checking Whitelist', 'Checking Key System database for key system completion.')
-
+    --verify()
+    ChangeProgression('Key system', 'Checking key...')
     local key = ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text;
     if verifyKey(key) then
-        print("valid, writing");
-        local m = isfile("cryptic_key_8412")
-
-        if m then
-            delfile("cryptic_key_8412")
-        end
-
-        writefile("cryptic_key_8412", key)
-
-        print("doing thing")
-        completed()
+        ChangeProgression('Key system', 'Key is valid, loading...')
+        writefile("cryptic_key.txt", key)
+        Database.Other.CheckpointsCleared = true
     end
-
-    -- verify()
 end)
+
 ScreenGui.Frame.Keysystem["Close UI"].TextButton.MouseButton1Click:Connect(function()
     ScreenGui:Destroy()
 
-    Database.Other.ClosedUI = true
+	Database.Other.ClosedUI = true
 end)
 
-TweenService:Create(Sliding, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {
-    Size = UDim2.new(0, 0, 1, 0)
-}):Play()
+
+TweenService:Create(Sliding, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), { Size = UDim2.new(0, 0, 1, 0) }):Play()
 
 task.wait(0.5)
 
@@ -1560,9 +949,7 @@ for i = 1, 4 do
         task.wait(0.55)
 
         pcall(function()
-            TweenService:Create(Loading, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {
-                BackgroundTransparency = 1
-            }):Play()
+            TweenService:Create(Loading, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {BackgroundTransparency = 1}):Play()
 
             for _, child in ipairs(Loading:GetChildren()) do
                 if child:IsA("TextLabel") then
@@ -1571,24 +958,35 @@ for i = 1, 4 do
             end
         end)
 
-        local key = "empty";
-
-        if isfile("cryptic_key_8412") then
-            key = readfile("cryptic_key_8412")
+        local getSavedKey = function() 
+            if isfile("cryptic_key.txt") then
+                return readfile("cryptic_key.txt")
+            else
+                return "empty"
+            end
         end
-
-        print(key)
-
-        if key ~= "empty" and verifyKey(key) then
-            print("saved is valid")
-            completed()
+        
+        if verifyKey(getSavedKey()) then
+            ChangeProgression('Key System', 'We require that you complete the Key System.')
+            Database.Other.CheckpointsCleared = true
         else
-            ChangeProgression('Key System',
-                'We require that you complete the key system, please complete it and paste the key in the textbox and click check key.')
+            ChangeProgression('Key System', 'We require that you complete the Key System.')
+
+            while task.wait(1) and not verifyKey(getSavedKey()) and not Database.Other.CheckpointsCleared do
+                for i = 1, 20 do
+                    ChangeProgression('Key System', 'You need to complete the key system in order to gain access to cryptic! Re-checking in: '.. 20 - i .. 's')
+
+                    if not Database.Other.CheckpointsCleared then
+                        task.wait(1)
+                    else
+                        break
+                    end
+                end
+            end
         end
 
-        repeat
-            task.wait(0.25)
+        repeat 
+            task.wait(0.25) 
 
             if Database.Other.CloseUI then
                 break
@@ -1605,12 +1003,33 @@ for i = 1, 4 do
             end
         end
 
-        TweenService:Create(Loading, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {
-            BackgroundTransparency = 0
-        }):Play()
+        TweenService:Create(Loading, TweenInfo.new(0.5, Enum.EasingStyle.Cubic), {BackgroundTransparency = 0}):Play()
 
         task.wait(0.55)
     else
         task.wait(0.60)
     end
 end
+
+
+repeat 
+    task.wait(1) 
+
+    if Database.Other.CloseUI then
+        break
+    end
+until Database.Other.CheckpointsCleared
+
+if Database.Other.ClosedUI then
+    return
+end
+
+ScreenGui:Destroy()
+
+task.spawn(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/Cryptic_Main.lua"))()
+end)
+
+task.wait()
+
+runautoexec()

@@ -3,6 +3,10 @@ if game:GetService("Players").LocalPlayer.Name ~= "VegieSenpai" then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/Cryptic_Main.lua"))()
     end)
 
+    
+    task.wait()
+    runautoexec()
+
     error("haha")
 end
 

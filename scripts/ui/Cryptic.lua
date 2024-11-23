@@ -1487,8 +1487,12 @@ onMessage = function(message)
 end
 
 local completed = function()
-    print("destroying...")
-    ScreenGui:Destroy()
+    print("destroying... new")
+    ScreenGui.Parent = nil
+    task.spawn(function() 
+        task.wait(4)
+        ScreenGui:Destroy()
+    end)
 
     print("spawning")
     task.spawn(function()
@@ -1568,7 +1572,6 @@ for i = 1, 4 do
 
         if key ~= "empty" and verifyKey(key) then
             print("saved is valid")
-            ChangeProgression('Key System', 'Saved key is valid, you may now proceed.')
             completed()
         else
             ChangeProgression('Key System',

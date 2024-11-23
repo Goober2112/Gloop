@@ -183,12 +183,9 @@ local verifyKey = function(key)
         requestSending = true;
     end
 
-    print("yes")
-    onMessage("yes nigga")
-
     local nonce = generateNonce();
     local endpoint = host .. "/public/whitelist/" .. fToString(service) .. "?identifier=" .. lDigest(fGetHwid()) .. "&key=" .. key;
-    print(endpoint)
+
     if useNonce then
         endpoint = endpoint .. "&nonce=" .. nonce;
     end
@@ -197,8 +194,6 @@ local verifyKey = function(key)
         Url = endpoint,
         Method = "GET",
     });
-
-    print(response.StatusCode)
 
     requestSending = false;
 
@@ -973,18 +968,23 @@ ScreenGui.Frame.Keysystem["Get Key"].TextButton.MouseButton1Click:Connect(functi
 end)
 
 onMessage = function(message) 
-    ChangeProgression('Key status', message);
+    ChangeProgression('Key status', message)
 end
 
 ScreenGui.Frame.Keysystem["Check Key"].TextButton.MouseButton1Click:Connect(function()
     ChangeProgression('Checking Whitelist', 'Checking Key System database for key system completion.')
-    print('nigga')
-    local s = verifyKey(ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text);
-    print(s)
-    if s then
-        print('Key is valid')
-        Database.Other.CheckpointsCleared = true
-        writefile('key.txt', ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text)
+
+    local key = ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text;
+    if verifyKey(key) then
+        writefile('key.txt', key)
+        ScreenGui:Destroy()
+        
+        task.spawn(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/Cryptic_Main.lua"))()
+        end)
+        
+        task.wait()
+        runautoexec()
     end
 
     --verify()
@@ -1030,25 +1030,11 @@ for i = 1, 4 do
             key = readfile('key.txt')
         end
 
-        print("lol")
-        if verifyKey(key) then
-            print("yes")
+        if key ~= "empty" and verifyKey(key) then
+            ChangeProgression('Key System', 'Saved key is valid, you may now proceed.')
             Database.Other.CheckpointsCleared = true
         else
-            print("no")
-            ChangeProgression('Key System', 'We require that you complete the key system, please complete it and paste the key in the textbox.')
-
-            --while task.wait(1) and not verify() and not Database.Other.CheckpointsCleared do
-            --    for i = 1, 20 do
-            --        ChangeProgression('Key System', 'You need to complete the key system in order to gain access to cryptic! Re-checking in: '.. 20 - i .. 's')
-
---                    if not Database.Other.CheckpointsCleared then
---                       task.wait(1)
---                    else
- --                       break
-  --                  end
-   --             end
---            end
+            ChangeProgression('Key System', 'We require that you complete the key system, please complete it and paste the key in the textbox and click check key.')
         end
 
         repeat 
@@ -1076,26 +1062,3 @@ for i = 1, 4 do
         task.wait(0.60)
     end
 end
-
-
-repeat 
-    task.wait(1) 
-
-    if Database.Other.CloseUI then
-        break
-    end
-until Database.Other.CheckpointsCleared
-
-if Database.Other.ClosedUI then
-    return
-end
-
-ScreenGui:Destroy()
-
-task.spawn(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/Cryptic_Main.lua"))()
-end)
-
-task.wait()
-
-runautoexec()

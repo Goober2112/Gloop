@@ -23,7 +23,7 @@ local secret = "nonoudontneedthislol";  -- make sure to obfuscate this if you wa
 local useNonce = false;  -- use a nonce to prevent replay attacks and request tampering.
 
 --! callbacks
-local onMessage = function(message) end;
+local onMessage = function(message) warn(message) end;
 
 --! wait for game to load
 repeat task.wait(1) until game:IsLoaded();
@@ -184,6 +184,7 @@ local verifyKey = function(key)
     end
 
     print("yes")
+    onMessage("yes nigga")
 
     local nonce = generateNonce();
     local endpoint = host .. "/public/whitelist/" .. fToString(service) .. "?identifier=" .. lDigest(fGetHwid()) .. "&key=" .. key;
@@ -972,12 +973,12 @@ ScreenGui.Frame.Keysystem["Get Key"].TextButton.MouseButton1Click:Connect(functi
 end)
 
 onMessage = function(message) 
-    ChangeProgression('Status', message);
+    ChangeProgression('Key status', message);
 end
 
 ScreenGui.Frame.Keysystem["Check Key"].TextButton.MouseButton1Click:Connect(function()
     ChangeProgression('Checking Whitelist', 'Checking Key System database for key system completion.')
-
+    print('nigga')
     local s = verifyKey(ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text);
     print(s)
     if s then

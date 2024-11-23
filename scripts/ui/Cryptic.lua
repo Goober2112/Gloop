@@ -1495,7 +1495,7 @@ end
 
 local completed = function()
     print("destroying...")
-    ScreenGui:Destroy()
+    --ScreenGui:Destroy()
 
     print("spawning")
     task.spawn(function()
@@ -1574,6 +1574,7 @@ for i = 1, 4 do
         print(key)
 
         if key ~= "empty" and verifyKey(key) then
+            print("saved is valid")
             ChangeProgression('Key System', 'Saved key is valid, you may now proceed.')
             completed()
         else

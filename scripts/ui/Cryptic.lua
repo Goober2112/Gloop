@@ -174,9 +174,11 @@ local verifyKey = function(key)
         requestSending = true;
     end
 
+    print("yes")
+
     local nonce = generateNonce();
     local endpoint = host .. "/public/whitelist/" .. fToString(service) .. "?identifier=" .. lDigest(fGetHwid()) .. "&key=" .. key;
-
+    print(endpoint)
     if useNonce then
         endpoint = endpoint .. "&nonce=" .. nonce;
     end
@@ -185,6 +187,8 @@ local verifyKey = function(key)
         Url = endpoint,
         Method = "GET",
     });
+
+    print(response.StatusCode)
 
     requestSending = false;
 

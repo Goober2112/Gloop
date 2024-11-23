@@ -965,7 +965,10 @@ end
 ScreenGui.Frame.Keysystem["Check Key"].TextButton.MouseButton1Click:Connect(function()
     ChangeProgression('Checking Whitelist', 'Checking Key System database for key system completion.')
 
-    if verifyKey(ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text) == true then
+    local s = verifyKey(ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text);
+    print(s)
+    if s then
+        print('Key is valid')
         Database.Other.CheckpointsCleared = true
         writefile('key.txt', ScreenGui.Frame.Keysystem["Enter Key Here"].TextBox.Text)
     end

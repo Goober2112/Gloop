@@ -1487,12 +1487,17 @@ onMessage = function(message)
 end
 
 local completed = function()
-    print("destroying... new")
-    ScreenGui.Parent = nil
-    task.spawn(function() 
-        task.wait(4)
-        ScreenGui:Destroy()
+    print("destroying... meow")
+
+    local s, e = pcall(function()
+        ScreenGui.Parent = nil
+        task.spawn(function()
+            task.wait(4)
+            ScreenGui:Destroy()
+        end)
     end)
+
+    warn(s, e)
 
     print("spawning")
     task.spawn(function()

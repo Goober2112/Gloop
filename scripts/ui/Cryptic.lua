@@ -1024,15 +1024,18 @@ for i = 1, 4 do
             end
         end)
 
-        local key = "";
+        local key = "empty";
 
         if isfile('key.txt') then
             key = readfile('key.txt')
         end
 
+        print("lol")
         if verifyKey(key) then
+            print("yes")
             Database.Other.CheckpointsCleared = true
         else
+            print("no")
             ChangeProgression('Key System', 'We require that you complete the key system, please complete it and paste the key in the textbox.')
 
             --while task.wait(1) and not verify() and not Database.Other.CheckpointsCleared do

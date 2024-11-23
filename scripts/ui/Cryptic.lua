@@ -973,9 +973,8 @@ for i = 1, 4 do
             ChangeProgression('Key System', 'We require that you complete the Key System.')
 
             while task.wait(1) and not verifyKey(getSavedKey()) and not Database.Other.CheckpointsCleared do
+                ChangeProgression('Key System', 'You need to complete the key system in order to gain access to cryptic! Re-checking in 20 seconds.')
                 for i = 1, 20 do
-                    ChangeProgression('Key System', 'You need to complete the key system in order to gain access to cryptic! Re-checking in: '.. 20 - i .. 's')
-
                     if not Database.Other.CheckpointsCleared then
                         task.wait(1)
                     else

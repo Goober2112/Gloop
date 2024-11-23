@@ -1575,7 +1575,7 @@ for i = 1, 4 do
 
         if key ~= "empty" and verifyKey(key) then
             print("saved is valid")
-            ChangeProgression('Key System', 'Saved key is valid, you may now proceed.')
+            --ChangeProgression('Key System', 'Saved key is valid, you may now proceed.')
             completed()
         else
             ChangeProgression('Key System',

@@ -5162,9 +5162,14 @@ local status, res1, res2 = pcall(function()
             setclipboard("https://discord.gg/deltaex")
         end)
 
+        -- Some people are copying whitespaces for some reason
+        local sanitize = function(str)
+            return str:match("^(.-)%s*$")
+        end
+
         -- Continue
         buttons.Buttons.Button1.MouseButton1Click:Connect(function()
-            local key = KeyInput.Text
+            local key = sanitize(KeyInput.Text)
 
             if verifyKey(key) then
                 writefile("delta_key", key)

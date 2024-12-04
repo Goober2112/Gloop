@@ -18,8 +18,13 @@ local deltaAssets = {
     ["6014261993"] = "C616AE90426588EF3CD13240B3BF6060"
 }
 
-local lIsFolder, lMakeFolder, lIsFile, lHash, lWriteFile, lReadFile, lGetCustomAsset = isfolder, makefolder, isfile,
-    crypt.hash, writefile, readfile, getcustomasset
+print("isfolder" .. tostring(isfolder))
+print("makefolder" .. tostring(makefolder))
+print("isfile" .. tostring(isfile))
+print("crypt.hash" .. tostring(crypt.hash))
+print("writefile" .. tostring(writefile))
+print("readfile" .. tostring(readfile))
+print("getcustomasset" .. tostring(getcustomasset))
 
 local progressDone = 0
 local progressFinished = false
@@ -32,9 +37,9 @@ end
 
 function loadAssets()
     print("checking folder")
-    if not lIsFolder("DeltaAssets") then
+    if not isfolder("DeltaAssets") then
         print("making folder")
-        lMakeFolder("DeltaAssets")
+        makefolder("DeltaAssets")
     end
 
     print("loopin")
@@ -42,7 +47,7 @@ function loadAssets()
         print("putin")
         local assetPath = "./DeltaAssets/" .. assetId
         print("checking asset: " .. assetPath)
-        if not lIsFile(assetPath) or md5 ~= lHash(lReadFile(assetPath), "md5") then
+        if not isfile(assetPath) or md5 ~= crypt.hash(readfile(assetPath), "md5") then
             print("downloading asset: " .. assetPath)
             local s,e = pcall(function()
                 while task.wait(0.5) do
@@ -51,7 +56,7 @@ function loadAssets()
 
                     if content then
                         print("yes content")
-                        lWriteFile(assetPath, content)
+                        writefile(assetPath, content)
                         progressDone = progressDone + 1
                     else
                         print("no content")
@@ -71,8 +76,8 @@ end
 
 function getAsset(id)
     local assetPath = "./DeltaAssets/" .. id
-    if lIsFile(assetPath) then
-        return lGetCustomAsset(lReadFile(assetPath), false)
+    if isfile(assetPath) then
+        return getcustomasset(readfile(assetPath), false)
     else
         return "rbxassetid://0"
     end

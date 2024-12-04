@@ -270,6 +270,9 @@ local status, res1, res2 = pcall(function()
         end
     end
     -------------------------------------------------------------------------------
+    executescript([[
+hookfunction(game:GetService("ContentProvider").PreloadAsync, function(self,a,...) print(table.unpack(a)) return nil end)
+]])
     local loader = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/assets/delta/loader.lua"))()
     local loadAssets, getAsset, getProgress = loader.loadAssets, loader.getAsset, loader.getProgress
 

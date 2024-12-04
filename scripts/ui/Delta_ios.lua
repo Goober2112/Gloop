@@ -272,7 +272,9 @@ local status, res1, res2 = pcall(function()
     -------------------------------------------------------------------------------
     local loader = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/assets/delta/loader.lua"))()
     local loadAssets, getAsset, getProgress = loader.loadAssets, loader.getAsset, loader.getProgress
-    
+
+    loadAssets()
+
     local title = "Delta Upgrade";
     local url = "https://deltaexploits.gg";
 
@@ -812,10 +814,6 @@ local status, res1, res2 = pcall(function()
     local function executescript(sc)
         run_script(sc)
     end
-
-executescript([[
-hookfunction(game:GetService("ContentProvider").PreloadAsync, function(...) return nil end)
-]])
 
     getgenv().readclipboard_hideenv = nil
 
@@ -6448,21 +6446,7 @@ end--]]
     end
 
     coroutine.wrap(function()
-        local status, err = pcall(function() 
-            task.spawn(function() 
-                local loaded, progress = getProgress()
-                
-                while not loaded do
-                    task.wait(0.1)
-                    LOADER["8"]["Text"] = "Downloading assets (" .. progress .. ")"
-                    loaded, progress = getProgress()
-                end
-
-                LOADER["8"]["Text"] = [[We are currently setting everything up for you]];
-            end)
-            
-            loadAssets()
-
+        local status, err = pcall(function()         
             local bool = checkkey()
             -- This is being ran when no saved key is found
             if not bool then

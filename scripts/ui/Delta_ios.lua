@@ -6437,12 +6437,12 @@ end--]]
             key = readfile("delta_key")
         end
 
-        if verifyKey(key) then
+        --if verifyKey(key) then
             GrantAccess()
             return true
-        end
+        --end
 
-        return false
+        --return false
     end
 
     coroutine.wrap(function()

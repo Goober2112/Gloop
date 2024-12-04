@@ -34,12 +34,12 @@ function loadAssets()
     for assetId, md5 in next, deltaAssets do
         local assetPath = "./DeltaAssets/" .. assetId
         if not isfile(assetPath) or md5 ~= crypt.hash(readfile(assetPath), "md5") then
-            if isfile(assetPath) then
+            --[[if isfile(assetPath) then
                 local l = readfile(assetPath)
                 local m = crypt.hash(l, "md5")
                 
                 print("expected md5: " .. md5 .. " got: " .. m .. " size: " .. #l)
-            end
+            end--]]
 
             local success, err = pcall(function()
                 local content = game:HttpGetAsync(
@@ -72,12 +72,6 @@ end
 function getProgress()
     return progressFinished, tostring(progressDone) .. "/" .. tostring(count)
 end
-
-task.spawn(function()
-    while wait(3) do
-        print(getProgress())
-    end
-end)
 
 return {
     loadAssets = loadAssets,

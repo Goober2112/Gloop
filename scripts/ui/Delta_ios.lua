@@ -6446,23 +6446,25 @@ end--]]
     end
 
     coroutine.wrap(function()
-        print("loading")
-        local s = os.clock()
-        loadAssets()
-        print("haha done loading: " .. (os.clock() - s))
-        
-        local bool = checkkey()
+        local s, e = pcall(function() 
+            print("loading")
+            local s = os.clock()
+            loadAssets()
+            print("haha done loading: " .. tostring(os.clock() - s))
+            local bool = checkkey()
+            -- This is being ran when no saved key is found
+            if not bool then
+                -- print("no valid key")
+                task.wait(1)
+                getgenv().rLib:End()
+                DELTA["1"].Enabled = true
+                StartUp()
+            else
+                DELTA["1"].Enabled = true
+            end
+        end)
 
-        -- This is being ran when no saved key is found
-        if not bool then
-            -- print("no valid key")
-            task.wait(1)
-            getgenv().rLib:End()
-            DELTA["1"].Enabled = true
-            StartUp()
-        else
-            DELTA["1"].Enabled = true
-        end
+        if not s then warn(e) end
     end)()
 
     return DELTA["1"], require;

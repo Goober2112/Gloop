@@ -15,10 +15,11 @@ local deltaAssets = {
     ["13462270380"] = "5602C7DE756A0C644949924C80E9119E",
     ["13462271348"] = "E98AF78D7C0410CCF1602662142C4F35",
     ["13569242972"] = "F92102D598550F8BFEF2C62D2172EA9F",
-    ["6014261993"] = "C616AE90426588EF3CD13240B3BF6060",
+    ["6014261993"] = "C616AE90426588EF3CD13240B3BF6060"
 }
 
-local lIsFolder, lMakeFolder, lIsFile, lHash, lWriteFile, lReadFile, lGetCustomAsset = isfolder, makefolder, isfile, hash, writefile, readfile, getcustomasset
+local lIsFolder, lMakeFolder, lIsFile, lHash, lWriteFile, lReadFile, lGetCustomAsset = isfolder, makefolder, isfile,
+    hash, writefile, readfile, getcustomasset
 
 local progressDone = 0
 local progressFinished = false
@@ -30,10 +31,13 @@ function loadAssets()
 
     for assetId, md5 in pairs(deltaAssets) do
         local assetPath = "./DeltaAssets/" .. assetId
+        print("checking asset: " .. assetPath)
         if not lIsFile(assetPath) or md5 ~= lHash(lReadFile(assetPath), "md5") then
-            pcall(function()
-                while task.wait(1) do
-                    local content = game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/assets/delta/" .. assetId)
+            print("downloading asset: " .. assetPath)
+            local s,e = pcall(function()
+                while task.wait(0.5) do
+                    local content = game:HttpGetAsync(
+                        "https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/assets/delta/" .. assetId)
 
                     if content then
                         lWriteFile(assetPath, content)
@@ -41,6 +45,11 @@ function loadAssets()
                     end
                 end
             end)
+
+            if not s then
+                warn("Failed to download asset: " .. assetId)
+                warn(e)
+            end
         end
     end
 
@@ -60,8 +69,14 @@ function getProgress()
     return progressFinished, tostring(progressDone) .. "/" .. tostring(#deltaAssets)
 end
 
+task.spawn(function() 
+    while wait() do
+        print(getProgress())
+    end
+end)
+
 return {
     loadAssets = loadAssets,
     getAsset = getAsset,
-    getProgress = getProgress,
+    getProgress = getProgress
 }

@@ -63,15 +63,17 @@ end
 function getAsset(id)
     local assetPath = "./DeltaAssets/" .. id
     if isfile(assetPath) then
-        local asset = getcustomasset(readfile(assetPath), false)
+        local asset = getcustomasset(assetPath, false)
 
         if asset then
             return asset
         else
-            return "rbxassetid://0"
+            print("warning defaulting for asset: " .. id)
+            return "rbxassetid://" .. id
         end
     else
-        return "rbxassetid://0"
+        print("warning defaulting for asset: " .. id)
+        return "rbxassetid://" .. id
     end
 end
 

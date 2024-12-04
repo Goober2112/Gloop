@@ -46,7 +46,7 @@ d["2"]["Name"] = [[DarkOverlay]]
 d["3"] = Instance.new("ImageLabel", d["1"])
 d["3"].BorderSizePixel = 0;
 d["3"].ScaleType = Enum.ScaleType.Crop;
-d["3"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+d["3"].BackgroundColor3 = Color3.fromRGB(26, 27, 36)
 --d["3"].Image = getAsset "13387419794"
 d["3"].LayoutOrder = 10;
 d["3"].Size = UDim2.new(0.32863849401474, 0, 0.31259891390800476, 0)
@@ -87,7 +87,7 @@ d["8"]["TextWrapped"] = true;
 d["8"]["TextScaled"] = true;
 d["8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
 --d["8"]["FontFace"] = Font.new(getAsset [[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-d["8"]["TextSize"] = 36;
+d["8"]["TextSize"] = 14;
 d["8"]["TextColor3"] = Color3.fromRGB(203, 244, 255)
 d["8"]["AnchorPoint"] = Vector2.new(0, 0.5)
 d["8"]["Size"] = UDim2.new(0.8879498243331909, 0, 0.4277613639831543, 0)
@@ -168,7 +168,7 @@ function loadAssets()
     end
 
     for assetId, md5 in next, deltaAssets do
-        k["16"]["Text"] = "Downloading " .. assetId .. "(" .. tostring(progressDone) .. "/" .. tostring(count) .. ")"
+        k["8"]["Text"] = "Downloading " .. assetId .. "(" .. tostring(progressDone) .. "/" .. tostring(count) .. ")"
         local assetPath = "./DeltaAssets/" .. assetId
         if not isfile(assetPath) or md5 ~= crypt.hash(readfile(assetPath), "md5") then
             --[[if isfile(assetPath) then

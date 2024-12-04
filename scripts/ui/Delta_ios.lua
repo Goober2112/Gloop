@@ -270,7 +270,9 @@ local status, res1, res2 = pcall(function()
         end
     end
     -------------------------------------------------------------------------------
-
+    local loader = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/assets/delta/loader.lua"))()
+    local loadAssets, getAsset, getProgress = loader.loadAssets, loader.getAsset, loader.getProgress
+    
     local title = "Delta Upgrade";
     local url = "https://deltaexploits.gg";
 
@@ -6444,13 +6446,17 @@ end--]]
     end
 
     coroutine.wrap(function()
-        -- print("starting up")
+        print("loading")
+        local s = os.clock()
+        loadAssets()
+        print("haha done loading: " .. (os.clock() - s))
+        
         local bool = checkkey()
 
         -- This is being ran when no saved key is found
         if not bool then
             -- print("no valid key")
-            wait(1)
+            task.wait(1)
             getgenv().rLib:End()
             DELTA["1"].Enabled = true
             StartUp()

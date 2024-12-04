@@ -19,7 +19,7 @@ local deltaAssets = {
 }
 
 local lIsFolder, lMakeFolder, lIsFile, lHash, lWriteFile, lReadFile, lGetCustomAsset = isfolder, makefolder, isfile,
-    hash, writefile, readfile, getcustomasset
+    crypt.hash, writefile, readfile, getcustomasset
 
 local progressDone = 0
 local progressFinished = false

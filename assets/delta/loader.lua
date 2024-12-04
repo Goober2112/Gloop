@@ -1,3 +1,4 @@
+
 local deltaAssets = {
     ["11702779517"] = "4897023ca03071d11c3adb84c557429c",
     ["13363093418"] = "6a4acaddea30c139640bbf13b7da64ed",
@@ -47,10 +48,14 @@ function loadAssets()
         local assetPath = "./DeltaAssets/" .. assetId
         print("checking asset: " .. assetPath)
         if not isfile(assetPath) or md5 ~= crypt.hash(readfile(assetPath), "md5") then
-            print("downloading asset: " .. assetPath)
             if isfile(assetPath) then
-                print("expected md5: " .. md5 .. "got: " .. crypt.hash(readfile(assetPath), "md5"))
+                local l = readfile(assetPath)
+                local m = crypt.hash(l, "md5")
+                
+                print("expected md5: " .. md5 .. " got: " .. m .. " size: " .. #l)
             end
+            
+            print("downloading asset: " .. assetPath)
 
             local success, err = pcall(function()
                 local content = game:HttpGetAsync(
@@ -95,3 +100,6 @@ return {
     getAsset = getAsset,
     getProgress = getProgress
 }
+
+
+

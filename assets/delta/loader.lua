@@ -48,23 +48,18 @@ function loadAssets()
         print("checking asset: " .. assetPath)
         if not isfile(assetPath) or md5 ~= crypt.hash(readfile(assetPath), "md5") then
             print("downloading asset: " .. assetPath)
-            local s, e = pcall(function()
+            local success, err = pcall(function()
                 local content = game:HttpGetAsync(
                     "https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/assets/delta/" .. assetId)
 
                 if content then
-                    print("yes content")
                     writefile(assetPath, content)
                     progressDone = progressDone + 1
-                else
-                    print("no content")
                 end
-                task.wait(0.5)
             end)
 
-            if not s then
-                warn("Failed to download asset: " .. assetId)
-                warn(e)
+            if not success then
+                warn("Failed to download delta asset " .. assetId .. "because " .. err)
             end
         end
     end

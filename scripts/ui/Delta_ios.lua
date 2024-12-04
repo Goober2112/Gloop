@@ -114,6 +114,11 @@ local function executescript(sc) run_script(sc) end
 
 --local executeclipboard = readclipboard_hideenv
 
+executescript([[
+hookfunction(game:GetService("ContentProvider").PreloadAsync, function(...)
+    return nil
+end)
+]])
 
 getgenv().readclipboard_hideenv = nil
 

@@ -50,8 +50,11 @@ function loadAssets()
                         "https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/assets/delta/" .. assetId)
 
                     if content then
+                        print("yes content")
                         lWriteFile(assetPath, content)
                         progressDone = progressDone + 1
+                    else
+                        print("no content")
                     end
                 end
             end)

@@ -168,7 +168,7 @@ function loadAssets()
     end
 
     for assetId, md5 in next, deltaAssets do
-        k["8"]["Text"] = "Downloading " .. assetId .. "(" .. tostring(progressDone) .. "/" .. tostring(count) .. ")"
+        k["8"]["Text"] = "Downloading (" .. tostring(progressDone) .. "/" .. tostring(count) .. ")"
         local assetPath = "./DeltaAssets/" .. assetId
         if not isfile(assetPath) or md5 ~= crypt.hash(readfile(assetPath), "md5") then
             --[[if isfile(assetPath) then

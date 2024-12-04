@@ -24,12 +24,22 @@ local lIsFolder, lMakeFolder, lIsFile, lHash, lWriteFile, lReadFile, lGetCustomA
 local progressDone = 0
 local progressFinished = false
 
+
+local count = 0
+for i, v in next, deltaAssets do
+    count = count + 1
+end
+
 function loadAssets()
+    print("checking folder")
     if not lIsFolder("DeltaAssets") then
+        print("making folder")
         lMakeFolder("DeltaAssets")
     end
 
-    for assetId, md5 in pairs(deltaAssets) do
+    print("loopin")
+    for assetId, md5 in next, deltaAssets do
+        print("putin")
         local assetPath = "./DeltaAssets/" .. assetId
         print("checking asset: " .. assetPath)
         if not lIsFile(assetPath) or md5 ~= lHash(lReadFile(assetPath), "md5") then
@@ -66,11 +76,11 @@ function getAsset(id)
 end
 
 function getProgress()
-    return progressFinished, tostring(progressDone) .. "/" .. tostring(#deltaAssets)
+    return progressFinished, tostring(progressDone) .. "/" .. tostring(count)
 end
 
 task.spawn(function() 
-    while wait() do
+    while wait(3) do
         print(getProgress())
     end
 end)

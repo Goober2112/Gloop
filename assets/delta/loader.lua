@@ -18,14 +18,6 @@ local deltaAssets = {
     ["13387627918"] = "763397d350f8d7f7b8e2faaf8cbb7005"
 }
 
-print("isfolder" .. tostring(isfolder))
-print("makefolder" .. tostring(makefolder))
-print("isfile" .. tostring(isfile))
-print("crypt.hash" .. tostring(crypt.hash))
-print("writefile" .. tostring(writefile))
-print("readfile" .. tostring(readfile))
-print("getcustomasset" .. tostring(getcustomasset))
-
 local progressDone = 0
 local progressFinished = false
 

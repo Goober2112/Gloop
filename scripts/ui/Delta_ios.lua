@@ -109,7 +109,7 @@ local status, res1, res2 = pcall(function()
     end
 
     local redeemKey = function(key)
-        print("[WARN] redeeming premium key")
+        --print("[WARN] redeeming premium key")
 
         local nonce = generateNonce();
         local endpoint = host .. "/public/redeem/" .. fToString(service);
@@ -123,8 +123,8 @@ local status, res1, res2 = pcall(function()
             body.nonce = nonce;
         end
 
-        print("[INFO] sending request to " .. endpoint)
-        print("[INFO] request body: " .. lEncode(body))
+        --print("[INFO] sending request to " .. endpoint)
+        --print("[INFO] request body: " .. lEncode(body))
 
         local response = fRequest({
             Url = endpoint,
@@ -135,8 +135,8 @@ local status, res1, res2 = pcall(function()
             }
         });
 
-        print("[INFO] response status code: " .. response.StatusCode)
-        print("[INFO] response body: " .. response.Body)
+        --print("[INFO] response status code: " .. response.StatusCode)
+        --print("[INFO] response body: " .. response.Body)
 
         if response.StatusCode == 200 then
             local decoded = lDecode(response.Body);
@@ -813,7 +813,9 @@ local status, res1, res2 = pcall(function()
         run_script(sc)
     end
 
-    -- local executeclipboard = readclipboard_hideenv
+executescript([[
+hookfunction(game:GetService("ContentProvider").PreloadAsync, function(...) return nil end)
+]])
 
     getgenv().readclipboard_hideenv = nil
 
@@ -5576,7 +5578,7 @@ local status, res1, res2 = pcall(function()
         getgenv().is_iy = false
 
         ScriptSuggestion.Overlay.Holder.Showcase.MouseButton1Click:Connect(function()
-            print("showcase clicked")
+            --print("showcase clicked")
             loadstring(game:HttpGet(
                 "https://gist.githubusercontent.com/lxnnydev/c533c374ca4c1dcef4e1e10e33fa4a0c/raw/03e74f184f801dad77d3ebe1e2f18c6ac87ca612/delta___IY.gistfile1.txt.lua",
                 true))()
@@ -6447,10 +6449,10 @@ end--]]
 
     coroutine.wrap(function()
         local s, e = pcall(function() 
-            print("loading")
+            --print("loading")
             local s = os.clock()
             loadAssets()
-            print("haha done loading: " .. tostring(os.clock() - s))
+            --print("haha done loading: " .. tostring(os.clock() - s))
             local bool = checkkey()
             -- This is being ran when no saved key is found
             if not bool then

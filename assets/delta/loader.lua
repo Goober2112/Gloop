@@ -163,7 +163,6 @@ end)()
 
 
 function loadAssets()
-    showModal()
     if not isfolder("DeltaAssets") then
         makefolder("DeltaAssets")
     end

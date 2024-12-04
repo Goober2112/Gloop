@@ -48,6 +48,10 @@ function loadAssets()
         print("checking asset: " .. assetPath)
         if not isfile(assetPath) or md5 ~= crypt.hash(readfile(assetPath), "md5") then
             print("downloading asset: " .. assetPath)
+            if isfile(assetPath) then
+                print("expected md5: " .. md5 .. "got: " .. crypt.hash(readfile(assetPath), "md5"))
+            end
+            
             local success, err = pcall(function()
                 local content = game:HttpGetAsync(
                     "https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/assets/delta/" .. assetId)

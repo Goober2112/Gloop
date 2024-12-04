@@ -29,7 +29,6 @@ print("getcustomasset" .. tostring(getcustomasset))
 local progressDone = 0
 local progressFinished = false
 
-
 local count = 0
 for i, v in next, deltaAssets do
     count = count + 1
@@ -49,19 +48,18 @@ function loadAssets()
         print("checking asset: " .. assetPath)
         if not isfile(assetPath) or md5 ~= crypt.hash(readfile(assetPath), "md5") then
             print("downloading asset: " .. assetPath)
-            local s,e = pcall(function()
-                while task.wait(0.5) do
-                    local content = game:HttpGetAsync(
-                        "https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/assets/delta/" .. assetId)
+            local s, e = pcall(function()
+                local content = game:HttpGetAsync(
+                    "https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/assets/delta/" .. assetId)
 
-                    if content then
-                        print("yes content")
-                        writefile(assetPath, content)
-                        progressDone = progressDone + 1
-                    else
-                        print("no content")
-                    end
+                if content then
+                    print("yes content")
+                    writefile(assetPath, content)
+                    progressDone = progressDone + 1
+                else
+                    print("no content")
                 end
+                task.wait(0.5)
             end)
 
             if not s then
@@ -87,7 +85,7 @@ function getProgress()
     return progressFinished, tostring(progressDone) .. "/" .. tostring(count)
 end
 
-task.spawn(function() 
+task.spawn(function()
     while wait(3) do
         print(getProgress())
     end

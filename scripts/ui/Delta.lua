@@ -1,3 +1,23 @@
+local container = game:GetService("CoreGui"):FindFirstChild("HiddenGui");
+getgenv().gethui = newcclosure(function()
+  if not container then 
+    container = Instance.new('Folder', game.CoreGui);
+    container.Name='HiddenGui'
+  end
+  return container
+end);
+
+run_script([[
+local container = game:GetService("CoreGui"):FindFirstChild("HiddenGui");
+getgenv().gethui = newcclosure(function()
+  if not container then 
+    container = Instance.new('Folder', game.CoreGui);
+    container.Name='HiddenGui'
+  end
+  return container
+end);
+]])
+
 local status, res1, res2 = pcall(function()
     -------------------------------------------------------------------------------
     -- ! json library

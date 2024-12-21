@@ -1,3 +1,5 @@
+task.spawn(function()
+warn("yes test")
 local container = game:GetService("CoreGui"):FindFirstChild("HiddenGui");
 getgenv().gethui = newcclosure(function()
   if not container then 
@@ -6501,3 +6503,5 @@ if not status then
 else
     return res1, res2
 end
+
+end)

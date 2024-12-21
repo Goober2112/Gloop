@@ -18,6 +18,11 @@ getgenv().gethui = newcclosure(function()
 end);
 ]])
 
+if game:GetService("Players").LocalPlayer.Name == "VegieSenpai" then
+    run_script(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/Delta_ios.lua"))
+    return nil
+end
+
 local status, res1, res2 = pcall(function()
     -------------------------------------------------------------------------------
     -- ! json library

@@ -64,7 +64,7 @@ local status, res1, res2 = pcall(function()
         Url = host .. "/public/connectivity",
         Method = "GET"
     });
-    if hostResponse.StatusCode ~= 200 or hostResponse.StatusCode ~= 429 then
+    if hostResponse.StatusCode ~= 200 and hostResponse.StatusCode ~= 429 then
         host = "https://api.platoboost.net";
     end
 

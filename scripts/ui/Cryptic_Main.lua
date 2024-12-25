@@ -2441,7 +2441,7 @@ Cryptic.UICorner_61.Parent = Cryptic.Toggle
 Cryptic.UIAspectRatioConstraint_3.Parent = Cryptic.Toggle
 Cryptic.UIAspectRatioConstraint_3.DominantAxis = Enum.DominantAxis.Height
 
-CryptoniamMain.MainShell.Visible = false
+
 
 if not game:IsLoaded() then
 	repeat task.wait() until game:IsLoaded()
@@ -2516,6 +2516,8 @@ local IGS1, IGS2, IGS3, IGS4 = false, false, false, false
 local UIS1, UIS2, UIS3, UIS4, UIS5 = false, false, false, false, false
 
 local CryptoniamMain = Cryptic and Cryptic.Cryptic
+
+CryptoniamMain.MainShell.Visible = false
 
 function Library:SB(a, b)
 	CryptoniamMain.MainShell.SideShell[a].MouseButton1Click:Connect(function()

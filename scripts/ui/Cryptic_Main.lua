@@ -3387,6 +3387,36 @@ function Library:CreateMiscOption(name, func)
 		Library:AdvancedCallback(func, 'Action Successful')
 	end)
 end
+----------------------------- Entire UI LOADED
+task.spawn(function()
+	if not SwitchingTab then
+		SwitchingTab = true
+
+		for _, buttons in pairs(CryptoniamMain.MainShell.SideShell:GetChildren()) do
+			if buttons:IsA('TextButton') then
+				buttons.BackgroundColor3 = Color3.fromRGB(32, 65, 126)
+			end
+		end
+
+		CryptoniamMain.MainShell.SideShell["A"].BackgroundColor3 = Color3.fromRGB(64, 128, 255)
+
+		TweenService:Create(CryptoniamMain.MainShell.SwitchTabs, TweenInfo.new(0.35, Enum.EasingStyle.Cubic), {Size = UDim2.new(0.992, 0, 0.887, 0)}):Play()
+
+		task.wait(0.55)
+
+		for _, frames in pairs(CryptoniamMain.MainShell.MainFrame:GetChildren()) do
+			if frames:IsA('Frame') then
+				frames.Visible = false
+			end
+		end
+
+		CryptoniamMain.MainShell.MainFrame["Script Editor Tab"].Visible = true
+
+		TweenService:Create(CryptoniamMain.MainShell.SwitchTabs, TweenInfo.new(0.25, Enum.EasingStyle.Cubic), {Size = UDim2.new(0, 0, 0.887, 0)}):Play()
+
+		SwitchingTab = false
+	end
+end)
 
 -------------------------- Main Functions to make the entire UI work
 Library:DataChecking()
@@ -3418,13 +3448,12 @@ IGS1 = IngameSection:CreateToggle("Unlock FPS", function()
 		setfpscap(60)
 	end
 end, 5)
-IGS5 = IngameSection:CreateToggle("Auto Hide UI", function() 
-    if IGS5:Stauts() then
-        CryptoniamMain.MainShell.Visible = false
-    else
-        CryptoniamMain.MainShell.Visible = true
-    end
-end, 1)
+IGS5 = IngameSection:CreateToggle("Auto Hide UI", function() end, 1)
+if IGS5:Status() then
+    CryptoniamMain.MainShell.Visible = false
+else
+    CryptoniamMain.MainShell.Visible = true
+end
 IGS3 = IngameSection:CreateToggle("Disable In-Game Console", function() end, 1)
 IGS4 = IngameSection:CreateSlider(0, 360, "Set FPS Cap (Enable 'Unlock FPS')", "", function() 
 	if IGS1:Status() then 
@@ -3694,10 +3723,18 @@ end)
 Library:Notify("UI Loaded", "Loaded the UI in " .. startT - os.time() .. "s! Thank you for using Cryptic.")
 
 Library:Console('Warn', 'Buy cryptic keys at https://pcallskeleton.mysellix.io/')
-Library:Console('Print', 'pcallskeleton is the UI & Lua developer')
+Library:Console('Print', 'deposible is the UI & Lua developer (the goat & creator of Aussie WIRE)')
 Library:Console('Error', 'The greatest man to live, Reaper, <On> ^Top^ ')
 
-
+game:GetService("LogService").MessageOut:Connect(function(msg, ty)
+    if ty == Enum.MessageType.MessageOutput then
+        Library:Console('Print', msg)
+    elseif ty == Enum.MessageType.MessageWarning then
+        Library:Console('Warn', msg)
+    elseif ty == Enum.MessageType.MessageError then
+        Library:Console('Error', msg)
+    end
+end)
 --------------------------- Global Scripts
 local GlobalTab = { ShowingScripts = 0, TotalPage = 0, CurrentPage = 1, Loading = false }
 
@@ -4203,8 +4240,10 @@ function Library:GlobalScripts(page)
 	local SearchRequest = string.gsub(CryptoniamMain.MainShell.MainFrame["Global Scripts"]["Search Bar"].Searchbar.Text, " ", "-")
 	
 	if GlobalTab.Loading then
+        Library:Console('Error', 'Already looking something up in Global Scripts Tab')
 		return
 	else
+        Library:Console('Warn', 'Looking something up in Global Scripts Tab process started!')
 		Library:ClearGlobalScript()
 		
 		GlobalTab.Loading = true
@@ -4231,7 +4270,9 @@ function Library:GlobalScripts(page)
 			Url = SearchRequest
 		})
 	end)
-	
+	if success then
+        Library:Console('Warn', "Global Scripts Tab Returned: "..tostring(HttpService:JSONDecode(response.Body)))
+    end
 	if success and response and response.Body and GlobalTab.ShowingScripts < 16 then
 		local dataresponse = HttpService:JSONDecode(response.Body)
 		
@@ -4261,14 +4302,17 @@ function Library:GlobalScripts(page)
 				end
 			end
 		end
-	end
+	elseif not success then
+        GlobalTab.Loading = false
+        Library:Console('Error', 'An Error has occured in the Global Scripts tab! Please let deposible on discord know.')
+    end
 	
 	GlobalTab.Loading = false
 end
 
-Library:ClearGlobalScript()
-Library:GlobalScripts(1)
-
+CryptoniamMain.MainShell.MainFrame["Global Scripts"]["Search Bar"].Searchbar.FocusLost:Connect(function()
+    Library:GlobalScripts(1)
+end)
 CryptoniamMain.MainShell.MainFrame["Global Scripts"]["Search Bar"].ImageButton.MouseButton1Click:Connect(function()
 	Library:GlobalScripts(1)
 end)
@@ -4363,38 +4407,11 @@ Library:CreateMiscOption("Server Hop To Least Populated Server", function()
 	until not ServerHopping
 end)
 
------------------------------ Entire UI LOADED
-task.spawn(function()
-	if not SwitchingTab then
-		SwitchingTab = true
-
-		for _, buttons in pairs(CryptoniamMain.MainShell.SideShell:GetChildren()) do
-			if buttons:IsA('TextButton') then
-				buttons.BackgroundColor3 = Color3.fromRGB(32, 65, 126)
-			end
-		end
-
-		CryptoniamMain.MainShell.SideShell["A"].BackgroundColor3 = Color3.fromRGB(64, 128, 255)
-
-		TweenService:Create(CryptoniamMain.MainShell.SwitchTabs, TweenInfo.new(0.35, Enum.EasingStyle.Cubic), {Size = UDim2.new(0.992, 0, 0.887, 0)}):Play()
-
-		task.wait(0.55)
-
-		for _, frames in pairs(CryptoniamMain.MainShell.MainFrame:GetChildren()) do
-			if frames:IsA('Frame') then
-				frames.Visible = false
-			end
-		end
-
-		CryptoniamMain.MainShell.MainFrame["Script Editor Tab"].Visible = true
-
-		TweenService:Create(CryptoniamMain.MainShell.SwitchTabs, TweenInfo.new(0.25, Enum.EasingStyle.Cubic), {Size = UDim2.new(0, 0, 0.887, 0)}):Play()
-
-		SwitchingTab = false
-	end
-end)
-
 ---------------------------- Customize Tab
+
+Library:ClearGlobalScript()
+
+Library:GlobalScripts(1)
 
 -- Color Slider for buttons
 -- Color Slider for UI

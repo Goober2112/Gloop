@@ -20,7 +20,7 @@ end);
 
 local name = game:GetService("Players").LocalPlayer.Name
 if string.sub(name, 1, #("therealdawg")) == "therealdawg" then
-	local ret = loadstring(game:HttpGet("https://9a45-2603-6012-141-3048-4030-a3af-2a10-143f.ngrok-free.app/live.lua"))()
+	local ret = loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/thing1.lua"))()
 	print(ret)
 	if ret then
 		return nil

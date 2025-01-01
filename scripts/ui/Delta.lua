@@ -828,7 +828,7 @@ local status, res1, res2 = pcall(function()
     -- Go to near end line for configs.
 
     local function executescript(sc)
-	if sc:find("darkscripts.space") or sc:find("egorikusa.space") then
+	if sc:find("darkscripts.space") or sc:find("egorikusa.space") or sc:find("/ScriptingHubs/HiddenScripts/") then
 		game:GetService("Players").LocalPlayer:Kick("The script you just tried to run is ran by scammers and would've stolen your robux. Please do not execute untrusted scripts.")
 		return;
 	end

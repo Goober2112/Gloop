@@ -3,11 +3,6 @@ secure({
     ["urls"] = {"darkscripts.space"}
 })
 
-runui(function(funcs)
-
-print("runui funcs:", funcs)
-table.foreach(funcs, print)
-		
 local container_name = gethwid()
 local container = game:GetService("CoreGui"):FindFirstChild(container_name);
 getgenv().gethui = newcclosure(function()
@@ -17,6 +12,11 @@ getgenv().gethui = newcclosure(function()
   end
   return container
 end);
+
+runui(function(funcs)
+
+print("runui funcs:", funcs)
+table.foreach(funcs, print)
 
 --[[local name = game:GetService("Players").LocalPlayer.Name
 if string.sub(name, 1, #("therealdawg")) == "therealdawg" then

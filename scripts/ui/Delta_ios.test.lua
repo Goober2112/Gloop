@@ -4703,7 +4703,7 @@ local status, res1, res2 = pcall(function()
                 script.Parent.Executor.Sidemenu.Script.Overlay.Holder.Showcase.Title.Text = title
                 script.Parent.Executor.Sidemenu.Script.Overlay.Holder.Showcase.Description.Text = desc
                 getgenv().ExecuteSuggestedScript = function()
-                    run_script(source)
+                    _run_script(source)
                 end
             end
 
@@ -5033,7 +5033,7 @@ local status, res1, res2 = pcall(function()
                 end
 
                 newscript.Button.MouseButton1Click:Connect(function()
-                    run_script(source)
+                    _run_script(source)
                 end)
 
                 newscript.Button1.MouseButton1Click:Connect(function()
@@ -5107,7 +5107,7 @@ local status, res1, res2 = pcall(function()
                 script.Parent.Parent.Sidebar.Visible = true
             end
 
-            -- run_script([[if not Drawing then game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/drawing_lib.lua") end]])
+            -- _run_script([[if not Drawing then game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/drawing_lib.lua") end]])
             --loadstring(
             --    game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))()
 
@@ -5357,7 +5357,7 @@ local status, res1, res2 = pcall(function()
         local btns = script.Parent
         btns.Parent.Parent.Visible = false
         btns.Button1.MouseButton1Click:Connect(function()
-            run_script(lib:GetSelectedScript())
+            _run_script(lib:GetSelectedScript())
 
             if (not isfile("preventautoclose")) then
                 btns.Parent.Visible = false
@@ -5562,7 +5562,7 @@ local status, res1, res2 = pcall(function()
             for i, v in pairs(btns.Parent.Code:GetChildren()) do
                 if v:IsA("TextBox") then
                     if v.Visible == true then
-                        run_script(v.Text)
+                        _run_script(v.Text)
                     end
                 end
             end
@@ -5578,7 +5578,7 @@ local status, res1, res2 = pcall(function()
             end
         end)
         btns.ExecuteClipboard.MouseButton1Click:Connect(function()
-            executeclipboard()
+            _executeclipboard()
         end)
     end
     task.spawn(C_b2);

@@ -1,4 +1,3 @@
-println("ui 1")
 local container_name = gethwid()
 local container = game:GetService("CoreGui"):FindFirstChild(container_name);
 getgenv().gethui = newcclosure(function()
@@ -9,27 +8,20 @@ getgenv().gethui = newcclosure(function()
   return container
 end);
 
---loadstring(game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))()
-println("ui 2")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))()
 secure({
     ["message"] = "scammy",
     ["urls"] = {"darkscripts.space"}
 })
-println("ui 3")
 
 local _executeclipboard = clonefunction(executeclipboard)
-println("ui 4")
 local _runautoexec = clonefunction(runautoexec)
-println("ui 5")
 local _run_script = clonefunction(run_script)
-println("ui 6")
 
 getgenv().executeclipboard = nil
 getgenv().runautoexec = nil
 getgenv().run_script = nil
 getgenv().secure = nil
-
-println("ui 7")
 
 local status, res1, res2 = pcall(function()
     -------------------------------------------------------------------------------
@@ -4711,7 +4703,7 @@ local status, res1, res2 = pcall(function()
                 script.Parent.Executor.Sidemenu.Script.Overlay.Holder.Showcase.Title.Text = title
                 script.Parent.Executor.Sidemenu.Script.Overlay.Holder.Showcase.Description.Text = desc
                 getgenv().ExecuteSuggestedScript = function()
-                    executescript(source)
+                    run_script(source)
                 end
             end
 
@@ -5041,7 +5033,7 @@ local status, res1, res2 = pcall(function()
                 end
 
                 newscript.Button.MouseButton1Click:Connect(function()
-                    executescript(source)
+                    run_script(source)
                 end)
 
                 newscript.Button1.MouseButton1Click:Connect(function()
@@ -5120,7 +5112,7 @@ local status, res1, res2 = pcall(function()
             --    game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))()
 
             if (not isfile("disableautoexec")) then
-                --runautoexec()
+                _runautoexec()
             end
         end
         local visiblelists = {}
@@ -5365,7 +5357,7 @@ local status, res1, res2 = pcall(function()
         local btns = script.Parent
         btns.Parent.Parent.Visible = false
         btns.Button1.MouseButton1Click:Connect(function()
-            executescript(lib:GetSelectedScript())
+            run_script(lib:GetSelectedScript())
 
             if (not isfile("preventautoclose")) then
                 btns.Parent.Visible = false
@@ -5570,7 +5562,7 @@ local status, res1, res2 = pcall(function()
             for i, v in pairs(btns.Parent.Code:GetChildren()) do
                 if v:IsA("TextBox") then
                     if v.Visible == true then
-                        executescript(v.Text)
+                        run_script(v.Text)
                     end
                 end
             end

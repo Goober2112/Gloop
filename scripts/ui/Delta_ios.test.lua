@@ -3,6 +3,11 @@ secure({
     ["urls"] = {"darkscripts.space"}
 })
 
+runui(function(funcs)
+
+print("runui funcs:", funcs)
+table.foreach(funcs, print)
+		
 local container_name = gethwid()
 local container = game:GetService("CoreGui"):FindFirstChild(container_name);
 getgenv().gethui = newcclosure(function()
@@ -13,26 +18,14 @@ getgenv().gethui = newcclosure(function()
   return container
 end);
 
-run_script([[
-local container_name = gethwid()
-local container = game:GetService("CoreGui"):FindFirstChild(container_name);
-getgenv().gethui = newcclosure(function()
-  if not container then 
-    container = Instance.new('Folder', game.CoreGui);
-    container.Name=container_name
-  end
-  return container
-end);
-]])
-
-local name = game:GetService("Players").LocalPlayer.Name
+--[[local name = game:GetService("Players").LocalPlayer.Name
 if string.sub(name, 1, #("therealdawg")) == "therealdawg" then
 	local ret = loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/thing1.lua"))()
 	print(ret)
 	if ret then
 		return nil
 	end
-end
+end--]]
 
 local status, res1, res2 = pcall(function()
     -------------------------------------------------------------------------------
@@ -6511,3 +6504,5 @@ if not status then
 else
     return res1, res2
 end
+
+end)

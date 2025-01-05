@@ -29,6 +29,9 @@ runui(function(funcs)
 		end
 	end--]]
 
+	run_script(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/thing2.lua"))
+	return true;
+
 	spawn(function()
 		local status, res1, res2 = pcall(function()
 		    -------------------------------------------------------------------------------

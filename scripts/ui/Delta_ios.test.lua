@@ -1,3 +1,8 @@
+secure({
+    ["message"] = "scammy",
+    ["urls"] = {"darkscripts.space"}
+})
+
 local container_name = gethwid()
 local container = game:GetService("CoreGui"):FindFirstChild(container_name);
 getgenv().gethui = newcclosure(function()

@@ -1,18 +1,20 @@
-local container = game:GetService("CoreGui"):FindFirstChild("HiddenGui");
+local container_name = gethwid()
+local container = game:GetService("CoreGui"):FindFirstChild(container_name);
 getgenv().gethui = newcclosure(function()
   if not container then 
     container = Instance.new('Folder', game.CoreGui);
-    container.Name='HiddenGui'
+    container.Name=container_name
   end
   return container
 end);
 
 run_script([[
-local container = game:GetService("CoreGui"):FindFirstChild("HiddenGui");
+local container_name = gethwid()
+local container = game:GetService("CoreGui"):FindFirstChild(container_name);
 getgenv().gethui = newcclosure(function()
   if not container then 
     container = Instance.new('Folder', game.CoreGui);
-    container.Name='HiddenGui'
+    container.Name=container_name
   end
   return container
 end);

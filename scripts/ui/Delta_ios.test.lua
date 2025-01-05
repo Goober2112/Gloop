@@ -835,7 +835,6 @@ local status, res1, res2 = pcall(function()
     if not isfile("uses_syn") then
         getgenv().syn = nil
     end
-    print("done")
 
     -- Go to near end line for configs.
     getgenv().readclipboard_hideenv = nil
@@ -6475,7 +6474,6 @@ end--]]
                 task.wait(1)
                 getgenv().rLib:End()
                 DELTA["1"].Enabled = true
-                print("haha")
                 StartUp()
             else
                 DELTA["1"].Enabled = true

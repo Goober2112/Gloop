@@ -1,3 +1,4 @@
+print("ui 1")
 local container_name = gethwid()
 local container = game:GetService("CoreGui"):FindFirstChild(container_name);
 getgenv().gethui = newcclosure(function()
@@ -9,20 +10,26 @@ getgenv().gethui = newcclosure(function()
 end);
 
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))()
-
+print("ui 2")
 secure({
     ["message"] = "scammy",
     ["urls"] = {"darkscripts.space"}
 })
+print("ui 3")
 
 local _executeclipboard = clonefunction(executeclipboard)
+print("ui 4")
 local _runautoexec = clonefunction(runautoexec)
+print("ui 5")
 local _run_script = clonefunction(run_script)
+print("ui 6")
 
 getgenv().executeclipboard = nil
 getgenv().runautoexec = nil
 getgenv().run_script = nil
 getgenv().secure = nil
+
+print("ui 7")
 
 local status, res1, res2 = pcall(function()
     -------------------------------------------------------------------------------

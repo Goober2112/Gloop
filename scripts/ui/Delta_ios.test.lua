@@ -8,7 +8,7 @@ getgenv().gethui = newcclosure(function()
   return container
 end);
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))()
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))()
 
 runui(function(funcs)
 	funcs["secure"]({
@@ -28,9 +28,6 @@ runui(function(funcs)
 			return nil
 		end
 	end--]]
-
-	run_script(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/thing2.lua"))
-	return true;
 
 	spawn(function()
 		local status, res1, res2 = pcall(function()

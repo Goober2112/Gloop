@@ -41,7 +41,7 @@ local status, res1, res2 = pcall(function()
     local fSetClipboard, fRequest, fStringChar, fToString, fStringSub, fOsTime, fMathRandom, fMathFloor, fGetHwid =
         setclipboard or toclipboard, request or http_request or syn_request, string.char, tostring, string.sub, os.time,
         math.random, math.floor, gethwid or function()
-            return cloneref(game:GetService("Players")).LocalPlayer.UserId
+            return game:GetService("Players").LocalPlayer.UserId
         end
     local cachedLink, cachedTime = "", 0;
 
@@ -51,7 +51,7 @@ local status, res1, res2 = pcall(function()
         Url = host .. "/public/connectivity",
         Method = "GET"
     });
-    if hostResponse.StatusCode ~= 200 or hostResponse.StatusCode ~= 429 then
+    if hostResponse.StatusCode ~= 200 and hostResponse.StatusCode ~= 429 then
         host = "https://api.platoboost.net";
     end
 
@@ -297,12 +297,11 @@ local status, res1, res2 = pcall(function()
     -- Updater internals [START]
     local fVersion, fStringFormat = Version, string.format;
     local currentVersion = fVersion();
-    --local localizationService = cloneref(game:GetService("LocalizationService"));
+    local localizationService = game:GetService("LocalizationService");
 
     local execname, execversion = identifyexecutor();
 
-    --local sLocaleId = localizationService.SystemLocaleId;
-    local sLocaleId = "en-us"
+    local sLocaleId = localizationService.SystemLocaleId;
     local translationVector1 = {
         [0] = {
             code = "es",
@@ -631,7 +630,7 @@ local status, res1, res2 = pcall(function()
 
     function showModal(a, b, c)
         local d = {}
-        local e = cloneref(game:GetService("GuiService"))
+        local e = game:GetService("GuiService")
         d["1"] = Instance.new("ScreenGui", gethui())
         d["1"]["IgnoreGuiInset"] = true;
         d["1"]["Enabled"] = false;
@@ -753,7 +752,7 @@ local status, res1, res2 = pcall(function()
         d["b"]["AspectRatio"] = 1.8712739944458008;
         local l = {}
         local m = d["1"]
-        local n = cloneref(game:GetService("TweenService"))
+        local n = game:GetService("TweenService")
         local o = m.MainFrame;
         local p = m.DarkOverlay;
         local q = false;
@@ -773,9 +772,9 @@ local status, res1, res2 = pcall(function()
             t:Play()
             t.Completed:Wait()
         end
-        task.spawn(function()
+        coroutine.wrap(function()
             l:Start()
-        end)
+        end)()
     end
 
     --[[if execversion ~= "1.3.652.762" then
@@ -800,10 +799,9 @@ local status, res1, res2 = pcall(function()
 
     local _tablefind = clonefunction(table.find);
 
-    local placeId = game.PlaceId
     local isA = clonefunction(game.IsA);
 
-    local GuiService = cloneref(game:GetService("GuiService"))
+    local GuiService = game:GetService("GuiService")
 
     makefolder("d_ios_script_dir")
 
@@ -826,6 +824,11 @@ local status, res1, res2 = pcall(function()
     end
 
     -- Go to near end line for configs.
+
+    local function executescript(sc)
+        _run_script(sc)
+    end
+
     getgenv().readclipboard_hideenv = nil
 
     local DELTA = {};
@@ -4607,7 +4610,7 @@ local status, res1, res2 = pcall(function()
             module.Settings = {}
             module.SavedScripts = {}
             local reserved = script.Parent.Executor.Executor.Overlay.Reserved
-            local ts = cloneref(game:GetService("TweenService"))
+            local ts = game:GetService("TweenService")
             local isTween = script.Parent.IsTween
             module.ScriptSearch = {}
             local executor = script.Parent.Executor.Executor.Overlay
@@ -4691,7 +4694,7 @@ local status, res1, res2 = pcall(function()
                 script.Parent.Executor.Sidemenu.Script.Overlay.Holder.Showcase.Title.Text = title
                 script.Parent.Executor.Sidemenu.Script.Overlay.Holder.Showcase.Description.Text = desc
                 getgenv().ExecuteSuggestedScript = function()
-                    _run_script(source)
+                    executescript(source)
                 end
             end
 
@@ -5021,7 +5024,7 @@ local status, res1, res2 = pcall(function()
                 end
 
                 newscript.Button.MouseButton1Click:Connect(function()
-                    _run_script(source)
+                    executescript(source)
                 end)
 
                 newscript.Button1.MouseButton1Click:Connect(function()
@@ -5040,7 +5043,7 @@ local status, res1, res2 = pcall(function()
         local script = DELTA["21"];
         local buttons = script.Parent.Holder
         local KeyInput = buttons.Input.TextBox.Input
-        local tweenserv = cloneref(game:GetService("TweenService"))
+        local tweenserv = game:GetService("TweenService")
         local istween = script.Parent.Parent.IsTween
 
         repeat
@@ -5095,7 +5098,7 @@ local status, res1, res2 = pcall(function()
                 script.Parent.Parent.Sidebar.Visible = true
             end
 
-            -- _run_script([[if not Drawing then game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/drawing_lib.lua") end]])
+            -- run_script([[if not Drawing then game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/drawing_lib.lua") end]])
             loadstring(game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))()
 
             if (not isfile("disableautoexec")) then
@@ -5208,7 +5211,7 @@ local status, res1, res2 = pcall(function()
         local buttons = script.Parent
         local inactivecolor = buttons.InactiveColor
         local activecolor = buttons.ActiveColor
-        local ts = cloneref(game:GetService("TweenService"))
+        local ts = game.TweenService
         local isTween = script.Parent.Parent.IsTween
 
         for i, v in pairs(buttons:GetChildren()) do
@@ -5300,7 +5303,7 @@ local status, res1, res2 = pcall(function()
             local KeyWordSearch = textbox.Text
             local url = "https://scriptblox.com/api/script/search?q=" .. string.gsub(KeyWordSearch, " ", "%%20")
             local response = game:HttpGetAsync(url)
-            local http = cloneref(game:GetService("HttpService"))
+            local http = game:GetService("HttpService")
             local decoded = http:JSONDecode(response)
             for _, script in pairs(decoded.result.scripts) do
                 -- print"found"
@@ -5335,7 +5338,7 @@ local status, res1, res2 = pcall(function()
         end)
 
     end
-    --task.spawn(C_50);
+    task.spawn(C_50);
     -- StarterGui.Delta.Scripthub.Popup.Buttons.ButtonsHandler
     local function C_69()
         local script = DELTA["69"];
@@ -5344,7 +5347,7 @@ local status, res1, res2 = pcall(function()
         local btns = script.Parent
         btns.Parent.Parent.Visible = false
         btns.Button1.MouseButton1Click:Connect(function()
-            _run_script(lib:GetSelectedScript())
+            executescript(lib:GetSelectedScript())
 
             if (not isfile("preventautoclose")) then
                 btns.Parent.Visible = false
@@ -5386,7 +5389,7 @@ local status, res1, res2 = pcall(function()
             btns.Parent.Parent.DarkOverlay.Visible = false
         end)
     end
-    --task.spawn(C_69);
+    task.spawn(C_69);
     -- StarterGui.Delta.Settings.Searchbar.SettingsSearchHandler
     local function C_74()
         local script = DELTA["74"];
@@ -5415,7 +5418,7 @@ local status, res1, res2 = pcall(function()
             end
         end)
     end
-    --task.spawn(C_74);
+    task.spawn(C_74);
     -- StarterGui.Delta.Settings.Sort.SettingsFilterHandler
     local function C_81()
         local script = DELTA["81"];
@@ -5488,7 +5491,7 @@ local status, res1, res2 = pcall(function()
             end
         end)
     end
-    --task.spawn(C_81);
+    task.spawn(C_81);
     -- StarterGui.Delta.Executor.Executor.Overlay.Menu.LocalScript
     local function C_a2()
         local script = DELTA["a2"];
@@ -5549,7 +5552,7 @@ local status, res1, res2 = pcall(function()
             for i, v in pairs(btns.Parent.Code:GetChildren()) do
                 if v:IsA("TextBox") then
                     if v.Visible == true then
-                        _run_script(v.Text)
+                        executescript(v.Text)
                     end
                 end
             end
@@ -5577,7 +5580,7 @@ local status, res1, res2 = pcall(function()
             module:AddTab()
         end)
     end
-  --  task.spawn(C_bd);
+    task.spawn(C_bd);
     -- StarterGui.Delta.Executor.Sidemenu.Script.ScriptSuggestionHandler
     local function C_122()
         local script = DELTA["122"];
@@ -5593,16 +5596,16 @@ local status, res1, res2 = pcall(function()
 
         end)
     end
-    --task.spawn(C_122);
+    task.spawn(C_122);
     -- StarterGui.Delta.Executor.Sidemenu.Network.NetworkStatsHandler
     local function C_131()
         local script = DELTA["131"];
         local Network = script.Parent
-        local localplr = cloneref(game:GetService("Players")).LocalPlayer
+        local localplr = game:GetService("Players").LocalPlayer
 
         -- Get players in real-time
         local function GetPlrs()
-            return #cloneref(game:GetService("Players")):GetPlayers()
+            return #game:GetService("Players"):GetPlayers()
         end
         local function SetTextForPlr()
             Network.Overlay.Holder.Information.Players.Text =
@@ -5610,10 +5613,10 @@ local status, res1, res2 = pcall(function()
         end
         SetTextForPlr()
 
-        cloneref(game:GetService("Players")).PlayerAdded:Connect(function()
+        game:GetService("Players").PlayerAdded:Connect(function()
             SetTextForPlr()
         end)
-        cloneref(game:GetService("Players")).PlayerAdded:Connect(function()
+        game:GetService("Players").PlayerAdded:Connect(function()
             SetTextForPlr()
         end)
 
@@ -5622,7 +5625,7 @@ local status, res1, res2 = pcall(function()
             return localplr:GetNetworkPing()
         end
 
-        local RunService = cloneref(game:GetService("RunService"))
+        local RunService = game:GetService("RunService")
         local FpsLabel = Network.Overlay.Holder.Information.Memory
         local TimeFunction = RunService:IsRunning() and time or os.clock
 
@@ -5651,7 +5654,7 @@ local status, res1, res2 = pcall(function()
         RunService.Heartbeat:Connect(HeartbeatUpdate)
 
     end
-    --task.spawn(C_131); nuh uhh
+    task.spawn(C_131);
     -- StarterGui.Delta.Console.RobloxConsole.Searchbar.LocalScript
     local function C_177()
         local script = DELTA["177"];
@@ -5680,7 +5683,7 @@ local status, res1, res2 = pcall(function()
         end)
 
     end
-    --task.spawn(C_177);
+    task.spawn(C_177);
     -- StarterGui.Delta.Console.RobloxConsole.LocalScript
     local function C_178()
         if not isfile("useconsole") then
@@ -5737,7 +5740,7 @@ local status, res1, res2 = pcall(function()
             end
         end)
     end
-    --task.spawn(C_178);
+    task.spawn(C_178);
     -- StarterGui.Delta.Console.RConsole.Searchbar.LocalScript
     local function C_19a()
         local script = DELTA["19a"];
@@ -5766,7 +5769,7 @@ local status, res1, res2 = pcall(function()
         end)
 
     end
-    --task.spawn(C_19a);
+    task.spawn(C_19a);
     -- StarterGui.Delta.Console.RConsole.LocalScript
     local function C_19b()
         local script = DELTA["19b"];
@@ -5845,13 +5848,13 @@ local status, res1, res2 = pcall(function()
             end
         end
     end
-    --task.spawn(C_19b);
+    task.spawn(C_19b);
     -- StarterGui.Delta.MainScript
     local function C_19c()
         local script = DELTA["19c"];
 
         ----------------------------- Startup Configs (not important to change.) -----------------------------
-        local ts = cloneref(game:GetService("TweenService"))
+        local ts = game:GetService("TweenService")
         local isTween = script.Parent.IsTween
         -- repeat until game:IsLoaded()
         script.Parent.Home.Holder.Script:Destroy()
@@ -5994,7 +5997,7 @@ local status, res1, res2 = pcall(function()
         end)
 
         UILib.Settings:AddButton("Rejoin", "Rejoins your current server", function()
-            game:GetService("TeleportService"):Teleport(placeId, game:GetService("Players").LocalPlayer)
+            game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
         end)
 
         UILib.Settings:AddButton("Small Server", "Joins a server with a low playercount", function()
@@ -6002,7 +6005,8 @@ local status, res1, res2 = pcall(function()
             local TPS = game:GetService("TeleportService")
             local Api = "https://games.roblox.com/v1/games/"
 
-            local _servers = Api .. placeId .. "/servers/Public?sortOrder=Asc&limit=100"
+            local _place = game.PlaceId
+            local _servers = Api .. _place .. "/servers/Public?sortOrder=Asc&limit=100"
             function ListServers(cursor)
                 local Raw = game:HttpGet(_servers .. ((cursor and "&cursor=" .. cursor) or ""))
                 return Http:JSONDecode(Raw)
@@ -6019,6 +6023,7 @@ local status, res1, res2 = pcall(function()
         end)
 
         UILib.Settings:AddButton("Serverhop", "Teleport to a new server", function()
+            local PlaceID = game.PlaceId
             local AllIDs = {}
             local foundAnything = ""
             local actualHour = os.date("!*t").hour
@@ -6033,11 +6038,11 @@ local status, res1, res2 = pcall(function()
             function TPReturner()
                 local Site;
                 if foundAnything == "" then
-                    Site = cloneref(game:GetService("HttpService")):JSONDecode(game:HttpGet(
-                        'https://games.roblox.com/v1/games/' .. placeID .. '/servers/Public?sortOrder=Asc&limit=100'))
+                    Site = game.HttpService:JSONDecode(game:HttpGet(
+                        'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
                 else
-                    Site = cloneref(game:GetService("HttpService")):JSONDecode(game:HttpGet(
-                        'https://games.roblox.com/v1/games/' .. placeID ..
+                    Site = game.HttpService:JSONDecode(game:HttpGet(
+                        'https://games.roblox.com/v1/games/' .. PlaceID ..
                             '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
                 end
                 local ID = ""
@@ -6434,9 +6439,9 @@ end--]]
     getgenv().rLib = require(LOADER["c"])
 
     -- Create a coroutine to run the loading animation asynchronously
-    task.spawn(function()
+    coroutine.wrap(function()
         getgenv().rLib:Start()
-    end)
+    end)()
 
     function checkkey()
         local key = "empty";
@@ -6453,7 +6458,7 @@ end--]]
 	return false
     end
 
-    task.spawn(function()
+    coroutine.wrap(function()
         local status, err = pcall(function()         
             local bool = checkkey()
             -- This is being ran when no saved key is found
@@ -6469,7 +6474,7 @@ end--]]
         end)
 
         if not status then warn("Delta coroutine errored: " .. err) end
-    end)
+    end)()
 
     return DELTA["1"], require;
 end)

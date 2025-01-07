@@ -1,8 +1,3 @@
-secure({
-    ["message"] = "The script you just ran poses a risk to your account. Please verify the place you get scripts from next time.",
-    ["urls"] = {"darkscripts.space"}
-})
-
 local _executeclipboard = clonefunction(executeclipboard)
 local _runautoexec = clonefunction(runautoexec)
 local _run_script = clonefunction(run_script)

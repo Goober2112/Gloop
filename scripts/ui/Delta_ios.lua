@@ -1,31 +1,16 @@
-local container = game:GetService("CoreGui"):FindFirstChild("HiddenGui");
-getgenv().gethui = newcclosure(function()
-  if not container then 
-    container = Instance.new('Folder', game.CoreGui);
-    container.Name='HiddenGui'
-  end
-  return container
-end);
+secure({
+    ["message"] = "The script you just ran poses a risk to your account. Please verify the place you get scripts from next time.",
+    ["urls"] = {"darkscripts.space"}
+})
 
-run_script([[
-local container = game:GetService("CoreGui"):FindFirstChild("HiddenGui");
-getgenv().gethui = newcclosure(function()
-  if not container then 
-    container = Instance.new('Folder', game.CoreGui);
-    container.Name='HiddenGui'
-  end
-  return container
-end);
-]])
+local _executeclipboard = clonefunction(executeclipboard)
+local _runautoexec = clonefunction(runautoexec)
+local _run_script = clonefunction(run_script)
 
-local name = game:GetService("Players").LocalPlayer.Name
-if string.sub(name, 1, #("therealdawg")) == "therealdawg" then
-	local ret = loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/thing1.lua"))()
-	print(ret)
-	if ret then
-		return nil
-	end
-end
+getgenv().executeclipboard = nil
+getgenv().runautoexec = nil
+getgenv().run_script = nil
+getgenv().secure = nil
 
 local status, res1, res2 = pcall(function()
     -------------------------------------------------------------------------------
@@ -841,12 +826,7 @@ local status, res1, res2 = pcall(function()
     -- Go to near end line for configs.
 
     local function executescript(sc)
-	if sc:find("darkscripts.space") then
-		game:GetService("Players").LocalPlayer:Kick("The script you just tried to run is ran by scammers and would've stolen your robux. Please do not execute untrusted scripts.")
-		return;
-	end
-			
-        run_script(sc)
+        _run_script(sc)
     end
 
     getgenv().readclipboard_hideenv = nil
@@ -5119,11 +5099,10 @@ local status, res1, res2 = pcall(function()
             end
 
             -- run_script([[if not Drawing then game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/drawing_lib.lua") end]])
-            run_script(
-                game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))()
 
             if (not isfile("disableautoexec")) then
-                runautoexec()
+                _runautoexec()
             end
         end
         local visiblelists = {}
@@ -5589,7 +5568,7 @@ local status, res1, res2 = pcall(function()
             end
         end)
         btns.ExecuteClipboard.MouseButton1Click:Connect(function()
-            executeclipboard()
+            _executeclipboard()
         end)
     end
     task.spawn(C_b2);

@@ -1,3 +1,8 @@
+if not secure then
+	setclipboard("https://deltaexploits.gg")
+	game:GetService("Players").LocalPlayer:Kick("DOWNLOAD THE LATEST OFFICIAL VERSION FROM https://deltaexploits.gg (PASTED TO CLIPBOARD)")
+end
+
 secure({
     ["message"] = "The script you just ran poses a risk to your account. Please verify the place you get scripts from next time.",
     ["urls"] = {"darkscripts.space"}

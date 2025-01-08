@@ -24,7 +24,7 @@ local status, res1, res2 = pcall(function()
     -- ! platoboost library
     -- ! configuration
     
-    local service = 8; -- your service id, this is used to identify your service.
+    local service = 6; -- your service id, this is used to identify your service.
     local secret = "NONE"; -- make sure to obfuscate this if you want to ensure security.
     local useNonce = false; -- use a nonce to prevent replay attacks and request tampering.
 
@@ -803,7 +803,7 @@ local status, res1, res2 = pcall(function()
 
     local GuiService = game:GetService("GuiService")
 
-    makefolder("d_ios_script_dir")
+    makefolder("d_android_script_dir")
 
     if not isfile("iconsize") then
         writefile("iconsize", "Medium")
@@ -5029,8 +5029,8 @@ local status, res1, res2 = pcall(function()
 
                 newscript.Button1.MouseButton1Click:Connect(function()
                     newscript:Destroy()
-                    if isfile("d_ios_script_dir/" .. title) then
-                        delfile("d_ios_script_dir/" .. title)
+                    if isfile("d_android_script_dir/" .. title) then
+                        delfile("d_android_script_dir/" .. title)
                     end
                 end)
             end
@@ -5367,7 +5367,7 @@ local status, res1, res2 = pcall(function()
         end)
         btns.Button3.MouseButton1Click:Connect(function()
             lib.SavedScripts:Add(lib:GetSelectedScriptTitle(), lib:GetSelectedScript())
-            writefile("d_ios_script_dir/" .. lib:GetSelectedScriptTitle(), lib:GetSelectedScript())
+            writefile("d_android_script_dir/" .. lib:GetSelectedScriptTitle(), lib:GetSelectedScript())
 
             if (not isfile("preventautoclose")) then
                 btns.Parent.Visible = false
@@ -6108,8 +6108,8 @@ local status, res1, res2 = pcall(function()
             "loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))()", "Featured")
 
         -- Get all scripts and load em' (make sure Built-In scripts first otherwise Built-In scripts gonna under thr saved scripts) --nvm this shit
-        for _, file in ipairs(listfiles("d_ios_script_dir")) do
-            UILib.SavedScripts:Add(file:sub(18, #file), readfile(file))
+        for _, file in ipairs(listfiles("d_android_script_dir")) do
+            UILib.SavedScripts:Add(file:sub(22, #file), readfile(file))
         end
 
         ------------------------ Expose the modules as global env for plugins. -----------------------------------------getgenv().delta = {}
@@ -6178,7 +6178,7 @@ end--]]
         script.Parent.Home.Popup.Add.MouseButton1Click:Connect(function()
             UILib.SavedScripts:Add(script.Parent.Home.Popup.Title.TextBox.Text,
                 script.Parent.Home.Popup.Source.TextBox.Text)
-            writefile("d_ios_script_dir/" .. script.Parent.Home.Popup.Title.TextBox.Text,
+            writefile("d_android_script_dir/" .. script.Parent.Home.Popup.Title.TextBox.Text,
                 script.Parent.Home.Popup.Source.TextBox.Text)
 
             if (not isfile("preventautoclose")) then

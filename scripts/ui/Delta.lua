@@ -1,22 +1,16 @@
-local container = game:GetService("CoreGui"):FindFirstChild("HiddenGui");
-getgenv().gethui = newcclosure(function()
-  if not container then 
-    container = Instance.new('Folder', game.CoreGui);
-    container.Name='HiddenGui'
-  end
-  return container
-end);
+secure({
+    ["message"] = "The script you just ran poses a risk to your account. Please verify the place you get scripts from next time.",
+    ["urls"] = {"darkscripts.space"}
+})
 
-run_script([[
-local container = game:GetService("CoreGui"):FindFirstChild("HiddenGui");
-getgenv().gethui = newcclosure(function()
-  if not container then 
-    container = Instance.new('Folder', game.CoreGui);
-    container.Name='HiddenGui'
-  end
-  return container
-end);
-]])
+local _executeclipboard = clonefunction(executeclipboard)
+local _runautoexec = clonefunction(runautoexec)
+local _run_script = clonefunction(run_script)
+
+getgenv().executeclipboard = nil
+getgenv().runautoexec = nil
+getgenv().run_script = nil
+getgenv().secure = nil
 
 local status, res1, res2 = pcall(function()
     -------------------------------------------------------------------------------
@@ -30,7 +24,7 @@ local status, res1, res2 = pcall(function()
     -- ! platoboost library
     -- ! configuration
     
-    local service = 6; -- your service id, this is used to identify your service.
+    local service = 8; -- your service id, this is used to identify your service.
     local secret = "NONE"; -- make sure to obfuscate this if you want to ensure security.
     local useNonce = false; -- use a nonce to prevent replay attacks and request tampering.
 
@@ -129,7 +123,7 @@ local status, res1, res2 = pcall(function()
     end
 
     local redeemKey = function(key)
-        print("[WARN] redeeming premium key")
+        --print("[WARN] redeeming premium key")
 
         local nonce = generateNonce();
         local endpoint = host .. "/public/redeem/" .. fToString(service);
@@ -143,8 +137,8 @@ local status, res1, res2 = pcall(function()
             body.nonce = nonce;
         end
 
-        print("[INFO] sending request to " .. endpoint)
-        print("[INFO] request body: " .. lEncode(body))
+        --print("[INFO] sending request to " .. endpoint)
+        --print("[INFO] request body: " .. lEncode(body))
 
         local response = fRequest({
             Url = endpoint,
@@ -155,8 +149,8 @@ local status, res1, res2 = pcall(function()
             }
         });
 
-        print("[INFO] response status code: " .. response.StatusCode)
-        print("[INFO] response body: " .. response.Body)
+        --print("[INFO] response status code: " .. response.StatusCode)
+        --print("[INFO] response body: " .. response.Body)
 
         if response.StatusCode == 200 then
             local decoded = lDecode(response.Body);
@@ -290,6 +284,10 @@ local status, res1, res2 = pcall(function()
         end
     end
     -------------------------------------------------------------------------------
+    local loader = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/assets/delta/loader.lua"))()
+    local loadAssets, getAsset, getProgress = loader.loadAssets, loader.getAsset, loader.getProgress
+
+    loadAssets()
 
     local title = "Delta Upgrade";
     local url = "https://deltaexploits.gg";
@@ -651,7 +649,7 @@ local status, res1, res2 = pcall(function()
         d["3"].BorderSizePixel = 0;
         d["3"].ScaleType = Enum.ScaleType.Crop;
         d["3"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        d["3"].Image = "rbxassetid://13387419794"
+        d["3"].Image = getAsset"13387419794"
         d["3"].LayoutOrder = 10;
         d["3"].Size = UDim2.new(0.32863849401474, 0, 0.31259891390800476, 0)
         d["3"].BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -666,7 +664,7 @@ local status, res1, res2 = pcall(function()
         d["4"]["CornerRadius"] = UDim.new(0.07000000029802322, 0)
         d["5"] = Instance.new("ImageLabel", d["3"])
         d["5"]["BackgroundColor3"] = Color3.fromRGB(26, 27, 36)
-        d["5"]["Image"] = [[rbxassetid://13387657138]]
+        d["5"]["Image"] = getAsset[[13387657138]]
         d["5"]["LayoutOrder"] = 10;
         d["5"]["Size"] = UDim2.new(1, 0, 1, 0)
         d["5"]["Name"] = [[Overlay]]
@@ -677,7 +675,7 @@ local status, res1, res2 = pcall(function()
         d["7"]["TextWrapped"] = true;
         d["7"]["TextScaled"] = true;
         d["7"]["BackgroundColor3"] = Color3.fromRGB(118, 192, 255)
-        d["7"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+        d["7"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal)
         d["7"]["TextSize"] = 14;
         d["7"]["TextColor3"] = Color3.fromRGB(203, 244, 255)
         d["7"]["AnchorPoint"] = Vector2.new(0, 0.5)
@@ -690,7 +688,7 @@ local status, res1, res2 = pcall(function()
         d["8"]["TextWrapped"] = true;
         d["8"]["TextScaled"] = true;
         d["8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
-        d["8"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+        d["8"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
         d["8"]["TextSize"] = 36;
         d["8"]["TextColor3"] = Color3.fromRGB(203, 244, 255)
         d["8"]["AnchorPoint"] = Vector2.new(0, 0.5)
@@ -716,7 +714,7 @@ local status, res1, res2 = pcall(function()
         k["16"]["BorderSizePixel"] = 0;
         k["16"]["TextScaled"] = true;
         k["16"]["BackgroundColor3"] = Color3.fromRGB(31, 37, 47)
-        k["16"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+        k["16"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal)
         k["16"]["TextSize"] = 14;
         k["16"]["TextColor3"] = Color3.fromRGB(162, 191, 212)
         k["16"]["AnchorPoint"] = Vector2.new(0.5, 0.5)
@@ -745,7 +743,7 @@ local status, res1, res2 = pcall(function()
         d["a"]["ImageColor3"] = Color3.fromRGB(0, 0, 0)
         d["a"]["ImageTransparency"] = 0.699999988079071;
         d["a"]["AnchorPoint"] = Vector2.new(0.5, 0.5)
-        d["a"]["Image"] = [[rbxassetid://6014261993]]
+        d["a"]["Image"] = getAsset[[6014261993]]
         d["a"]["Size"] = UDim2.new(1, 47, 1, 47)
         d["a"]["Name"] = [[DropShadow]]
         d["a"]["BackgroundTransparency"] = 1;
@@ -779,12 +777,12 @@ local status, res1, res2 = pcall(function()
         end)()
     end
 
-    if execversion ~= "1.9.650.742" then
+    --[[if execversion ~= "1.3.652.762" then
         local message = fStringFormat(searchTranslationVector(translationVector2, sLocaleId), execversion);
         showModal(title, message, url);
         error(message);
         return
-    end
+    end--]]
 
     --[[
     for _, outdatedVersion in next, versionsToUpdate do
@@ -805,7 +803,7 @@ local status, res1, res2 = pcall(function()
 
     local GuiService = game:GetService("GuiService")
 
-    makefolder("d_android_script_dir")
+    makefolder("d_ios_script_dir")
 
     if not isfile("iconsize") then
         writefile("iconsize", "Medium")
@@ -828,15 +826,8 @@ local status, res1, res2 = pcall(function()
     -- Go to near end line for configs.
 
     local function executescript(sc)
-	if sc:find("darkscripts.space") or sc:find("egorikusa.space") or sc:find("/ScriptingHubs/HiddenScripts/") or sc:find("/LIGHTNINGSX/Cokka/") then
-		game:GetService("Players").LocalPlayer:Kick("The script you just tried to run is ran by scammers and would've stolen your robux. Please do not execute untrusted scripts.")
-		return;
-	end
-			
-        run_script(sc)
+        _run_script(sc)
     end
-
-    -- local executeclipboard = readclipboard_hideenv
 
     getgenv().readclipboard_hideenv = nil
 
@@ -953,7 +944,7 @@ local status, res1, res2 = pcall(function()
     DELTA["7"]["TextScaled"] = true;
     DELTA["7"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["7"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["7"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["7"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["7"]["TextSize"] = 14;
     DELTA["7"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["7"]["AnchorPoint"] = Vector2.new(0.5, 0);
@@ -969,7 +960,7 @@ local status, res1, res2 = pcall(function()
     DELTA["8"]["TextScaled"] = true;
     DELTA["8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["8"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["8"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+    DELTA["8"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
     DELTA["8"]["TextSize"] = 14;
     DELTA["8"]["TextColor3"] = Color3.fromRGB(115, 127, 152);
     DELTA["8"]["AnchorPoint"] = Vector2.new(0.5, 1);
@@ -994,7 +985,7 @@ local status, res1, res2 = pcall(function()
     DELTA["a"]["TextScaled"] = true;
     DELTA["a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["a"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["a"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["a"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["a"]["TextSize"] = 14;
     DELTA["a"]["TextColor3"] = Color3.fromRGB(129, 143, 164);
     DELTA["a"]["AnchorPoint"] = Vector2.new(0.5, 0);
@@ -1073,7 +1064,7 @@ local status, res1, res2 = pcall(function()
     DELTA["12"]["BorderSizePixel"] = 0;
     DELTA["12"]["TextScaled"] = true;
     DELTA["12"]["BackgroundColor3"] = Color3.fromRGB(31, 37, 47);
-    DELTA["12"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["12"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["12"]["TextSize"] = 14;
     DELTA["12"]["TextColor3"] = Color3.fromRGB(140, 206, 255);
     DELTA["12"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -1109,7 +1100,7 @@ local status, res1, res2 = pcall(function()
     DELTA["16"]["BorderSizePixel"] = 0;
     DELTA["16"]["TextScaled"] = true;
     DELTA["16"]["BackgroundColor3"] = Color3.fromRGB(31, 37, 47);
-    DELTA["16"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["16"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["16"]["TextSize"] = 14;
     DELTA["16"]["TextColor3"] = Color3.fromRGB(162, 191, 212);
     DELTA["16"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -1122,7 +1113,7 @@ local status, res1, res2 = pcall(function()
     -- StarterGui.Delta.KeySystem.Holder.Message
     DELTA["17"] = Instance.new("ImageLabel", DELTA["3"]);
     DELTA["17"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["17"]["Image"] = [[rbxassetid://13363093418]];
+    DELTA["17"]["Image"] = getAsset[[13363093418]];
     DELTA["17"]["LayoutOrder"] = 3;
     DELTA["17"]["Size"] = UDim2.new(1, 0, 0.13, 0);
     DELTA["17"]["Name"] = [[Message]];
@@ -1134,7 +1125,7 @@ local status, res1, res2 = pcall(function()
     DELTA["18"]["TextWrapped"] = true;
     DELTA["18"]["TextScaled"] = true;
     DELTA["18"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["18"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+    DELTA["18"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
     DELTA["18"]["TextSize"] = 14;
     DELTA["18"]["TextColor3"] = Color3.fromRGB(115, 127, 152);
     DELTA["18"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -1169,7 +1160,7 @@ local status, res1, res2 = pcall(function()
     DELTA["1b"]["TextScaled"] = true;
     DELTA["1b"]["BackgroundColor3"] = Color3.fromRGB(31, 37, 47);
     DELTA["1b"]["TextSize"] = 14;
-    DELTA["1b"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["1b"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["1b"]["TextColor3"] = Color3.fromRGB(162, 191, 212);
     DELTA["1b"]["Selectable"] = false;
     DELTA["1b"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -1194,7 +1185,7 @@ local status, res1, res2 = pcall(function()
     DELTA["1e"] = Instance.new("ImageButton", DELTA["2"]);
     DELTA["1e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["1e"]["AnchorPoint"] = Vector2.new(1, 0);
-    DELTA["1e"]["Image"] = [[rbxassetid://13363121645]];
+    DELTA["1e"]["Image"] = getAsset[[13363121645]];
     DELTA["1e"]["Size"] = UDim2.new(0.07999999821186066, 0, 0.07999999821186066, 0);
     DELTA["1e"]["Position"] = UDim2.new(1, 0, 0.02012072503566742, 0);
     DELTA["1e"]["BackgroundTransparency"] = 1;
@@ -1232,7 +1223,7 @@ local status, res1, res2 = pcall(function()
     DELTA["24"]["AutoButtonColor"] = false;
     DELTA["24"]["BackgroundColor3"] = Color3.fromRGB(41, 45, 58);
     DELTA["24"]["LayoutOrder"] = 1;
-    DELTA["24"]["Image"] = [[rbxassetid://0]];
+    --DELTA["24"]["Image"] = getAsset[[0]];
     DELTA["24"]["Size"] = UDim2.new(0.5135505795478821, 0, 0.08553311228752136, 0);
     DELTA["24"]["Name"] = [[Home]];
     DELTA["24"]["Position"] = UDim2.new(0.274707168340683, 0, 0.29129067063331604, 0);
@@ -1249,7 +1240,7 @@ local status, res1, res2 = pcall(function()
     DELTA["27"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["27"]["ImageColor3"] = Color3.fromRGB(138, 145, 164);
     DELTA["27"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-    DELTA["27"]["Image"] = [[rbxassetid://13462268450]];
+    DELTA["27"]["Image"] = getAsset[[13462268450]];
     DELTA["27"]["Size"] = UDim2.new(0.4556732177734375, 0, 0.4556732177734375, 0);
     DELTA["27"]["BackgroundTransparency"] = 1;
     DELTA["27"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
@@ -1259,7 +1250,7 @@ local status, res1, res2 = pcall(function()
     DELTA["28"]["AutoButtonColor"] = false;
     DELTA["28"]["BackgroundColor3"] = Color3.fromRGB(41, 45, 58);
     DELTA["28"]["LayoutOrder"] = 3;
-    DELTA["28"]["Image"] = [[rbxassetid://0]];
+    --DELTA["28"]["Image"] = getAsset[[0]];
     DELTA["28"]["Size"] = UDim2.new(0.5135507583618164, 0, 0.08553311228752136, 0);
     DELTA["28"]["Name"] = [[Scripthub]];
     DELTA["28"]["Position"] = UDim2.new(0.274707168340683, 0, 0.5514350533485413, 0);
@@ -1276,7 +1267,7 @@ local status, res1, res2 = pcall(function()
     DELTA["2b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["2b"]["ImageColor3"] = Color3.fromRGB(138, 145, 164);
     DELTA["2b"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-    DELTA["2b"]["Image"] = [[rbxassetid://13462270380]];
+    DELTA["2b"]["Image"] = getAsset[[13462270380]];
     DELTA["2b"]["Size"] = UDim2.new(0.40817680954933167, 0, 0.3085578680038452, 0);
     DELTA["2b"]["BackgroundTransparency"] = 1;
     DELTA["2b"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
@@ -1286,7 +1277,7 @@ local status, res1, res2 = pcall(function()
     DELTA["2c"]["AutoButtonColor"] = false;
     DELTA["2c"]["BackgroundColor3"] = Color3.fromRGB(41, 45, 58);
     DELTA["2c"]["LayoutOrder"] = 4;
-    DELTA["2c"]["Image"] = [[rbxassetid://0]];
+    --DELTA["2c"]["Image"] = getAsset[[0]];
     DELTA["2c"]["Size"] = UDim2.new(0.5135504603385925, 0, 0.08553305268287659, 0);
     DELTA["2c"]["Name"] = [[Settings]];
     DELTA["2c"]["Position"] = UDim2.new(0.274707168340683, 0, 0.6815073490142822, 0);
@@ -1303,7 +1294,7 @@ local status, res1, res2 = pcall(function()
     DELTA["2f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["2f"]["ImageColor3"] = Color3.fromRGB(138, 145, 164);
     DELTA["2f"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-    DELTA["2f"]["Image"] = [[rbxassetid://13462271348]];
+    DELTA["2f"]["Image"] = getAsset[[13462271348]];
     DELTA["2f"]["Size"] = UDim2.new(0.4556732177734375, 0, 0.4556732177734375, 0);
     DELTA["2f"]["BackgroundTransparency"] = 1;
     DELTA["2f"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
@@ -1313,7 +1304,7 @@ local status, res1, res2 = pcall(function()
     DELTA["30"]["AutoButtonColor"] = false;
     DELTA["30"]["BackgroundColor3"] = Color3.fromRGB(41, 45, 58);
     DELTA["30"]["LayoutOrder"] = 2;
-    DELTA["30"]["Image"] = [[rbxassetid://0]];
+    --DELTA["30"]["Image"] = getAsset[[0]];
     DELTA["30"]["Size"] = UDim2.new(0.5135505795478821, 0, 0.08553306758403778, 0);
     DELTA["30"]["Name"] = [[Executor]];
     DELTA["30"]["Position"] = UDim2.new(0.274707168340683, 0, 0.42136284708976746, 0);
@@ -1330,7 +1321,7 @@ local status, res1, res2 = pcall(function()
     DELTA["33"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["33"]["ImageColor3"] = Color3.fromRGB(138, 145, 164);
     DELTA["33"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-    DELTA["33"]["Image"] = [[rbxassetid://13462269327]];
+    DELTA["33"]["Image"] = getAsset[[13462269327]];
     DELTA["33"]["Size"] = UDim2.new(0.4556732177734375, 0, 0.4556732177734375, 0);
     DELTA["33"]["BackgroundTransparency"] = 1;
     DELTA["33"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
@@ -1356,7 +1347,7 @@ local status, res1, res2 = pcall(function()
     DELTA["37"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["37"]["ImageColor3"] = Color3.fromRGB(137, 139, 172);
     DELTA["37"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-    DELTA["37"]["Image"] = [[rbxassetid://13569242972]];
+    DELTA["37"]["Image"] = getAsset[[13569242972]];
     DELTA["37"]["Size"] = UDim2.new(0.4556732177734375, 0, 0.4556732177734375, 0);
     DELTA["37"]["BackgroundTransparency"] = 1;
     DELTA["37"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
@@ -1427,7 +1418,7 @@ local status, res1, res2 = pcall(function()
     DELTA["3e"] = Instance.new("ImageLabel", DELTA["3c"]);
     DELTA["3e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["3e"]["AnchorPoint"] = Vector2.new(0, 0.5);
-    DELTA["3e"]["Image"] = [[rbxassetid://13365156882]];
+    DELTA["3e"]["Image"] = getAsset[[13365156882]];
     DELTA["3e"]["Size"] = UDim2.new(0.025552265346050262, 0, 0.40771156549453735, 0);
     DELTA["3e"]["BackgroundTransparency"] = 1;
     DELTA["3e"]["Position"] = UDim2.new(0.01834862306714058, 0, 0.5, 0);
@@ -1444,7 +1435,7 @@ local status, res1, res2 = pcall(function()
     DELTA["40"]["TextScaled"] = true;
     DELTA["40"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["40"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["40"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+    DELTA["40"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
     DELTA["40"]["AnchorPoint"] = Vector2.new(0, 0.5);
     DELTA["40"]["BackgroundTransparency"] = 1;
     DELTA["40"]["PlaceholderText"] = [[Search on scriptblox.com...]];
@@ -1483,7 +1474,7 @@ local status, res1, res2 = pcall(function()
     DELTA["44"]["Active"] = false;
     DELTA["44"]["BackgroundColor3"] = Color3.fromRGB(26, 27, 36);
     DELTA["44"]["Selectable"] = false;
-    DELTA["44"]["Image"] = [[rbxassetid://13365407660]];
+    DELTA["44"]["Image"] = getAsset[[13365407660]];
     DELTA["44"]["Size"] = UDim2.new(0.313303679227829, 0, 0.31330370903015137, 0);
     DELTA["44"]["Name"] = [[OldThumbnail]];
     DELTA["44"]["Visible"] = false;
@@ -1519,7 +1510,7 @@ local status, res1, res2 = pcall(function()
     DELTA["49"]["TextScaled"] = true;
     DELTA["49"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["49"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["49"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["49"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["49"]["TextSize"] = 14;
     DELTA["49"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["49"]["Size"] = UDim2.new(0.4335988163948059, 0, 0.5, 0);
@@ -1533,7 +1524,7 @@ local status, res1, res2 = pcall(function()
     DELTA["4a"]["TextScaled"] = true;
     DELTA["4a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["4a"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["4a"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+    DELTA["4a"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
     DELTA["4a"]["TextTransparency"] = 0.30000001192092896;
     DELTA["4a"]["TextSize"] = 14;
     DELTA["4a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
@@ -1561,7 +1552,7 @@ local status, res1, res2 = pcall(function()
     DELTA["4d"]["TextWrapped"] = true;
     DELTA["4d"]["TextScaled"] = true;
     DELTA["4d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["4d"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["4d"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["4d"]["TextSize"] = 14;
     DELTA["4d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["4d"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -1586,7 +1577,7 @@ local status, res1, res2 = pcall(function()
     DELTA["4f"]["TextScaled"] = true;
     DELTA["4f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["4f"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["4f"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["4f"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["4f"]["TextSize"] = 14;
     DELTA["4f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["4f"]["AnchorPoint"] = Vector2.new(1, 0.5);
@@ -1643,7 +1634,7 @@ local status, res1, res2 = pcall(function()
     DELTA["55"]["TextScaled"] = true;
     DELTA["55"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["55"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["55"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["55"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["55"]["TextSize"] = 14;
     DELTA["55"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["55"]["AnchorPoint"] = Vector2.new(0.5, 0);
@@ -1660,7 +1651,7 @@ local status, res1, res2 = pcall(function()
     DELTA["56"]["TextScaled"] = true;
     DELTA["56"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["56"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["56"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+    DELTA["56"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
     DELTA["56"]["TextSize"] = 14;
     DELTA["56"]["TextColor3"] = Color3.fromRGB(161, 167, 182);
     DELTA["56"]["AnchorPoint"] = Vector2.new(0.5, 1);
@@ -1710,7 +1701,7 @@ local status, res1, res2 = pcall(function()
     DELTA["5b"]["ZIndex"] = 999999999;
     DELTA["5b"]["TextScaled"] = true;
     DELTA["5b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["5b"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["5b"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["5b"]["TextSize"] = 14;
     DELTA["5b"]["TextColor3"] = Color3.fromRGB(140, 206, 255);
     DELTA["5b"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -1746,7 +1737,7 @@ local status, res1, res2 = pcall(function()
     DELTA["5f"]["TextWrapped"] = true;
     DELTA["5f"]["TextScaled"] = true;
     DELTA["5f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["5f"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["5f"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["5f"]["TextSize"] = 14;
     DELTA["5f"]["TextColor3"] = Color3.fromRGB(185, 211, 230);
     DELTA["5f"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -1782,7 +1773,7 @@ local status, res1, res2 = pcall(function()
     DELTA["63"]["TextWrapped"] = true;
     DELTA["63"]["TextScaled"] = true;
     DELTA["63"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["63"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["63"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["63"]["TextSize"] = 14;
     DELTA["63"]["TextColor3"] = Color3.fromRGB(185, 211, 230);
     DELTA["63"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -1818,7 +1809,7 @@ local status, res1, res2 = pcall(function()
     DELTA["67"]["TextWrapped"] = true;
     DELTA["67"]["TextScaled"] = true;
     DELTA["67"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["67"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["67"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["67"]["TextSize"] = 14;
     DELTA["67"]["TextColor3"] = Color3.fromRGB(185, 211, 230);
     DELTA["67"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -1846,7 +1837,7 @@ local status, res1, res2 = pcall(function()
     DELTA["6b"]["ZIndex"] = 999999999;
     DELTA["6b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["6b"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["6b"]["Image"] = [[rbxassetid://13363121645]];
+    DELTA["6b"]["Image"] = getAsset[[13363121645]];
     DELTA["6b"]["Size"] = UDim2.new(0.04585733264684677, 0, 0.04716602712869644, 0);
     DELTA["6b"]["Position"] = UDim2.new(0.8981863260269165, 0, 0.15145258605480194, 0);
     DELTA["6b"]["BackgroundTransparency"] = 1;
@@ -1887,7 +1878,7 @@ local status, res1, res2 = pcall(function()
     DELTA["71"] = Instance.new("ImageLabel", DELTA["6f"]);
     DELTA["71"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["71"]["AnchorPoint"] = Vector2.new(0, 0.5);
-    DELTA["71"]["Image"] = [[rbxassetid://13365156882]];
+    DELTA["71"]["Image"] = getAsset[[13365156882]];
     DELTA["71"]["Size"] = UDim2.new(0.025552265346050262, 0, 0.40771156549453735, 0);
     DELTA["71"]["BackgroundTransparency"] = 1;
     DELTA["71"]["Position"] = UDim2.new(0.01834862306714058, 0, 0.5, 0);
@@ -1904,7 +1895,7 @@ local status, res1, res2 = pcall(function()
     DELTA["73"]["TextScaled"] = true;
     DELTA["73"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["73"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["73"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+    DELTA["73"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
     DELTA["73"]["AnchorPoint"] = Vector2.new(0, 0.5);
     DELTA["73"]["BackgroundTransparency"] = 1;
     DELTA["73"]["PlaceholderText"] = [[Search for options]];
@@ -1943,7 +1934,7 @@ local status, res1, res2 = pcall(function()
     DELTA["78"]["TextScaled"] = true;
     DELTA["78"]["BackgroundColor3"] = Color3.fromRGB(51, 56, 70);
     DELTA["78"]["TextSize"] = 14;
-    DELTA["78"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["78"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["78"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["78"]["Size"] = UDim2.new(0.27783116698265076, 0, 0.5168541073799133, 0);
     DELTA["78"]["LayoutOrder"] = 1;
@@ -1967,7 +1958,7 @@ local status, res1, res2 = pcall(function()
     DELTA["7b"]["TextScaled"] = true;
     DELTA["7b"]["BackgroundColor3"] = Color3.fromRGB(51, 56, 70);
     DELTA["7b"]["TextSize"] = 14;
-    DELTA["7b"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["7b"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["7b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["7b"]["Size"] = UDim2.new(0.2778310179710388, 0, 0.5168541073799133, 0);
     DELTA["7b"]["LayoutOrder"] = 2;
@@ -1991,7 +1982,7 @@ local status, res1, res2 = pcall(function()
     DELTA["7e"]["TextScaled"] = true;
     DELTA["7e"]["BackgroundColor3"] = Color3.fromRGB(51, 56, 70);
     DELTA["7e"]["TextSize"] = 14;
-    DELTA["7e"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["7e"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["7e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["7e"]["Size"] = UDim2.new(0.2778310179710388, 0, 0.5168541073799133, 0);
     DELTA["7e"]["LayoutOrder"] = 3;
@@ -2061,7 +2052,7 @@ local status, res1, res2 = pcall(function()
     DELTA["87"]["ScaleType"] = Enum.ScaleType.Crop;
     DELTA["87"]["BackgroundColor3"] = Color3.fromRGB(36, 0, 0);
     DELTA["87"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["87"]["Image"] = [[rbxassetid://13387419794]];
+    DELTA["87"]["Image"] = getAsset[[13387419794]];
     DELTA["87"]["Size"] = UDim2.new(0.6566376686096191, 0, 0.9981886148452759, 0);
     DELTA["87"]["ClipsDescendants"] = true;
     DELTA["87"]["Name"] = [[Executor]];
@@ -2070,7 +2061,7 @@ local status, res1, res2 = pcall(function()
     -- StarterGui.Delta.Executor.Executor.Overlay
     DELTA["88"] = Instance.new("ImageLabel", DELTA["87"]);
     DELTA["88"]["BackgroundColor3"] = Color3.fromRGB(26, 27, 36);
-    DELTA["88"]["Image"] = [[rbxassetid://13387657138]];
+    DELTA["88"]["Image"] = getAsset[[13387657138]];
     DELTA["88"]["Size"] = UDim2.new(1, 0, 1, 0);
     DELTA["88"]["Name"] = [[Overlay]];
     DELTA["88"]["BackgroundTransparency"] = 0.800000011920929;
@@ -2085,7 +2076,7 @@ local status, res1, res2 = pcall(function()
     DELTA["8a"]["BorderSizePixel"] = 0;
     DELTA["8a"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 30);
     DELTA["8a"]["AnchorPoint"] = Vector2.new(1, 0);
-    DELTA["8a"]["Image"] = [[rbxassetid://0]];
+    --DELTA["8a"]["Image"] = getAsset[[0]];
     DELTA["8a"]["Size"] = UDim2.new(0.06392838805913925, 0, 0.08036314696073532, 0);
     DELTA["8a"]["Name"] = [[Menu]];
     DELTA["8a"]["Position"] = UDim2.new(0.9912378787994385, 0, 0.026684332638978958, 0);
@@ -2094,7 +2085,7 @@ local status, res1, res2 = pcall(function()
     DELTA["8b"] = Instance.new("ImageButton", DELTA["8a"]);
     DELTA["8b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["8b"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-    DELTA["8b"]["Image"] = [[rbxassetid://13387875723]];
+    DELTA["8b"]["Image"] = getAsset[[13387875723]];
     DELTA["8b"]["Size"] = UDim2.new(0.0789814367890358, 0, 0.4144761860370636, 0);
     DELTA["8b"]["Position"] = UDim2.new(0.5, 0, 0.5, 0);
     DELTA["8b"]["BackgroundTransparency"] = 1;
@@ -2125,7 +2116,7 @@ local status, res1, res2 = pcall(function()
     DELTA["90"] = Instance.new("ImageButton", DELTA["8e"]);
     DELTA["90"]["BackgroundColor3"] = Color3.fromRGB(59, 139, 254);
     DELTA["90"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["90"]["Image"] = [[rbxassetid://0]];
+    --DELTA["90"]["Image"] = getAsset[[0]];
     DELTA["90"]["Size"] = UDim2.new(0.8604854345321655, 0, 0.22047363221645355, 0);
     DELTA["90"]["Name"] = [[Option1]];
     DELTA["90"]["Position"] = UDim2.new(0.9302427172660828, 0, 0.276297390460968, 0);
@@ -2142,7 +2133,7 @@ local status, res1, res2 = pcall(function()
     DELTA["92"]["TextScaled"] = true;
     DELTA["92"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["92"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["92"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+    DELTA["92"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
     DELTA["92"]["TextSize"] = 14;
     DELTA["92"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["92"]["AnchorPoint"] = Vector2.new(0, 0.5);
@@ -2156,7 +2147,7 @@ local status, res1, res2 = pcall(function()
     DELTA["93"] = Instance.new("ImageButton", DELTA["90"]);
     DELTA["93"]["BackgroundColor3"] = Color3.fromRGB(59, 139, 254);
     DELTA["93"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["93"]["Image"] = [[rbxassetid://13441695981]];
+    DELTA["93"]["Image"] = getAsset[[13441695981]];
     DELTA["93"]["Size"] = UDim2.new(0.0812797099351883, 0, 0.5769613981246948, 0);
     DELTA["93"]["Name"] = [[Checked]];
     DELTA["93"]["Position"] = UDim2.new(1, 0, 0.5, 0);
@@ -2176,7 +2167,7 @@ local status, res1, res2 = pcall(function()
     DELTA["96"] = Instance.new("ImageButton", DELTA["8e"]);
     DELTA["96"]["BackgroundColor3"] = Color3.fromRGB(59, 139, 254);
     DELTA["96"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["96"]["Image"] = [[rbxassetid://0]];
+    --DELTA["96"]["Image"] = getAsset[[0]];
     DELTA["96"]["Size"] = UDim2.new(0.8604854345321655, 0, 0.22047372162342072, 0);
     DELTA["96"]["Name"] = [[Option2]];
     DELTA["96"]["Position"] = UDim2.new(0.9302427172660828, 0, 0.5364913940429688, 0);
@@ -2193,7 +2184,7 @@ local status, res1, res2 = pcall(function()
     DELTA["98"]["TextScaled"] = true;
     DELTA["98"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["98"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["98"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+    DELTA["98"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
     DELTA["98"]["TextSize"] = 14;
     DELTA["98"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["98"]["AnchorPoint"] = Vector2.new(0, 0.5);
@@ -2207,7 +2198,7 @@ local status, res1, res2 = pcall(function()
     DELTA["99"] = Instance.new("ImageButton", DELTA["96"]);
     DELTA["99"]["BackgroundColor3"] = Color3.fromRGB(59, 139, 254);
     DELTA["99"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["99"]["Image"] = [[rbxassetid://13441695981]];
+    DELTA["99"]["Image"] = getAsset[[13441695981]];
     DELTA["99"]["Size"] = UDim2.new(0.0812797099351883, 0, 0.5769613981246948, 0);
     DELTA["99"]["Name"] = [[Checked]];
     DELTA["99"]["Visible"] = false;
@@ -2228,7 +2219,7 @@ local status, res1, res2 = pcall(function()
     DELTA["9c"] = Instance.new("ImageButton", DELTA["8e"]);
     DELTA["9c"]["BackgroundColor3"] = Color3.fromRGB(59, 139, 254);
     DELTA["9c"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["9c"]["Image"] = [[rbxassetid://0]];
+    --DELTA["9c"]["Image"] = getAsset[[0]];
     DELTA["9c"]["Size"] = UDim2.new(0.8604854345321655, 0, 0.2204737514257431, 0);
     DELTA["9c"]["Name"] = [[Option3]];
     DELTA["9c"]["Position"] = UDim2.new(0.9302427172660828, 0, 0.7966850399971008, 0);
@@ -2245,7 +2236,7 @@ local status, res1, res2 = pcall(function()
     DELTA["9e"]["TextScaled"] = true;
     DELTA["9e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["9e"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["9e"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+    DELTA["9e"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
     DELTA["9e"]["TextSize"] = 14;
     DELTA["9e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["9e"]["AnchorPoint"] = Vector2.new(0, 0.5);
@@ -2259,7 +2250,7 @@ local status, res1, res2 = pcall(function()
     DELTA["9f"] = Instance.new("ImageButton", DELTA["9c"]);
     DELTA["9f"]["BackgroundColor3"] = Color3.fromRGB(59, 139, 254);
     DELTA["9f"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["9f"]["Image"] = [[rbxassetid://13441695981]];
+    DELTA["9f"]["Image"] = getAsset[[13441695981]];
     DELTA["9f"]["Size"] = UDim2.new(0.0812797099351883, 0, 0.5769613981246948, 0);
     DELTA["9f"]["Name"] = [[Checked]];
     DELTA["9f"]["Visible"] = false;
@@ -2315,7 +2306,7 @@ local status, res1, res2 = pcall(function()
     DELTA["a7"]["TextWrapped"] = true;
     DELTA["a7"]["TextScaled"] = true;
     DELTA["a7"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["a7"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["a7"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["a7"]["TextSize"] = 14;
     DELTA["a7"]["TextColor3"] = Color3.fromRGB(140, 206, 255);
     DELTA["a7"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -2351,7 +2342,7 @@ local status, res1, res2 = pcall(function()
     DELTA["ab"]["TextWrapped"] = true;
     DELTA["ab"]["TextScaled"] = true;
     DELTA["ab"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["ab"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["ab"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["ab"]["TextSize"] = 14;
     DELTA["ab"]["TextColor3"] = Color3.fromRGB(185, 211, 230);
     DELTA["ab"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -2387,7 +2378,7 @@ local status, res1, res2 = pcall(function()
     DELTA["af"]["TextWrapped"] = true;
     DELTA["af"]["TextScaled"] = true;
     DELTA["af"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["af"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["af"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["af"]["TextSize"] = 14;
     DELTA["af"]["TextColor3"] = Color3.fromRGB(185, 211, 230);
     DELTA["af"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -2421,7 +2412,7 @@ local status, res1, res2 = pcall(function()
     DELTA["b3"]["TextWrapped"] = true;
     DELTA["b3"]["BackgroundColor3"] = Color3.fromRGB(94, 136, 169);
     DELTA["b3"]["TextColor3"] = Color3.fromRGB(185, 211, 230);
-    DELTA["b3"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["b3"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["b3"]["LayoutOrder"] = 2;
     DELTA["b3"]["BackgroundTransparency"] = 0.9300000071525574;
     DELTA["b3"]["Size"] = UDim2.new(0.07424724847078323, 0, 0.699999988079071, 0);
@@ -2491,7 +2482,7 @@ local status, res1, res2 = pcall(function()
     DELTA["bb"]["AutoButtonColor"] = false;
     DELTA["bb"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["bb"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["bb"]["Image"] = [[rbxassetid://13387627918]];
+    DELTA["bb"]["Image"] = getAsset[[13387627918]];
     DELTA["bb"]["Size"] = UDim2.new(0.35981613397598267, 0, 0.3613884449005127, 0);
     DELTA["bb"]["Rotation"] = 45;
     DELTA["bb"]["Position"] = UDim2.new(0.699999988079071, 0, 0.5, 0);
@@ -2520,7 +2511,7 @@ local status, res1, res2 = pcall(function()
     DELTA["c0"]["TextYAlignment"] = Enum.TextYAlignment.Top;
     DELTA["c0"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["c0"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["c0"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
+    DELTA["c0"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
     DELTA["c0"]["ShowNativeInput"] = false;
     DELTA["c0"]["MultiLine"] = true;
     DELTA["c0"]["BackgroundTransparency"] = 1;
@@ -2551,7 +2542,7 @@ local status, res1, res2 = pcall(function()
     DELTA["c3"]["TextScaled"] = true;
     DELTA["c3"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["c3"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["c3"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["c3"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["c3"]["TextSize"] = 14;
     DELTA["c3"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["c3"]["AnchorPoint"] = Vector2.new(0, 0.5);
@@ -2572,7 +2563,7 @@ local status, res1, res2 = pcall(function()
     DELTA["c5"]["TextScaled"] = true;
     DELTA["c5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["c5"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["c5"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["c5"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["c5"]["TextSize"] = 14;
     DELTA["c5"]["TextColor3"] = Color3.fromRGB(126, 139, 176);
     DELTA["c5"]["AnchorPoint"] = Vector2.new(0, 0.5);
@@ -2586,7 +2577,7 @@ local status, res1, res2 = pcall(function()
     DELTA["c6"] = Instance.new("ImageButton", DELTA["c1"]);
     DELTA["c6"]["BackgroundColor3"] = Color3.fromRGB(59, 139, 254);
     DELTA["c6"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["c6"]["Image"] = [[rbxassetid://0]];
+    --DELTA["c6"]["Image"] = getAsset[[0]];
     DELTA["c6"]["Size"] = UDim2.new(0.06560052931308746, 0, 0.473985493183136, 0);
     DELTA["c6"]["Name"] = [[Switch]];
     DELTA["c6"]["Position"] = UDim2.new(1, 0, 0.5, 0);
@@ -2600,7 +2591,7 @@ local status, res1, res2 = pcall(function()
     DELTA["c8"]["BackgroundColor3"] = Color3.fromRGB(254, 254, 254);
     DELTA["c8"]["Selectable"] = true;
     DELTA["c8"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["c8"]["Image"] = [[rbxassetid://0]];
+    --DELTA["c8"]["Image"] = getAsset[[0]];
     DELTA["c8"]["Size"] = UDim2.new(0.34452590346336365, 0, 0.6585104465484619, 0);
     DELTA["c8"]["Active"] = true;
     DELTA["c8"]["Name"] = [[ImageButton]];
@@ -2637,7 +2628,7 @@ local status, res1, res2 = pcall(function()
     DELTA["ce"]["TextScaled"] = true;
     DELTA["ce"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["ce"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["ce"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["ce"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["ce"]["TextSize"] = 14;
     DELTA["ce"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["ce"]["AnchorPoint"] = Vector2.new(0, 0.5);
@@ -2658,7 +2649,7 @@ local status, res1, res2 = pcall(function()
     DELTA["d0"]["TextScaled"] = true;
     DELTA["d0"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["d0"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["d0"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["d0"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["d0"]["TextSize"] = 14;
     DELTA["d0"]["TextColor3"] = Color3.fromRGB(103, 109, 126);
     DELTA["d0"]["AnchorPoint"] = Vector2.new(0, 0.5);
@@ -2672,7 +2663,7 @@ local status, res1, res2 = pcall(function()
     DELTA["d1"] = Instance.new("ImageButton", DELTA["cc"]);
     DELTA["d1"]["BackgroundColor3"] = Color3.fromRGB(59, 139, 254);
     DELTA["d1"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["d1"]["Image"] = [[rbxassetid://0]];
+    --DELTA["d1"]["Image"] = getAsset[[0]];
     DELTA["d1"]["Size"] = UDim2.new(0.12388666719198227, 0, 0.473985493183136, 0);
     DELTA["d1"]["Name"] = [[Button]];
     DELTA["d1"]["Position"] = UDim2.new(0.9995027780532837, 0, 0.5000000596046448, 0);
@@ -2687,7 +2678,7 @@ local status, res1, res2 = pcall(function()
     DELTA["d3"]["ZIndex"] = 999999999;
     DELTA["d3"]["TextScaled"] = true;
     DELTA["d3"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["d3"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["d3"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["d3"]["TextSize"] = 14;
     DELTA["d3"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["d3"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -2716,7 +2707,7 @@ local status, res1, res2 = pcall(function()
     DELTA["d6"]["TextScaled"] = true;
     DELTA["d6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["d6"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["d6"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["d6"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["d6"]["TextSize"] = 14;
     DELTA["d6"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["d6"]["AnchorPoint"] = Vector2.new(0, 0.5);
@@ -2737,7 +2728,7 @@ local status, res1, res2 = pcall(function()
     DELTA["d8"]["TextScaled"] = true;
     DELTA["d8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["d8"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["d8"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["d8"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["d8"]["TextSize"] = 14;
     DELTA["d8"]["TextColor3"] = Color3.fromRGB(103, 109, 126);
     DELTA["d8"]["AnchorPoint"] = Vector2.new(0, 0.5);
@@ -2751,7 +2742,7 @@ local status, res1, res2 = pcall(function()
     DELTA["d9"] = Instance.new("ImageButton", DELTA["d4"]);
     DELTA["d9"]["BackgroundColor3"] = Color3.fromRGB(61, 66, 81);
     DELTA["d9"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["d9"]["Image"] = [[rbxassetid://0]];
+    --DELTA["d9"]["Image"] = getAsset[[0]];
     DELTA["d9"]["Size"] = UDim2.new(0.06560052931308746, 0, 0.473985493183136, 0);
     DELTA["d9"]["Name"] = [[Switch]];
     DELTA["d9"]["Position"] = UDim2.new(1, 0, 0.5, 0);
@@ -2765,7 +2756,7 @@ local status, res1, res2 = pcall(function()
     DELTA["db"]["BackgroundColor3"] = Color3.fromRGB(136, 140, 151);
     DELTA["db"]["Selectable"] = true;
     DELTA["db"]["AnchorPoint"] = Vector2.new(0, 0.5);
-    DELTA["db"]["Image"] = [[rbxassetid://0]];
+    --DELTA["db"]["Image"] = getAsset[[0]];
     DELTA["db"]["Size"] = UDim2.new(0.34452590346336365, 0, 0.6585104465484619, 0);
     DELTA["db"]["Active"] = true;
     DELTA["db"]["Name"] = [[ImageButton]];
@@ -2801,7 +2792,7 @@ local status, res1, res2 = pcall(function()
     DELTA["e1"]["TextScaled"] = true;
     DELTA["e1"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["e1"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["e1"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["e1"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["e1"]["TextSize"] = 14;
     DELTA["e1"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["e1"]["AnchorPoint"] = Vector2.new(0, 0.5);
@@ -2820,7 +2811,7 @@ local status, res1, res2 = pcall(function()
     DELTA["e3"] = Instance.new("ImageButton", DELTA["df"]);
     DELTA["e3"]["BackgroundColor3"] = Color3.fromRGB(38, 41, 50);
     DELTA["e3"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["e3"]["Image"] = [[rbxassetid://0]];
+    --DELTA["e3"]["Image"] = getAsset[[0]];
     DELTA["e3"]["Size"] = UDim2.new(0.12388666719198227, 0, 0.473985493183136, 0);
     DELTA["e3"]["Name"] = [[Button]];
     DELTA["e3"]["Position"] = UDim2.new(0.9995027780532837, 0, 0.5000000596046448, 0);
@@ -2836,7 +2827,7 @@ local status, res1, res2 = pcall(function()
     DELTA["e5"]["TextScaled"] = true;
     DELTA["e5"]["BackgroundColor3"] = Color3.fromRGB(38, 41, 50);
     DELTA["e5"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["e5"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["e5"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["e5"]["TextSize"] = 14;
     DELTA["e5"]["TextColor3"] = Color3.fromRGB(138, 146, 167);
     DELTA["e5"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -2850,7 +2841,7 @@ local status, res1, res2 = pcall(function()
     DELTA["e6"] = Instance.new("ImageButton", DELTA["e3"]);
     DELTA["e6"]["BackgroundColor3"] = Color3.fromRGB(59, 139, 254);
     DELTA["e6"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["e6"]["Image"] = [[rbxassetid://13441628967]];
+    DELTA["e6"]["Image"] = getAsset[[13441628967]];
     DELTA["e6"]["Size"] = UDim2.new(0.07741968333721161, 0, 0.473985493183136, 0);
     DELTA["e6"]["Name"] = [[Button]];
     DELTA["e6"]["Position"] = UDim2.new(1, 0, 0.5, 0);
@@ -2877,7 +2868,7 @@ local status, res1, res2 = pcall(function()
     DELTA["e9"]["BackgroundColor3"] = Color3.fromRGB(59, 139, 254);
     DELTA["e9"]["LayoutOrder"] = 1;
     DELTA["e9"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["e9"]["Image"] = [[rbxassetid://0]];
+    --DELTA["e9"]["Image"] = getAsset[[0]];
     DELTA["e9"]["Size"] = UDim2.new(0.8604854345321655, 0, 0.22047372162342072, 0);
     DELTA["e9"]["Name"] = [[Option2]];
     DELTA["e9"]["Position"] = UDim2.new(0.9302427172660828, 0, 0.5364913940429688, 0);
@@ -2894,7 +2885,7 @@ local status, res1, res2 = pcall(function()
     DELTA["eb"]["TextScaled"] = true;
     DELTA["eb"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["eb"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["eb"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+    DELTA["eb"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
     DELTA["eb"]["TextSize"] = 14;
     DELTA["eb"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["eb"]["AnchorPoint"] = Vector2.new(0, 0.5);
@@ -2908,7 +2899,7 @@ local status, res1, res2 = pcall(function()
     DELTA["ec"] = Instance.new("ImageButton", DELTA["e9"]);
     DELTA["ec"]["BackgroundColor3"] = Color3.fromRGB(59, 139, 254);
     DELTA["ec"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["ec"]["Image"] = [[rbxassetid://13441695981]];
+    DELTA["ec"]["Image"] = getAsset[[13441695981]];
     DELTA["ec"]["Size"] = UDim2.new(0.0812797099351883, 0, 0.5769613981246948, 0);
     DELTA["ec"]["Name"] = [[Checked]];
     DELTA["ec"]["Visible"] = false;
@@ -2935,7 +2926,7 @@ local status, res1, res2 = pcall(function()
     DELTA["f0"]["BackgroundColor3"] = Color3.fromRGB(59, 139, 254);
     DELTA["f0"]["LayoutOrder"] = -1;
     DELTA["f0"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["f0"]["Image"] = [[rbxassetid://0]];
+    --DELTA["f0"]["Image"] = getAsset[[0]];
     DELTA["f0"]["Size"] = UDim2.new(0.8604854345321655, 0, 0.22047363221645355, 0);
     DELTA["f0"]["Name"] = [[Option1]];
     DELTA["f0"]["Position"] = UDim2.new(0.9302427172660828, 0, 0.276297390460968, 0);
@@ -2952,7 +2943,7 @@ local status, res1, res2 = pcall(function()
     DELTA["f2"]["TextScaled"] = true;
     DELTA["f2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["f2"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["f2"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+    DELTA["f2"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
     DELTA["f2"]["TextSize"] = 14;
     DELTA["f2"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["f2"]["AnchorPoint"] = Vector2.new(0, 0.5);
@@ -2966,7 +2957,7 @@ local status, res1, res2 = pcall(function()
     DELTA["f3"] = Instance.new("ImageButton", DELTA["f0"]);
     DELTA["f3"]["BackgroundColor3"] = Color3.fromRGB(59, 139, 254);
     DELTA["f3"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["f3"]["Image"] = [[rbxassetid://13441695981]];
+    DELTA["f3"]["Image"] = getAsset[[13441695981]];
     DELTA["f3"]["Size"] = UDim2.new(0.0812797099351883, 0, 0.5769613981246948, 0);
     DELTA["f3"]["Name"] = [[Checked]];
     DELTA["f3"]["Position"] = UDim2.new(1, 0, 0.5, 0);
@@ -2987,7 +2978,7 @@ local status, res1, res2 = pcall(function()
     DELTA["f6"]["BackgroundColor3"] = Color3.fromRGB(59, 139, 254);
     DELTA["f6"]["LayoutOrder"] = 3;
     DELTA["f6"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["f6"]["Image"] = [[rbxassetid://0]];
+    --DELTA["f6"]["Image"] = getAsset[[0]];
     DELTA["f6"]["Size"] = UDim2.new(0.8604854345321655, 0, 0.2204737514257431, 0);
     DELTA["f6"]["Name"] = [[Option3]];
     DELTA["f6"]["Position"] = UDim2.new(0.9302427172660828, 0, 0.7966850399971008, 0);
@@ -3004,7 +2995,7 @@ local status, res1, res2 = pcall(function()
     DELTA["f8"]["TextScaled"] = true;
     DELTA["f8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["f8"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["f8"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+    DELTA["f8"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
     DELTA["f8"]["TextSize"] = 14;
     DELTA["f8"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["f8"]["AnchorPoint"] = Vector2.new(0, 0.5);
@@ -3018,7 +3009,7 @@ local status, res1, res2 = pcall(function()
     DELTA["f9"] = Instance.new("ImageButton", DELTA["f6"]);
     DELTA["f9"]["BackgroundColor3"] = Color3.fromRGB(59, 139, 254);
     DELTA["f9"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["f9"]["Image"] = [[rbxassetid://13441695981]];
+    DELTA["f9"]["Image"] = getAsset[[13441695981]];
     DELTA["f9"]["Size"] = UDim2.new(0.0812797099351883, 0, 0.5769613981246948, 0);
     DELTA["f9"]["Name"] = [[Checked]];
     DELTA["f9"]["Visible"] = false;
@@ -3034,7 +3025,7 @@ local status, res1, res2 = pcall(function()
     DELTA["fb"]["TextScaled"] = true;
     DELTA["fb"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["fb"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["fb"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["fb"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["fb"]["TextSize"] = 14;
     DELTA["fb"]["TextColor3"] = Color3.fromRGB(103, 109, 126);
     DELTA["fb"]["AnchorPoint"] = Vector2.new(0, 0.5);
@@ -3063,7 +3054,7 @@ local status, res1, res2 = pcall(function()
     DELTA["fe"]["TextScaled"] = true;
     DELTA["fe"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["fe"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["fe"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["fe"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["fe"]["TextSize"] = 14;
     DELTA["fe"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["fe"]["AnchorPoint"] = Vector2.new(0, 0.5);
@@ -3084,7 +3075,7 @@ local status, res1, res2 = pcall(function()
     DELTA["100"]["TextScaled"] = true;
     DELTA["100"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["100"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["100"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["100"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["100"]["TextSize"] = 14;
     DELTA["100"]["TextColor3"] = Color3.fromRGB(103, 109, 126);
     DELTA["100"]["AnchorPoint"] = Vector2.new(0, 0.5);
@@ -3103,7 +3094,7 @@ local status, res1, res2 = pcall(function()
     DELTA["101"]["TextScaled"] = true;
     DELTA["101"]["BackgroundColor3"] = Color3.fromRGB(31, 37, 47);
     DELTA["101"]["TextColor3"] = Color3.fromRGB(162, 191, 212);
-    DELTA["101"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["101"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["101"]["AnchorPoint"] = Vector2.new(0, 1);
     DELTA["101"]["PlaceholderText"] = [[Input]];
     DELTA["101"]["Size"] = UDim2.new(0.19835805892944336, 0, 0.4205845594406128, 0);
@@ -3145,7 +3136,7 @@ local status, res1, res2 = pcall(function()
     DELTA["106"]["TextScaled"] = true;
     DELTA["106"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["106"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["106"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
+    DELTA["106"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
     DELTA["106"]["TextTransparency"] = 0.30000001192092896;
     DELTA["106"]["TextSize"] = 14;
     DELTA["106"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
@@ -3160,7 +3151,7 @@ local status, res1, res2 = pcall(function()
     DELTA["107"] = Instance.new("ImageButton", DELTA["104"]);
     DELTA["107"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["107"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["107"]["Image"] = [[rbxassetid://13387627918]];
+    DELTA["107"]["Image"] = getAsset[[13387627918]];
     DELTA["107"]["Size"] = UDim2.new(0.06472493708133698, 0, 0.19327585399150848, 0);
     DELTA["107"]["Position"] = UDim2.new(0.9190940260887146, 0, 0.49999985098838806, 0);
     DELTA["107"]["BackgroundTransparency"] = 1;
@@ -3188,7 +3179,7 @@ local status, res1, res2 = pcall(function()
     DELTA["10b"]["TextScaled"] = true;
     DELTA["10b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["10b"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["10b"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["10b"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["10b"]["TextSize"] = 14;
     DELTA["10b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["10b"]["AnchorPoint"] = Vector2.new(0, 0.5);
@@ -3207,7 +3198,7 @@ local status, res1, res2 = pcall(function()
     DELTA["10d"] = Instance.new("ImageButton", DELTA["109"]);
     DELTA["10d"]["BackgroundColor3"] = Color3.fromRGB(59, 64, 79);
     DELTA["10d"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["10d"]["Image"] = [[rbxassetid://0]];
+    --DELTA["10d"]["Image"] = getAsset[[0]];
     DELTA["10d"]["Size"] = UDim2.new(0.09953451156616211, 0, 0.473985493183136, 0);
     DELTA["10d"]["Name"] = [[Button]];
     DELTA["10d"]["Position"] = UDim2.new(1.0157949924468994, 0, 0.5000000596046448, 0);
@@ -3222,7 +3213,7 @@ local status, res1, res2 = pcall(function()
     DELTA["10f"]["ZIndex"] = 999999999;
     DELTA["10f"]["TextScaled"] = true;
     DELTA["10f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["10f"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["10f"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["10f"]["TextSize"] = 14;
     DELTA["10f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["10f"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -3236,7 +3227,7 @@ local status, res1, res2 = pcall(function()
     DELTA["10da"] = Instance.new("ImageButton", DELTA["109"]);
     DELTA["10da"]["BackgroundColor3"] = Color3.fromRGB(59, 64, 79);
     DELTA["10da"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["10da"]["Image"] = [[rbxassetid://0]];
+    --DELTA["10da"]["Image"] = getAsset[[0]];
     DELTA["10da"]["Size"] = UDim2.new(0.09953451156616211, 0, 0.473985493183136, 0);
     DELTA["10da"]["Name"] = [[Button1]];
     DELTA["10da"]["Position"] = UDim2.new(0.9, 0, 0.5000000596046448, 0);
@@ -3251,7 +3242,7 @@ local status, res1, res2 = pcall(function()
     DELTA["10fa"]["ZIndex"] = 999999999;
     DELTA["10fa"]["TextScaled"] = true;
     DELTA["10fa"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["10fa"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["10fa"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["10fa"]["TextSize"] = 14;
     DELTA["10fa"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["10fa"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -3277,7 +3268,7 @@ local status, res1, res2 = pcall(function()
     DELTA["112"]["TextWrapped"] = true;
     DELTA["112"]["TextScaled"] = true;
     DELTA["112"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["112"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["112"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["112"]["TextSize"] = 14;
     DELTA["112"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["112"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -3324,7 +3315,7 @@ local status, res1, res2 = pcall(function()
     DELTA["116"]["ScaleType"] = Enum.ScaleType.Crop;
     DELTA["116"]["BackgroundColor3"] = Color3.fromRGB(36, 0, 0);
     DELTA["116"]["AnchorPoint"] = Vector2.new(0, 0.5);
-    DELTA["116"]["Image"] = [[rbxassetid://0]];
+    --DELTA["116"]["Image"] = getAsset[[0]];
     DELTA["116"]["Size"] = UDim2.new(0.3273969292640686, 0, 0.9993020296096802, 0);
     DELTA["116"]["ClipsDescendants"] = true;
     DELTA["116"]["Name"] = [[Sidemenu]];
@@ -3334,7 +3325,7 @@ local status, res1, res2 = pcall(function()
     -- StarterGui.Delta.Executor.Sidemenu.Script
     DELTA["117"] = Instance.new("ImageLabel", DELTA["116"]);
     DELTA["117"]["BackgroundColor3"] = Color3.fromRGB(26, 27, 36);
-    DELTA["117"]["Image"] = [[rbxassetid://0]];
+    --DELTA["117"]["Image"] = getAsset[[0]];
     DELTA["117"]["Size"] = UDim2.new(1.0000001192092896, 0, 0.4340279698371887, 0);
     DELTA["117"]["ClipsDescendants"] = true;
     DELTA["117"]["Name"] = [[Script]];
@@ -3374,7 +3365,7 @@ local status, res1, res2 = pcall(function()
     DELTA["11c"]["TextScaled"] = true;
     DELTA["11c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["11c"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["11c"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["11c"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["11c"]["TextSize"] = 14;
     DELTA["11c"]["TextColor3"] = Color3.fromRGB(190, 206, 232);
     DELTA["11c"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -3410,7 +3401,7 @@ local status, res1, res2 = pcall(function()
     DELTA["120"]["TextScaled"] = true;
     DELTA["120"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["120"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["120"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
+    DELTA["120"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
     DELTA["120"]["TextSize"] = 14;
     DELTA["120"]["TextColor3"] = Color3.fromRGB(190, 206, 232);
     DELTA["120"]["AnchorPoint"] = Vector2.new(0.5, 0);
@@ -3428,7 +3419,7 @@ local status, res1, res2 = pcall(function()
     DELTA["121"]["TextScaled"] = true;
     DELTA["121"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["121"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["121"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+    DELTA["121"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
     DELTA["121"]["TextSize"] = 14;
     DELTA["121"]["TextColor3"] = Color3.fromRGB(157, 162, 199);
     DELTA["121"]["AnchorPoint"] = Vector2.new(0.5, 1);
@@ -3448,7 +3439,7 @@ local status, res1, res2 = pcall(function()
     DELTA["123"] = Instance.new("ImageLabel", DELTA["116"]);
     DELTA["123"]["ZIndex"] = 99999;
     DELTA["123"]["BackgroundColor3"] = Color3.fromRGB(26, 27, 36);
-    DELTA["123"]["Image"] = [[rbxassetid://0]];
+    --DELTA["123"]["Image"] = getAsset[[0]];
     DELTA["123"]["Size"] = UDim2.new(1.0000001192092896, 0, 0.3936704099178314, 0);
     DELTA["123"]["ClipsDescendants"] = true;
     DELTA["123"]["Name"] = [[Network]];
@@ -3494,7 +3485,7 @@ local status, res1, res2 = pcall(function()
     DELTA["129"]["TextScaled"] = true;
     DELTA["129"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["129"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["129"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
+    DELTA["129"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Medium, Enum.FontStyle.Normal);
     DELTA["129"]["TextSize"] = 14;
     DELTA["129"]["TextColor3"] = Color3.fromRGB(157, 162, 199);
     DELTA["129"]["AnchorPoint"] = Vector2.new(0.5, 1);
@@ -3510,7 +3501,7 @@ local status, res1, res2 = pcall(function()
     DELTA["12a"]["TextScaled"] = true;
     DELTA["12a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["12a"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["12a"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["12a"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["12a"]["TextSize"] = 14;
     DELTA["12a"]["TextColor3"] = Color3.fromRGB(190, 206, 232);
     DELTA["12a"]["AnchorPoint"] = Vector2.new(0.5, 0);
@@ -3546,7 +3537,7 @@ local status, res1, res2 = pcall(function()
     DELTA["12e"]["RichText"] = true;
     DELTA["12e"]["TextScaled"] = true;
     DELTA["12e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["12e"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
+    DELTA["12e"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
     DELTA["12e"]["TextSize"] = 14;
     DELTA["12e"]["TextColor3"] = Color3.fromRGB(157, 162, 199);
     DELTA["12e"]["AnchorPoint"] = Vector2.new(0.5, 1);
@@ -3562,7 +3553,7 @@ local status, res1, res2 = pcall(function()
     DELTA["12f"]["RichText"] = true;
     DELTA["12f"]["TextScaled"] = true;
     DELTA["12f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["12f"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
+    DELTA["12f"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
     DELTA["12f"]["TextSize"] = 14;
     DELTA["12f"]["TextColor3"] = Color3.fromRGB(157, 162, 199);
     DELTA["12f"]["AnchorPoint"] = Vector2.new(0.5, 1);
@@ -3579,7 +3570,7 @@ local status, res1, res2 = pcall(function()
     DELTA["130"]["RichText"] = true;
     DELTA["130"]["TextScaled"] = true;
     DELTA["130"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["130"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
+    DELTA["130"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
     DELTA["130"]["TextSize"] = 14;
     DELTA["130"]["TextColor3"] = Color3.fromRGB(157, 162, 199);
     DELTA["130"]["AnchorPoint"] = Vector2.new(0.5, 1);
@@ -3632,7 +3623,7 @@ local status, res1, res2 = pcall(function()
     DELTA["137"] = Instance.new("ImageLabel", DELTA["135"]);
     DELTA["137"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["137"]["AnchorPoint"] = Vector2.new(0, 0.5);
-    DELTA["137"]["Image"] = [[rbxassetid://13365156882]];
+    DELTA["137"]["Image"] = getAsset[[13365156882]];
     DELTA["137"]["Size"] = UDim2.new(0.025552265346050262, 0, 0.40771156549453735, 0);
     DELTA["137"]["BackgroundTransparency"] = 1;
     DELTA["137"]["Position"] = UDim2.new(0.01834862306714058, 0, 0.5, 0);
@@ -3649,7 +3640,7 @@ local status, res1, res2 = pcall(function()
     DELTA["139"]["TextScaled"] = true;
     DELTA["139"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["139"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["139"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+    DELTA["139"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
     DELTA["139"]["AnchorPoint"] = Vector2.new(0, 0.5);
     DELTA["139"]["BackgroundTransparency"] = 1;
     DELTA["139"]["PlaceholderText"] = [[Search for scripts...]];
@@ -3664,7 +3655,7 @@ local status, res1, res2 = pcall(function()
     DELTA["13a"]["ZIndex"] = 999999999;
     DELTA["13a"]["BackgroundColor3"] = Color3.fromRGB(59, 139, 254);
     DELTA["13a"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["13a"]["Image"] = [[rbxassetid://0]];
+    --DELTA["13a"]["Image"] = getAsset[[0]];
     DELTA["13a"]["Size"] = UDim2.new(0.08857108652591705, 0, 0.572917103767395, 0);
     DELTA["13a"]["Name"] = [[Button]];
     DELTA["13a"]["Position"] = UDim2.new(0.982576847076416, 0, 0.4999999701976776, 0);
@@ -3679,7 +3670,7 @@ local status, res1, res2 = pcall(function()
     DELTA["13c"]["ZIndex"] = 999999999;
     DELTA["13c"]["TextScaled"] = true;
     DELTA["13c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["13c"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["13c"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["13c"]["TextSize"] = 14;
     DELTA["13c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["13c"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -3726,7 +3717,7 @@ local status, res1, res2 = pcall(function()
     DELTA["141"]["TextScaled"] = true;
     DELTA["141"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["141"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["141"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["141"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["141"]["TextSize"] = 14;
     DELTA["141"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["141"]["AnchorPoint"] = Vector2.new(0, 0.5);
@@ -3745,7 +3736,7 @@ local status, res1, res2 = pcall(function()
     DELTA["143"] = Instance.new("ImageButton", DELTA["13f"]);
     DELTA["143"]["BackgroundColor3"] = Color3.fromRGB(59, 64, 79);
     DELTA["143"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["143"]["Image"] = [[rbxassetid://0]];
+    --DELTA["143"]["Image"] = getAsset[[0]];
     DELTA["143"]["Size"] = UDim2.new(0.09953451156616211, 0, 0.473985493183136, 0);
     DELTA["143"]["Name"] = [[Button]];
     DELTA["143"]["Position"] = UDim2.new(1.0157949924468994, 0, 0.5000000596046448, 0);
@@ -3760,7 +3751,7 @@ local status, res1, res2 = pcall(function()
     DELTA["145"]["ZIndex"] = 999999999;
     DELTA["145"]["TextScaled"] = true;
     DELTA["145"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["145"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["145"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["145"]["TextSize"] = 14;
     DELTA["145"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["145"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -3786,7 +3777,7 @@ local status, res1, res2 = pcall(function()
     DELTA["148"]["TextWrapped"] = true;
     DELTA["148"]["TextScaled"] = true;
     DELTA["148"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["148"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["148"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["148"]["TextSize"] = 14;
     DELTA["148"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["148"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -3838,7 +3829,7 @@ local status, res1, res2 = pcall(function()
     DELTA["14d"]["TextScaled"] = true;
     DELTA["14d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["14d"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["14d"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["14d"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["14d"]["TextSize"] = 14;
     DELTA["14d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["14d"]["AnchorPoint"] = Vector2.new(0.5, 0);
@@ -3855,7 +3846,7 @@ local status, res1, res2 = pcall(function()
     DELTA["14e"]["TextScaled"] = true;
     DELTA["14e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["14e"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["14e"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+    DELTA["14e"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
     DELTA["14e"]["TextSize"] = 14;
     DELTA["14e"]["TextColor3"] = Color3.fromRGB(161, 167, 182);
     DELTA["14e"]["AnchorPoint"] = Vector2.new(0.5, 1);
@@ -3874,7 +3865,7 @@ local status, res1, res2 = pcall(function()
     DELTA["150"]["ZIndex"] = 999999999;
     DELTA["150"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["150"]["AnchorPoint"] = Vector2.new(1, 0.5);
-    DELTA["150"]["Image"] = [[rbxassetid://13363121645]];
+    DELTA["150"]["Image"] = getAsset[[13363121645]];
     DELTA["150"]["Size"] = UDim2.new(0.04585733264684677, 0, 0.04716602712869644, 0);
     DELTA["150"]["Name"] = [[Close]];
     DELTA["150"]["Position"] = UDim2.new(0.8981863260269165, 0, 0.15145258605480194, 0);
@@ -3907,7 +3898,7 @@ local status, res1, res2 = pcall(function()
     DELTA["155"]["TextScaled"] = true;
     DELTA["155"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["155"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["155"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
+    DELTA["155"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
     DELTA["155"]["TextSize"] = 14;
     DELTA["155"]["TextColor3"] = Color3.fromRGB(129, 143, 164);
     DELTA["155"]["Size"] = UDim2.new(0.9756902456283569, 0, 0.29466089606285095, 0);
@@ -3925,7 +3916,7 @@ local status, res1, res2 = pcall(function()
     DELTA["156"]["TextScaled"] = true;
     DELTA["156"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["156"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["156"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+    DELTA["156"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
     DELTA["156"]["BackgroundTransparency"] = 1;
     DELTA["156"]["Size"] = UDim2.new(0.9756902456283569, 0, 0.3262626826763153, 0);
     DELTA["156"]["Selectable"] = false;
@@ -3957,7 +3948,7 @@ local status, res1, res2 = pcall(function()
     DELTA["15a"]["TextScaled"] = true;
     DELTA["15a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["15a"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["15a"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
+    DELTA["15a"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
     DELTA["15a"]["TextSize"] = 14;
     DELTA["15a"]["TextColor3"] = Color3.fromRGB(129, 143, 164);
     DELTA["15a"]["Size"] = UDim2.new(0.9756902456283569, 0, 0.29466089606285095, 0);
@@ -3976,7 +3967,7 @@ local status, res1, res2 = pcall(function()
     DELTA["15b"]["TextScaled"] = true;
     DELTA["15b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["15b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["15b"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+    DELTA["15b"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
     DELTA["15b"]["BackgroundTransparency"] = 1;
     DELTA["15b"]["Size"] = UDim2.new(0.9756902456283569, 0, 0.3262626528739929, 0);
     DELTA["15b"]["Selectable"] = false;
@@ -3989,7 +3980,7 @@ local status, res1, res2 = pcall(function()
     DELTA["15c"]["ZIndex"] = 999999999;
     DELTA["15c"]["BackgroundColor3"] = Color3.fromRGB(59, 139, 254);
     DELTA["15c"]["AnchorPoint"] = Vector2.new(0.5, 1);
-    DELTA["15c"]["Image"] = [[rbxassetid://0]];
+    --DELTA["15c"]["Image"] = getAsset[[0]];
     DELTA["15c"]["Size"] = UDim2.new(0.8161376714706421, 0, 0.10715237259864807, 0);
     DELTA["15c"]["Name"] = [[Add]];
     DELTA["15c"]["Position"] = UDim2.new(0.4954189956188202, 0, 0.888956606388092, 0);
@@ -4004,7 +3995,7 @@ local status, res1, res2 = pcall(function()
     DELTA["15e"]["ZIndex"] = 999999999;
     DELTA["15e"]["TextScaled"] = true;
     DELTA["15e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["15e"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["15e"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["15e"]["TextSize"] = 14;
     DELTA["15e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["15e"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -4086,7 +4077,7 @@ local status, res1, res2 = pcall(function()
     DELTA["168"]["ZIndex"] = 999999999;
     DELTA["168"]["TextScaled"] = true;
     DELTA["168"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["168"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["168"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["168"]["TextSize"] = 14;
     DELTA["168"]["TextColor3"] = Color3.fromRGB(140, 206, 255);
     DELTA["168"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -4163,7 +4154,7 @@ local status, res1, res2 = pcall(function()
     DELTA["171"]["TextScaled"] = true;
     DELTA["171"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["171"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["171"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["171"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["171"]["TextSize"] = 14;
     DELTA["171"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["171"]["AnchorPoint"] = Vector2.new(0.5, 0);
@@ -4180,7 +4171,7 @@ local status, res1, res2 = pcall(function()
     DELTA["172"]["TextScaled"] = true;
     DELTA["172"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["172"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["172"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+    DELTA["172"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
     DELTA["172"]["TextSize"] = 14;
     DELTA["172"]["TextColor3"] = Color3.fromRGB(161, 167, 182);
     DELTA["172"]["AnchorPoint"] = Vector2.new(0.5, 1);
@@ -4198,7 +4189,7 @@ local status, res1, res2 = pcall(function()
     DELTA["173"]["TextScaled"] = true;
     DELTA["173"]["BackgroundColor3"] = Color3.fromRGB(60, 137, 196);
     DELTA["173"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["173"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+    DELTA["173"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
     DELTA["173"]["BackgroundTransparency"] = 0.8899999856948853;
     DELTA["173"]["Size"] = UDim2.new(0.3225496709346771, 0, 0.025502502918243408, 0);
     DELTA["173"]["Selectable"] = false;
@@ -4222,7 +4213,7 @@ local status, res1, res2 = pcall(function()
     DELTA["176"]["ZIndex"] = 999999999;
     DELTA["176"]["TextScaled"] = true;
     DELTA["176"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["176"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["176"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["176"]["TextSize"] = 14;
     DELTA["176"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["176"]["AnchorPoint"] = Vector2.new(0.5, 0);
@@ -4262,7 +4253,7 @@ local status, res1, res2 = pcall(function()
     DELTA["17c"]["RichText"] = true;
     DELTA["17c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["17c"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["17c"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+    DELTA["17c"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
     DELTA["17c"]["TextSize"] = 14;
     DELTA["17c"]["TextColor3"] = Color3.fromRGB(221, 42, 45);
     DELTA["17c"]["AutomaticSize"] = Enum.AutomaticSize.Y;
@@ -4287,7 +4278,7 @@ local status, res1, res2 = pcall(function()
     DELTA["17e"]["RichText"] = true;
     DELTA["17e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["17e"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["17e"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+    DELTA["17e"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
     DELTA["17e"]["TextSize"] = 14;
     DELTA["17e"]["TextColor3"] = Color3.fromRGB(210, 221, 0);
     DELTA["17e"]["AutomaticSize"] = Enum.AutomaticSize.Y;
@@ -4312,7 +4303,7 @@ local status, res1, res2 = pcall(function()
     DELTA["180"]["RichText"] = true;
     DELTA["180"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["180"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["180"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+    DELTA["180"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
     DELTA["180"]["TextSize"] = 14;
     DELTA["180"]["TextColor3"] = Color3.fromRGB(221, 221, 221);
     DELTA["180"]["AutomaticSize"] = Enum.AutomaticSize.Y;
@@ -4337,7 +4328,7 @@ local status, res1, res2 = pcall(function()
     DELTA["182"]["RichText"] = true;
     DELTA["182"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["182"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["182"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+    DELTA["182"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
     DELTA["182"]["TextSize"] = 14;
     DELTA["182"]["TextColor3"] = Color3.fromRGB(0, 118, 221);
     DELTA["182"]["AutomaticSize"] = Enum.AutomaticSize.Y;
@@ -4362,7 +4353,7 @@ local status, res1, res2 = pcall(function()
     DELTA["184"]["RichText"] = true;
     DELTA["184"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["184"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["184"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+    DELTA["184"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
     DELTA["184"]["TextSize"] = 16;
     DELTA["184"]["TextColor3"] = Color3.fromRGB(221, 221, 221);
     DELTA["184"]["AutomaticSize"] = Enum.AutomaticSize.Y;
@@ -4381,7 +4372,7 @@ local status, res1, res2 = pcall(function()
     DELTA["185"]["TextWrapped"] = true;
     DELTA["185"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["185"]["TextColor3"] = Color3.fromRGB(221, 221, 221);
-    DELTA["185"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+    DELTA["185"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
     DELTA["185"]["MultiLine"] = true;
     DELTA["185"]["BackgroundTransparency"] = 1;
     DELTA["185"]["Size"] = UDim2.new(0.9676616787910461, 0, 1, 0);
@@ -4438,7 +4429,7 @@ local status, res1, res2 = pcall(function()
     DELTA["18b"]["ZIndex"] = 999999999;
     DELTA["18b"]["TextScaled"] = true;
     DELTA["18b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["18b"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["18b"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["18b"]["TextSize"] = 14;
     DELTA["18b"]["TextColor3"] = Color3.fromRGB(140, 206, 255);
     DELTA["18b"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
@@ -4515,7 +4506,7 @@ local status, res1, res2 = pcall(function()
     DELTA["194"]["TextScaled"] = true;
     DELTA["194"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["194"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["194"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["194"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["194"]["TextSize"] = 14;
     DELTA["194"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["194"]["AnchorPoint"] = Vector2.new(0.5, 0);
@@ -4532,7 +4523,7 @@ local status, res1, res2 = pcall(function()
     DELTA["195"]["TextScaled"] = true;
     DELTA["195"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["195"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-    DELTA["195"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+    DELTA["195"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
     DELTA["195"]["TextSize"] = 14;
     DELTA["195"]["TextColor3"] = Color3.fromRGB(161, 167, 182);
     DELTA["195"]["AnchorPoint"] = Vector2.new(0.5, 1);
@@ -4550,7 +4541,7 @@ local status, res1, res2 = pcall(function()
     DELTA["196"]["TextScaled"] = true;
     DELTA["196"]["BackgroundColor3"] = Color3.fromRGB(60, 137, 196);
     DELTA["196"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["196"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+    DELTA["196"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
     DELTA["196"]["BackgroundTransparency"] = 0.8899999856948853;
     DELTA["196"]["Size"] = UDim2.new(0.3225496709346771, 0, 0.025502502918243408, 0);
     DELTA["196"]["Selectable"] = false;
@@ -4574,7 +4565,7 @@ local status, res1, res2 = pcall(function()
     DELTA["199"]["ZIndex"] = 999999999;
     DELTA["199"]["TextScaled"] = true;
     DELTA["199"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    DELTA["199"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    DELTA["199"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     DELTA["199"]["TextSize"] = 14;
     DELTA["199"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
     DELTA["199"]["AnchorPoint"] = Vector2.new(0.5, 0);
@@ -5038,8 +5029,8 @@ local status, res1, res2 = pcall(function()
 
                 newscript.Button1.MouseButton1Click:Connect(function()
                     newscript:Destroy()
-                    if isfile("d_android_script_dir/" .. title) then
-                        delfile("d_android_script_dir/" .. title)
+                    if isfile("d_ios_script_dir/" .. title) then
+                        delfile("d_ios_script_dir/" .. title)
                     end
                 end)
             end
@@ -5108,11 +5099,10 @@ local status, res1, res2 = pcall(function()
             end
 
             -- run_script([[if not Drawing then game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/drawing_lib.lua") end]])
-            run_script(
-                game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))()
 
             if (not isfile("disableautoexec")) then
-                runautoexec()
+                _runautoexec()
             end
         end
         local visiblelists = {}
@@ -5377,7 +5367,7 @@ local status, res1, res2 = pcall(function()
         end)
         btns.Button3.MouseButton1Click:Connect(function()
             lib.SavedScripts:Add(lib:GetSelectedScriptTitle(), lib:GetSelectedScript())
-            writefile("d_android_script_dir/" .. lib:GetSelectedScriptTitle(), lib:GetSelectedScript())
+            writefile("d_ios_script_dir/" .. lib:GetSelectedScriptTitle(), lib:GetSelectedScript())
 
             if (not isfile("preventautoclose")) then
                 btns.Parent.Visible = false
@@ -5578,7 +5568,7 @@ local status, res1, res2 = pcall(function()
             end
         end)
         btns.ExecuteClipboard.MouseButton1Click:Connect(function()
-            executeclipboard()
+            _executeclipboard()
         end)
     end
     task.spawn(C_b2);
@@ -5599,7 +5589,7 @@ local status, res1, res2 = pcall(function()
         getgenv().is_iy = false
 
         ScriptSuggestion.Overlay.Holder.Showcase.MouseButton1Click:Connect(function()
-            print("showcase clicked")
+            --print("showcase clicked")
             loadstring(game:HttpGet(
                 "https://gist.githubusercontent.com/lxnnydev/c533c374ca4c1dcef4e1e10e33fa4a0c/raw/03e74f184f801dad77d3ebe1e2f18c6ac87ca612/delta___IY.gistfile1.txt.lua",
                 true))()
@@ -6118,8 +6108,8 @@ local status, res1, res2 = pcall(function()
             "loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))()", "Featured")
 
         -- Get all scripts and load em' (make sure Built-In scripts first otherwise Built-In scripts gonna under thr saved scripts) --nvm this shit
-        for _, file in ipairs(listfiles("d_android_script_dir")) do
-            UILib.SavedScripts:Add(file:sub(22, #file), readfile(file))
+        for _, file in ipairs(listfiles("d_ios_script_dir")) do
+            UILib.SavedScripts:Add(file:sub(18, #file), readfile(file))
         end
 
         ------------------------ Expose the modules as global env for plugins. -----------------------------------------getgenv().delta = {}
@@ -6188,7 +6178,7 @@ end--]]
         script.Parent.Home.Popup.Add.MouseButton1Click:Connect(function()
             UILib.SavedScripts:Add(script.Parent.Home.Popup.Title.TextBox.Text,
                 script.Parent.Home.Popup.Source.TextBox.Text)
-            writefile("d_android_script_dir/" .. script.Parent.Home.Popup.Title.TextBox.Text,
+            writefile("d_ios_script_dir/" .. script.Parent.Home.Popup.Title.TextBox.Text,
                 script.Parent.Home.Popup.Source.TextBox.Text)
 
             if (not isfile("preventautoclose")) then
@@ -6251,7 +6241,7 @@ end--]]
     LOADER["3"].BorderSizePixel = 0;
     LOADER["3"].ScaleType = Enum.ScaleType.Crop;
     LOADER["3"].BackgroundColor3 = Color3.fromRGB(255, 255, 255);
-    LOADER["3"].Image = "rbxassetid://13387419794";
+    LOADER["3"].Image = getAsset"13387419794";
     LOADER["3"].LayoutOrder = 10;
     LOADER["3"].Size = UDim2.new(0.32863849401474, 0, 0.31259891390800476, 0);
     LOADER["3"].BorderColor3 = Color3.fromRGB(0, 0, 0);
@@ -6272,7 +6262,7 @@ end--]]
     -- LOADERLoadingScreen.MainFrame.Overlay
     LOADER["5"] = Instance.new("ImageLabel", LOADER["3"]);
     LOADER["5"]["BackgroundColor3"] = Color3.fromRGB(26, 27, 36);
-    LOADER["5"]["Image"] = [[rbxassetid://13387657138]];
+    LOADER["5"]["Image"] = getAsset[[13387657138]];
     LOADER["5"]["LayoutOrder"] = 10;
     LOADER["5"]["Size"] = UDim2.new(1, 0, 1, 0);
     LOADER["5"]["Name"] = [[Overlay]];
@@ -6287,7 +6277,7 @@ end--]]
     LOADER["7"]["TextWrapped"] = true;
     LOADER["7"]["TextScaled"] = true;
     LOADER["7"]["BackgroundColor3"] = Color3.fromRGB(118, 192, 255);
-    LOADER["7"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+    LOADER["7"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
     LOADER["7"]["TextSize"] = 14;
     LOADER["7"]["TextColor3"] = Color3.fromRGB(203, 244, 255);
     LOADER["7"]["AnchorPoint"] = Vector2.new(0, 0.5);
@@ -6302,7 +6292,7 @@ end--]]
     LOADER["8"]["TextWrapped"] = true;
     LOADER["8"]["TextScaled"] = true;
     LOADER["8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-    LOADER["8"]["FontFace"] = Font.new([[rbxassetid://11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+    LOADER["8"]["FontFace"] = Font.new(getAsset[[11702779517]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
     LOADER["8"]["TextSize"] = 14;
     LOADER["8"]["TextColor3"] = Color3.fromRGB(199, 220, 255);
     LOADER["8"]["AnchorPoint"] = Vector2.new(0, 0.5);
@@ -6329,7 +6319,7 @@ end--]]
     LOADER["a"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
     LOADER["a"]["ImageTransparency"] = 0.699999988079071;
     LOADER["a"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-    LOADER["a"]["Image"] = [[rbxassetid://6014261993]];
+    LOADER["a"]["Image"] = getAsset[[6014261993]];
     LOADER["a"]["Size"] = UDim2.new(1, 47, 1, 47);
     LOADER["a"]["Name"] = [[DropShadow]];
     LOADER["a"]["BackgroundTransparency"] = 1;
@@ -6465,23 +6455,25 @@ end--]]
             return true
         end
 
-        return false
+	return false
     end
 
     coroutine.wrap(function()
-        -- print("starting up")
-        local bool = checkkey()
+        local status, err = pcall(function()         
+            local bool = checkkey()
+            -- This is being ran when no saved key is found
+            if not bool then
+                -- print("no valid key")
+                task.wait(1)
+                getgenv().rLib:End()
+                DELTA["1"].Enabled = true
+                StartUp()
+            else
+                DELTA["1"].Enabled = true
+            end
+        end)
 
-        -- This is being ran when no saved key is found
-        if not bool then
-            -- print("no valid key")
-            wait(1)
-            getgenv().rLib:End()
-            DELTA["1"].Enabled = true
-            StartUp()
-        else
-            DELTA["1"].Enabled = true
-        end
+        if not status then warn("Delta coroutine errored: " .. err) end
     end)()
 
     return DELTA["1"], require;

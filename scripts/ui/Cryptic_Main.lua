@@ -1,14 +1,12 @@
 secure({
     ["message"] = "The script you just ran poses a risk to your account. Please verify the place you get scripts from next time.",
-    ["urls"] = {"darkscripts.space", "tobi437a"}
+    ["urls"] = {"darkscripts.space"}
 })
 
 local _executeclipboard = clonefunction(executeclipboard)
-local _runautoexec = clonefunction(runautoexec)
 local _run_script = clonefunction(run_script)
 
 getgenv().executeclipboard = nil
-getgenv().runautoexec = nil
 getgenv().run_script = nil
 getgenv().secure = nil
 
@@ -289,6 +287,7 @@ local Cryptic = {
 	UICorner_63 = Instance.new("UICorner"),
 	UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint"),
 }
+
 Cryptic.Cryptic.Name = "Cryptic"
 Cryptic.Cryptic.Parent = gethui()
 Cryptic.Cryptic.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -606,7 +605,7 @@ Cryptic.Subtitle.Position = UDim2.new(0.50333333, 0, 0.0842593834, 0)
 Cryptic.Subtitle.Size = UDim2.new(0.0922835767, 0, 0.0253632143, 0)
 Cryptic.Subtitle.ZIndex = 3
 Cryptic.Subtitle.Font = Enum.Font.SourceSansItalic
-Cryptic.Subtitle.Text = "Version: 2.654.474"
+Cryptic.Subtitle.Text = "Version: 2.420.696"
 Cryptic.Subtitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 Cryptic.Subtitle.TextScaled = true
 Cryptic.Subtitle.TextSize = 14.000

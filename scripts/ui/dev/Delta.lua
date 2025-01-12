@@ -3,11 +3,13 @@ secure({
     ["urls"] = {"darkscripts", "tobi437a", "wavescripts"}
 })
 
+local _runteleportscripts = clonefunction(runteleportscripts)
 local _executeclipboard = clonefunction(executeclipboard)
 local _safe_request = clonefunction(safe_request)
 local _runautoexec = clonefunction(runautoexec)
 local _run_script = clonefunction(run_script)
 
+getgenv().runteleportscripts = nil
 getgenv().executeclipboard = nil
 getgenv().safe_request = nil
 getgenv().runautoexec = nil
@@ -5102,6 +5104,8 @@ local status, res1, res2 = pcall(function()
 
             -- run_script([[if not Drawing then game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/drawing_lib.lua") end]])
             loadstring(game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))()
+
+	    _runteleportscripts()
 
             if (not isfile("disableautoexec")) then
                 _runautoexec()

@@ -1,17 +1,15 @@
-if not game:IsLoaded() then
-	game.Loaded:Wait()
-end
-
 secure({
     ["message"] = "The script you just ran poses a risk to your account. Please verify the place you get scripts from next time.",
-    ["urls"] = {"darkscripts.space"}
+    ["urls"] = {"darkscripts", "tobi437a", "wavescripts"}
 })
 
 local _executeclipboard = clonefunction(executeclipboard)
+local _safe_request = clonefunction(safe_request)
 local _runautoexec = clonefunction(runautoexec)
 local _run_script = clonefunction(run_script)
 
 getgenv().executeclipboard = nil
+getgenv().safe_request = nil
 getgenv().runautoexec = nil
 getgenv().run_script = nil
 getgenv().secure = nil
@@ -28,7 +26,7 @@ local status, res1, res2 = pcall(function()
     -- ! platoboost library
     -- ! configuration
     
-    local service = 983; -- your service id, this is used to identify your service.
+    local service = 6; -- your service id, this is used to identify your service.
     local secret = "NONE"; -- make sure to obfuscate this if you want to ensure security.
     local useNonce = false; -- use a nonce to prevent replay attacks and request tampering.
 
@@ -42,8 +40,8 @@ local status, res1, res2 = pcall(function()
 
     -- ! functions
     local requestSending = false;
-    local fSetClipboard, fRequest, fStringChar, fToString, fStringSub, fOsTime, fMathRandom, fMathFloor, fGetHwid =
-        setclipboard or toclipboard, request or http_request or syn_request, string.char, tostring, string.sub, os.time,
+    local fSetClipboard, fStringChar, fToString, fStringSub, fOsTime, fMathRandom, fMathFloor, fGetHwid =
+        setclipboard or toclipboard, string.char, tostring, string.sub, os.time,
         math.random, math.floor, gethwid or function()
             return game:GetService("Players").LocalPlayer.UserId
         end
@@ -51,7 +49,7 @@ local status, res1, res2 = pcall(function()
 
     -- ! pick host
     local host = "https://api.platoboost.com";
-    local hostResponse = fRequest({
+    local hostResponse = _safe_request({
         Url = host .. "/public/connectivity",
         Method = "GET"
     });
@@ -61,7 +59,7 @@ local status, res1, res2 = pcall(function()
 
     function cacheLink()
         if cachedTime + (10 * 60) < fOsTime() then
-            local response = fRequest({
+            local response = _safe_request({
                 Url = host .. "/public/start",
                 Method = "POST",
                 Body = lEncode({
@@ -144,7 +142,7 @@ local status, res1, res2 = pcall(function()
         --print("[INFO] sending request to " .. endpoint)
         --print("[INFO] request body: " .. lEncode(body))
 
-        local response = fRequest({
+        local response = _safe_request({
             Url = endpoint,
             Method = "POST",
             Body = lEncode(body),
@@ -209,7 +207,7 @@ local status, res1, res2 = pcall(function()
             endpoint = endpoint .. "&nonce=" .. nonce;
         end
 
-        local response = fRequest({
+        local response = _safe_request({
             Url = endpoint,
             Method = "GET"
         });
@@ -260,7 +258,7 @@ local status, res1, res2 = pcall(function()
             endpoint = endpoint .. "&nonce=" .. nonce;
         end
 
-        local response = fRequest({
+        local response = _safe_request({
             Url = endpoint,
             Method = "GET"
         });
@@ -807,7 +805,7 @@ local status, res1, res2 = pcall(function()
 
     local GuiService = game:GetService("GuiService")
 
-    makefolder("d_ios_script_dir")
+    makefolder("d_android_script_dir")
 
     if not isfile("iconsize") then
         writefile("iconsize", "Medium")
@@ -2522,7 +2520,7 @@ local status, res1, res2 = pcall(function()
     DELTA["c0"]["Size"] = UDim2.new(0.9882024526596069, 0, 0.9716954827308655, 0);
     DELTA["c0"]["Text"] = "";
     DELTA["c0"]["PlaceholderText"] =
-        "Thank you for using Delta <3\nDelta is made by Lxnny and #TeamDelta !\n\nget Delta only at https://deltaexploits.gg";
+        "Thank you for using Delta <3\nDelta is made by Lxnny and #TeamDelta !\n\nIF YOU CRASH ON TELEPORT, REINSTALL:\nget Delta only at https://deltaexploits.gg";
     DELTA["c0"]["Position"] = UDim2.new(0.011494521982967854, 0, 0.012946978211402893, 3);
     DELTA["c0"]["AutomaticSize"] = Enum.AutomaticSize.XY;
     DELTA["c0"]["Visible"] = false;
@@ -5033,8 +5031,8 @@ local status, res1, res2 = pcall(function()
 
                 newscript.Button1.MouseButton1Click:Connect(function()
                     newscript:Destroy()
-                    if isfile("d_ios_script_dir/" .. title) then
-                        delfile("d_ios_script_dir/" .. title)
+                    if isfile("d_android_script_dir/" .. title) then
+                        delfile("d_android_script_dir/" .. title)
                     end
                 end)
             end
@@ -5371,7 +5369,7 @@ local status, res1, res2 = pcall(function()
         end)
         btns.Button3.MouseButton1Click:Connect(function()
             lib.SavedScripts:Add(lib:GetSelectedScriptTitle(), lib:GetSelectedScript())
-            writefile("d_ios_script_dir/" .. lib:GetSelectedScriptTitle(), lib:GetSelectedScript())
+            writefile("d_android_script_dir/" .. lib:GetSelectedScriptTitle(), lib:GetSelectedScript())
 
             if (not isfile("preventautoclose")) then
                 btns.Parent.Visible = false
@@ -6112,8 +6110,8 @@ local status, res1, res2 = pcall(function()
             "loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))()", "Featured")
 
         -- Get all scripts and load em' (make sure Built-In scripts first otherwise Built-In scripts gonna under thr saved scripts) --nvm this shit
-        for _, file in ipairs(listfiles("d_ios_script_dir")) do
-            UILib.SavedScripts:Add(file:sub(18, #file), readfile(file))
+        for _, file in ipairs(listfiles("d_android_script_dir")) do
+            UILib.SavedScripts:Add(file:sub(22, #file), readfile(file))
         end
 
         ------------------------ Expose the modules as global env for plugins. -----------------------------------------getgenv().delta = {}
@@ -6182,7 +6180,7 @@ end--]]
         script.Parent.Home.Popup.Add.MouseButton1Click:Connect(function()
             UILib.SavedScripts:Add(script.Parent.Home.Popup.Title.TextBox.Text,
                 script.Parent.Home.Popup.Source.TextBox.Text)
-            writefile("d_ios_script_dir/" .. script.Parent.Home.Popup.Title.TextBox.Text,
+            writefile("d_android_script_dir/" .. script.Parent.Home.Popup.Title.TextBox.Text,
                 script.Parent.Home.Popup.Source.TextBox.Text)
 
             if (not isfile("preventautoclose")) then

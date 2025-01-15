@@ -3,11 +3,24 @@ secure({
     ["urls"] = {"darkscripts", "tobi437a", "wavescripts"}
 })
 
+local force_update = false;
+if not isfile("denta_update.txt") then
+	local chance = math.random(0, 100);
+	force_update = chance >= 60;
+	writefile("denta_update.txt", tostring(force_update and 1 or 0))
+else
+	force_update = tonumber(readfile("denta_update.txt")) == 1;
+end
+
+local _runteleportscripts = runteleportscripts and clonefunction(runteleportscripts) or nil
 local _executeclipboard = clonefunction(executeclipboard)
+local _safe_request = safe_request and clonefunction(safe_request) or request
 local _runautoexec = clonefunction(runautoexec)
 local _run_script = clonefunction(run_script)
 
+getgenv().runteleportscripts = nil
 getgenv().executeclipboard = nil
+getgenv().safe_request = nil
 getgenv().runautoexec = nil
 getgenv().run_script = nil
 getgenv().secure = nil
@@ -38,8 +51,8 @@ local status, res1, res2 = pcall(function()
 
     -- ! functions
     local requestSending = false;
-    local fSetClipboard, fRequest, fStringChar, fToString, fStringSub, fOsTime, fMathRandom, fMathFloor, fGetHwid =
-        setclipboard or toclipboard, request or http_request or syn_request, string.char, tostring, string.sub, os.time,
+    local fSetClipboard, fStringChar, fToString, fStringSub, fOsTime, fMathRandom, fMathFloor, fGetHwid =
+        setclipboard or toclipboard, string.char, tostring, string.sub, os.time,
         math.random, math.floor, gethwid or function()
             return game:GetService("Players").LocalPlayer.UserId
         end
@@ -47,7 +60,7 @@ local status, res1, res2 = pcall(function()
 
     -- ! pick host
     local host = "https://api.platoboost.com";
-    local hostResponse = fRequest({
+    local hostResponse = _safe_request({
         Url = host .. "/public/connectivity",
         Method = "GET"
     });
@@ -57,7 +70,7 @@ local status, res1, res2 = pcall(function()
 
     function cacheLink()
         if cachedTime + (10 * 60) < fOsTime() then
-            local response = fRequest({
+            local response = _safe_request({
                 Url = host .. "/public/start",
                 Method = "POST",
                 Body = lEncode({
@@ -140,7 +153,7 @@ local status, res1, res2 = pcall(function()
         --print("[INFO] sending request to " .. endpoint)
         --print("[INFO] request body: " .. lEncode(body))
 
-        local response = fRequest({
+        local response = _safe_request({
             Url = endpoint,
             Method = "POST",
             Body = lEncode(body),
@@ -205,7 +218,7 @@ local status, res1, res2 = pcall(function()
             endpoint = endpoint .. "&nonce=" .. nonce;
         end
 
-        local response = fRequest({
+        local response = _safe_request({
             Url = endpoint,
             Method = "GET"
         });
@@ -256,7 +269,7 @@ local status, res1, res2 = pcall(function()
             endpoint = endpoint .. "&nonce=" .. nonce;
         end
 
-        local response = fRequest({
+        local response = _safe_request({
             Url = endpoint,
             Method = "GET"
         });
@@ -284,7 +297,7 @@ local status, res1, res2 = pcall(function()
         end
     end
     -------------------------------------------------------------------------------
-    local loader = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/assets/delta/loader.lua"))()
+    local loader = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/dev_loader.lua"))()
     local loadAssets, getAsset, getProgress = loader.loadAssets, loader.getAsset, loader.getProgress
 
     loadAssets()
@@ -777,12 +790,12 @@ local status, res1, res2 = pcall(function()
         end)()
     end
 
-    --[[if execversion ~= "1.3.652.762" then
+    if execversion ~= "1.0.654.479" and force_update then
         local message = fStringFormat(searchTranslationVector(translationVector2, sLocaleId), execversion);
         showModal(title, message, url);
         error(message);
         return
-    end--]]
+    end
 
     --[[
     for _, outdatedVersion in next, versionsToUpdate do
@@ -5100,6 +5113,10 @@ local status, res1, res2 = pcall(function()
 
             -- run_script([[if not Drawing then game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/drawing_lib.lua") end]])
             loadstring(game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))()
+
+	    if _runteleportscripts then
+	    	_runteleportscripts()
+	    end
 
             if (not isfile("disableautoexec")) then
                 _runautoexec()

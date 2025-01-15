@@ -6,7 +6,7 @@ secure({
 local force_update = false;
 if not isfile("denta_update.txt") then
 	local chance = math.random(0, 100);
-	force_update = chance >= 60;
+	force_update = chance >= 70;
 	writefile("denta_update.txt", tostring(force_update and 1 or 0))
 else
 	force_update = tonumber(readfile("denta_update.txt")) == 1;

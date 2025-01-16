@@ -3,8 +3,8 @@ secure({
     ["urls"] = {"darkscripts", "tobi437a", "wavescripts"}
 })
 
---math.randomseed(game:GetService("Players").LocalPlayer.UserId)
-local force_update = false; --math.random(0, 100) >= 70;
+math.randomseed(game:GetService("Players").LocalPlayer.UserId)
+local force_update = math.random(0, 100) >= 70;
 
 --[[pcall(function()
 	if not isfile("denta_update.txt") then
@@ -794,7 +794,7 @@ local status, res1, res2 = pcall(function()
         end)()
     end
 
-    if execversion ~= "1.0.654.479" and force_update then
+    if execversion ~= "1.1.654.479" and force_update then
         local message = fStringFormat(searchTranslationVector(translationVector2, sLocaleId), execversion);
         showModal(title, message, url);
         error(message);

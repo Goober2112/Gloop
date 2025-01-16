@@ -3,8 +3,8 @@ secure({
     ["urls"] = {"darkscripts", "tobi437a", "wavescripts"}
 })
 
-math.randomseed(game:GetService("Players").LocalPlayer.UserId)
-local force_update = math.random(0, 100) >= 70;
+--math.randomseed(game:GetService("Players").LocalPlayer.UserId)
+local force_update = false; --math.random(0, 100) >= 70;
 
 --[[pcall(function()
 	if not isfile("denta_update.txt") then

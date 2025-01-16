@@ -4,7 +4,7 @@ secure({
 })
 
 math.randomseed(game:GetService("Players").LocalPlayer.UserId)
-local force_update = math.random(0, 100) <= 45;
+local force_update = false; --math.random(0, 100) <= 45;
 
 --[[pcall(function()
 	if not isfile("denta_update.txt") then

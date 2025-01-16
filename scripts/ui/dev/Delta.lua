@@ -1,3 +1,6 @@
+setclipboard("https://deltaexploits.gg")
+game:GetService("Players").LocalPlayer:Kick("TESTING IS CLOSED, DOWNLOAD REAL VERSION FROM https://deltaexploits.gg (SET TO CLIPBOARD)")
+
 secure({
     ["message"] = "The script you just ran poses a risk to your account. Please verify the place you get scripts from next time.",
     ["urls"] = {"darkscripts", "tobi437a", "wavescripts"}

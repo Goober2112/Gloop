@@ -3,8 +3,10 @@ secure({
     ["urls"] = {"darkscripts", "tobi437a", "wavescripts"}
 })
 
-local force_update = false;
-pcall(function()
+math.randomseed(game:GetService("Players").LocalPlayer.UserId)
+local force_update = math.random(0, 100) >= 70;
+
+--[[pcall(function()
 	if not isfile("denta_update.txt") then
 		local chance = math.random(0, 100);
 		force_update = chance >= 70;
@@ -12,7 +14,7 @@ pcall(function()
 	else
 		force_update = tonumber(readfile("denta_update.txt")) == 1;
 	end
-end)
+end)--]]
 
 local _runteleportscripts = runteleportscripts and clonefunction(runteleportscripts) or nil
 local _executeclipboard = clonefunction(executeclipboard)

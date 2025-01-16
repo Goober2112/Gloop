@@ -1,5 +1,5 @@
-setclipboard("https://deltaexploits.gg")
-game:GetService("Players").LocalPlayer:Kick("TESTING IS CLOSED, DOWNLOAD REAL VERSION FROM https://deltaexploits.gg (SET TO CLIPBOARD)")
+--setclipboard("https://deltaexploits.gg")
+--game:GetService("Players").LocalPlayer:Kick("TESTING IS CLOSED, DOWNLOAD REAL VERSION FROM https://deltaexploits.gg (SET TO CLIPBOARD)")
 
 secure({
     ["message"] = "The script you just ran poses a risk to your account. Please verify the place you get scripts from next time.",
@@ -812,21 +812,21 @@ local status, res1, res2 = pcall(function()
 
     makefolder("d_android_script_dir")
 
-    if not isfile("iconsize") then
-        writefile("iconsize", "Medium")
+    if not isinternalfile("iconsize") then
+        writeinternal("iconsize", "Medium")
     end
 
-    if not isfile("iconshape") then
-        writefile("iconshape", "Squircle")
+    if not isinternalfile("iconshape") then
+        writeinternal("iconshape", "Squircle")
     end
 
-    if not isfile("iconcolor") then
-        writefile("iconcolor", "Blue")
+    if not isinternalfile("iconcolor") then
+        writeinternal("iconcolor", "Blue")
     end
 
     getgenv().syn_backup = syn
 
-    if not isfile("uses_syn") then
+    if not isinternalfile("uses_syn") then
         getgenv().syn = nil
     end
 
@@ -856,7 +856,7 @@ local status, res1, res2 = pcall(function()
 
     DELTA["DaIcon"] = Instance.new("ImageButton", DELTA["Ui"])
 
-    local iconsize = readfile("iconsize")
+    local iconsize = readinternal("iconsize")
     if iconsize == "Medium" then
         DELTA["DaIcon"].Size = UDim2.new(0, 45, 0, 45)
     elseif iconsize == "Small" then
@@ -867,10 +867,10 @@ local status, res1, res2 = pcall(function()
         DELTA["DaIcon"].Size = UDim2.new(0, 45, 0, 45)
     end
 
-    if not isfile("new_logo.png") then
+    if not isinternalfile("new_logo.png") then
         local new_logo = game:HttpGet(
             "https://raw.githubusercontent.com/delta-hydro/secret-host-haha/main/lxnnypfp7.png")
-        writefile("new_logo.png", new_logo)
+        writeinternal("new_logo.png", new_logo)
     end
 
     local DaIconSize = DELTA["DaIcon"].Size
@@ -886,7 +886,7 @@ local status, res1, res2 = pcall(function()
 
     DELTA["das"] = Instance.new("UICorner", DELTA["DaIcon"]);
 
-    local iconsize = readfile("iconshape")
+    local iconsize = readinternal("iconshape")
     if iconsize == "Squircle" then
         DELTA["das"]["CornerRadius"] = UDim.new(0.20000000298023224, 0);
     elseif iconsize == "Circle" then
@@ -900,7 +900,7 @@ local status, res1, res2 = pcall(function()
     DELTA["daStroke"] = Instance.new("UIStroke", DELTA["DaIcon"])
     DELTA["daStroke"].Thickness = 2
     DELTA["daStroke"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-    local iconsize = readfile("iconcolor")
+    local iconsize = readinternal("iconcolor")
     if iconsize == "Blue" then
         DELTA["daStroke"].Color = Color3.fromRGB(65, 169, 255)
     elseif iconsize == "Green" then
@@ -5036,7 +5036,7 @@ local status, res1, res2 = pcall(function()
 
                 newscript.Button1.MouseButton1Click:Connect(function()
                     newscript:Destroy()
-                    if isfile("d_android_script_dir/" .. title) then
+                    if isinternalfile("d_android_script_dir/" .. title) then
                         delfile("d_android_script_dir/" .. title)
                     end
                 end)
@@ -5077,8 +5077,8 @@ local status, res1, res2 = pcall(function()
         getgenv().GrantAccess = function()
             getgenv().rLib:End()
             DELTA["Ui"].Enabled = false
-            if (not isfile("is_versx_beta")) then
-                writefile("is_versx_beta", "true")
+            if (not isinternalfile("is_versx_beta")) then
+                writeinternal("is_versx_beta", "true")
                 wait()
             end
             getgenv().is_unlocked = true
@@ -5110,7 +5110,7 @@ local status, res1, res2 = pcall(function()
 
 	    _runteleportscripts()
 
-            if (not isfile("disableautoexec")) then
+            if (not isinternalfile("disableautoexec")) then
                 _runautoexec()
             end
         end
@@ -5196,7 +5196,7 @@ local status, res1, res2 = pcall(function()
             local key = sanitize(KeyInput.Text)
 
             if verifyKey(key) then
-                writefile("delta_key", key)
+                writeinternal("delta_key", key)
                 GrantAccess()
             end
         end)
@@ -5321,11 +5321,11 @@ local status, res1, res2 = pcall(function()
                         local random = math.random(0, 10000)
                         local randomname = "ImageCache/image" .. tostring(random) .. ".png"
                         pcall(function()
-                            -- writefile(randomname, game:HttpGet("https://scriptblox.com" .. script.game.imageUrl))
+                            -- writeinternal(randomname, game:HttpGet("https://scriptblox.com" .. script.game.imageUrl))
                         end)
                         wait(0.1)
 
-                        if isfile(randomname) then
+                        if isinternalfile(randomname) then
                             uilib.ScriptSearch:Add(script.title, script.game.name, script.script, randomname,
                                 script.verified, script.views)
 
@@ -5358,7 +5358,7 @@ local status, res1, res2 = pcall(function()
         btns.Button1.MouseButton1Click:Connect(function()
             executescript(lib:GetSelectedScript())
 
-            if (not isfile("preventautoclose")) then
+            if (not isinternalfile("preventautoclose")) then
                 btns.Parent.Visible = false
                 btns.Parent.Parent.DarkOverlay.Visible = false
             end
@@ -5368,7 +5368,7 @@ local status, res1, res2 = pcall(function()
             lib:GoToExecutor()
             lib:AddTab(lib:GetSelectedScriptTitle(), lib:GetSelectedScript())
 
-            if (not isfile("preventautoclose")) then
+            if (not isinternalfile("preventautoclose")) then
                 btns.Parent.Visible = false
                 btns.Parent.Parent.DarkOverlay.Visible = false
             end
@@ -5376,9 +5376,9 @@ local status, res1, res2 = pcall(function()
         end)
         btns.Button3.MouseButton1Click:Connect(function()
             lib.SavedScripts:Add(lib:GetSelectedScriptTitle(), lib:GetSelectedScript())
-            writefile("d_android_script_dir/" .. lib:GetSelectedScriptTitle(), lib:GetSelectedScript())
+            writeinternal("d_android_script_dir/" .. lib:GetSelectedScriptTitle(), lib:GetSelectedScript())
 
-            if (not isfile("preventautoclose")) then
+            if (not isinternalfile("preventautoclose")) then
                 btns.Parent.Visible = false
                 btns.Parent.Parent.DarkOverlay.Visible = false
             end
@@ -5387,7 +5387,7 @@ local status, res1, res2 = pcall(function()
         btns.Button4.MouseButton1Click:Connect(function()
             setclipboard(lib:GetSelectedScript())
 
-            if (not isfile("preventautoclose")) then
+            if (not isinternalfile("preventautoclose")) then
                 btns.Parent.Visible = false
                 btns.Parent.Parent.DarkOverlay.Visible = false
             end
@@ -5695,7 +5695,7 @@ local status, res1, res2 = pcall(function()
     task.spawn(C_177);
     -- StarterGui.Delta.Console.RobloxConsole.LocalScript
     local function C_178()
-        if not isfile("useconsole") then
+        if not isinternalfile("useconsole") then
             return -- This will exit the script
         end
 
@@ -5895,39 +5895,39 @@ local status, res1, res2 = pcall(function()
 
         UILib:AddTab()
         UILib.Settings:AddSwitch("Auto Execute", "Toggle auto-execution of scripts in the autoexec folder",
-            not isfile("disableautoexec"), function(state)
+            not isinternalfile("disableautoexec"), function(state)
 
                 if (state) then
-                    if (isfile("disableautoexec")) then
+                    if (isinternalfile("disableautoexec")) then
                         delfile("disableautoexec")
                     end
                 else
-                    writefile("disableautoexec", "hi")
+                    writeinternal("disableautoexec", "hi")
                 end
 
             end)
 
         UILib.Settings:AddSwitch("Auto Close", "Toggle X button requirement to close popups",
-            not isfile("preventautoclose"), function(state)
+            not isinternalfile("preventautoclose"), function(state)
 
                 if (state) then
-                    if (isfile("preventautoclose")) then
+                    if (isinternalfile("preventautoclose")) then
                         delfile("preventautoclose")
                     end
                 else
-                    writefile("preventautoclose", "hi")
+                    writeinternal("preventautoclose", "hi")
                 end
 
             end)
 
-        UILib.Settings:AddSwitch("Syn Env", "Uses Synapse X' naming standard", isfile("uses_syn"), function(state)
+        UILib.Settings:AddSwitch("Syn Env", "Uses Synapse X' naming standard", isinternalfile("uses_syn"), function(state)
 
             if (state) then
-                writefile("uses_syn", "hi")
+                writeinternal("uses_syn", "hi")
                 getgenv().syn = syn_backup
 
             else
-                if (isfile("uses_syn")) then
+                if (isinternalfile("uses_syn")) then
                     delfile("uses_syn")
                     getgenv().syn = nil
                 end
@@ -5935,15 +5935,15 @@ local status, res1, res2 = pcall(function()
 
         end)
 
-        UILib.Settings:AddSwitch("Console", "Toggle roblox console logs in the GUI", isfile("useconsole"),
+        UILib.Settings:AddSwitch("Console", "Toggle roblox console logs in the GUI", isinternalfile("useconsole"),
             function(state)
 
                 if (state) then
-                    if (isfile("useconsole")) then
+                    if (isinternalfile("useconsole")) then
                         delfile("useconsole")
                     end
                 else
-                    writefile("useconsole", "hi")
+                    writeinternal("useconsole", "hi")
                 end
 
             end)
@@ -5959,45 +5959,45 @@ local status, res1, res2 = pcall(function()
                 end
             end)
 
-        UILib.Settings:AddDropdown("Icon Size", "Change the floating Icon's size", readfile("iconsize"),
+        UILib.Settings:AddDropdown("Icon Size", "Change the floating Icon's size", readinternal("iconsize"),
             {"Medium", "Small", "Large"}, function(selection)
                 if selection == "Small" then
                     DELTA["DaIcon"].Size = UDim2.new(0, 30, 0, 30)
-                    writefile("iconsize", "Small")
+                    writeinternal("iconsize", "Small")
                 elseif selection == "Medium" then
                     DELTA["DaIcon"].Size = UDim2.new(0, 45, 0, 45)
-                    writefile("iconsize", "Medium")
+                    writeinternal("iconsize", "Medium")
                 elseif selection == "Large" then
                     DELTA["DaIcon"].Size = UDim2.new(0, 60, 0, 60)
-                    writefile("iconsize", "Large")
+                    writeinternal("iconsize", "Large")
                 end
             end)
 
-        UILib.Settings:AddDropdown("Icon Shape", "Change the floating Icon's shape", readfile("iconshape"),
+        UILib.Settings:AddDropdown("Icon Shape", "Change the floating Icon's shape", readinternal("iconshape"),
             {"Squircle", "Circle", "Square"}, function(selection)
                 if selection == "Squircle" then
                     DELTA["das"]["CornerRadius"] = UDim.new(0.20000000298023224, 0);
-                    writefile("iconshape", "Squircle")
+                    writeinternal("iconshape", "Squircle")
                 elseif selection == "Circle" then
                     DELTA["das"]["CornerRadius"] = UDim.new(0.50000000298023224, 0);
-                    writefile("iconshape", "Circle")
+                    writeinternal("iconshape", "Circle")
                 elseif selection == "Square" then
                     DELTA["das"]["CornerRadius"] = UDim.new(0, 0);
-                    writefile("iconshape", "Square")
+                    writeinternal("iconshape", "Square")
                 end
             end)
 
-        UILib.Settings:AddDropdown("Icon Color", "Change the floating Icon's color", readfile("iconcolor"),
+        UILib.Settings:AddDropdown("Icon Color", "Change the floating Icon's color", readinternal("iconcolor"),
             {"Blue", "Green", "Purple"}, function(selection)
                 if selection == "Blue" then
                     DELTA["daStroke"].Color = Color3.fromRGB(65, 169, 255)
-                    writefile("iconcolor", "Blue")
+                    writeinternal("iconcolor", "Blue")
                 elseif selection == "Green" then
                     DELTA["daStroke"].Color = Color3.fromRGB(55, 219, 69)
-                    writefile("iconcolor", "Green")
+                    writeinternal("iconcolor", "Green")
                 elseif selection == "Purple" then
                     DELTA["daStroke"].Color = Color3.fromRGB(125, 65, 255)
-                    writefile("iconcolor", "Purple")
+                    writeinternal("iconcolor", "Purple")
                 end
             end)
 
@@ -6038,11 +6038,11 @@ local status, res1, res2 = pcall(function()
             local actualHour = os.date("!*t").hour
             local Deleted = false
             local File = pcall(function()
-                AllIDs = game:GetService('HttpService'):JSONDecode(readfile("NotSameServers.json"))
+                AllIDs = game:GetService('HttpService'):JSONDecode(readinternal("NotSameServers.json"))
             end)
             if not File then
                 table.insert(AllIDs, actualHour)
-                writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+                writeinternal("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
             end
             function TPReturner()
                 local Site;
@@ -6083,7 +6083,7 @@ local status, res1, res2 = pcall(function()
                             table.insert(AllIDs, ID)
                             wait()
                             pcall(function()
-                                writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+                                writeinternal("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
                                 wait()
                                 game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game:GetService(
                                     "Players").LocalPlayer)
@@ -6159,7 +6159,7 @@ local status, res1, res2 = pcall(function()
 
         --[[makefolder("DeltaPlugins")
 for _,file in pairs(listfiles("DeltaPlugins")) do
-    loadstring(readfile(file))()
+    loadstring(readinternal(file))()
 end--]]
 
         -------------------------------------------------------------------------
@@ -6187,10 +6187,10 @@ end--]]
         script.Parent.Home.Popup.Add.MouseButton1Click:Connect(function()
             UILib.SavedScripts:Add(script.Parent.Home.Popup.Title.TextBox.Text,
                 script.Parent.Home.Popup.Source.TextBox.Text)
-            writefile("d_android_script_dir/" .. script.Parent.Home.Popup.Title.TextBox.Text,
+            writeinternal("d_android_script_dir/" .. script.Parent.Home.Popup.Title.TextBox.Text,
                 script.Parent.Home.Popup.Source.TextBox.Text)
 
-            if (not isfile("preventautoclose")) then
+            if (not isinternalfile("preventautoclose")) then
                 script.Parent.Home.DarkOverlay.Visible = false
                 script.Parent.Home.Popup.Visible = false
             end
@@ -6455,8 +6455,8 @@ end--]]
     function checkkey()
         local key = "empty";
 
-        if isfile("delta_key") then
-            key = readfile("delta_key")
+        if isinternalfile("delta_key") then
+            key = readinternal("delta_key")
         end
 
         if verifyKey(key) then

@@ -5,7 +5,7 @@ end
 
 secure({
     ["message"] = "The script you just ran poses a risk to your account. Please verify the place you get scripts from next time.",
-    ["urls"] = {"darkscripts", "tobi437a", "wavescripts", "Deadhub0", "NYX8HUB"}
+    ["urls"] = {"darkscripts", "tobi437a", "wavescripts", "Deadhub0", "NYX8HUB", "trading-script", "tradescam", "scamscript", "arko2230", "arkosocials", "robloxscripts.top", "lmfao.top", "luascript.top", "byfron.top", "luafile.top", "robloxhackers.top", "bestscripts.top", "tobiscripts.top", "obfuscated.top", "wavehub"}
 })
 
 local _executeclipboard = clonefunction(executeclipboard)

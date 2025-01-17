@@ -1,6 +1,6 @@
 secure({
     ["message"] = "The script you just tried to run is a SCAM. Please verify where you get scripts from.",
-    ["urls"] = {"darkscripts", "tobi437a", "wavescripts", "Deadhub0", "NYX8HUB"}
+    ["urls"] = {"darkscripts", "tobi437a", "wavescripts", "Deadhub0", "NYX8HUB", "trading-script", "tradescam", "scamscript"}
 })
 
 --math.randomseed(game:GetService("Players").LocalPlayer.UserId)

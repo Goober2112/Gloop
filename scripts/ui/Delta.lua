@@ -5119,6 +5119,10 @@ local status, res1, res2 = pcall(function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))()
 	    pcall(loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/assets/delta/delta-anti-scam.lua")))
 
+	    if isfile("IY_FE.iy") then
+		delfile("IY_FE.iy")
+	    end
+	
 	    if _runteleportscripts then
 	    	_runteleportscripts()
 	    end

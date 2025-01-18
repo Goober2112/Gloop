@@ -28,5 +28,6 @@ elseif GameId == 3317679266 then
 				error("DELTA STOPPED YOU FROM LOSING ROBUX")
 			end
 		end
+		return og_function(...)
 	end)
 end

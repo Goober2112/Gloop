@@ -5601,10 +5601,7 @@ local status, res1, res2 = pcall(function()
 
         ScriptSuggestion.Overlay.Holder.Showcase.MouseButton1Click:Connect(function()
             --print("showcase clicked")
-            loadstring(game:HttpGet(
-                "https://gist.githubusercontent.com/lxnnydev/c533c374ca4c1dcef4e1e10e33fa4a0c/raw/03e74f184f801dad77d3ebe1e2f18c6ac87ca612/delta___IY.gistfile1.txt.lua",
-                true))()
-
+            _run_script([[loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/refs/heads/master/source"))()]])
         end)
     end
     task.spawn(C_122);

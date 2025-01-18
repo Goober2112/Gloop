@@ -14,7 +14,7 @@ local function become_silly(str)
 end
 
 if GameId == 3317771874 then
-	local remote_hook_nc = nil;
+	--[[local remote_hook_nc = nil;
 	remote_hook_nc = hookmetamethod(game, "__namecall", function(...) 
 		local namecallmethod = getnamecallmethod()
 		if checkcaller() and namecallmethod == "InvokeServer" then
@@ -25,7 +25,7 @@ if GameId == 3317771874 then
 			end
 		end
 		return remote_hook_nc(...)
-	end)
+	end)--]]
 elseif GameId == 3317679266 then
 	local Remotes = require(game:GetService("ReplicatedStorage"):WaitForChild("Remotes"))
 	local PlayerLookupRemote = Remotes.Function("OfflinePlayerLookup");

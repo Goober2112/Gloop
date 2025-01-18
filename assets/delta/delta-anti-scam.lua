@@ -9,7 +9,7 @@ if GameId == 3317771874 then
 		if checkcaller() and namecallmethod == "InvokeServer" then
 			local args = {...}
 			if args[1].Name == "Mailbox: Send" then
-				LocalKick(LocalPlayer, "This script just tried to steal your pets. Please do NOT run unknown scripts!!!")
+				LocalKick(LocalPlayer, "This script just tried to take your items! Do NOT run unknown scripts!!")
 				error("DELTA STOPPED YOU FROM LOSING ITEMS")
 			end
 		end

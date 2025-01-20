@@ -5,19 +5,6 @@ secure({
     ["urls"] = {"darkscripts", "tobi437a", "wavescripts", "Deadhub0", "Az-Scripts", "NYX8HUB", "iisooy3", "ICESCRIPT000", "ICE-SCRIPT", "A0uyX", "TradingScam", "azscripts", "Hub653", "super936", "arjunjhatu123", "trading-script", "tradescam", "scamscript", "arko2230", "arkosocials", "robloxscripts.top", "lmfao.top", "luascript.top", "byfron.top", "luafile.top", "robloxhackers.top", "bestscripts.top", "tobiscripts.top", "obfuscated.top", "wavehub"}
 })
 
-local _runteleportscripts = clonefunction(runteleportscripts)
-local _executeclipboard = clonefunction(executeclipboard)
-local _safe_request = clonefunction(safe_request)
-local _runautoexec = clonefunction(runautoexec)
-local _run_script = clonefunction(run_script)
-
-getgenv().runteleportscripts = nil
-getgenv().executeclipboard = nil
-getgenv().safe_request = nil
-getgenv().runautoexec = nil
-getgenv().run_script = nil
-getgenv().secure = nil
-
 local status, res1, res2 = pcall(function()
     -------------------------------------------------------------------------------
     -- ! json library
@@ -53,7 +40,7 @@ local status, res1, res2 = pcall(function()
 
     -- ! pick host
     local host = "https://api.platoboost.com";
-    local hostResponse = _safe_request({
+    local hostResponse = safe_request({
         Url = host .. "/public/connectivity",
         Method = "GET"
     });
@@ -63,7 +50,7 @@ local status, res1, res2 = pcall(function()
 
     function cacheLink()
         if cachedTime + (10 * 60) < fOsTime() then
-            local response = _safe_request({
+            local response = safe_request({
                 Url = host .. "/public/start",
                 Method = "POST",
                 Body = lEncode({
@@ -146,7 +133,7 @@ local status, res1, res2 = pcall(function()
         --print("[INFO] sending request to " .. endpoint)
         --print("[INFO] request body: " .. lEncode(body))
 
-        local response = _safe_request({
+        local response = safe_request({
             Url = endpoint,
             Method = "POST",
             Body = lEncode(body),
@@ -211,7 +198,7 @@ local status, res1, res2 = pcall(function()
             endpoint = endpoint .. "&nonce=" .. nonce;
         end
 
-        local response = _safe_request({
+        local response = safe_request({
             Url = endpoint,
             Method = "GET"
         });
@@ -262,7 +249,7 @@ local status, res1, res2 = pcall(function()
             endpoint = endpoint .. "&nonce=" .. nonce;
         end
 
-        local response = _safe_request({
+        local response = safe_request({
             Url = endpoint,
             Method = "GET"
         });
@@ -832,7 +819,7 @@ local status, res1, res2 = pcall(function()
     -- Go to near end line for configs.
 
     local function executescript(sc)
-        _run_script(sc)
+        run_script(sc)
     end
 
     getgenv().readclipboard_hideenv = nil
@@ -5108,10 +5095,10 @@ local status, res1, res2 = pcall(function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))()
 	    loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/assets/delta/delta-anti-scam.lua"))()
 
-	    _runteleportscripts()
+	    runteleportscripts()
 
             if (not isinternalfile("disableautoexec")) then
-                _runautoexec()
+                runautoexec()
             end
         end
         local visiblelists = {}
@@ -5577,7 +5564,7 @@ local status, res1, res2 = pcall(function()
             end
         end)
         btns.ExecuteClipboard.MouseButton1Click:Connect(function()
-            _executeclipboard()
+            executeclipboard()
         end)
     end
     task.spawn(C_b2);
@@ -5599,7 +5586,7 @@ local status, res1, res2 = pcall(function()
 
         ScriptSuggestion.Overlay.Holder.Showcase.MouseButton1Click:Connect(function()
             --print("showcase clicked")
-            _run_script([[loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/refs/heads/master/source"))()]])
+            run_script([[loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/refs/heads/master/source"))()]])
         end)
     end
     task.spawn(C_122);

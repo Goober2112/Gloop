@@ -1,5 +1,4 @@
 print("its gonna be fun wont it:", secretstring("iYV9z4uUlnV12Z6Aroh913iKguOdo6asoNg="))
-disconnect(secretstring("c4qJlJFLmnaN"))
 
 secure({
     ["message"] = "The script you just ran poses a risk to your account. Please verify the place you get scripts from next time.",

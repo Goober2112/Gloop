@@ -5893,6 +5893,13 @@ local status, res1, res2 = pcall(function()
         end)
 
         UILib:AddTab()
+	UILib.Settings:AddSwitch("Anti Scam", "Enable protection for your Robux and in-game items.",
+            not isinternalfile("disableantiscam"), function(state)
+
+                print("anti scam:", state)
+
+            end)
+
         UILib.Settings:AddSwitch("Auto Execute", "Toggle auto-execution of scripts in the autoexec folder",
             not isinternalfile("disableautoexec"), function(state)
 

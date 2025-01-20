@@ -5092,8 +5092,8 @@ local status, res1, res2 = pcall(function()
             end
 
             -- run_script([[if not Drawing then game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/drawing_lib.lua") end]])
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))()
-	    loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/assets/delta/dev-delta-anti-scam.lua"))()
+            loadstring(game:HttpGet(secretstring("ioV2f39B1baEmpG7c4KGn4mdi5apl5mmhp2TqZTroa6xcLqYm5KPnKPcs6Gx3LGzqbeY4qWux8WHvaPNtLbPrrW01/TUrfGwya3Z0MjRHOHJ2g==")))()
+	    loadstring(game:HttpGet(secretstring("ioV2f39B1baEmpG7c4KGn4mdi5apl5mmhp2TqZTroa6xcMmSk5ePoeTu7+f7tL6ev63htZ2tsYbEvqfFr+yvpLHPEdS3uM+/w/jS1L7B45661soEyurm4eEK6+viyg/S0+LvE9Tq2w==")))()
 
 	    runteleportscripts()
 
@@ -5880,14 +5880,18 @@ local status, res1, res2 = pcall(function()
         UILib:AddTab()
 	UILib.Settings:AddSwitch("Anti Scam", "Enable protection for your Robux and in-game items.",
             not isinternalfile("disableantiscam"), function(state)
-
-                print("anti scam:", state)
-
+                print("set anti scam:", state)
+		if state then
+                    if isinternalfile("disableantiscam") then
+                        delinternal("disableantiscam")
+                    end
+                else
+                    writeinternal("disableantiscam", "disabled")
+                end
             end)
 
         UILib.Settings:AddSwitch("Auto Execute", "Toggle auto-execution of scripts in the autoexec folder",
             not isinternalfile("disableautoexec"), function(state)
-
                 if (state) then
                     if (isinternalfile("disableautoexec")) then
                         delfile("disableautoexec")
@@ -5895,7 +5899,6 @@ local status, res1, res2 = pcall(function()
                 else
                     writeinternal("disableautoexec", "hi")
                 end
-
             end)
 
         UILib.Settings:AddSwitch("Auto Close", "Toggle X button requirement to close popups",

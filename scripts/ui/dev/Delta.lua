@@ -5879,6 +5879,7 @@ local status, res1, res2 = pcall(function()
 
         UILib:AddTab()
 	UILib.Settings:AddSwitch(STR_UI_2, STR_UI_3, not isinternalfile(STR_UI_1), function(state)
+		setantiscam(state)
 		if state then
                     if isinternalfile(STR_UI_1) then
                         delinternal(STR_UI_1)

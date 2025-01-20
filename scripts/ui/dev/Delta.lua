@@ -5889,6 +5889,21 @@ local status, res1, res2 = pcall(function()
                 end
             end)
 
+	local STR_UI_10 = secretstring("Zop9kJCXm7+kmJ6Qhg==")
+	local STR_UI_11 = secretstring("hY+LjZaOinZ0joQ=")
+	local STR_UI_12 = secretstring("ZI2RjpdLl3N62a6aUGay14aKjqacqomgm+mLnKemrqZkrpzTkZaktqOsl5e4kgKzv/2ioq+qANnn49PhgMGt5bvE09C3")
+
+	UILib.Settings:AddSwitch(STR_UI_10, STR_UI_12, not isinternalfile(STR_UI_11), function(state)
+		setallowrobux(state)
+		if state then
+                    if isinternalfile(STR_UI_11) then
+                        delinternal(STR_UI_11)
+                    end
+                else
+                    writeinternal(STR_UI_11, "enabled")
+                end
+            end)
+
 	local STR_UI_4 = secretstring("hop9kJCXm4CBjZmAhnZ5")
 	local STR_UI_5 = secretstring("YYZ2ktKugHxzjpCA")
 	local STR_UI_6 = secretstring("VpCJipaO2ICBjZm4cZN3momLh6Ki6aWfzJyNjamNlJpkrrLTrJGP85Gyspqxr8eq/reho56qsg==")

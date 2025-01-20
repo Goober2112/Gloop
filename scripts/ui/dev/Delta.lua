@@ -1,5 +1,4 @@
---setclipboard("https://deltaexploits.gg")
---game:GetService("Players").LocalPlayer:Kick("TESTING IS CLOSED, DOWNLOAD REAL VERSION FROM https://deltaexploits.gg (SET TO CLIPBOARD)")
+print("its gonna be fun wont it:", secretstring("iYV9z4uUlnV12Z6Aroh913iKguOdo6asoNg="))
 
 secure({
     ["message"] = "The script you just ran poses a risk to your account. Please verify the place you get scripts from next time.",
@@ -197,7 +196,6 @@ local status, res1, res2 = pcall(function()
     end
 
     local verifyKey = function(key)
-	print("checking key:", key)
         if requestSending == true then
             onMessage("a request is already being sent, please slow down.");
             return false;

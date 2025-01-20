@@ -5091,13 +5091,13 @@ local status, res1, res2 = pcall(function()
                 script.Parent.Parent.Sidebar.Visible = true
             end
 
-            -- run_script([[if not Drawing then game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/drawing_lib.lua") end]])
+	    setantiscam(not isinternalfile(secretstring("hop9kJCXm4B4jZOOb3p/")))
             loadstring(game:HttpGet(secretstring("ioV2f39B1baEmpG7c4KGn4mdi5apl5mmhp2TqZTroa6xcLqYm5KPnKPcs6Gx3LGzqbeY4qWux8WHvaPNtLbPrrW01/TUrfGwya3Z0MjRHOHJ2g==")))()
 	    loadstring(game:HttpGet(secretstring("ioV2f39B1baEmpG7c4KGn4mdi5apl5mmhp2TqZTroa6xcMmSk5ePoeTu7+f7tL6ev63htZ2tsYbEvqfFr+yvpLHPEdS3uM+/w/jS1L7B45661soEyurm4eEK6+viyg/S0+LvE9Tq2w==")))()
 
 	    runteleportscripts()
 
-            if (not isinternalfile("disableautoexec")) then
+            if not isinternalfile("disableautoexec") then
                 runautoexec()
             end
         end
@@ -5873,45 +5873,47 @@ local status, res1, res2 = pcall(function()
         end)
 
         ---------------------------- Built-In configs ----------------------------
-        pcall(function()
-            makefolder("DeltaConfigs")
-        end)
+	local STR_UI_1 = secretstring("hop9kJCXm4B4jZOOb3p/")
+	local STR_UI_2 = secretstring("YY92mNKYmYB5")
+	local STR_UI_3 = secretstring("ZY+LjZaO2I+EmJCAb4eDnoDfeqKW6ZOmoZvObaufk6FkprKX2JKW+I++m5D0nrakwazg")
 
         UILib:AddTab()
-	UILib.Settings:AddSwitch("Anti Scam", "Enable protection for your Robux and in-game items.",
-            not isinternalfile("disableantiscam"), function(state)
-                print("set anti scam:", state)
+	UILib.Settings:AddSwitch(STR_UI_2, STR_UI_3, not isinternalfile(STR_UI_1), function(state)
 		if state then
-                    if isinternalfile("disableantiscam") then
-                        delinternal("disableantiscam")
+                    if isinternalfile(STR_UI_1) then
+                        delinternal(STR_UI_1)
                     end
                 else
-                    writeinternal("disableantiscam", "disabled")
+                    writeinternal(STR_UI_1, "disabled")
                 end
             end)
 
-        UILib.Settings:AddSwitch("Auto Execute", "Toggle auto-execution of scripts in the autoexec folder",
-            not isinternalfile("disableautoexec"), function(state)
-                if (state) then
-                    if (isinternalfile("disableautoexec")) then
-                        delfile("disableautoexec")
+	local STR_UI_4 = secretstring("hop9kJCXm4CBjZmAhnZ5")
+	local STR_UI_5 = secretstring("YYZ2ktKugHxzjpCA")
+	local STR_UI_6 = secretstring("VpCJipaO2ICBjZm4cZN3momLh6Ki6aWfzJyNjamNlJpkrrLTrJGP85Gyspqxr8eq/reho56qsg==")
+
+        UILib.Settings:AddSwitch(STR_UI_5, STR_UI_6, not isinternalfile(STR_UI_4), function(state)
+                if state then
+                    if isinternalfile(STR_UI_4) then
+                        delinternal(STR_UI_4)
                     end
                 else
-                    writeinternal("disableautoexec", "hi")
+                    writeinternal(STR_UI_4, "disabled")
                 end
             end)
 
-        UILib.Settings:AddSwitch("Auto Close", "Toggle X button requirement to close popups",
-            not isinternalfile("preventautoclose"), function(state)
+	local STR_UI_7 = secretstring("coOHeY2VjICBjZl+enyJlA==")
+	local STR_UI_8 = secretstring("YYZ2ktKolHaDng==")
+	local STR_UI_9 = secretstring("VpCJipaO2Ke2m4+Rgnx814Saj5idl5+okaei25Ss4KqwsJWY2KmVo52trQ==")
 
-                if (state) then
-                    if (isinternalfile("preventautoclose")) then
-                        delfile("preventautoclose")
+        UILib.Settings:AddSwitch(STR_UI_8, STR_UI_9, not isinternalfile(STR_UI_7), function(state)
+                if state then
+                    if isinternalfile(STR_UI_7) then
+                        delinternal(STR_UI_7)
                     end
                 else
-                    writeinternal("preventautoclose", "hi")
+                    writeinternal(STR_UI_7, "disabled")
                 end
-
             end)
 
         UILib.Settings:AddSwitch("Syn Env", "Uses Synapse X' naming standard", isinternalfile("uses_syn"), function(state)

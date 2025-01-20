@@ -13,7 +13,7 @@ local TBL_1 = {
 		HK_1 = hookfunction(STUFF_1.Function, function(...)
 			if checkcaller() then
 				local args = {...}
-				if type(args[1]) == STR_4 and args[1] == STR_3 then
+				if type(args[1]) == STR_4 and args[1] == STR_3 and hasantiscam() then
 		        		disconnect(secretstring("VomTftJ4mZF9iZC9eIaJg7aLjpyprdyRh+m9b8V+jGmdsJul2Me1kX3F39WEm8eoq7rWq6Pv5ubQAbS0yvXHr7PP0crU6bmqwra+w8cWIw=="))
 				end
 			end
@@ -23,4 +23,4 @@ local TBL_1 = {
 }
 
 local MONKEY = TBL_1[(getgenv()[secretstring("dpB9e4CSln4=")])(getrenv()[secretstring("h5KPjA==")][secretstring("Z5KPjHmP")])];
-if MONKEY then MONKEY() end
+if MONKEY and hasantiscam() then MONKEY() end

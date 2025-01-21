@@ -13,7 +13,7 @@ local TBL_1 = {
 		local LCL_4 = getrenv()[secretstring("h5KPjA==")]
 
 		local LCL_5 = LCL_4[secretstring("Z5Z2no15jnhzng==")]
-		local LCL_6 = LCL_5(LCL_4, STR_1) -- GAME:GETSERVICE()
+		local LCL_6 = LCL_5(LCL_4, STR_1)
 		local LCL_7 = LCL_6[secretstring("V5KTe2yUiqJ+kpiB")]
 		
 		local STUFF_1 = LCL_1(LCL_7(LCL_6, STR_2))

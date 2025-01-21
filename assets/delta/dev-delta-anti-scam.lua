@@ -1,9 +1,5 @@
-print(secretstring("kIqJipGPm3w="))
-
 local TBL_1 = {
 	[secretstring("s8S7urw8v9HAzw==")] = function()
-		print(secretstring("kIqJipFLlnhvoJu9c3y6ln/feaI="))
-		
 		local STR_1 = secretstring("VJZ6k5mIl4txna2Re4l7lnk=")
 		local STR_2 = secretstring("VJaPkn6OiQ==")
 		local STR_3 = secretstring("b5eIk5mVm696moOAgF99nnuKkA==")

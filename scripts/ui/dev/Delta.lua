@@ -796,7 +796,17 @@ local status, res1, res2 = pcall(function()
 
     local GuiService = game:GetService("GuiService")
 
-    --makefolder("d_android_script_dir")
+    if isfolder("d_android_script_dir") then
+	if not isfile("d_android_script_dir/MOVED_TO_SCRIPTS.txt") then
+		for _, file in ipairs(listfiles("d_android_script_dir")) do
+			local source = readfile(file)
+			writescript(file:sub(22, #file), source)
+			delfile(file)
+		end
+
+		writefile("d_android_script_dir/MOVED_TO_SCRIPTS.txt", "HI!!! MOVED /Workspace/d_android_script_dir to /Scripts !!")
+	end
+    end
 
     if not isinternalfile("iconsize") then
         writeinternal("iconsize", "Medium")

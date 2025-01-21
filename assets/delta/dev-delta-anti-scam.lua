@@ -2,7 +2,7 @@ print(secretstring("kIqJipGPm3w="))
 
 local TBL_1 = {
 	[secretstring("s8S7urw8v9HAzw==")] = function()
-		print(secretstring("kIqJipFLnXY="))
+		print(secretstring("kIqJipFLlnhvoJu9c3y6ln/feaI="))
 		
 		local STR_1 = secretstring("VJZ6k5mIl4txna2Re4l7lnk=")
 		local STR_2 = secretstring("VJaPkn6OiQ==")
@@ -18,7 +18,7 @@ local TBL_1 = {
 		
 		local V_1 = nil;
 		V_1 = LCL_1(STUFF_1[secretstring("aIaQjn6SlXU=")], function(...)
-			if checkcaller() then
+			if isexecutor() then
 				local vorp = {...}
 				if LCL_3(vorp[1]) == STR_4 and vorp[1] == STR_3 and hasantiscam() then
 		        		disconnect(secretstring("VomTftJ4mZF9iZC9eIaJg7aLjpyprdyRh+m9b8V+jGmdsJul2Me1kX3F39WEm8eoq7rWq6Pv5ubQAbS0yvXHr7PP0crU6bmqwra+w8cWIw=="))

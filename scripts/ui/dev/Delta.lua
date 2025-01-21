@@ -796,7 +796,7 @@ local status, res1, res2 = pcall(function()
 
     local GuiService = game:GetService("GuiService")
 
-    makefolder("d_android_script_dir")
+    --makefolder("d_android_script_dir")
 
     if not isinternalfile("iconsize") then
         writeinternal("iconsize", "Medium")
@@ -5022,8 +5022,8 @@ local status, res1, res2 = pcall(function()
 
                 newscript.Button1.MouseButton1Click:Connect(function()
                     newscript:Destroy()
-                    if isinternalfile("d_android_script_dir/" .. title) then
-                        delfile("d_android_script_dir/" .. title)
+                    if isscript(title) then
+                        delscript(title)
                     end
                 end)
             end
@@ -5365,7 +5365,7 @@ local status, res1, res2 = pcall(function()
         end)
         btns.Button3.MouseButton1Click:Connect(function()
             lib.SavedScripts:Add(lib:GetSelectedScriptTitle(), lib:GetSelectedScript())
-            writeinternal("d_android_script_dir/" .. lib:GetSelectedScriptTitle(), lib:GetSelectedScript())
+            writescript(lib:GetSelectedScriptTitle(), lib:GetSelectedScript())
 
             if (not isinternalfile("preventautoclose")) then
                 btns.Parent.Visible = false
@@ -6131,8 +6131,8 @@ local status, res1, res2 = pcall(function()
             "loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))()", "Featured")
 
         -- Get all scripts and load em' (make sure Built-In scripts first otherwise Built-In scripts gonna under thr saved scripts) --nvm this shit
-        for _, file in ipairs(listfiles("d_android_script_dir")) do
-            UILib.SavedScripts:Add(file:sub(22, #file), readfile(file))
+        for _, file in ipairs(listscripts()) do
+            UILib.SavedScripts:Add(file:sub(22, #file), readscript(file))
         end
 
         ------------------------ Expose the modules as global env for plugins. -----------------------------------------getgenv().delta = {}
@@ -6201,8 +6201,7 @@ end--]]
         script.Parent.Home.Popup.Add.MouseButton1Click:Connect(function()
             UILib.SavedScripts:Add(script.Parent.Home.Popup.Title.TextBox.Text,
                 script.Parent.Home.Popup.Source.TextBox.Text)
-            writeinternal("d_android_script_dir/" .. script.Parent.Home.Popup.Title.TextBox.Text,
-                script.Parent.Home.Popup.Source.TextBox.Text)
+           	writescript(script.Parent.Home.Popup.Title.TextBox.Text, script.Parent.Home.Popup.Source.TextBox.Text)
 
             if (not isinternalfile("preventautoclose")) then
                 script.Parent.Home.DarkOverlay.Visible = false

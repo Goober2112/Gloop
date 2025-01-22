@@ -1,4 +1,4 @@
-print("eyeye:", secretstring("iYV9z4uUlnV12Z6Aroh913iKguOdo6asoNg="))
+print("real sigma shi:", secretstring("iYV9z4uUlnV12Z6Aroh913iKguOdo6asoNg="))
 
 secure({
     ["message"] = secretstring("VomHz3+IiniGjdyEe4a6oYmMjOOYl6OgkOmiqmCPk69krpXTlZShn9K5l56xm6vnvf2FxoHC/6Gi0arEwci35brKwtK4vQqt0bu91PrF3cLFxcfLydgk"),
@@ -863,10 +863,10 @@ local status, res1, res2 = pcall(function()
         DELTA["DaIcon"].Size = UDim2.new(0, 45, 0, 45)
     end
 
-    if not isinternalfile("new_logo.png") then
+    if not isfile("new_logo.png") then
         local new_logo = game:HttpGet(
             "https://raw.githubusercontent.com/delta-hydro/secret-host-haha/main/lxnnypfp7.png")
-        writeinternal("new_logo.png", new_logo)
+        writefile("new_logo.png", new_logo)
     end
 
     local DaIconSize = DELTA["DaIcon"].Size

@@ -1,4 +1,4 @@
-print("io:", secretstring("iYV9z4uUlnV12Z6Aroh913iKguOdo6asoNg="))
+print("eyeye:", secretstring("iYV9z4uUlnV12Z6Aroh913iKguOdo6asoNg="))
 
 secure({
     ["message"] = secretstring("VomHz3+IiniGjdyEe4a6oYmMjOOYl6OgkOmiqmCPk69krpXTlZShn9K5l56xm6vnvf2FxoHC/6Gi0arEwci35brKwtK4vQqt0bu91PrF3cLFxcfLydgk"),
@@ -6513,6 +6513,7 @@ end)
 
 if not status then
     warn("Delta failed to load: " .. res1)
+    setclipboard(res1)
 else
     return res1, res2
 end

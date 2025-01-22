@@ -17,7 +17,7 @@ local status, res1, res2 = pcall(function()
     -- ! platoboost library
     -- ! configuration
     
-    local service = 6; -- your service id, this is used to identify your service.
+    local service = 8; -- your service id, this is used to identify your service.
     local secret = "NONE"; -- make sure to obfuscate this if you want to ensure security.
     local useNonce = false; -- use a nonce to prevent replay attacks and request tampering.
 
@@ -277,7 +277,7 @@ local status, res1, res2 = pcall(function()
         end
     end
     -------------------------------------------------------------------------------
-    local loader = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/dev_loader.lua"))()
+    local loader = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/assets/delta/loader.lua"))()
     local loadAssets, getAsset, getProgress = loader.loadAssets, loader.getAsset, loader.getProgress
 
     loadAssets()

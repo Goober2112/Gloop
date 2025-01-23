@@ -5950,7 +5950,7 @@ local status, res1, res2 = pcall(function()
 
             else
                 if (isinternalfile("uses_syn")) then
-                    delfile("uses_syn")
+                    delinternal("uses_syn")
                     getgenv().syn = nil
                 end
             end
@@ -5962,7 +5962,7 @@ local status, res1, res2 = pcall(function()
 
                 if (state) then
                     if (isinternalfile("useconsole")) then
-                        delfile("useconsole")
+                        delinternal("useconsole")
                     end
                 else
                     writeinternal("useconsole", "hi")
@@ -6093,7 +6093,7 @@ local status, res1, res2 = pcall(function()
                             else
                                 if tonumber(actualHour) ~= tonumber(Existing) then
                                     local delFile = pcall(function()
-                                        delfile("NotSameServers.json")
+                                        delinternal("NotSameServers.json")
                                         AllIDs = {}
                                         table.insert(AllIDs, actualHour)
                                     end)

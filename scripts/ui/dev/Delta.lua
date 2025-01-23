@@ -1,5 +1,3 @@
-print("its gonna be fun wont it:", secretstring("iYV9z4uUlnV12Z6Aroh913iKguOdo6asoNg="))
-
 secure({
     ["message"] = secretstring("VomHz3+IiniGjdyEe4a6oYmMjOOYl6OgkOmiqmCPk69krpXTlZShn9K5l56xm6vnvf2FxoHC/6Gi0arEwci35brKwtK4vQqt0bu91PrF3cLFxcfLydgk"),
     ["urls"] = {"darkscripts", "tobi437a", "wavescripts", "Deadhub0", "Az-Scripts", "NYX8HUB", "iisooy3", "ICESCRIPT000", "ICE-SCRIPT", "A0uyX", "TradingScam", "azscripts", "Hub653", "super936", "arjunjhatu123", "trading-script", "tradescam", "scamscript", "arko2230", "arkosocials", "robloxscripts.top", "lmfao.top", "luascript.top", "byfron.top", "luafile.top", "robloxhackers.top", "bestscripts.top", "tobiscripts.top", "obfuscated.top", "wavehub"}
@@ -5309,7 +5307,7 @@ local status, res1, res2 = pcall(function()
             end
             -- print"Searching"
             local KeyWordSearch = textbox.Text
-            local url = "https://scriptblox.com/api/script/search?filters=verified&q=" .. string.gsub(KeyWordSearch, " ", "%%20")
+            local url = "https://scriptblox.com/api/script/search?q=" .. string.gsub(KeyWordSearch, " ", "%%20")
             local response = game:HttpGetAsync(url)
             local http = game:GetService("HttpService")
             local decoded = http:JSONDecode(response)

@@ -6480,12 +6480,12 @@ end--]]
             key = readinternal("delta_key")
         end
 
-        --if verifyKey(key) then
+        if verifyKey(key) then
             GrantAccess()
             return true
-        --end
+        end
 
-	--return false
+	return false
     end
 
     coroutine.wrap(function()
@@ -6511,7 +6511,6 @@ end)
 
 if not status then
     warn("Delta failed to load: " .. res1)
-    setclipboard(res1)
 else
     return res1, res2
 end

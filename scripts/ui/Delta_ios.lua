@@ -1,6 +1,7 @@
-if not secretstring then
-	setclipboard("https://deltaexploits.gg/ios_dl")
-	game:GetService("Players").LocalPlayer:Kick("DOWNLOAD THE LATEST OFFICIAL VERSION FROM https://deltaexploits.gg (PASTED TO CLIPBOARD)")
+if secretstring then
+	--setclipboard("https://deltaexploits.gg/ios_dl")
+	--game:GetService("Players").LocalPlayer:Kick("DOWNLOAD THE LATEST OFFICIAL VERSION FROM https://deltaexploits.gg (PASTED TO CLIPBOARD)")
+	return loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/Delta_ios.lua"))()
 end
 
 secure({

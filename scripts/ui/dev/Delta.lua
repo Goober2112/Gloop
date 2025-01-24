@@ -6140,7 +6140,9 @@ local status, res1, res2 = pcall(function()
 
         -- Get all scripts and load em' (make sure Built-In scripts first otherwise Built-In scripts gonna under thr saved scripts) --nvm this shit
         for _, file in ipairs(listscripts()) do
-            UILib.SavedScripts:Add(file, readscript(file))
+	    pcall(function()
+		UILib.SavedScripts:Add(file, readscript(file))
+	end)
         end
 
         ------------------------ Expose the modules as global env for plugins. -----------------------------------------getgenv().delta = {}

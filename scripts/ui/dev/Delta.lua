@@ -796,11 +796,11 @@ local status, res1, res2 = pcall(function()
 
     if isfolder("d_android_script_dir") then
 	if not isfile("d_android_script_dir/MOVED_TO_SCRIPTS.txt") then
-		for _, file in ipairs(listfiles("d_android_script_dir")) do
+		--[[for _, file in ipairs(listfiles("d_android_script_dir")) do
 			local source = readfile(file)
 			writescript(file:sub(22, #file), source)
 			delfile(file)
-		end
+		end--]]
 
 		writefile("d_android_script_dir/MOVED_TO_SCRIPTS.txt", "HI!!! MOVED /Workspace/d_android_script_dir to /Scripts !!")
 	end

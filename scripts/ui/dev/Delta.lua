@@ -6141,6 +6141,7 @@ local status, res1, res2 = pcall(function()
         -- Get all scripts and load em' (make sure Built-In scripts first otherwise Built-In scripts gonna under thr saved scripts) --nvm this shit
         for _, file in ipairs(listscripts()) do
 	    pcall(function()
+		print("attemping script:", file)
 		UILib.SavedScripts:Add(file, readscript(file))
 	end)
         end

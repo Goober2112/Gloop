@@ -77,7 +77,7 @@ local status, res1, res2 = pcall(function()
                 return false, msg;
             end
 
-            local msg = "Failed to cache link.";
+            local msg = "Failed to cache link. (" .. tostring(response.StatusCode) .. ")";
             onMessage(msg);
             return false, msg;
         else
@@ -175,7 +175,7 @@ local status, res1, res2 = pcall(function()
             onMessage("you are being rate limited, please wait 20 seconds and try again.");
             return false;
         else
-            onMessage("server returned an invalid status code, please try again later.");
+            onMessage("server returned an invalid status code, please try again later. (" .. tostring(response.StatusCode) .. ")");
             return false;
         end
     end
@@ -234,7 +234,7 @@ local status, res1, res2 = pcall(function()
             onMessage("you are being rate limited, please wait 20 seconds and try again.");
             return false;
         else
-            onMessage("server returned an invalid status code, please try again later.");
+            onMessage("server returned an invalid status code, please try again later. (" .. tostring(response.StatusCode) .. ")");
             return false;
         end
     end

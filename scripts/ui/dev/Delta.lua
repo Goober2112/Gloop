@@ -798,7 +798,9 @@ local status, res1, res2 = pcall(function()
 	if not isfile("d_android_script_dir/MOVED_TO_SCRIPTS.txt") then
 		for _, file in ipairs(listfiles("d_android_script_dir")) do
 			local source = readfile(file)
-			writescript(file:sub(22, #file), source)
+			pcall(function()
+				writescript(file:sub(22, #file), source)
+			end)
 			--delfile(file)
 		end
 

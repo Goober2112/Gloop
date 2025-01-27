@@ -514,8 +514,9 @@ function LoadExploit()
     -- // Main UI Code
 
     	
-    
+   
 local ScreenGui = Instance.new("ScreenGui")
+local OCScreenGui = Instance.new("ScreenGui", game:GetService("CoreGui"))
 local Frame = Instance.new("Frame")
 local TextBox = Instance.new("TextBox")
 local TextButton = Instance.new("TextButton")
@@ -523,9 +524,22 @@ local TextButton_2 = Instance.new("TextButton")
 local TextButton_3 = Instance.new("TextButton")
 local TextButton_4 = Instance.new("TextButton")
 
+local openclosebutton = Instance.new("ImageButton", OCScreenGui)
+openclosebutton.Image = "rbxassetid://8121912680"
+openclosebutton.Size = UDim2.new(0,50,0,50)
+
+openclosebutton.MouseButton1Click:Connect(function()
+print("uh")
+	if ScreenGui.Enabled == false then
+	ScreenGui.Enabled = true
+else
+ScreenGui.Enabled = false
+end
+end)
+
 --Properties:
 
-ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
+ScreenGui.Parent = game:GetService("CoreGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Frame.Parent = ScreenGui
@@ -595,18 +609,16 @@ TextButton_3.MouseButton1Click:Connect(function()
 end)
 
 TextButton_2.MouseButton1Click:Connect(function()
-    executeclipboard()
+--	executeclipboard()
 end)
 
 TextButton_4.MouseButton1Click:Connect(function()
-	run_script([[loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/refs/heads/master/source"))()]])
+	--run_script([[loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/refs/heads/master/source"))()]])
 end)
 
 TextButton.MouseButton1Click:Connect(function()
-	run_script(TextBox.Text)
+	--run_script(TextBox.Text)
 end)
-
-end
 
 TextBox:GetPropertyChangedSignal("Text"):Connect(function()
     EnteredKey = TextBox.Text

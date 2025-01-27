@@ -34,7 +34,7 @@ if hostResponse.StatusCode ~= 200 or hostResponse.StatusCode ~= 429 then
     host = "https://api.platoboost.net";
 end
 
---!optimize 2
+
 function cacheLink()
     if cachedTime + (10*60) < fOsTime() then
         local response = fRequest({
@@ -76,7 +76,7 @@ end
 
 cacheLink();
 
---!optimize 2
+
 local generateNonce = function()
     local str = ""
     for _ = 1, 16 do
@@ -85,7 +85,7 @@ local generateNonce = function()
     return str
 end
 
---!optimize 1
+
 for _ = 1, 5 do
     local oNonce = generateNonce();
     task.wait(0.2)
@@ -96,7 +96,7 @@ for _ = 1, 5 do
     end
 end
 
---!optimize 2
+
 local copyLink = function()
     local success, link = cacheLink();
     
@@ -105,7 +105,7 @@ local copyLink = function()
     end
 end
 
---!optimize 2
+
 local redeemKey = function(key)
     local nonce = generateNonce();
     local endpoint = host .. "/public/redeem/" .. fToString(service);
@@ -165,7 +165,7 @@ local redeemKey = function(key)
     end
 end
 
---!optimize 2
+
 local verifyKey = function(key)
     if requestSending == true then
         onMessage("a request is already being sent, please slow down.");
@@ -224,7 +224,7 @@ local verifyKey = function(key)
     end
 end
 
---!optimize 2
+
 local getFlag = function(name)
     local nonce = generateNonce();
     local endpoint = host .. "/public/flag/" .. fToString(service) .. "?name=" .. name;
@@ -278,7 +278,7 @@ end
 
 -- // Instances
 
-local niggakernel_rat_key_interface = Instance.new("ScreenGui", game.Players.LocalPlayer.PlayerGui)
+niggakernel_rat_key_interface = Instance.new("ScreenGui", game.Players.LocalPlayer.PlayerGui)
 local fuckinghell = Instance.new("Frame", niggakernel_rat_key_interface)
 fuckinghell.Size = UDim2.new(0.3, 0, 0.3, 0)
 fuckinghell.BackgroundColor3 = Color3.fromRGB(20,20,20)
@@ -321,7 +321,7 @@ function LoadExploit()
             Title = "Swift Key System",
             Text = "Welcome to Swift!"
         })
-        KeySystem:Destroy()
+        niggakernel_rat_key_interface:Destroy()
     else
         game:GetService("StarterGui"):SetCore("SendNotification", {
             Title = "Swift Key System",
@@ -438,6 +438,8 @@ end)
 TextButton.MouseButton1Click:Connect(function()
 	run_script(TextBox.Text)
 end)
+
+end
 
 input:GetPropertyChangedSignal("Text"):Connect(function()
     EnteredKey = input.Text

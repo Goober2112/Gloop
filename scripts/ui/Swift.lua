@@ -278,217 +278,36 @@ end
 
 -- // Instances
 
-local Swift = Instance.new("ScreenGui", game:GetService("CoreGui"))
-Swift.ZIndexBehavior = Enum.ZIndexBehavior.Global
-
-
-local KeySystem = createInstance("Frame", {
-	Position = UDim2.new(0.500, 0.000, 0.500, 0.000),
-	Size = UDim2.new(0.376, 0.000, 0.411, 0.000),
-	Parent = Swift,
-	AnchorPoint = Vector2.new(0.5, 0.5),
-	BackgroundColor3 = Color3.fromRGB(20,20,20),
-	BorderSizePixel = 0,
-	ZIndex = 500
-})
-
-local UICorner = createInstance("UICorner", {
-	Parent = KeySystem,
-	CornerRadius = UDim.new(0.015, 0)
-})
-
-local Logo = createInstance("ImageLabel", {
-	Position = UDim2.new(0.029, 0.000, 0.052, 0.000),
-	Size = UDim2.new(0.092, 0.000, 0.069, 0.000),
-	Parent = KeySystem,
-	BackgroundTransparency = 1,
-	BackgroundColor3 = Color3.fromRGB(255, 255, 255),
-	ImageColor3 = Color3.fromRGB(255, 255, 255),
-	Image = "rbxassetid://88996476370186",
-	BorderSizePixel = 0,
-	ZIndex = 503
-})
-
-local UIAspectRatioConstraint = createInstance("UIAspectRatioConstraint", {
-	AspectRatio = 2.608,
-	Parent = Logo
-})
-
-local TextLabel = createInstance("TextLabel", {
-	Position = UDim2.new(0.500, 0.000, 0.033, 0.000),
-	Size = UDim2.new(0.400, 0.000, 0.100, 2.000),
-	Parent = KeySystem,
-	BackgroundTransparency = 1,
-	AnchorPoint = Vector2.new(0.5, 0),
-	Font = Enum.Font.SourceSans,
-	Text = 'Swift Key System',
-	TextScaled = true,
-	TextXAlignment = Enum.TextXAlignment.Center,
-	TextYAlignment = Enum.TextYAlignment.Center,
-	TextWrapped = true,
-	TextColor3 = Color3.fromRGB(255, 255, 255),
-	BackgroundColor3 = Color3.fromRGB(255, 255, 255),
-	TextSize = 14,
-	BorderSizePixel = 0,
-	ZIndex = 502
-})
-
-local UITextSizeConstraint = createInstance("UITextSizeConstraint", {
-	Parent = TextLabel,
-	MaxTextSize = 30,
-	MinTextSize = 1
-})
-
-local Div = createInstance("Frame", {
-	Position = UDim2.new(0.500, 0.000, 0.174, 0.000),
-	Size = UDim2.new(1.000, 0.000, 0.000, 2.000),
-	Parent = KeySystem,
-	AnchorPoint = Vector2.new(0.5, 0),
-	BackgroundColor3 = Color3.fromRGB(25, 25, 25),
-	BorderSizePixel = 0,
-	ZIndex = 505
-})
-
-local UISizeConstraint = createInstance("UISizeConstraint", {
-	Parent = Div,
-	MaxSize = Vector2.new(0, 2),
-	MinSize = Vector2.new(0, 2)
-})
-
-local TextBoxHolder = createInstance("Frame", {
-	Position = UDim2.new(0.179, 0.000, 0.320, 0.000),
-	Size = UDim2.new(0.641, 0.000, 0.133, 0.000),
-	Parent = KeySystem,
-	BackgroundColor3 = Color3.fromRGB(0, 0, 0),
-	BackgroundTransparency = .5,
-	BorderSizePixel = 0,
-	ZIndex = 504
-})
-
-local Highlight = createInstance("Frame", {
-	Position = UDim2.new(0.000, 0.000, 1.000, 0.000),
-	Size = UDim2.new(1.000, 0.000, 0.000, 1.000),
-	Parent = TextBoxHolder,
-	BackgroundTransparency = 0.5,
-	AnchorPoint = Vector2.new(0, 1),
-	BackgroundColor3 = Color3.fromRGB(251, 196, 112),
-	BorderSizePixel = 0,
-	ZIndex = 505
-})
-
-local UITextSizeConstraint_1 = createInstance("UITextSizeConstraint", {
-	Parent = TextBoxHolder,
-	MaxTextSize = 20,
-	MinTextSize = 1
-})
-
-local TextBox = createInstance("TextBox", {
-	Position = UDim2.new(0.500, 0.000, 0.500, 0.000),
-	Size = UDim2.new(0.641, 0.000, 0.469, 0.000),
-	Parent = TextBoxHolder,
-	ClearTextOnFocus = false,
-	BackgroundTransparency = 1,
-	AnchorPoint = Vector2.new(0.5, 0.5),
-	Font = Enum.Font.SourceSans,
-	Text = '',
-	TextScaled = true,
-	TextXAlignment = Enum.TextXAlignment.Center,
-	TextYAlignment = Enum.TextYAlignment.Center,
-	TextWrapped = true,
-	TextColor3 = Color3.fromRGB(178, 178, 178),
-	PlaceholderText = 'Enter Key',
-	PlaceholderColor3 = Color3.fromRGB(178, 178, 178),
-	BackgroundColor3 = Color3.fromRGB(0, 0, 0),
-	TextSize = 14,
-	BorderSizePixel = 0,
-	ZIndex = 509
-})
-
-local UITextSizeConstraint_2 = createInstance("UITextSizeConstraint", {
-	Parent = TextBox,
-	MaxTextSize = 20,
-	MinTextSize = 1
-})
-
-local UIAspectRatioConstraint_3 = createInstance("UIAspectRatioConstraint", {
-	AspectRatio = 1.961,
-	Parent = KeySystem
-})
-
-local Submit = createInstance("ImageButton", {
-	Position = UDim2.new(0.500, 0.000, 0.560, 0.000),
-	Size = UDim2.new(0.641, 0.000, 0.122, 0.000),
-	Parent = KeySystem,
-	AutoButtonColor = false,
-	AnchorPoint = Vector2.new(0.5, 0),
-	BackgroundColor3 = Color3.fromRGB(0, 0, 0),
-	BackgroundTransparency = .5,
-	BorderSizePixel = 0,
-	ZIndex = 507
-})
-
-local TextLabel_4 = createInstance("TextLabel", {
-	Position = UDim2.new(0.500, 0.000, 0.500, 0.000),
-	Size = UDim2.new(0.383, 0.000, 0.633, 0.000),
-	Parent = Submit,
-	BackgroundTransparency = 1,
-	AnchorPoint = Vector2.new(0.5, 0.5),
-	Font = Enum.Font.SourceSans,
-	Text = 'Submit Key',
-	TextScaled = true,
-	TextXAlignment = Enum.TextXAlignment.Center,
-	TextYAlignment = Enum.TextYAlignment.Center,
-	TextWrapped = true,
-	TextColor3 = Color3.fromRGB(173, 173, 173),
-	BackgroundColor3 = Color3.fromRGB(255, 255, 255),
-	TextSize = 14,
-	BorderSizePixel = 0,
-	ZIndex = 508
-})
-
-local UITextSizeConstraint_5 = createInstance("UITextSizeConstraint", {
-	Parent = TextLabel_4,
-	MaxTextSize = 25,
-	MinTextSize = 1
-})
-
-local GetKey = createInstance("ImageButton", {
-	Position = UDim2.new(0.500, 0.000, 0.716, 0.000),
-	Size = UDim2.new(0.641, 0.000, 0.122, 0.000),
-	Parent = KeySystem,
-	AutoButtonColor = false,
-	AnchorPoint = Vector2.new(0.5, 0),
-	BackgroundColor3 = Color3.fromRGB(0, 0, 0),
-	BackgroundTransparency = .5,
-	BorderSizePixel = 0,
-	ZIndex = 507
-})
-
-local TextLabel_7 = createInstance("TextLabel", {
-	Position = UDim2.new(0.500, 0.000, 0.500, 0.000),
-	Size = UDim2.new(0.383, 0.000, 0.633, 0.000),
-	Parent = GetKey,
-	BackgroundTransparency = 1,
-	AnchorPoint = Vector2.new(0.5, 0.5),
-	Font = Enum.Font.SourceSans,
-	Text = 'Get Key',
-	TextScaled = true,
-	TextXAlignment = Enum.TextXAlignment.Center,
-	TextYAlignment = Enum.TextYAlignment.Center,
-	TextWrapped = true,
-	TextColor3 = Color3.fromRGB(173, 173, 173),
-	BackgroundColor3 = Color3.fromRGB(255, 255, 255),
-	TextSize = 14,
-	BorderSizePixel = 0,
-	ZIndex = 508
-})
-
-local UITextSizeConstraint_8 = createInstance("UITextSizeConstraint", {
-	Parent = TextLabel_7,
-	MaxTextSize = 25,
-	MinTextSize = 1
-})
-
+local niggakernel_rat_key_interface = Instance.new("ScreenGui", game.Players.LocalPlayer.PlayerGui)
+local fuckinghell = Instance.new("Frame", niggakernel_rat_key_interface)
+fuckinghell.Size = UDim2.new(0.3, 0, 0.3, 0)
+fuckinghell.BackgroundColor3 = Color3.fromRGB(20,20,20)
+local label = Instance.new("TextLabel", fuckinghell)
+label.Text = "niggakernel rat keysystem (swift)"
+label.Size = UDim2.new(1,0,0.2,0)
+label.BackgroundTransparency = 1
+label.BorderSizePixel = 1
+label.TextColor3 = Color3.fromRGB(255,255,255)
+label.Font = Enum.Font.IndieFlower
+label.TextSize = 20
+local input = Instance.new("TextBox", fuckinghell)
+input.Size = UDim2.new(1,0,0.4)
+input.Position = UDim2.new(0,0,0.2,0)
+input.BackgroundColor3 = Color3.fromRGB(10,10,10)
+input.PlaceholderText = "input niggakernel key"
+input.TextColor3 = Color3.fromRGB(255,255,255)
+local getkeybutton = Instance.new("TextButton", fuckinghell)
+getkeybutton.Size = UDim2.new(0.5, 0, 0.4, 0)
+getkeybutton.Position = UDim2.new(0,0,0.6,0)
+getkeybutton.BackgroundTransparency = 1
+getkeybutton.Text = "get key"
+getkeybutton.TextColor3 = Color3.fromRGB(255,255,255)
+local redeemkeybutton = Instance.new("TextButton", fuckinghell)
+redeemkeybutton.Size = UDim2.new(0.5, 0, 0.4, 0)
+redeemkeybutton.Position = UDim2.new(0.5,0,0.6,0)
+redeemkeybutton.BackgroundTransparency = 1
+redeemkeybutton.Text = "redeem niggakernel key"
+redeemkeybutton.TextColor3 = Color3.fromRGB(255,255,255)
 
 local EnteredKey = ""
 
@@ -609,26 +428,26 @@ TextButton_3.MouseButton1Click:Connect(function()
 end)
 
 TextButton_2.MouseButton1Click:Connect(function()
---	executeclipboard()
+executeclipboard()
 end)
 
 TextButton_4.MouseButton1Click:Connect(function()
-	--run_script([[loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/refs/heads/master/source"))()]])
+	run_script([[loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/refs/heads/master/source"))()]])
 end)
 
 TextButton.MouseButton1Click:Connect(function()
-	--run_script(TextBox.Text)
+	run_script(TextBox.Text)
 end)
 
-TextBox:GetPropertyChangedSignal("Text"):Connect(function()
-    EnteredKey = TextBox.Text
+input:GetPropertyChangedSignal("Text"):Connect(function()
+    EnteredKey = input.Text
 end)
 
-Submit.MouseButton1Click:Connect(function()
+redeemkeybutton.MouseButton1Click:Connect(function()
     LoadExploit()
 end)
 
-GetKey.MouseButton1Click:Connect(function()
+getkeybutton.MouseButton1Click:Connect(function()
     copyLink()
 end)
 
@@ -637,8 +456,6 @@ onMessage = function(message)
         Title = "Swift Key System",
         Text = message
     })
-end
-
 end
 
 -------------------------------------------------------------------------------

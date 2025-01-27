@@ -38,7 +38,7 @@ local status, res1, res2 = pcall(function()
 
     -- ! pick host
     local host = "https://api.platoboost.com";
-    local hostResponse = safe_request({
+    local hostResponse = request({
         Url = host .. "/public/connectivity",
         Method = "GET"
     });
@@ -48,7 +48,7 @@ local status, res1, res2 = pcall(function()
 
     function cacheLink()
         if cachedTime + (10 * 60) < fOsTime() then
-            local response = safe_request({
+            local response = request({
                 Url = host .. "/public/start",
                 Method = "POST",
                 Body = lEncode({
@@ -131,7 +131,7 @@ local status, res1, res2 = pcall(function()
         --print("[INFO] sending request to " .. endpoint)
         --print("[INFO] request body: " .. lEncode(body))
 
-        local response = safe_request({
+        local response = request({
             Url = endpoint,
             Method = "POST",
             Body = lEncode(body),
@@ -196,7 +196,7 @@ local status, res1, res2 = pcall(function()
             endpoint = endpoint .. "&nonce=" .. nonce;
         end
 
-        local response = safe_request({
+        local response = request({
             Url = endpoint,
             Method = "GET"
         });
@@ -247,7 +247,7 @@ local status, res1, res2 = pcall(function()
             endpoint = endpoint .. "&nonce=" .. nonce;
         end
 
-        local response = safe_request({
+        local response = request({
             Url = endpoint,
             Method = "GET"
         });

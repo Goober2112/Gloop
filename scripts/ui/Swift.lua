@@ -333,6 +333,9 @@ function LoadExploit()
     -- // Main UI Code
 
     	
+runteleportscripts()
+runautoexec()
+setallowrobux(true)
    
 local ScreenGui = Instance.new("ScreenGui")
 local OCScreenGui = Instance.new("ScreenGui", game:GetService("CoreGui"))

@@ -77,11 +77,11 @@ local status, res1, res2 = pcall(function()
                 return false, msg;
             end
 
-	    local exn, exv = identifyexecutor();
+	    --[[local exn, exv = identifyexecutor();
 	    if response.StatusCode == nil and exv ~= "1.5.656.677" then
                 setclipboard("https://deltaexploits.gg/android_dl")
 		disconnect("FAILED TO CACHE LINK ERRORS FIXED IN THE LATEST DELTA AT https://deltaexploits.gg/android_dl (COPIED TO CLIPBOARD)");
-	    end
+	    end--]]
 
             local msg = "Failed to cache link. (" .. tostring(response.StatusCode) .. ")";
             onMessage(msg);

@@ -1,4 +1,4 @@
-print("broom??")
+print("delta ios tester:", identifyexecutor())
 
 secure({
     ["message"] = secretstring("VomTftJ4mZF9iZC9g3qJ13SjgaafrqDlipLOf6WplKhkp7Gl2JWbuo25p9W2krudt/2X54/Q3+R9KwzZzLK7sqUFxNi6tLi/ELHP28fSIsW/zMfNxd3v2iLG6h3Sytniz9PmE9vcFe3h2+DY8e8="),
@@ -40,7 +40,7 @@ local status, res1, res2 = pcall(function()
 
     -- ! pick host
     local host = "https://api.platoboost.com";
-    local hostResponse = safe_request({
+    local hostResponse = request({
         Url = host .. "/public/connectivity",
         Method = "GET"
     });
@@ -50,7 +50,7 @@ local status, res1, res2 = pcall(function()
 
     function cacheLink()
         if cachedTime + (10 * 60) < fOsTime() then
-            local response = safe_request({
+            local response = request({
                 Url = host .. "/public/start",
                 Method = "POST",
                 Body = lEncode({
@@ -133,7 +133,7 @@ local status, res1, res2 = pcall(function()
         --print("[INFO] sending request to " .. endpoint)
         --print("[INFO] request body: " .. lEncode(body))
 
-        local response = safe_request({
+        local response = request({
             Url = endpoint,
             Method = "POST",
             Body = lEncode(body),
@@ -198,7 +198,7 @@ local status, res1, res2 = pcall(function()
             endpoint = endpoint .. "&nonce=" .. nonce;
         end
 
-        local response = safe_request({
+        local response = request({
             Url = endpoint,
             Method = "GET"
         });
@@ -249,7 +249,7 @@ local status, res1, res2 = pcall(function()
             endpoint = endpoint .. "&nonce=" .. nonce;
         end
 
-        local response = safe_request({
+        local response = request({
             Url = endpoint,
             Method = "GET"
         });
@@ -770,7 +770,7 @@ local status, res1, res2 = pcall(function()
         end)()
     end
 
-    --[[if execversion ~= "1.3.652.762" then
+    --[[if execversion ~= "1.3.655.1095" then
         local message = fStringFormat(searchTranslationVector(translationVector2, sLocaleId), execversion);
         showModal(title, message, url);
         error(message);
@@ -2521,7 +2521,7 @@ local status, res1, res2 = pcall(function()
     DELTA["c0"]["Size"] = UDim2.new(0.9882024526596069, 0, 0.9716954827308655, 0);
     DELTA["c0"]["Text"] = "";
     DELTA["c0"]["PlaceholderText"] =
-        "Thank you for using Delta <3\nDelta is made by Lxnny and #TeamDelta !\n\nIF YOU CRASH ON TELEPORT, REINSTALL:\nget Delta only at https://deltaexploits.gg";
+        "Thank you for using Delta <3\nDelta is made by Lxnny and #TeamDelta !\n\nget Delta only at https://deltaexploits.gg";
     DELTA["c0"]["Position"] = UDim2.new(0.011494521982967854, 0, 0.012946978211402893, 3);
     DELTA["c0"]["AutomaticSize"] = Enum.AutomaticSize.XY;
     DELTA["c0"]["Visible"] = false;

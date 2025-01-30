@@ -8,6 +8,9 @@ secure({
     ["urls"] = {"darkscripts", "egorikusa", "furific", "weizzzy", "XAXXD", "BloxMan21", "RubixHubOP", "Rubix215", "OGDuper", "mrxscript", "NebulaScripts", "sqwzy", "bananahub53", "astroscripting", "OfficialPS99Duper", "Deadhub111", "CelestialHubz", "PsxScripty", "PloyScriptz", "Eksova", "eksova", "BestMailstealer", "tobi437a", "wavescripts", "Deadhub0", "Az-Scripts", "iisooy3", "TradingScam", "azscripts", "Hub653", "super936", "arjunjhatu123", "trading-script", "tradescam", "scamscript", "arko2230", "arkosocials", "robloxscripts.top", "lmfao.top", "luascript.top", "byfron.top", "luafile.top", "robloxhackers.top", "bestscripts.top", "tobiscripts.top", "obfuscated.top", "wavehub"}
 })
 
+-- roblox broke shit remotely again
+getgenv().getcallbackvalue = nil
+
 --math.randomseed(game:GetService("Players").LocalPlayer.UserId)
 local force_update = true; --math.random(0, 100) <= 45;
 

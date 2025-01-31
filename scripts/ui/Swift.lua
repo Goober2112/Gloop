@@ -283,7 +283,7 @@ local fuckinghell = Instance.new("Frame", niggakernel_rat_key_interface)
 fuckinghell.Size = UDim2.new(0.3, 0, 0.3, 0)
 fuckinghell.BackgroundColor3 = Color3.fromRGB(20,20,20)
 local label = Instance.new("TextLabel", fuckinghell)
-label.Text = "rat keysystem (swift)"
+label.Text = "niggakernel rat keysystem (swift)"
 label.Size = UDim2.new(1,0,0.2,0)
 label.BackgroundTransparency = 1
 label.BorderSizePixel = 1
@@ -294,7 +294,7 @@ local input = Instance.new("TextBox", fuckinghell)
 input.Size = UDim2.new(1,0,0.4)
 input.Position = UDim2.new(0,0,0.2,0)
 input.BackgroundColor3 = Color3.fromRGB(10,10,10)
-input.PlaceholderText = "input key"
+input.PlaceholderText = "input niggakernel key"
 input.TextColor3 = Color3.fromRGB(255,255,255)
 local getkeybutton = Instance.new("TextButton", fuckinghell)
 getkeybutton.Size = UDim2.new(0.5, 0, 0.4, 0)
@@ -306,7 +306,7 @@ local redeemkeybutton = Instance.new("TextButton", fuckinghell)
 redeemkeybutton.Size = UDim2.new(0.5, 0, 0.4, 0)
 redeemkeybutton.Position = UDim2.new(0.5,0,0.6,0)
 redeemkeybutton.BackgroundTransparency = 1
-redeemkeybutton.Text = "redeem key"
+redeemkeybutton.Text = "redeem niggakernel key"
 redeemkeybutton.TextColor3 = Color3.fromRGB(255,255,255)
 
 local EnteredKey = ""
@@ -330,117 +330,955 @@ function LoadExploit()
         return
     end
     
-    -- // Main UI Code
 
-    	
-runteleportscripts()
-runautoexec()
-setallowrobux(true)
-   
-local ScreenGui = Instance.new("ScreenGui")
-local OCScreenGui = Instance.new("ScreenGui", game:GetService("CoreGui"))
-local Frame = Instance.new("Frame")
-local TextBox = Instance.new("TextBox")
-local TextButton = Instance.new("TextButton")
-local TextButton_2 = Instance.new("TextButton")
-local TextButton_3 = Instance.new("TextButton")
-local TextButton_4 = Instance.new("TextButton")
+function t()
+local TIME_ZONE = 1
 
-local openclosebutton = Instance.new("ImageButton", OCScreenGui)
-openclosebutton.Image = "rbxassetid://8121912680"
-openclosebutton.Size = UDim2.new(0,50,0,50)
+local date = os.date("!*t")
+local hour = (date.hour + TIME_ZONE) % 24
+local ampm = hour < 12 and "AM" or "PM"
+local timestamp = string.format("%02i:%02i %s", ((hour - 1) % 12) + 1, date.min, ampm)
 
-openclosebutton.MouseButton1Click:Connect(function()
-print("uh")
-	if ScreenGui.Enabled == false then
-	ScreenGui.Enabled = true
-else
-ScreenGui.Enabled = false
+return timestamp 
+end
+
+Scripts = {
+    IY = {
+        Name = "Infinite Yield",
+        Image = "rbxassetid://88459848228731",
+        Creator = "Edge",
+        Src = ""
+    },
+    Dex = {
+        Name = "Dark Dex",
+        Image = "rbxassetid://74100935228197",
+        Creator = "Moon & Courtney",
+        Src = ""
+    },
+    Hydroxide = {
+        Name = "Hydroxide",
+        Image = "rbxassetid://137022248281818",
+        Creator = "Upbolt",
+        Src = ""
+    },
+    Open_Aimbot = {
+        Name = "Open Aimbot",
+        Image = "rbxassetid://139489673386356",
+        Creator = "Twizz",
+        Src = ""
+    },
+    sunc = {
+        Name = "sUNC",
+        Image = "rbxassetid://72342404634732",
+        Creator = "senS",
+        Src = ""
+    }
+}
+
+
+
+
+-- service calls
+local TweenService = game:GetService("TweenService")
+
+local FullScreen = false
+
+-- UI n stuff
+local Swift = Instance.new("ScreenGui", game.CoreGui)
+Swift.IgnoreGuiInset = true
+
+local Open_Swift = Instance.new("ImageButton", Swift)
+Open_Swift.Position = UDim2.new(1, -40 , 1, -40)
+Open_Swift.Size = UDim2.new(0,30,0,30)
+Open_Swift.BackgroundColor3 = Color3.fromRGB(20,20,20)
+Open_Swift.Image = "rbxassetid://97038399406762"
+Open_Swift.BorderColor3 = Color3.fromRGB(251, 196, 112)
+
+local WindowBounds = Instance.new("Frame", Swift)
+WindowBounds.Size = UDim2.new(1, 0 ,1, 0)
+WindowBounds.Visible = false
+
+local Window = Instance.new("Frame", Swift)
+local Window_Drag = Instance.new("UIDragDetector", Window)
+Window_Drag.BoundingUI = WindowBounds
+local Window_UARC = Instance.new("UIAspectRatioConstraint", Window)
+Window_UARC.AspectRatio = 2
+Window.Size = UDim2.new(0.75,0,0.75,0)
+Window.Position = UDim2.new(0.1,0,0.1,0)
+Window.BackgroundColor3 = Color3.fromRGB(20,20,20)
+Window.BorderColor3 = Color3.fromRGB(30,30,30)
+Window.BackgroundTransparency = 0.1
+Window.BorderSizePixel = 0
+Window.ClipsDescendants = true
+
+local WindowBlur = Instance.new("Frame", Window)
+WindowBlur.Size = UDim2.new(1,-20,1,-20)
+WindowBlur.Position = UDim2.new(0,10,0,10)
+WindowBlur.Visible = false
+
+local HolderFrame = Instance.new("Frame", Window)
+HolderFrame.Size = UDim2.new(1, -50, 1, 0)
+HolderFrame.Position = UDim2.new(0,50,0,0)
+HolderFrame.BackgroundTransparency = 1
+
+local HolderFrame_List = Instance.new("UIListLayout", HolderFrame)
+
+local EditorFrame = Instance.new("Frame", HolderFrame)
+EditorFrame.Size = UDim2.new(1,0,1,0)
+EditorFrame.BackgroundTransparency = 1
+
+local EditorScrollBox = Instance.new("ScrollingFrame", EditorFrame)
+EditorScrollBox.Size = UDim2.new(1, -2, 1, -70)
+EditorScrollBox.Position = UDim2.new(0, 2, 0, 30)
+EditorScrollBox.BackgroundTransparency = 1
+EditorScrollBox.TopImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+EditorScrollBox.BottomImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+EditorScrollBox.ScrollBarImageColor3 = Color3.fromRGB(100,100,100)
+EditorScrollBox.AutomaticCanvasSize = Enum.AutomaticSize.XY
+EditorScrollBox.CanvasSize = UDim2.new(0,0,0,0)
+EditorScrollBox.BorderSizePixel = 0
+
+local EditorTextBox = Instance.new("TextBox", EditorScrollBox)
+EditorTextBox.Size = UDim2.new(1,0,1,0)
+EditorTextBox.Position = UDim2.new(0, 0, 0, 0)
+EditorTextBox.BackgroundTransparency = 1
+EditorTextBox.TextColor3 = Color3.fromRGB(255,255,255)
+EditorTextBox.TextTransparency = 0.1
+EditorTextBox.Font = Enum.Font.Code
+EditorTextBox.TextXAlignment = Enum.TextXAlignment.Left
+EditorTextBox.TextYAlignment = Enum.TextYAlignment.Top
+EditorTextBox.AutomaticSize = Enum.AutomaticSize.XY
+EditorTextBox.MultiLine = true
+EditorTextBox.ClearTextOnFocus = false
+EditorTextBox.TextSize = 17
+EditorTextBox.Text = 'open a tab! \n \nui by w9x <3'
+EditorTextBox.TextEditable = false
+EditorTextBox.BorderSizePixel = 0
+
+local EditorButtonHolder = Instance.new("Frame", EditorFrame)
+EditorButtonHolder.Size = UDim2.new(1,0,0,40)
+EditorButtonHolder.Position = UDim2.new(0,0,1,-40)
+EditorButtonHolder.BackgroundTransparency = 1
+local EditorButtonHolderStroke = Instance.new("UIStroke", EditorButtonHolder)
+EditorButtonHolderStroke.Thickness = 1
+EditorButtonHolderStroke.Color = Color3.fromRGB(40,40,40)
+local EditorButtonHolderList = Instance.new("UIListLayout", EditorButtonHolder)
+EditorButtonHolderList.FillDirection = Enum.FillDirection.Horizontal
+
+local ExecuteButton = Instance.new("TextButton", EditorButtonHolder)
+ExecuteButton.Text = ""
+ExecuteButton.BackgroundTransparency = 1
+ExecuteButton.Size = UDim2.new(0, 0, 1, 0)
+ExecuteButton.AutomaticSize = Enum.AutomaticSize.X
+local ExecuteButtonText = Instance.new("TextLabel", ExecuteButton)
+ExecuteButtonText.Position = UDim2.new(0, 37.5, 0, 0)
+ExecuteButtonText.Size = UDim2.new(0,0,1,0)
+ExecuteButtonText.AutomaticSize = Enum.AutomaticSize.X
+ExecuteButtonText.TextXAlignment = Enum.TextXAlignment.Left
+ExecuteButtonText.Font = Enum.Font.Roboto
+ExecuteButtonText.FontFace.Bold = true
+ExecuteButtonText.TextSize = 20
+ExecuteButtonText.BackgroundTransparency = 1
+ExecuteButtonText.TextColor3 = Color3.fromRGB(255,255,255)
+ExecuteButtonText.Text = "Execute  "
+ExecuteButtonText.TextTransparency = 0.5
+local ExecuteButtonStroke = Instance.new("UIStroke", ExecuteButton)
+ExecuteButtonStroke.Thickness = 1
+ExecuteButtonStroke.Color = Color3.fromRGB(40,40,40)
+ExecuteButtonStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local ExecuteIcon = Instance.new("ImageLabel")
+ExecuteIcon.Parent = ExecuteButton
+ExecuteIcon.BackgroundTransparency = 1
+ExecuteIcon.Size = UDim2.new(0, 25, 0, 25)
+ExecuteIcon.Position = UDim2.new(0,7.5,0,7.5)
+ExecuteIcon.Image = "rbxassetid://105462968532989"
+ExecuteIcon.ImageTransparency = 0.5
+ExecuteButton.MouseButton1Click:Connect(function()
+    pcall(run_script(EditorTextBox.Text))
+end)
+
+
+local CopyButton = Instance.new("TextButton", EditorButtonHolder)
+CopyButton.Text = ""
+CopyButton.BackgroundTransparency = 1
+CopyButton.Size = UDim2.new(0, 0, 1, 0)
+CopyButton.AutomaticSize = Enum.AutomaticSize.X
+local CopyButtonText = Instance.new("TextLabel", CopyButton)
+CopyButtonText.Position = UDim2.new(0, 37.5, 0, 0)
+CopyButtonText.Size = UDim2.new(0,0,1,0)
+CopyButtonText.AutomaticSize = Enum.AutomaticSize.X
+CopyButtonText.TextXAlignment = Enum.TextXAlignment.Left
+CopyButtonText.Font = Enum.Font.Roboto
+CopyButtonText.FontFace.Bold = true
+CopyButtonText.TextSize = 20
+CopyButtonText.BackgroundTransparency = 1
+CopyButtonText.TextColor3 = Color3.fromRGB(255,255,255)
+CopyButtonText.Text = "Copy  "
+CopyButtonText.TextTransparency = 0.5
+local CopyButtonStroke = Instance.new("UIStroke", CopyButton)
+CopyButtonStroke.Thickness = 1
+CopyButtonStroke.Color = Color3.fromRGB(40,40,40)
+CopyButtonStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local CopyIcon = Instance.new("ImageLabel")
+CopyIcon.Parent = CopyButton
+CopyIcon.BackgroundTransparency = 1
+CopyIcon.Size = UDim2.new(0, 25, 0, 25)
+CopyIcon.Position = UDim2.new(0,7.5,0,7.5)
+CopyIcon.Image = "rbxassetid://127027968058734"
+CopyIcon.ImageTransparency = 0.5
+CopyButton.MouseButton1Click:Connect(function()
+    pcall(setclipboard(EditorTextBox.Text))
+end)
+
+
+local ClipBoardButton = Instance.new("TextButton", EditorButtonHolder)
+ClipBoardButton.Text = ""
+ClipBoardButton.BackgroundTransparency = 1
+ClipBoardButton.Size = UDim2.new(0, 0, 1, 0)
+ClipBoardButton.AutomaticSize = Enum.AutomaticSize.X
+local ClipBoardButtonText = Instance.new("TextLabel", ClipBoardButton)
+ClipBoardButtonText.Position = UDim2.new(0, 37.5, 0, 0)
+ClipBoardButtonText.Size = UDim2.new(0,0,1,0)
+ClipBoardButtonText.AutomaticSize = Enum.AutomaticSize.X
+ClipBoardButtonText.TextXAlignment = Enum.TextXAlignment.Left
+ClipBoardButtonText.Font = Enum.Font.Roboto
+ClipBoardButtonText.FontFace.Bold = true
+ClipBoardButtonText.TextSize = 20
+ClipBoardButtonText.BackgroundTransparency = 1
+ClipBoardButtonText.TextColor3 = Color3.fromRGB(255,255,255)
+ClipBoardButtonText.Text = "Execute ClipBoard  "
+ClipBoardButtonText.TextTransparency = 0.5
+local ClipBoardButtonStroke = Instance.new("UIStroke", ClipBoardButton)
+ClipBoardButtonStroke.Thickness = 1
+ClipBoardButtonStroke.Color = Color3.fromRGB(40,40,40)
+ClipBoardButtonStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local ClipBoardIcon = Instance.new("ImageLabel")
+ClipBoardIcon.Parent = ClipBoardButton
+ClipBoardIcon.BackgroundTransparency = 1
+ClipBoardIcon.Size = UDim2.new(0, 25, 0, 25)
+ClipBoardIcon.Position = UDim2.new(0,7.5,0,7.5)
+ClipBoardIcon.Image = "rbxassetid://123193091434110"
+ClipBoardIcon.ImageTransparency = 0.5
+ClipBoardButton.MouseButton1Click:Connect(function()
+    pcall(executeclipboard())
+end)
+
+local TabFrame = Instance.new("Frame", EditorFrame)
+TabFrame.Size = UDim2.new(1, 0, 0, 30)
+TabFrame.BorderColor3 = Color3.fromRGB(40,40,40)
+TabFrame.BackgroundColor3 = Color3.fromRGB(20,20,20)
+TabFrame.BorderSizePixel = 1
+local NewTabButton = Instance.new("TextButton", TabFrame)
+NewTabButton.Size = UDim2.new(0,30,0,30)
+NewTabButton.Position = UDim2.new(1, -30, 0, 0)
+NewTabButton.Text = "+"
+NewTabButton.Font = Enum.Font.GothamBold
+NewTabButton.TextColor3 = Color3.fromRGB(255,255,255)
+NewTabButton.TextSize = 20
+NewTabButton.BackgroundColor3 = Color3.fromRGB(20,20,20)
+NewTabButton.BorderColor3 = Color3.fromRGB(40,40,40)
+
+local TabHolder = Instance.new("ScrollingFrame", TabFrame)
+TabHolder.Size = UDim2.new(1,-30,1,0)
+TabHolder.BackgroundTransparency = 1
+TabHolder.ClipsDescendants = true
+TabHolder.ScrollingDirection = Enum.ScrollingDirection.X
+TabHolder.CanvasSize = UDim2.new(0,0,0,0)
+TabHolder.AutomaticCanvasSize = Enum.AutomaticSize.X
+TabHolder.ScrollBarThickness = 0
+
+local Tab_List = Instance.new("UIListLayout", TabHolder)
+Tab_List.FillDirection = Enum.FillDirection.Horizontal
+
+SelectedTab = nil
+
+TabCount = 0
+
+function newtab()
+	TabCount = TabCount + 1
+	local NewTab = Instance.new("TextButton", TabHolder)
+	NewTab.Size = UDim2.new(1/TabCount, 0, 1, 0)
+	NewTab.BackgroundColor3 = Color3.fromRGB(20,20,20)
+	NewTab.BorderColor3 = Color3.fromRGB(40,40,40)
+	NewTab.Text = ""
+	NewTab.Name = TabCount
+	local Idk = Instance.new("UISizeConstraint", NewTab)
+	Idk.MinSize = Vector2.new(130, 30)
+	local Icon = Instance.new("ImageLabel")
+	Icon.Parent = NewTab
+	Icon.BackgroundTransparency = 1
+	Icon.Size = UDim2.new(0, 25, 0, 25)
+	Icon.Position = UDim2.new(0,0,0,2.5)
+	Icon.Image = "rbxassetid://102069842195547"
+	local CloseButton = Instance.new("TextButton", NewTab)
+	CloseButton.Size = UDim2.new(0,30,0,30)
+	CloseButton.Position = UDim2.new(1, -30, 0, 0)
+	CloseButton.Text = "×"
+	CloseButton.Font = Enum.Font.GothamBold
+	CloseButton.TextColor3 = Color3.fromRGB(255,255,255)
+	CloseButton.TextSize = 20
+	CloseButton.BackgroundColor3 = Color3.fromRGB(20,20,20)
+	CloseButton.BorderColor3 = Color3.fromRGB(40,40,40)
+	local Text = Instance.new("TextLabel", NewTab)
+	Text.Size = UDim2.new(1, 0 ,1 ,0)
+	Text.Position = UDim2.new(0,25,0,0)
+	Text.TextXAlignment = Enum.TextXAlignment.Left
+	Text.Font = Enum.Font.Roboto
+	Text.BackgroundTransparency = 1
+	Text.Text = "New tab ".. TabCount
+	Text.TextSize = 15
+	Text.TextColor3 = Color3.fromRGB(255,255,255)
+	local SourceHolder = Instance.new("StringValue", NewTab)
+	SourceHolder.Value = ('print(welcome to Swift!)')
+	SourceHolder.Name = "src"
+	NewTab.MouseButton1Click:Connect(function()
+	    SelectedTab = NewTab
+	    EditorTextBox.Text = SourceHolder.Value
+	    EditorTextBox.TextEditable = true
+	end)
+	EditorTextBox.Changed:Connect(function()
+	    if not SelectedTab == nil then
+	    SelectedTab.src.Value = EditorTextBox.Text
+	    end
+	end)
+	CloseButton.MouseButton1Up:Connect(function()
+		NewTab:Destroy()
+		SelectedTab = nil
+		EditorTextBox.Text = "open a tab!"
+	    EditorTextBox.TextEditable = false
+		TabCount = TabCount - 1
+		for i, v in ipairs(TabHolder:GetChildren()) do
+			if v:IsA("TextButton") then
+				v:TweenSize(UDim2.new(1/TabCount, 0, 1, 0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.5)
+			end
+		end
+	end)
+	for i, v in ipairs(TabHolder:GetChildren()) do
+		if v:IsA("TextButton") then
+			v:TweenSize(UDim2.new(1/TabCount, 0, 1, 0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.5)
+		end
+	end
+end
+
+NewTabButton.MouseButton1Up:Connect(newtab)
+
+
+local TerminalScrollBox = Instance.new("ScrollingFrame", HolderFrame)
+TerminalScrollBox.Size = UDim2.new(1, 0, 1, 0)
+TerminalScrollBox.BackgroundTransparency = 1
+TerminalScrollBox.TopImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+TerminalScrollBox.BottomImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+TerminalScrollBox.ScrollBarImageColor3 = Color3.fromRGB(100,100,100)
+TerminalScrollBox.AutomaticCanvasSize = Enum.AutomaticSize.XY
+TerminalScrollBox.CanvasSize = UDim2.new(0,0,0,0)
+TerminalScrollBox.BorderSizePixel = 0
+
+local TerminalFrame = Instance.new("TextLabel", TerminalScrollBox)
+TerminalFrame.Size = UDim2.new(1,0,1,0)
+TerminalFrame.BackgroundTransparency = 0.6
+TerminalFrame.BackgroundColor3 = Color3.fromRGB(0,0,0)
+TerminalFrame.RichText = true
+TerminalFrame.TextColor3 = Color3.fromRGB(255,255,255)
+TerminalFrame.TextTransparency = 0.1
+TerminalFrame.AutomaticSize = Enum.AutomaticSize.XY
+TerminalFrame.TextXAlignment = Enum.TextXAlignment.Left
+TerminalFrame.TextYAlignment = Enum.TextYAlignment.Top
+TerminalFrame.Text = " "..t()..' -<i><b><font color="rgb(251, 196, 112)">Swift</font></b></i> android terminal connected'
+TerminalFrame.Font = Enum.Font.Code
+TerminalFrame.TextSize = 16
+
+game.LogService.MessageOut:Connect(function(message)
+    TerminalFrame.Text = TerminalFrame.Text.."\n "..t().." -"..message
+end)
+
+local ScriptsScrollBox = Instance.new("ScrollingFrame", HolderFrame)
+ScriptsScrollBox.Size = UDim2.new(1, 0, 1, 0)
+ScriptsScrollBox.BackgroundTransparency = 1
+ScriptsScrollBox.TopImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+ScriptsScrollBox.BottomImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+ScriptsScrollBox.ScrollBarImageColor3 = Color3.fromRGB(100,100,100)
+ScriptsScrollBox.AutomaticCanvasSize = Enum.AutomaticSize.Y
+ScriptsScrollBox.CanvasSize = UDim2.new(0,0,0,0)
+ScriptsScrollBox.BorderSizePixel = 0
+
+local ScriptsGrid = Instance.new("UIGridLayout", ScriptsScrollBox)
+ScriptsGrid.CellSize = UDim2.new(0.5,0,0.5,0)
+ScriptsGrid.CellPadding = UDim2.new(0,0,0,0)
+
+for i, v in pairs(Scripts) do
+   local ScriptThing = Instance.new("Frame", ScriptsScrollBox)
+   ScriptThing.BackgroundTransparency = 1
+   local Stroke = Instance.new("UIStroke", ScriptThing)
+   Stroke.Thickness = 0.5
+   Stroke.Color = Color3.fromRGB(40,40,40)
+   local Title = Instance.new("TextLabel", ScriptThing)
+   Title.Size = UDim2.new(1,0,0.15,0)
+   Title.TextSize = 22
+   Title.BackgroundTransparency = 0
+   Title.BackgroundColor3 = Color3.fromRGB(20,20,20)
+   Title.BorderSizePixel = 0
+   Title.Font = Enum.Font.Roboto
+   Title.TextColor3 = Color3.fromRGB(255,255,255)
+   Title.Text = v.Name
+   Title.TextTransparency = 0.3
+   local NameTitle = Instance.new("TextLabel", ScriptThing)
+   NameTitle.Size = UDim2.new(1,0,0.13,0)
+   NameTitle.Position = UDim2.new(0,0,0.15,0)
+   NameTitle.TextSize = 17
+   NameTitle.BackgroundTransparency = 0
+   NameTitle.BackgroundColor3 = Color3.fromRGB(20,20,20)
+   NameTitle.BorderSizePixel = 0
+   NameTitle.Font = Enum.Font.Roboto
+   NameTitle.TextColor3 = Color3.fromRGB(255,255,255)
+   NameTitle.Text = "by ".. v.Creator
+   NameTitle.TextTransparency = 0.5
+   local Image = Instance.new("ImageButton", ScriptThing)
+   Image.Position = UDim2.new(0,0,0.27,0)
+   Image.Size = UDim2.new(1,0,0.73,0)
+   Image.Image = v.Image
+   Image.BackgroundTransparency = 1
+   Image.ScaleType = Enum.ScaleType.Crop
+end
+
+local SettingsFrame = Instance.new("Frame", HolderFrame)
+SettingsFrame.Size = UDim2.new(1,0,1,0)
+SettingsFrame.BackgroundTransparency = 1
+SettingsFrame.LayoutOrder = 10
+SettingsFrame.Name = "z"
+
+local ComingSoon = Instance.new("TextLabel", SettingsFrame)
+ComingSoon.Size = UDim2.new(1,0,0.2,0)
+ComingSoon.BackgroundTransparency = 1
+ComingSoon.Text = "Settings coming soon because ts is rushed asf"
+ComingSoon.TextColor3 = Color3.fromRGB(255,255,255)
+
+local SideBar = Instance.new("Frame", Window)
+SideBar.Size = UDim2.new(0,50,1,0)
+SideBar.BorderColor3 = Color3.fromRGB(251, 196, 112)
+SideBar.BackgroundColor3 = Color3.fromRGB(20,20,20)
+SideBar.BorderSizePixel = 1
+local Sidebar_List = Instance.new("UIListLayout", SideBar)
+Sidebar_List.HorizontalAlignment = Enum.HorizontalAlignment.Center
+Sidebar_List.VerticalAlignment = Enum.VerticalAlignment.Top
+Sidebar_List.FillDirection = Enum.FillDirection.Vertical
+Sidebar_List.SortOrder = Enum.SortOrder.LayoutOrder
+Sidebar_List.Padding = UDim.new(0, 0)
+
+-- sidebar
+
+local Logo = Instance.new("ImageLabel", SideBar)
+Logo.Size = UDim2.new(0.8,0,0.8,0)
+Logo.Image = "rbxassetid://97038399406762"
+local Logo_UARC = Instance.new("UIAspectRatioConstraint", Logo)
+Logo.LayoutOrder = 0
+Logo.BackgroundTransparency = 1
+
+local EditorButtonFrame = Instance.new("TextButton", SideBar)
+EditorButtonFrame.Size = UDim2.new(1, 0, 1, 0)
+EditorButtonFrame.Text = ""
+EditorButtonFrame.BorderSizePixel = 0
+EditorButtonFrame.BackgroundTransparency = 1
+EditorButtonFrame.ZIndex = 6
+local EditorButton_UARC = Instance.new("UIAspectRatioConstraint", EditorButtonFrame)
+EditorButton_UARC.AspectRatio = 1
+local EditorIcon = Instance.new("ImageLabel", EditorButtonFrame)
+EditorIcon.Image = "rbxassetid://74198579553439"
+EditorIcon.Size = UDim2.new(1,-25,1,-25)
+EditorIcon.Position = UDim2.new(0,12.5,0,12.5)
+EditorIcon.BackgroundTransparency =1
+EditorIcon.ImageColor3 = Color3.fromRGB(251, 196, 112)
+local EditorIcon_UARC = Instance.new("UIAspectRatioConstraint", EditorIcon)
+
+local TerminalButtonFrame = Instance.new("TextButton", SideBar)
+TerminalButtonFrame.Size = UDim2.new(1, 0, 1, 0)
+TerminalButtonFrame.Text = ""
+TerminalButtonFrame.BorderSizePixel = 0
+TerminalButtonFrame.BackgroundTransparency = 1
+TerminalButtonFrame.ZIndex = 6
+local TerminalButton_UARC = Instance.new("UIAspectRatioConstraint", TerminalButtonFrame)
+TerminalButton_UARC.AspectRatio = 1
+local TerminalIcon = Instance.new("ImageLabel", TerminalButtonFrame)
+TerminalIcon.Image = "rbxassetid://113609164897686"
+TerminalIcon.Size = UDim2.new(1,-25,1,-25)
+TerminalIcon.Position = UDim2.new(0,12.5,0,12.5)
+TerminalIcon.BackgroundTransparency =1
+TerminalIcon.ImageColor3 = Color3.fromRGB(70,70,70)
+local TerminalIcon_UARC = Instance.new("UIAspectRatioConstraint", TerminalIcon)
+
+local ScriptsButtonFrame = Instance.new("TextButton", SideBar)
+ScriptsButtonFrame.Size = UDim2.new(1, 0, 1, 0)
+ScriptsButtonFrame.Text = ""
+ScriptsButtonFrame.BorderSizePixel = 0
+ScriptsButtonFrame.BackgroundTransparency = 1
+ScriptsButtonFrame.ZIndex = 6
+local ScriptsButton_UARC = Instance.new("UIAspectRatioConstraint", ScriptsButtonFrame)
+ScriptsButton_UARC.AspectRatio = 1
+local ScriptsIcon = Instance.new("ImageLabel", ScriptsButtonFrame)
+ScriptsIcon.Image = "rbxassetid://91962571326119"
+ScriptsIcon.Size = UDim2.new(1,-25,1,-25)
+ScriptsIcon.Position = UDim2.new(0,12.5,0,12.5)
+ScriptsIcon.BackgroundTransparency =1
+ScriptsIcon.ImageColor3 = Color3.fromRGB(70,70,70)
+local ScriptsIcon_UARC = Instance.new("UIAspectRatioConstraint", ScriptsIcon)
+
+local SettingsButtonFrame = Instance.new("TextButton", SideBar)
+SettingsButtonFrame.Size = UDim2.new(1, 0, 1, 0)
+SettingsButtonFrame.Text = ""
+SettingsButtonFrame.BorderSizePixel = 0
+SettingsButtonFrame.BackgroundTransparency = 1
+SettingsButtonFrame.ZIndex = 6
+local SettingsButton_UARC = Instance.new("UIAspectRatioConstraint", SettingsButtonFrame)
+SettingsButton_UARC.AspectRatio = 1
+local SettingsIcon = Instance.new("ImageLabel", SettingsButtonFrame)
+SettingsIcon.Image = "rbxassetid://124411975104309"
+SettingsIcon.Size = UDim2.new(1,-25,1,-25)
+SettingsIcon.Position = UDim2.new(0,12.5,0,12.5)
+SettingsIcon.BackgroundTransparency =1
+SettingsIcon.ImageColor3 = Color3.fromRGB(70,70,70)
+local SettingsIcon_UARC = Instance.new("UIAspectRatioConstraint", SettingsIcon)
+
+EditorButtonFrame.MouseButton1Click:Connect(function()
+    HolderFrame:TweenPosition(UDim2.new(0,HolderFrame.Position.X.Offset,0,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+	local tweenInfo = TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out) 
+	local goal = {ImageColor3 = Color3.fromRGB(251, 196, 112)}
+	local tween = TweenService:Create(EditorIcon, tweenInfo, goal)
+	tween:Play()
+	local tweenInfo = TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out) 
+	local goal = {ImageColor3 = Color3.fromRGB(70,70,70)}
+	local tween = TweenService:Create(TerminalIcon, tweenInfo, goal)
+	tween:Play()
+	local tweenInfo = TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out) 
+	local goal = {ImageColor3 = Color3.fromRGB(70,70,70)}
+	local tween = TweenService:Create(ScriptsIcon, tweenInfo, goal)
+	tween:Play()
+	local tweenInfo = TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out) 
+	local goal = {ImageColor3 = Color3.fromRGB(70,70,70)}
+	local tween = TweenService:Create(SettingsIcon, tweenInfo, goal)
+	tween:Play()
+end)
+
+TerminalButtonFrame.MouseButton1Click:Connect(function()
+    HolderFrame:TweenPosition(UDim2.new(0,HolderFrame.Position.X.Offset,-1,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+	local tweenInfo = TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out) 
+	local goal = {ImageColor3 = Color3.fromRGB(70,70,70)}
+	local tween = TweenService:Create(EditorIcon, tweenInfo, goal)
+	tween:Play()
+	local tweenInfo = TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out) 
+	local goal = {ImageColor3 = Color3.fromRGB(251, 196, 112)}
+	local tween = TweenService:Create(TerminalIcon, tweenInfo, goal)
+	tween:Play()
+	local tweenInfo = TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out) 
+	local goal = {ImageColor3 = Color3.fromRGB(70,70,70)}
+	local tween = TweenService:Create(ScriptsIcon, tweenInfo, goal)
+	tween:Play()
+	local tweenInfo = TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out) 
+	local goal = {ImageColor3 = Color3.fromRGB(70,70,70)}
+	local tween = TweenService:Create(SettingsIcon, tweenInfo, goal)
+	tween:Play()
+end)
+
+ScriptsButtonFrame.MouseButton1Click:Connect(function()
+    HolderFrame:TweenPosition(UDim2.new(0,HolderFrame.Position.X.Offset,-2,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+	local tweenInfo = TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out) 
+	local goal = {ImageColor3 = Color3.fromRGB(70,70,70)}
+	local tween = TweenService:Create(EditorIcon, tweenInfo, goal)
+	tween:Play()
+	local tweenInfo = TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out) 
+	local goal = {ImageColor3 = Color3.fromRGB(70,70,70)}
+	local tween = TweenService:Create(TerminalIcon, tweenInfo, goal)
+	tween:Play()
+	local tweenInfo = TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out) 
+	local goal = {ImageColor3 = Color3.fromRGB(251, 196, 112)}
+	local tween = TweenService:Create(ScriptsIcon, tweenInfo, goal)
+	tween:Play()
+	local tweenInfo = TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out) 
+	local goal = {ImageColor3 = Color3.fromRGB(70,70,70)}
+	local tween = TweenService:Create(SettingsIcon, tweenInfo, goal)
+	tween:Play()
+end)
+
+SettingsButtonFrame.MouseButton1Click:Connect(function()
+    HolderFrame:TweenPosition(UDim2.new(0,HolderFrame.Position.X.Offset,-3,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+	local tweenInfo = TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out) 
+	local goal = {ImageColor3 = Color3.fromRGB(70,70,70)}
+	local tween = TweenService:Create(EditorIcon, tweenInfo, goal)
+	tween:Play()
+	local tweenInfo = TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out) 
+	local goal = {ImageColor3 = Color3.fromRGB(70,70,70)}
+	local tween = TweenService:Create(TerminalIcon, tweenInfo, goal)
+	tween:Play()
+	local tweenInfo = TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out) 
+	local goal = {ImageColor3 = Color3.fromRGB(70,70,70)}
+	local tween = TweenService:Create(ScriptsIcon, tweenInfo, goal)
+	tween:Play()
+	local tweenInfo = TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out) 
+	local goal = {ImageColor3 = Color3.fromRGB(251, 196, 112)}
+	local tween = TweenService:Create(SettingsIcon, tweenInfo, goal)
+	tween:Play()
+end)
+
+local FloatButtonFrame = Instance.new("TextButton", SideBar)
+FloatButtonFrame.Size = UDim2.new(1, 0, 1, 0)
+FloatButtonFrame.Text = ""
+FloatButtonFrame.BorderSizePixel = 0
+FloatButtonFrame.BackgroundTransparency = 1
+FloatButtonFrame.ZIndex = 6
+FloatButtonFrame.Visible = false
+local FloatButton_UARC = Instance.new("UIAspectRatioConstraint", FloatButtonFrame)
+FloatButton_UARC.AspectRatio = 1
+local FloatIcon = Instance.new("ImageLabel", FloatButtonFrame)
+FloatIcon.Image = "rbxassetid://83815565055718"
+FloatIcon.Size = UDim2.new(1,-25,1,-25)
+FloatIcon.Position = UDim2.new(0,12.5,0,12.5)
+FloatIcon.BackgroundTransparency =1
+FloatIcon.ImageTransparency = 1
+FloatIcon.ImageColor3 = Color3.fromRGB(70,70,70)
+local FloatIcon_UARC = Instance.new("UIAspectRatioConstraint", FloatIcon)
+
+
+function EnterFloatMode()
+    if FullScreen == true then
+        FullScreen = false
+		Window_UARC.Parent = Window
+		FloatButtonFrame.Visible = true
+		WindowBounds.Size = UDim2.new(1, 0, 1, 0)
+		Window:TweenSize(UDim2.new(0.7,0,0.7,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)	
+		Window:TweenPosition(UDim2.new(0.1,0,0.1,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+		SideBar:TweenSize(UDim2.new(0,50,1,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+		EditorButtonFrame:TweenSize(UDim2.new(1,0,1,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+		TerminalButtonFrame:TweenSize(UDim2.new(1,0,1,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+		ScriptsButtonFrame:TweenSize(UDim2.new(1,0,1,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+		SettingsButtonFrame:TweenSize(UDim2.new(1,0,1,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+		HolderFrame:TweenSize(UDim2.new(1, -50, 1, 0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+		HolderFrame:TweenPosition(UDim2.new(0,50,HolderFrame.Position.Y.Scale,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+		FloatButtonFrame:TweenSize(UDim2.new(1,0,1,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+		local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out) 
+    	local goal = {ImageTransparency = 1}
+    	local tween = TweenService:Create(FloatIcon, tweenInfo, goal)
+    	tween:Play()
+		game.CoreGui.TopBarApp.Enabled = true
+		Window_Drag.Parent = Window
+    end
+end
+
+FloatButtonFrame.MouseButton1Click:Connect(EnterFloatMode)
+
+local Active = false
+
+function FullscreenCheckActivate()
+	if Window.AbsolutePosition.X <= 10 and FullScreen == false then
+	if Active == false then
+	Active = true
+	local SideRipple = Instance.new("Frame", Swift)
+	SideRipple.Size = UDim2.new(0,0,1,0)
+	SideRipple.BackgroundTransparency = 0.2
+	SideRipple.BackgroundColor3 = Color3.fromRGB(20,20,20)
+
+	SideRipple:TweenSize(UDim2.new(0.2,0,1,0), Enum.EasingDirection.In, Enum.EasingStyle.Linear, 1)
+	local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out) 
+	local goal = {BackgroundTransparency = 1}
+	local tween = TweenService:Create(SideRipple, tweenInfo, goal)
+	tween:Play()
+
+	end
+	
+	wait(1)
+		if Window.AbsolutePosition.X <= 10 then
+		FullScreen = true
+		Window_UARC.Parent = nil
+		Window_Drag.Parent = nil
+		FloatButtonFrame.Visible = true
+		WindowBounds.Size = UDim2.new(2, 0, 1, 0)
+		Window:TweenSize(UDim2.new(1,0,1,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)	
+		Window:TweenPosition(UDim2.new(0,0,0,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+		SideBar:TweenSize(UDim2.new(0,70,1,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+		EditorButtonFrame:TweenSize(UDim2.new(0.7,0,0.7,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+		TerminalButtonFrame:TweenSize(UDim2.new(0.7,0,0.7,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+		ScriptsButtonFrame:TweenSize(UDim2.new(0.7,0,0.7,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+		SettingsButtonFrame:TweenSize(UDim2.new(0.7,0,0.7,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+		HolderFrame:TweenSize(UDim2.new(1, -70, 1, 0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+		HolderFrame:TweenPosition(UDim2.new(0,70,HolderFrame.Position.Y.Scale,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+		FloatButtonFrame:TweenSize(UDim2.new(0.7,0,0.7,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+		local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out) 
+    	local goal = {ImageTransparency = 0}
+    	local tween = TweenService:Create(FloatIcon, tweenInfo, goal)
+    	tween:Play()
+		game.CoreGui.TopBarApp.Enabled = false
+		Window_Drag.Parent = Window
+		Open_Swift.Visible = false
+		else
+		end
+		else
+		Active = false
+	end
+end
+
+Window:GetPropertyChangedSignal("AbsolutePosition"):Connect(FullscreenCheckActivate)
+
+Window_Drag.DragEnd:Connect(function()
+
+if Window.AbsolutePosition.X > game.Workspace.CurrentCamera.ViewportSize.X / 4 and FullScreen == true then
+	Window:TweenPosition(UDim2.new(1,0,0,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+	game.CoreGui.TopBarApp.Enabled = true
+	Open_Swift.Visible = true
+elseif FullScreen == true then
+	Window:TweenPosition(UDim2.new(0,0,0,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
 end
 end)
 
---Properties:
-
-ScreenGui.Parent = game:GetService("CoreGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-Frame.Parent = ScreenGui
-Frame.BackgroundColor3 = Color3.fromRGB(20,20,20)
-Frame.BorderColor3 = Color3.fromRGB(251, 196, 112)
-Frame.BorderSizePixel = 1
-Frame.Position = UDim2.new(0.256390393, 0, 0.230031952, 0)
-Frame.Size = UDim2.new(0, 350, 0, 230)
-
-local framedrag = Instance.new("UIDragDetector")
-
-TextBox.Parent = Frame
-TextBox.BackgroundColor3 = Color3.fromRGB(30,30,30)
-TextBox.BorderSizePixel = 0
-TextBox.Size = UDim2.new(0, 350, 0, 200)
-TextBox.ClearTextOnFocus = false
-TextBox.Font = Enum.Font.SourceSans
-TextBox.Text = "print(\"type shit\")"
-TextBox.TextColor3 = Color3.fromRGB(255,255,255)
-TextBox.TextSize = 14.000
-TextBox.MultiLine = true
-TextBox.TextXAlignment = Enum.TextXAlignment.Left
-TextBox.TextYAlignment = Enum.TextYAlignment.Top
-
-TextButton.Parent = Frame
-TextButton.BackgroundColor3 = Color3.fromRGB(30,30,30)
-TextButton.BorderSizePixel = 0
-TextButton.Position = UDim2.new(0, 0, 0, 205)
-TextButton.Size = UDim2.new(0.25, 0, 0, 20)
-TextButton.Font = Enum.Font.SourceSans
-TextButton.Text = "Execute"
-TextButton.TextColor3 = Color3.fromRGB(255,255,255)
-TextButton.TextSize = 14.000
-
-TextButton_2.Parent = Frame
-TextButton_2.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-TextButton_2.BorderSizePixel = 0
-TextButton_2.Position = UDim2.new(0.25, 0, 0, 205)
-TextButton_2.Size = UDim2.new(0.25, 0, 0, 20)
-TextButton_2.Font = Enum.Font.SourceSans
-TextButton_2.Text = "Execute Clipboard"
-TextButton_2.TextColor3 = Color3.fromRGB(255,255,255)
-TextButton_2.TextSize = 14.000
-
-TextButton_3.Parent = Frame
-TextButton_3.BackgroundColor3 = Color3.fromRGB(30,30,30)
-TextButton_3.BorderSizePixel = 0
-TextButton_3.Position = UDim2.new(0.5, 0, 0, 205)
-TextButton_3.Size = UDim2.new(0.25, 0, 0, 20)
-TextButton_3.Font = Enum.Font.SourceSans
-TextButton_3.Text = "Clear"
-TextButton_3.TextColor3 = Color3.fromRGB(255,255,255)
-TextButton_3.TextSize = 14.000
-
-TextButton_4.Parent = Frame
-TextButton_4.BackgroundColor3 = Color3.fromRGB(30,30,30)
-TextButton_4.BorderSizePixel = 0
-TextButton_4.Position = UDim2.new(0.75, 0 ,0 , 205)
-TextButton_4.Size = UDim2.new(0.25, 0, 0, 20)
-TextButton_4.Font = Enum.Font.SourceSans
-TextButton_4.Text = "IY"
-TextButton_4.TextColor3 = Color3.fromRGB(255,255,255)
-TextButton_4.TextSize = 14.000
-
-TextButton_3.MouseButton1Click:Connect(function()
-	TextBox.Text = ""
+Open_Swift.MouseButton1Click:Connect(function()
+    if FullScreen == true then
+    Window:TweenPosition(UDim2.new(0,0,0,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+    game.CoreGui.TopBarApp.Enabled = false
+    Open_Swift.Visible = false
+    end
 end)
 
-TextButton_2.MouseButton1Click:Connect(function()
-executeclipboard()
-end)
+local DOFEffect = Instance.new("DepthOfFieldEffect", game:GetService("Lighting"))
+DOFEffect.Enabled = true
+DOFEffect.FarIntensity = 0
+DOFEffect.FocusDistance = 51.6
+DOFEffect.InFocusRadius = 50
+DOFEffect.NearIntensity = 10
 
-TextButton_4.MouseButton1Click:Connect(function()
-	run_script([[loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/refs/heads/master/source"))()]])
-end)
 
-TextButton.MouseButton1Click:Connect(function()
-	run_script(TextBox.Text)
-end)
+local neon = (function()
+	-- fractality
+
+
+	local module = {}
+
+
+	local RunService = game:GetService'RunService'
+	local camera = workspace.CurrentCamera
+
+
+	do
+		local function IsNotNaN(x)
+			return x == x
+		end
+		local continue = IsNotNaN(camera:ScreenPointToRay(0,0).Origin.x)
+		while not continue do
+			RunService.RenderStepped:wait()
+			continue = IsNotNaN(camera:ScreenPointToRay(0,0).Origin.x)
+		end
+	end
+
+	local binds = {}
+	local root = Instance.new('Folder', camera)
+	root.Name = 'neon'
+
+
+	local GenUid; do -- Generate unique names for RenderStepped bindings
+		local id = 0
+		function GenUid()
+			id = id + 1
+			return 'neon::'..tostring(id)
+		end
+	end
+
+	local DrawQuad; do
+		local acos, max, pi, sqrt = math.acos, math.max, math.pi, math.sqrt
+		local sz = 0.2
+
+		function DrawTriangle(v1, v2, v3, p0, p1) -- I think Stravant wrote this function
+			local s1 = (v1 - v2).magnitude
+			local s2 = (v2 - v3).magnitude
+			local s3 = (v3 - v1).magnitude
+			local smax = max(s1, s2, s3)
+			local A, B, C
+			if s1 == smax then
+				A, B, C = v1, v2, v3
+			elseif s2 == smax then
+				A, B, C = v2, v3, v1
+			elseif s3 == smax then
+				A, B, C = v3, v1, v2
+			end
+
+			local para = ( (B-A).x*(C-A).x + (B-A).y*(C-A).y + (B-A).z*(C-A).z ) / (A-B).magnitude
+			local perp = sqrt((C-A).magnitude^2 - para*para)
+			local dif_para = (A - B).magnitude - para
+
+			local st = CFrame.new(B, A)
+			local za = CFrame.Angles(pi/2,0,0)
+
+			local cf0 = st
+
+			local Top_Look = (cf0 * za).lookVector
+			local Mid_Point = A + CFrame.new(A, B).lookVector * para
+			local Needed_Look = CFrame.new(Mid_Point, C).lookVector
+			local dot = Top_Look.x*Needed_Look.x + Top_Look.y*Needed_Look.y + Top_Look.z*Needed_Look.z
+
+			local ac = CFrame.Angles(0, 0, acos(dot))
+
+			cf0 = cf0 * ac
+			if ((cf0 * za).lookVector - Needed_Look).magnitude > 0.01 then
+				cf0 = cf0 * CFrame.Angles(0, 0, -2*acos(dot))
+			end
+			cf0 = cf0 * CFrame.new(0, perp/2, -(dif_para + para/2))
+
+			local cf1 = st * ac * CFrame.Angles(0, pi, 0)
+			if ((cf1 * za).lookVector - Needed_Look).magnitude > 0.01 then
+				cf1 = cf1 * CFrame.Angles(0, 0, 2*acos(dot))
+			end
+			cf1 = cf1 * CFrame.new(0, perp/2, dif_para/2)
+
+			if not p0 then
+				p0 = Instance.new('Part')
+				p0.FormFactor = 'Custom'
+				p0.TopSurface = 0
+				p0.BottomSurface = 0
+				p0.Anchored = true
+				p0.CanCollide = false
+				p0.Material = 'Glass'
+				p0.Size = Vector3.new(sz, sz, sz)
+				local mesh = Instance.new('SpecialMesh', p0)
+				mesh.MeshType = 2
+				mesh.Name = 'WedgeMesh'
+			end
+			p0.WedgeMesh.Scale = Vector3.new(0, perp/sz, para/sz)
+			p0.CFrame = cf0
+
+			if not p1 then
+				p1 = p0:clone()
+			end
+			p1.WedgeMesh.Scale = Vector3.new(0, perp/sz, dif_para/sz)
+			p1.CFrame = cf1
+
+			return p0, p1
+		end
+
+		function DrawQuad(v1, v2, v3, v4, parts)
+			parts[1], parts[2] = DrawTriangle(v1, v2, v3, parts[1], parts[2])
+			parts[3], parts[4] = DrawTriangle(v3, v2, v4, parts[3], parts[4])
+		end
+	end
+
+
+	--------------------------------
+	---- Module API --------------------------------
+	----------------------------------------------------------------
+
+
+	-- Create a part binding for a GuiObject.
+	function module:BindFrame(frame, properties)
+		if binds[frame] then
+			return binds[frame].parts
+		end
+
+		local uid = GenUid()
+		local parts = {}
+		local f = Instance.new('Folder', root)
+		f.Name = frame.Name
+
+		local parents = {} -- construct hierarchy tree for rotation
+		do
+			local function add(child)
+				if child:IsA'GuiObject' then
+					parents[#parents + 1] = child
+					add(child.Parent)
+				end
+			end
+			add(frame)
+		end
+
+		local function UpdateOrientation(fetchProps)
+			local zIndex = 1 - 0.05*frame.ZIndex
+			-- the transparency inversion bug still surfaces when there's z-fighting
+			local tl, br = frame.AbsolutePosition, frame.AbsolutePosition + frame.AbsoluteSize
+			local tr, bl = Vector2.new(br.x, tl.y), Vector2.new(tl.x, br.y)
+			do
+				local rot = 0;
+				for _, v in ipairs(parents) do
+					rot = rot + v.Rotation
+				end
+				if rot ~= 0 and rot%180 ~= 0 then
+					local mid = tl:lerp(br, 0.5)
+					local s, c = math.sin(math.rad(rot)), math.cos(math.rad(rot))
+					local vec = tl
+					tl = Vector2.new(c*(tl.x - mid.x) - s*(tl.y - mid.y), s*(tl.x - mid.x) + c*(tl.y - mid.y)) + mid
+					tr = Vector2.new(c*(tr.x - mid.x) - s*(tr.y - mid.y), s*(tr.x - mid.x) + c*(tr.y - mid.y)) + mid
+					bl = Vector2.new(c*(bl.x - mid.x) - s*(bl.y - mid.y), s*(bl.x - mid.x) + c*(bl.y - mid.y)) + mid
+					br = Vector2.new(c*(br.x - mid.x) - s*(br.y - mid.y), s*(br.x - mid.x) + c*(br.y - mid.y)) + mid
+				end
+			end
+			DrawQuad(
+				camera:ScreenPointToRay(tl.x, tl.y, zIndex).Origin, 
+				camera:ScreenPointToRay(tr.x, tr.y, zIndex).Origin, 
+				camera:ScreenPointToRay(bl.x, bl.y, zIndex).Origin, 
+				camera:ScreenPointToRay(br.x, br.y, zIndex).Origin, 
+				parts
+			)
+			if fetchProps then
+				for _, pt in pairs(parts) do
+					pt.Parent = f
+				end
+				for propName, propValue in pairs(properties) do
+					for _, pt in pairs(parts) do
+						pt[propName] = propValue
+					end
+				end
+			end
+		end
+
+		UpdateOrientation(true)
+		RunService:BindToRenderStep(uid, 2000, UpdateOrientation)
+
+		binds[frame] = {
+			uid = uid;
+			parts = parts;
+		}
+		return binds[frame].parts
+	end
+
+	-- Applies the `properties` table to bound parts.
+	function module:Modify(frame, properties)
+		local parts = module:GetBoundParts(frame)
+		if parts then
+			for propName, propValue in pairs(properties) do
+				for _, pt in pairs(parts) do
+					pt[propName] = propValue
+				end
+			end
+		else
+			warn(('No part bindings exist for %s'):format(frame:GetFullName()))
+		end
+	end
+
+	-- Removes the part binding from a gui object if one exists.
+	function module:UnbindFrame(frame)
+		local cb = binds[frame]
+		if cb then
+			RunService:UnbindFromRenderStep(cb.uid)
+			for _, v in pairs(cb.parts) do
+				v:Destroy()
+			end
+			binds[frame] = nil
+		else
+			warn(('No part bindings exist for %s'):format(frame:GetFullName()))
+		end
+	end
+
+	-- Returns true if a part binding exists for the gui object.
+	function module:HasBinding(frame)
+		return binds[frame] ~= nil
+	end
+
+	-- Returns an array using this.
+	function module:GetBoundParts(frame)
+		return binds[frame] and binds[frame].parts
+	end
+
+
+	return module
+
+end)()
+
+
+neon:BindFrame(WindowBlur, {
+	Transparency = 0.98;
+	BrickColor = BrickColor.new("Institutional white");
+})
 
 end
 

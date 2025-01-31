@@ -494,7 +494,7 @@ ExecuteIcon.Position = UDim2.new(0,7.5,0,7.5)
 ExecuteIcon.Image = "rbxassetid://105462968532989"
 ExecuteIcon.ImageTransparency = 0.5
 ExecuteButton.MouseButton1Click:Connect(function()
-    pcall(run_script(EditorTextBox.Text))
+    run_script(EditorTextBox.Text)
 end)
 
 
@@ -527,7 +527,7 @@ CopyIcon.Position = UDim2.new(0,7.5,0,7.5)
 CopyIcon.Image = "rbxassetid://127027968058734"
 CopyIcon.ImageTransparency = 0.5
 CopyButton.MouseButton1Click:Connect(function()
-    pcall(setclipboard(EditorTextBox.Text))
+    setclipboard(EditorTextBox.Text)
 end)
 
 
@@ -560,7 +560,7 @@ ClipBoardIcon.Position = UDim2.new(0,7.5,0,7.5)
 ClipBoardIcon.Image = "rbxassetid://123193091434110"
 ClipBoardIcon.ImageTransparency = 0.5
 ClipBoardButton.MouseButton1Click:Connect(function()
-    pcall(executeclipboard())
+    executeclipboard()
 end)
 
 local TabFrame = Instance.new("Frame", EditorFrame)
@@ -767,7 +767,7 @@ Sidebar_List.Padding = UDim.new(0, 0)
 -- sidebar
 
 local Logo = Instance.new("ImageLabel", SideBar)
-Logo.Size = UDim2.new(0.8,0,0.8,0)
+Logo.Size = UDim2.new(0.75,0,0.75,0)
 Logo.Image = "rbxassetid://97038399406762"
 local Logo_UARC = Instance.new("UIAspectRatioConstraint", Logo)
 Logo.LayoutOrder = 0

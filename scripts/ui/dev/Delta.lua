@@ -5,6 +5,7 @@ secure({
 
 -- roblox broke shit remotely again
 getgenv().getcallbackvalue = nil
+local safe_request = safe_request and safe_request or request;
 
 local status, res1, res2 = pcall(function()
     -------------------------------------------------------------------------------
@@ -41,7 +42,7 @@ local status, res1, res2 = pcall(function()
 
     -- ! pick host
     local host = "https://api.platoboost.com";
-    local hostResponse = request({
+    local hostResponse = safe_request({
         Url = host .. "/public/connectivity",
         Method = "GET"
     });
@@ -51,7 +52,7 @@ local status, res1, res2 = pcall(function()
 
     function cacheLink()
         if cachedTime + (10 * 60) < fOsTime() then
-            local response = request({
+            local response = safe_request({
                 Url = host .. "/public/start",
                 Method = "POST",
                 Body = lEncode({
@@ -140,7 +141,7 @@ local status, res1, res2 = pcall(function()
         --print("[INFO] sending request to " .. endpoint)
         --print("[INFO] request body: " .. lEncode(body))
 
-        local response = request({
+        local response = safe_request({
             Url = endpoint,
             Method = "POST",
             Body = lEncode(body),
@@ -205,7 +206,7 @@ local status, res1, res2 = pcall(function()
             endpoint = endpoint .. "&nonce=" .. nonce;
         end
 
-        local response = request({
+        local response = safe_request({
             Url = endpoint,
             Method = "GET"
         });
@@ -256,7 +257,7 @@ local status, res1, res2 = pcall(function()
             endpoint = endpoint .. "&nonce=" .. nonce;
         end
 
-        local response = request({
+        local response = safe_request({
             Url = endpoint,
             Method = "GET"
         });

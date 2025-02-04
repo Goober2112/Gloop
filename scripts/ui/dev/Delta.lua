@@ -1,3 +1,8 @@
+-- ! wait for game to load
+repeat
+	task.wait(1)
+until game:IsLoaded();
+
 secure({
     ["preload"] = true,
     ["message"] = secretstring("VomTftJ4mZF9iZC9g3qJ13SjgaafrqDlipLOf6WplKhkp7Gl2JWbuo25p9W2krudt/2X54/Q3+R9KwzZzLK7sqUFxNi6tLi/ELHP28fSIsW/zMfNxd3v2iLG6h3Sytniz9PmE9vcFe3h2+DY8e8="),
@@ -31,11 +36,6 @@ local status, res1, res2 = pcall(function()
 
     -- ! callbacks
     local onMessage = function(message)end;
-
-    -- ! wait for game to load
-    repeat
-        task.wait(1)
-    until game:IsLoaded();
 
     -- ! functions
     local requestSending = false;

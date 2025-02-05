@@ -788,12 +788,12 @@ local status, res1, res2 = pcall(function()
         end)()
     end
 
-    if execversion ~= "1.0.658.460" and (game.PlaceId == 16732694052) then
+    --[[if execversion ~= "1.0.658.460" and (game.PlaceId == 16732694052) then
         local message = fStringFormat(searchTranslationVector(translationVector2, sLocaleId), execversion);
         showModal(title, message, url);
         error(message);
         return
-    end
+    end--]]
 
     --[[
     for _, outdatedVersion in next, versionsToUpdate do

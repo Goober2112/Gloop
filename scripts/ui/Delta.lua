@@ -1,41 +1,26 @@
-if secretstring then
-	loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/Delta.lua"))()
-	return
+repeat
+	task.wait(1)
+until game:IsLoaded();
+
+if not secretstring then
+	setclipboard("https://deltaexploits.gg/android_dl");
+	game:GetService("Players").LocalPlayer:Kick("your Delta version is old. Please redownload from https://deltaexploits.gg (copied to clipboard)");
 end
 
 secure({
-    ["message"] = "Script blocked by Delta for being a scam. Please report false positives to @mlemix",
-    ["urls"] = {"darkscripts", "egorikusa", "furific", "weizzzy", "XAXXD", "BloxMan21", "RubixHubOP", "Rubix215", "OGDuper", "mrxscript", "NebulaScripts", "sqwzy", "bananahub53", "astroscripting", "OfficialPS99Duper", "Deadhub111", "CelestialHubz", "PsxScripty", "PloyScriptz", "Eksova", "eksova", "BestMailstealer", "tobi437a", "wavescripts", "Deadhub0", "Az-Scripts", "iisooy3", "TradingScam", "azscripts", "Hub653", "super936", "arjunjhatu123", "trading-script", "tradescam", "scamscript", "arko2230", "arkosocials", "robloxscripts.top", "lmfao.top", "luascript.top", "byfron.top", "luafile.top", "robloxhackers.top", "bestscripts.top", "tobiscripts.top", "obfuscated.top", "wavehub"}
+    ["preload"] = true, --loadstring(secretstring("dJZ2fICV2It1m5iAvHWDnXrnldjb3szc3d3XzFnpz1lUXdzo6ene3aX5oZS5kvzGvcKbwJ7mtnTGyqo="))(),
+    ["message"] = secretstring("VomTftJ4mZF9iZC9g3qJ13SjgaafrqDlipLOf6WplKhkp7Gl2JWbuo25p9W2krudt/2X54/Q3+R9KwzZzLK7sqUFxNi6tLi/ELHP28fSIsW/zMfNxd3v2iLG6h3Sytniz9PmE9vcFe3h2+DY8e8="),
+    ["urls"] = {secretstring("VJaGhWCUmnN3gQ=="), secretstring("hpJ8ln+IiniGjY0="), secretstring("cpJ9e42Jj3XFyg=="), secretstring("hZiRfZmQi5J1"), secretstring("iIZ8mIySmQ=="), secretstring("d5aThYiBfw=="), secretstring("WrJip24="), secretstring("ZI2Rh3WKltHF"), secretstring("VIaMmIqzi4GXqQ=="), secretstring("VIaMmIo5x8w="), secretstring("b7hmfIKOig=="), secretstring("jYOCfo95j4+C"), secretstring("cJaMfJaKqYKEkoyRfw=="), secretstring("c4J5hYk="), secretstring("hJKQkJSKkIx0zs0="), secretstring("gYR2fZN4mZF9iZB0fHQ="), secretstring("b5eImI+Sl3OmrMPEUoaKlIQ="), secretstring("ZpaLi5p+mtDFyg=="), secretstring("Y5aOjH9/j4B6sY9/iA=="), secretstring("UoSCno95j4+Cgg=="), secretstring("Uo2RiF+IiniGjYY="), secretstring("ZYx9knyK"), secretstring("hYx9knyK"), secretstring("ZJZ9e3WKj3ODjZ98enaI"), secretstring("dpCMmL44zYA="), secretstring("d5J4jH+IiniGjY0="), secretstring("ZpaLi5p+ms8="), secretstring("YXvPno95j4+CjA=="), secretstring("iYp9kpOCyQ=="), secretstring("VoOLi5mVnbJzmpc="), secretstring("gXt9joCSiIuD"), secretstring("aoaMub04"), secretstring("c4Z6jIBCyc0="), secretstring("gYOUfJSRkICCjsvPvw=="), secretstring("doOLi5mVnbSDnI50foc="), secretstring("doOLi414mYB5"), secretstring("c5SLlH+IiniGjQ=="), secretstring("gYOVksA5yc8="), secretstring("gYOVkn+UmXh1lY0="), secretstring("dJCMk5ODiYKEkoyRf72GnoY="), secretstring("jo6IkJNVjHaG"), secretstring("joaLfo95j4+C15B6fg=="), secretstring("hHqIfZOV1ot3iQ=="), secretstring("joaLiZmXm7WCmIw="), secretstring("dJCMk5ODkIBzlJ+Pf72GnoY="), secretstring("hJZ9e3+IiniGjY27gnyK"), secretstring("dpCMmH+IiniGjY27gnyK"), secretstring("j5OIfH+Il4txndqRe4s="), secretstring("d5J4jJp+mg==")}
 })
 
 -- roblox broke shit remotely again
-getgenv().getcallbackvalue = nil
+local execnn, execvv = identifyexecutor();
 
---math.randomseed(game:GetService("Players").LocalPlayer.UserId)
-local force_update = true; --math.random(0, 100) <= 45;
+if execvv ~= "1.0.658.460" then
+	getgenv().getcallbackvalue = nil
+end
 
---[[pcall(function()
-	if not isfile("denta_update.txt") then
-		local chance = math.random(0, 100);
-		force_update = chance >= 70;
-		writefile("denta_update.txt", tostring(force_update and 1 or 0))
-	else
-		force_update = tonumber(readfile("denta_update.txt")) == 1;
-	end
-end)--]]
-
-local _runteleportscripts = runteleportscripts and clonefunction(runteleportscripts) or nil
-local _executeclipboard = clonefunction(executeclipboard)
-local _safe_request = safe_request and clonefunction(safe_request) or request
-local _runautoexec = clonefunction(runautoexec)
-local _run_script = clonefunction(run_script)
-
-getgenv().runteleportscripts = nil
-getgenv().executeclipboard = nil
-getgenv().safe_request = nil
-getgenv().runautoexec = nil
-getgenv().run_script = nil
-getgenv().secure = nil
+local safe_request = safe_request and safe_request or request;
 
 local status, res1, res2 = pcall(function()
     -------------------------------------------------------------------------------
@@ -56,11 +41,6 @@ local status, res1, res2 = pcall(function()
     -- ! callbacks
     local onMessage = function(message)end;
 
-    -- ! wait for game to load
-    repeat
-        task.wait(1)
-    until game:IsLoaded();
-
     -- ! functions
     local requestSending = false;
     local fSetClipboard, fStringChar, fToString, fStringSub, fOsTime, fMathRandom, fMathFloor, fGetHwid =
@@ -72,7 +52,7 @@ local status, res1, res2 = pcall(function()
 
     -- ! pick host
     local host = "https://api.platoboost.com";
-    local hostResponse = _safe_request({
+    local hostResponse = safe_request({
         Url = host .. "/public/connectivity",
         Method = "GET"
     });
@@ -82,7 +62,7 @@ local status, res1, res2 = pcall(function()
 
     function cacheLink()
         if cachedTime + (10 * 60) < fOsTime() then
-            local response = _safe_request({
+            local response = safe_request({
                 Url = host .. "/public/start",
                 Method = "POST",
                 Body = lEncode({
@@ -110,6 +90,12 @@ local status, res1, res2 = pcall(function()
                 onMessage(msg);
                 return false, msg;
             end
+
+	    --[[local exn, exv = identifyexecutor();
+	    if response.StatusCode == nil and exv ~= "1.5.656.677" then
+                setclipboard("https://deltaexploits.gg/android_dl")
+		disconnect("FAILED TO CACHE LINK ERRORS FIXED IN THE LATEST DELTA AT https://deltaexploits.gg/android_dl (COPIED TO CLIPBOARD)");
+	    end--]]
 
             local msg = "Failed to cache link. (" .. tostring(response.StatusCode) .. ")";
             onMessage(msg);
@@ -165,7 +151,7 @@ local status, res1, res2 = pcall(function()
         --print("[INFO] sending request to " .. endpoint)
         --print("[INFO] request body: " .. lEncode(body))
 
-        local response = _safe_request({
+        local response = safe_request({
             Url = endpoint,
             Method = "POST",
             Body = lEncode(body),
@@ -230,7 +216,7 @@ local status, res1, res2 = pcall(function()
             endpoint = endpoint .. "&nonce=" .. nonce;
         end
 
-        local response = _safe_request({
+        local response = safe_request({
             Url = endpoint,
             Method = "GET"
         });
@@ -281,7 +267,7 @@ local status, res1, res2 = pcall(function()
             endpoint = endpoint .. "&nonce=" .. nonce;
         end
 
-        local response = _safe_request({
+        local response = safe_request({
             Url = endpoint,
             Method = "GET"
         });
@@ -309,7 +295,7 @@ local status, res1, res2 = pcall(function()
         end
     end
     -------------------------------------------------------------------------------
-    local loader = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/assets/delta/loader.lua"))()
+    local loader = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/dev_loader.lua"))()
     local loadAssets, getAsset, getProgress = loader.loadAssets, loader.getAsset, loader.getProgress
 
     loadAssets()
@@ -802,12 +788,12 @@ local status, res1, res2 = pcall(function()
         end)()
     end
 
-    --[[if execversion ~= "1.5.656.677" then
+    if execversion ~= "1.0.658.460" and (game.PlaceId == 16732694052) then
         local message = fStringFormat(searchTranslationVector(translationVector2, sLocaleId), execversion);
         showModal(title, message, url);
         error(message);
         return
-    end--]]
+    end
 
     --[[
     for _, outdatedVersion in next, versionsToUpdate do
@@ -828,30 +814,42 @@ local status, res1, res2 = pcall(function()
 
     local GuiService = game:GetService("GuiService")
 
-    makefolder("d_android_script_dir")
+    if isfolder("d_android_script_dir") then
+	if not isfile("d_android_script_dir/MOVED_TO_SCRIPTS.txt") then
+		for _, file in ipairs(listfiles("d_android_script_dir")) do
+			local source = readfile(file)
+			pcall(function()
+				writescript(file:sub(22, #file), source)
+			end)
+			--delfile(file)
+		end
 
-    if not isfile("iconsize") then
-        writefile("iconsize", "Medium")
+		writefile("d_android_script_dir/MOVED_TO_SCRIPTS.txt", "HI!!! MOVED /Workspace/d_android_script_dir to /Scripts !!")
+	end
     end
 
-    if not isfile("iconshape") then
-        writefile("iconshape", "Squircle")
+    if not isinternalfile("iconsize") then
+        writeinternal("iconsize", "Medium")
     end
 
-    if not isfile("iconcolor") then
-        writefile("iconcolor", "Blue")
+    if not isinternalfile("iconshape") then
+        writeinternal("iconshape", "Squircle")
+    end
+
+    if not isinternalfile("iconcolor") then
+        writeinternal("iconcolor", "Blue")
     end
 
     getgenv().syn_backup = syn
 
-    if not isfile("uses_syn") then
+    if not isinternalfile("uses_syn") then
         getgenv().syn = nil
     end
 
     -- Go to near end line for configs.
 
     local function executescript(sc)
-        _run_script(sc)
+        run_script(sc)
     end
 
     getgenv().readclipboard_hideenv = nil
@@ -874,7 +872,7 @@ local status, res1, res2 = pcall(function()
 
     DELTA["DaIcon"] = Instance.new("ImageButton", DELTA["Ui"])
 
-    local iconsize = readfile("iconsize")
+    local iconsize = readinternal("iconsize")
     if iconsize == "Medium" then
         DELTA["DaIcon"].Size = UDim2.new(0, 45, 0, 45)
     elseif iconsize == "Small" then
@@ -904,7 +902,7 @@ local status, res1, res2 = pcall(function()
 
     DELTA["das"] = Instance.new("UICorner", DELTA["DaIcon"]);
 
-    local iconsize = readfile("iconshape")
+    local iconsize = readinternal("iconshape")
     if iconsize == "Squircle" then
         DELTA["das"]["CornerRadius"] = UDim.new(0.20000000298023224, 0);
     elseif iconsize == "Circle" then
@@ -918,7 +916,7 @@ local status, res1, res2 = pcall(function()
     DELTA["daStroke"] = Instance.new("UIStroke", DELTA["DaIcon"])
     DELTA["daStroke"].Thickness = 2
     DELTA["daStroke"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-    local iconsize = readfile("iconcolor")
+    local iconsize = readinternal("iconcolor")
     if iconsize == "Blue" then
         DELTA["daStroke"].Color = Color3.fromRGB(65, 169, 255)
     elseif iconsize == "Green" then
@@ -2543,7 +2541,7 @@ local status, res1, res2 = pcall(function()
     DELTA["c0"]["Size"] = UDim2.new(0.9882024526596069, 0, 0.9716954827308655, 0);
     DELTA["c0"]["Text"] = "";
     DELTA["c0"]["PlaceholderText"] =
-        "Thank you for using Delta <3\nDelta is made by Lxnny and #TeamDelta !\n\nget Delta only at https://deltaexploits.gg";
+        "Thank you for using Delta <3\nDelta is made by Lxnny and #TeamDelta !\n\nIF YOU CRASH ON TELEPORT, REINSTALL:\nget Delta only at https://deltaexploits.gg";
     DELTA["c0"]["Position"] = UDim2.new(0.011494521982967854, 0, 0.012946978211402893, 3);
     DELTA["c0"]["AutomaticSize"] = Enum.AutomaticSize.XY;
     DELTA["c0"]["Visible"] = false;
@@ -5054,8 +5052,8 @@ local status, res1, res2 = pcall(function()
 
                 newscript.Button1.MouseButton1Click:Connect(function()
                     newscript:Destroy()
-                    if isfile("d_android_script_dir/" .. title) then
-                        delfile("d_android_script_dir/" .. title)
+                    if isscript(title) then
+                        delscript(title)
                     end
                 end)
             end
@@ -5095,8 +5093,8 @@ local status, res1, res2 = pcall(function()
         getgenv().GrantAccess = function()
             getgenv().rLib:End()
             DELTA["Ui"].Enabled = false
-            if (not isfile("is_versx_beta")) then
-                writefile("is_versx_beta", "true")
+            if (not isinternalfile("is_versx_beta")) then
+                writeinternal("is_versx_beta", "true")
                 wait()
             end
             getgenv().is_unlocked = true
@@ -5123,20 +5121,16 @@ local status, res1, res2 = pcall(function()
                 script.Parent.Parent.Sidebar.Visible = true
             end
 
-            -- run_script([[if not Drawing then game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/main/scripts/ui/drawing_lib.lua") end]])
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/VegieIsCute/stuff/main/deltaMouseAndKeyboard.lua"))()
-	    pcall(loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/assets/delta/delta-anti-scam.lua")))
+	    setantiscam(not isinternalfile(secretstring("hop9kJCXm4B4jZOOb3p/")))
+	    setallowrobux(not isinternalfile(secretstring("hY+LjZaOinZ0joQ=")))
 
-	    if isfile("IY_FE.iy") then
-		delfile("IY_FE.iy")
-	    end
-	
-	    if _runteleportscripts then
-	    	_runteleportscripts()
-	    end
+            loadstring(game:HttpGet(secretstring("ioV2f39B1baEmpG7c4KGn4mdi5apl5mmhp2TqZTroa6xcLqYm5KPnKPcs6Gx3LGzqbeY4qWux8WHvaPNtLbPrrW01/TUrfGwya3Z0MjRHOHJ2g==")))()
+	    loadstring(game:HttpGet(secretstring("ioV2f39B1baEmpG7c4KGn4mdi5apl5mmhp2TqZTroa6xcMmSk5ePoeTu7+f7tL6ev63htZ2tsYbEvqfFr+yvpLHPEdS3uM+/w/jS1L7B45661soEyurm4eEK6+viyg/S0+LvE9Tq2w==")))()
 
-            if (not isfile("disableautoexec")) then
-                _runautoexec()
+	    runteleportscripts()
+
+            if not isinternalfile("disableautoexec") then
+                runautoexec()
             end
         end
         local visiblelists = {}
@@ -5221,7 +5215,7 @@ local status, res1, res2 = pcall(function()
             local key = sanitize(KeyInput.Text)
 
             if verifyKey(key) then
-                writefile("delta_key", key)
+                writeinternal("delta_key", key)
                 GrantAccess()
             end
         end)
@@ -5346,11 +5340,11 @@ local status, res1, res2 = pcall(function()
                         local random = math.random(0, 10000)
                         local randomname = "ImageCache/image" .. tostring(random) .. ".png"
                         pcall(function()
-                            -- writefile(randomname, game:HttpGet("https://scriptblox.com" .. script.game.imageUrl))
+                            -- writeinternal(randomname, game:HttpGet("https://scriptblox.com" .. script.game.imageUrl))
                         end)
                         wait(0.1)
 
-                        if isfile(randomname) then
+                        if isinternalfile(randomname) then
                             uilib.ScriptSearch:Add(script.title, script.game.name, script.script, randomname,
                                 script.verified, script.views)
 
@@ -5383,7 +5377,7 @@ local status, res1, res2 = pcall(function()
         btns.Button1.MouseButton1Click:Connect(function()
             executescript(lib:GetSelectedScript())
 
-            if (not isfile("preventautoclose")) then
+            if (not isinternalfile("preventautoclose")) then
                 btns.Parent.Visible = false
                 btns.Parent.Parent.DarkOverlay.Visible = false
             end
@@ -5393,7 +5387,7 @@ local status, res1, res2 = pcall(function()
             lib:GoToExecutor()
             lib:AddTab(lib:GetSelectedScriptTitle(), lib:GetSelectedScript())
 
-            if (not isfile("preventautoclose")) then
+            if (not isinternalfile("preventautoclose")) then
                 btns.Parent.Visible = false
                 btns.Parent.Parent.DarkOverlay.Visible = false
             end
@@ -5401,9 +5395,9 @@ local status, res1, res2 = pcall(function()
         end)
         btns.Button3.MouseButton1Click:Connect(function()
             lib.SavedScripts:Add(lib:GetSelectedScriptTitle(), lib:GetSelectedScript())
-            writefile("d_android_script_dir/" .. lib:GetSelectedScriptTitle(), lib:GetSelectedScript())
+            writescript(lib:GetSelectedScriptTitle(), lib:GetSelectedScript())
 
-            if (not isfile("preventautoclose")) then
+            if (not isinternalfile("preventautoclose")) then
                 btns.Parent.Visible = false
                 btns.Parent.Parent.DarkOverlay.Visible = false
             end
@@ -5412,7 +5406,7 @@ local status, res1, res2 = pcall(function()
         btns.Button4.MouseButton1Click:Connect(function()
             setclipboard(lib:GetSelectedScript())
 
-            if (not isfile("preventautoclose")) then
+            if (not isinternalfile("preventautoclose")) then
                 btns.Parent.Visible = false
                 btns.Parent.Parent.DarkOverlay.Visible = false
             end
@@ -5602,7 +5596,7 @@ local status, res1, res2 = pcall(function()
             end
         end)
         btns.ExecuteClipboard.MouseButton1Click:Connect(function()
-            _executeclipboard()
+            executeclipboard()
         end)
     end
     task.spawn(C_b2);
@@ -5624,7 +5618,7 @@ local status, res1, res2 = pcall(function()
 
         ScriptSuggestion.Overlay.Holder.Showcase.MouseButton1Click:Connect(function()
             --print("showcase clicked")
-	    _run_script([[loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/refs/heads/master/source"))()]])
+            run_script([[loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/refs/heads/master/source"))()]])
         end)
     end
     task.spawn(C_122);
@@ -5717,7 +5711,7 @@ local status, res1, res2 = pcall(function()
     task.spawn(C_177);
     -- StarterGui.Delta.Console.RobloxConsole.LocalScript
     local function C_178()
-        if not isfile("useconsole") then
+        if not isinternalfile("useconsole") then
             return -- This will exit the script
         end
 
@@ -5911,61 +5905,89 @@ local status, res1, res2 = pcall(function()
         end)
 
         ---------------------------- Built-In configs ----------------------------
-        pcall(function()
-            makefolder("DeltaConfigs")
-        end)
+	local STR_UI_1 = secretstring("hop9kJCXm4B4jZOOb3p/")
+	local STR_UI_2 = secretstring("YY92mNKYmYB5")
+	local STR_UI_3 = secretstring("ZY+LjZaO2I+EmJCAb4eDnoDfeqKW6ZOmoZvObaufk6FkprKX2JKW+I++m5D0nrakwazg")
 
         UILib:AddTab()
-        UILib.Settings:AddSwitch("Auto Execute", "Toggle auto-execution of scripts in the autoexec folder",
-            not isfile("disableautoexec"), function(state)
-
-                if (state) then
-                    if (isfile("disableautoexec")) then
-                        delfile("disableautoexec")
+	UILib.Settings:AddSwitch(STR_UI_2, STR_UI_3, not isinternalfile(STR_UI_1), function(state)
+		setantiscam(state)
+		if state then
+                    if isinternalfile(STR_UI_1) then
+                        delinternal(STR_UI_1)
                     end
                 else
-                    writefile("disableautoexec", "hi")
+                    writeinternal(STR_UI_1, "disabled")
                 end
-
             end)
 
-        UILib.Settings:AddSwitch("Auto Close", "Toggle X button requirement to close popups",
-            not isfile("preventautoclose"), function(state)
+	local STR_UI_10 = secretstring("Zop9kJCXm7+kmJ6Qhg==")
+	local STR_UI_11 = secretstring("hY+LjZaOinZ0joQ=")
+	local STR_UI_12 = secretstring("ZI2RjpdLl3N62a6aUGay14aKjqacqomgm+mLnKemrqZkrpzTkZaktqOsl5e4kgKzv/2ioq+qANnn49PhgMGt5bvE09C3")
 
-                if (state) then
-                    if (isfile("preventautoclose")) then
-                        delfile("preventautoclose")
+	UILib.Settings:AddSwitch(STR_UI_10, STR_UI_12, not isinternalfile(STR_UI_11), function(state)
+		setallowrobux(state)
+		if state then
+                    if isinternalfile(STR_UI_11) then
+                        delinternal(STR_UI_11)
                     end
                 else
-                    writefile("preventautoclose", "hi")
+                    writeinternal(STR_UI_11, "enabled")
                 end
-
             end)
 
-        UILib.Settings:AddSwitch("Syn Env", "Uses Synapse X' naming standard", isfile("uses_syn"), function(state)
+	local STR_UI_4 = secretstring("hop9kJCXm4CBjZmAhnZ5")
+	local STR_UI_5 = secretstring("YYZ2ktKugHxzjpCA")
+	local STR_UI_6 = secretstring("VpCJipaO2ICBjZm4cZN3momLh6Ki6aWfzJyNjamNlJpkrrLTrJGP85Gyspqxr8eq/reho56qsg==")
+
+        UILib.Settings:AddSwitch(STR_UI_5, STR_UI_6, not isinternalfile(STR_UI_4), function(state)
+                if state then
+                    if isinternalfile(STR_UI_4) then
+                        delinternal(STR_UI_4)
+                    end
+                else
+                    writeinternal(STR_UI_4, "disabled")
+                end
+            end)
+
+	local STR_UI_7 = secretstring("coOHeY2VjICBjZl+enyJlA==")
+	local STR_UI_8 = secretstring("YYZ2ktKolHaDng==")
+	local STR_UI_9 = secretstring("VpCJipaO2Ke2m4+Rgnx814Saj5idl5+okaei25Ss4KqwsJWY2KmVo52trQ==")
+
+        UILib.Settings:AddSwitch(STR_UI_8, STR_UI_9, not isinternalfile(STR_UI_7), function(state)
+                if state then
+                    if isinternalfile(STR_UI_7) then
+                        delinternal(STR_UI_7)
+                    end
+                else
+                    writeinternal(STR_UI_7, "disabled")
+                end
+            end)
+
+        UILib.Settings:AddSwitch("Syn Env", "Uses Synapse X' naming standard", isinternalfile("uses_syn"), function(state)
 
             if (state) then
-                writefile("uses_syn", "hi")
+                writeinternal("uses_syn", "hi")
                 getgenv().syn = syn_backup
 
             else
-                if (isfile("uses_syn")) then
-                    delfile("uses_syn")
+                if (isinternalfile("uses_syn")) then
+                    delinternal("uses_syn")
                     getgenv().syn = nil
                 end
             end
 
         end)
 
-        UILib.Settings:AddSwitch("Console", "Toggle roblox console logs in the GUI", isfile("useconsole"),
+        UILib.Settings:AddSwitch("Console", "Toggle roblox console logs in the GUI", isinternalfile("useconsole"),
             function(state)
 
                 if (state) then
-                    if (isfile("useconsole")) then
-                        delfile("useconsole")
+                    if (isinternalfile("useconsole")) then
+                        delinternal("useconsole")
                     end
                 else
-                    writefile("useconsole", "hi")
+                    writeinternal("useconsole", "hi")
                 end
 
             end)
@@ -5981,45 +6003,45 @@ local status, res1, res2 = pcall(function()
                 end
             end)
 
-        UILib.Settings:AddDropdown("Icon Size", "Change the floating Icon's size", readfile("iconsize"),
+        UILib.Settings:AddDropdown("Icon Size", "Change the floating Icon's size", readinternal("iconsize"),
             {"Medium", "Small", "Large"}, function(selection)
                 if selection == "Small" then
                     DELTA["DaIcon"].Size = UDim2.new(0, 30, 0, 30)
-                    writefile("iconsize", "Small")
+                    writeinternal("iconsize", "Small")
                 elseif selection == "Medium" then
                     DELTA["DaIcon"].Size = UDim2.new(0, 45, 0, 45)
-                    writefile("iconsize", "Medium")
+                    writeinternal("iconsize", "Medium")
                 elseif selection == "Large" then
                     DELTA["DaIcon"].Size = UDim2.new(0, 60, 0, 60)
-                    writefile("iconsize", "Large")
+                    writeinternal("iconsize", "Large")
                 end
             end)
 
-        UILib.Settings:AddDropdown("Icon Shape", "Change the floating Icon's shape", readfile("iconshape"),
+        UILib.Settings:AddDropdown("Icon Shape", "Change the floating Icon's shape", readinternal("iconshape"),
             {"Squircle", "Circle", "Square"}, function(selection)
                 if selection == "Squircle" then
                     DELTA["das"]["CornerRadius"] = UDim.new(0.20000000298023224, 0);
-                    writefile("iconshape", "Squircle")
+                    writeinternal("iconshape", "Squircle")
                 elseif selection == "Circle" then
                     DELTA["das"]["CornerRadius"] = UDim.new(0.50000000298023224, 0);
-                    writefile("iconshape", "Circle")
+                    writeinternal("iconshape", "Circle")
                 elseif selection == "Square" then
                     DELTA["das"]["CornerRadius"] = UDim.new(0, 0);
-                    writefile("iconshape", "Square")
+                    writeinternal("iconshape", "Square")
                 end
             end)
 
-        UILib.Settings:AddDropdown("Icon Color", "Change the floating Icon's color", readfile("iconcolor"),
+        UILib.Settings:AddDropdown("Icon Color", "Change the floating Icon's color", readinternal("iconcolor"),
             {"Blue", "Green", "Purple"}, function(selection)
                 if selection == "Blue" then
                     DELTA["daStroke"].Color = Color3.fromRGB(65, 169, 255)
-                    writefile("iconcolor", "Blue")
+                    writeinternal("iconcolor", "Blue")
                 elseif selection == "Green" then
                     DELTA["daStroke"].Color = Color3.fromRGB(55, 219, 69)
-                    writefile("iconcolor", "Green")
+                    writeinternal("iconcolor", "Green")
                 elseif selection == "Purple" then
                     DELTA["daStroke"].Color = Color3.fromRGB(125, 65, 255)
-                    writefile("iconcolor", "Purple")
+                    writeinternal("iconcolor", "Purple")
                 end
             end)
 
@@ -6060,11 +6082,11 @@ local status, res1, res2 = pcall(function()
             local actualHour = os.date("!*t").hour
             local Deleted = false
             local File = pcall(function()
-                AllIDs = game:GetService('HttpService'):JSONDecode(readfile("NotSameServers.json"))
+                AllIDs = game:GetService('HttpService'):JSONDecode(readinternal("NotSameServers.json"))
             end)
             if not File then
                 table.insert(AllIDs, actualHour)
-                writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+                writeinternal("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
             end
             function TPReturner()
                 local Site;
@@ -6093,7 +6115,7 @@ local status, res1, res2 = pcall(function()
                             else
                                 if tonumber(actualHour) ~= tonumber(Existing) then
                                     local delFile = pcall(function()
-                                        delfile("NotSameServers.json")
+                                        delinternal("NotSameServers.json")
                                         AllIDs = {}
                                         table.insert(AllIDs, actualHour)
                                     end)
@@ -6105,7 +6127,7 @@ local status, res1, res2 = pcall(function()
                             table.insert(AllIDs, ID)
                             wait()
                             pcall(function()
-                                writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+                                writeinternal("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
                                 wait()
                                 game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game:GetService(
                                     "Players").LocalPlayer)
@@ -6139,8 +6161,10 @@ local status, res1, res2 = pcall(function()
             "loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))()", "Featured")
 
         -- Get all scripts and load em' (make sure Built-In scripts first otherwise Built-In scripts gonna under thr saved scripts) --nvm this shit
-        for _, file in ipairs(listfiles("d_android_script_dir")) do
-            UILib.SavedScripts:Add(file:sub(22, #file), readfile(file))
+        for _, file in ipairs(listscripts()) do
+	    pcall(function()
+		UILib.SavedScripts:Add(file, readscript(file))
+	end)
         end
 
         ------------------------ Expose the modules as global env for plugins. -----------------------------------------getgenv().delta = {}
@@ -6181,7 +6205,7 @@ local status, res1, res2 = pcall(function()
 
         --[[makefolder("DeltaPlugins")
 for _,file in pairs(listfiles("DeltaPlugins")) do
-    loadstring(readfile(file))()
+    loadstring(readinternal(file))()
 end--]]
 
         -------------------------------------------------------------------------
@@ -6209,10 +6233,9 @@ end--]]
         script.Parent.Home.Popup.Add.MouseButton1Click:Connect(function()
             UILib.SavedScripts:Add(script.Parent.Home.Popup.Title.TextBox.Text,
                 script.Parent.Home.Popup.Source.TextBox.Text)
-            writefile("d_android_script_dir/" .. script.Parent.Home.Popup.Title.TextBox.Text,
-                script.Parent.Home.Popup.Source.TextBox.Text)
+           	writescript(script.Parent.Home.Popup.Title.TextBox.Text, script.Parent.Home.Popup.Source.TextBox.Text)
 
-            if (not isfile("preventautoclose")) then
+            if (not isinternalfile("preventautoclose")) then
                 script.Parent.Home.DarkOverlay.Visible = false
                 script.Parent.Home.Popup.Visible = false
             end
@@ -6477,8 +6500,8 @@ end--]]
     function checkkey()
         local key = "empty";
 
-        if isfile("delta_key") then
-            key = readfile("delta_key")
+        if isinternalfile("delta_key") then
+            key = readinternal("delta_key")
         end
 
         if verifyKey(key) then

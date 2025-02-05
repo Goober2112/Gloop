@@ -18,6 +18,26 @@ local deltaAssets = {
     ["01717"] = "763397d350f8d7f7b8e2faaf8cbb7005"
 }
 
+local oopsie = {
+    ["13569242972"] = "011",
+    ["13365156882"] = "022",
+    ["13462269327"] = "033",
+    ["13365407660"] = "044",
+    ["13387875723"] = "055",
+    ["13387419794"] = "066",
+    ["13462268450"] = "077",
+    ["13363093418"] = "088",
+    ["13363121645"] = "099",
+    ["11702779517"] = "01010",
+    ["13441628967"] = "01111",
+    ["13462271348"] = "01212",
+    ["6014261993"] = "01313",
+    ["13441695981"] = "01414",
+    ["13462270380"] = "01515",
+    ["13387657138"] = "01616",
+    ["13387627918"] = "01717"
+}
+
 local progressDone = 0
 local progressFinished = false
 
@@ -200,6 +220,10 @@ function loadAssets()
 end
 
 function getAsset(id)
+    if #id > 6 then
+        id = oopsie[id]
+    end
+    
     local assetPath = "./DeltaAssets/" .. id
     if isfile(assetPath) then
         local asset = getcustomasset(assetPath, false)

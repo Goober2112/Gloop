@@ -231,11 +231,11 @@ function getAsset(id)
         if asset then
             return asset
         else
-            print("warning defaulting for asset: " .. id)
+            warn("defaulting to asset (ASSERR-2):", id)
             return "rbxassetid://" .. id
         end
     else
-        print("warning defaulting for asset: " .. id)
+        warn("defaulting to asset (ASSERR-1):", id)
         return "rbxassetid://" .. id
     end
 end

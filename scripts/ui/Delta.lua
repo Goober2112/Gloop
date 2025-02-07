@@ -16,7 +16,7 @@ secure({
 -- roblox broke shit remotely again
 local execnn, execvv = identifyexecutor();
 
-if execvv ~= "1.0.658.460" then
+if execvv ~= "1.2.658.460" then
 	getgenv().getcallbackvalue = nil
 end
 

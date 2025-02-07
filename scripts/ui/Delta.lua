@@ -18,6 +18,16 @@ local execnn, execvv = identifyexecutor();
 
 --if execvv ~= "1.2.658.460" then
 getgenv().getcallbackvalue = nil
+getgenv().getrunningscripts = newcclosure(function()
+	local scripts = {}
+	for i, v in pairs(getinstances()) do
+		if v:IsA("LocalScript") then
+			table.insert(scripts, v)
+			end
+		end
+
+	return scripts;
+end)
 --end
 
 local safe_request = safe_request and safe_request or request;

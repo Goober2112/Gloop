@@ -97,7 +97,7 @@ local status, res1, res2 = pcall(function()
 		disconnect("FAILED TO CACHE LINK ERRORS FIXED IN THE LATEST DELTA AT https://deltaexploits.gg/android_dl (COPIED TO CLIPBOARD)");
 	    end--]]
 
-            local msg = "Failed to cache link. (" .. tostring(response.StatusCode) .. ")";
+            local msg = "Failed to cache link. (" .. tostring(response.StatusMessage) .. ")";
             onMessage(msg);
             return false, msg;
         else

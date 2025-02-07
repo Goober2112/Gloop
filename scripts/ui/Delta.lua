@@ -16,7 +16,7 @@ secure({
 -- roblox broke shit remotely again
 local execnn, execvv = identifyexecutor();
 
---if execvv ~= "1.2.658.460" then
+if execvv ~= "1.3.658.460" then
 getgenv().getcallbackvalue = nil
 getgenv().getrunningscripts = newcclosure(function()
 	local scripts = {}
@@ -28,7 +28,7 @@ getgenv().getrunningscripts = newcclosure(function()
 
 	return scripts;
 end)
---end
+end
 
 local safe_request = safe_request and safe_request or request;
 

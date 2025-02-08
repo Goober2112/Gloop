@@ -73,6 +73,8 @@ local status, res1, res2 = pcall(function()
     end
 
     function cacheLink()
+	onMessage("LOADING... (EXPECT A FREEZE)");
+			
         if cachedTime + (10 * 60) < fOsTime() then
             local response = safe_request({
                 Url = host .. "/public/start",
@@ -219,6 +221,8 @@ local status, res1, res2 = pcall(function()
         else
             requestSending = true;
         end
+
+	onMessage("CHECKING... (EXPECT A FREEZE)");
 
         local nonce = generateNonce();
         local endpoint = host .. "/public/whitelist/" .. fToString(service) .. "?identifier=" .. lDigest(fGetHwid()) ..

@@ -5909,7 +5909,7 @@ local status, res1, res2 = pcall(function()
 	local STR_UI_11 = secretstring("hY+LjZaOinZ0joQ=")
 	local STR_UI_12 = secretstring("ZI2RjpdLl3N62a6aUGay14aKjqacqomgm+mLnKemrqZkrpzTkZaktqOsl5e4kgKzv/2ioq+qANnn49PhgMGt5bvE09C3")
 
-	UILib.Settings:AddSwitch(STR_UI_10, STR_UI_12, not hasallowrobux(), function(state)
+	UILib.Settings:AddSwitch(STR_UI_10, STR_UI_12, hasallowrobux(), function(state)
 		setallowrobux(state)
             end)
 

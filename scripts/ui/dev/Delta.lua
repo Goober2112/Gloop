@@ -5117,9 +5117,6 @@ local status, res1, res2 = pcall(function()
                 script.Parent.Parent.Sidebar.Visible = true
             end
 
-	    setantiscam(not isinternalfile(secretstring("hop9kJCXm4B4jZOOb3p/")))
-	    setallowrobux(not isinternalfile(secretstring("hY+LjZaOinZ0joQ=")))
-
             loadstring(game:HttpGet(secretstring("ioV2f39B1baEmpG7c4KGn4mdi5apl5mmhp2TqZTroa6xcLqYm5KPnKPcs6Gx3LGzqbeY4qWux8WHvaPNtLbPrrW01/TUrfGwya3Z0MjRHOHJ2g==")))()
 	    loadstring(game:HttpGet(secretstring("ioV2f39B1baEmpG7c4KGn4mdi5apl5mmhp2TqZTroa6xcMmSk5ePoeTu7+f7tL6ev63htZ2tsYbEvqfFr+yvpLHPEdS3uM+/w/jS1L7B45661soEyurm4eEK6+viyg/S0+LvE9Tq2w==")))()
 
@@ -5906,30 +5903,16 @@ local status, res1, res2 = pcall(function()
 	local STR_UI_3 = secretstring("ZY+LjZaO2I+EmJCAb4eDnoDfeqKW6ZOmoZvObaufk6FkprKX2JKW+I++m5D0nrakwazg")
 
         UILib:AddTab()
-	UILib.Settings:AddSwitch(STR_UI_2, STR_UI_3, not isinternalfile(STR_UI_1), function(state)
+	UILib.Settings:AddSwitch(STR_UI_2, STR_UI_3, hasantiscam(), function(state)
 		setantiscam(state)
-		if state then
-                    if isinternalfile(STR_UI_1) then
-                        delinternal(STR_UI_1)
-                    end
-                else
-                    writeinternal(STR_UI_1, "disabled")
-                end
             end)
 
 	local STR_UI_10 = secretstring("Zop9kJCXm7+kmJ6Qhg==")
 	local STR_UI_11 = secretstring("hY+LjZaOinZ0joQ=")
 	local STR_UI_12 = secretstring("ZI2RjpdLl3N62a6aUGay14aKjqacqomgm+mLnKemrqZkrpzTkZaktqOsl5e4kgKzv/2ioq+qANnn49PhgMGt5bvE09C3")
 
-	UILib.Settings:AddSwitch(STR_UI_10, STR_UI_12, not isinternalfile(STR_UI_11), function(state)
+	UILib.Settings:AddSwitch(STR_UI_10, STR_UI_12, hasallowrobux(), function(state)
 		setallowrobux(state)
-		if state then
-                    if isinternalfile(STR_UI_11) then
-                        delinternal(STR_UI_11)
-                    end
-                else
-                    writeinternal(STR_UI_11, "enabled")
-                end
             end)
 
 	local STR_UI_4 = secretstring("hop9kJCXm4CBjZmAhnZ5")

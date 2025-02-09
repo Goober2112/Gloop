@@ -846,7 +846,6 @@ local status, res1, res2 = pcall(function()
     getgenv().readclipboard_hideenv = nil
 
     local DELTA = {};
-    getgenv().Vm9vaE59PzVBeTVNdyY4JDsieDglUzdwRDNabyExbjR1ezBmYHNNT2kjOXk = true
 
     -- StarterGui.Delta
     DELTA["1"] = Instance.new("ScreenGui", gethui());

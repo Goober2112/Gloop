@@ -831,10 +831,10 @@ local status, res1, res2 = pcall(function()
         writeinternal("iconcolor", "Blue")
     end
 
-    getgenv().syn_backup = syn
+    uienv().syn_backup = syn
 
     if not isinternalfile("uses_syn") then
-        getgenv().syn = nil
+        uienv().syn = nil
     end
 
     -- Go to near end line for configs.
@@ -843,7 +843,7 @@ local status, res1, res2 = pcall(function()
         run_script(sc)
     end
 
-    getgenv().readclipboard_hideenv = nil
+    uienv().readclipboard_hideenv = nil
 
     local DELTA = {};
 
@@ -4613,7 +4613,7 @@ local status, res1, res2 = pcall(function()
         return DELTA_REQUIRE(Module);
     end
 
-    getgenv().total_tabs = 0
+    uienv().total_tabs = 0
 
     DELTA_MODULES[DELTA["160"]] = {
         Closure = function()
@@ -4706,7 +4706,7 @@ local status, res1, res2 = pcall(function()
             function module:SetCurrentSuggestionScript(title, desc, source)
                 script.Parent.Executor.Sidemenu.Script.Overlay.Holder.Showcase.Title.Text = title
                 script.Parent.Executor.Sidemenu.Script.Overlay.Holder.Showcase.Description.Text = desc
-                getgenv().ExecuteSuggestedScript = function()
+                uienv().ExecuteSuggestedScript = function()
                     executescript(source)
                 end
             end
@@ -5062,7 +5062,7 @@ local status, res1, res2 = pcall(function()
         repeat
 
         until game:IsLoaded()
-        getgenv().StartUp = function()
+        uienv().StartUp = function()
 
             script.Parent.Visible = true
             local twinfo = TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
@@ -5078,16 +5078,16 @@ local status, res1, res2 = pcall(function()
         end
         StartUp()
 
-        getgenv().is_unlocked = false
+        uienv().is_unlocked = false
 
-        getgenv().GrantAccess = function()
-            getgenv().rLib:End()
+        uienv().GrantAccess = function()
+            uienv().rLib:End()
             DELTA["Ui"].Enabled = false
             if (not isinternalfile("is_versx_beta")) then
                 writeinternal("is_versx_beta", "true")
                 wait()
             end
-            getgenv().is_unlocked = true
+            uienv().is_unlocked = true
             if istween.Value == true then
                 -- tween closing key sys
                 local twinfo = TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
@@ -5286,7 +5286,7 @@ local status, res1, res2 = pcall(function()
     task.spawn(C_39)
 
     DELTA["DaIcon"].MouseButton1Click:Connect(function()
-        if (getgenv().is_unlocked) then
+        if (uienv().is_unlocked) then
             OpenDelta()
         end
 
@@ -5601,7 +5601,7 @@ local status, res1, res2 = pcall(function()
         local script = DELTA["122"];
         local ScriptSuggestion = script.Parent
         local uilib = require(script.Parent.Parent.Parent.Parent.UILibrary)
-        getgenv().is_iy = false
+        uienv().is_iy = false
 
         ScriptSuggestion.Overlay.Holder.Showcase.MouseButton1Click:Connect(function()
             --print("showcase clicked")
@@ -5830,20 +5830,20 @@ local status, res1, res2 = pcall(function()
 	]]
 
         -- Expose the function as global env
-        getgenv().rconsoleprint = rprint
-        getgenv().rconsoleerror = rerror
-        getgenv().rconsolewarn = rwarn
-        getgenv().rconsoleinfo = rinfo
+        uienv().rconsoleprint = rprint
+        uienv().rconsoleerror = rerror
+        uienv().rconsolewarn = rwarn
+        uienv().rconsoleinfo = rinfo
 
-        getgenv().consoleprint = rprint
-        getgenv().consoleerror = rerror
-        getgenv().consolewarn = rwarn
-        getgenv().consoleinfo = rinfo
+        uienv().consoleprint = rprint
+        uienv().consoleerror = rerror
+        uienv().consolewarn = rwarn
+        uienv().consoleinfo = rinfo
 
-        getgenv().rconsoleinput = rinput
-        getgenv().consoleinput = rinput
+        uienv().rconsoleinput = rinput
+        uienv().consoleinput = rinput
 
-        getgenv().rconsoleclear = function()
+        uienv().rconsoleclear = function()
             for i, v in pairs(script.Parent.Console.ScrollingFrame.Header:GetChildren()) do
                 if v:IsA("Frame") then
                     v:Destroy()
@@ -5851,7 +5851,7 @@ local status, res1, res2 = pcall(function()
 
             end
         end
-        getgenv().consoleclear = function()
+        uienv().consoleclear = function()
             for i, v in pairs(script.Parent.Console.ScrollingFrame.Header:GetChildren()) do
                 if v:IsA("Frame") then
                     v:Destroy()
@@ -5941,12 +5941,12 @@ local status, res1, res2 = pcall(function()
 
             if (state) then
                 writeinternal("uses_syn", "hi")
-                getgenv().syn = syn_backup
+                uienv().syn = syn_backup
 
             else
                 if (isinternalfile("uses_syn")) then
                     delinternal("uses_syn")
-                    getgenv().syn = nil
+                    uienv().syn = nil
                 end
             end
 
@@ -6140,9 +6140,9 @@ local status, res1, res2 = pcall(function()
 	end)
         end
 
-        ------------------------ Expose the modules as global env for plugins. -----------------------------------------getgenv().delta = {}
+        ------------------------ Expose the modules as global env for plugins. -----------------------------------------uienv().delta = {}
 
-        getgenv().delta = {}
+        uienv().delta = {}
 
         function delta:AddTab(a, b)
             UILib:AddTab(a, b)
@@ -6463,11 +6463,11 @@ end--]]
         end
     }
 
-    getgenv().rLib = require(LOADER["c"])
+    uienv().rLib = require(LOADER["c"])
 
     -- Create a coroutine to run the loading animation asynchronously
     coroutine.wrap(function()
-        getgenv().rLib:Start()
+        uienv().rLib:Start()
     end)()
 
     function checkkey()
@@ -6492,7 +6492,7 @@ end--]]
             if not bool then
                 -- print("no valid key")
                 task.wait(1)
-                getgenv().rLib:End()
+                uienv().rLib:End()
                 DELTA["1"].Enabled = true
                 StartUp()
             else

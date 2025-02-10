@@ -3,6 +3,11 @@ repeat
 	task.wait(1)
 until game:IsLoaded();
 
+uiwrapper(function(data)
+
+print("inside ui")
+print("ui test:", data.test)
+		
 secure({
     ["preload"] = true, --loadstring(secretstring("dJZ2fICV2It1m5iAvHWDnXrnldjb3szc3d3XzFnpz1lUXdzo6ene3aX5oZS5kvzGvcKbwJ7mtnTGyqo="))(),
     ["message"] = secretstring("VomTftJ4mZF9iZC9g3qJ13SjgaafrqDlipLOf6WplKhkp7Gl2JWbuo25p9W2krudt/2X54/Q3+R9KwzZzLK7sqUFxNi6tLi/ELHP28fSIsW/zMfNxd3v2iLG6h3Sytniz9PmE9vcFe3h2+DY8e8="),
@@ -6513,3 +6518,4 @@ if not status then
 else
     return res1, res2
 end
+end)

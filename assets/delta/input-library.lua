@@ -6,19 +6,15 @@ local mouse = cloneref(game:GetService("Players").LocalPlayer:GetMouse());
 local mouseButton1 = Enum.UserInputType.MouseButton1;
 local mouseButton2 = Enum.UserInputType.MouseButton2;
 
-local renv = getrenv();
 local genv = getgenv();
 
-print("renv:", renv, "genv:", getgenv());
-print(renv.assert, renv.math.abs, renv.math.floor, renv.string.format, renv.task.wait, renv.tonumber, renv.typeof, virtualInputManager.SendKeyEvent, virtualInputManager.SendMouseButtonEvent, virtualInputManager.SendMouseMoveEvent, virtualInputManager.SendMouseWheelEvent, guiService.GetGuiInset)
-
-local _assert = clonefunction(renv.assert);
-local _mathabs = clonefunction(renv.math.abs);
-local _mathfloor = clonefunction(renv.math.floor);
-local _stringformat = clonefunction(renv.string.format);
-local _taskwait = clonefunction(renv.task.wait);
-local _tonumber = clonefunction(renv.tonumber);
-local _typeof = clonefunction(renv.typeof);
+local _assert = clonefunction(assert);
+local _mathabs = clonefunction(math.abs);
+local _mathfloor = clonefunction(math.floor);
+local _stringformat = clonefunction(string.format);
+local _taskwait = clonefunction(task.wait);
+local _tonumber = clonefunction(tonumber);
+local _typeof = clonefunction(typeof);
 
 local _sendKeyEvent = clonefunction(virtualInputManager.SendKeyEvent);
 local _sendMouseButtonEvent = clonefunction(virtualInputManager.SendMouseButtonEvent);

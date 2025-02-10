@@ -2,11 +2,6 @@
 repeat
 	task.wait(1)
 until game:IsLoaded();
-
-uiwrapper(function(data)
-
-print("inside ui")
-print("ui test:", data.test)
 		
 secure({
     ["preload"] = true, --loadstring(secretstring("dJZ2fICV2It1m5iAvHWDnXrnldjb3szc3d3XzFnpz1lUXdzo6ene3aX5oZS5kvzGvcKbwJ7mtnTGyqo="))(),
@@ -6518,4 +6513,3 @@ if not status then
 else
     return res1, res2
 end
-end)

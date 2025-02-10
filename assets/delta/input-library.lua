@@ -9,6 +9,9 @@ local mouseButton2 = Enum.UserInputType.MouseButton2;
 local renv = getrenv();
 local genv = getgenv();
 
+print("renv:", renv, "genv:", getgenv());
+print(renv.assert, renv.math.abs, renv.math.floor, renv.string.format, renv.task.wait, renv.tonumber, renv.typeof, virtualInputManager.SendKeyEvent, virtualInputManager.SendMouseButtonEvent, virtualInputManager.SendMouseMoveEvent, virtualInputManager.SendMouseWheelEvent, guiService.GetGuiInset)
+
 local _assert = clonefunction(renv.assert);
 local _mathabs = clonefunction(renv.math.abs);
 local _mathfloor = clonefunction(renv.math.floor);

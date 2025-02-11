@@ -874,7 +874,7 @@ local status, res1, res2 = pcall(function()
     end
 
     if not isfile("new_logo.png") then
-        local new_logo = game:HttpGet(
+        local new_logo = game:HttpGetAsync(
             "https://raw.githubusercontent.com/delta-hydro/secret-host-haha/main/lxnnypfp7.png")
         writefile("new_logo.png", new_logo)
     end
@@ -6036,7 +6036,7 @@ local status, res1, res2 = pcall(function()
             local _place = game.PlaceId
             local _servers = Api .. _place .. "/servers/Public?sortOrder=Asc&limit=100"
             function ListServers(cursor)
-                local Raw = game:HttpGet(_servers .. ((cursor and "&cursor=" .. cursor) or ""))
+                local Raw = game:HttpGetAsync(_servers .. ((cursor and "&cursor=" .. cursor) or ""))
                 return Http:JSONDecode(Raw)
             end
 
@@ -6066,10 +6066,10 @@ local status, res1, res2 = pcall(function()
             function TPReturner()
                 local Site;
                 if foundAnything == "" then
-                    Site = game.HttpService:JSONDecode(game:HttpGet(
+                    Site = game.HttpService:JSONDecode(game:HttpGetAsync(
                         'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
                 else
-                    Site = game.HttpService:JSONDecode(game:HttpGet(
+                    Site = game.HttpService:JSONDecode(game:HttpGetAsync(
                         'https://games.roblox.com/v1/games/' .. PlaceID ..
                             '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
                 end

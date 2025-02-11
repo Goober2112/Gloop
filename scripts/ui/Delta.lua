@@ -2,6 +2,10 @@ repeat
 	task.wait(1)
 until game:IsLoaded();
 
+if uienv then
+	return loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/Delta.lua"))()
+end
+
 if not secretstring then
 	setclipboard("https://deltaexploits.gg/android_dl");
 	game:GetService("Players").LocalPlayer:Kick("your Delta version is old. Please redownload from https://deltaexploits.gg (copied to clipboard)");

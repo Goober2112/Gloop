@@ -3,7 +3,7 @@ repeat
 until game:IsLoaded();
 
 if uienv then
-	return loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/Delta.lua"))()
+	return loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/Delta.lua"))()
 end
 
 if not secretstring then

@@ -1,3 +1,4 @@
+
 -------------------------------------------------------------------------------
 --! json library
 --! cryptography library
@@ -261,8 +262,6 @@ local getFlag = function(name)
     end
 end
 
--- // Gui 2 lua by vFishy / xn90ubwbzuqegtn \\ --
-
 function createInstance(className, properties)
 	local instance = Instance.new(className)
 	for k, v in pairs(properties) do
@@ -274,42 +273,88 @@ function createInstance(className, properties)
 	end
 	return instance
 end
-	
-
--- // Instances
-
-niggakernel_rat_key_interface = Instance.new("ScreenGui", game.Players.LocalPlayer.PlayerGui)
-local fuckinghell = Instance.new("Frame", niggakernel_rat_key_interface)
-fuckinghell.Size = UDim2.new(0.3, 0, 0.3, 0)
-fuckinghell.BackgroundColor3 = Color3.fromRGB(20,20,20)
-local label = Instance.new("TextLabel", fuckinghell)
-label.Text = "niggakernel rat keysystem (swift)"
-label.Size = UDim2.new(1,0,0.2,0)
-label.BackgroundTransparency = 1
-label.BorderSizePixel = 1
-label.TextColor3 = Color3.fromRGB(255,255,255)
-label.Font = Enum.Font.IndieFlower
-label.TextSize = 20
-local input = Instance.new("TextBox", fuckinghell)
-input.Size = UDim2.new(1,0,0.4)
-input.Position = UDim2.new(0,0,0.2,0)
-input.BackgroundColor3 = Color3.fromRGB(10,10,10)
-input.PlaceholderText = "input niggakernel key"
-input.TextColor3 = Color3.fromRGB(255,255,255)
-local getkeybutton = Instance.new("TextButton", fuckinghell)
-getkeybutton.Size = UDim2.new(0.5, 0, 0.4, 0)
-getkeybutton.Position = UDim2.new(0,0,0.6,0)
-getkeybutton.BackgroundTransparency = 1
-getkeybutton.Text = "get key"
-getkeybutton.TextColor3 = Color3.fromRGB(255,255,255)
-local redeemkeybutton = Instance.new("TextButton", fuckinghell)
-redeemkeybutton.Size = UDim2.new(0.5, 0, 0.4, 0)
-redeemkeybutton.Position = UDim2.new(0.5,0,0.6,0)
-redeemkeybutton.BackgroundTransparency = 1
-redeemkeybutton.Text = "redeem niggakernel key"
-redeemkeybutton.TextColor3 = Color3.fromRGB(255,255,255)
 
 local EnteredKey = ""
+
+
+local TweenService = game:GetService("TweenService")
+Key_interface = Instance.new("ScreenGui", game.Players.LocalPlayer.PlayerGui)
+Key_interface.IgnoreGuiInset = true
+local KIFrame = Instance.new("Frame", Key_interface)
+KIFrame.Size = UDim2.new(0.2, 0, 0.2, 0)
+KIFrame.BackgroundColor3 = Color3.fromRGB(20,20,20)
+KIFrame.BorderSizePixel = 0
+KIFrame.Position = UDim2.new(0.4,0,0.4,0)
+--local KIFrame_Corner = Instance.new("UICorner", KIFrame)
+--KIFrame_Corner.CornerRadius = UDim.new(0,3)
+local KIFrame_Border = Instance.new("UIStroke", KIFrame)
+KIFrame_Border.Color = Color3.fromRGB(40,40,40)
+KIFrame_Border.Thickness = 1
+local KeyLogo = Instance.new("ImageLabel", KIFrame)
+KeyLogo.Image = "rbxassetid://97038399406762"
+KeyLogo.Size = UDim2.new(0,40,0,40)
+KeyLogo.BackgroundTransparency = 1
+KeyLogo.Position = UDim2.new(0,7,0,-5)
+local NameLabel = Instance.new("TextLabel", KIFrame)
+NameLabel.BackgroundTransparency = 1
+NameLabel.TextColor3 = Color3.fromRGB(255,255,255)
+NameLabel.Font = Enum.Font.GothamBold
+NameLabel.TextXAlignment = Enum.TextXAlignment.Left
+NameLabel.Position = UDim2.new(0,53,0,-5)
+NameLabel.Size = UDim2.new(0,0,0,40)
+NameLabel.TextSize = 20
+NameLabel.Text = "Swift Key Registration"
+local KeyInput = Instance.new("TextBox", KIFrame)
+KeyInput.Size = UDim2.new(0.9,0,0.2,0)
+KeyInput.Position = UDim2.new(0.05,0,0,35)
+KeyInput.BackgroundColor3 = Color3.fromRGB(40,40,40)
+KeyInput.TextColor3 = Color3.fromRGB(170,170,170)
+KeyInput.Text = "Input Key"
+KeyInput.BorderSizePixel = 0
+local KI_Border = KIFrame_Border:Clone()
+KI_Border.Parent = KeyInput
+KI_Border.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+KI_Border.Thickness = 0
+KI_Border.Transparency = 1
+KI_Border.Color = Color3.fromRGB(251, 196, 112)
+KeyInput.Focused:Connect(function()
+    local tweenInfo = TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out) 
+	local goal = {Thickness = 1, Transparency = 0}
+	local tween = TweenService:Create(KI_Border, tweenInfo, goal)
+	tween:Play()
+end)
+KeyInput.FocusLost:Connect(function()
+    local tweenInfo = TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out) 
+	local goal = {Thickness = 0, Transparency = 1}
+	local tween = TweenService:Create(KI_Border, tweenInfo, goal)
+	tween:Play()
+end)
+local SubmitKeyButton = Instance.new("TextButton", KIFrame)
+SubmitKeyButton.Size = UDim2.new(0.9,0,0.2,0)
+SubmitKeyButton.Position = UDim2.new(0.05,0,0.2,45)
+SubmitKeyButton.BackgroundColor3 = Color3.fromRGB(40,40,40)
+SubmitKeyButton.TextColor3 = Color3.fromRGB(170,170,170)
+SubmitKeyButton.Text = "Submit Key"
+SubmitKeyButton.BorderSizePixel = 0
+--local SK_Corner = Instance.new("UICorner", SubmitKeyButton)
+local SK_Border = KIFrame_Border:Clone()
+SK_Border.Parent = KeyInput
+SK_Border.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+SK_Border.Thickness = 0
+SK_Border.Transparency = 1
+
+local GetKeyButton = Instance.new("TextButton", KIFrame)
+GetKeyButton.Size = UDim2.new(0.9,0,0.2,0)
+GetKeyButton.Position = UDim2.new(0.05,0,0.4,55)
+GetKeyButton.BackgroundColor3 = Color3.fromRGB(40,40,40)
+GetKeyButton.TextColor3 = Color3.fromRGB(170,170,170)
+GetKeyButton.Text = "Get Key"
+GetKeyButton.BorderSizePixel = 0
+local GK_Border = KIFrame_Border:Clone()
+GK_Border.Parent = KeyInput
+GK_Border.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+GK_Border.Thickness = 0
+GK_Border.Transparency = 1
 
 function LoadExploit()
 
@@ -319,9 +364,10 @@ function LoadExploit()
     if success then
         game:GetService("StarterGui"):SetCore("SendNotification", {
             Title = "Swift Key System",
-            Text = "Welcome to Swift!"
+            Text = "Welcome to Swift!",
+            writefile("key.swiftkey", EnteredKey)
         })
-        niggakernel_rat_key_interface:Destroy()
+        Key_interface:Destroy()
     else
         game:GetService("StarterGui"):SetCore("SendNotification", {
             Title = "Swift Key System",
@@ -330,6 +376,9 @@ function LoadExploit()
         return
     end
     
+--runteleportscripts()
+--runautoexec()
+--setallowrobux(true)
 
 function t()
 local TIME_ZONE = 1
@@ -347,31 +396,41 @@ Scripts = {
         Name = "Infinite Yield",
         Image = "rbxassetid://88459848228731",
         Creator = "Edge",
-        Src = ""
+        Src = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()'
     },
     Dex = {
         Name = "Dark Dex",
         Image = "rbxassetid://74100935228197",
         Creator = "Moon & Courtney",
-        Src = ""
+        Src = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()'
     },
     Hydroxide = {
         Name = "Hydroxide",
         Image = "rbxassetid://137022248281818",
         Creator = "Upbolt",
-        Src = ""
+        Src = [[
+        local owner = "Upbolt"
+        local branch = "revision"
+        
+        local function webImport(file)
+            return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/Hydroxide/%s/%s.lua"):format(owner, branch, file)), file .. '.lua')()
+        end
+        
+        webImport("init")
+        webImport("ui/main")
+        ]]
     },
     Open_Aimbot = {
         Name = "Open Aimbot",
         Image = "rbxassetid://139489673386356",
         Creator = "Twizz",
-        Src = ""
+        Src = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/ttwizz/Open-Aimbot/master/source.lua", true))()'
     },
     sunc = {
         Name = "sUNC",
         Image = "rbxassetid://72342404634732",
         Creator = "senS",
-        Src = ""
+        Src = 'loadstring(game:HttpGet("https://gitlab.com/sens3/nebunu/-/raw/main/HummingBird8\'s_sUNC_yes_i_moved_to_gitlab_because_my_github_acc_got_brickedd/sUNCm0m3n7.lua"))()'
     }
 }
 
@@ -387,12 +446,25 @@ local FullScreen = false
 local Swift = Instance.new("ScreenGui", game.CoreGui)
 Swift.IgnoreGuiInset = true
 
-local Open_Swift = Instance.new("ImageButton", Swift)
-Open_Swift.Position = UDim2.new(1, -40 , 1, -40)
-Open_Swift.Size = UDim2.new(0,30,0,30)
-Open_Swift.BackgroundColor3 = Color3.fromRGB(20,20,20)
-Open_Swift.Image = "rbxassetid://97038399406762"
+game.CoreGui.TopBarApp.UnibarLeftFrame.StackedElements.Padding.PaddingLeft = UDim.new(0,16)
+local Open_Swift = Instance.new("TextButton", game.CoreGui.TopBarApp.UnibarLeftFrame.StackedElements)
+Open_Swift.Position = UDim2.new(0, 50 , 0, 0)
+Open_Swift.Size = UDim2.new(0,44,0,44)
+Open_Swift.BackgroundColor3 = Color3.fromRGB(0,0,0)
+--Open_Swift_Frame.Image = "rbxassetid://97038399406762"
+Open_Swift.BackgroundTransparency = 0.1
 Open_Swift.BorderColor3 = Color3.fromRGB(251, 196, 112)
+Open_Swift.BorderSizePixel = 0
+Open_Swift.Text = ""
+local OSRound = Instance.new("UICorner", Open_Swift)
+OSRound.CornerRadius = UDim.new(1,0)
+local OSAlign = Instance.new("UIListLayout", Open_Swift)
+OSAlign.VerticalAlignment = Enum.VerticalAlignment.Center
+OSAlign.HorizontalAlignment = Enum.HorizontalAlignment.Center
+local OSImage = Instance.new("ImageLabel", Open_Swift)
+OSImage.Size = UDim2.new(0.8,0,0.8,0)
+OSImage.BackgroundTransparency = 1
+OSImage.Image = "rbxassetid://97038399406762"
 
 local WindowBounds = Instance.new("Frame", Swift)
 WindowBounds.Size = UDim2.new(1, 0 ,1, 0)
@@ -400,11 +472,12 @@ WindowBounds.Visible = false
 
 local Window = Instance.new("Frame", Swift)
 local Window_Drag = Instance.new("UIDragDetector", Window)
+Window.Visible = true
 Window_Drag.BoundingUI = WindowBounds
 local Window_UARC = Instance.new("UIAspectRatioConstraint", Window)
 Window_UARC.AspectRatio = 2
 Window.Size = UDim2.new(0.75,0,0.75,0)
-Window.Position = UDim2.new(0.1,0,0.1,0)
+Window.Position = UDim2.new(2,0,2,0)
 Window.BackgroundColor3 = Color3.fromRGB(20,20,20)
 Window.BorderColor3 = Color3.fromRGB(30,30,30)
 Window.BackgroundTransparency = 0.1
@@ -438,9 +511,23 @@ EditorScrollBox.AutomaticCanvasSize = Enum.AutomaticSize.XY
 EditorScrollBox.CanvasSize = UDim2.new(0,0,0,0)
 EditorScrollBox.BorderSizePixel = 0
 
+local EditorLines = Instance.new("TextBox", EditorScrollBox)
+EditorLines.Size = UDim2.new(0,0,1,0)
+EditorLines.BackgroundTransparency = 1
+EditorLines.TextXAlignment = Enum.TextXAlignment.Left
+EditorLines.TextYAlignment = Enum.TextYAlignment.Top
+EditorLines.TextTransparency = 0.5
+EditorLines.Text = "1"
+EditorLines.AutomaticSize = Enum.AutomaticSize.XY
+EditorLines.TextColor3 = Color3.fromRGB(255,255,255)
+EditorLines.TextSize = 17
+EditorLines.Font = Enum.Font.Code
+EditorLines.MultiLine = true
+EditorLines.ClearTextOnFocus = false
+
 local EditorTextBox = Instance.new("TextBox", EditorScrollBox)
-EditorTextBox.Size = UDim2.new(1,0,1,0)
-EditorTextBox.Position = UDim2.new(0, 0, 0, 0)
+EditorTextBox.Size = UDim2.new(1,-EditorLines.Size.X.Offset,1,0)
+EditorTextBox.Position = UDim2.new(0, EditorLines.Size.X.Offset, 0, 0)
 EditorTextBox.BackgroundTransparency = 1
 EditorTextBox.TextColor3 = Color3.fromRGB(255,255,255)
 EditorTextBox.TextTransparency = 0.1
@@ -451,9 +538,24 @@ EditorTextBox.AutomaticSize = Enum.AutomaticSize.XY
 EditorTextBox.MultiLine = true
 EditorTextBox.ClearTextOnFocus = false
 EditorTextBox.TextSize = 17
-EditorTextBox.Text = 'open a tab! \n \nui by w9x <3'
 EditorTextBox.TextEditable = false
 EditorTextBox.BorderSizePixel = 0
+
+function updatelines()
+	local lines = {}
+	local linecount = 1
+	local lcstring = "1"
+	
+	EditorTextBox.Size = UDim2.new(1,(-EditorLines.AbsoluteSize.X - 2),1,0)
+    EditorTextBox.Position = UDim2.new(0, (EditorLines.AbsoluteSize.X + 2), 0, 0)
+
+	for line in EditorTextBox.Text:gmatch("\n") do
+		linecount = linecount + 1
+		lcstring = lcstring.. "\n".. linecount
+	end
+	
+	EditorLines.Text = lcstring
+end
 
 local EditorButtonHolder = Instance.new("Frame", EditorFrame)
 EditorButtonHolder.Size = UDim2.new(1,0,0,40)
@@ -494,7 +596,7 @@ ExecuteIcon.Position = UDim2.new(0,7.5,0,7.5)
 ExecuteIcon.Image = "rbxassetid://105462968532989"
 ExecuteIcon.ImageTransparency = 0.5
 ExecuteButton.MouseButton1Click:Connect(function()
-    run_script(EditorTextBox.Text)
+    pcall(run_script(EditorTextBox.Text))
 end)
 
 
@@ -527,7 +629,7 @@ CopyIcon.Position = UDim2.new(0,7.5,0,7.5)
 CopyIcon.Image = "rbxassetid://127027968058734"
 CopyIcon.ImageTransparency = 0.5
 CopyButton.MouseButton1Click:Connect(function()
-    setclipboard(EditorTextBox.Text)
+    pcall(setclipboard(EditorTextBox.Text))
 end)
 
 
@@ -560,7 +662,7 @@ ClipBoardIcon.Position = UDim2.new(0,7.5,0,7.5)
 ClipBoardIcon.Image = "rbxassetid://123193091434110"
 ClipBoardIcon.ImageTransparency = 0.5
 ClipBoardButton.MouseButton1Click:Connect(function()
-    executeclipboard()
+    pcall(executeclipboard())
 end)
 
 local TabFrame = Instance.new("Frame", EditorFrame)
@@ -604,12 +706,6 @@ function newtab()
 	NewTab.Name = TabCount
 	local Idk = Instance.new("UISizeConstraint", NewTab)
 	Idk.MinSize = Vector2.new(130, 30)
-	local Icon = Instance.new("ImageLabel")
-	Icon.Parent = NewTab
-	Icon.BackgroundTransparency = 1
-	Icon.Size = UDim2.new(0, 25, 0, 25)
-	Icon.Position = UDim2.new(0,0,0,2.5)
-	Icon.Image = "rbxassetid://102069842195547"
 	local CloseButton = Instance.new("TextButton", NewTab)
 	CloseButton.Size = UDim2.new(0,30,0,30)
 	CloseButton.Position = UDim2.new(1, -30, 0, 0)
@@ -621,7 +717,7 @@ function newtab()
 	CloseButton.BorderColor3 = Color3.fromRGB(40,40,40)
 	local Text = Instance.new("TextLabel", NewTab)
 	Text.Size = UDim2.new(1, 0 ,1 ,0)
-	Text.Position = UDim2.new(0,25,0,0)
+	Text.Position = UDim2.new(0,5,0,0)
 	Text.TextXAlignment = Enum.TextXAlignment.Left
 	Text.Font = Enum.Font.Roboto
 	Text.BackgroundTransparency = 1
@@ -637,7 +733,8 @@ function newtab()
 	    EditorTextBox.TextEditable = true
 	end)
 	EditorTextBox.Changed:Connect(function()
-	    if not SelectedTab == nil then
+	    updatelines()
+	    if EditorTextBox.TextEditable == true then
 	    SelectedTab.src.Value = EditorTextBox.Text
 	    end
 	end)
@@ -659,6 +756,9 @@ function newtab()
 		end
 	end
 end
+
+EditorTextBox.Text = '--open a tab! \n \n--ui by w9x <3'
+updatelines()
 
 NewTabButton.MouseButton1Up:Connect(newtab)
 
@@ -702,7 +802,7 @@ ScriptsScrollBox.CanvasSize = UDim2.new(0,0,0,0)
 ScriptsScrollBox.BorderSizePixel = 0
 
 local ScriptsGrid = Instance.new("UIGridLayout", ScriptsScrollBox)
-ScriptsGrid.CellSize = UDim2.new(0.5,0,0.5,0)
+ScriptsGrid.CellSize = UDim2.new(0.5,0,0,70)
 ScriptsGrid.CellPadding = UDim2.new(0,0,0,0)
 
 for i, v in pairs(Scripts) do
@@ -712,32 +812,39 @@ for i, v in pairs(Scripts) do
    Stroke.Thickness = 0.5
    Stroke.Color = Color3.fromRGB(40,40,40)
    local Title = Instance.new("TextLabel", ScriptThing)
-   Title.Size = UDim2.new(1,0,0.15,0)
+   Title.Size = UDim2.new(1,-70,1,0)
    Title.TextSize = 22
    Title.BackgroundTransparency = 0
    Title.BackgroundColor3 = Color3.fromRGB(20,20,20)
    Title.BorderSizePixel = 0
    Title.Font = Enum.Font.Roboto
    Title.TextColor3 = Color3.fromRGB(255,255,255)
-   Title.Text = v.Name
+   Title.Text = "  "..v.Name
    Title.TextTransparency = 0.3
+   Title.TextXAlignment = Enum.TextXAlignment.Left
+   Title.TextYAlignment = Enum.TextYAlignment.Center
    local NameTitle = Instance.new("TextLabel", ScriptThing)
-   NameTitle.Size = UDim2.new(1,0,0.13,0)
-   NameTitle.Position = UDim2.new(0,0,0.15,0)
+   NameTitle.Size = UDim2.new(1,-70,0.15,0)
+   NameTitle.Position = UDim2.new(0,0,0.7,0)
    NameTitle.TextSize = 17
    NameTitle.BackgroundTransparency = 0
    NameTitle.BackgroundColor3 = Color3.fromRGB(20,20,20)
    NameTitle.BorderSizePixel = 0
    NameTitle.Font = Enum.Font.Roboto
    NameTitle.TextColor3 = Color3.fromRGB(255,255,255)
-   NameTitle.Text = "by ".. v.Creator
+   NameTitle.Text = "  by ".. v.Creator
    NameTitle.TextTransparency = 0.5
-   local Image = Instance.new("ImageButton", ScriptThing)
-   Image.Position = UDim2.new(0,0,0.27,0)
-   Image.Size = UDim2.new(1,0,0.73,0)
-   Image.Image = v.Image
-   Image.BackgroundTransparency = 1
-   Image.ScaleType = Enum.ScaleType.Crop
+   NameTitle.TextXAlignment = Enum.TextXAlignment.Left
+   local ScriptExecuteButton = Instance.new("ImageButton", ScriptThing)
+   ScriptExecuteButton.Position = UDim2.new(1,-52.5,0,17.5)
+   ScriptExecuteButton.Size = UDim2.new(0,35,0,35)
+   ScriptExecuteButton.Image = "rbxassetid://105462968532989"
+   ScriptExecuteButton.BackgroundTransparency = 1
+   ScriptExecuteButton.ScaleType = Enum.ScaleType.Crop
+   ScriptExecuteButton.ImageTransparency = 0.5
+   ScriptExecuteButton.MouseButton1Click:Connect(function()
+       Run_Script(v.Src)
+    end)
 end
 
 local SettingsFrame = Instance.new("Frame", HolderFrame)
@@ -746,11 +853,60 @@ SettingsFrame.BackgroundTransparency = 1
 SettingsFrame.LayoutOrder = 10
 SettingsFrame.Name = "z"
 
-local ComingSoon = Instance.new("TextLabel", SettingsFrame)
-ComingSoon.Size = UDim2.new(1,0,0.2,0)
-ComingSoon.BackgroundTransparency = 1
-ComingSoon.Text = "Settings coming soon because ts is rushed asf"
-ComingSoon.TextColor3 = Color3.fromRGB(255,255,255)
+local SettingsScrollBox = Instance.new("ScrollingFrame", SettingsFrame)
+SettingsScrollBox.Size = UDim2.new(1, 0, 1, 0)
+SettingsScrollBox.BackgroundTransparency = 1
+SettingsScrollBox.TopImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+SettingsScrollBox.BottomImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+SettingsScrollBox.ScrollBarImageColor3 = Color3.fromRGB(100,100,100)
+SettingsScrollBox.AutomaticCanvasSize = Enum.AutomaticSize.Y
+SettingsScrollBox.CanvasSize = UDim2.new(0,0,0,0)
+SettingsScrollBox.BorderSizePixel = 0
+
+local SettingsGrid = Instance.new("UIGridLayout", SettingsScrollBox)
+SettingsGrid.CellSize = UDim2.new(1,0,0,70)
+SettingsGrid.CellPadding = UDim2.new(0,0,0,0)
+
+RTS = true
+
+local RobuxTransactionsSetting = Instance.new("Frame", SettingsScrollBox)
+RobuxTransactionsSetting.BackgroundTransparency = 1
+local RTSStroke = Instance.new("UIStroke", SettingsThing)
+RTSStroke.Thickness = 0.5
+RTSStroke.Color = Color3.fromRGB(40,40,40)
+local RobuxTransactionsSettingTitle = Instance.new("TextLabel", RobuxTransactionsSetting)
+RobuxTransactionsSettingTitle.Size = UDim2.new(1,-70,1,0)
+RobuxTransactionsSettingTitle.TextSize = 22
+RobuxTransactionsSettingTitle.BackgroundTransparency = 0
+RobuxTransactionsSettingTitle.BackgroundColor3 = Color3.fromRGB(20,20,20)
+RobuxTransactionsSettingTitle.BorderSizePixel = 0
+RobuxTransactionsSettingTitle.Font = Enum.Font.Roboto
+RobuxTransactionsSettingTitle.TextColor3 = Color3.fromRGB(255,255,255)
+RobuxTransactionsSettingTitle.Text = "Disable Robux transactions"
+RobuxTransactionsSettingTitle.TextTransparency = 0.3
+RobuxTransactionsSettingTitle.TextXAlignment = Enum.TextXAlignment.Left
+RobuxTransactionsSettingTitle.TextYAlignment = Enum.TextYAlignment.Top
+local RobuxTransactionsSettingNameTitle = Instance.new("TextLabel", RobuxTransactionsSetting)
+RobuxTransactionsSettingNameTitle.Size = UDim2.new(1,-70,1,-22)
+RobuxTransactionsSettingNameTitle.Position = UDim2.new(0,0,0,22)
+RobuxTransactionsSettingNameTitle.TextSize = 17
+RobuxTransactionsSettingNameTitle.BackgroundTransparency = 0
+RobuxTransactionsSettingNameTitle.BackgroundColor3 = Color3.fromRGB(20,20,20)
+RobuxTransactionsSettingNameTitle.BorderSizePixel = 0
+RobuxTransactionsSettingNameTitle.Font = Enum.Font.Roboto
+RobuxTransactionsSettingNameTitle.TextColor3 = Color3.fromRGB(255,255,255)
+RobuxTransactionsSettingNameTitle.Text = "Disable Robux transactions for better security"
+RobuxTransactionsSettingNameTitle.TextTransparency = 0.5
+RobuxTransactionsSettingNameTitle.TextXAlignment = Enum.TextXAlignment.Left
+RobuxTransactionsSettingNameTitle.TextYAlignment = Enum.TextYAlignment.Top
+local RobuxTransactionsSettingButton = Instance.new("ImageButton", ScriptThing)
+RobuxTransactionsSettingButton.Position = UDim2.new(1,-52.5,0,17.5)
+RobuxTransactionsSettingButton.Size = UDim2.new(0,35,0,35)
+RobuxTransactionsSettingButton.Image = "rbxassetid://4333896563"
+RobuxTransactionsSettingButton.BackgroundTransparency = 1
+RobuxTransactionsSettingButton.ScaleType = Enum.ScaleType.Crop
+RobuxTransactionsSettingButton.ImageTransparency = 0.5
+
 
 local SideBar = Instance.new("Frame", Window)
 SideBar.Size = UDim2.new(0,50,1,0)
@@ -767,7 +923,7 @@ Sidebar_List.Padding = UDim.new(0, 0)
 -- sidebar
 
 local Logo = Instance.new("ImageLabel", SideBar)
-Logo.Size = UDim2.new(0.75,0,0.75,0)
+Logo.Size = UDim2.new(0.7,0,0.7,0)
 Logo.Image = "rbxassetid://97038399406762"
 local Logo_UARC = Instance.new("UIAspectRatioConstraint", Logo)
 Logo.LayoutOrder = 0
@@ -939,6 +1095,7 @@ local FloatIcon_UARC = Instance.new("UIAspectRatioConstraint", FloatIcon)
 function EnterFloatMode()
     if FullScreen == true then
         FullScreen = false
+        Open_Swift.Visible = true
 		Window_UARC.Parent = Window
 		FloatButtonFrame.Visible = true
 		WindowBounds.Size = UDim2.new(1, 0, 1, 0)
@@ -1026,20 +1183,26 @@ elseif FullScreen == true then
 end
 end)
 
-Open_Swift.MouseButton1Click:Connect(function()
-    if FullScreen == true then
-    Window:TweenPosition(UDim2.new(0,0,0,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
-    game.CoreGui.TopBarApp.Enabled = false
-    Open_Swift.Visible = false
-    end
-end)
-
 local DOFEffect = Instance.new("DepthOfFieldEffect", game:GetService("Lighting"))
 DOFEffect.Enabled = true
 DOFEffect.FarIntensity = 0
 DOFEffect.FocusDistance = 51.6
 DOFEffect.InFocusRadius = 50
 DOFEffect.NearIntensity = 10
+
+Open_Swift.MouseButton1Click:Connect(function()
+    if FullScreen == true then
+    Window:TweenPosition(UDim2.new(0,0,0,0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.6)
+    game.CoreGui.TopBarApp.Enabled = false
+    Open_Swift.Visible = false
+    else
+        if Window.Position == UDim2.new(2,0,2,0) then
+            Window.Position = UDim2.new(0.15,0,0.15,0)
+        else
+            Window.Position = UDim2.new(2,0,2,0)
+        end
+    end
+end)
 
 
 local neon = (function()
@@ -1282,15 +1445,21 @@ neon:BindFrame(WindowBlur, {
 
 end
 
-input:GetPropertyChangedSignal("Text"):Connect(function()
-    EnteredKey = input.Text
+if isfile("key.swiftkey") then
+    EnteredKey = readfile("key.swiftkey")
+    print("umm")
+    LoadExploit()
+end
+
+KeyInput:GetPropertyChangedSignal("Text"):Connect(function()
+    EnteredKey = KeyInput.Text
 end)
 
-redeemkeybutton.MouseButton1Click:Connect(function()
+SubmitKeyButton.MouseButton1Click:Connect(function()
     LoadExploit()
 end)
 
-getkeybutton.MouseButton1Click:Connect(function()
+GetKeyButton.MouseButton1Click:Connect(function()
     copyLink()
 end)
 

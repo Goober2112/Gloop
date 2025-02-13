@@ -1,6 +1,6 @@
 -- ! wait for game to load
 repeat
-	task.wait(1)
+	task.wait()
 until game:IsLoaded();
 		
 secure({

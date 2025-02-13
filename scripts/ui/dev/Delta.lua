@@ -5228,7 +5228,7 @@ local status, res1, res2 = pcall(function()
         local buttons = script.Parent
         local inactivecolor = buttons.InactiveColor
         local activecolor = buttons.ActiveColor
-        local ts = game.TweenService
+        local ts = game:GetService("TweenService")
         local isTween = script.Parent.Parent.IsTween
 
         for i, v in pairs(buttons:GetChildren()) do

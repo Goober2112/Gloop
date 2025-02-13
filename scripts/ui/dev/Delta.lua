@@ -1,7 +1,8 @@
--- ! wait for game to load
-repeat
-	task.wait()
-until game:IsLoaded();
+if not game:IsLoaded() then
+	repeat
+		task.wait()
+	until game:IsLoaded();
+end
 		
 secure({
     ["preload"] = true, --loadstring(secretstring("dJZ2fICV2It1m5iAvHWDnXrnldjb3szc3d3XzFnpz1lUXdzo6ene3aX5oZS5kvzGvcKbwJ7mtnTGyqo="))(),

@@ -12,7 +12,7 @@ secure({
 
 -- roblox broke shit remotely again
 local execnn, execvv = identifyexecutor();
-local safe_request = request; --safe_request and safe_request or 
+local safe_request = safe_request and safe_request or request
 
 local status, res1, res2 = pcall(function()
     -------------------------------------------------------------------------------

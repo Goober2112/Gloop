@@ -108,7 +108,6 @@ local status, res1, res2 = pcall(function()
 
     for _ = 1, 5 do
         local oNonce = generateNonce();
-        task.wait(0.2)
         if generateNonce() == oNonce then
             local msg = "platoboost nonce error.";
             onMessage(msg);
@@ -5083,10 +5082,6 @@ local status, res1, res2 = pcall(function()
         uienv().GrantAccess = function()
             uienv().rLib:End()
             DELTA["Ui"].Enabled = false
-            if (not isinternalfile("is_versx_beta")) then
-                writeinternal("is_versx_beta", "true")
-                wait()
-            end
             uienv().is_unlocked = true
             if istween.Value == true then
                 -- tween closing key sys
@@ -5097,7 +5092,7 @@ local status, res1, res2 = pcall(function()
                 tween:Play()
                 tween.Completed:Wait()
                 script.Parent.Visible = false
-                task.wait(.1)
+
                 -- tween open main menu
                 script.Parent.Parent.Sidebar.Position = UDim2.new(1.078, 0, 0.474, 0)
                 script.Parent.Parent.Sidebar.Visible = true

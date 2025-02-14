@@ -1,3 +1,9 @@
+if not game:IsLoaded() then
+	repeat
+		task.wait()
+	until game:IsLoaded();
+end
+
 --[[ Variables ]]--
 local virtualInputManager = cloneref(Instance.new("VirtualInputManager"));
 local guiService = cloneref(game:GetService("GuiService"));

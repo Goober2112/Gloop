@@ -13,7 +13,7 @@ secure({
 
 local _DENTA, DENTA_VERSION, DENTA_TYPE = identifyexecutor();
 
-local safe_request = safe_request;
+local safe_request = request;
 if DENTA_TYPE == "arm32" then
 	safe_request = request; -- arm users are slow
 end

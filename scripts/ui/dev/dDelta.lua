@@ -28,15 +28,15 @@ local GLOOPY_SAFE_REQUEST = function(data)
     end
 
     if success then
-        return { ["StatusCode"] = 200, ["Body"] = ret }
-    else if success ~= nil then
+        return { ["StatusCode"] = 200, ["StatusMessage"] = "OK", ["Body"] = ret }
+    elseif success ~= nil and type(ret) == "string" then
         local status_code = string.match(ret, "%d+")
         if status_code then
-            return { ["StatusCode"] = tonumber(status_code), ["Body"] = ret }
+            return { ["StatusCode"] = tonumber(status_code), ["StatusMessage"] = ret, ["Body"] = "" }
         end
     end
 
-    return { ["StatusCode"] = 0, ["Body"] = "" }
+    return { ["StatusCode"] = 0, ["StatusMessage"] = "UNK", ["Body"] = "" }
 end
 
 local status, res1, res2 = pcall(function()

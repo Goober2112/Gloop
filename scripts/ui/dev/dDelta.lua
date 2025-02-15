@@ -16,7 +16,7 @@ local GLOOPY_SAFE_REQUEST = function(data)
     local success = nil
     local ret = nil
 
-	if data.Method == "GET" then
+    if data.Method == "GET" then
         success, ret = pcall(game.HttpGetAsync, game, data.Url)
     elseif data.Method == "POST" then
         local content_type = "*/*"

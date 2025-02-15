@@ -12,9 +12,32 @@ secure({
 })
 
 local _DENTA, DENTA_VERSION, DENTA_TYPE = identifyexecutor();
+local GLOOPY_SAFE_REQUEST = function(data)
+    local success = nil
+    local ret = nil
 
-local safe_request = request;
-print("tester:", DELTA_VERSION_NUM)
+	if data.Method == "GET" then
+        success, ret = pcall(game.HttpGetAsync, game, data.Url)
+    elseif data.Method == "POST" then
+        local content_type = "*/*"
+        if data.Headers and data.Headers["Content-Type"] then
+            content_type = data.Headers["Content-Type"]
+        end
+
+        success, ret = pcall(game.HttpPostAsync, game, data.Url, data.Body, content_type)
+    end
+
+    if success then
+        return { ["StatusCode"] = 200, ["Body"] = ret }
+    else if success ~= nil then
+        local status_code = string.match(ret, "%d+")
+        if status_code then
+            return { ["StatusCode"] = tonumber(status_code), ["Body"] = ret }
+        end
+    end
+
+    return { ["StatusCode"] = 0, ["Body"] = "" }
+end
 
 local status, res1, res2 = pcall(function()
     -------------------------------------------------------------------------------
@@ -46,7 +69,7 @@ local status, res1, res2 = pcall(function()
 
     -- ! pick host
     local host = "https://api.platoboost.com";
-    local hostResponse = safe_request({
+    local hostResponse = GLOOPY_SAFE_REQUEST({
         Url = host .. "/public/connectivity",
         Method = "GET"
     });
@@ -56,7 +79,7 @@ local status, res1, res2 = pcall(function()
 
     function cacheLink()
         if cachedTime + (10 * 60) < fOsTime() then
-            local response = safe_request({
+            local response = GLOOPY_SAFE_REQUEST({
                 Url = host .. "/public/start",
                 Method = "POST",
                 Body = lEncode({
@@ -144,7 +167,7 @@ local status, res1, res2 = pcall(function()
         --print("[INFO] sending request to " .. endpoint)
         --print("[INFO] request body: " .. lEncode(body))
 
-        local response = safe_request({
+        local response = GLOOPY_SAFE_REQUEST({
             Url = endpoint,
             Method = "POST",
             Body = lEncode(body),
@@ -209,7 +232,7 @@ local status, res1, res2 = pcall(function()
             endpoint = endpoint .. "&nonce=" .. nonce;
         end
 
-        local response = safe_request({
+        local response = GLOOPY_SAFE_REQUEST({
             Url = endpoint,
             Method = "GET"
         });
@@ -260,7 +283,7 @@ local status, res1, res2 = pcall(function()
             endpoint = endpoint .. "&nonce=" .. nonce;
         end
 
-        local response = safe_request({
+        local response = GLOOPY_SAFE_REQUEST({
             Url = endpoint,
             Method = "GET"
         });

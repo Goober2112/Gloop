@@ -223,3 +223,26 @@ genv.mousescroll = newcclosure(function(amount)
         _taskwait();
     end
 end);
+
+genv.decompile = newcclosure(function(target)
+    	local bytecode = getscriptbytecode(target)
+
+    	if bytecode then
+        	local output = request({
+            		Url = "http://api.plusgiant5.com/konstant/decompile", -- found in dex. credits to plusgiant5 🙏
+            		Method = "POST",
+            		Body = bytecode,
+			Headers = {
+				["Content-Type"] = "text/plain"
+			}
+        	})
+      
+        	if output.StatusCode == 200 then
+            		return output.Body
+        	end
+
+        	return "-- failed to decompile bytecode: " .. output.StatusMessage
+    	end
+
+	return "-- failed to decompile bytecode"
+end)

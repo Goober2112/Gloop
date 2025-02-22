@@ -43,14 +43,11 @@ local status, res1, res2 = pcall(function()
     local cachedLink, cachedTime = "", 0;
 
     -- ! pick host
-    local host = "https://api.platoboost.com";
+    local host = "https://api.platorelay.com";
     local hostResponse = safe_request({
         Url = host .. "/public/connectivity",
         Method = "GET"
     });
-    if hostResponse.StatusCode ~= 200 and hostResponse.StatusCode ~= 429 then
-        host = "https://api.platoboost.net";
-    end
 
     function cacheLink()
         if cachedTime + (10 * 60) < fOsTime() then
@@ -105,16 +102,6 @@ local status, res1, res2 = pcall(function()
             str = str .. fStringChar(fMathFloor(fMathRandom() * (122 - 97 + 1)) + 97)
         end
         return str
-    end
-
-    for _ = 1, 5 do
-        local oNonce = generateNonce();
-        task.wait(0.2)
-        if generateNonce() == oNonce then
-            local msg = "platoboost nonce error.";
-            onMessage(msg);
-            error(msg);
-        end
     end
 
     local copyLink = function()
@@ -6480,10 +6467,10 @@ end--]]
             key = readinternal("delta_key")
         end
 
-        --if verifyKey(key) then
+        if verifyKey(key) then
             GrantAccess()
             return true
-        --end
+        end
 
 	--return false
     end

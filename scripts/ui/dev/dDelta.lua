@@ -305,6 +305,12 @@ local status, res1, res2 = pcall(function()
         end
     end
     -------------------------------------------------------------------------------
+    if not game:IsLoaded() then
+	repeat
+		task.wait()
+	until game:IsLoaded();
+    end
+		
     local loader = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/dev_loader.lua"))()
     local loadAssets, getAsset, getProgress = loader.loadAssets, loader.getAsset, loader.getProgress
 
@@ -5078,9 +5084,6 @@ local status, res1, res2 = pcall(function()
         local tweenserv = game:GetService("TweenService")
         local istween = script.Parent.Parent.IsTween
 
-        repeat
-
-        until game:IsLoaded()
         uienv().StartUp = function()
 
             script.Parent.Visible = true
@@ -5100,12 +5103,6 @@ local status, res1, res2 = pcall(function()
         uienv().is_unlocked = false
 
         uienv().GrantAccess = function()
-	    if not game:IsLoaded() then
-	        repeat
-		    task.wait()
-	        until game:IsLoaded();
-            end
-
             uienv().rLib:End()
             DELTA["Ui"].Enabled = false
             uienv().is_unlocked = true

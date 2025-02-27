@@ -5,7 +5,7 @@ secure({
     ["pathetic"] = {secretstring("tNC7ug=="),secretstring("hXmHjn1/m7+CkZOOrnp1mH2h"),secretstring("hpaOe5E="),secretstring("g5CGjIo="),secretstring("gZR8jH14")}	
 })
 
-local _DENTA, DENTA_VERSION, DENTA_TYPE = identifyexecutor();
+local _DENTA, DENTA_VERSION = identifyexecutor();
 local GLOOPY_SAFE_REQUEST = function(data)
     local success = nil
     local ret = nil
@@ -45,7 +45,7 @@ local status, res1, res2 = pcall(function()
     -- ! platoboost library
     -- ! configuration
     
-    local service = 6; -- your service id, this is used to identify your service.
+    local service = 8; -- your service id, this is used to identify your service.
     local secret = "NONE"; -- make sure to obfuscate this if you want to ensure security.
     local useNonce = false; -- use a nonce to prevent replay attacks and request tampering.
 

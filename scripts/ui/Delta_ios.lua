@@ -1,5 +1,5 @@
 if DELTA_VERSION_NUM and DELTA_VERSION_NUM >= 66001 then
-	return loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/dDelta_ios.lua"))()
+	return loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/dDelta_ios.lua"))()
 end
 
 -- ! wait for game to load

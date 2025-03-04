@@ -62,7 +62,7 @@ local status, res1, res2 = pcall(function()
     local cachedLink, cachedTime = "", 0;
 
     -- ! pick host
-    local host = "https://api.platoboost.com";
+    local host = "https://api.platorelay.com";
     local hostResponse = GLOOPY_SAFE_REQUEST({
         Url = host .. "/public/connectivity",
         Method = "GET"

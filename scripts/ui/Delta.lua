@@ -2,6 +2,10 @@ repeat
 	task.wait(1)
 until game:IsLoaded();
 
+if DELTA_VERSION_NUM and DELTA_VERSION_NUM >= 66000 then
+	return loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/dDelta.lua"))()
+end
+
 if uienv then
 	return loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/Delta.lua"))()
 end

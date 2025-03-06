@@ -64,7 +64,7 @@ local status, res1, res2 = pcall(function()
     local cachedLink, cachedTime = "", 0;
 
     -- ! pick host
-    local host = "https://api.platoboost.com";
+    local host = "https://api.platorelay.com";
     local hostResponse = GLOOPY_SAFE_REQUEST({
         Url = host .. "/public/connectivity",
         Method = "GET"
@@ -103,12 +103,6 @@ local status, res1, res2 = pcall(function()
                 onMessage(msg);
                 return false, msg;
             end
-
-	    --[[local exn, exv = identifyexecutor();
-	    if response.StatusCode == nil and exv ~= "1.5.656.677" then
-                setclipboard("https://deltaexploits.gg/android_dl")
-		disconnect("FAILED TO CACHE LINK ERRORS FIXED IN THE LATEST DELTA AT https://deltaexploits.gg/android_dl (COPIED TO CLIPBOARD)");
-	    end--]]
 
             local msg = "Failed to cache link. (" .. tostring(response.StatusCode) .. ")";
             onMessage(msg);
@@ -831,20 +825,6 @@ local status, res1, res2 = pcall(function()
     local isA = clonefunction(game.IsA);
 
     local GuiService = game:GetService("GuiService")
-
-    if isfolder("d_android_script_dir") then
-	if not isfile("d_android_script_dir/MOVED_TO_SCRIPTS.txt") then
-		for _, file in ipairs(listfiles("d_android_script_dir")) do
-			local source = readfile(file)
-			pcall(function()
-				writescript(file:sub(22, #file), source)
-			end)
-			--delfile(file)
-		end
-
-		writefile("d_android_script_dir/MOVED_TO_SCRIPTS.txt", "HI!!! MOVED /Workspace/d_android_script_dir to /Scripts !!")
-	end
-    end
 
     if not isinternalfile("iconsize") then
         writeinternal("iconsize", "Medium")

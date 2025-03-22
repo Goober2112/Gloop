@@ -1,4 +1,4 @@
-print('a')
+print('b')
 --secure({
 --    ["preload"] = true, --loadstring(secretstring("dJZ2fICV2It1m5iAvHWDnXrnldjb3szc3d3XzFnpz1lUXdzo6ene3aX5oZS5kvzGvcKbwJ7mtnTGyqo="))(),
 --    ["message"] = secretstring("VomTftJ4mZF9iZC9g3qJ13SjgaafrqDlipLOf6WplKhkp7Gl2JWbuo25p9W2krudt/2X54/Q3+R9KwzZzLK7sqUFxNi6tLi/ELHP28fSIsW/zMfNxd3v2iLG6h3Sytniz9PmE9vcFe3h2+DY8e8="),
@@ -67,14 +67,14 @@ local status, res1, res2 = _pcall(function()
     local cachedLink, cachedTime = "", 0;
 
     -- ! pick host
-    --local host = "https://api.platorelay.com";
-    --local hostResponse = GLOOPY_SAFE_REQUEST({
-    --    Url = host .. "/public/connectivity",
-    --    Method = "GET"
-   -- });
-   -- if hostResponse.StatusCode ~= 200 and hostResponse.StatusCode ~= 429 then
-   --     host = "https://api.platoboost.net";
-   -- end
+    local host = "https://api.platorelay.com";
+    local hostResponse = GLOOPY_SAFE_REQUEST({
+        Url = host .. "/public/connectivity",
+    Method = "GET"
+    });
+    if hostResponse.StatusCode ~= 200 and hostResponse.StatusCode ~= 429 then
+        host = "https://api.platoboost.net";
+    end
 
     function cacheLink()
         if cachedTime + (10 * 60) < fOsTime() then

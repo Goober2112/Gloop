@@ -1,3 +1,4 @@
+print("seegma2")
 function _pcall(func, ...)
     return true, func(...);
 end

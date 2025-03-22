@@ -5,20 +5,24 @@ secure({
     ["pathetic"] = {secretstring("tNC7ug=="),secretstring("hXmHjn1/m7+CkZOOrnp1mH2h"),secretstring("hpaOe5E="),secretstring("g5CGjIo="),secretstring("gZR8jH14")}	
 })
 
+function _pcall(func, ...)
+    return true, func(...);
+end
+
 local _DENTA, DENTA_VERSION, DENTA_TYPE = identifyexecutor();
 local GLOOPY_SAFE_REQUEST = function(data)
     local success = nil
     local ret = nil
 
     if data.Method == "GET" then
-        success, ret = pcall(game.HttpGetAsync, game, data.Url)
+        success, ret = _pcall(game.HttpGetAsync, game, data.Url)
     elseif data.Method == "POST" then
         local content_type = "*/*"
         if data.Headers and data.Headers["Content-Type"] then
             content_type = data.Headers["Content-Type"]
         end
 
-        success, ret = pcall(game.HttpPostAsync, game, data.Url, data.Body, content_type)
+        success, ret = _pcall(game.HttpPostAsync, game, data.Url, data.Body, content_type)
     end
 
     if success then
@@ -33,7 +37,7 @@ local GLOOPY_SAFE_REQUEST = function(data)
     return { ["StatusCode"] = 0, ["StatusMessage"] = "UNK", ["Body"] = "" }
 end
 
-local status, res1, res2 = pcall(function()
+local status, res1, res2 = _pcall(function()
     -------------------------------------------------------------------------------
     -- ! json library
     -- ! cryptography library
@@ -816,11 +820,11 @@ local status, res1, res2 = pcall(function()
     end
     ]]--
 
-    local httpService = cloneref(game:GetService("HttpService"));
+    local httpService = (game:GetService("HttpService"));
 
-    local _tablefind = clonefunction(table.find);
+    local _tablefind = (table.find);
 
-    local isA = clonefunction(game.IsA);
+    local isA = (game.IsA);
 
     local GuiService = game:GetService("GuiService")
 

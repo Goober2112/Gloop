@@ -629,7 +629,7 @@ local status, res1, res2 = pcall(function()
     local DaIconPositionY = ScreenCenterY - DaIconSize.Y.Offset / 2
     DELTA["DaIcon"].Position = UDim2.new(0, DaIconPositionX, 0, DaIconPositionY / 20)
     DELTA["DaIcon"].Draggable = true
-    DELTA["DaIcon"].Image = getcustomasset("new_logo.png")
+    --DELTA["DaIcon"].Image = getcustomasset("new_logo.png")
     DELTA["DaIcon"].BackgroundColor3 = Color3.fromRGB(48, 50, 59)
 
     DELTA["das"] = Instance.new("UICorner", DELTA["DaIcon"]);

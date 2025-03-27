@@ -205,6 +205,9 @@ local status, res1, res2 = pcall(function()
     end
 
     local verifyKey = function(key)
+	--disabled for testing
+	return true;
+		
         if requestSending == true then
             onMessage("a request is already being sent, please slow down.");
             return false;

@@ -5343,8 +5343,7 @@ local status, res1, res2 = pcall(function()
 
                     else
                         uilib.ScriptSearch:Add(script.title, script.game.name, script.script,
-                            "https://assetgame.roblox.com/Game/Tools/ThumbnailAsset.ashx?aid=" .. script.game.gameId ..
-                                "&fmt=png&wd=420&ht=420", script.verified, script.views)
+                            script.gane.imageUrl, script.verified, script.views)
                         -- parint"gamur"
                     end
                     -- print"oki"

@@ -5339,7 +5339,7 @@ local status, res1, res2 = pcall(function()
                     else
                         local assetId = "";
 
-                        pcall(function()
+                        local s, e = pcall(function()
                             if isfile(cached_name) then
                                 assetId = getcustomasset(cached_name)
                             else
@@ -5348,6 +5348,10 @@ local status, res1, res2 = pcall(function()
                                 assetId = getcustomasset(cached_name)
                             end
                         end)
+
+                        if not s then
+                            warn("Failed to cache image " .. script._id .. ": " .. tostring(e))
+                        end
 
                         uilib.ScriptSearch:Add(script.title, script.game.name, script.script,
                             assetId, script.verified, script.views)

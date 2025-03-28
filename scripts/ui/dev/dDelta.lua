@@ -5344,7 +5344,7 @@ local status, res1, res2 = pcall(function()
                                 assetId = getcustomasset(cached_name)
                             else
                                 local rawImage = game:HttpGet(script.game.imageUrl)
-                                writefile(cached_name, image)
+                                writefile(cached_name, rawImage)
                                 assetId = getcustomasset(cached_name)
                                 warn("Cached image for " .. script._id .. " with ID: " .. assetId)
                             end

@@ -5320,33 +5320,38 @@ local status, res1, res2 = pcall(function()
             local response = game:HttpGetAsync(url)
             local http = game:GetService("HttpService")
             local decoded = http:JSONDecode(response)
+
+            if not isfolder("ImageCache") then
+                if isfile("ImageCache") then
+                    delfile("ImageCache")
+                end
+                makefolder("ImageCache")
+            end
+
             for _, script in pairs(decoded.result.scripts) do
-                -- print"found"
                 if script.scriptType == "free" and script.isPatched == false then
+                    local cached_name = "ImageCache/image_" .. script.game._id .. ".png"
+
+                    wait(0.1)
+
                     if (script.isUniversal == true) then
-                        local random = math.random(0, 10000)
-                        local randomname = "ImageCache/image" .. tostring(random) .. ".png"
-                        pcall(function()
-                            -- writeinternal(randomname, game:HttpGet("https://scriptblox.com" .. script.game.imageUrl))
-                        end)
-                        wait(0.1)
-
-                        if isinternalfile(randomname) then
-                            uilib.ScriptSearch:Add(script.title, script.game.name, script.script, randomname,
-                                script.verified, script.views)
-
-                        else
-                            uilib.ScriptSearch:Add(script.title, script.game.name, script.script, "", script.verified,
-                                script.views)
-                        end
-                        -- print'yey'
-
+                        uilib.ScriptSearch:Add(script.title, script.game.name, script.script, "", script.verified, script.views)
                     else
+                        local assetId = "";
+
+                        pcall(function()
+                            if isfile(cached_name) then
+                                assetId = getcustomasset(cached_name)
+                            else
+                                local rawImage = game:HttpGet(script.game.imageUrl)
+                                writefile(cached_name, image)
+                                assetId = getcustomasset(cached_name)
+                            end
+                        end)
+
                         uilib.ScriptSearch:Add(script.title, script.game.name, script.script,
-                            script.game.imageUrl, script.verified, script.views)
-                        -- parint"gamur"
+                            assetId, script.verified, script.views)
                     end
-                    -- print"oki"
                 end
             end
         end)

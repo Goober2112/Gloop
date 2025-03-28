@@ -5343,7 +5343,7 @@ local status, res1, res2 = pcall(function()
 
                     else
                         uilib.ScriptSearch:Add(script.title, script.game.name, script.script,
-                            script.gane.imageUrl, script.verified, script.views)
+                            script.game.imageUrl, script.verified, script.views)
                         -- parint"gamur"
                     end
                     -- print"oki"

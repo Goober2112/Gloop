@@ -5344,16 +5344,16 @@ local status, res1, res2 = pcall(function()
                                 assetId = getcustomasset(cached_name)
                             else
                                 local rawImage = game:HttpGet(script.game.imageUrl)
-                                print("Downloading image for " .. script._id .. " to cache: " .. rawImage)
+                                --print("Downloading image for " .. script._id .. " to cache: " .. rawImage)
                                 writefile(cached_name, rawImage)
                                 assetId = getcustomasset(cached_name)
-                                warn("Cached image for " .. script._id .. " with ID: " .. assetId)
+                                --warn("Cached image for " .. script._id .. " with ID: " .. assetId)
                             end
                         end)
 
-                        if not s then
-                            warn("Failed to cache image " .. script._id .. ": " .. tostring(e))
-                        end
+                        --if not s then
+                        --    warn("Failed to cache image " .. script._id .. ": " .. tostring(e))
+                        --end
 
                         uilib.ScriptSearch:Add(script.title, script.game.name, script.script,
                             assetId, script.verified, script.views)

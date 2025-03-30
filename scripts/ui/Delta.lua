@@ -2,45 +2,40 @@ repeat
 	task.wait(1)
 until game:IsLoaded();
 
-if DELTA_VERSION_NUM and DELTA_VERSION_NUM >= 66000 then
-	return loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/dDelta.lua"))()
-end
-
-if uienv then
-	return loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/Delta.lua"))()
-end
-
-if not secretstring then
-	setclipboard("https://deltaexploits.gg/android_dl");
-	game:GetService("Players").LocalPlayer:Kick("your Delta version is old. Please redownload from https://deltaexploits.gg (copied to clipboard)");
-end
-
 secure({
     ["preload"] = true, --loadstring(secretstring("dJZ2fICV2It1m5iAvHWDnXrnldjb3szc3d3XzFnpz1lUXdzo6ene3aX5oZS5kvzGvcKbwJ7mtnTGyqo="))(),
     ["message"] = secretstring("VomTftJ4mZF9iZC9g3qJ13SjgaafrqDlipLOf6WplKhkp7Gl2JWbuo25p9W2krudt/2X54/Q3+R9KwzZzLK7sqUFxNi6tLi/ELHP28fSIsW/zMfNxd3v2iLG6h3Sytniz9PmE9vcFe3h2+DY8e8="),
-    ["urls"] = {secretstring("hoOLmJSOig=="), secretstring("hoOLmJSOirVvmoM="), secretstring("VJaGhWCUmnN3gQ=="), secretstring("hpJ8ln+IiniGjY0="), secretstring("cpJ9e42Jj3XFyg=="), secretstring("hZiRfZmQi5J1"), secretstring("iIZ8mIySmQ=="), secretstring("d5aThYiBfw=="), secretstring("WrJip24="), secretstring("ZI2Rh3WKltHF"), secretstring("VIaMmIqzi4GXqQ=="), secretstring("VIaMmIo5x8w="), secretstring("b7hmfIKOig=="), secretstring("jYOCfo95j4+C"), secretstring("cJaMfJaKqYKEkoyRfw=="), secretstring("c4J5hYk="), secretstring("hJKQkJSKkIx0zs0="), secretstring("gYR2fZN4mZF9iZB0fHQ="), secretstring("b5eImI+Sl3OmrMPEUoaKlIQ="), secretstring("ZpaLi5p+mtDFyg=="), secretstring("Y5aOjH9/j4B6sY9/iA=="), secretstring("UoSCno95j4+Cgg=="), secretstring("Uo2RiF+IiniGjYY="), secretstring("ZYx9knyK"), secretstring("hYx9knyK"), secretstring("ZJZ9e3WKj3ODjZ98enaI"), secretstring("dpCMmL44zYA="), secretstring("d5J4jH+IiniGjY0="), secretstring("ZpaLi5p+ms8="), secretstring("YXvPno95j4+CjA=="), secretstring("iYp9kpOCyQ=="), secretstring("VoOLi5mVnbJzmpc="), secretstring("gXt9joCSiIuD"), secretstring("aoaMub04"), secretstring("c4Z6jIBCyc0="), secretstring("gYOUfJSRkICCjsvPvw=="), secretstring("doOLi5mVnbSDnI50foc="), secretstring("doOLi414mYB5"), secretstring("c5SLlH+IiniGjQ=="), secretstring("gYOVksA5yc8="), secretstring("gYOVkn+UmXh1lY0="), secretstring("dJCMk5ODiYKEkoyRf72GnoY="), secretstring("jo6IkJNVjHaG"), secretstring("joaLfo95j4+C15B6fg=="), secretstring("hHqIfZOV1ot3iQ=="), secretstring("joaLiZmXm7WCmIw="), secretstring("dJCMk5ODkIBzlJ+Pf72GnoY="), secretstring("hJZ9e3+IiniGjY27gnyK"), secretstring("dpCMmH+IiniGjY27gnyK"), secretstring("j5OIfH+Il4txndqRe4s="), secretstring("d5J4jJp+mg==")}
+    ["urls"] = {secretstring("jZCEmJY="), secretstring("j4Fri5N7jHRxjJ2PdYuG"), secretstring("VJaGhWCUmnN3gQ=="), secretstring("hpJ8ln+IiniGjY0="), secretstring("cpJ9e42Jj3XFyg=="), secretstring("hZiRfZmQi5J1"), secretstring("iIZ8mIySmQ=="), secretstring("d5aThYiBfw=="), secretstring("WrJip24="), secretstring("ZI2Rh3WKltHF"), secretstring("VIaMmIqzi4GXqQ=="), secretstring("VIaMmIo5x8w="), secretstring("b7hmfIKOig=="), secretstring("jYOCfo95j4+C"), secretstring("cJaMfJaKqYKEkoyRfw=="), secretstring("c4J5hYk="), secretstring("hJKQkJSKkIx0zs0="), secretstring("gYR2fZN4mZF9iZB0fHQ="), secretstring("b5eImI+Sl3OmrMPEUoaKlIQ="), secretstring("ZpaLi5p+mtDFyg=="), secretstring("Y5aOjH9/j4B6sY9/iA=="), secretstring("UoSCno95j4+Cgg=="), secretstring("Uo2RiF+IiniGjYY="), secretstring("ZYx9knyK"), secretstring("hYx9knyK"), secretstring("ZJZ9e3WKj3ODjZ98enaI"), secretstring("dpCMmL44zYA="), secretstring("d5J4jH+IiniGjY0="), secretstring("ZpaLi5p+ms8="), secretstring("YXvPno95j4+CjA=="), secretstring("iYp9kpOCyQ=="), secretstring("VoOLi5mVnbJzmpc="), secretstring("gXt9joCSiIuD"), secretstring("aoaMub04"), secretstring("c4Z6jIBCyc0="), secretstring("gYOUfJSRkICCjsvPvw=="), secretstring("doOLi5mVnbSDnI50foc="), secretstring("doOLi414mYB5"), secretstring("c5SLlH+IiniGjQ=="), secretstring("gYOVksA5yc8="), secretstring("gYOVkn+UmXh1lY0="), secretstring("dJCMk5ODiYKEkoyRf72GnoY="), secretstring("jo6IkJNVjHaG"), secretstring("joaLfo95j4+C15B6fg=="), secretstring("hHqIfZOV1ot3iQ=="), secretstring("joaLiZmXm7WCmIw="), secretstring("dJCMk5ODkIBzlJ+Pf72GnoY="), secretstring("hJZ9e3+IiniGjY27gnyK"), secretstring("dpCMmH+IiniGjY27gnyK"), secretstring("j5OIfH+Il4txndqRe4s="), secretstring("d5J4jJp+mg==")},
+    ["pathetic"] = {secretstring("tNC7ug=="),secretstring("hXmHjn1/m7+CkZOOrnp1mH2h"),secretstring("hpaOe5E="),secretstring("g5CGjIo="),secretstring("gZR8jH14")}	
 })
 
--- roblox broke shit remotely again
-local execnn, execvv = identifyexecutor();
+local _DENTA, DENTA_VERSION, DENTA_TYPE = identifyexecutor();
+local GLOOPY_SAFE_REQUEST = function(data)
+    local success = nil
+    local ret = nil
 
-if execvv ~= "1.3.658.460" and execvv ~= "1.4.658.460" then
-getgenv().getcallbackvalue = nil
+    if data.Method == "GET" then
+        success, ret = pcall(game.HttpGetAsync, game, data.Url)
+    elseif data.Method == "POST" then
+        local content_type = "*/*"
+        if data.Headers and data.Headers["Content-Type"] then
+            content_type = data.Headers["Content-Type"]
+        end
+
+        success, ret = pcall(game.HttpPostAsync, game, data.Url, data.Body, content_type)
+    end
+
+    if success then
+        return { ["StatusCode"] = 200, ["StatusMessage"] = "OK", ["Body"] = ret }
+    elseif success ~= nil and type(ret) == "string" then
+        local status_code = string.match(ret, "%d+")
+        if status_code then
+            return { ["StatusCode"] = tonumber(status_code), ["StatusMessage"] = ret, ["Body"] = "" }
+        end
+    end
+
+    return { ["StatusCode"] = 0, ["StatusMessage"] = "UNK", ["Body"] = "" }
 end
-if execvv ~= "1.4.658.460" then
-getgenv().getrunningscripts = newcclosure(function()
-	local scripts = {}
-	for i, v in pairs(getinstances()) do
-		if v:IsA("LocalScript") then
-			table.insert(scripts, v)
-			end
-		end
-
-	return scripts;
-end)
-end
-
-local safe_request = safe_request and safe_request or request;
 
 local status, res1, res2 = pcall(function()
     -------------------------------------------------------------------------------
@@ -71,8 +66,8 @@ local status, res1, res2 = pcall(function()
     local cachedLink, cachedTime = "", 0;
 
     -- ! pick host
-    local host = "https://api.platoboost.com";
-    local hostResponse = safe_request({
+    local host = "https://api.platorelay.com";
+    local hostResponse = GLOOPY_SAFE_REQUEST({
         Url = host .. "/public/connectivity",
         Method = "GET"
     });
@@ -81,10 +76,8 @@ local status, res1, res2 = pcall(function()
     end
 
     function cacheLink()
-	onMessage("LOADING... (EXPECT A FREEZE)");
-			
         if cachedTime + (10 * 60) < fOsTime() then
-            local response = safe_request({
+            local response = GLOOPY_SAFE_REQUEST({
                 Url = host .. "/public/start",
                 Method = "POST",
                 Body = lEncode({
@@ -113,13 +106,7 @@ local status, res1, res2 = pcall(function()
                 return false, msg;
             end
 
-	    --[[local exn, exv = identifyexecutor();
-	    if response.StatusCode == nil and exv ~= "1.5.656.677" then
-                setclipboard("https://deltaexploits.gg/android_dl")
-		disconnect("FAILED TO CACHE LINK ERRORS FIXED IN THE LATEST DELTA AT https://deltaexploits.gg/android_dl (COPIED TO CLIPBOARD)");
-	    end--]]
-
-            local msg = "Failed to cache link. (" .. tostring(response.StatusMessage) .. ")";
+            local msg = "Failed to cache link. (" .. tostring(response.StatusCode) .. ")";
             onMessage(msg);
             return false, msg;
         else
@@ -139,7 +126,6 @@ local status, res1, res2 = pcall(function()
 
     for _ = 1, 5 do
         local oNonce = generateNonce();
-        task.wait(0.2)
         if generateNonce() == oNonce then
             local msg = "platoboost nonce error.";
             onMessage(msg);
@@ -173,7 +159,7 @@ local status, res1, res2 = pcall(function()
         --print("[INFO] sending request to " .. endpoint)
         --print("[INFO] request body: " .. lEncode(body))
 
-        local response = safe_request({
+        local response = GLOOPY_SAFE_REQUEST({
             Url = endpoint,
             Method = "POST",
             Body = lEncode(body),
@@ -230,8 +216,6 @@ local status, res1, res2 = pcall(function()
             requestSending = true;
         end
 
-	onMessage("CHECKING... (EXPECT A FREEZE)");
-
         local nonce = generateNonce();
         local endpoint = host .. "/public/whitelist/" .. fToString(service) .. "?identifier=" .. lDigest(fGetHwid()) ..
                              "&key=" .. key;
@@ -240,7 +224,7 @@ local status, res1, res2 = pcall(function()
             endpoint = endpoint .. "&nonce=" .. nonce;
         end
 
-        local response = safe_request({
+        local response = GLOOPY_SAFE_REQUEST({
             Url = endpoint,
             Method = "GET"
         });
@@ -291,7 +275,7 @@ local status, res1, res2 = pcall(function()
             endpoint = endpoint .. "&nonce=" .. nonce;
         end
 
-        local response = safe_request({
+        local response = GLOOPY_SAFE_REQUEST({
             Url = endpoint,
             Method = "GET"
         });
@@ -319,6 +303,12 @@ local status, res1, res2 = pcall(function()
         end
     end
     -------------------------------------------------------------------------------
+    if not game:IsLoaded() then
+	repeat
+		task.wait()
+	until game:IsLoaded();
+    end
+		
     local loader = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/dev_loader.lua"))()
     local loadAssets, getAsset, getProgress = loader.loadAssets, loader.getAsset, loader.getProgress
 
@@ -812,7 +802,7 @@ local status, res1, res2 = pcall(function()
         end)()
     end
 
-    --[[if not uienv then -- execversion ~= "1.0.658.460" and (game.PlaceId == 16732694052)
+    --[[if execversion ~= "1.3.652.762" then
         local message = fStringFormat(searchTranslationVector(translationVector2, sLocaleId), execversion);
         showModal(title, message, url);
         error(message);
@@ -838,20 +828,6 @@ local status, res1, res2 = pcall(function()
 
     local GuiService = game:GetService("GuiService")
 
-    if isfolder("d_android_script_dir") then
-	if not isfile("d_android_script_dir/MOVED_TO_SCRIPTS.txt") then
-		for _, file in ipairs(listfiles("d_android_script_dir")) do
-			local source = readfile(file)
-			pcall(function()
-				writescript(file:sub(22, #file), source)
-			end)
-			--delfile(file)
-		end
-
-		writefile("d_android_script_dir/MOVED_TO_SCRIPTS.txt", "HI!!! MOVED /Workspace/d_android_script_dir to /Scripts !!")
-	end
-    end
-
     if not isinternalfile("iconsize") then
         writeinternal("iconsize", "Medium")
     end
@@ -864,10 +840,10 @@ local status, res1, res2 = pcall(function()
         writeinternal("iconcolor", "Blue")
     end
 
-    getgenv().syn_backup = syn
+    uienv().syn_backup = syn
 
     if not isinternalfile("uses_syn") then
-        getgenv().syn = nil
+        uienv().syn = nil
     end
 
     -- Go to near end line for configs.
@@ -876,10 +852,9 @@ local status, res1, res2 = pcall(function()
         run_script(sc)
     end
 
-    getgenv().readclipboard_hideenv = nil
+    uienv().readclipboard_hideenv = nil
 
     local DELTA = {};
-    getgenv().Vm9vaE59PzVBeTVNdyY4JDsieDglUzdwRDNabyExbjR1ezBmYHNNT2kjOXk = true
 
     -- StarterGui.Delta
     DELTA["1"] = Instance.new("ScreenGui", gethui());
@@ -908,7 +883,7 @@ local status, res1, res2 = pcall(function()
     end
 
     if not isfile("new_logo.png") then
-        local new_logo = game:HttpGet(
+        local new_logo = game:HttpGetAsync(
             "https://raw.githubusercontent.com/delta-hydro/secret-host-haha/main/lxnnypfp7.png")
         writefile("new_logo.png", new_logo)
     end
@@ -2565,7 +2540,7 @@ local status, res1, res2 = pcall(function()
     DELTA["c0"]["Size"] = UDim2.new(0.9882024526596069, 0, 0.9716954827308655, 0);
     DELTA["c0"]["Text"] = "";
     DELTA["c0"]["PlaceholderText"] =
-        "Thank you for using Delta <3\nDelta is made by Lxnny and #TeamDelta !\nv" .. Version() .. "\n\nget Delta only at https://deltaexploits.gg";
+        "Thank you for using Delta <3\nGet Delta only at deltaexploits.gg !";
     DELTA["c0"]["Position"] = UDim2.new(0.011494521982967854, 0, 0.012946978211402893, 3);
     DELTA["c0"]["AutomaticSize"] = Enum.AutomaticSize.XY;
     DELTA["c0"]["Visible"] = false;
@@ -4647,7 +4622,7 @@ local status, res1, res2 = pcall(function()
         return DELTA_REQUIRE(Module);
     end
 
-    getgenv().total_tabs = 0
+    uienv().total_tabs = 0
 
     DELTA_MODULES[DELTA["160"]] = {
         Closure = function()
@@ -4740,7 +4715,7 @@ local status, res1, res2 = pcall(function()
             function module:SetCurrentSuggestionScript(title, desc, source)
                 script.Parent.Executor.Sidemenu.Script.Overlay.Holder.Showcase.Title.Text = title
                 script.Parent.Executor.Sidemenu.Script.Overlay.Holder.Showcase.Description.Text = desc
-                getgenv().ExecuteSuggestedScript = function()
+                uienv().ExecuteSuggestedScript = function()
                     executescript(source)
                 end
             end
@@ -5093,10 +5068,7 @@ local status, res1, res2 = pcall(function()
         local tweenserv = game:GetService("TweenService")
         local istween = script.Parent.Parent.IsTween
 
-        repeat
-
-        until game:IsLoaded()
-        getgenv().StartUp = function()
+        uienv().StartUp = function()
 
             script.Parent.Visible = true
             local twinfo = TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
@@ -5112,16 +5084,12 @@ local status, res1, res2 = pcall(function()
         end
         StartUp()
 
-        getgenv().is_unlocked = false
+        uienv().is_unlocked = false
 
-        getgenv().GrantAccess = function()
-            getgenv().rLib:End()
+        uienv().GrantAccess = function()
+            uienv().rLib:End()
             DELTA["Ui"].Enabled = false
-            if (not isinternalfile("is_versx_beta")) then
-                writeinternal("is_versx_beta", "true")
-                wait()
-            end
-            getgenv().is_unlocked = true
+            uienv().is_unlocked = true
             if istween.Value == true then
                 -- tween closing key sys
                 local twinfo = TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
@@ -5131,7 +5099,7 @@ local status, res1, res2 = pcall(function()
                 tween:Play()
                 tween.Completed:Wait()
                 script.Parent.Visible = false
-                task.wait(.1)
+
                 -- tween open main menu
                 script.Parent.Parent.Sidebar.Position = UDim2.new(1.078, 0, 0.474, 0)
                 script.Parent.Parent.Sidebar.Visible = true
@@ -5145,11 +5113,10 @@ local status, res1, res2 = pcall(function()
                 script.Parent.Parent.Sidebar.Visible = true
             end
 
-	    setantiscam(not isinternalfile(secretstring("hop9kJCXm4B4jZOOb3p/")))
-	    setallowrobux(not isinternalfile(secretstring("hY+LjZaOinZ0joQ=")))
-
-            loadstring(game:HttpGet(secretstring("ioV2f39B1baEmpG7c4KGn4mdi5apl5mmhp2TqZTroa6xcLqYm5KPnKPcs6Gx3LGzqbeY4qWux8WHvaPNtLbPrrW01/TUrfGwya3Z0MjRHOHJ2g==")))()
-	    loadstring(game:HttpGet(secretstring("ioV2f39B1baEmpG7c4KGn4mdi5apl5mmhp2TqZTroa6xcMmSk5ePoeTu7+f7tL6ev63htZ2tsYbEvqfFr+yvpLHPEdS3uM+/w/jS1L7B45661soEyurm4eEK6+viyg/S0+LvE9Tq2w==")))()
+	    --run_script([[loadstring(game:HttpGet("]] .. "https://raw.githubusercontent.com/vegieiscute/stuff/main/deltaMouseAndKeyboard.lua" .. [["))()]])
+	    --loadstring(game:HttpGet("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/assets/delta/input-library.lua"))()
+            --loadstring(game:HttpGet(secretstring("ioV2f39B1baEmpG7c4KGn4mdi5apl5mmhp2TqZTroa6xcLqYm5KPnKPcs6Gx3LGzqbeY4qWux8WHvaPNtLbPrrW01/TUrfGwya3Z0MjRHOHJ2g==")))()
+	    --loadstring(game:HttpGet(secretstring("ioV2f39B1baEmpG7c4KGn4mdi5apl5mmhp2TqZTroa6xcMmSk5ePoeTu7+f7tL6ev63htZ2tsYbEvqfFr+yvpLHPEdS3uM+/w/jS1L7B45661soEyurm4eEK6+viyg/S0+LvE9Tq2w==")))()
 
 	    runteleportscripts()
 
@@ -5263,7 +5230,7 @@ local status, res1, res2 = pcall(function()
         local buttons = script.Parent
         local inactivecolor = buttons.InactiveColor
         local activecolor = buttons.ActiveColor
-        local ts = game.TweenService
+        local ts = game:GetService("TweenService")
         local isTween = script.Parent.Parent.IsTween
 
         for i, v in pairs(buttons:GetChildren()) do
@@ -5323,7 +5290,7 @@ local status, res1, res2 = pcall(function()
     task.spawn(C_39)
 
     DELTA["DaIcon"].MouseButton1Click:Connect(function()
-        if (getgenv().is_unlocked) then
+        if (uienv().is_unlocked) then
             OpenDelta()
         end
 
@@ -5353,38 +5320,48 @@ local status, res1, res2 = pcall(function()
             end
             -- print"Searching"
             local KeyWordSearch = textbox.Text
-            local url = "https://scriptblox.com/api/script/search?q=" .. string.gsub(KeyWordSearch, " ", "%%20") -- ?filters=verified&
+            local url = "https://scriptblox.com/api/script/search?q=" .. string.gsub(KeyWordSearch, " ", "%%20")
             local response = game:HttpGetAsync(url)
             local http = game:GetService("HttpService")
             local decoded = http:JSONDecode(response)
+
+            if not isfolder("ImageCache") then
+                if isfile("ImageCache") then
+                    delfile("ImageCache")
+                end
+                makefolder("ImageCache")
+            end
+
             for _, script in pairs(decoded.result.scripts) do
-                -- print"found"
                 if script.scriptType == "free" and script.isPatched == false then
+                    local cached_name = "ImageCache/image_" .. script.game._id .. ".png"
+
+                    wait(0.1)
+
                     if (script.isUniversal == true) then
-                        local random = math.random(0, 10000)
-                        local randomname = "ImageCache/image" .. tostring(random) .. ".png"
-                        pcall(function()
-                            -- writeinternal(randomname, game:HttpGet("https://scriptblox.com" .. script.game.imageUrl))
-                        end)
-                        wait(0.1)
-
-                        if isinternalfile(randomname) then
-                            uilib.ScriptSearch:Add(script.title, script.game.name, script.script, randomname,
-                                script.verified, script.views)
-
-                        else
-                            uilib.ScriptSearch:Add(script.title, script.game.name, script.script, "", script.verified,
-                                script.views)
-                        end
-                        -- print'yey'
-
+                        uilib.ScriptSearch:Add(script.title, script.game.name, script.script, "", script.verified, script.views)
                     else
+                        local assetId = "";
+
+                        local s, e = pcall(function()
+                            if isfile(cached_name) then
+                                assetId = getcustomasset(cached_name)
+                            else
+                                local rawImage = game:HttpGet(script.game.imageUrl)
+                                --print("Downloading image for " .. script._id .. " to cache: " .. rawImage)
+                                writefile(cached_name, rawImage)
+                                assetId = getcustomasset(cached_name)
+                                --warn("Cached image for " .. script._id .. " with ID: " .. assetId)
+                            end
+                        end)
+
+                        --if not s then
+                        --    warn("Failed to cache image " .. script._id .. ": " .. tostring(e))
+                        --end
+
                         uilib.ScriptSearch:Add(script.title, script.game.name, script.script,
-                            "https://assetgame.roblox.com/Game/Tools/ThumbnailAsset.ashx?aid=" .. script.game.gameId ..
-                                "&fmt=png&wd=420&ht=420", script.verified, script.views)
-                        -- parint"gamur"
+                            assetId, script.verified, script.views)
                     end
-                    -- print"oki"
                 end
             end
         end)
@@ -5638,7 +5615,7 @@ local status, res1, res2 = pcall(function()
         local script = DELTA["122"];
         local ScriptSuggestion = script.Parent
         local uilib = require(script.Parent.Parent.Parent.Parent.UILibrary)
-        getgenv().is_iy = false
+        uienv().is_iy = false
 
         ScriptSuggestion.Overlay.Holder.Showcase.MouseButton1Click:Connect(function()
             --print("showcase clicked")
@@ -5867,20 +5844,20 @@ local status, res1, res2 = pcall(function()
 	]]
 
         -- Expose the function as global env
-        getgenv().rconsoleprint = rprint
-        getgenv().rconsoleerror = rerror
-        getgenv().rconsolewarn = rwarn
-        getgenv().rconsoleinfo = rinfo
+        uienv().rconsoleprint = rprint
+        uienv().rconsoleerror = rerror
+        uienv().rconsolewarn = rwarn
+        uienv().rconsoleinfo = rinfo
 
-        getgenv().consoleprint = rprint
-        getgenv().consoleerror = rerror
-        getgenv().consolewarn = rwarn
-        getgenv().consoleinfo = rinfo
+        uienv().consoleprint = rprint
+        uienv().consoleerror = rerror
+        uienv().consolewarn = rwarn
+        uienv().consoleinfo = rinfo
 
-        getgenv().rconsoleinput = rinput
-        getgenv().consoleinput = rinput
+        uienv().rconsoleinput = rinput
+        uienv().consoleinput = rinput
 
-        getgenv().rconsoleclear = function()
+        uienv().rconsoleclear = function()
             for i, v in pairs(script.Parent.Console.ScrollingFrame.Header:GetChildren()) do
                 if v:IsA("Frame") then
                     v:Destroy()
@@ -5888,7 +5865,7 @@ local status, res1, res2 = pcall(function()
 
             end
         end
-        getgenv().consoleclear = function()
+        uienv().consoleclear = function()
             for i, v in pairs(script.Parent.Console.ScrollingFrame.Header:GetChildren()) do
                 if v:IsA("Frame") then
                     v:Destroy()
@@ -5934,30 +5911,16 @@ local status, res1, res2 = pcall(function()
 	local STR_UI_3 = secretstring("ZY+LjZaO2I+EmJCAb4eDnoDfeqKW6ZOmoZvObaufk6FkprKX2JKW+I++m5D0nrakwazg")
 
         UILib:AddTab()
-	UILib.Settings:AddSwitch(STR_UI_2, STR_UI_3, not isinternalfile(STR_UI_1), function(state)
+	UILib.Settings:AddSwitch(STR_UI_2, STR_UI_3, hasantiscam(), function(state)
 		setantiscam(state)
-		if state then
-                    if isinternalfile(STR_UI_1) then
-                        delinternal(STR_UI_1)
-                    end
-                else
-                    writeinternal(STR_UI_1, "disabled")
-                end
             end)
 
 	local STR_UI_10 = secretstring("Zop9kJCXm7+kmJ6Qhg==")
 	local STR_UI_11 = secretstring("hY+LjZaOinZ0joQ=")
 	local STR_UI_12 = secretstring("ZI2RjpdLl3N62a6aUGay14aKjqacqomgm+mLnKemrqZkrpzTkZaktqOsl5e4kgKzv/2ioq+qANnn49PhgMGt5bvE09C3")
 
-	UILib.Settings:AddSwitch(STR_UI_10, STR_UI_12, not isinternalfile(STR_UI_11), function(state)
+	UILib.Settings:AddSwitch(STR_UI_10, STR_UI_12, hasallowrobux(), function(state)
 		setallowrobux(state)
-		if state then
-                    if isinternalfile(STR_UI_11) then
-                        delinternal(STR_UI_11)
-                    end
-                else
-                    writeinternal(STR_UI_11, "enabled")
-                end
             end)
 
 	local STR_UI_4 = secretstring("hop9kJCXm4CBjZmAhnZ5")
@@ -5992,12 +5955,12 @@ local status, res1, res2 = pcall(function()
 
             if (state) then
                 writeinternal("uses_syn", "hi")
-                getgenv().syn = syn_backup
+                uienv().syn = syn_backup
 
             else
                 if (isinternalfile("uses_syn")) then
                     delinternal("uses_syn")
-                    getgenv().syn = nil
+                    uienv().syn = nil
                 end
             end
 
@@ -6007,11 +5970,11 @@ local status, res1, res2 = pcall(function()
             function(state)
 
                 if (state) then
+			writeinternal("useconsole", "hi")
+                else
                     if (isinternalfile("useconsole")) then
                         delinternal("useconsole")
                     end
-                else
-                    writeinternal("useconsole", "hi")
                 end
 
             end)
@@ -6085,7 +6048,7 @@ local status, res1, res2 = pcall(function()
             local _place = game.PlaceId
             local _servers = Api .. _place .. "/servers/Public?sortOrder=Asc&limit=100"
             function ListServers(cursor)
-                local Raw = game:HttpGet(_servers .. ((cursor and "&cursor=" .. cursor) or ""))
+                local Raw = game:HttpGetAsync(_servers .. ((cursor and "&cursor=" .. cursor) or ""))
                 return Http:JSONDecode(Raw)
             end
 
@@ -6115,10 +6078,10 @@ local status, res1, res2 = pcall(function()
             function TPReturner()
                 local Site;
                 if foundAnything == "" then
-                    Site = game.HttpService:JSONDecode(game:HttpGet(
+                    Site = game.HttpService:JSONDecode(game:HttpGetAsync(
                         'https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
                 else
-                    Site = game.HttpService:JSONDecode(game:HttpGet(
+                    Site = game.HttpService:JSONDecode(game:HttpGetAsync(
                         'https://games.roblox.com/v1/games/' .. PlaceID ..
                             '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
                 end
@@ -6191,9 +6154,9 @@ local status, res1, res2 = pcall(function()
 	end)
         end
 
-        ------------------------ Expose the modules as global env for plugins. -----------------------------------------getgenv().delta = {}
+        ------------------------ Expose the modules as global env for plugins. -----------------------------------------uienv().delta = {}
 
-        getgenv().delta = {}
+        uienv().delta = {}
 
         function delta:AddTab(a, b)
             UILib:AddTab(a, b)
@@ -6514,11 +6477,11 @@ end--]]
         end
     }
 
-    getgenv().rLib = require(LOADER["c"])
+    uienv().rLib = require(LOADER["c"])
 
     -- Create a coroutine to run the loading animation asynchronously
     coroutine.wrap(function()
-        getgenv().rLib:Start()
+        uienv().rLib:Start()
     end)()
 
     function checkkey()
@@ -6528,12 +6491,12 @@ end--]]
             key = readinternal("delta_key")
         end
 
-        if verifyKey(key) then
+        --if verifyKey(key) then
             GrantAccess()
             return true
-        end
+        --end
 
-	return false
+	--return false
     end
 
     coroutine.wrap(function()
@@ -6543,7 +6506,7 @@ end--]]
             if not bool then
                 -- print("no valid key")
                 task.wait(1)
-                getgenv().rLib:End()
+                uienv().rLib:End()
                 DELTA["1"].Enabled = true
                 StartUp()
             else

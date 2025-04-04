@@ -5334,7 +5334,7 @@ local status, res1, res2 = pcall(function()
 
             for _, script in pairs(decoded.result.scripts) do
                 if script.scriptType == "free" and script.isPatched == false then
-                    local cached_name = "ImageCache/image_" .. script.game._id .. ".png"
+                    local cached_name = "ImageCache/image_" .. script.game._id
 
                     wait(0.1)
 
@@ -6491,12 +6491,12 @@ end--]]
             key = readinternal("delta_key")
         end
 
-        --if verifyKey(key) then
+        if verifyKey(key) then
             GrantAccess()
             return true
-        --end
+        end
 
-	--return false
+	return false
     end
 
     coroutine.wrap(function()

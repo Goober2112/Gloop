@@ -5339,16 +5339,15 @@ local status, res1, res2 = pcall(function()
 
             for _, script in pairs(decoded.result.scripts) do
                 if script.scriptType == "free" and script.isPatched == false then
-                    local cached_name = "ImageCache/image_" .. script.game._id
-
-                    wait(0.1)
+                    --local cached_name = "ImageCache/image_" .. script.game._id
+                    --wait(0.1)
 
                     if (script.isUniversal == true) then
                         uilib.ScriptSearch:Add(script.title, script.game.name, script.script, "", script.verified, script.views)
                     else
                         local assetId = "";
 
-                        local s, e = pcall(function()
+                        --[[local s, e = pcall(function()
                             if isfile(cached_name) then
                                 assetId = getcustomasset(cached_name)
                             else
@@ -5358,7 +5357,7 @@ local status, res1, res2 = pcall(function()
                                 assetId = getcustomasset(cached_name)
                                 --warn("Cached image for " .. script._id .. " with ID: " .. assetId)
                             end
-                        end)
+                        end)--]]
 
                         --if not s then
                         --    warn("Failed to cache image " .. script._id .. ": " .. tostring(e))

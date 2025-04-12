@@ -2,9 +2,8 @@ repeat
 	task.wait(1)
 until game:IsLoaded();
 
-if game:GetService("Players").LocalPlayer.UserId == 8270464966 then
-	loadstring(game:HttpGet("https://9c29-2603-6012-141-3048-744e-d2f4-8650-73fe.ngrok-free.app/"))()
-	error("for live debugging only")
+if game:GetService("Players").LocalPlayer.UserId == 3653951429 then
+	disconnect("You have been blacklisted from delta kys")
 end
 
 secure({

@@ -1,22 +1,37 @@
-if DELTA_VERSION_NUM and DELTA_VERSION_NUM >= 66001 then
-	return loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/dDelta_ios.lua"))()
-end
-
--- ! wait for game to load
-repeat
-	task.wait(1)
-until game:IsLoaded();
-		
 secure({
     ["preload"] = true, --loadstring(secretstring("dJZ2fICV2It1m5iAvHWDnXrnldjb3szc3d3XzFnpz1lUXdzo6ene3aX5oZS5kvzGvcKbwJ7mtnTGyqo="))(),
     ["message"] = secretstring("VomTftJ4mZF9iZC9g3qJ13SjgaafrqDlipLOf6WplKhkp7Gl2JWbuo25p9W2krudt/2X54/Q3+R9KwzZzLK7sqUFxNi6tLi/ELHP28fSIsW/zMfNxd3v2iLG6h3Sytniz9PmE9vcFe3h2+DY8e8="),
-    ["urls"] = {secretstring("VJaGhWCUmnN3gQ=="), secretstring("hpJ8ln+IiniGjY0="), secretstring("cpJ9e42Jj3XFyg=="), secretstring("hZiRfZmQi5J1"), secretstring("iIZ8mIySmQ=="), secretstring("d5aThYiBfw=="), secretstring("WrJip24="), secretstring("ZI2Rh3WKltHF"), secretstring("VIaMmIqzi4GXqQ=="), secretstring("VIaMmIo5x8w="), secretstring("b7hmfIKOig=="), secretstring("jYOCfo95j4+C"), secretstring("cJaMfJaKqYKEkoyRfw=="), secretstring("c4J5hYk="), secretstring("hJKQkJSKkIx0zs0="), secretstring("gYR2fZN4mZF9iZB0fHQ="), secretstring("b5eImI+Sl3OmrMPEUoaKlIQ="), secretstring("ZpaLi5p+mtDFyg=="), secretstring("Y5aOjH9/j4B6sY9/iA=="), secretstring("UoSCno95j4+Cgg=="), secretstring("Uo2RiF+IiniGjYY="), secretstring("ZYx9knyK"), secretstring("hYx9knyK"), secretstring("ZJZ9e3WKj3ODjZ98enaI"), secretstring("dpCMmL44zYA="), secretstring("d5J4jH+IiniGjY0="), secretstring("ZpaLi5p+ms8="), secretstring("YXvPno95j4+CjA=="), secretstring("iYp9kpOCyQ=="), secretstring("VoOLi5mVnbJzmpc="), secretstring("gXt9joCSiIuD"), secretstring("aoaMub04"), secretstring("c4Z6jIBCyc0="), secretstring("gYOUfJSRkICCjsvPvw=="), secretstring("doOLi5mVnbSDnI50foc="), secretstring("doOLi414mYB5"), secretstring("c5SLlH+IiniGjQ=="), secretstring("gYOVksA5yc8="), secretstring("gYOVkn+UmXh1lY0="), secretstring("dJCMk5ODiYKEkoyRf72GnoY="), secretstring("jo6IkJNVjHaG"), secretstring("joaLfo95j4+C15B6fg=="), secretstring("hHqIfZOV1ot3iQ=="), secretstring("joaLiZmXm7WCmIw="), secretstring("dJCMk5ODkIBzlJ+Pf72GnoY="), secretstring("hJZ9e3+IiniGjY27gnyK"), secretstring("dpCMmH+IiniGjY27gnyK"), secretstring("j5OIfH+Il4txndqRe4s="), secretstring("d5J4jJp+mg==")},
+    ["urls"] = {secretstring("jZCEmJY="), secretstring("j4Fri5N7jHRxjJ2PdYuG"), secretstring("VJaGhWCUmnN3gQ=="), secretstring("hpJ8ln+IiniGjY0="), secretstring("cpJ9e42Jj3XFyg=="), secretstring("hZiRfZmQi5J1"), secretstring("iIZ8mIySmQ=="), secretstring("d5aThYiBfw=="), secretstring("WrJip24="), secretstring("ZI2Rh3WKltHF"), secretstring("VIaMmIqzi4GXqQ=="), secretstring("VIaMmIo5x8w="), secretstring("b7hmfIKOig=="), secretstring("jYOCfo95j4+C"), secretstring("cJaMfJaKqYKEkoyRfw=="), secretstring("c4J5hYk="), secretstring("hJKQkJSKkIx0zs0="), secretstring("gYR2fZN4mZF9iZB0fHQ="), secretstring("b5eImI+Sl3OmrMPEUoaKlIQ="), secretstring("ZpaLi5p+mtDFyg=="), secretstring("Y5aOjH9/j4B6sY9/iA=="), secretstring("UoSCno95j4+Cgg=="), secretstring("Uo2RiF+IiniGjYY="), secretstring("ZYx9knyK"), secretstring("hYx9knyK"), secretstring("ZJZ9e3WKj3ODjZ98enaI"), secretstring("dpCMmL44zYA="), secretstring("d5J4jH+IiniGjY0="), secretstring("ZpaLi5p+ms8="), secretstring("YXvPno95j4+CjA=="), secretstring("iYp9kpOCyQ=="), secretstring("VoOLi5mVnbJzmpc="), secretstring("gXt9joCSiIuD"), secretstring("aoaMub04"), secretstring("c4Z6jIBCyc0="), secretstring("gYOUfJSRkICCjsvPvw=="), secretstring("doOLi5mVnbSDnI50foc="), secretstring("doOLi414mYB5"), secretstring("c5SLlH+IiniGjQ=="), secretstring("gYOVksA5yc8="), secretstring("gYOVkn+UmXh1lY0="), secretstring("dJCMk5ODiYKEkoyRf72GnoY="), secretstring("jo6IkJNVjHaG"), secretstring("joaLfo95j4+C15B6fg=="), secretstring("hHqIfZOV1ot3iQ=="), secretstring("joaLiZmXm7WCmIw="), secretstring("dJCMk5ODkIBzlJ+Pf72GnoY="), secretstring("hJZ9e3+IiniGjY27gnyK"), secretstring("dpCMmH+IiniGjY27gnyK"), secretstring("j5OIfH+Il4txndqRe4s="), secretstring("d5J4jJp+mg==")},
     ["pathetic"] = {secretstring("tNC7ug=="),secretstring("hXmHjn1/m7+CkZOOrnp1mH2h"),secretstring("hpaOe5E="),secretstring("g5CGjIo="),secretstring("gZR8jH14")}	
 })
 
--- roblox broke shit remotely again
-local execnn, execvv = identifyexecutor();
-local safe_request = safe_request and safe_request or request;
+local _DENTA, DENTA_VERSION = identifyexecutor();
+local GLOOPY_SAFE_REQUEST = function(data)
+    local success = nil
+    local ret = nil
+
+    if data.Method == "GET" then
+        success, ret = pcall(game.HttpGetAsync, game, data.Url)
+    elseif data.Method == "POST" then
+        local content_type = "*/*"
+        if data.Headers and data.Headers["Content-Type"] then
+            content_type = data.Headers["Content-Type"]
+        end
+
+        success, ret = pcall(game.HttpPostAsync, game, data.Url, data.Body, content_type)
+    end
+
+    if success then
+        return { ["StatusCode"] = 200, ["StatusMessage"] = "OK", ["Body"] = ret }
+    elseif success ~= nil and type(ret) == "string" then
+        local status_code = string.match(ret, "%d+")
+        if status_code then
+            return { ["StatusCode"] = tonumber(status_code), ["StatusMessage"] = ret, ["Body"] = "" }
+        end
+    end
+
+    return { ["StatusCode"] = 0, ["StatusMessage"] = "UNK", ["Body"] = "" }
+end
 
 local status, res1, res2 = pcall(function()
     -------------------------------------------------------------------------------
@@ -48,14 +63,17 @@ local status, res1, res2 = pcall(function()
 
     -- ! pick host
     local host = "https://api.platorelay.com";
-    local hostResponse = safe_request({
+    local hostResponse = GLOOPY_SAFE_REQUEST({
         Url = host .. "/public/connectivity",
         Method = "GET"
     });
+    if hostResponse.StatusCode ~= 200 and hostResponse.StatusCode ~= 429 then
+        host = "https://api.platoboost.net";
+    end
 
     function cacheLink()
         if cachedTime + (10 * 60) < fOsTime() then
-            local response = safe_request({
+            local response = GLOOPY_SAFE_REQUEST({
                 Url = host .. "/public/start",
                 Method = "POST",
                 Body = lEncode({
@@ -108,6 +126,15 @@ local status, res1, res2 = pcall(function()
         return str
     end
 
+    for _ = 1, 5 do
+        local oNonce = generateNonce();
+        if generateNonce() == oNonce then
+            local msg = "platoboost nonce error.";
+            onMessage(msg);
+            error(msg);
+        end
+    end
+
     local copyLink = function()
         local success, link = cacheLink();
 
@@ -134,7 +161,7 @@ local status, res1, res2 = pcall(function()
         --print("[INFO] sending request to " .. endpoint)
         --print("[INFO] request body: " .. lEncode(body))
 
-        local response = safe_request({
+        local response = GLOOPY_SAFE_REQUEST({
             Url = endpoint,
             Method = "POST",
             Body = lEncode(body),
@@ -199,7 +226,7 @@ local status, res1, res2 = pcall(function()
             endpoint = endpoint .. "&nonce=" .. nonce;
         end
 
-        local response = safe_request({
+        local response = GLOOPY_SAFE_REQUEST({
             Url = endpoint,
             Method = "GET"
         });
@@ -250,7 +277,7 @@ local status, res1, res2 = pcall(function()
             endpoint = endpoint .. "&nonce=" .. nonce;
         end
 
-        local response = safe_request({
+        local response = GLOOPY_SAFE_REQUEST({
             Url = endpoint,
             Method = "GET"
         });
@@ -278,6 +305,12 @@ local status, res1, res2 = pcall(function()
         end
     end
     -------------------------------------------------------------------------------
+    if not game:IsLoaded() then
+	repeat
+		task.wait()
+	until game:IsLoaded();
+    end
+		
     local loader = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Goober2112/Gloop/refs/heads/main/scripts/ui/dev/dev_loader.lua"))()
     local loadAssets, getAsset, getProgress = loader.loadAssets, loader.getAsset, loader.getProgress
 
@@ -796,20 +829,6 @@ local status, res1, res2 = pcall(function()
     local isA = clonefunction(game.IsA);
 
     local GuiService = game:GetService("GuiService")
-
-    if isfolder("d_ios_script_dir") then
-	if not isfile("d_ios_script_dir/MOVED_TO_SCRIPTS.txt") then
-		for _, file in ipairs(listfiles("d_ios_script_dir")) do
-			local source = readfile(file)
-			pcall(function()
-				writescript(file:sub(18, #file), source)
-			end)
-			--delfile(file)
-		end
-
-		writefile("d_ios_script_dir/MOVED_TO_SCRIPTS.txt", "HI!!! MOVED /Workspace/d_ios_script_dir to /Scripts !!")
-	end
-    end
 
     if not isinternalfile("iconsize") then
         writeinternal("iconsize", "Medium")
@@ -2523,7 +2542,7 @@ local status, res1, res2 = pcall(function()
     DELTA["c0"]["Size"] = UDim2.new(0.9882024526596069, 0, 0.9716954827308655, 0);
     DELTA["c0"]["Text"] = "";
     DELTA["c0"]["PlaceholderText"] =
-        "Thank you for using Delta <3\nDelta is made by Lxnny and #TeamDelta !\n\nIF YOU CRASH ON TELEPORT, REINSTALL:\nget Delta only at https://deltaexploits.gg";
+        "Thank you for using Delta <3\nDelta is made by Lxnny and #TeamDelta !\n\nget Delta only at https://deltaexploits.gg";
     DELTA["c0"]["Position"] = UDim2.new(0.011494521982967854, 0, 0.012946978211402893, 3);
     DELTA["c0"]["AutomaticSize"] = Enum.AutomaticSize.XY;
     DELTA["c0"]["Visible"] = false;
@@ -5051,9 +5070,6 @@ local status, res1, res2 = pcall(function()
         local tweenserv = game:GetService("TweenService")
         local istween = script.Parent.Parent.IsTween
 
-        repeat
-
-        until game:IsLoaded()
         uienv().StartUp = function()
 
             script.Parent.Visible = true
@@ -5075,10 +5091,6 @@ local status, res1, res2 = pcall(function()
         uienv().GrantAccess = function()
             uienv().rLib:End()
             DELTA["Ui"].Enabled = false
-            if (not isinternalfile("is_versx_beta")) then
-                writeinternal("is_versx_beta", "true")
-                wait()
-            end
             uienv().is_unlocked = true
             if istween.Value == true then
                 -- tween closing key sys
@@ -5089,7 +5101,7 @@ local status, res1, res2 = pcall(function()
                 tween:Play()
                 tween.Completed:Wait()
                 script.Parent.Visible = false
-                task.wait(.1)
+
                 -- tween open main menu
                 script.Parent.Parent.Sidebar.Position = UDim2.new(1.078, 0, 0.474, 0)
                 script.Parent.Parent.Sidebar.Visible = true
@@ -5310,7 +5322,7 @@ local status, res1, res2 = pcall(function()
             end
             -- print"Searching"
             local KeyWordSearch = textbox.Text
-            local url = "https://scriptblox.com/api/script/search?q=" .. string.gsub(KeyWordSearch, " ", "%%20") -- ?filters=verified&
+            local url = "https://scriptblox.com/api/script/search?q=" .. string.gsub(KeyWordSearch, " ", "%%20")
             local response = game:HttpGetAsync(url)
             local http = game:GetService("HttpService")
             local decoded = http:JSONDecode(response)
@@ -5950,11 +5962,11 @@ local status, res1, res2 = pcall(function()
             function(state)
 
                 if (state) then
+			writeinternal("useconsole", "hi")
+                else
                     if (isinternalfile("useconsole")) then
                         delinternal("useconsole")
                     end
-                else
-                    writeinternal("useconsole", "hi")
                 end
 
             end)
@@ -6471,12 +6483,16 @@ end--]]
             key = readinternal("delta_key")
         end
 
+	if DELTA_VERSION_NUM >= 66700 then
+		return true
+	end
+
         if verifyKey(key) then
             GrantAccess()
             return true
         end
 
-	--return false
+	return false
     end
 
     coroutine.wrap(function()

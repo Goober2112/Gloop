@@ -6488,6 +6488,11 @@ end--]]
     end)()
 
     function checkkey()
+	if getFlag("keyless") == "true" then
+            GrantAccess()
+	    return true
+	end
+
         local key = "empty";
 
         if isinternalfile("delta_key") then

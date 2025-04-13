@@ -6484,6 +6484,7 @@ end--]]
         end
 
 	if DELTA_VERSION_NUM >= 66700 then
+		GrantAccess()
 		return true
 	end
 

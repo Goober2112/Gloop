@@ -6488,7 +6488,11 @@ end--]]
     end)()
 
     function checkkey()
-	if getFlag("keyless") == "true" then
+	local keyless = getFlag("keyless");
+
+	print(keyless)
+	
+	if keyless then
             GrantAccess()
 	    return true
 	end

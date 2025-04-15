@@ -6483,11 +6483,6 @@ end--]]
             key = readinternal("delta_key")
         end
 
-	if DELTA_VERSION_NUM >= 66700 then
-		GrantAccess()
-		return true
-	end
-
         if verifyKey(key) then
             GrantAccess()
             return true

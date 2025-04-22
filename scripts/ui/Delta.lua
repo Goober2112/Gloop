@@ -5197,7 +5197,7 @@ local status, res1, res2 = pcall(function()
 
         -- Discord
         buttons.Button2.MouseButton1Click:Connect(function()
-            setclipboard("https://discord.gg/deltaex")
+            setclipboard("https://discord.gg/deltax")
         end)
 
         -- Some people are copying whitespaces for some reason

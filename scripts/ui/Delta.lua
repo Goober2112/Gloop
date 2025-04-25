@@ -6036,7 +6036,7 @@ local status, res1, res2 = pcall(function()
             end)
 
         UILib.Settings:AddButton("Join Discord", "Copies our discord invite", function()
-            setclipboard("https://discord.gg/deltaex")
+            setclipboard("https://discord.gg/deltax")
         end)
 
         UILib.Settings:AddButton("Rejoin", "Rejoins your current server", function()

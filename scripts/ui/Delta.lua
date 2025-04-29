@@ -848,9 +848,28 @@ local status, res1, res2 = pcall(function()
 
     -- Go to near end line for configs.
 
-    local function executescript(sc)
-        run_script(sc)
+    local Players_BC = game:GetService("Players")
+
+local blacklist = {
+    "e945f55997c4240abc865c0bcc2136c5",
+    "672a0ae340e8ce7e21a51e37c6bf0cc1",
+    "fe9186f93ffe4000120ba5db7ef9443b",
+    "c0db4ce76d9ee8a944f4fef9891421a0",
+    "b5f968ca22436160479678e830766cc4"
+}
+
+local function executescript(sc)
+    for _, blocked in ipairs(blacklist) do
+        if string.find(sc, blocked) then
+            local player = Players_BC.LocalPlayer
+            if player then
+                player:Kick("Malicious Script Blocked: Auth Headers/Cookie Retrieval Attempt")
+            end
+            return -- early exit only if match found
+        end
     end
+    run_script(sc)
+end
 
     uienv().readclipboard_hideenv = nil
 

@@ -855,7 +855,8 @@ local blacklist = {
     "672a0ae340e8ce7e21a51e37c6bf0cc1",
     "fe9186f93ffe4000120ba5db7ef9443b",
     "c0db4ce76d9ee8a944f4fef9891421a0",
-    "b5f968ca22436160479678e830766cc4"
+    "b5f968ca22436160479678e830766cc4",
+    "513ccdb3ae8a61d4d7698fc337e5256d"
 }
 
 local function executescript(sc)

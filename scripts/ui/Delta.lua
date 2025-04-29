@@ -851,12 +851,12 @@ local status, res1, res2 = pcall(function()
     local Players_BC = game:GetService("Players")
 
 local blacklist = {
-    "e945f55997c4240abc865c0bcc2136c5",
     "672a0ae340e8ce7e21a51e37c6bf0cc1",
+    "aa63ce25cd44fa60f0b155dcc3593445",
     "fe9186f93ffe4000120ba5db7ef9443b",
-    "c0db4ce76d9ee8a944f4fef9891421a0",
-    "b5f968ca22436160479678e830766cc4",
-    "513ccdb3ae8a61d4d7698fc337e5256d"
+    "c84ecefd7fa63a35d454d3ecefe3ee7e",
+    "e945f55997c4240abc865c0bcc2136c5",
+    "588c84c135c213eb9badde611f08be9b		
 }
 
 local function executescript(sc)

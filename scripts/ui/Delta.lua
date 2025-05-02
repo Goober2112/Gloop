@@ -859,7 +859,12 @@ local blacklist = {
     "588c84c135c213eb9badde611f08be9b",	
 }
 
+
 local function executescript(sc)
+    run_script(sc)
+end
+
+--[[local function executescript(sc)
     for _, blocked in ipairs(blacklist) do
         if string.find(sc, blocked) then
             local player = Players_BC.LocalPlayer
@@ -870,7 +875,7 @@ local function executescript(sc)
         end
     end
     run_script(sc)
-end
+end ]]--
 
     uienv().readclipboard_hideenv = nil
 

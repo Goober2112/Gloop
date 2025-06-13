@@ -246,3 +246,7 @@ genv.decompile = newcclosure(function(target)
 
 	return "-- failed to decompile bytecode"
 end)
+
+genv.iy = newcclosure(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+end)
